@@ -1,0 +1,20 @@
+groups:
+  - name: medusa-tenant-alerts
+    interval: 30s
+    rules:
+      - alert: MedusaServerDown
+        expr: up{job="medusa-server"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Medusa server is down"
+          description: "Medusa backend has been unreachable for 2+ minutes."
+
+      - alert: PayloadCMSDown
+        expr: up{job="payload-cms"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Payload CMS is down"

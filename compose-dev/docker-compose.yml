@@ -1,0 +1,243 @@
+name: tenant-template-dev
+
+networks:
+  tenant_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+  meilisearch_data:
+  prometheus_data:
+  grafana_data:
+
+services:
+  # ============ DATA LAYER ============
+
+  postgres:
+    image: postgres:16.4-alpine
+    container_name: dev-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_DB_MEDUSA},${POSTGRES_DB_PAYLOAD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - tenant_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: dev-redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - tenant_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============ STORAGE LAYER ============
+
+  minio:
+    image: minio/minio:latest
+    container_name: dev-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - minio_data:/data
+    networks:
+      - tenant_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:latest
+    container_name: dev-minio-init
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+      mc mb -p local/medusa-media || true;
+      mc mb -p local/payload-uploads || true;
+      mc anonymous set download local/medusa-media || true;
+      exit 0;
+      "
+    networks:
+      - tenant_net
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: dev-meilisearch
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_ENV: development
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - meilisearch_data:/meili_data
+    ports:
+      - "7700:7700"
+    networks:
+      - tenant_net
+
+  # ============ APP LAYER ============
+
+  medusa-server:
+    build:
+      context: ../medusa
+      dockerfile: Dockerfile
+      target: development
+    container_name: dev-medusa-server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      MEDUSA_WORKER_MODE: shared
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB_MEDUSA}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
+      JWT_SECRET: ${MEDUSA_JWT_SECRET}
+      COOKIE_SECRET: ${MEDUSA_COOKIE_SECRET}
+      STORE_CORS: http://shop.huayuesc.local
+      ADMIN_CORS: http://admin.huayuesc.local
+      AUTH_CORS: http://shop.huayuesc.local,http://admin.huayuesc.local
+      S3_FILE_URL: http://minio.huayuesc.local/medusa-media
+      S3_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      S3_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      S3_REGION: us-east-1
+      S3_BUCKET: medusa-media
+      S3_ENDPOINT: http://minio:9000
+    volumes:
+      - ../medusa/src:/app/src
+      - ../medusa/medusa-config.ts:/app/medusa-config.ts
+      - /app/node_modules
+    command: sh -c "npx medusa db:migrate || true; npm run dev"
+    networks:
+      - tenant_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+
+  payload-cms:
+    build:
+      context: ../payload
+      dockerfile: Dockerfile
+      target: development
+    container_name: dev-payload-cms
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      DATABASE_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB_PAYLOAD}
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_SERVER_URL: http://cms.huayuesc.local
+    volumes:
+      - ../payload/src:/app/src
+      - /app/node_modules
+    networks:
+      - tenant_net
+
+  storefront:
+    build:
+      context: ../storefront
+      dockerfile: Dockerfile
+      target: development
+    container_name: dev-storefront
+    restart: unless-stopped
+    depends_on:
+      - medusa-server
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://api.huayuesc.local
+      NEXT_PUBLIC_BASE_URL: http://shop.huayuesc.local
+    volumes:
+      - ../storefront/src:/app/src
+      - ../storefront/public:/app/public
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - tenant_net
+
+  # ============ OBS LAYER ============
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: dev-prometheus
+    restart: unless-stopped
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    volumes:
+      - ../observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    networks:
+      - tenant_net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: dev-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_INSTALL_PLUGINS: ""
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ../observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    networks:
+      - tenant_net
+
+  # ============ EDGE LAYER ============
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: dev-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../caddy/Caddyfile.dev:/etc/caddy/Caddyfile:ro
+    networks:
+      - tenant_net
