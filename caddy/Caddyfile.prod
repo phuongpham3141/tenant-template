@@ -1,0 +1,46 @@
+{
+    email ops@huayuesc.com
+}
+
+# === Tenant ACME (10.10.0.x) ===
+
+shop.acme.huayuesc.com {
+    reverse_proxy 10.10.0.1:3001
+    encode gzip zstd
+
+    @cacheable {
+        path *.js *.css *.woff2 *.png *.jpg *.svg
+    }
+    header @cacheable Cache-Control "public, max-age=31536000, immutable"
+}
+
+api.acme.huayuesc.com {
+    reverse_proxy 10.10.0.1:9000
+    encode gzip zstd
+}
+
+admin.acme.huayuesc.com {
+    reverse_proxy 10.10.0.1:7001
+    encode gzip zstd
+}
+
+cms.acme.huayuesc.com {
+    reverse_proxy 10.10.0.1:3000
+    encode gzip zstd
+}
+
+metrics.acme.huayuesc.com {
+    reverse_proxy 10.10.0.4:3000
+
+    # IP whitelist for Grafana (ops + customer)
+    @blocked not remote_ip 1.2.3.4/32 5.6.7.8/32
+    respond @blocked 403
+}
+
+minio.acme.huayuesc.com {
+    reverse_proxy 10.10.0.3:9001
+    encode gzip zstd
+}
+
+# === Tenant BIGSHOP (10.20.0.x) ===
+# Duplicate the pattern above with 10.20.0.x. Or templatize via caddy snippets.

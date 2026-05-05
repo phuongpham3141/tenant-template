@@ -1,0 +1,27 @@
+{
+    auto_https off
+}
+
+http://shop.huayuesc.local {
+    reverse_proxy storefront:3001
+}
+
+http://admin.huayuesc.local {
+    reverse_proxy medusa-server:7001
+}
+
+http://api.huayuesc.local {
+    reverse_proxy medusa-server:9000
+}
+
+http://cms.huayuesc.local {
+    reverse_proxy payload-cms:3000
+}
+
+http://metrics.huayuesc.local {
+    reverse_proxy grafana:3000
+}
+
+http://minio.huayuesc.local {
+    reverse_proxy minio:9001
+}
