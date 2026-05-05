@@ -1,0 +1,14 @@
+node_modules
+.next
+.medusa/admin
+build
+dist
+.env
+.env.*
+.git
+.gitignore
+*.log
+README.md
+.DS_Store
+coverage
+.cache
