@@ -1,0 +1,97 @@
+name: tenant-${TENANT_ID}-app
+
+networks:
+  app_net:
+    driver: bridge
+
+services:
+  medusa-server:
+    image: ghcr.io/phuongpham3141/medusa-${TENANT_ID}:${MEDUSA_VERSION}
+    container_name: medusa-server
+    restart: always
+    environment:
+      NODE_ENV: production
+      MEDUSA_WORKER_MODE: server
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATA_HOST}:6432/${POSTGRES_DB_MEDUSA}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@${DATA_HOST}:6379
+      JWT_SECRET: ${MEDUSA_JWT_SECRET}
+      COOKIE_SECRET: ${MEDUSA_COOKIE_SECRET}
+      STORE_CORS: https://shop.${TENANT_DOMAIN}
+      ADMIN_CORS: https://admin.${TENANT_DOMAIN}
+      AUTH_CORS: https://shop.${TENANT_DOMAIN},https://admin.${TENANT_DOMAIN}
+      S3_FILE_URL: https://minio.${TENANT_DOMAIN}/medusa-media
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_KEY}
+      S3_BUCKET: medusa-media
+      S3_ENDPOINT: http://${STORAGE_HOST}:9000
+    ports:
+      - "9000:9000"
+    networks:
+      - app_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        limits: { cpus: "4", memory: 8G }
+        reservations: { memory: 4G }
+
+  medusa-worker:
+    image: ghcr.io/phuongpham3141/medusa-${TENANT_ID}:${MEDUSA_VERSION}
+    container_name: medusa-worker
+    restart: always
+    environment:
+      NODE_ENV: production
+      MEDUSA_WORKER_MODE: worker
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATA_HOST}:6432/${POSTGRES_DB_MEDUSA}
+      REDIS_URL: redis://:${REDIS_PASSWORD}@${DATA_HOST}:6379
+      JWT_SECRET: ${MEDUSA_JWT_SECRET}
+      COOKIE_SECRET: ${MEDUSA_COOKIE_SECRET}
+      S3_FILE_URL: https://minio.${TENANT_DOMAIN}/medusa-media
+      S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY}
+      S3_SECRET_ACCESS_KEY: ${S3_SECRET_KEY}
+      S3_BUCKET: medusa-media
+      S3_ENDPOINT: http://${STORAGE_HOST}:9000
+    networks:
+      - app_net
+    deploy:
+      resources:
+        limits: { cpus: "2", memory: 4G }
+
+  payload-cms:
+    image: ghcr.io/phuongpham3141/payload-${TENANT_ID}:${PAYLOAD_VERSION}
+    container_name: payload-cms
+    restart: always
+    environment:
+      NODE_ENV: production
+      DATABASE_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DATA_HOST}:6432/${POSTGRES_DB_PAYLOAD}
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_SERVER_URL: https://cms.${TENANT_DOMAIN}
+    ports:
+      - "3000:3000"
+    networks:
+      - app_net
+    deploy:
+      resources:
+        limits: { cpus: "2", memory: 4G }
+
+  storefront:
+    image: ghcr.io/phuongpham3141/storefront-${TENANT_ID}:${STOREFRONT_VERSION}
+    container_name: storefront
+    restart: always
+    depends_on:
+      - medusa-server
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: https://api.${TENANT_DOMAIN}
+      NEXT_PUBLIC_BASE_URL: https://shop.${TENANT_DOMAIN}
+    ports:
+      - "3001:3001"
+    networks:
+      - app_net
+    deploy:
+      resources:
+        limits: { cpus: "2", memory: 2G }

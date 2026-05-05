@@ -1,0 +1,50 @@
+name: tenant-${TENANT_ID}-storage
+
+networks:
+  storage_net:
+    driver: bridge
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    restart: always
+    command: server /data --address ":9000" --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BROWSER_REDIRECT_URL: https://minio.${TENANT_DOMAIN}
+      MINIO_PROMETHEUS_AUTH_TYPE: public
+    volumes:
+      - /srv/minio/data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - storage_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    deploy:
+      resources:
+        limits: { memory: 4G }
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: meilisearch
+    restart: always
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_ENV: production
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - /srv/meilisearch/data:/meili_data
+    ports:
+      - "7700:7700"
+    networks:
+      - storage_net
+    deploy:
+      resources:
+        limits: { memory: 2G }
