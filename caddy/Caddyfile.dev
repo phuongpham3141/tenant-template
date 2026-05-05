@@ -6,8 +6,10 @@ http://shop.huayuesc.local {
     reverse_proxy storefront:3001
 }
 
+# Medusa Admin (v2: /app path on same port as API)
 http://admin.huayuesc.local {
-    reverse_proxy medusa-server:7001
+    redir / /app permanent
+    reverse_proxy medusa-server:9000
 }
 
 http://api.huayuesc.local {

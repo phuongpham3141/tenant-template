@@ -15,6 +15,19 @@ module.exports = defineConfig({
     },
     workerMode: (process.env.MEDUSA_WORKER_MODE as any) || "shared",
   },
+  admin: {
+    vite: () => ({
+      server: {
+        allowedHosts: [
+          'admin.huayuesc.local',
+          'api.huayuesc.local',
+          '.huayuesc.local',
+          '.huayuesc.com',
+          'localhost',
+        ],
+      },
+    }),
+  },
   modules: [
     {
       resolve: "@medusajs/medusa/file",
