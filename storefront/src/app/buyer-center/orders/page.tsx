@@ -25,7 +25,7 @@ const TABS = ["Tất cả", "Đang xử lý", "Đang vận chuyển", "Đã giao
 export default function OrdersPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Đơn hàng" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Đơn hàng" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/orders" />
         <div>
@@ -71,7 +71,7 @@ export default function OrdersPage() {
                       <span className={`text-[11px] px-2 py-0.5 rounded-sm font-semibold ${STATUS_COLOR[o.status]}`}>{o.status}</span>
                     </td>
                     <td className="px-3 py-3">
-                      <Link href="/info/theo-doi-don" className="text-brand text-[12px] hover:underline">Chi tiết →</Link>
+                      <Link href="/info/order-tracking" className="text-brand text-[12px] hover:underline">Chi tiết →</Link>
                     </td>
                   </tr>
                 ))}

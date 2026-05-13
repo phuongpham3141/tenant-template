@@ -1,0 +1,23 @@
+{
+  "name": "clickhouse-sink-cybersilkroads",
+  "config": {
+    "connector.class": "com.clickhouse.kafka.connect.ClickHouseSinkConnector",
+    "tasks.max": "4",
+    "topics.regex": "csr\\.(audit|advertising|search|personalization|communication|live|email_mkt|auth|api|payment|notification|experiment|ai|tax|media|fraud|vn_sourcing)\\..+",
+    "hostname": "${CH_HOST}",
+    "port": "${CH_PORT}",
+    "database": "default",
+    "username": "${CH_USER}",
+    "password": "${CH_PASSWORD}",
+    "ssl": "false",
+    "schemas.enable": "false",
+    "errors.tolerance": "all",
+    "errors.deadletterqueue.topic.name": "csr.cdc.dlq",
+    "errors.deadletterqueue.topic.replication.factor": "1",
+    "topic2TableMap": "csr.audit.audit_event=audit_ch.audit_event,csr.advertising.ads_impression_log=advertising_ch.ads_impression_log,csr.advertising.ads_click_log=advertising_ch.ads_click_log,csr.search.search_query_log=search_ch.search_query_log,csr.personalization.user_behavior_event=personalization_ch.user_behavior_event,csr.live.livestream_chat_message=live_ch.livestream_chat_message,csr.ai.inference_log=ai_ch.ai_inference_log,csr.auth.login_attempt_log=auth_ch.login_attempt_log,csr.api.api_call_log=api_ch.api_call_log",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}

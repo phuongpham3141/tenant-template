@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: csr-public
+  namespace: csr
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: 200m
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/enable-cors: "false"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts: [shop.huayuesc.vn, api.huayuesc.vn, cms.huayuesc.vn, admin.huayuesc.vn]
+      secretName: csr-public-tls
+  rules:
+    - host: shop.huayuesc.vn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: storefront, port: { number: 80 } } }
+    - host: api.huayuesc.vn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: medusa, port: { number: 80 } } }
+    - host: cms.huayuesc.vn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: payload, port: { number: 80 } } }
+    - host: admin.huayuesc.vn
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: medusa, port: { number: 80 } } }

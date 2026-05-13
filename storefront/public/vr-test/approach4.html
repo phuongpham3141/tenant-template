@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Approach 4 — Native + CSS combined chi tiết log</title>
+<style>
+  body{font-family:system-ui,Arial;max-width:1200px;margin:16px auto;padding:0 16px}
+  body.fs-lock{overflow:hidden}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:#666;font-size:13px;margin:0 0 16px}
+  .row{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+  button{padding:10px 18px;background:#0066cc;color:#fff;border:0;border-radius:4px;font-weight:bold;cursor:pointer;font-size:14px}
+  button:hover{background:#005ab3}
+  .log{background:#0a0a0a;color:#0f0;font-family:Consolas,monospace;font-size:11px;padding:10px;border-radius:4px;height:200px;overflow-y:auto;margin:12px 0;white-space:pre-wrap}
+  .log .err{color:#f66}
+  .log .ok{color:#6f6}
+  .log .info{color:#fc6}
+
+  #wrap{position:relative;width:100%;height:600px;background:#000;border:1px solid #ccc;border-radius:6px;overflow:hidden}
+  #wrap.css-fs{position:fixed!important;inset:0;width:100vw;height:100vh;z-index:99999;border-radius:0;border:0}
+  #wrap iframe{width:100%;height:100%;border:0}
+  .ov1{position:absolute;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#0066cc,#003d7a);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;border-radius:6px;z-index:10}
+  .exit-btn{position:absolute;top:16px;right:16px;background:#fff;color:#0066cc;padding:8px 14px;border-radius:4px;font-weight:bold;border:0;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.3);display:none}
+  #wrap.css-fs .exit-btn{display:block}
+  #wrap:fullscreen .exit-btn{display:block}
+  .back{display:inline-block;margin-bottom:8px;color:#0066cc;text-decoration:none;font-size:13px}
+</style>
+</head>
+<body>
+  <a class="back" href="index.html">← Về trang index</a>
+  <h1>Approach 4 — Native API thử trước, CSS fallback nếu fail (verbose log)</h1>
+  <p class="sub">Click → thử native, nếu reject hoặc throw thì rơi sang CSS pseudo-fullscreen. Mọi bước in log.</p>
+
+  <div class="row">
+    <button id="fs">⛶ Toàn màn hình</button>
+    <button id="diag">🔬 Diagnostic</button>
+    <button id="clear">🗑 Clear log</button>
+  </div>
+  <div class="log" id="log"></div>
+
+  <div id="wrap">
+    <iframe src="https://world-port.made-in-china.com/viewVR?comId=eKtTcaCAvhrm"
+            allow="accelerometer; gyroscope; magnetometer; vr; xr-spatial-tracking; fullscreen"
+            allowfullscreen></iframe>
+    <div class="ov1">🏭 OPPEIN HOME GROUP</div>
+    <button class="exit-btn" id="exit">✕ Thoát (Esc)</button>
+  </div>
+
+<script>
+  const log = document.getElementById('log');
+  const wrap = document.getElementById('wrap');
+  function L(msg, cls){
+    const t = new Date().toLocaleTimeString();
+    const line = document.createElement('div');
+    if(cls) line.className = cls;
+    line.textContent = `[${t}] ${msg}`;
+    log.appendChild(line);
+    log.scrollTop = log.scrollHeight;
+  }
+  document.getElementById('clear').onclick = ()=> log.innerHTML='';
+
+  function setCssFs(on){
+    wrap.classList.toggle('css-fs', on);
+    document.body.classList.toggle('fs-lock', on);
+  }
+
+  document.getElementById('diag').onclick = ()=>{
+    L('=== DIAGNOSTIC ===','info');
+    L('document.fullscreenEnabled = ' + document.fullscreenEnabled);
+    L('typeof wrap.requestFullscreen = ' + typeof wrap.requestFullscreen);
+    L('typeof wrap.webkitRequestFullscreen = ' + typeof wrap.webkitRequestFullscreen);
+    L('document.fullscreenElement = ' + document.fullscreenElement);
+    L('navigator.userAgent: ' + navigator.userAgent.slice(0,80));
+    try{
+      const fp = document.featurePolicy || document.permissionsPolicy;
+      if(fp && fp.allowsFeature){
+        L('featurePolicy.allowsFeature("fullscreen") = ' + fp.allowsFeature('fullscreen'));
+      } else {
+        L('featurePolicy API không có');
+      }
+    }catch(e){ L('featurePolicy error: '+e.message,'err'); }
+  };
+
+  document.getElementById('fs').onclick = ()=>{
+    L('--- Click toggle FS ---','info');
+    if(document.fullscreenElement){
+      L('Đang ở native FS → exit...');
+      document.exitFullscreen().then(()=>L('Exit native FS OK','ok')).catch(e=>L('Exit error: '+e.message,'err'));
+      return;
+    }
+    if(wrap.classList.contains('css-fs')){
+      L('Đang ở CSS pseudo-FS → exit...');
+      setCssFs(false);
+      L('Exit CSS pseudo-FS OK','ok');
+      return;
+    }
+    const fn = wrap.requestFullscreen || wrap.webkitRequestFullscreen;
+    if(!fn){
+      L('Native API không có → CSS fallback','info');
+      setCssFs(true);
+      return;
+    }
+    L('Thử native API...');
+    try{
+      const p = fn.call(wrap);
+      if(p && p.then){
+        p.then(()=> L('✅ Native FS RESOLVED','ok'))
+         .catch(e=> {
+           L('❌ Native REJECTED: '+e.name+' '+e.message,'err');
+           L('→ rơi sang CSS pseudo-fullscreen','info');
+           setCssFs(true);
+         });
+      } else {
+        L('requestFullscreen không trả Promise (browser cũ)','info');
+      }
+    }catch(e){
+      L('THROW SYNCHRONOUS: '+e.name+' '+e.message,'err');
+      L('→ rơi sang CSS pseudo-fullscreen','info');
+      setCssFs(true);
+    }
+  };
+  document.getElementById('exit').onclick = ()=> document.getElementById('fs').click();
+
+  document.addEventListener('fullscreenchange', ()=>{
+    L('🔔 fullscreenchange → ' + (document.fullscreenElement?document.fullscreenElement.id:'null'));
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='Escape' && wrap.classList.contains('css-fs')){
+      setCssFs(false);
+      L('Esc → exit CSS pseudo-FS','ok');
+    }
+  });
+</script>
+</body>
+</html>

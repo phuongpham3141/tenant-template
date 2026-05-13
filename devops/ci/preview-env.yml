@@ -1,0 +1,40 @@
+name: Preview Environment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    permissions: { contents: read, packages: write, pull-requests: write }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build preview images
+        uses: docker/build-push-action@v5
+        with:
+          context: ./storefront
+          push: true
+          tags: ghcr.io/${{ github.repository }}/storefront:pr-${{ github.event.pull_request.number }}
+      - name: Deploy to preview namespace
+        run: |
+          NAMESPACE=csr-pr-${{ github.event.pull_request.number }}
+          kubectl create namespace $NAMESPACE --dry-run=client -o yaml | kubectl apply -f -
+          # Apply manifests substituting NAMESPACE + image tag
+          envsubst < devops/deploy/k8s/storefront.yaml | kubectl apply -n $NAMESPACE -f -
+      - name: Comment PR with URL
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: "Preview: https://pr-${{ github.event.pull_request.number }}.preview.huayuesc.vn"
+
+  cleanup:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - run: kubectl delete namespace csr-pr-${{ github.event.pull_request.number }} --ignore-not-found

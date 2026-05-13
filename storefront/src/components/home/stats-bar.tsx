@@ -3,7 +3,7 @@ import { STATS } from "@/data/home";
 export function StatsBar() {
   return (
     <div className="max-w-[1400px] mx-auto px-4 max-md:px-3">
-      <div className="bg-paper border border-line rounded my-4 p-4 grid grid-cols-5 gap-5 text-center max-md:grid-cols-3 max-md:gap-2 max-md:my-2 max-md:p-3">
+      <div className="stats-row bg-paper border border-line rounded my-4 p-4 grid grid-cols-5 gap-5 text-center md:max-xl:grid-cols-3 md:max-xl:gap-3 max-md:grid-cols-3 max-md:gap-2 max-md:my-2 max-md:p-3">
         {STATS.map((s, i) => (
           <div
             key={s.label}

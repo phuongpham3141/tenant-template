@@ -1,0 +1,63 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Target environment"
+        required: true
+        type: choice
+        options: [staging, production]
+      ref:
+        description: "Git ref / image tag"
+        required: true
+        default: "main"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+      - name: Configure kubectl
+        uses: azure/setup-kubectl@v4
+      - name: Decode kubeconfig
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+        run: |
+          mkdir -p $HOME/.kube
+          echo "$KUBE_CONFIG" | base64 -d > $HOME/.kube/config
+      - name: Apply migrations
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_MIGRATIONS }}
+        run: |
+          for f in tenant-template/medusa/migrations/*.sql; do
+            echo ">>> applying $f"
+            psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f "$f"
+          done
+      - name: Apply seeds (idempotent)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_MIGRATIONS }}
+        run: |
+          for f in tenant-template/seed/masters/*.sql tenant-template/seed/prompts/*.sql; do
+            psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f "$f"
+          done
+      - name: Roll out services
+        run: |
+          IMAGE_TAG=${{ inputs.ref }}
+          kubectl set image deployment/medusa medusa=ghcr.io/${{ github.repository }}/medusa:${IMAGE_TAG} -n csr
+          kubectl set image deployment/payload payload=ghcr.io/${{ github.repository }}/payload:${IMAGE_TAG} -n csr
+          kubectl set image deployment/storefront storefront=ghcr.io/${{ github.repository }}/storefront:${IMAGE_TAG} -n csr
+          kubectl rollout status deployment/medusa -n csr --timeout=10m
+          kubectl rollout status deployment/payload -n csr --timeout=10m
+          kubectl rollout status deployment/storefront -n csr --timeout=10m
+      - name: Smoke test
+        run: |
+          curl -fsS https://${{ vars.STOREFRONT_HOST }}/api/healthz
+          curl -fsS https://${{ vars.API_HOST }}/health

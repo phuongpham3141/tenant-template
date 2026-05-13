@@ -1,0 +1,78 @@
+version: "3.9"
+
+services:
+  kafka:
+    image: bitnami/kafka:3.7
+    container_name: kafka
+    environment:
+      KAFKA_CFG_PROCESS_ROLES: "controller,broker"
+      KAFKA_CFG_NODE_ID: 1
+      KAFKA_CFG_CONTROLLER_QUORUM_VOTERS: "1@kafka:9093"
+      KAFKA_CFG_LISTENERS: "PLAINTEXT://:9092,CONTROLLER://:9093"
+      KAFKA_CFG_ADVERTISED_LISTENERS: "PLAINTEXT://kafka:9092"
+      KAFKA_CFG_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT"
+      KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_CFG_NUM_PARTITIONS: 6
+    volumes:
+      - kafka-data:/bitnami/kafka
+    networks: [cdc]
+
+  debezium:
+    image: debezium/connect:2.7
+    container_name: debezium
+    depends_on: [kafka]
+    environment:
+      BOOTSTRAP_SERVERS: "kafka:9092"
+      GROUP_ID: "csr-debezium"
+      CONFIG_STORAGE_TOPIC: "csr.connect-config"
+      OFFSET_STORAGE_TOPIC: "csr.connect-offsets"
+      STATUS_STORAGE_TOPIC: "csr.connect-status"
+      KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_LOG4J_LOGGERS: "org.apache.kafka.connect=INFO"
+    ports:
+      - "8083:8083"
+    volumes:
+      - ../../cdc/debezium:/csr-cdc:ro
+    networks: [cdc, db, ch]
+
+  clickhouse-sink:
+    image: confluentinc/cp-kafka-connect:7.5.0
+    container_name: ch-sink
+    depends_on: [kafka]
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: "kafka:9092"
+      CONNECT_GROUP_ID: "csr-ch-sink"
+      CONNECT_CONFIG_STORAGE_TOPIC: "csr.chsink-config"
+      CONNECT_OFFSET_STORAGE_TOPIC: "csr.chsink-offsets"
+      CONNECT_STATUS_STORAGE_TOPIC: "csr.chsink-status"
+      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+    ports:
+      - "8084:8083"
+    networks: [cdc, ch]
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    environment:
+      KAFKA_CLUSTERS_0_NAME: csr
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: debezium
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://debezium:8083
+    ports:
+      - "8085:8080"
+    networks: [cdc]
+
+volumes:
+  kafka-data:
+
+networks:
+  cdc:
+    driver: bridge
+  db:
+    external: true
+  ch:
+    external: true

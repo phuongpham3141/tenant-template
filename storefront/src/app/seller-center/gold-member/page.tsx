@@ -4,7 +4,7 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TIERS = [
   {
-    name: "Free",
+    name: "Miễn phí",
     price: "$0",
     per: "/năm",
     color: "border-line",
@@ -14,18 +14,18 @@ const TIERS = [
     desc: "Cho NCC mới, thử nghiệm thị trường",
   },
   {
-    name: "Gold",
+    name: "Vàng",
     price: "$2,980",
     per: "/năm",
     color: "border-gold ring-2 ring-gold",
     badge: "PHỔ BIẾN NHẤT",
-    cta: "Nâng cấp Gold",
+    cta: "Nâng cấp Vàng",
     ctaColor: "bg-gold text-brand-dark",
     desc: "Cho NCC nghiêm túc xuất khẩu sang VN",
     highlight: true,
   },
   {
-    name: "Diamond",
+    name: "Kim cương",
     price: "$6,800",
     per: "/năm",
     color: "border-brand",
@@ -42,10 +42,10 @@ const FEATURES = [
   { name: "Vị trí trong kết quả tìm kiếm", free: "Bình thường", gold: "Top 30%", diamond: "Top 5%" },
   { name: "Banner trang chủ ngành", free: "—", gold: "✓ (luân phiên)", diamond: "✓ (cố định 1 slot)" },
   { name: "Audit nhà máy + báo cáo TÜV", free: "Tự trả $1,200", gold: "1 lần / năm miễn phí", diamond: "2 lần / năm miễn phí" },
-  { name: "Gold badge + verified seller", free: "—", gold: "✓", diamond: "✓ + Diamond crown" },
+  { name: "Phù hiệu Vàng + nhà bán đã xác minh", free: "—", gold: "✓", diamond: "✓ + vương miện Kim cương" },
   { name: "Dashboard analytics chi tiết", free: "Cơ bản", gold: "Đầy đủ", diamond: "Đầy đủ + competitor data" },
   { name: "AI trợ lý Maike", free: "Demo 7 ngày", gold: "✓ Free", diamond: "✓ Free + custom training" },
-  { name: "Account manager riêng", free: "—", gold: "Chia sẻ", diamond: "Dedicated" },
+  { name: "Account manager riêng", free: "—", gold: "Chia sẻ", diamond: "Chuyên trách" },
   { name: "Tham dự Smart Expo", free: "1 expo / năm", gold: "Tất cả expo", diamond: "Tất cả + booth premium" },
 ];
 
@@ -53,21 +53,21 @@ const TESTIMONIALS = [
   {
     company: "Shenzhen Lighting Co.",
     role: "CEO Lý Cường",
-    quote: "Sau 3 tháng nâng Gold, đơn từ buyer Việt Nam tăng 4× — chủ yếu nhờ banner ngành đèn LED và RFQ ưu tiên. ROI bù phí Gold trong tháng đầu.",
+    quote: "Sau 3 tháng nâng Vàng, đơn từ buyer Việt Nam tăng 4× — chủ yếu nhờ banner ngành đèn LED và RFQ ưu tiên. ROI bù phí Vàng trong tháng đầu.",
     metric: "+312% đơn",
     avatar: 41,
   },
   {
     company: "Foshan Tile Master",
     role: "Sales Director Trương Mỹ",
-    quote: "Buyer HCM tìm porcelain tile trên AlibabaVN — Gold đẩy chúng tôi lên top 3 kết quả. RFQ inbound từ 8/tháng lên 47/tháng. Audit TÜV miễn phí giúp ký được hotel chain lớn.",
+    quote: "Buyer HCM tìm gạch porcelain trên Cybersilkroads — Vàng đẩy chúng tôi lên top 3 kết quả. RFQ inbound từ 8/tháng lên 47/tháng. Audit TÜV miễn phí giúp ký được chuỗi khách sạn lớn.",
     metric: "47 RFQ/tháng",
     avatar: 42,
   },
   {
     company: "Guangzhou KUKA Home",
     role: "Export Manager Vương Hoa",
-    quote: "Diamond + Smart Expo cho phép chúng tôi tiếp cận 12K buyer Đông Nam Á trong 1 tuần — bằng 6 tháng làm trade fair offline. Phí 6.8K USD nhỏ so với chi phí Canton Fair $40K+.",
+    quote: "Kim cương + Triển lãm thông minh cho phép chúng tôi tiếp cận 12K buyer Đông Nam Á trong 1 tuần — bằng 6 tháng làm trade fair offline. Phí 6.8K USD nhỏ so với chi phí Canton Fair $40K+.",
     metric: "12K buyer/expo",
     avatar: 43,
   },
@@ -75,23 +75,23 @@ const TESTIMONIALS = [
 
 const ROI_ROWS = [
   { label: "Đơn hàng trung bình hiện tại / tháng", v: "$4,200" },
-  { label: "Tăng trưởng dự kiến với Gold (3.2×)", v: "+$13,440" },
-  { label: "Phí Gold năm (chia 12 tháng)", v: "−$248" },
+  { label: "Tăng trưởng dự kiến với Vàng (3.2×)", v: "+$13,440" },
+  { label: "Phí Vàng năm (chia 12 tháng)", v: "−$248" },
   { label: "Lãi ròng tăng thêm / tháng (margin 22%)", v: "+$2,729" },
 ];
 
 export default function GoldMemberPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Đăng ký Gold Member" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Đăng ký Hội viên Vàng" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/gold-member" />
         <div>
           <div className="bg-gradient-to-br from-gold/40 to-gold/10 border border-gold rounded p-5 mb-4">
             <div className="inline-block bg-brand-dark text-gold px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🥇 GOLD MEMBERSHIP</div>
-            <h1 className="text-[24px] font-bold text-ink">Trở thành Gold Supplier — đột phá xuất khẩu Việt Nam</h1>
+            <h1 className="text-[24px] font-bold text-ink">Trở thành NCC Vàng — đột phá xuất khẩu Việt Nam</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed max-w-[680px]">
-              91% đơn hàng B2B trên AlibabaVN đến từ Gold/Diamond suppliers. Khi buyer tìm kiếm "porcelain tile MOQ 500m²" hay "OEM kitchen cabinet", thuật toán ưu tiên hiển thị suppliers có badge — Gold = lòng tin + traffic + báo cáo audit minh bạch.
+              91% đơn hàng B2B trên Cybersilkroads đến từ NCC Vàng/Kim cương. Khi buyer tìm kiếm "gạch porcelain MOQ 500m²" hay "OEM tủ bếp", thuật toán ưu tiên hiển thị suppliers có badge — Vàng = lòng tin + traffic + báo cáo audit minh bạch.
             </p>
           </div>
 
@@ -122,9 +122,9 @@ export default function GoldMemberPage() {
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Tính năng</th>
-                  <th className="text-center px-3 py-2.5 font-medium">Free</th>
-                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">Gold</th>
-                  <th className="text-center px-3 py-2.5 font-medium">Diamond</th>
+                  <th className="text-center px-3 py-2.5 font-medium">Miễn phí</th>
+                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">Vàng</th>
+                  <th className="text-center px-3 py-2.5 font-medium">Kim cương</th>
                 </tr>
               </thead>
               <tbody>
@@ -141,12 +141,12 @@ export default function GoldMemberPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">💬 Suppliers đã thành công với Gold</b>
+            <b className="block text-[15px] text-ink mb-4">💬 Nhà cung cấp đã thành công với Vàng</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {TESTIMONIALS.map((t) => (
                 <div key={t.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
                   <div className="flex items-center gap-3 mb-3">
-                    <img src={`https://picsum.photos/seed/seller-gold-${t.avatar}/56/56`} alt="" className="w-12 h-12 rounded-full object-cover" />
+                    <img src={`/img/seller-gold-${t.avatar}.jpg?v=3`} alt="" className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <b className="block text-[12.5px] text-ink leading-tight">{t.company}</b>
                       <span className="text-[11px] text-mute">{t.role}</span>
@@ -164,8 +164,8 @@ export default function GoldMemberPage() {
 
           <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[15px] text-ink mb-3">📊 Tính ROI Gold</b>
-              <p className="text-[11.5px] text-mute mb-3">Dựa trên trung bình 142 supplier furniture đã nâng Gold trong 12 tháng qua.</p>
+              <b className="block text-[15px] text-ink mb-3">📊 Tính ROI Vàng</b>
+              <p className="text-[11.5px] text-mute mb-3">Dựa trên trung bình 142 supplier furniture đã nâng Vàng trong 12 tháng qua.</p>
               <table className="w-full text-[12.5px]">
                 <tbody>
                   {ROI_ROWS.map((r, i) => (
@@ -182,10 +182,10 @@ export default function GoldMemberPage() {
             <div className="bg-brand-dark text-white rounded p-5 flex flex-col justify-center">
               <b className="block text-[18px] mb-2">🚀 Sẵn sàng nâng cấp?</b>
               <p className="text-[12.5px] opacity-90 leading-relaxed mb-4">
-                Hôm nay đăng ký Gold — kích hoạt trong 24h, kèm gói audit TÜV trị giá $1,200 và banner ngành 30 ngày miễn phí cho 50 đăng ký đầu tiên tháng 5.
+                Hôm nay đăng ký Vàng — kích hoạt trong 24h, kèm gói audit TÜV trị giá $1,200 và banner ngành 30 ngày miễn phí cho 50 đăng ký đầu tiên tháng 5.
               </p>
               <button className="bg-gold text-brand-dark rounded-sm py-3 font-bold text-[14px] hover:opacity-95">
-                Nâng cấp Gold ngay — $2,980/năm
+                Nâng cấp Vàng ngay — $2,980/năm
               </button>
               <span className="text-[11px] opacity-70 mt-2 text-center">Không hài lòng trong 30 ngày → hoàn 100% phí.</span>
             </div>
@@ -196,4 +196,4 @@ export default function GoldMemberPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Gold Member — Seller Center" };
+export const metadata = { title: "Đăng ký Hội viên Vàng — Seller Center" };

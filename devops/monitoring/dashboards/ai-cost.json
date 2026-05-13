@@ -1,0 +1,16 @@
+{
+  "title": "CSR — AI Cost & Performance",
+  "tags": ["csr", "ai"],
+  "schemaVersion": 39,
+  "panels": [
+    { "type": "stat", "title": "Spend today (USD)", "targets": [{ "expr": "sum(ai_cost_usd_daily)" }] },
+    { "type": "stat", "title": "Inferences last 1h", "targets": [{ "expr": "sum(rate(ai_inference_total[1h])) * 3600" }] },
+    { "type": "stat", "title": "Cache hit rate %", "targets": [{ "expr": "100 * sum(ai_inference_cache_hit_total) / sum(ai_inference_total)" }] },
+    { "type": "timeseries", "title": "Cost by model",
+      "targets": [{ "expr": "sum by (model_id)(rate(ai_cost_micros_total[5m])) / 1000000", "legendFormat": "{{model_id}}" }] },
+    { "type": "timeseries", "title": "Latency p95 by feature",
+      "targets": [{ "expr": "histogram_quantile(0.95, sum by (feature_code, le)(rate(ai_inference_latency_ms_bucket[5m])))", "legendFormat": "{{feature_code}}" }] },
+    { "type": "table", "title": "Top features by cost (24h)",
+      "targets": [{ "expr": "topk(10, sum by (feature_code)(increase(ai_cost_micros_total[24h]) / 1000000))" }] }
+  ]
+}

@@ -50,13 +50,13 @@ export default function BrowsingHistoryPage() {
 
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Lịch sử duyệt" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Lịch sử duyệt" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/browsing-history" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4 flex justify-between items-start max-md:flex-col max-md:gap-3">
             <div>
-              <div className="inline-block bg-mute2/30 text-mute px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🕘 BROWSING HISTORY</div>
+              <div className="inline-block bg-mute2/30 text-mute px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🕘 LỊCH SỬ DUYỆT</div>
               <h1 className="text-[22px] font-bold text-ink">Lịch sử duyệt</h1>
               <p className="text-[12.5px] text-mute mt-1">{total} sản phẩm trong 30 ngày qua · Đồng bộ giữa thiết bị</p>
             </div>

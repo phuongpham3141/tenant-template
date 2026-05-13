@@ -1,0 +1,25 @@
+-- Unit of measure master
+INSERT INTO catalog.unit_master (code, category, label_i18n, conversion_to_base_factor, base_code, is_active) VALUES
+('kg','weight','{"vi":"kg","en":"kg","cn":"千克"}',1,'kg',TRUE),
+('g','weight','{"vi":"g","en":"g","cn":"克"}',0.001,'kg',TRUE),
+('lb','weight','{"vi":"pound","en":"lb","cn":"磅"}',0.453592,'kg',TRUE),
+('mt','weight','{"vi":"tấn","en":"metric ton","cn":"公吨"}',1000,'kg',TRUE),
+('m','length','{"vi":"mét","en":"m","cn":"米"}',1,'m',TRUE),
+('cm','length','{"vi":"cm","en":"cm","cn":"厘米"}',0.01,'m',TRUE),
+('mm','length','{"vi":"mm","en":"mm","cn":"毫米"}',0.001,'m',TRUE),
+('inch','length','{"vi":"inch","en":"inch","cn":"英寸"}',0.0254,'m',TRUE),
+('ft','length','{"vi":"feet","en":"ft","cn":"英尺"}',0.3048,'m',TRUE),
+('l','volume','{"vi":"lít","en":"L","cn":"升"}',1,'l',TRUE),
+('ml','volume','{"vi":"ml","en":"mL","cn":"毫升"}',0.001,'l',TRUE),
+('cbm','volume','{"vi":"m³","en":"cbm","cn":"立方米"}',1000,'l',TRUE),
+('sqm','area','{"vi":"m²","en":"sqm","cn":"平方米"}',1,'sqm',TRUE),
+('pcs','count','{"vi":"cái","en":"pieces","cn":"件"}',1,'pcs',TRUE),
+('pair','count','{"vi":"đôi","en":"pair","cn":"双"}',2,'pcs',TRUE),
+('box','count','{"vi":"hộp","en":"box","cn":"盒"}',1,'box',TRUE),
+('ctn','count','{"vi":"thùng","en":"carton","cn":"箱"}',1,'ctn',TRUE),
+('plt','count','{"vi":"pallet","en":"pallet","cn":"托盘"}',1,'plt',TRUE),
+('cont20','count','{"vi":"container 20ft","en":"20ft container","cn":"20英尺集装箱"}',1,'cont',TRUE),
+('cont40','count','{"vi":"container 40ft","en":"40ft container","cn":"40英尺集装箱"}',1,'cont',TRUE),
+('hr','time','{"vi":"giờ","en":"hour","cn":"小时"}',3600,'s',TRUE),
+('day','time','{"vi":"ngày","en":"day","cn":"天"}',86400,'s',TRUE)
+ON CONFLICT (code) DO UPDATE SET label_i18n = EXCLUDED.label_i18n;

@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workers
+  namespace: csr
+spec:
+  replicas: 3
+  selector: { matchLabels: { app: workers } }
+  template:
+    metadata: { labels: { app: workers } }
+    spec:
+      containers:
+        - name: workers
+          image: ghcr.io/CHANGE_ME/medusa:latest
+          command: ["node", "dist/workers/index.js"]
+          envFrom:
+            - secretRef: { name: medusa-secrets }
+            - configMapRef: { name: medusa-config }
+          env:
+            - { name: MEDUSA_WORKER_MODE, value: "worker" }
+          resources:
+            requests: { cpu: "500m", memory: "1Gi" }
+            limits: { cpu: "2000m", memory: "4Gi" }
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rfq-expirer
+  namespace: csr
+spec:
+  schedule: "*/10 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: job
+              image: ghcr.io/CHANGE_ME/medusa:latest
+              command: ["node", "dist/jobs/rfq-expirer.js"]
+              envFrom:
+                - secretRef: { name: medusa-secrets }
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: fx-snapshot
+  namespace: csr
+spec:
+  schedule: "0 */6 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: job
+              image: ghcr.io/CHANGE_ME/medusa:latest
+              command: ["node", "dist/jobs/fx-snapshot-poller.js"]
+              envFrom:
+                - secretRef: { name: medusa-secrets }
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pg-backup
+  namespace: csr
+spec:
+  schedule: "0 2 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: ghcr.io/CHANGE_ME/devops-tools:latest
+              command: ["/scripts/pgbackup.sh"]
+              envFrom:
+                - secretRef: { name: backup-secrets }

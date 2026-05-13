@@ -1,0 +1,16 @@
+export const CacheTags = {
+  product: (id: string) => `product:${id}`,
+  productSearch: "product:search",
+  supplier: (id: string) => `supplier:${id}`,
+  category: (id: string) => `category:${id}`,
+  industryChannel: (slug: string) => `industry:${slug}`,
+  rfq: (id: string) => `rfq:${id}`,
+  rfqList: "rfq:list",
+  order: (id: string) => `order:${id}`,
+  livestreamLive: "livestream:live-now",
+  livestream: (id: string) => `livestream:${id}`,
+  blogArticle: (slug: string) => `blog:${slug}`,
+  navigation: "navigation",
+  footer: "footer",
+  siteSettings: "site-settings",
+}

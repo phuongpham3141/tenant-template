@@ -1,0 +1,65 @@
+{
+  "title": "CSR — Search Quality",
+  "tags": ["csr", "search", "ai"],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Autocomplete RPS (1m)",
+      "targets": [{ "expr": "sum(rate(search_query_log_total{intent=\"autocomplete\"}[1m]))" }]
+    },
+    {
+      "type": "stat",
+      "title": "Visual searches today",
+      "targets": [{ "expr": "sum(increase(search_query_log_total{intent=~\"visual_search.*\"}[24h]))" }]
+    },
+    {
+      "type": "stat",
+      "title": "Embedding coverage %",
+      "targets": [{ "expr": "100 * sum(ai_embedding_doc_count{scope_type=\"product\"}) / sum(catalog_product_active_count)" }]
+    },
+    {
+      "type": "stat",
+      "title": "Zero-result rate (24h)",
+      "targets": [{ "expr": "100 * sum(increase(search_zero_result_log_total[24h])) / sum(increase(search_query_log_total{intent=\"keyword\"}[24h]))" }]
+    },
+    {
+      "type": "timeseries",
+      "title": "Autocomplete latency p50/p95/p99",
+      "targets": [
+        { "expr": "histogram_quantile(0.5, sum by (le)(rate(search_query_latency_ms_bucket{intent=\"autocomplete\"}[5m])))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, sum by (le)(rate(search_query_latency_ms_bucket{intent=\"autocomplete\"}[5m])))", "legendFormat": "p95" },
+        { "expr": "histogram_quantile(0.99, sum by (le)(rate(search_query_latency_ms_bucket{intent=\"autocomplete\"}[5m])))", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Visual search latency",
+      "targets": [
+        { "expr": "histogram_quantile(0.5, sum by (le)(rate(search_query_latency_ms_bucket{intent=~\"visual_search.*\"}[5m])))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, sum by (le)(rate(search_query_latency_ms_bucket{intent=~\"visual_search.*\"}[5m])))", "legendFormat": "p95" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Autocomplete CTR by suggestion type",
+      "targets": [{ "expr": "sum by (suggestion_type)(rate(search_autocomplete_click_total[1h]))", "legendFormat": "{{suggestion_type}}" }]
+    },
+    {
+      "type": "timeseries",
+      "title": "Visual embed worker throughput",
+      "targets": [{ "expr": "sum(rate(bullmq_visual_embed_completed_total[5m]))", "legendFormat": "completed/s" }]
+    },
+    {
+      "type": "table",
+      "title": "Top zero-result queries (7d)",
+      "targets": [{ "expr": "topk(20, sum by (query)(increase(search_zero_result_log_total[7d])))" }]
+    },
+    {
+      "type": "table",
+      "title": "Top visual search categories (24h)",
+      "targets": [{ "expr": "topk(10, sum by (detected_category)(increase(search_visual_detected_total[24h])))" }]
+    }
+  ]
+}

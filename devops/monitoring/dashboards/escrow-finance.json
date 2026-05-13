@@ -1,0 +1,21 @@
+{
+  "title": "CSR — Escrow & Finance",
+  "tags": ["csr", "finance"],
+  "schemaVersion": 39,
+  "panels": [
+    { "type": "stat", "title": "Escrow funded today (USD)", "targets": [{ "expr": "sum(escrow_funded_usd_minor_total / 1000000)" }] },
+    { "type": "stat", "title": "Escrow released today (USD)", "targets": [{ "expr": "sum(escrow_released_usd_minor_total / 1000000)" }] },
+    { "type": "stat", "title": "Open milestones overdue", "targets": [{ "expr": "sum(escrow_milestone_overdue)" }] },
+    { "type": "timeseries", "title": "Payment success vs failure",
+      "targets": [
+        { "expr": "sum by (status)(rate(payment_transaction_total[5m]))", "legendFormat": "{{status}}" }
+      ]
+    },
+    { "type": "timeseries", "title": "FX snapshots captured",
+      "targets": [{ "expr": "sum by (pair)(rate(fx_snapshot_total[1h]))", "legendFormat": "{{pair}}" }]
+    },
+    { "type": "table", "title": "Top suppliers by payout (24h)",
+      "targets": [{ "expr": "topk(10, sum by (supplier_id)(payout_amount_usd_minor / 1000000))" }]
+    }
+  ]
+}

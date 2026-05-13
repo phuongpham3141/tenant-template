@@ -76,12 +76,12 @@ const VERTICALS = [
 export default function ProductDirectoryPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Danh bạ sản phẩm" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Danh bạ sản phẩm" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/product-directory" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 PRODUCT DIRECTORY</div>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 DANH BẠ SẢN PHẨM</div>
             <h1 className="text-[22px] font-bold text-ink">Danh bạ sản phẩm</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
               Tra cứu nhanh hơn 2.400 SKU theo bảng chữ cái A–Z. Bấm chữ cái để cuộn đến nhóm tương ứng, hoặc xem theo ngành dọc bên phải nếu bạn đang phục vụ một loại dự án cụ thể.

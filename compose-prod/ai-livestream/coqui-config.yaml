@@ -1,0 +1,28 @@
+# Coqui TTS XTTS-v2 config — multilingual voice cloning (vi/en/cn supported)
+# Reference: https://github.com/coqui-ai/TTS
+
+model:
+  name: tts_models/multilingual/multi-dataset/xtts_v2
+  device: ${COQUI_DEVICE:-cpu}   # set to "cuda" when GPU available
+  use_deepspeed: false
+
+server:
+  port: 5002
+  host: 0.0.0.0
+  max_concurrent_synthesis: 2
+  max_text_length: 800           # split longer texts; keeps per-request latency reasonable
+
+voice_cloning:
+  min_sample_seconds: 30
+  max_sample_seconds: 120
+  preferred_locales: [vi, en, zh-cn]
+  sample_rate: 24000
+
+cache:
+  enabled: true
+  ttl_seconds: 3600              # cache identical text+speaker for 1h
+  max_entries: 5000
+
+logging:
+  level: info
+  request_log: true

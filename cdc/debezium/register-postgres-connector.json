@@ -1,0 +1,32 @@
+{
+  "name": "postgres-cdc-cybersilkroads",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "${PG_HOST}",
+    "database.port": "${PG_PORT}",
+    "database.user": "${PG_CDC_USER}",
+    "database.password": "${PG_CDC_PASSWORD}",
+    "database.dbname": "${PG_DB}",
+    "topic.prefix": "csr",
+    "plugin.name": "pgoutput",
+    "publication.name": "csr_cdc_pub",
+    "slot.name": "csr_cdc_slot",
+    "snapshot.mode": "initial",
+    "table.include.list": "audit.audit_event,advertising.ads_impression_log,advertising.ads_click_log,advertising.ads_conversion_log,search.search_query_log,personalization.user_behavior_event,communication.conversation_message,live.livestream_chat_message,live.livestream_event_log,email_mkt.email_log,email_mkt.email_event_log,auth.login_attempt_log,auth.security_event_log,api.api_call_log,api.webhook_delivery_log,payment.payment_event_log,notification.notification_log,experiment.experiment_event_log,ai.inference_log,tax.tax_calculation_log,media.media_view_event,fraud.fraud_score_log,vn_sourcing.sourcing_event_log",
+    "heartbeat.interval.ms": "10000",
+    "schema.history.internal.kafka.bootstrap.servers": "${KAFKA_BROKERS}",
+    "schema.history.internal.kafka.topic": "csr.schema-history",
+    "decimal.handling.mode": "string",
+    "time.precision.mode": "adaptive_time_microseconds",
+    "tombstones.on.delete": "false",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+    "transforms.unwrap.drop.tombstones": "true",
+    "transforms.unwrap.delete.handling.mode": "rewrite"
+  }
+}

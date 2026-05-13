@@ -7,7 +7,7 @@ const ALL_PRODUCTS = SECTIONS.flatMap((s) => s.products);
 const FILTERS = [
   { title: "Danh mục", options: NAV_CATEGORIES.slice(0, 6).map((c) => c.name) },
   { title: "Vật liệu", options: ["Gốm sứ", "Đá tự nhiên", "Gỗ", "Kim loại", "Da", "Nhựa cao cấp"] },
-  { title: "Phong cách", options: ["Hiện đại", "Cổ điển", "Tối giản", "Industrial", "Bắc Âu", "Luxury"] },
+  { title: "Phong cách", options: ["Hiện đại", "Cổ điển", "Tối giản", "Công nghiệp", "Bắc Âu", "Sang trọng"] },
   { title: "Giá", options: ["< $10", "$10 – $50", "$50 – $200", "$200 – $1000", "> $1000"] },
   { title: "Nơi xuất xứ", options: ["Foshan", "Quảng Châu", "Đông Quan", "Hàng Châu", "Thượng Hải"] },
 ];
@@ -23,7 +23,7 @@ export default function ProductsPage() {
             <p className="text-[13px] text-mute mt-1">2,400+ sản phẩm từ 40+ nhà máy đã audit · Báo giá trong 24h · Vận chuyển DDP về VN</p>
           </div>
           <div className="flex gap-2">
-            {["All", "Hot", "New", "Featured", "OEM"].map((t, i) => (
+            {["Tất cả", "Hot", "New", "Featured", "OEM"].map((t, i) => (
               <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t}</a>
             ))}
           </div>
@@ -80,4 +80,4 @@ export default function ProductsPage() {
   );
 }
 
-export const metadata = { title: "Tất cả sản phẩm — AlibabaVN" };
+export const metadata = { title: "Tất cả sản phẩm — Cybersilkroads" };

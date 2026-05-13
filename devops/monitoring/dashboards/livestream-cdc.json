@@ -1,0 +1,15 @@
+{
+  "title": "CSR — CDC Pipeline",
+  "tags": ["csr", "cdc", "kafka"],
+  "schemaVersion": 39,
+  "panels": [
+    { "type": "stat", "title": "Debezium connector status", "targets": [{ "expr": "kafka_connect_connector_status" }] },
+    { "type": "stat", "title": "Replication slot lag (MB)", "targets": [{ "expr": "pg_replication_slot_lag_bytes / 1048576" }] },
+    { "type": "timeseries", "title": "Kafka consumer lag (csr.* topics)",
+      "targets": [{ "expr": "sum by (topic)(kafka_consumergroup_lag{topic=~\"csr\\\\..*\"})", "legendFormat": "{{topic}}" }] },
+    { "type": "timeseries", "title": "ClickHouse sink throughput",
+      "targets": [{ "expr": "sum by (table)(rate(clickhouse_kafka_sink_records_total[1m]))", "legendFormat": "{{table}}" }] },
+    { "type": "table", "title": "DLQ counts",
+      "targets": [{ "expr": "sum by (topic)(kafka_topic_partition_current_offset{topic=~\"csr\\\\..*\\\\.dlq\"})" }] }
+  ]
+}

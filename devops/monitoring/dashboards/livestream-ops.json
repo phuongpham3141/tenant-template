@@ -1,0 +1,16 @@
+{
+  "title": "CSR — Livestream Ops",
+  "tags": ["csr", "live"],
+  "schemaVersion": 39,
+  "panels": [
+    { "type": "stat", "title": "Live streams now", "targets": [{ "expr": "count(livestream_status{status=\"live\"})" }] },
+    { "type": "stat", "title": "Peak concurrent viewers (all)", "targets": [{ "expr": "sum(livestream_peak_concurrent_viewers)" }] },
+    { "type": "stat", "title": "Revenue last 24h (USD)", "targets": [{ "expr": "sum(livestream_total_revenue_usd_minor / 1000000)" }] },
+    { "type": "timeseries", "title": "Chat msg rate / stream",
+      "targets": [{ "expr": "sum by (stream_id)(rate(livestream_chat_message_total[1m]))", "legendFormat": "{{stream_id}}" }]
+    },
+    { "type": "timeseries", "title": "Concurrent viewers",
+      "targets": [{ "expr": "livestream_concurrent_viewers", "legendFormat": "{{stream_id}}" }]
+    }
+  ]
+}

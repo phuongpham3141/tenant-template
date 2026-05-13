@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storefront
+  namespace: csr
+spec:
+  replicas: 4
+  selector: { matchLabels: { app: storefront } }
+  strategy: { type: RollingUpdate, rollingUpdate: { maxSurge: 2, maxUnavailable: 0 } }
+  template:
+    metadata: { labels: { app: storefront } }
+    spec:
+      containers:
+        - name: storefront
+          image: ghcr.io/CHANGE_ME/storefront:latest
+          ports: [{ name: http, containerPort: 3000 }]
+          envFrom:
+            - configMapRef: { name: storefront-config }
+            - secretRef: { name: storefront-secrets }
+          resources:
+            requests: { cpu: "300m", memory: "768Mi" }
+            limits: { cpu: "1500m", memory: "2Gi" }
+          readinessProbe:
+            httpGet: { path: /api/healthz, port: http }
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: { path: /api/healthz, port: http }
+            initialDelaySeconds: 20
+            periodSeconds: 15
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: storefront
+  namespace: csr
+spec:
+  selector: { app: storefront }
+  ports: [{ name: http, port: 80, targetPort: 3000 }]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: storefront-hpa
+  namespace: csr
+spec:
+  scaleTargetRef: { apiVersion: apps/v1, kind: Deployment, name: storefront }
+  minReplicas: 4
+  maxReplicas: 30
+  metrics:
+    - type: Resource
+      resource: { name: cpu, target: { type: Utilization, averageUtilization: 60 } }

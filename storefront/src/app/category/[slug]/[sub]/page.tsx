@@ -98,9 +98,9 @@ export async function generateMetadata({
   const { slug, sub } = await params;
   const data = getLeafCategory(slug, sub);
   return {
-    title: data ? `${data.title} — ${data.resultsCount} kết quả · AlibabaVN` : `${sub} · AlibabaVN`,
+    title: data ? `${data.title} — ${data.resultsCount} kết quả · Cybersilkroads` : `${sub} · Cybersilkroads`,
     description: data
-      ? `${data.resultsCount} ${data.title} từ nhà cung cấp đã kiểm định tại Trung Quốc. Báo giá nhanh trong 24h trên AlibabaVN.`
+      ? `${data.resultsCount} ${data.title} từ nhà cung cấp đã kiểm định tại Trung Quốc. Báo giá nhanh trong 24h trên Cybersilkroads.`
       : undefined,
   };
 }

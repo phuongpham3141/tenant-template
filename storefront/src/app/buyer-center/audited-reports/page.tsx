@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 
-const TABS = ["Tất cả", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "AlibabaVN Internal"];
+const TABS = ["Tất cả", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "Cybersilkroads Internal"];
 
 const REPORTS = [
   {
@@ -60,7 +60,7 @@ const REPORTS = [
     name: "Landbond Furniture Group",
     location: "Foshan & Linyi",
     date: "10/02/2026",
-    auditor: "AlibabaVN Internal",
+    auditor: "Cybersilkroads Internal",
     score: 90,
     kpi: { quality: 91, capacity: 89, compliance: 90 },
     slug: "landbond-furniture",
@@ -80,7 +80,7 @@ const REPORTS = [
     name: "ZuoYou Furniture",
     location: "Shenzhen",
     date: "28/01/2026",
-    auditor: "AlibabaVN Internal",
+    auditor: "Cybersilkroads Internal",
     score: 85,
     kpi: { quality: 86, capacity: 84, compliance: 85 },
     slug: "zuoyou-furniture",
@@ -103,15 +103,15 @@ function Bar({ v }: { v: number }) {
 export default function AuditedReportsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Báo cáo nhà máy đã thẩm định" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Báo cáo nhà máy đã thẩm định" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/audited-reports" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛡 AUDITED FACTORY REPORTS</div>
+            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛡 BÁO CÁO KIỂM ĐỊNH NHÀ MÁY</div>
             <h1 className="text-[22px] font-bold text-ink">Báo cáo nhà máy đã thẩm định</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Truy cập miễn phí {REPORTS.length}+ báo cáo audit do TÜV Rheinland, SGS, Bureau Veritas, Intertek và đội AlibabaVN Internal thực hiện trong 12 tháng gần nhất. Mỗi báo cáo đánh giá 3 trục: chất lượng sản xuất, năng lực cung ứng và tuân thủ.
+              Truy cập miễn phí {REPORTS.length}+ báo cáo audit do TÜV Rheinland, SGS, Bureau Veritas, Intertek và đội Cybersilkroads Internal thực hiện trong 12 tháng gần nhất. Mỗi báo cáo đánh giá 3 trục: chất lượng sản xuất, năng lực cung ứng và tuân thủ.
             </p>
           </div>
 
@@ -142,15 +142,15 @@ export default function AuditedReportsPage() {
                   </div>
                   <div className="space-y-2 mb-3">
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Quality</span><span className="text-mute">{r.kpi.quality}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Chất lượng</span><span className="text-mute">{r.kpi.quality}</span></div>
                       <Bar v={r.kpi.quality} />
                     </div>
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Capacity</span><span className="text-mute">{r.kpi.capacity}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Năng lực</span><span className="text-mute">{r.kpi.capacity}</span></div>
                       <Bar v={r.kpi.capacity} />
                     </div>
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Compliance</span><span className="text-mute">{r.kpi.compliance}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Tuân thủ</span><span className="text-mute">{r.kpi.compliance}</span></div>
                       <Bar v={r.kpi.compliance} />
                     </div>
                   </div>

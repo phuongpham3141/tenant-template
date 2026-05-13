@@ -112,4 +112,4 @@ export default function BuyerCenterPage() {
   );
 }
 
-export const metadata = { title: "Trung tâm Buyer — AlibabaVN" };
+export const metadata = { title: "Trung tâm Buyer — Cybersilkroads" };

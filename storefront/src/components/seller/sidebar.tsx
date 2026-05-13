@@ -39,7 +39,7 @@ export function SellerSidebar({ active }: { active?: string }) {
       <div className="px-3 py-2.5 border-b border-line mb-2">
         <b className="block text-[14px] text-ink">Công ty TNHH KUKA Home</b>
         <span className="text-[11.5px] text-mute">
-          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">Gold</span>
+          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">Vàng</span>
           Supplier · Quảng Châu
         </span>
       </div>

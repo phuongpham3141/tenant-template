@@ -1,10 +1,12 @@
+import Link from "next/link";
 import type { ListingProduct } from "@/data/products";
 
 export function ProdCard({ p }: { p: ListingProduct }) {
+  const href = `/product/${p.id}`;
   return (
     <div className="bg-paper border border-line rounded grid grid-cols-[220px_1fr_220px] gap-4 p-3.5 hover:border-brand hover:shadow-[0_4px_12px_rgba(0,60,143,0.08)] transition max-[900px]:grid-cols-[180px_1fr] max-[900px]:gap-3 max-md:grid-cols-1">
-      {/* Image */}
-      <div className="relative">
+      {/* Image — wrapped in Link to product detail */}
+      <Link href={href} className="relative cursor-pointer block">
         <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden">
           <img src={p.img.src} alt={p.title} className="w-full h-full object-cover" />
         </div>
@@ -22,27 +24,29 @@ export function ProdCard({ p }: { p: ListingProduct }) {
             )}
           </div>
         )}
-        <span className="absolute top-1.5 right-1.5 w-7 h-7 bg-white/90 rounded-full flex items-center justify-center text-[14px] text-mute hover:text-accent cursor-pointer">
+        <span className="absolute top-1.5 right-1.5 w-7 h-7 bg-white/90 rounded-full flex items-center justify-center text-[14px] text-mute hover:text-accent cursor-pointer" aria-label="Yêu thích">
           ♡
         </span>
         <span className="absolute bottom-1.5 left-1.5 bg-black/65 text-white text-[10.5px] px-1.5 py-0.5 rounded-sm font-medium">
           {p.isVideo ? "▶ " : ""}1/{p.img.total}
         </span>
-        <span className="absolute bottom-1.5 right-1.5 w-6 h-6 bg-white/90 rounded-sm flex items-center justify-center text-[12px] text-mute cursor-pointer">
+        <span className="absolute bottom-1.5 right-1.5 w-6 h-6 bg-white/90 rounded-sm flex items-center justify-center text-[12px] text-mute cursor-pointer" aria-label="Xem ảnh lớn">
           ⌕
         </span>
-      </div>
+      </Link>
 
-      {/* Info */}
+      {/* Info — title + price linked to product detail */}
       <div className="flex flex-col min-w-0 max-md:order-3">
         {p.guaranteed && (
           <span className="text-success text-[11.5px] font-semibold mb-1.5 flex items-center gap-1">
             ● Giao dịch bảo đảm
           </span>
         )}
-        <h3 className="text-[14px] font-semibold text-ink leading-snug mb-2 line-clamp-2 hover:text-brand cursor-pointer">
-          {p.title}
-        </h3>
+        <Link href={href} className="cursor-pointer">
+          <h3 className="text-[14px] font-semibold text-ink leading-snug mb-2 line-clamp-2 hover:text-brand">
+            {p.title}
+          </h3>
+        </Link>
         <div className="flex items-baseline gap-1 mb-1.5">
           <span className="text-accent text-[18px] font-extrabold">{p.priceFrom}</span>
           <span className="text-accent text-[15px] font-bold">-{p.priceTo}</span>
@@ -51,7 +55,9 @@ export function ProdCard({ p }: { p: ListingProduct }) {
         <div className="text-[12px] text-mute mb-2">
           <b className="text-ink">{p.moq}</b> (Số lượng tối thiểu)
         </div>
-        <p className="text-[12px] text-mute leading-relaxed line-clamp-2">{p.desc}</p>
+        <Link href={href} className="cursor-pointer">
+          <p className="text-[12px] text-mute leading-relaxed line-clamp-2 hover:text-brand">{p.desc}</p>
+        </Link>
       </div>
 
       {/* Supplier */}

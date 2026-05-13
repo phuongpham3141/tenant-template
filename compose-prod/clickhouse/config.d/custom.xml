@@ -1,0 +1,35 @@
+<clickhouse>
+  <listen_host>0.0.0.0</listen_host>
+  <max_connections>1024</max_connections>
+  <max_concurrent_queries>200</max_concurrent_queries>
+  <max_server_memory_usage_to_ram_ratio>0.8</max_server_memory_usage_to_ram_ratio>
+  <mark_cache_size>5368709120</mark_cache_size>
+  <merge_tree>
+    <max_suspicious_broken_parts>100</max_suspicious_broken_parts>
+    <parts_to_throw_insert>3000</parts_to_throw_insert>
+  </merge_tree>
+  <zookeeper>
+    <node>
+      <host>ch-zookeeper</host>
+      <port>2181</port>
+    </node>
+  </zookeeper>
+  <remote_servers>
+    <csr_cluster>
+      <shard>
+        <internal_replication>true</internal_replication>
+        <replica>
+          <host>clickhouse</host>
+          <port>9000</port>
+        </replica>
+      </shard>
+    </csr_cluster>
+  </remote_servers>
+  <prometheus>
+    <endpoint>/metrics</endpoint>
+    <port>9363</port>
+    <metrics>true</metrics>
+    <events>true</events>
+    <asynchronous_metrics>true</asynchronous_metrics>
+  </prometheus>
+</clickhouse>

@@ -1,0 +1,59 @@
+groups:
+  - name: csr.ai_livestream.sla
+    interval: 30s
+    rules:
+      - alert: AiLivestreamStreamStalled
+        expr: |
+          time() - max by (stream_id)(stream_audio_track_last_chunk_unix) > 30
+        for: 2m
+        labels: { severity: high }
+        annotations:
+          summary: "AI livestream stream stalled (>30s no chunk)"
+          description: "Stream {{ $labels.stream_id }} not producing audio chunks"
+
+      - alert: AiLivestreamGpuOOM
+        expr: |
+          sum(rate(ai_video_render_failed_total{reason=~".*oom.*|.*cuda.*"}[5m])) > 0.5
+        for: 3m
+        labels: { severity: critical }
+        annotations: { summary: "GPU OOM detected on video render workers" }
+
+      - alert: AiLivestreamQuotaApproaching
+        expr: ai_quota_percent_used > 80
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "Tenant {{ $labels.tenant_id }} at {{ $value }}% AI quota"
+
+      - alert: AiLivestreamQuotaExceeded
+        expr: ai_quota_percent_used >= 100
+        for: 1m
+        labels: { severity: high }
+        annotations:
+          summary: "Tenant {{ $labels.tenant_id }} exceeded AI livestream quota; sessions paused"
+
+      - alert: AiMuxProcessDown
+        expr: up{job="simulcast-mux"} == 0
+        for: 2m
+        labels: { severity: critical }
+        annotations: { summary: "Simulcast mux service down" }
+
+      - alert: AiChatResponseLatencyHigh
+        expr: |
+          histogram_quantile(0.95, sum by (le)(rate(chat_response_latency_ms_bucket[5m]))) > 2000
+        for: 10m
+        labels: { severity: warning }
+        annotations: { summary: "AI chat p95 latency > 2s (target: <500ms)" }
+
+      - alert: AiVideoRenderBacklog
+        expr: bullmq_ai_video_render_waiting > 100
+        for: 5m
+        labels: { severity: warning }
+        annotations: { summary: "Video render backlog > 100 jobs — scale GPU workers" }
+
+      - alert: AiPersonaTrainingStuck
+        expr: |
+          sum(voice_profile_training_pending_seconds > 1800) > 0
+        for: 1m
+        labels: { severity: warning }
+        annotations: { summary: "Voice clone training stuck > 30 min" }

@@ -13,21 +13,21 @@ const STEPS = [
   {
     n: 2,
     title: "Xác thực buyer & hoàn thiện hồ sơ",
-    desc: "Tải lên Giấy phép kinh doanh để mở khoá Trade Assurance, RFQ ưu tiên và giá factory-direct. Duyệt trong 24h làm việc.",
+    desc: "Tải lên Giấy phép kinh doanh để mở khoá Bảo đảm Giao dịch, RFQ ưu tiên và giá factory-direct. Duyệt trong 24h làm việc.",
     cta: "Hoàn thiện hồ sơ →",
     href: "/account/verify",
   },
   {
     n: 3,
     title: "Gửi RFQ đầu tiên",
-    desc: "Mô tả 1 lần — hệ thống tự gửi đến 5–10 nhà máy phù hợp. Báo giá kèm sample, lead time, DDP về VN trong 24h.",
+    desc: "Mô tả 1 lần — hệ thống tự gửi đến 5–10 nhà máy phù hợp. Báo giá kèm sample, thời gian giao, DDP về VN trong 24h.",
     cta: "Gửi RFQ →",
     href: "/buying-request",
   },
   {
     n: 4,
     title: "Theo dõi & chốt báo giá",
-    desc: "So sánh báo giá, chat trực tiếp NCC, đặt sample, ký hợp đồng. Toàn bộ luồng được bảo vệ bởi Secured Trading Service.",
+    desc: "So sánh báo giá, chat trực tiếp NCC, đặt sample, ký hợp đồng. Toàn bộ luồng được bảo vệ bởi Dịch vụ giao dịch bảo đảm.",
     cta: "Vào dashboard →",
     href: "/buyer-center",
   },
@@ -35,24 +35,24 @@ const STEPS = [
 
 const FAQS = [
   {
-    q: "AlibabaVN khác Alibaba.com hay Made-in-China.com như thế nào?",
-    a: "AlibabaVN là cổng B2B Việt-Trung được vận hành cho thị trường VN: hỗ trợ tiếng Việt 24/7, báo giá DDP về kho VN, hợp đồng tiếng Việt, và đội xử lý Cát Lái – Hải Phòng – Bằng Tường. Bạn không cần Trung Quốc hay tiếng Anh để giao dịch.",
+    q: "Cybersilkroads khác Alibaba.com hay Made-in-China.com như thế nào?",
+    a: "Cybersilkroads là cổng B2B Việt-Trung được vận hành cho thị trường VN: hỗ trợ tiếng Việt 24/7, báo giá DDP về kho VN, hợp đồng tiếng Việt, và đội xử lý Cát Lái – Hải Phòng – Bằng Tường. Bạn không cần Trung Quốc hay tiếng Anh để giao dịch.",
   },
   {
     q: "Tôi có cần đặt cọc để gửi RFQ không?",
-    a: "Không. Gửi RFQ và nhận báo giá hoàn toàn miễn phí, không cam kết. Bạn chỉ thanh toán khi đã chọn NCC, ký hợp đồng và xác nhận đặt cọc qua Secured Trading Service (escrow giữ tiền cho đến khi giao hàng đạt QC).",
+    a: "Không. Gửi RFQ và nhận báo giá hoàn toàn miễn phí, không cam kết. Bạn chỉ thanh toán khi đã chọn NCC, ký hợp đồng và xác nhận đặt cọc qua Dịch vụ giao dịch bảo đảm (tài khoản trung gian giữ tiền cho đến khi giao hàng đạt QC).",
   },
   {
-    q: "MOQ tối thiểu trên AlibabaVN là bao nhiêu?",
+    q: "MOQ trên Cybersilkroads là bao nhiêu?",
     a: "MOQ phụ thuộc nhà máy và sản phẩm — thường 50–500 sản phẩm hoặc 100–500 m² đối với vật liệu xây dựng. Một số NCC đã thẩm định cho phép MOQ thấp hơn cho buyer mới, hoặc gộp container chia sẻ (LCL) khi bạn chưa đủ nguyên container.",
   },
   {
-    q: "Lead time và phí vận chuyển DDP về VN là bao lâu, bao nhiêu?",
+    q: "Thời gian giao và phí vận chuyển DDP về VN là bao lâu, bao nhiêu?",
     a: "Sản xuất trung bình 15–30 ngày. Vận chuyển sea freight Foshan–Cát Lái 7–10 ngày, đường bộ Bằng Tường–Hà Nội 3–5 ngày. Phí DDP đã bao gồm thuế nhập khẩu + VAT + chi phí kho bãi, trung bình 8–15% giá FOB tuỳ loại hàng.",
   },
   {
     q: "Nếu hàng không đạt chất lượng tôi có được hoàn tiền không?",
-    a: "Có. Tất cả đơn qua Secured Trading Service đều có 3 lớp bảo vệ: (1) Escrow giữ tiền tại AlibabaVN; (2) QC kiểm hàng trước khi xuất xưởng (tuỳ chọn $300/lần); (3) Bảo hiểm vận chuyển. Nếu hàng sai mô tả hoặc lỗi kỹ thuật, bạn được hoàn 100% tiền hoặc đổi lô mới.",
+    a: "Có. Tất cả đơn qua Dịch vụ giao dịch bảo đảm đều có 3 lớp bảo vệ: (1) Tài khoản trung gian giữ tiền tại Cybersilkroads; (2) QC kiểm hàng trước khi xuất xưởng (tuỳ chọn $300/lần); (3) Bảo hiểm vận chuyển. Nếu hàng sai mô tả hoặc lỗi kỹ thuật, bạn được hoàn 100% tiền hoặc đổi lô mới.",
   },
 ];
 
@@ -80,7 +80,7 @@ const DOWNLOADS = [
 export default function NewUserGuidePage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Hướng dẫn người mua mới" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Hướng dẫn người mua mới" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/new-user-guide" />
         <div>
@@ -88,7 +88,7 @@ export default function NewUserGuidePage() {
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📖 BUYER ONBOARDING</div>
             <h1 className="text-[22px] font-bold text-ink">Hướng dẫn người mua mới</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Lần đầu mua sỉ từ Trung Quốc? AlibabaVN đã chuẩn hoá toàn bộ quy trình — từ tạo tài khoản đến nhận hàng tại kho VN — thành 4 bước rõ ràng. Đọc xong trang này, bạn sẽ tự tin gửi RFQ đầu tiên trong 10 phút.
+              Lần đầu mua sỉ từ Trung Quốc? Cybersilkroads đã chuẩn hoá toàn bộ quy trình — từ tạo tài khoản đến nhận hàng tại kho VN — thành 4 bước rõ ràng. Đọc xong trang này, bạn sẽ tự tin gửi RFQ đầu tiên trong 10 phút.
             </p>
           </div>
 

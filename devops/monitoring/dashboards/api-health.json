@@ -1,0 +1,32 @@
+{
+  "title": "CSR — API Health",
+  "tags": ["csr", "api"],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Request rate (RPS)",
+      "targets": [{ "expr": "sum(rate(http_requests_total{service=\"medusa\"}[1m]))", "legendFormat": "rps" }]
+    },
+    {
+      "type": "stat",
+      "title": "Error rate (5xx %)",
+      "targets": [{ "expr": "100 * sum(rate(http_requests_total{service=\"medusa\",status=~\"5..\"}[5m])) / sum(rate(http_requests_total{service=\"medusa\"}[5m]))", "legendFormat": "%" }]
+    },
+    {
+      "type": "timeseries",
+      "title": "Latency p50/p95/p99",
+      "targets": [
+        { "expr": "histogram_quantile(0.5, sum by (le)(rate(http_request_duration_seconds_bucket{service=\"medusa\"}[5m])))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, sum by (le)(rate(http_request_duration_seconds_bucket{service=\"medusa\"}[5m])))", "legendFormat": "p95" },
+        { "expr": "histogram_quantile(0.99, sum by (le)(rate(http_request_duration_seconds_bucket{service=\"medusa\"}[5m])))", "legendFormat": "p99" }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "RPS per endpoint",
+      "targets": [{ "expr": "sum by (endpoint)(rate(http_requests_total{service=\"medusa\"}[1m]))", "legendFormat": "{{endpoint}}" }]
+    }
+  ]
+}

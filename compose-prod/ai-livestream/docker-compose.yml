@@ -1,0 +1,79 @@
+version: "3.9"
+
+# Self-hosted alternatives for development/fallback when SaaS providers are not configured.
+# Production should prefer ElevenLabs + HeyGen for quality; this stack keeps the system functional offline.
+
+services:
+  coqui-tts:
+    image: ghcr.io/coqui-ai/tts-cpu:latest
+    container_name: coqui-tts
+    command:
+      - --model_name
+      - tts_models/multilingual/multi-dataset/xtts_v2
+      - --port
+      - "5002"
+      - --use_cuda
+      - "false"
+    ports:
+      - "5002:5002"
+    volumes:
+      - coqui-cache:/root/.local/share/tts
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5002/api/ready || exit 1"]
+      interval: 30s
+    networks: [ai-live]
+
+  wav2lip:
+    image: ghcr.io/CHANGE_ME/wav2lip:latest
+    container_name: wav2lip
+    ports:
+      - "8500:8500"
+    environment:
+      WAV2LIP_DEVICE: cpu
+      WAV2LIP_BATCH_SIZE: "8"
+    volumes:
+      - wav2lip-models:/app/checkpoints
+    networks: [ai-live]
+
+  ffmpeg-mux:
+    image: linuxserver/ffmpeg:latest
+    container_name: ffmpeg-mux
+    restart: unless-stopped
+    volumes:
+      - hls:/data/hls
+      - fifo:/data/fifo
+      - ./mux-bootstrap.sh:/bootstrap.sh:ro
+    entrypoint: ["/bin/sh", "/bootstrap.sh"]
+    networks: [ai-live]
+
+  nginx-rtmp:
+    image: tiangolo/nginx-rtmp:latest
+    container_name: nginx-rtmp
+    ports:
+      - "1935:1935"  # RTMP ingest
+      - "8080:80"    # HLS playback
+    volumes:
+      - hls:/usr/local/nginx/html/hls
+      - ./nginx-rtmp.conf:/etc/nginx/nginx.conf:ro
+    networks: [ai-live]
+
+  redis-ai:
+    image: redis:7-alpine
+    container_name: redis-ai
+    command: ["redis-server", "--maxmemory", "2gb", "--maxmemory-policy", "allkeys-lru"]
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis-ai-data:/data
+    networks: [ai-live]
+
+volumes:
+  coqui-cache:
+  wav2lip-models:
+  hls:
+  fifo:
+  redis-ai-data:
+
+networks:
+  ai-live:
+    driver: bridge

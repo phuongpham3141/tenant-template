@@ -58,7 +58,7 @@ const CASES = [
   },
   {
     company: "KUKA Home (sofa)",
-    desc: "Triển khai song song Tmall (B2C) + 1688 (showroom đại lý) + xuất khẩu AlibabaVN. 3 kênh share warehouse + share QC team — giảm 18% cost overhead.",
+    desc: "Triển khai song song Tmall (B2C) + 1688 (showroom đại lý) + xuất khẩu Cybersilkroads. 3 kênh share warehouse + share QC team — giảm 18% cost overhead.",
     metric: "−18% overhead",
     img: 92,
   },
@@ -67,7 +67,7 @@ const CASES = [
 export default function DomesticCnPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Nội địa Trung Quốc" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Nội địa Trung Quốc" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/domestic-cn" />
         <div>
@@ -75,14 +75,14 @@ export default function DomesticCnPage() {
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🇨🇳 MIC DOMESTIC TRADE</div>
             <h1 className="text-[26px] font-bold leading-tight">Bán hàng nội địa Trung Quốc</h1>
             <p className="text-[14px] opacity-95 mt-2 leading-relaxed max-w-[680px]">
-              Nhà máy TQ có thể bán nội địa song song với xuất khẩu — đa dạng hoá doanh thu, ổn định dòng tiền khi thị trường XK biến động. AlibabaVN hỗ trợ on-board Tmall, JD, 1688 cho NCC đang chỉ làm xuất khẩu.
+              Nhà máy TQ có thể bán nội địa song song với xuất khẩu — đa dạng hoá doanh thu, ổn định dòng tiền khi thị trường XK biến động. Cybersilkroads hỗ trợ on-board Tmall, JD, 1688 cho NCC đang chỉ làm xuất khẩu.
             </p>
           </div>
 
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-1">
             {CHANNELS.map((c) => (
               <div key={c.name} className="bg-paper border border-line rounded overflow-hidden hover:border-brand">
-                <img src={`https://picsum.photos/seed/seller-cn-${c.img}/400/160`} alt="" className="w-full h-[120px] object-cover" />
+                <img src={`/img/seller-cn-${c.img}.jpg?v=3`} alt="" className="w-full h-[120px] object-cover" />
                 <div className="p-4">
                   <b className="block text-[14px] text-ink">{c.name}</b>
                   <span className="text-[11px] text-mute mb-2 block">Vận hành: {c.operator}</span>
@@ -145,7 +145,7 @@ export default function DomesticCnPage() {
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
                 <div key={c.company} className="border border-line rounded overflow-hidden hover:border-brand grid grid-cols-[140px_1fr] max-md:grid-cols-1">
-                  <img src={`https://picsum.photos/seed/seller-cn-case-${c.img}/280/200`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
+                  <img src={`/img/seller-cn-case-${c.img}.jpg?v=3`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
                   <div className="p-4">
                     <b className="block text-[13px] text-ink mb-2">{c.company}</b>
                     <p className="text-[11.5px] text-mute leading-relaxed mb-3">{c.desc}</p>

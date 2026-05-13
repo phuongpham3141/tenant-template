@@ -22,11 +22,11 @@ export default async function BuyingRequestPage({
       <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Yêu cầu báo giá" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[180px] bg-brand-dark">
-          <img src="https://picsum.photos/seed/rfq-hero/1400/240" alt="" className="w-full h-full object-cover opacity-55" />
+          <img src="/img/rfq-hero.jpg?v=3" alt="" className="w-full h-full object-cover opacity-55" />
           <div className="absolute inset-0 px-8 py-6 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📨 RFQ — REQUEST FOR QUOTATION</span>
             <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">Gửi yêu cầu — Nhận báo giá trong 24h</h1>
-            <p className="text-[13.5px] opacity-90 mt-1">Mô tả 1 lần — gửi đến 5-10 nhà máy phù hợp. Báo giá kèm sample, lead time, DDP về VN.</p>
+            <p className="text-[13.5px] opacity-90 mt-1">Mô tả 1 lần — gửi đến 5-10 nhà máy phù hợp. Báo giá kèm sample, thời gian giao, DDP về VN.</p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ export default async function BuyingRequestPage({
           <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
             <div className="col-span-2">
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">Sản phẩm cần tìm <span className="text-accent">*</span></label>
-              <input name="q" defaultValue={sp.q ?? ""} placeholder="Vd: porcelain tile 600x1200 calacatta white" className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
+              <input name="q" defaultValue={sp.q ?? ""} placeholder="Vd: gạch porcelain 600x1200 calacatta white" className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
             </div>
             <div>
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">Danh mục</label>
@@ -55,7 +55,7 @@ export default async function BuyingRequestPage({
             </div>
             <div className="col-span-2">
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">Mô tả chi tiết</label>
-              <textarea name="desc" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, deadline..." className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand resize-none" />
+              <textarea name="desc" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, thời hạn..." className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand resize-none" />
             </div>
             <div className="col-span-2">
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">Ảnh tham khảo</label>
@@ -110,7 +110,7 @@ export default async function BuyingRequestPage({
             <b className="block text-[14px] font-bold text-ink mb-3">Quy trình 3 bước</b>
             {[
               { n: 1, t: "Gửi RFQ", d: "Mô tả 1 lần, hệ thống tự match nhà máy phù hợp" },
-              { n: 2, t: "Nhận 5-10 báo giá", d: "Trong 24h, kèm sample image, lead time, DDP" },
+              { n: 2, t: "Nhận 5-10 báo giá", d: "Trong 24h, kèm sample image, thời gian giao, DDP" },
               { n: 3, t: "Chọn NCC tốt nhất", d: "So sánh, chat trực tiếp, đặt sample, xác nhận đơn" },
             ].map((s) => (
               <div key={s.n} className="flex gap-3 mb-3 last:mb-0">
@@ -124,11 +124,11 @@ export default async function BuyingRequestPage({
           </div>
 
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[13px] font-bold text-ink mb-2">🛡 Cam kết AlibabaVN</b>
+            <b className="block text-[13px] font-bold text-ink mb-2">🛡 Cam kết Cybersilkroads</b>
             <ul className="text-[12px] text-mute space-y-1.5">
               <li>✓ Báo giá free, không cam kết đặt</li>
               <li>✓ Audit nhà máy miễn phí trước đặt</li>
-              <li>✓ Bảo vệ thanh toán Trade Assurance</li>
+              <li>✓ Bảo vệ thanh toán Bảo đảm Giao dịch</li>
               <li>✓ Hỗ trợ tiếng Việt 24/7</li>
             </ul>
           </div>
@@ -154,4 +154,4 @@ export default async function BuyingRequestPage({
   );
 }
 
-export const metadata = { title: "Gửi yêu cầu báo giá — AlibabaVN" };
+export const metadata = { title: "Gửi yêu cầu báo giá — Cybersilkroads" };

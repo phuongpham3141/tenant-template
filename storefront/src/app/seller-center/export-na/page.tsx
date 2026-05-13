@@ -44,14 +44,14 @@ const CASES = [
 
 const TIERS = [
   { name: "Starter", price: "$999", per: "/tháng", channels: "1 channel", skus: "Tới 50 SKU", ad: "Up to $5K/tháng PPC", support: "Email business hours" },
-  { name: "Pro", price: "$2,499", per: "/tháng", channels: "3 channels", skus: "Tới 500 SKU", ad: "Up to $25K/tháng PPC", support: "Dedicated AM, weekly call", highlight: true },
+  { name: "Pro", price: "$2,499", per: "/tháng", channels: "3 channels", skus: "Tới 500 SKU", ad: "Up to $25K/tháng PPC", support: "Quản lý chuyên trách, weekly call", highlight: true },
   { name: "Enterprise", price: "$4,999", per: "/tháng", channels: "Tất cả channels", skus: "Không giới hạn", ad: "Up to $100K/tháng PPC", support: "Dedicated team, 24/7" },
 ];
 
 export default function ExportNaPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Xuất khẩu Bắc Mỹ" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Xuất khẩu Bắc Mỹ" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/export-na" />
         <div>
@@ -59,14 +59,14 @@ export default function ExportNaPage() {
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🌎 NORTH AMERICA OMNI-CHANNEL</div>
             <h1 className="text-[26px] font-bold leading-tight">Xuất khẩu đa kênh Bắc Mỹ — Mỹ · Canada · Mexico</h1>
             <p className="text-[14px] opacity-90 mt-2 leading-relaxed max-w-[680px]">
-              480 triệu người tiêu dùng. GDP $30 nghìn tỷ. AlibabaVN đồng hành NCC TQ "đổ bộ" Bắc Mỹ — từ EIN, FBA, PPC, customer service tiếng Anh, tới sales tax compliance. Một đối tác, 4 kênh bán hàng.
+              480 triệu người tiêu dùng. GDP $30 nghìn tỷ. Cybersilkroads đồng hành NCC TQ "đổ bộ" Bắc Mỹ — từ EIN, FBA, PPC, customer service tiếng Anh, tới sales tax compliance. Một đối tác, 4 kênh bán hàng.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
             {CHANNELS.map((c) => (
               <div key={c.name} className="bg-paper border border-line rounded p-4 hover:border-brand grid grid-cols-[80px_1fr] gap-3">
-                <img src={`https://picsum.photos/seed/seller-na-${c.img}/120/120`} alt="" className="w-20 h-20 rounded object-cover" />
+                <img src={`/img/seller-na-${c.img}.jpg?v=3`} alt="" className="w-20 h-20 rounded object-cover" />
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[20px]">{c.icon}</span>
@@ -100,7 +100,7 @@ export default function ExportNaPage() {
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
                 <div key={c.company} className="border border-line rounded overflow-hidden hover:border-brand">
-                  <img src={`https://picsum.photos/seed/seller-na-case-${c.img}/320/180`} alt="" className="w-full h-[140px] object-cover" />
+                  <img src={`/img/seller-na-case-${c.img}.jpg?v=3`} alt="" className="w-full h-[140px] object-cover" />
                   <div className="p-4">
                     <b className="block text-[13px] text-ink mb-1">{c.company}</b>
                     <span className="text-[11px] text-brand block mb-2">{c.product}</span>

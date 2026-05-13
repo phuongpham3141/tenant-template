@@ -1,0 +1,69 @@
+groups:
+  - name: csr.api.sla
+    interval: 30s
+    rules:
+      - alert: ApiHighErrorRate
+        expr: |
+          sum(rate(http_requests_total{service="medusa",status=~"5.."}[5m]))
+            / sum(rate(http_requests_total{service="medusa"}[5m])) > 0.02
+        for: 5m
+        labels: { severity: critical }
+        annotations:
+          summary: "Medusa API 5xx error rate > 2%"
+          description: "{{ $value | humanizePercentage }} of API requests are 5xx"
+      - alert: ApiHighLatencyP95
+        expr: |
+          histogram_quantile(0.95, sum by (le)(rate(http_request_duration_seconds_bucket{service="medusa"}[5m]))) > 1.5
+        for: 10m
+        labels: { severity: warning }
+        annotations:
+          summary: "Medusa API p95 latency > 1.5s"
+
+  - name: csr.db.sla
+    rules:
+      - alert: PgConnectionsHigh
+        expr: pg_stat_activity_count > pg_settings_max_connections * 0.85
+        for: 5m
+        labels: { severity: warning }
+        annotations: { summary: "Postgres connection saturation" }
+      - alert: PgReplicationLagHigh
+        expr: pg_stat_replication_replay_lag > 30
+        for: 10m
+        labels: { severity: critical }
+        annotations: { summary: "Postgres replica lag > 30s" }
+      - alert: PgLongRunningQuery
+        expr: pg_stat_activity_max_tx_duration > 600
+        for: 5m
+        labels: { severity: warning }
+        annotations: { summary: "Postgres tx running > 10 minutes" }
+
+  - name: csr.escrow.sla
+    rules:
+      - alert: EscrowMilestoneSlaBreached
+        expr: |
+          (time() - max by (escrow_id)(escrow_milestone_due_unix{status="pending"})) > 0
+        for: 1m
+        labels: { severity: high }
+        annotations:
+          summary: "Escrow milestone past due"
+      - alert: PaymentWebhookFailures
+        expr: |
+          sum(rate(payment_webhook_failures_total[10m])) > 10
+        for: 5m
+        labels: { severity: critical }
+        annotations:
+          summary: "Payment webhook failures spiking"
+
+  - name: csr.kafka.sla
+    rules:
+      - alert: KafkaConsumerLagHigh
+        expr: kafka_consumergroup_lag > 50000
+        for: 10m
+        labels: { severity: warning }
+        annotations: { summary: "Kafka consumer lag > 50k" }
+      - alert: DebeziumConnectorFailed
+        expr: |
+          kafka_connect_connector_status{state!="RUNNING"} > 0
+        for: 2m
+        labels: { severity: critical }
+        annotations: { summary: "Debezium connector not running" }

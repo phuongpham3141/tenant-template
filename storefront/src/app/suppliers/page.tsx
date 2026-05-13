@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { FACTORIES } from "@/data/home";
 
 const FILTERS = [
-  { title: "Industry", options: ["Ceramic & Stone", "Furniture", "Bathroom & Sanitary", "Lighting", "Kitchen", "Hotel Supplies"] },
+  { title: "Ngành", options: ["Gốm sứ & Đá", "Nội thất", "Thiết bị vệ sinh", "Chiếu sáng", "Bếp", "Thiết bị khách sạn"] },
   { title: "Tỉnh/Thành", options: ["Foshan", "Guangzhou", "Hangzhou", "Dongguan", "Shenzhen", "Hong Kong"] },
   { title: "Quy mô (nhân viên)", options: ["< 100", "100 – 500", "500 – 2000", "2000+"] },
   { title: "Năm thành lập", options: ["< 5Y", "5 – 10Y", "10 – 20Y", "> 20Y"] },
@@ -16,11 +16,11 @@ export default function SuppliersPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5 flex justify-between items-end max-md:flex-col max-md:items-start max-md:gap-3">
           <div>
-            <h1 className="text-[24px] font-extrabold text-ink leading-tight">40+ Vetted factories</h1>
-            <p className="text-[13px] text-mute mt-1">Tất cả nhà máy trên AlibabaVN đều được audit on-site 2 lần/năm bởi đội ngũ Quảng Châu của chúng tôi.</p>
+            <h1 className="text-[24px] font-extrabold text-ink leading-tight">40+ nhà máy đã thẩm định</h1>
+            <p className="text-[13px] text-mute mt-1">Tất cả nhà máy trên Cybersilkroads đều được audit on-site 2 lần/năm bởi đội ngũ Quảng Châu của chúng tôi.</p>
           </div>
           <div className="flex gap-2 flex-wrap">
-            {["All", "Gold Supplier", "Audited", "Verified Trade"].map((t, i) => (
+            {["Tất cả", "NCC Vàng", "Đã kiểm định", "Giao dịch đã xác minh"].map((t, i) => (
               <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t}</a>
             ))}
           </div>
@@ -55,12 +55,12 @@ export default function SuppliersPage() {
                   </div>
                 </div>
                 <div className="flex gap-1 mb-2.5 flex-wrap">
-                  {f.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold">GOLD</span>}
-                  {f.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">AUDITED</span>}
+                  {f.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold">VÀNG</span>}
+                  {f.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">ĐÃ KIỂM ĐỊNH</span>}
                   <span className="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">{f.badges.years}</span>
                 </div>
                 <div className="flex gap-3 text-[11.5px] text-mute mb-2.5 pb-2.5 border-b border-dashed border-line">
-                  <span><b className="text-accent">★ {f.rating}</b> ({f.reviews})</span>
+                  <span><b className="text-accent">★ {f.rating}</b> ({f.reviews} đánh giá)</span>
                   <span>{f.meta}</span>
                 </div>
                 <div className="flex gap-1 flex-wrap">
@@ -82,4 +82,4 @@ export default function SuppliersPage() {
   );
 }
 
-export const metadata = { title: "Nhà cung cấp — AlibabaVN" };
+export const metadata = { title: "Nhà cung cấp — Cybersilkroads" };

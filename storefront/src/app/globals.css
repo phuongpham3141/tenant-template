@@ -18,7 +18,7 @@
 }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -54,3 +54,399 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* megamenu-rev:4 — shared-panel pattern */
+/* Mega-menu — Shared right-side panel.
+   Layout: mm-wrap = mm-l1 (sidebar of 12 mm-cat) + mm-panel (fixed 720px to
+   the right). All 12 mm-l2 submenus stack at inset:0 inside mm-panel.
+   Only the mm-l2 whose corresponding mm-cat is hovered (or itself hovered)
+   becomes display:grid. */
+
+/* CategoryMenu in BannerSection: sidebar always visible, panel toggles */
+.mm-wrap .mm-panel {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 120ms ease,
+    visibility 0s 200ms;
+}
+.mm-wrap:hover .mm-panel,
+.mm-wrap:focus-within .mm-panel {
+  visibility: visible;
+  opacity: 1;
+  transition:
+    opacity 120ms ease,
+    visibility 0s 0s;
+}
+
+/* NavBar dropdown: trigger always visible, mm-wrap toggles on hover */
+.mm-root .mm-wrap {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 0s 200ms;
+}
+.mm-root:hover .mm-wrap,
+.mm-root:focus-within .mm-wrap {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 0s 0s;
+}
+
+/* All submenus hidden by default — only the hovered category's submenu
+   (or its panel content when hovered) becomes display:grid */
+.mm-l2 {
+  display: none;
+}
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(1):hover, .mm-panel > .mm-l2:nth-child(1):hover) .mm-panel > .mm-l2:nth-child(1),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(2):hover, .mm-panel > .mm-l2:nth-child(2):hover) .mm-panel > .mm-l2:nth-child(2),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(3):hover, .mm-panel > .mm-l2:nth-child(3):hover) .mm-panel > .mm-l2:nth-child(3),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(4):hover, .mm-panel > .mm-l2:nth-child(4):hover) .mm-panel > .mm-l2:nth-child(4),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(5):hover, .mm-panel > .mm-l2:nth-child(5):hover) .mm-panel > .mm-l2:nth-child(5),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(6):hover, .mm-panel > .mm-l2:nth-child(6):hover) .mm-panel > .mm-l2:nth-child(6),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(7):hover, .mm-panel > .mm-l2:nth-child(7):hover) .mm-panel > .mm-l2:nth-child(7),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(8):hover, .mm-panel > .mm-l2:nth-child(8):hover) .mm-panel > .mm-l2:nth-child(8),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(9):hover, .mm-panel > .mm-l2:nth-child(9):hover) .mm-panel > .mm-l2:nth-child(9),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(10):hover, .mm-panel > .mm-l2:nth-child(10):hover) .mm-panel > .mm-l2:nth-child(10),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(11):hover, .mm-panel > .mm-l2:nth-child(11):hover) .mm-panel > .mm-l2:nth-child(11),
+.mm-wrap:has(.mm-l1 > .mm-cat:nth-child(12):hover, .mm-panel > .mm-l2:nth-child(12):hover) .mm-panel > .mm-l2:nth-child(12) {
+  display: grid;
+}
+
+/* When mm-wrap hovered but no mm-cat hovered yet, show first submenu by
+   default so the panel isn't blank when user hovers in from the right. */
+.mm-wrap:hover .mm-panel > .mm-l2:nth-child(1) {
+  display: grid;
+}
+/* Override: when ANY non-first mm-cat OR non-first mm-l2 is hovered,
+   hide the first (let the specific :has() rule above show that one). */
+.mm-wrap:has(
+  .mm-l1 > .mm-cat:nth-child(n+2):hover,
+  .mm-panel > .mm-l2:nth-child(n+2):hover
+) .mm-panel > .mm-l2:nth-child(1) {
+  display: none;
+}
+
+/* === Hero slider ===
+   Radio inputs control slide visibility via :has() — works WITHOUT JS.
+   Client component (HeroSlider) layers JS on top for auto-rotate (3s),
+   prev/next buttons, and swipe gestures. */
+
+.hero-slide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 500ms ease, visibility 0s 500ms;
+  pointer-events: none;
+}
+.hero-root:has(#hs-1:checked) .hero-slide-1,
+.hero-root:has(#hs-2:checked) .hero-slide-2,
+.hero-root:has(#hs-3:checked) .hero-slide-3,
+.hero-root:has(#hs-4:checked) .hero-slide-4 {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 500ms ease, visibility 0s 0s;
+  pointer-events: auto;
+}
+
+/* Dots — default narrow, gold + wider when active radio is :checked */
+.hero-dot {
+  width: 28px;
+  background: rgba(255, 255, 255, 0.4);
+}
+.hero-dot:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+.hero-root:has(#hs-1:checked) .hero-dot-1,
+.hero-root:has(#hs-2:checked) .hero-dot-2,
+.hero-root:has(#hs-3:checked) .hero-dot-3,
+.hero-root:has(#hs-4:checked) .hero-dot-4 {
+  background: var(--color-gold);
+  width: 36px;
+}
+
+/* Prev/Next labels — 4 pairs in DOM, only the pair matching active radio
+   is shown via display:flex. Pure CSS click via htmlFor; works without JS. */
+.hero-prev,
+.hero-next {
+  display: none;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.hero-root:has(#hs-1:checked) .hero-prev-1,
+.hero-root:has(#hs-1:checked) .hero-next-1,
+.hero-root:has(#hs-2:checked) .hero-prev-2,
+.hero-root:has(#hs-2:checked) .hero-next-2,
+.hero-root:has(#hs-3:checked) .hero-prev-3,
+.hero-root:has(#hs-3:checked) .hero-next-3,
+.hero-root:has(#hs-4:checked) .hero-prev-4,
+.hero-root:has(#hs-4:checked) .hero-next-4 {
+  display: flex;
+}
+/* Desktop: only show on hero hover */
+.hero-root:hover .hero-prev,
+.hero-root:hover .hero-next {
+  opacity: 1;
+}
+/* Mobile: always visible (no hover concept on touch) */
+@media (max-width: 767px) {
+  .hero-prev,
+  .hero-next {
+    opacity: 1;
+  }
+}
+
+/* === Footer social icons ===
+   Each social anchor sets --social-brand inline. On hover the background
+   fills with the brand color (Facebook blue, YouTube red, etc.) and the
+   SVG icon (currentColor) flips to white for contrast. */
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+a:hover > .social-icon {
+  color: white;
+}
+a[style*="--social-brand"]:hover {
+  background-color: var(--social-brand) !important;
+}
+
+/* === Top strip dropdowns ===
+   Each .ts-item wraps a trigger link + a .ts-pop panel. Panel is hidden
+   by default and shown on hover/focus-within of the wrapper. Slight
+   translateY for a subtle slide-in effect. */
+
+.ts-item .ts-pop {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 0s 200ms;
+}
+.ts-item:hover .ts-pop,
+.ts-item:focus-within .ts-pop {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    visibility 0s 0s;
+}
+
+/* === Product detail: image gallery + color swatch radios ===
+   Hidden radios (.ig-radio-N / .cv-radio-N) inside a `.ig-root` / `.cv-root`
+   wrapper drive (a) the visible main image and (b) the active thumb /
+   swatch border. Pure CSS — no JS, no flash. */
+
+.ig-img {
+  display: none;
+}
+.ig-thumb {
+  border: 1px solid var(--color-line);
+}
+.ig-root:has(.ig-radio-1:checked) .ig-img-1,
+.ig-root:has(.ig-radio-2:checked) .ig-img-2,
+.ig-root:has(.ig-radio-3:checked) .ig-img-3,
+.ig-root:has(.ig-radio-4:checked) .ig-img-4,
+.ig-root:has(.ig-radio-5:checked) .ig-img-5,
+.ig-root:has(.ig-radio-6:checked) .ig-img-6 {
+  display: block;
+}
+.ig-root:has(.ig-radio-1:checked) .ig-thumb-1,
+.ig-root:has(.ig-radio-2:checked) .ig-thumb-2,
+.ig-root:has(.ig-radio-3:checked) .ig-thumb-3,
+.ig-root:has(.ig-radio-4:checked) .ig-thumb-4,
+.ig-root:has(.ig-radio-5:checked) .ig-thumb-5,
+.ig-root:has(.ig-radio-6:checked) .ig-thumb-6 {
+  border-color: var(--color-brand);
+  border-width: 2px;
+}
+
+.cv-swatch {
+  border: 2px solid var(--color-line);
+}
+.cv-root:has(.cv-radio-1:checked) .cv-swatch-1,
+.cv-root:has(.cv-radio-2:checked) .cv-swatch-2,
+.cv-root:has(.cv-radio-3:checked) .cv-swatch-3,
+.cv-root:has(.cv-radio-4:checked) .cv-swatch-4,
+.cv-root:has(.cv-radio-5:checked) .cv-swatch-5,
+.cv-root:has(.cv-radio-6:checked) .cv-swatch-6 {
+  border-color: var(--color-brand);
+}
+
+/* === Universal tablet column reduction (fallback for pages w/o explicit md:max-lg:) ===
+   Wrapped in :where() so specificity is 0 — any explicit md:max-lg:grid-cols-N
+   from Tailwind utility classes will take precedence. Pages that don't define
+   a tablet variant inherit these sane defaults so 4-col / 5-col grids never
+   render with awkward partial rows on iPad / mid-range tablets. */
+@media (min-width: 48rem) and (max-width: 79.99rem) {
+  :where(.grid-cols-4) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  :where(.grid-cols-5) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* === Responsive even-grid trimming ===
+   Whenever a grid has fixed cell counts on desktop (e.g. 4×2=8) but the
+   tablet/mobile column count would create a lopsided last row, hide the
+   trailing cells so every visible row is fully filled. Always EVEN/whole.
+
+   Breakpoints (Tailwind v4 defaults):
+     - tablet  = 768px ≤ width < 1280px  (=> @media (min-width:48rem) and (max-width:79.99rem))
+                  (covers iPad Mini through iPad Pro portrait)
+     - mobile  = width < 768px           (=> @media (max-width:47.99rem))
+
+   Tablet column counts vs visible items (per component):
+     - .ps-grid       : 3 cols × 2 rows = 6 visible (hide cells ≥ 7)
+     - .stats-row     : 3 cols × 1 row  = 3 visible (hide cells ≥ 4)
+
+   Mobile counts:
+     - .ps-grid       : 2 cols × 2 rows = 4 visible (hide cells ≥ 5)
+     - .stats-row     : 3 cols × 1 row  = 3 visible (hide cells ≥ 4) */
+
+/* Tablet trimming */
+@media (min-width: 48rem) and (max-width: 79.99rem) {
+  .ps-grid > *:nth-child(n+7) { display: none; }
+  .stats-row > *:nth-child(n+4) { display: none; }
+  /* Drop dangling border-right of the new last visible cell in stats */
+  .stats-row > *:nth-child(3) { border-right: 0; }
+}
+
+/* Mobile trimming */
+@media (max-width: 47.99rem) {
+  .ps-grid > *:nth-child(n+5) { display: none; }
+  .stats-row > *:nth-child(n+4) { display: none; }
+}
+
+/* === Product section tabs ===
+   Hidden radios `.ps-radio-N` (N=1..8) inside a `.ps-root` drive both
+   the active tab styling (`.ps-tab-N`) and the visible product grid
+   (`.ps-grid-N`). All grids are rendered server-side; the CSS swap is
+   instant and requires zero JavaScript / no navigation. */
+
+.ps-tab {
+  color: var(--color-mute);
+  border-color: transparent;
+}
+.ps-tab:hover {
+  color: var(--color-brand);
+}
+.ps-grid {
+  display: none;
+}
+
+.ps-root:has(.ps-radio-1:checked) .ps-tab-1,
+.ps-root:has(.ps-radio-2:checked) .ps-tab-2,
+.ps-root:has(.ps-radio-3:checked) .ps-tab-3,
+.ps-root:has(.ps-radio-4:checked) .ps-tab-4,
+.ps-root:has(.ps-radio-5:checked) .ps-tab-5,
+.ps-root:has(.ps-radio-6:checked) .ps-tab-6,
+.ps-root:has(.ps-radio-7:checked) .ps-tab-7,
+.ps-root:has(.ps-radio-8:checked) .ps-tab-8 {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+  font-weight: 600;
+}
+
+.ps-root:has(.ps-radio-1:checked) .ps-grid-1,
+.ps-root:has(.ps-radio-2:checked) .ps-grid-2,
+.ps-root:has(.ps-radio-3:checked) .ps-grid-3,
+.ps-root:has(.ps-radio-4:checked) .ps-grid-4,
+.ps-root:has(.ps-radio-5:checked) .ps-grid-5,
+.ps-root:has(.ps-radio-6:checked) .ps-grid-6,
+.ps-root:has(.ps-radio-7:checked) .ps-grid-7,
+.ps-root:has(.ps-radio-8:checked) .ps-grid-8 {
+  display: grid;
+}
+
+/* === Supplier detail tabs ===
+   Hidden radios `.sup-radio-N` (N=1..7) inside a `.sup-root` drive both
+   active tab styling (`.sup-tab-N`) and visible panel (`.sup-panel-N`).
+   Pure CSS via :has() — works without JavaScript hydration. */
+
+.sup-tab {
+  color: var(--color-mute);
+  border-color: transparent;
+}
+.sup-tab:hover {
+  color: var(--color-brand);
+}
+.sup-panel {
+  display: none;
+}
+
+.sup-root:has(.sup-radio-1:checked) .sup-tab-1,
+.sup-root:has(.sup-radio-2:checked) .sup-tab-2,
+.sup-root:has(.sup-radio-3:checked) .sup-tab-3,
+.sup-root:has(.sup-radio-4:checked) .sup-tab-4,
+.sup-root:has(.sup-radio-5:checked) .sup-tab-5,
+.sup-root:has(.sup-radio-6:checked) .sup-tab-6,
+.sup-root:has(.sup-radio-7:checked) .sup-tab-7 {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+  font-weight: 600;
+}
+
+.sup-root:has(.sup-radio-1:checked) .sup-panel-1,
+.sup-root:has(.sup-radio-2:checked) .sup-panel-2,
+.sup-root:has(.sup-radio-3:checked) .sup-panel-3,
+.sup-root:has(.sup-radio-4:checked) .sup-panel-4,
+.sup-root:has(.sup-radio-5:checked) .sup-panel-5,
+.sup-root:has(.sup-radio-6:checked) .sup-panel-6,
+.sup-root:has(.sup-radio-7:checked) .sup-panel-7 {
+  display: block;
+}
+
+/* === Header search tabs + forms ===
+   Pure CSS via .search-root:has(#st-X:checked) — radios hidden, labels
+   (.search-tab.tab-X) toggle active styling, forms (.search-form.form-X)
+   toggle display:flex. Only the active form is shown. */
+
+.search-form {
+  display: none;
+}
+.search-root:has(#st-products:checked) .form-products,
+.search-root:has(#st-suppliers:checked) .form-suppliers,
+.search-root:has(#st-rfq:checked) .form-rfq {
+  display: flex;
+}
+
+.search-tab {
+  background: #E0E5EC;
+  color: var(--color-mute);
+}
+.search-tab:hover {
+  background: #D0D5DC;
+}
+.search-root:has(#st-products:checked) .tab-products,
+.search-root:has(#st-suppliers:checked) .tab-suppliers,
+.search-root:has(#st-rfq:checked) .tab-rfq {
+  background: var(--color-brand);
+  color: white;
+}
+
+/* Section hover-expand: only first 4 subcats visible by default;
+   hover any section to reveal all hidden items */
+.mm-sec ul > li:nth-child(n+5) {
+  display: none;
+}
+.mm-sec:hover ul > li:nth-child(n+5) {
+  display: list-item;
+}
+/* Show "(N)" hint count next to title only when there are hidden items */
+.mm-sec .mm-sec-more {
+  display: inline;
+}
+.mm-sec:hover .mm-sec-more {
+  display: none;
+}
+

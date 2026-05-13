@@ -6,13 +6,26 @@ import { SECTIONS, FACTORIES } from "@/data/home";
 const FAV_PRODUCTS = SECTIONS.flatMap((s) => s.products).slice(0, 8);
 const FAV_SUPPLIERS = FACTORIES.slice(0, 3);
 
-export default function FavoritesPage() {
+export default async function FavoritesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ add?: string }>;
+}) {
+  const { add } = await searchParams;
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Yêu thích" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Yêu thích" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/favorites" />
         <div>
+          {add && (
+            <div className="bg-success/10 border border-success/30 text-success rounded p-3 mb-4 flex items-center gap-2 text-[13px]">
+              <span className="text-[16px]">✓</span>
+              <span>
+                Đã thêm <Link href={`/product/${add}`} className="font-semibold underline cursor-pointer">{add}</Link> vào danh sách yêu thích.
+              </span>
+            </div>
+          )}
           <div className="bg-paper border border-line rounded p-4 mb-4">
             <h1 className="text-[20px] font-bold text-ink">Yêu thích</h1>
             <p className="text-[12px] text-mute mt-0.5">{FAV_PRODUCTS.length} sản phẩm · {FAV_SUPPLIERS.length} nhà cung cấp đã lưu</p>

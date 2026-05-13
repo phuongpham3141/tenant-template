@@ -9,7 +9,7 @@ export function CatFoot({ data }: { data: CategoryPage }) {
         </a>
         <p className="text-[12.5px] text-mute leading-relaxed mb-4 max-w-[900px]">
           Tìm nguồn {data.title.toLowerCase()} trực tiếp từ các nhà máy đã được kiểm
-          định tại Trung Quốc. AlibabaVN kết nối bạn với hơn 40 nhà cung cấp đầu
+          định tại Trung Quốc. Cybersilkroads kết nối bạn với hơn 40 nhà cung cấp đầu
           ngành, tích hợp dịch vụ audit nhà máy, kiểm hàng QC, và vận chuyển DDP
           tới kho Việt Nam. Báo giá nhanh trong 24 giờ, MOQ linh hoạt, OEM/ODM
           theo yêu cầu.

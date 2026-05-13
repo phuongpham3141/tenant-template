@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:24-alpine
+    container_name: clickhouse
+    environment:
+      CLICKHOUSE_USER: ${CH_USER}
+      CLICKHOUSE_PASSWORD: ${CH_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+      - ./config.d:/etc/clickhouse-server/config.d:ro
+      - ./users.d:/etc/clickhouse-server/users.d:ro
+      - ../../clickhouse/schema:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "8123:8123"  # HTTP
+      - "9000:9000"  # Native
+      - "9009:9009"  # Internal replication
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    networks: [ch]
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+        reservations:
+          memory: 8G
+
+  zookeeper:
+    image: bitnami/zookeeper:3.9
+    container_name: ch-zookeeper
+    environment:
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+    volumes:
+      - zk-data:/bitnami/zookeeper
+    networks: [ch]
+
+volumes:
+  clickhouse-data:
+  zk-data:
+
+networks:
+  ch:
+    driver: bridge

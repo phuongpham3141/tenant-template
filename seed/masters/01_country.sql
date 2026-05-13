@@ -1,0 +1,31 @@
+-- Country master (ISO 3166-1 alpha-2, focus on CN/VN trade corridor)
+INSERT INTO admin.country_master (code, name_en, name_vi, name_cn, region, currency, is_eu, is_oecd, calling_code, locale_default) VALUES
+('VN','Vietnam','Việt Nam','越南','SEA','VND',FALSE,FALSE,'+84','vi'),
+('CN','China','Trung Quốc','中国','EA','CNY',FALSE,FALSE,'+86','cn'),
+('HK','Hong Kong','Hồng Kông','香港','EA','HKD',FALSE,FALSE,'+852','cn'),
+('TW','Taiwan','Đài Loan','台湾','EA','TWD',FALSE,FALSE,'+886','cn'),
+('TH','Thailand','Thái Lan','泰国','SEA','THB',FALSE,FALSE,'+66','en'),
+('ID','Indonesia','Indonesia','印度尼西亚','SEA','IDR',FALSE,FALSE,'+62','en'),
+('MY','Malaysia','Malaysia','马来西亚','SEA','MYR',FALSE,FALSE,'+60','en'),
+('SG','Singapore','Singapore','新加坡','SEA','SGD',FALSE,FALSE,'+65','en'),
+('PH','Philippines','Philippines','菲律宾','SEA','PHP',FALSE,FALSE,'+63','en'),
+('KH','Cambodia','Campuchia','柬埔寨','SEA','KHR',FALSE,FALSE,'+855','en'),
+('LA','Laos','Lào','老挝','SEA','LAK',FALSE,FALSE,'+856','en'),
+('MM','Myanmar','Myanmar','缅甸','SEA','MMK',FALSE,FALSE,'+95','en'),
+('JP','Japan','Nhật Bản','日本','EA','JPY',FALSE,TRUE,'+81','en'),
+('KR','South Korea','Hàn Quốc','韩国','EA','KRW',FALSE,TRUE,'+82','en'),
+('US','United States','Hoa Kỳ','美国','NA','USD',FALSE,TRUE,'+1','en'),
+('GB','United Kingdom','Vương quốc Anh','英国','EU','GBP',FALSE,TRUE,'+44','en'),
+('DE','Germany','Đức','德国','EU','EUR',TRUE,TRUE,'+49','en'),
+('FR','France','Pháp','法国','EU','EUR',TRUE,TRUE,'+33','en'),
+('IT','Italy','Ý','意大利','EU','EUR',TRUE,TRUE,'+39','en'),
+('ES','Spain','Tây Ban Nha','西班牙','EU','EUR',TRUE,TRUE,'+34','en'),
+('NL','Netherlands','Hà Lan','荷兰','EU','EUR',TRUE,TRUE,'+31','en'),
+('AU','Australia','Úc','澳大利亚','OC','AUD',FALSE,TRUE,'+61','en'),
+('CA','Canada','Canada','加拿大','NA','CAD',FALSE,TRUE,'+1','en'),
+('AE','UAE','Các tiểu vương quốc Ả Rập','阿联酋','MEA','AED',FALSE,FALSE,'+971','en'),
+('IN','India','Ấn Độ','印度','SA','INR',FALSE,FALSE,'+91','en'),
+('BR','Brazil','Brazil','巴西','SA','BRL',FALSE,FALSE,'+55','en'),
+('RU','Russia','Nga','俄罗斯','EU','RUB',FALSE,FALSE,'+7','en')
+ON CONFLICT (code) DO UPDATE SET
+  name_en = EXCLUDED.name_en, name_vi = EXCLUDED.name_vi, name_cn = EXCLUDED.name_cn;

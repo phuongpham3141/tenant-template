@@ -48,7 +48,7 @@ export default function SellerCenterPage() {
                 Tổng quan hoạt động supplier · Cấp độ <span className="bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold">Gold Tier 3</span> · 6 năm liên tiếp
               </p>
             </div>
-            <Link href="/seller-center/gold-member" className="text-[12px] bg-brand text-white px-3 py-2 rounded-sm font-semibold whitespace-nowrap">⭐ Nâng cấp Diamond</Link>
+            <Link href="/seller-center/gold-member" className="text-[12px] bg-brand text-white px-3 py-2 rounded-sm font-semibold whitespace-nowrap">⭐ Nâng cấp Kim cương</Link>
           </div>
 
           <div className="grid grid-cols-4 gap-3 mb-4 max-md:grid-cols-2">
@@ -115,7 +115,7 @@ export default function SellerCenterPage() {
             </Link>
             <Link href="/seller-center/ai-assistant" className="bg-brand/10 border border-brand rounded p-4 hover:bg-brand/15">
               <b className="block text-[14px] text-ink mb-1">🤖 Maike AI: trả lời RFQ tự động</b>
-              <p className="text-[12px] text-mute">Bật Maike để giảm 70% thời gian phản hồi — buyer thấy báo giá trong 5 phút thay vì 6 giờ. Free với gói Gold.</p>
+              <p className="text-[12px] text-mute">Bật Maike để giảm 70% thời gian phản hồi — buyer thấy báo giá trong 5 phút thay vì 6 giờ. Miễn phí với gói Vàng.</p>
             </Link>
           </div>
         </div>
@@ -124,4 +124,4 @@ export default function SellerCenterPage() {
   );
 }
 
-export const metadata = { title: "Trung tâm người bán — AlibabaVN" };
+export const metadata = { title: "Trung tâm người bán — Cybersilkroads" };

@@ -1,0 +1,44 @@
+{
+  "title": "CSR — AI Livestream Ops",
+  "tags": ["csr", "ai", "livestream"],
+  "timezone": "Asia/Ho_Chi_Minh",
+  "schemaVersion": 39,
+  "panels": [
+    { "type": "stat", "title": "Active AI sessions",
+      "targets": [{ "expr": "sum(ai_director_session{status=\"running\"})" }] },
+    { "type": "stat", "title": "24/7 streams running",
+      "targets": [{ "expr": "sum(livestream{mode=\"ai_continuous\",status=\"live\"})" }] },
+    { "type": "stat", "title": "GPU utilization avg %",
+      "targets": [{ "expr": "avg(DCGM_FI_DEV_GPU_UTIL)" }] },
+    { "type": "stat", "title": "Spend last 1h (USD)",
+      "targets": [{ "expr": "sum(increase(ai_compute_ledger_total_micros[1h])) / 1000000" }] },
+    { "type": "timeseries", "title": "Cost by resource type (5m)",
+      "targets": [{ "expr": "sum by (resource_type)(rate(ai_compute_ledger_total_micros[5m])) / 1000000", "legendFormat": "{{resource_type}}" }] },
+    { "type": "timeseries", "title": "TTS render latency p95",
+      "targets": [{ "expr": "histogram_quantile(0.95, sum by (le, provider)(rate(tts_render_duration_ms_bucket[5m])))", "legendFormat": "{{provider}}" }] },
+    { "type": "timeseries", "title": "Video render latency p95",
+      "targets": [{ "expr": "histogram_quantile(0.95, sum by (le, provider)(rate(video_render_duration_ms_bucket[5m])))", "legendFormat": "{{provider}}" }] },
+    { "type": "timeseries", "title": "Chat response latency p50/p95",
+      "targets": [
+        { "expr": "histogram_quantile(0.5, sum by (le)(rate(chat_response_latency_ms_bucket[5m])))", "legendFormat": "p50" },
+        { "expr": "histogram_quantile(0.95, sum by (le)(rate(chat_response_latency_ms_bucket[5m])))", "legendFormat": "p95" }
+      ]
+    },
+    { "type": "timeseries", "title": "BullMQ queue depth",
+      "targets": [
+        { "expr": "bullmq_ai_tts_render_waiting", "legendFormat": "tts" },
+        { "expr": "bullmq_ai_video_render_waiting", "legendFormat": "video" },
+        { "expr": "bullmq_ai_director_tick_waiting", "legendFormat": "director" },
+        { "expr": "bullmq_ai_mux_feed_waiting", "legendFormat": "mux-feed" }
+      ]
+    },
+    { "type": "table", "title": "Top tenants by spend (24h, USD)",
+      "targets": [{ "expr": "topk(10, sum by (tenant_id)(increase(ai_compute_ledger_total_micros[24h]) / 1000000))" }] },
+    { "type": "table", "title": "Quota consumption per tenant (%)",
+      "targets": [{ "expr": "ai_quota_percent_used" }] },
+    { "type": "stat", "title": "Cache hit rate %",
+      "targets": [{ "expr": "100 * sum(rate(ai_chat_cache_hit_total[5m])) / (sum(rate(ai_chat_cache_hit_total[5m])) + sum(rate(ai_chat_cache_miss_total[5m])))" }] },
+    { "type": "stat", "title": "Failed sessions (1h)",
+      "targets": [{ "expr": "sum(increase(ai_director_session_failed_total[1h]))" }] }
+  ]
+}

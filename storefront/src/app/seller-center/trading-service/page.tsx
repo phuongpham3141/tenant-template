@@ -3,32 +3,32 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 
 const BENEFITS = [
-  { icon: "💰", title: "Đảm bảo thanh toán", desc: "Buyer đặt cọc 30% vào escrow ngay khi ký PI — bạn yên tâm sản xuất, không lo bị huỷ giữa chừng." },
-  { icon: "🛡", title: "Bảo hiểm rủi ro vận chuyển", desc: "AlibabaVN mua bảo hiểm All-Risk cho mọi đơn STS — bồi thường 110% giá FOB nếu container hỏng/cháy/mất." },
+  { icon: "💰", title: "Đảm bảo thanh toán", desc: "Buyer đặt cọc 30% vào tài khoản trung gian ngay khi ký PI — bạn yên tâm sản xuất, không lo bị huỷ giữa chừng." },
+  { icon: "🛡", title: "Bảo hiểm rủi ro vận chuyển", desc: "Cybersilkroads mua bảo hiểm All-Risk cho mọi đơn STS — bồi thường 110% giá FOB nếu container hỏng/cháy/mất." },
   { icon: "⚖", title: "Hỗ trợ pháp lý song ngữ", desc: "Đội Baker McKenzie + YKVN hỗ trợ tranh chấp hợp đồng. Phiên dịch họp với buyer miễn phí 60 phút/đơn." },
   { icon: "📈", title: "Mở rộng buyer pool", desc: "Đơn STS hiển thị badge 'Verified Trade' → ưu tiên xếp hạng tìm kiếm. Buyer Việt Nam thích đơn STS hơn 4× đơn thường." },
 ];
 
 const STEPS = [
   { n: 1, title: "Buyer gửi RFQ → bạn báo giá", desc: "Buyer thấy badge 'Đăng ký STS' trên profile của bạn. Báo giá kèm điều khoản 30-40-30." },
-  { n: 2, title: "Ký PI + escrow funded", desc: "Buyer ký PI điện tử và chuyển 30% cọc vào tài khoản ký quỹ Vietcombank. Bạn nhận thông báo, bắt đầu sản xuất." },
+  { n: 2, title: "Ký PI + Đã nạp tài khoản trung gian", desc: "Buyer ký PI điện tử và chuyển 30% cọc vào tài khoản ký quỹ Vietcombank. Bạn nhận thông báo, bắt đầu sản xuất." },
   { n: 3, title: "Sản xuất + cập nhật milestone", desc: "Upload ảnh dây chuyền hàng tuần lên e-Home. Tới hạn xuất xưởng → buyer release 40% tiếp." },
   { n: 4, title: "QC kiểm hàng + niêm phong", desc: "QIMA/SGS kiểm 10% lô theo AQL 2.5 — đạt → niêm phong container. Phí QC buyer trả." },
-  { n: 5, title: "Vận chuyển — bạn nhận 70%", desc: "Container ra cảng → escrow tự release 70% (cọc 30% + xuất xưởng 40%) cho bạn ngay khi B/L phát hành." },
-  { n: 6, title: "Buyer nhận hàng → payout 30% cuối", desc: "Buyer xác nhận trên app trong 14 ngày → escrow giải ngân nốt 30%. Đơn đóng, bạn được rating + STS credit." },
+  { n: 5, title: "Vận chuyển — bạn nhận 70%", desc: "Container ra cảng → tài khoản trung gian tự giải ngân 70% (cọc 30% + xuất xưởng 40%) cho bạn ngay khi B/L phát hành." },
+  { n: 6, title: "Buyer nhận hàng → payout 30% cuối", desc: "Buyer xác nhận trên app trong 14 ngày → tài khoản trung gian giải ngân nốt 30%. Đơn đóng, bạn được rating + STS credit." },
 ];
 
 const FEES = [
-  { item: "Phí escrow STS", v: "0.5%", per: "trên giá trị đơn", note: "Có thể chia 50/50 với buyer (deal phổ biến)" },
-  { item: "Phí AI quote translator", v: "Free", per: "—", note: "Tích hợp sẵn cho Gold supplier" },
-  { item: "Phiên dịch hợp đồng VN-CN", v: "Free", per: "60 phút đầu", note: "$50/giờ tiếp theo" },
+  { item: "Phí trung gian STS", v: "0.5%", per: "trên giá trị đơn", note: "Có thể chia 50/50 với buyer (deal phổ biến)" },
+  { item: "Phí dịch báo giá AI", v: "Miễn phí", per: "—", note: "Tích hợp sẵn cho NCC Vàng" },
+  { item: "Phiên dịch hợp đồng VN-CN", v: "Miễn phí", per: "60 phút đầu", note: "$50/giờ tiếp theo" },
   { item: "QC kiểm hàng tại xưởng", v: "Buyer trả", per: "—", note: "Bạn không gánh phí, chỉ đón đoàn QC" },
 ];
 
 const CASES = [
   {
     title: "Foshan Tile — đơn $84K không lo công nợ",
-    desc: "NCC sản xuất 4,200m² porcelain cho hotel chain VN. Buyer chậm release 30% cuối → escrow tự động chuyển sau 14 ngày. NCC nhận đủ tiền không cần đòi nợ.",
+    desc: "NCC sản xuất 4,200m² porcelain cho chuỗi khách sạn VN. Người mua chậm giải ngân 30% cuối → tài khoản trung gian tự động chuyển sau 14 ngày. NCC nhận đủ tiền không cần đòi nợ.",
     metric: "100% thanh toán đúng hạn",
   },
   {
@@ -38,7 +38,7 @@ const CASES = [
   },
   {
     title: "KUKA Home — bồi thường $12K container hỏng",
-    desc: "Container 30 sofa va đập tại cảng Singapore. Bảo hiểm AlibabaVN đền $12,400 trong 11 ngày — KUKA kịp gửi lô thay thế giữ uy tín với buyer.",
+    desc: "Container 30 sofa va đập tại cảng Singapore. Bảo hiểm Cybersilkroads đền $12,400 trong 11 ngày — KUKA kịp gửi lô thay thế giữ uy tín với buyer.",
     metric: "Đền $12K trong 11 ngày",
   },
 ];
@@ -46,15 +46,15 @@ const CASES = [
 export default function TradingServicePage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Dịch vụ giao dịch" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Dịch vụ giao dịch" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/trading-service" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🔒 SECURED TRADING SERVICE — SELLER VIEW</div>
+            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🔒 GIAO DỊCH BẢO ĐẢM — DÀNH CHO NHÀ BÁN</div>
             <h1 className="text-[22px] font-bold text-ink">Dịch vụ giao dịch (góc nhìn nhà bán)</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              STS không chỉ bảo vệ buyer — nó bảo vệ <b>bạn</b>. Buyer cọc thật vào escrow trước khi bạn cắt vải/đổ phôi/đặt nguyên liệu. Container hỏng? Bảo hiểm đền. Buyer chậm trả? Escrow tự release theo timeline. Tranh chấp? Có hỗ trợ pháp lý song ngữ.
+              STS không chỉ bảo vệ buyer — nó bảo vệ <b>bạn</b>. Người mua cọc thật vào tài khoản trung gian trước khi bạn cắt vải/đổ phôi/đặt nguyên liệu. Container hỏng? Bảo hiểm đền. Buyer chậm trả? Tài khoản trung gian tự giải ngân theo timeline. Tranh chấp? Có hỗ trợ pháp lý song ngữ.
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function TradingServicePage() {
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <b className="block text-[15px] text-ink mb-3">💵 Phí — chỉ 0.5% cho NCC</b>
-            <p className="text-[12px] text-mute mb-4">Phí escrow rất thấp so với chi phí công nợ và rủi ro thông thường. Hầu hết NCC chia 50/50 với buyer — chỉ trả 0.25% thực tế.</p>
+            <p className="text-[12px] text-mute mb-4">Phí trung gian rất thấp so với chi phí công nợ và rủi ro thông thường. Hầu hết NCC chia 50/50 với buyer — chỉ trả 0.25% thực tế.</p>
             <table className="w-full text-[12.5px]">
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
@@ -129,7 +129,7 @@ export default function TradingServicePage() {
 
           <Link href="/seller-center/trade-ehome" className="block bg-success text-white rounded p-5 hover:opacity-95 text-center">
             <b className="block text-[18px] mb-1">🔒 Bật STS cho tất cả đơn của bạn</b>
-            <p className="text-[12.5px] opacity-90">Vào e-Home → Cài đặt → Auto-enable STS. Buyer thấy badge "Verified Trade" trên mọi listing của bạn.</p>
+            <p className="text-[12.5px] opacity-90">Vào e-Home → Cài đặt → Auto-enable STS. Buyer thấy badge "Giao dịch đã xác minh" trên mọi listing của bạn.</p>
           </Link>
         </div>
       </div>
