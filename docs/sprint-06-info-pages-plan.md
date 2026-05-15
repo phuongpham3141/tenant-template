@@ -1,120 +1,122 @@
-# Sprint 6 — Info pages plan (8 pages + hex cluster cleanup)
+# Sprint 6 — Kế hoạch Info pages (8 trang + dọn cụm hex)
 
-**Date:** 2026-05-15
-**Sprint:** 6 Phase 1 (audit only)
-**Methodology:** Hex cluster analysis + content review
+**Ngày:** 2026-05-15
+**Sprint:** 6 Pha 1 (chỉ audit)
+**Phương pháp:** Phân tích cụm hex + đánh giá nội dung
+**Phiên bản:** v2 — tuân thủ Rule 9 tiếng Việt thuần
 
-## Plan deviation flagged
+## Plan deviation phát hiện
 
-**Plan paste expected:** 7 info pages with ~78+ hex.
+**Kế hoạch ban đầu mong đợi:** 7 info pages với ~78+ hex.
 
-**Reality:** **8 info pages** (`/info/industry-news/[slug]` = sub-page), **91 hex literals**, network/page.tsx alone has 56 hex (61% of cluster).
+**Thực tế:** **8 info pages** (`/info/industry-news/[slug]` là sub-page), **91 hex literals**, `network/page.tsx` một mình có 56 hex (61% của cụm).
 
-## Info pages list (verified)
+## Danh sách info pages (đã verify)
 
-| # | Page | LOC | Client | Data | Form | Hex | Arb `[#]` | Inline |
+| # | Trang | LOC | Client | Data | Form | Hex | Arb `[#]` | Inline |
 |---|------|----:|:------:|:----:|:----:|----:|---------:|-------:|
-| 1 | `[topic]` (dynamic) | 1404 | N | N | N | 0 | 0 | 2 |
-| 2 | `contact` | 656 | Y | N | N | 4 | 0 | 3 |
-| 3 | `ddp-calculator` | 230 | N | N | Y | 0 | 0 | 0 |
-| 4 | `disputes` | 701 | N | N | N | 15 | 1 | 10 |
-| 5 | `industry-news/[slug]` | 317 | N | N | N | 1 | 1 | 4 |
-| 6 | `industry-news` | 307 | N | N | Y | 2 | 2 | 5 |
-| 7 | `network` | 1051 | N | N | N | **56** | 2 | 18 |
-| 8 | `sample-orders` | 733 | N | N | N | 13 | 0 | 10 |
+| 1 | `[topic]` (động) | 1404 | Không | Không | Không | 0 | 0 | 2 |
+| 2 | `contact` | 656 | Có | Không | Không | 4 | 0 | 3 |
+| 3 | `ddp-calculator` | 230 | Không | Không | Có | 0 | 0 | 0 |
+| 4 | `disputes` | 701 | Không | Không | Không | 15 | 1 | 10 |
+| 5 | `industry-news/[slug]` | 317 | Không | Không | Không | 1 | 1 | 4 |
+| 6 | `industry-news` | 307 | Không | Không | Có | 2 | 2 | 5 |
+| 7 | `network` | 1051 | Không | Không | Không | **56** | 2 | 18 |
+| 8 | `sample-orders` | 733 | Không | Không | Không | 13 | 0 | 10 |
 
-**Aggregate:** total_hex = **91**, total_arb = 6, total_inline = 52, total LOC = 4999.
+**Tổng kết:** tổng hex = **91**, tổng arb = 6, tổng inline = 52, tổng LOC = 4999.
 
-## Hex cluster analysis
+## Phân tích cụm hex
 
-- **Total hex literals:** 91
-- **Refactor candidates (match 19 existing tokens):** 6 (6.6%)
-- **NEW color candidates:** 85 (93.4%)
+- **Tổng hex literals:** 91
+- **Ứng viên refactor (match 19 token có sẵn):** 6 (6.6%)
+- **Ứng viên màu MỚI:** 85 (93.4%)
 
-→ Phase 3 strategy = mostly **introduce new semantic tokens** thay vì pure refactor.
+→ Chiến lược Pha 3 = chủ yếu **thêm token semantic mới** thay vì pure refactor.
 
-### Top hex hotspots
+### Top hex hotspot
 
-| Page | hex | Sprint 6 priority |
+| Trang | hex | Ưu tiên Sprint 6 |
 |---|---:|---|
-| network | 56 | P0 — biggest cluster, target 0 |
+| network | 56 | P0 — cụm lớn nhất, mục tiêu 0 |
 | disputes | 15 | P0 |
 | sample-orders | 13 | P0 |
 | contact | 4 | P1 |
 | industry-news | 2 | P2 |
 | industry-news/[slug] | 1 | P2 |
-| [topic] | 0 | refactor skip |
-| ddp-calculator | 0 | refactor skip |
+| [topic] | 0 | bỏ qua refactor |
+| ddp-calculator | 0 | bỏ qua refactor |
 
-### Top NEW colors (potential new token additions)
+### Top màu MỚI (ứng viên thêm token)
 
-| Hex | Uses | Suggested token name | Phase 3 priority |
+| Hex | Lần dùng | Tên token đề xuất | Ưu tiên Pha 3 |
 |---|---:|---|---|
-| `#002557` | 8 | `--color-navy` (deep navy) | P1 (add token) |
-| `#001A3F` | 8 | `--color-navy-dark` (darker navy) | P1 (add token) |
-| `#0E7490` | 6 | `--color-teal-dark` (deep teal) | P1 (add token) |
-| `#7C2D12` | 4 | inline keep OR `--color-rust` | P2 |
-| `#92400E` | 4 | inline keep OR `--color-amber-dark` | P2 |
-| `#DC2626` | 3 | use existing `--color-red` (#B81827)? | P2 — verify visual |
-| `#16A34A` | 3 | use existing `--color-success` (#2A9D8F)? | P2 — verify visual |
-| `#0E2A33` | 3 | use existing `--color-brand-dark`? | P2 — verify visual |
-| `#C8102E` | 3 | (Vietnam flag red) keep semantic | P2 — semantic data |
-| `#7C3AED` | 3 | use existing `--color-purple` (#A21CAF)? | P2 — verify visual |
-| Other 5-8 | 2 each | case-by-case | P3 |
+| `#002557` | 8 | `--color-navy` (xanh navy đậm) | P1 (thêm token) |
+| `#001A3F` | 8 | `--color-navy-dark` (navy đậm hơn) | P1 (thêm token) |
+| `#0E7490` | 6 | `--color-teal-dark` (teal đậm) | P1 (thêm token) |
+| `#7C2D12` | 4 | giữ inline HOẶC `--color-rust` | P2 |
+| `#92400E` | 4 | giữ inline HOẶC `--color-amber-dark` | P2 |
+| `#DC2626` | 3 | dùng `--color-red` (#B81827) sẵn có? | P2 — verify visual |
+| `#16A34A` | 3 | dùng `--color-success` (#2A9D8F) sẵn có? | P2 — verify visual |
+| `#0E2A33` | 3 | dùng `--color-brand-dark` sẵn có? | P2 — verify visual |
+| `#C8102E` | 3 | (đỏ cờ Việt Nam) giữ semantic | P2 — dữ liệu semantic |
+| `#7C3AED` | 3 | dùng `--color-purple` (#A21CAF) sẵn có? | P2 — verify visual |
+| Khác 5-8 | 2 mỗi | tùy trường hợp | P3 |
 
-→ **3 new tokens recommended** Sprint 6 Phase 3: `navy`, `navy-dark`, `teal-dark` (Sprint 4 pattern: ≥6 uses + semantic meaning).
+→ **3 token mới đề xuất** Sprint 6 Pha 3: `navy`, `navy-dark`, `teal-dark` (pattern Sprint 4: ≥6 lần dùng + ý nghĩa semantic).
 
-## Phase 3 strategy (Sprint 6 — info + login/register + close)
+## Chiến lược Pha 3 (Sprint 6 — info + đăng nhập/đăng ký + đóng sprint)
 
-### Bước 1: Info pages design token expansion
-- Add 3 new tokens to `globals.css @theme`: `navy`, `navy-dark`, `teal-dark`
-- Tokens count: 19 → 22
+### Bước 1: Mở rộng design token info pages
+- Thêm 3 token mới vào `globals.css @theme`: `navy`, `navy-dark`, `teal-dark`
+- Số token: 19 → 22
 
-### Bước 2: Info pages mechanical refactor
-- Refactor 91 hex → tokens (22 token vocabulary)
-- Target: 91 → <20 hex (info cluster cleanup)
-- Top page `network`: 56 → 0 hex via expanded tokens + inline retention only for semantic
-- Validate visual parity (no regression)
+### Bước 2: Refactor mechanical info pages
+- Refactor 91 hex → tokens (vốn từ 22 token)
+- Mục tiêu: 91 → <20 hex (dọn cụm info)
+- Trang top `network`: 56 → 0 hex qua token mở rộng + giữ inline chỉ cho semantic
+- Validate visual parity (không regression)
 
-### Bước 3: Info pages UX polish (selective)
-- **contact**: prominent form, hours, map placeholder
-- **ddp-calculator**: improve UX (input fields + computation result display)
-- **disputes, sample-orders, network, industry-news**: layout polish (mostly server-render content pages)
+### Bước 3: Polish UX info pages (chọn lọc)
+- **contact**: form nổi bật, giờ làm việc, placeholder bản đồ
+- **ddp-calculator**: cải thiện UX (input + hiển thị kết quả tính toán)
+- **disputes, sample-orders, network, industry-news**: polish layout (chủ yếu trang content server-render)
 
-### Bước 4: Login/register polish (see auth section below)
+### Bước 4: Polish đăng nhập/đăng ký (xem section auth phía dưới)
 
-### Bước 5: Sprint 6 final close + push
+### Bước 5: Đóng Sprint 6 + push origin/cms
 
-## Per-page Phase 3 actions
+## Hành động Pha 3 theo từng trang
 
-| Page | Mechanical | UX polish | Form wire | Priority |
+| Trang | Mechanical | UX polish | Wire form | Ưu tiên |
 |---|:-:|:-:|:-:|---|
-| `[topic]` | — | — | — | skip (0 hex) |
-| `contact` | hex refactor (4) | layout improve | Server Action (defer) | P1 |
-| `ddp-calculator` | — | calculator UX | client compute | P1 |
-| `disputes` | hex refactor (15) | layout polish | — | P0 |
-| `industry-news` | hex refactor (2) | list pattern | search (defer) | P2 |
-| `industry-news/[slug]` | hex refactor (1) | article template | — | P2 |
-| `network` | hex refactor (56) | grid + locations | — | P0 (biggest) |
-| `sample-orders` | hex refactor (13) | process steps | — | P0 |
+| `[topic]` | — | — | — | bỏ qua (0 hex) |
+| `contact` | refactor hex (4) | cải thiện layout | Server Action (defer) | P1 |
+| `ddp-calculator` | — | UX calculator | client compute | P1 |
+| `disputes` | refactor hex (15) | polish layout | — | P0 |
+| `industry-news` | refactor hex (2) | pattern danh sách | search (defer) | P2 |
+| `industry-news/[slug]` | refactor hex (1) | template bài viết | — | P2 |
+| `network` | refactor hex (56) | lưới + địa điểm | — | P0 (lớn nhất) |
+| `sample-orders` | refactor hex (13) | các bước quy trình | — | P0 |
 
-## Acceptance criteria info pages (Phase 3)
+## Tiêu chí chấp nhận info pages (Pha 3)
 
 - ✅ 8 info pages publish-ready
-- ✅ Hex literals info cluster: 91 → <20 (target ~78% reduction)
-- ✅ 3 new tokens added (navy, navy-dark, teal-dark) → 22 total
-- ✅ Contact form structure ready (Server Action defer Sprint 7 backend)
-- ✅ DDP calculator client-side compute working
+- ✅ Hex literals cụm info: 91 → <20 (mục tiêu giảm ~78%)
+- ✅ 3 token mới thêm (navy, navy-dark, teal-dark) → tổng 22
+- ✅ Cấu trúc form Liên hệ sẵn sàng (defer Server Action Sprint 7 backend)
+- ✅ DDP calculator client-side compute hoạt động
 - ✅ Mobile responsive
+- ✅ 100% tiếng Việt thuần (Rule 9)
 
-## Questions for coordinator (Phase 3 prep)
+## Câu hỏi cho coordinator (chuẩn bị Pha 3)
 
-1. **3 new tokens approval:** `navy` (#002557), `navy-dark` (#001A3F), `teal-dark` (#0E7490) — match brand palette?
-2. **Existing token reuse:** verify visual parity:
+1. **Duyệt 3 token mới:** `navy` (#002557), `navy-dark` (#001A3F), `teal-dark` (#0E7490) — có match palette brand?
+2. **Verify tái sử dụng token sẵn có:**
    - `#DC2626` → `red` (#B81827)?
    - `#16A34A` → `success` (#2A9D8F)?
    - `#0E2A33` → `brand-dark` (#003A42)?
    - `#7C3AED` → `purple` (#A21CAF)?
-3. **Vietnam flag red `#C8102E`:** keep as semantic literal (national flag color)?
-4. **Contact form Server Action:** Sprint 6 phase 3 wire HAY defer Sprint 7?
-5. **DDP calculator backend:** client-side static formula (Sprint 6) hay wire backend pricing API (Sprint 7)?
+3. **Đỏ cờ Việt Nam `#C8102E`:** giữ làm literal semantic (màu cờ quốc gia)?
+4. **Form Liên hệ Server Action:** wire Sprint 6 Pha 3 HAY defer Sprint 7?
+5. **DDP calculator backend:** công thức client-side tĩnh (Sprint 6) hay wire backend pricing API (Sprint 7)?

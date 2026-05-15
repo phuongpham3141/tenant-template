@@ -1,116 +1,118 @@
-# Sprint 6 — Seller-center inventory (11 pages)
+# Sprint 6 — Kiểm kê Seller-center (11 trang)
 
-**Date:** 2026-05-15
-**Sprint:** 6 Phase 1 (audit only)
-**Methodology:** 4-state audit (Sprint 5 lesson)
+**Ngày:** 2026-05-15
+**Sprint:** 6 Pha 1 (chỉ audit)
+**Phương pháp:** Audit 4-trạng-thái (bài học Sprint 5)
+**Phiên bản:** v2 — tuân thủ Rule 9 tiếng Việt thuần
 
-## Plan deviation flagged (Rule 8 amendment)
+## Plan deviation phát hiện (Rule 8 phụ — kiểu "build vs polish")
 
-**Plan paste expected:** dashboard, orders, rfqs, messages, profile, analytics, pricing, livestream, inventory, settings (typical CRUD seller portal).
+**Kế hoạch ban đầu mong đợi:** dashboard / orders / rfqs / messages / profile / analytics / pricing / livestream / inventory / settings (portal CRUD seller thông thường).
 
-**Reality:** seller-center là **B2B sourcing services landing**, not CRUD portal. 11 pages thực tế là service offerings + dashboards:
+**Thực tế:** seller-center là **trang giới thiệu dịch vụ B2B sourcing**, KHÔNG phải portal CRUD. 11 trang thực tế là service offerings + landing:
 
-1. `/seller-center` (root dashboard — likely overview)
-2. `/seller-center/ai-assistant` (AI tool service)
-3. `/seller-center/ai-livestream` (AI livestream tool — Tier 1-4 R22)
-4. `/seller-center/domestic-cn` (domestic China market service)
-5. `/seller-center/export-na` (export to North America service)
-6. `/seller-center/gold-member` (premium membership)
-7. `/seller-center/logistics` (logistics service)
-8. `/seller-center/smart-expo` (smart expo participation)
-9. `/seller-center/trade-ehome` (Trade Ehome service)
-10. `/seller-center/trade-services` (trade services umbrella)
-11. `/seller-center/trading-service` (trading service)
+1. `/seller-center` (root — overview)
+2. `/seller-center/ai-assistant` (dịch vụ trợ lý AI)
+3. `/seller-center/ai-livestream` (công cụ livestream AI — Tier 1-4 R22)
+4. `/seller-center/domestic-cn` (dịch vụ thị trường Trung Quốc nội địa)
+5. `/seller-center/export-na` (dịch vụ xuất khẩu Bắc Mỹ)
+6. `/seller-center/gold-member` (thành viên cao cấp)
+7. `/seller-center/logistics` (dịch vụ logistics)
+8. `/seller-center/smart-expo` (tham gia hội chợ thông minh)
+9. `/seller-center/trade-ehome` (dịch vụ Trade Ehome)
+10. `/seller-center/trade-services` (gói dịch vụ thương mại)
+11. `/seller-center/trading-service` (dịch vụ giao dịch)
 
-→ Sprint 6 Phase 2 scope = **polish 11 service landing pages**, NOT build CRUD seller dashboards. CRUD seller portal có thể defer Sprint 9 hoặc Sprint 7 wire-up.
+→ Phạm vi Pha 2 Sprint 6 = **polish 11 trang landing dịch vụ**, KHÔNG phải xây CRUD seller dashboard. CRUD seller portal có thể defer Sprint 9 hoặc wire-up Sprint 7.
 
-## 4-state inventory
+## Kiểm kê 4-trạng-thái
 
-| # | Page | LOC | Client | Data fetch | Form | Hex | Inline | Notes |
-|---|------|----:|:------:|:----------:|:----:|----:|-------:|-------|
-| 1 | (root dashboard) | 127 | N | N | N | 4 | 0 | no-loading, no-empty |
-| 2 | ai-assistant | 145 | N | N | N | 0 | 0 | no-loading, no-empty, mobile-thin(4) |
-| 3 | ai-livestream | 107 | N | N | N | 0 | 1 | no-loading, mobile-thin(2) — **orphan: not in sidebar nav** |
-| 4 | domestic-cn | 172 | N | N | N | 2 | 1 | no-loading |
-| 5 | export-na | 150 | N | N | N | 2 | 1 | no-loading, no-empty |
-| 6 | gold-member | 199 | N | N | N | 0 | 0 | no-loading, no-empty, mobile-thin(4) |
-| 7 | logistics | 184 | N | N | N | 0 | 0 | no-loading, no-empty, mobile-thin(4) |
-| 8 | smart-expo | 128 | N | N | N | 0 | 0 | no-loading, no-empty |
-| 9 | trade-ehome | 123 | N | N | N | 0 | 0 | no-loading, no-empty |
-| 10 | trade-services | 177 | N | N | N | 0 | 0 | no-loading, no-empty |
-| 11 | trading-service | 140 | N | N | N | 0 | 0 | no-loading, no-empty, mobile-thin(3) |
+| # | Trang | LOC | Client | Fetch data | Form | Hex | Inline | Ghi chú |
+|---|------|----:|:------:|:----------:|:----:|----:|-------:|---------|
+| 1 | (root dashboard) | 127 | Không | Không | Không | 4 | 0 | thiếu loading, thiếu empty |
+| 2 | ai-assistant | 145 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty, mobile mỏng (4) |
+| 3 | ai-livestream | 107 | Không | Không | Không | 0 | 1 | thiếu loading, mobile mỏng (2) — **mồ côi: không có trong sidebar** |
+| 4 | domestic-cn | 172 | Không | Không | Không | 2 | 1 | thiếu loading |
+| 5 | export-na | 150 | Không | Không | Không | 2 | 1 | thiếu loading, thiếu empty |
+| 6 | gold-member | 199 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty, mobile mỏng (4) |
+| 7 | logistics | 184 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty, mobile mỏng (4) |
+| 8 | smart-expo | 128 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty |
+| 9 | trade-ehome | 123 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty |
+| 10 | trade-services | 177 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty |
+| 11 | trading-service | 140 | Không | Không | Không | 0 | 0 | thiếu loading, thiếu empty, mobile mỏng (3) |
 
-**Aggregate:** total_hex = **8**, total_inline = 3, mockup-only = **11/11**, total LOC = **1652**.
+**Tổng kết:** tổng hex = **8**, tổng inline = 3, mockup thuần = **11/11**, tổng LOC = **1652**.
 
-## Sprint 5 pattern comparison
+## So sánh pattern Sprint 5
 
-| Aspect | Sprint 5 buyer-center | Sprint 6 seller-center | Note |
+| Khía cạnh | Sprint 5 buyer-center | Sprint 6 seller-center | Ghi chú |
 |---|---|---|---|
-| Pages | 12 | 11 | similar scale |
-| Server components | 12/12 | 11/11 | identical pattern |
-| Data fetching | 0/12 | 0/11 | identical (mockups) |
-| Forms | 2/12 (Contact, Post RFQ) | 0/11 | seller-center has zero forms |
-| Hex baseline | 0 | 8 | seller cleaner |
-| Loading state coverage | 0/12 | 0/11 | identical gap |
-| Empty state coverage | 0/12 | 9/11 missing | similar gap |
+| Số trang | 12 | 11 | quy mô tương tự |
+| Server components | 12/12 | 11/11 | pattern giống hệt |
+| Fetch dữ liệu | 0/12 | 0/11 | giống hệt (mockup) |
+| Form | 2/12 (Liên hệ, Đăng RFQ) | 0/11 | seller-center không có form |
+| Hex baseline | 0 | 8 | seller sạch hơn |
+| Phủ loading state | 0/12 | 0/11 | gap giống hệt |
+| Phủ empty state | 0/12 | 9/11 thiếu | gap tương tự |
 
-→ Seller-center mirror buyer-center pattern + 1 less form layer = **less wiring needed Sprint 6**.
+→ Seller-center phản chiếu pattern buyer-center + ít hơn 1 layer form = **ít công wire hơn Sprint 6**.
 
-## Seller sidebar nav audit
+## Audit sidebar nav seller
 
-10 nav items in `src/components/seller/sidebar.tsx`. All 10 link to existing pages ✅.
+10 mục nav trong `src/components/seller/sidebar.tsx`. Cả 10 link tới trang đã tồn tại ✅.
 
-**Issue:** `/seller-center/ai-livestream` page exists nhưng KHÔNG xuất hiện trong sidebar nav → orphan page (Phase 2 decision: add to nav OR remove page).
+**Vấn đề:** `/seller-center/ai-livestream` page tồn tại nhưng KHÔNG xuất hiện trong sidebar nav → trang mồ côi (quyết định Pha 2: thêm vào nav HOẶC bỏ trang).
 
 ## SDK / actions imports
 
-**0 imports** trong toàn bộ seller-center. Hoàn toàn static mockup (như buyer-center pre-Sprint 5).
+**0 imports** trong toàn bộ seller-center. Mockup tĩnh hoàn toàn (giống buyer-center trước Sprint 5).
 
-## Pages categorization (Phase 2 planning)
+## Phân loại trang (lập kế hoạch Pha 2)
 
-| Page | Type | Priority | Action |
+| Trang | Loại | Ưu tiên | Hành động |
 |---|---|---|---|
-| (root dashboard) | DASHBOARD | P0 | Polish — welcome + 4 stats + service tiles |
-| ai-assistant | LANDING | P0 | Polish — feature showcase + CTA |
-| ai-livestream | LANDING | P1 | Polish + **add to sidebar** OR remove |
-| domestic-cn | LANDING | P1 | Polish — market entry pitch |
-| export-na | LANDING | P1 | Polish — export pitch + process |
-| gold-member | PRICING | P0 | Polish — tier table + benefits + upgrade CTA |
-| logistics | SERVICE | P1 | Polish — service description + how-it-works |
-| smart-expo | SERVICE | P1 | Polish — expo info + signup CTA |
-| trade-ehome | SERVICE | P2 | Polish — service overview |
-| trade-services | UMBRELLA | P0 | Polish — service grid linking to others |
-| trading-service | SERVICE | P2 | Polish — service description |
+| (root dashboard) | DASHBOARD | P0 | Polish — chào mừng + 4 thống kê + ô dịch vụ |
+| ai-assistant | LANDING | P0 | Polish — showcase tính năng + CTA |
+| ai-livestream | LANDING | P1 | Polish + **thêm vào sidebar** HOẶC bỏ |
+| domestic-cn | LANDING | P1 | Polish — pitch thị trường |
+| export-na | LANDING | P1 | Polish — pitch xuất khẩu + quy trình |
+| gold-member | PRICING | P0 | Polish — bảng bậc + lợi ích + CTA nâng cấp |
+| logistics | SERVICE | P1 | Polish — mô tả dịch vụ + cách hoạt động |
+| smart-expo | SERVICE | P1 | Polish — thông tin hội chợ + CTA đăng ký |
+| trade-ehome | SERVICE | P2 | Polish — tổng quan dịch vụ |
+| trade-services | UMBRELLA | P0 | Polish — lưới dịch vụ link tới các trang khác |
+| trading-service | SERVICE | P2 | Polish — mô tả dịch vụ |
 
-## Phase 2 implementation plan (preview)
+## Kế hoạch thực thi Pha 2 (sơ bộ)
 
-### Bước 1: Mechanical refactor (Rule 8 Tier 1)
+### Bước 1: Refactor mechanical (Rule 8 Tier 1)
 - 8 hex literals → tokens (root 4, domestic-cn 2, export-na 2)
-- 3 inline styles → static refactor if applicable
-- Reuse Sprint 5 infrastructure (EmptyState, Skeleton)
+- 3 inline styles → refactor static nếu áp dụng được
+- Tái sử dụng infrastructure Sprint 5 (EmptyState, Skeleton)
 
-### Bước 2: UX layout polish per page type (Rule 8 Tier 2)
-- Apply B2B seller-marketing conventions (service hero + benefit cards + how-it-works + CTA)
-- Add `loading.tsx` cho seller-center segment
-- Add `error.tsx` cho seller-center segment
-- Mobile responsive pass on thin pages (ai-assistant, ai-livestream, gold-member, logistics, trading-service)
+### Bước 2: Polish UX layout theo loại trang (Rule 8 Tier 2)
+- Áp dụng convention B2B marketing-seller (hero dịch vụ + thẻ lợi ích + cách hoạt động + CTA)
+- Thêm `loading.tsx` cho segment seller-center
+- Thêm `error.tsx` cho segment seller-center
+- Mobile responsive pass cho các trang mỏng (ai-assistant, ai-livestream, gold-member, logistics, trading-service)
 
-### Bước 3: Orphan ai-livestream resolution
-- **Decision needed:** Add to sidebar OR remove page (escalate coordinator)
-- Default Phase 2 action: ADD to sidebar (page exists with content; coordinator can re-decide)
+### Bước 3: Xử lý ai-livestream mồ côi
+- **Cần quyết định:** thêm vào sidebar HOẶC bỏ trang (escalate coordinator)
+- Action mặc định Pha 2: THÊM vào sidebar (trang đã có content; coordinator có thể đổi ý)
 
-## Acceptance criteria Phase 2
+## Tiêu chí chấp nhận Pha 2
 
-- ✅ 11 seller-center pages publish-ready (mechanical + UX polish)
-- ✅ Reuse Sprint 5 infrastructure (no new components)
+- ✅ 11 trang seller-center publish-ready (mechanical + UX polish)
+- ✅ Tái sử dụng infrastructure Sprint 5 (không component mới)
 - ✅ 0 hex literals trong scope (8 → 0)
-- ✅ Mobile responsive (mobile hits ≥ 10/page on thin pages)
-- ✅ loading.tsx + error.tsx cho `/seller-center/` segment
-- ✅ ai-livestream orphan resolved
+- ✅ Mobile responsive (≥ 10 hit/trang trên trang mỏng)
+- ✅ `loading.tsx` + `error.tsx` cho segment `/seller-center/`
+- ✅ ai-livestream mồ côi đã xử lý
+- ✅ 100% tiếng Việt thuần (Rule 9)
 
-## Questions for coordinator (Phase 2 prep)
+## Câu hỏi cho coordinator (chuẩn bị Pha 2)
 
-1. **ai-livestream orphan:** add to sidebar (default) hay remove page?
-2. **CRUD seller portal:** plan paste implied seller portal có orders/products/analytics/inventory. Current seller-center có NOT có. Defer build Sprint 9/Sprint 7 hay add Sprint 6 scope?
-3. **Mobile responsive threshold:** target ≥10 hits/page giống Sprint 5? hay khác?
-4. **gold-member pricing tiers:** static data có sẵn hay cần verify với coordinator?
+1. **ai-livestream mồ côi:** thêm vào sidebar (mặc định) hay bỏ trang?
+2. **CRUD seller portal:** kế hoạch ban đầu ngụ ý seller portal có orders/products/analytics/inventory. Seller-center hiện tại KHÔNG có. Defer build Sprint 9/Sprint 7 hay thêm vào scope Sprint 6?
+3. **Ngưỡng mobile responsive:** mục tiêu ≥10 hits/trang như Sprint 5? hay khác?
+4. **Bảng bậc gold-member:** dữ liệu tĩnh đã có hay cần verify với coordinator?
