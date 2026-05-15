@@ -28,7 +28,7 @@ export function SecBlock({ section, parentSlug }: { section: CatSection; parentS
         <a className="text-brand text-[12.5px] cursor-pointer">Xem tất cả →</a>
       </div>
       <div className="bg-paper rounded-b border-l border-r border-b border-line grid grid-cols-[280px_1fr] max-md:grid-cols-1">
-        <aside className="bg-[#FCFBF8] p-4 border-r border-line max-md:border-r-0 max-md:border-b">
+        <aside className="bg-cream p-4 border-r border-line max-md:border-r-0 max-md:border-b">
           <ul className="space-y-1.5">
             {section.subcats.map((sc) => {
               const head = sc.slug ? (
@@ -84,7 +84,7 @@ export function SecBlock({ section, parentSlug }: { section: CatSection; parentS
           {section.products.map((p, i) => (
             <a
               key={i}
-              className="border-r border-b border-line last:border-r-0 [&:nth-child(4n)]:border-r-0 p-3 hover:bg-[#FCFBF8] cursor-pointer flex flex-col gap-2"
+              className="border-r border-b border-line last:border-r-0 [&:nth-child(4n)]:border-r-0 p-3 hover:bg-cream cursor-pointer flex flex-col gap-2"
             >
               <span className="text-[12px] text-ink font-medium leading-tight line-clamp-2 min-h-[32px]">
                 {p.name}

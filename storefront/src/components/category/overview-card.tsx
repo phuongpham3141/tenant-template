@@ -8,7 +8,7 @@ export function OverviewCard({ data }: { data: CategoryPage }) {
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-4">
       <div className="bg-paper border border-line rounded overflow-hidden grid grid-cols-[280px_1fr] min-h-[480px] max-md:grid-cols-1">
-        <aside className="border-r border-line bg-[#FCFBF8] p-4 max-md:border-r-0 max-md:border-b">
+        <aside className="border-r border-line bg-cream p-4 max-md:border-r-0 max-md:border-b">
           <h1 className="text-[20px] font-bold text-ink mb-1">{data.title}</h1>
           <p className="text-[12px] text-mute mb-4 leading-relaxed">{data.intro}</p>
           {data.overview.groups.map((g) => (
@@ -48,7 +48,7 @@ export function OverviewCard({ data }: { data: CategoryPage }) {
           {data.overview.products.map((p, i) => (
             <a
               key={i}
-              className="border-r border-b border-line last:border-r-0 [&:nth-child(5n)]:border-r-0 p-3 hover:bg-[#FCFBF8] cursor-pointer flex flex-col gap-2"
+              className="border-r border-b border-line last:border-r-0 [&:nth-child(5n)]:border-r-0 p-3 hover:bg-cream cursor-pointer flex flex-col gap-2"
             >
               <span className="text-[12px] text-ink font-medium leading-tight line-clamp-2 min-h-[32px]">
                 {p.name}

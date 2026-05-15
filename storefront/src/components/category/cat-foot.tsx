@@ -25,7 +25,7 @@ export function CatFoot({ data }: { data: CategoryPage }) {
               <option key={s.id}>{s.title}</option>
             ))}
           </select>
-          <button className="px-6 py-2.5 bg-accent text-white font-bold text-[13px] rounded-sm hover:bg-[#B81827] cursor-pointer">
+          <button className="px-6 py-2.5 bg-accent text-white font-bold text-[13px] rounded-sm hover:bg-red cursor-pointer">
             🔍 TÌM
           </button>
         </form>
