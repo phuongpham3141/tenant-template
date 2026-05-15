@@ -22,6 +22,10 @@
   --color-warm:      #E8943A;  /* ×24 warm orange (distinct from gold) */
   --color-purple:    #A21CAF;  /* ×29 livestream brand */
 
+  /* Sprint 4 Phase 2 Buoc 2 — Home hover/state tokens */
+  --color-red:       #B81827;  /* Chinese red — accent hover / danger states */
+  --color-cream:     #FCFBF8;  /* warm cream hover surface */
+
   --font-sans: var(--font-inter), Arial, sans-serif;
 }
 

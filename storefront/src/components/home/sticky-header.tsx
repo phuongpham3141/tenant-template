@@ -84,7 +84,7 @@ export function StickyHeader() {
         {/* CTAs */}
         <Link
           href="/buying-request"
-          className="flex items-center gap-1.5 text-[12.5px] text-accent font-semibold hover:text-[#B81827] flex-shrink-0 max-xl:hidden"
+          className="flex items-center gap-1.5 text-[12.5px] text-accent font-semibold hover:text-red flex-shrink-0 max-xl:hidden"
         >
           <span className="text-[16px]">📨</span>
           <span>Gửi RFQ</span>

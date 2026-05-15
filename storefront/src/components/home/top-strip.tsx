@@ -159,7 +159,7 @@ function PopHeader({ title, more, moreHref }: { title: string; more?: string; mo
 const TONE_CLASS: Record<NonNullable<LinkRow["badgeTone"]>, string> = {
   info: "bg-brand/10 text-brand",
   success: "bg-success/15 text-success",
-  warning: "bg-gold/20 text-[#9C6A1F]",
+  warning: "bg-gold/20 text-warm",
   accent: "bg-accent/15 text-accent",
   muted: "bg-bg text-mute",
 };

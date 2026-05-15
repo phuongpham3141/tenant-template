@@ -17,7 +17,7 @@ export function CategoryShowcase() {
             <Link
               key={c.slug}
               href={`/category/${c.slug}`}
-              className="group/cat flex flex-col items-center text-center hover:bg-[#FCFBF8] rounded p-2 transition-colors max-md:p-1.5"
+              className="group/cat flex flex-col items-center text-center hover:bg-cream rounded p-2 transition-colors max-md:p-1.5"
             >
               <div className="relative w-full aspect-square bg-surface-1 rounded-sm overflow-hidden mb-2 border border-line group-hover/cat:border-brand transition-colors max-md:mb-1.5">
                 <img

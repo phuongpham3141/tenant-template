@@ -69,7 +69,7 @@ export function Factories() {
             className="border border-line rounded-sm overflow-hidden transition cursor-pointer hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] block group/fact"
           >
             {/* === Banner: factory photo with badges + brand seal === */}
-            <div className="relative aspect-[16/9] overflow-hidden bg-[#0E2A33]">
+            <div className="relative aspect-[16/9] overflow-hidden bg-brand-dark">
               <img
                 src={bannerUrl(f.slug)}
                 alt={f.name}

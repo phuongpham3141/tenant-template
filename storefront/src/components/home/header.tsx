@@ -102,7 +102,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-line text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Tìm bằng hình ảnh"
             title="Tải ảnh lên để tìm sản phẩm tương tự"
           >
@@ -133,7 +133,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-line text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Tìm NCC bằng ảnh sản phẩm"
             title="Tải ảnh sản phẩm để tìm nhà cung cấp"
           >
@@ -164,7 +164,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-line text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Đính kèm ảnh khi gửi RFQ"
             title="Đính kèm ảnh sản phẩm để mô tả rõ hơn"
           >
@@ -174,7 +174,7 @@ export function Header() {
             type="submit"
             aria-label="Gửi yêu cầu báo giá"
             title="Gửi yêu cầu báo giá"
-            className="px-7 bg-accent text-white text-[22px] hover:bg-[#B81827] cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
+            className="px-7 bg-accent text-white text-[22px] hover:bg-red cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             📨
           </button>

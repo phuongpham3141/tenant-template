@@ -68,7 +68,7 @@ export function TradeShowsSection() {
           </div>
           <Link
             href="/trade-shows"
-            className="px-5 py-2 bg-accent text-white font-semibold text-[13px] rounded-sm hover:bg-[#B81827] cursor-pointer flex-shrink-0 max-md:self-end max-md:py-1.5 max-md:px-4"
+            className="px-5 py-2 bg-accent text-white font-semibold text-[13px] rounded-sm hover:bg-red cursor-pointer flex-shrink-0 max-md:self-end max-md:py-1.5 max-md:px-4"
           >
             Xem thêm →
           </Link>
@@ -138,7 +138,7 @@ export function TradeShowsSection() {
               <Link
                 key={show.name}
                 href={show.href}
-                className="relative flex-1 flex gap-2.5 items-center border border-line rounded p-2 hover:border-brand hover:shadow-sm hover:bg-[#FCFBF8] cursor-pointer group/item transition"
+                className="relative flex-1 flex gap-2.5 items-center border border-line rounded p-2 hover:border-brand hover:shadow-sm hover:bg-cream cursor-pointer group/item transition"
               >
                 {/* Thumbnail — 96×60 landscape, never crops the subject */}
                 <div className="w-24 h-[60px] flex-shrink-0 rounded-sm overflow-hidden bg-surface-1 border border-line max-md:w-20 max-md:h-[52px]">
