@@ -268,3 +268,9 @@ Sẵn sàng cho Sprint 2 planning. Đợi user confirm priority order (xem câu 
   - Issue: status='success' cho run có 10/13 failed entries (misleading audit trail)
   - Sprint 8 action: Redefine enum thành ('success', 'partial', 'failed', 'rolled_back')
   - Add NOT NULL constraint on `notes` field nếu status != 'success'
+
+### Resolved Day 4 (data updates, no code commit)
+
+- [x] **P1.4-F3** · Payload user tenant_id NULL → 'cybersilkroads'
+  - Action: UPDATE payload.users SET tenant_id='cybersilkroads' WHERE id=1
+  - Note: Đây là data update, không phải schema change → KHÔNG cần migration file (Rule 6 exception)
