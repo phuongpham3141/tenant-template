@@ -394,3 +394,28 @@ Storefront architecture nên document rõ pattern này trong `docs/architecture.
 - `api()` helper handles session + publishable key + tenant
 - /api/auth/* only — cho cookie management
 - KHÔNG dùng client-side fetch trừ proxy upload (visual-upload đặc biệt)
+
+## 🟡 Sprint 3 Day 1 phụ phát hiện (2026-05-15)
+
+- [ ] **P3.D7-F1 (NEW)** · 44 non-FK indexes lost trong mig 46 partition convert
+  - Background: Day 1 audit phát hiện index count 2076 → 2032 (-44)
+  - Root cause: `CREATE TABLE LIKE template INCLUDING ALL` không inherit partial indexes / deferred constraints
+  - Affected: 12 partitioned tables (audit.audit_event, live.ai_compute_ledger, etc.)
+  - Risk: P3 — no immediate impact, query patterns chưa biết
+  - Action Sprint 8: Identify lost indexes per table, evaluate cần restore không
+  - NOTE: P1.6-F2 objective (FK indexes) vẫn 100% achieved
+
+## 🟢 Sprint 3 Day 2 reclassification (2026-05-15)
+
+### REAL (Sprint 8 backlog)
+- P2.1-F2 — R23 CHECK 03 script bug: hard-coded policy name 'tenant_isolation' (Layer 1+2 confirmed)
+- P3.D4-F1 — 10 tables không có time column (Layer 2 confirmed 10/10)
+- P3.D4-F2 — audit_event 37 rows + runbook file MISSING (Layer 1+2)
+- P3.D4-F4 — migration_log status semantics: mig 46 logged 'success' cho run 0/13 succeeded (Layer 2)
+
+### NOT GAP (drop từ gap-list — move to design log)
+- P3.1-F3 — Image 680MB (design decision pgvector + pg_partman)
+- P3.1-F4 — PG 16.13 (Debian image upgrade)
+
+### WONT FIX (drop)
+- P2.D2-F1/F2 — Heredoc + mig 43 squash (cosmetic + history rewrite risk)
