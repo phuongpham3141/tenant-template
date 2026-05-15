@@ -21,8 +21,17 @@ const NAV_GROUPS = [
     ],
   },
   {
-    title: "Truy cập nhanh",
+    title: "Giao dịch của tôi",
     items: [
+      { label: "Đơn hàng", href: "/buyer-center/orders", icon: "📦" },
+      { label: "Yêu cầu báo giá", href: "/buyer-center/rfqs", icon: "📋" },
+      { label: "Tin nhắn", href: "/buyer-center/messages", icon: "💬" },
+    ],
+  },
+  {
+    title: "Tài khoản",
+    items: [
+      { label: "Hồ sơ", href: "/buyer-center/profile", icon: "👤" },
       { label: "Yêu thích", href: "/buyer-center/favorites", icon: "❤" },
       { label: "Lịch sử duyệt", href: "/buyer-center/browsing-history", icon: "🕘" },
     ],

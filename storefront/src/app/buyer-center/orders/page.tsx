@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
+import { EmptyState } from "@/components/ui/EmptyState";
 
 const ORDERS = [
   { id: "AVN-7831", supplier: "Dongpeng Ceramics", product: "Porcelain tile 600×1200", qty: "1,800 m²", total: "$15,300", status: "Đang vận chuyển", date: "12/04/2026" },
@@ -37,6 +38,16 @@ export default function OrdersPage() {
             <Link href="/products" className="px-4 py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px]">+ Đơn hàng mới</Link>
           </div>
 
+          {ORDERS.length === 0 ? (
+            <div className="bg-paper border border-line rounded">
+              <EmptyState
+                title="Bạn chưa có đơn hàng"
+                message="Khám phá sản phẩm chất lượng từ 40+ nhà máy đã audit và bắt đầu đặt hàng."
+                ctaText="Duyệt sản phẩm"
+                ctaHref="/products"
+              />
+            </div>
+          ) : (
           <div className="bg-paper border border-line rounded">
             <div className="flex gap-0 border-b border-line px-2">
               {TABS.map((t, i) => (
@@ -78,6 +89,7 @@ export default function OrdersPage() {
               </tbody>
             </table>
           </div>
+          )}
         </div>
       </div>
     </>

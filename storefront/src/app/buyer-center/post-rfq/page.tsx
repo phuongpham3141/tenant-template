@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { NAV_CATEGORIES } from "@/data/home";
+import { submitRfqForm } from "./action";
 
 const TIPS = [
   { icon: "📐", t: "Mô tả kỹ thông số kỹ thuật", d: "Kích thước, vật liệu, màu, trọng lượng — càng cụ thể, báo giá càng chính xác." },
@@ -32,16 +33,18 @@ export default async function PostRfqPage({
           </div>
 
           <div className="grid grid-cols-[1fr_280px] gap-4 max-md:grid-cols-1">
-            <form action="/buying-request" method="get" className="bg-paper border border-line rounded p-5">
+            <form action={submitRfqForm} className="bg-paper border border-line rounded p-5">
               <h2 className="text-[16px] font-bold text-ink mb-4">Form RFQ chuẩn</h2>
               <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Sản phẩm cần tìm <span className="text-accent">*</span></label>
-                  <input name="q" defaultValue={sp.q ?? ""} placeholder="Vd: gạch porcelain 600x1200 calacatta white" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+                  <input name="title_vi" defaultValue={sp.q ?? ""} placeholder="Vd: gạch porcelain 600x1200 calacatta white" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" required />
+                  <input type="hidden" name="title_en" value="" />
+                  <input type="hidden" name="title_cn" value="" />
                 </div>
                 <div>
                   <label className="block text-[12px] font-semibold text-ink mb-1">Danh mục</label>
-                  <select name="category" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] bg-white">
+                  <select name="category_id" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] bg-white" defaultValue="">
                     <option value="">-- Chọn danh mục --</option>
                     {NAV_CATEGORIES.map((c) => (
                       <option key={c.slug} value={c.slug}>{c.icon} {c.name}</option>
@@ -49,12 +52,25 @@ export default async function PostRfqPage({
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[12px] font-semibold text-ink mb-1">Số lượng + đơn vị <span className="text-accent">*</span></label>
-                  <input name="qty" defaultValue={sp.qty ?? ""} placeholder="Vd: 500 m² hoặc 30 set" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+                  <label className="block text-[12px] font-semibold text-ink mb-1">Số lượng <span className="text-accent">*</span></label>
+                  <div className="grid grid-cols-[1fr_120px] gap-2">
+                    <input name="target_quantity" type="number" min="1" defaultValue={sp.qty ?? ""} placeholder="Vd: 500" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" required />
+                    <select name="target_unit_code" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] bg-white" defaultValue="pcs">
+                      <option value="pcs">pcs</option>
+                      <option value="set">set</option>
+                      <option value="m2">m²</option>
+                      <option value="m3">m³</option>
+                      <option value="kg">kg</option>
+                      <option value="container20">cont 20'</option>
+                      <option value="container40">cont 40'</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Mô tả chi tiết</label>
-                  <textarea name="desc" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, thời hạn..." className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand resize-none" />
+                  <textarea name="description_vi" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, thời hạn..." className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand resize-none" />
+                  <input type="hidden" name="description_en" value="" />
+                  <input type="hidden" name="description_cn" value="" />
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Ảnh tham khảo</label>
@@ -64,12 +80,14 @@ export default async function PostRfqPage({
                 </div>
                 <div>
                   <label className="block text-[12px] font-semibold text-ink mb-1">Cảng đích</label>
-                  <select name="port" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] bg-white">
-                    <option>Cát Lái – HCM</option>
-                    <option>Hải Phòng – HP</option>
-                    <option>Đà Nẵng – ĐN</option>
-                    <option>DDP về kho (khuyến nghị)</option>
+                  <select name="destination_port" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] bg-white" defaultValue="catlai">
+                    <option value="catlai">Cát Lái – HCM</option>
+                    <option value="haiphong">Hải Phòng – HP</option>
+                    <option value="danang">Đà Nẵng – ĐN</option>
+                    <option value="ddp_warehouse">DDP về kho (khuyến nghị)</option>
                   </select>
+                  <input type="hidden" name="destination_country" value="VN" />
+                  <input type="hidden" name="invite_mode" value="open" />
                 </div>
                 <div>
                   <label className="block text-[12px] font-semibold text-ink mb-1">Ngân sách / đơn vị</label>
