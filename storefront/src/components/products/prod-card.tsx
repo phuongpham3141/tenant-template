@@ -74,7 +74,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
           {p.supplier.loc}
         </span>
         <div className="flex flex-col gap-1.5 mt-auto">
-          <button className="px-3 py-1.5 bg-accent text-white text-[12px] font-semibold rounded-full cursor-pointer hover:bg-[#B81827]">
+          <button className="px-3 py-1.5 bg-accent text-white text-[12px] font-semibold rounded-full cursor-pointer hover:bg-red">
             Liên hệ ngay
           </button>
           <button className="px-3 py-1.5 bg-paper text-brand border border-brand text-[12px] font-semibold rounded-full cursor-pointer hover:bg-brand hover:text-white">

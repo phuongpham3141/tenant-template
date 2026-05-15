@@ -17,7 +17,7 @@ export function NotFoundBlock({ keyword }: { keyword: string }) {
               defaultValue={keyword}
               className="flex-1 px-3.5 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
             />
-            <button className="px-5 py-2.5 bg-accent text-white font-bold text-[13px] rounded-sm hover:bg-[#B81827] cursor-pointer">
+            <button className="px-5 py-2.5 bg-accent text-white font-bold text-[13px] rounded-sm hover:bg-red cursor-pointer">
               Gửi yêu cầu
             </button>
           </form>
