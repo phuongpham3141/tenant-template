@@ -38,13 +38,13 @@ async function main() {
 
   if (existing.totalDocs > 0) {
     const user = existing.docs[0] as any
-    console.log(`[ensure-admin] ✓ User exists: id=${user.id}, tenant=${user.tenant_id || 'NULL'}`)
+    console.log(`[ensure-admin] ✓ User exists: id=${user.id}, tenant=${user.tenantId || 'NULL'}`)
 
-    if (!user.tenant_id) {
+    if (!user.tenantId) {
       await payload.update({
         collection: 'users',
         id: user.id,
-        data: { tenant_id: ADMIN_TENANT_ID } as any,
+        data: { tenantId: ADMIN_TENANT_ID } as any,
       })
       console.log(`[ensure-admin] ✓ Updated tenant_id → ${ADMIN_TENANT_ID}`)
     }
@@ -58,7 +58,7 @@ async function main() {
     data: {
       email: ADMIN_EMAIL,
       password: ADMIN_PASSWORD,
-      tenant_id: ADMIN_TENANT_ID,
+      tenantId: ADMIN_TENANT_ID,
     } as any,
   })
 

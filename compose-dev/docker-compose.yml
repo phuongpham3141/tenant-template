@@ -171,6 +171,8 @@ services:
       PAYLOAD_PUBLIC_SERVER_URL: http://cms.huayuesc.local
     volumes:
       - ../payload/src:/app/src
+      - ../payload/scripts:/app/scripts
+      - ../payload/package.json:/app/package.json
       - /app/node_modules
     networks:
       - tenant_net
