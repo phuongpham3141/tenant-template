@@ -294,3 +294,45 @@ Sẵn sàng cho Sprint 2 planning. Đợi user confirm priority order (xem câu 
 ### Apply Rule 5 lesson
 
 Đây là FALSE POSITIVE thứ 2 (sau R23 CHECK 03 mig 42 redundancy). Cả 2 đều do query/check assumption sai về schema layout. **Lesson reinforced:** Validation finding cần audit ground truth (cả 2-3 layer của design).
+
+## 🟢 Day 5 Bước 3 — P1.5-F1 RE-CLASSIFIED (false positive thứ 3)
+
+### [✅ RE-AUDIT] P1.5-F1 — Middleware auth gate THỰC RA đã hoạt động
+
+- **Sprint 1 finding (wrong):** "Middleware actual chỉ set locale cookie, KHÔNG check auth → /buyer-center accessible cho ai cũng vào được"
+- **Day 5 audit (correct):** Middleware đã có FULL auth gate logic ngay từ commit `084e296` (R19 ship):
+  ```typescript
+  const PROTECTED_PATHS = [/^\/buyer-center/, /^\/seller-center/, /^\/account/, /^\/checkout/];
+  if (requiresAuth && !req.cookies.get("csr_session")) {
+    url.pathname = "/login";
+    url.searchParams.set("redirect", req.nextUrl.pathname);
+    return NextResponse.redirect(url);
+  }
+  ```
+- **6 curl tests PASS:**
+  - `/buyer-center` unauth → 307 → `/login?redirect=%2Fbuyer-center` ✓
+  - `/buyer-center` + cookie → 200 ✓
+  - `/` homepage → 200 ✓
+  - `/seller-center` unauth → 307 ✓
+  - `/account` unauth → 307 ✓ (bonus, ngoài spec)
+  - `/checkout` unauth → 307 ✓ (bonus, ngoài spec)
+- **Root cause Sprint 1 wrong audit:** Day 1 P1.5 đọc version OLD của middleware (VM working tree pre-Option B sync chứa local hack chỉ set locale). Day 1 Option B sync `git checkout cms origin/cms` replace middleware bằng version đầy đủ từ R19 commit.
+
+→ **P1.5-F1 status: FALSE POSITIVE — Closed. No code change needed.**
+
+### Defer Sprint 3+ enhancements
+
+- Session cookie VALIDATION (signed/encrypted check) — currently chỉ check `exists`
+- Token refresh logic
+- RBAC fine-grained per route
+- Tenant resolution từ subdomain (currently dùng locale subdomain only)
+
+### Lesson Rule 5 — FALSE POSITIVE thứ 3
+
+Cả 3 false positives Sprint 1 đều do audit không multi-layer:
+1. **R23 CHECK 03 mig 42** — script không catch existing `tenant_self_*` policies
+2. **P1.4-F2 re-seed** — query `public.product` only, miss `catalog.product`
+3. **P1.5-F1 middleware** — đọc snapshot working tree cũ, không reflect committed code
+
+**Pattern chung:** Audit Sprint 1 dùng quick query / partial read → bỏ sót state đúng.
+**Action Sprint 3:** Re-run TOÀN BỘ Sprint 1 P1.X audits với multi-layer ground truth check.
