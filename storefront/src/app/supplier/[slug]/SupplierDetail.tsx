@@ -840,7 +840,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
     <>
       <div className="bg-paper border border-line rounded p-5 mb-4">
         <div className="flex items-start gap-4 max-md:flex-col">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center text-white text-[26px] flex-shrink-0" style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, #008899 100%)" }}>
+          <div className="w-14 h-14 rounded-full flex items-center justify-center text-white text-[26px] flex-shrink-0" style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%)" }}>
             🤖
           </div>
           <div className="flex-1">
@@ -903,7 +903,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
             if (m.role === "ai") {
               return (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), #008899)" }}>
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), var(--color-brand-light))" }}>
                     🤖
                   </div>
                   <div className="max-w-[80%]">
@@ -935,7 +935,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
           })}
 
           <div className="flex items-start gap-2">
-            <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), #008899)" }}>
+            <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), var(--color-brand-light))" }}>
               🤖
             </div>
             <div className="bg-white border border-line rounded-lg rounded-tl-none px-4 py-3 flex items-center gap-1">

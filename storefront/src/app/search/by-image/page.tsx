@@ -1,3 +1,9 @@
+/**
+ * /search/by-image — Marketing/landing page cho visual search feature.
+ * Server component (metadata + Breadcrumb), SEO-friendly.
+ * Companion: /search/visual = functional upload UI (client component).
+ * Audit Sprint 4 Phase 3 confirmed NOT duplicate (92% file diff).
+ */
 import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 

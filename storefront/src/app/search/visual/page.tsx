@@ -1,5 +1,12 @@
 "use client"
 
+/**
+ * /search/visual — Functional visual search upload page.
+ * Client component, uses useVisualSearch hook.
+ * Companion: /search/by-image = SEO landing/marketing page.
+ * Audit Sprint 4 Phase 3 confirmed NOT duplicate (92% file diff).
+ */
+
 import { useState, useCallback } from "react"
 import { useVisualSearch } from "@/lib/hooks/useVisualSearch"
 import { VisualSearchResults } from "@/components/search/VisualSearchResults"
