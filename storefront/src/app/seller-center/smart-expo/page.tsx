@@ -3,20 +3,20 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 
 const UPCOMING = [
-  { date: "12-16/06/2026", title: "Furniture Asia Cloud Expo", topic: "Sofa · Bedroom · Office furniture", buyer: "Đông Nam Á + Úc", img: 21 },
+  { date: "12-16/06/2026", title: "Furniture Asia Cloud Expo", topic: "Sofa · Phòng ngủ · Nội thất văn phòng", buyer: "Đông Nam Á + Úc", img: 21 },
   { date: "20-24/06/2026", title: "Smart Home & Lighting", topic: "LED · Smart switches · IoT", buyer: "Việt Nam + Thái Lan", img: 22 },
-  { date: "08-12/07/2026", title: "Building Materials Asia", topic: "Tile · Sanitary · Door & Window", buyer: "Việt Nam + Indonesia", img: 23 },
-  { date: "22-26/07/2026", title: "Garments & Textiles", topic: "Knitwear · Denim · Home textile", buyer: "Toàn Đông Nam Á", img: 24 },
+  { date: "08-12/07/2026", title: "Building Materials Asia", topic: "Gạch · Sanitary · Cửa & Cửa sổ", buyer: "Việt Nam + Indonesia", img: 23 },
+  { date: "22-26/07/2026", title: "Garments & Textiles", topic: "Đồ dệt kim · Denim · Vải gia dụng", buyer: "Toàn Đông Nam Á", img: 24 },
 ];
 
 const STEPS = [
-  { n: 1, title: "Chọn gói gian hàng", desc: "Standard $480 · Premium $1,280 · Diamond $3,200 — bao gồm thiết kế 3D, video intro, livestream slot." },
+  { n: 1, title: "Chọn gói gian hàng", desc: "Tiêu chuẩn $480 · Cao cấp $1,280 · Kim cương $3,200 — bao gồm thiết kế 3D, video intro, livestream slot." },
   { n: 2, title: "Upload SKU + media", desc: "Tối thiểu 12 sản phẩm hot, 1 video factory tour 60-90 giây, profile công ty song ngữ VN-CN." },
   { n: 3, title: "Live + chat realtime", desc: "Trong 5 ngày expo: 2 buổi livestream/ngày, chat AI dịch tự động VN ↔ CN, lịch hẹn 1-1 với buyer." },
 ];
 
 const BOOTHS = [
-  { name: "KUKA Home Furniture", industry: "Sofa · Bedroom", visits: "2,840", img: 31 },
+  { name: "KUKA Home Furniture", industry: "Sofa · Phòng ngủ", visits: "2,840", img: 31 },
   { name: "Foshan Tile Master", industry: "Porcelain Tile", visits: "1,920", img: 32 },
   { name: "Shenzhen LED Co.", industry: "Smart Lighting", visits: "1,650", img: 33 },
   { name: "Ortonbaths Group", industry: "Sanitary Ware", visits: "2,210", img: 34 },
@@ -34,7 +34,7 @@ const STATS = [
 export default function SmartExpoPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Smart Expo đám mây" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Smart Expo đám mây" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/smart-expo" />
         <div>
@@ -63,7 +63,7 @@ export default function SmartExpoPage() {
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
               {UPCOMING.map((u) => (
                 <div key={u.title} className="border border-line rounded overflow-hidden hover:border-brand grid grid-cols-[120px_1fr] max-md:grid-cols-1">
-                  <img src={`https://picsum.photos/seed/seller-expo-${u.img}/240/180`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
+                  <img src={`/img/seller-expo-${u.img}.jpg?v=4`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
                   <div className="p-3">
                     <span className="text-[10.5px] text-accent font-bold uppercase tracking-wider">{u.date}</span>
                     <b className="block text-[13.5px] text-ink mt-1 mb-1">{u.title}</b>
@@ -98,7 +98,7 @@ export default function SmartExpoPage() {
               {BOOTHS.map((b) => (
                 <div key={b.name} className="border border-line rounded overflow-hidden hover:border-brand">
                   <div className="aspect-video bg-[#F5F5F5] relative">
-                    <img src={`https://picsum.photos/seed/seller-booth-${b.img}/320/180`} alt="" className="w-full h-full object-cover" />
+                    <img src={`/img/seller-booth-${b.img}.jpg?v=4`} alt="" className="w-full h-full object-cover" />
                     <span className="absolute top-2 right-2 bg-success text-white text-[10px] font-bold px-2 py-0.5 rounded-sm">3D</span>
                   </div>
                   <div className="p-3">
@@ -116,7 +116,7 @@ export default function SmartExpoPage() {
 
           <div className="bg-brand-dark text-white rounded p-5 text-center">
             <b className="block text-[18px] mb-2">🎟 Đăng gian hàng cho Furniture Asia 12-16/06</b>
-            <p className="text-[12.5px] opacity-90 mb-4">Slot Diamond chỉ còn 8 — Premium còn 24. Đăng trước 25/05 giảm 30%.</p>
+            <p className="text-[12.5px] opacity-90 mb-4">Slot Kim cương chỉ còn 8 — Premium còn 24. Đăng trước 25/05 giảm 30%.</p>
             <button className="bg-gold text-brand-dark px-7 py-3 rounded-sm font-bold text-[14px]">Tạo gian hàng ảo ngay</button>
           </div>
         </div>

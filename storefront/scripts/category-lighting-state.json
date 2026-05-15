@@ -1,0 +1,40 @@
+{
+  "category": "lighting",
+  "startedAt": "2026-05-12T03:47:41.156Z",
+  "items": [
+    {
+      "slug": "cat5-s1-2",
+      "vn": "Đèn LED tuýp T8 18W 1.2m",
+      "status": "error",
+      "tries": 3,
+      "error": "safety filter",
+      "actual": "1.2m T8 LED tube light on white background",
+      "confidence": 0.8
+    },
+    {
+      "slug": "cat5-10",
+      "vn": "Đèn tuýp LED T8 18W 1.2m",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Frosted T8 LED tube light in warehouse setting.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat5-s8-5",
+      "vn": "Công tắc smart Wi-Fi 1 nút",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Sleek white tempered glass 1-gang smart touch switch",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat5-s3-7",
+      "vn": "Đèn motif Noel hình tuần lộc",
+      "status": "ok",
+      "tries": 4,
+      "actual": "Large glowing white LED reindeer motif in public square.",
+      "confidence": 0.98
+    }
+  ],
+  "updatedAt": "2026-05-12T03:49:07.201Z"
+}

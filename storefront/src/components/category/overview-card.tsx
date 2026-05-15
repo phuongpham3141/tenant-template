@@ -9,10 +9,7 @@ export function OverviewCard({ data }: { data: CategoryPage }) {
     <div className="max-w-[1400px] mx-auto px-4 mt-4">
       <div className="bg-paper border border-line rounded overflow-hidden grid grid-cols-[280px_1fr] min-h-[480px] max-md:grid-cols-1">
         <aside className="border-r border-line bg-[#FCFBF8] p-4 max-md:border-r-0 max-md:border-b">
-          <h1 className="text-[20px] font-bold text-ink mb-1">
-            {data.title}
-            {data.cn && <span className="text-mute font-normal text-[14px] ml-2">· {data.cn}</span>}
-          </h1>
+          <h1 className="text-[20px] font-bold text-ink mb-1">{data.title}</h1>
           <p className="text-[12px] text-mute mb-4 leading-relaxed">{data.intro}</p>
           {data.overview.groups.map((g) => (
             <div key={g.title} className="mb-4 last:mb-0">

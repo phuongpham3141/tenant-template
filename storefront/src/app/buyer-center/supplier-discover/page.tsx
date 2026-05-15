@@ -18,15 +18,15 @@ const SORTS = [
 export default function SupplierDiscoverPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Khám phá nhà cung cấp" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Khám phá nhà cung cấp" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/supplier-discover" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 SUPPLIER DISCOVER</div>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 KHÁM PHÁ NHÀ CUNG CẤP</div>
             <h1 className="text-[22px] font-bold text-ink">Khám phá nhà cung cấp</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Hơn 4.500 nhà máy đã được AlibabaVN thẩm định, lọc theo ngành, vùng sản xuất, quy mô và năm thành lập. Mọi NCC ở đây đều có ít nhất 1 đơn thành công với buyer Việt và sẵn sàng làm việc bằng email tiếng Việt.
+              Hơn 4.500 nhà máy đã được Cybersilkroads thẩm định, lọc theo ngành, vùng sản xuất, quy mô và năm thành lập. Mọi NCC ở đây đều có ít nhất 1 đơn thành công với buyer Việt và sẵn sàng làm việc bằng email tiếng Việt.
             </p>
           </div>
 
@@ -69,8 +69,8 @@ export default function SupplierDiscoverPage() {
                     </Link>
                     <span className="text-[11px] text-mute">{f.location}</span>
                     <div className="flex gap-1 mt-1 flex-wrap">
-                      {f.badges.gold && <span className="text-[9.5px] bg-gold text-brand-dark px-1.5 py-0.5 rounded-sm font-bold">GOLD</span>}
-                      {f.badges.audited && <span className="text-[9.5px] bg-success/20 text-success px-1.5 py-0.5 rounded-sm font-bold">✓ AUDITED</span>}
+                      {f.badges.gold && <span className="text-[9.5px] bg-gold text-brand-dark px-1.5 py-0.5 rounded-sm font-bold">VÀNG</span>}
+                      {f.badges.audited && <span className="text-[9.5px] bg-success/20 text-success px-1.5 py-0.5 rounded-sm font-bold">✓ ĐÃ KIỂM ĐỊNH</span>}
                       <span className="text-[9.5px] bg-brand/10 text-brand px-1.5 py-0.5 rounded-sm font-bold">{f.badges.years}</span>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function SupplierDiscoverPage() {
                 <div className="grid grid-cols-3 gap-2 mb-3 text-center">
                   <div className="bg-[#FAFBFC] rounded-sm py-1.5">
                     <b className="block text-[12px] text-success">★ {f.rating}</b>
-                    <span className="text-[9.5px] text-mute">{f.reviews} reviews</span>
+                    <span className="text-[9.5px] text-mute">{f.reviews} đánh giá</span>
                   </div>
                   <div className="bg-[#FAFBFC] rounded-sm py-1.5">
                     <b className="block text-[11px] text-ink">{f.meta}</b>

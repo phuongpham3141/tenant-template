@@ -16,7 +16,7 @@ const MODES = [
     title: "FCL Sea (full container)",
     leadtime: "8-12 ngày",
     cost: "$1,800-3,200/cont 40'",
-    bestFor: "Đơn lớn > 28 CBM, hotel chain, dự án",
+    bestFor: "Đơn lớn > 28 CBM, chuỗi khách sạn, dự án",
     pros: ["Đơn giá rẻ nhất tính theo m³", "An toàn (không gom với hàng khác)", "Tracking realtime"],
   },
   {
@@ -52,7 +52,7 @@ const ROUTES = [
 export default function LogisticsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Logistics quốc tế" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Logistics quốc tế" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/logistics" />
         <div>
@@ -60,7 +60,7 @@ export default function LogisticsPage() {
             <div className="inline-block bg-brand/15 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🚢 INTERNATIONAL LOGISTICS</div>
             <h1 className="text-[22px] font-bold text-ink">Logistics quốc tế cho NCC</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              3 phương thức vận chuyển + 8 forwarders + 6 lộ trình phổ biến TQ-VN. Báo giá real-time, tracking 24/7, DDP option giúp buyer không lo thông quan. Tích hợp escrow STS cho mọi đơn vận.
+              3 phương thức vận chuyển + 8 forwarders + 6 lộ trình phổ biến TQ-VN. Báo giá real-time, tracking 24/7, DDP option giúp buyer không lo thông quan. Tích hợp trung gian STS cho mọi đơn vận.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export default function LogisticsPage() {
                 <b className="block text-[14px] text-ink mb-2">{m.title}</b>
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   <div className="bg-[#FAFBFC] rounded p-2">
-                    <span className="text-[10px] text-mute block">Lead time</span>
+                    <span className="text-[10px] text-mute block">Thời gian giao</span>
                     <b className="text-[12px] text-brand">{m.leadtime}</b>
                   </div>
                   <div className="bg-[#FAFBFC] rounded p-2">
@@ -114,7 +114,7 @@ export default function LogisticsPage() {
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {FORWARDERS.map((f) => (
                 <div key={f.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
-                  <img src={`https://picsum.photos/seed/seller-fwd-${f.img}/40/40`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
+                  <img src={`/img/seller-fwd-${f.img}.jpg?v=4`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
                   <div className="min-w-0">
                     <b className="block text-[12.5px] text-ink truncate">{f.name}</b>
                     <span className="text-[10.5px] text-mute">{f.coverage}</span>

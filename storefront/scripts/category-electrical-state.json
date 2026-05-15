@@ -1,0 +1,16 @@
+{
+  "category": "electrical",
+  "startedAt": "2026-05-12T04:44:44.795Z",
+  "items": [
+    {
+      "slug": "cat11-s2-6",
+      "vn": "Tower socket 8 lỗ + 4 USB",
+      "status": "ok",
+      "tries": 4,
+      "error": "rate limited all attempts",
+      "actual": "Vertical black and grey tower power strip with 8 outlets, 4 USB.",
+      "confidence": 0.95
+    }
+  ],
+  "updatedAt": "2026-05-12T04:48:37.846Z"
+}

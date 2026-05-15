@@ -10,7 +10,7 @@ export function NotFoundBlock({ keyword }: { keyword: string }) {
             Tìm nguồn dễ dàng
           </b>
           <p className="text-[12px] text-mute mb-3 leading-relaxed">
-            Mô tả nhu cầu, các nhà cung cấp đã được audit sẽ phản hồi bạn.
+            Mô tả nhu cầu, các nhà cung cấp đã được kiểm định sẽ phản hồi bạn.
           </p>
           <form className="flex gap-2 max-md:flex-col">
             <input

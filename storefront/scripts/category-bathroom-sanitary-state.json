@@ -1,0 +1,31 @@
+{
+  "category": "bathroom-sanitary",
+  "startedAt": "2026-05-11T07:52:15.112Z",
+  "items": [
+    {
+      "slug": "cat3-s1-7",
+      "vn": "Bồn tiểu nữ sứ trắng",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "White ceramic wall-mounted male urinal",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat3-s2-1",
+      "vn": "Lavabo âm bàn oval 60×40",
+      "status": "ok",
+      "tries": 2,
+      "actual": "White oval basin integrated flush with marble countertop",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat3-s8-2",
+      "vn": "Nhà vệ sinh di động HDPE",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Blue HDPE portable toilet with ventilation pipe and lockable door.",
+      "confidence": 0.95
+    }
+  ],
+  "updatedAt": "2026-05-11T07:53:21.630Z"
+}

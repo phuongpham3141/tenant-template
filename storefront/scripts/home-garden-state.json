@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-05-11T07:09:09.495Z",
+  "updatedAt": "2026-05-11T07:10:49.666Z",
+  "items": [
+    {
+      "slug": "cat1-s2-5",
+      "vn": "Quả cầu thủy tinh phản chiếu 30cm",
+      "en": "30cm reflective mirror gazing globe ball, iridescent blue color, on metal stand in garden",
+      "status": "ok",
+      "actual": "Reflective blue globe with white continents on a metal stand",
+      "tries": 3,
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat1-s3-0",
+      "vn": "Chậu composite tròn cao 60cm",
+      "en": "Round tall composite plant pot 60cm height, modern beige minimalist design, empty",
+      "status": "ok",
+      "actual": "Tall, round, beige composite plant pot, 60cm height, empty.",
+      "tries": 2,
+      "confidence": 1
+    },
+    {
+      "slug": "cat1-s5-7",
+      "vn": "Đèn cột sân vườn cao 2m",
+      "en": "2-meter tall garden post light, black metal pillar with classic lantern fixture top",
+      "status": "ok",
+      "actual": "Black metal garden post light with classic lantern top.",
+      "tries": 2,
+      "confidence": 1
+    },
+    {
+      "slug": "cat1-s6-0",
+      "vn": "Bộ hộp đựng đồ nhựa PP 5 món",
+      "en": "5-piece PP plastic storage box container set, clear transparent with lids, stackable",
+      "status": "ok",
+      "actual": "Three clear, stackable plastic storage containers with lids.",
+      "tries": 1,
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat1-s6-1",
+      "vn": "Móc treo dán tường chịu lực 5kg",
+      "en": "Strong adhesive wall hook holder rated 5kg, white plastic, hanging from wall",
+      "status": "ok",
+      "actual": "White plastic adhesive wall hook, strong support 5kg",
+      "tries": 2,
+      "confidence": 1
+    }
+  ]
+}

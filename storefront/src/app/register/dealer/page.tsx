@@ -14,7 +14,7 @@ export default function RegisterDealerPage() {
 
           <div className="grid grid-cols-3 gap-3 mb-5 max-md:grid-cols-1">
             {[
-              { icon: "🏭", t: "Audit miễn phí", d: "1 lần audit on-site nhà máy bạn chọn (giá trị $400)" },
+              { icon: "🏭", t: "Kiểm định miễn phí", d: "1 lần kiểm định tại chỗ nhà máy bạn chọn (giá trị $400)" },
               { icon: "💰", t: "Giảm 10% đơn đầu", d: "Áp dụng cho đơn $5K+ từ NCC trong nền tảng" },
               { icon: "🚚", t: "Free DDP", d: "Miễn cước DDP đơn đầu (tối đa $300)" },
             ].map((p) => (
@@ -70,7 +70,7 @@ export default function RegisterDealerPage() {
             </div>
             <label className="flex items-start gap-2 text-[12px] text-mute mt-4">
               <input type="checkbox" required className="accent-brand mt-0.5" />
-              <span>Đồng ý <Link href="/info/dieu-khoan" className="text-brand">Điều khoản</Link> và sử dụng audit miễn phí trong 90 ngày.</span>
+              <span>Đồng ý <Link href="/info/terms-of-service" className="text-brand">Điều khoản</Link> và sử dụng audit miễn phí trong 90 ngày.</span>
             </label>
             <button type="submit" className="w-full py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90 mt-3">Đăng ký Dealer & Nhận ưu đãi →</button>
           </form>
@@ -80,7 +80,7 @@ export default function RegisterDealerPage() {
           <b className="block text-[14px] font-bold text-ink mb-3">🎯 Dealer khác nói gì</b>
           <div className="space-y-3 text-[12px] text-ink">
             <div className="border-l-2 border-gold pl-3">
-              <p className="leading-relaxed">&ldquo;Audit miễn phí giúp tôi tránh được 1 NCC fake — giá trị hơn $400 thực tế.&rdquo;</p>
+              <p className="leading-relaxed">&ldquo;Kiểm định miễn phí giúp tôi tránh được 1 NCC giả mạo — giá trị hơn $400 thực tế.&rdquo;</p>
               <span className="text-[11px] text-mute mt-1 block">— Trần Quang Hưng, VLXD Phương Nam</span>
             </div>
             <div className="border-l-2 border-gold pl-3">
@@ -94,4 +94,4 @@ export default function RegisterDealerPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Dealer — AlibabaVN" };
+export const metadata = { title: "Đăng ký Dealer — Cybersilkroads" };

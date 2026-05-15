@@ -1,0 +1,16 @@
+{
+  "category": "decoration",
+  "startedAt": "2026-05-12T04:40:15.370Z",
+  "items": [
+    {
+      "slug": "cat9-s8-6",
+      "vn": "Mannequin trẻ em 1m fiber",
+      "status": "error",
+      "tries": 1,
+      "actual": "1m child mannequin, matte white, plain background",
+      "confidence": 0.9,
+      "error": "safety filter"
+    }
+  ],
+  "updatedAt": "2026-05-12T04:40:40.964Z"
+}

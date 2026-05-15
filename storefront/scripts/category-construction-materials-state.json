@@ -1,0 +1,23 @@
+{
+  "category": "construction-materials",
+  "startedAt": "2026-05-11T07:37:46.517Z",
+  "items": [
+    {
+      "slug": "cat2-s1-5",
+      "vn": "Tôn lợp 5 sóng 0.45mm",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Metallic grey 5-wave corrugated roofing sheets on an industrial building.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat2-s1-6",
+      "vn": "Co ống thép DN50 90 độ",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Grey DN50 steel pipe elbow, approximately 45-60 degree bend, with flange.",
+      "confidence": 0.9
+    }
+  ],
+  "updatedAt": "2026-05-11T07:38:46.671Z"
+}

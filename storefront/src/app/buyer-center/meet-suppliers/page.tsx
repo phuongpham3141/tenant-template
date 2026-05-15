@@ -9,7 +9,7 @@ const EVENTS = [
     title: "Canton Fair Mùa Xuân 2026",
     date: "15/04 – 19/04/2026",
     location: "Quảng Châu · Trung Quốc",
-    desc: "Hội chợ XNK lớn nhất châu Á — 25,000 NCC, 5 ngành hàng. AlibabaVN tổ chức tour đoàn buyer Việt với phiên dịch + đặt lịch họp 1-1 trước.",
+    desc: "Hội chợ XNK lớn nhất châu Á — 25,000 NCC, 5 ngành hàng. Cybersilkroads tổ chức tour đoàn buyer Việt với phiên dịch + đặt lịch họp 1-1 trước.",
     color: "bg-accent",
     cta: "Đăng ký đoàn",
   },
@@ -18,7 +18,7 @@ const EVENTS = [
     title: "Vietnam Expo 2026 – Booth Trung Quốc",
     date: "08/05 – 11/05/2026",
     location: "Trung tâm Triển lãm Giảng Võ · Hà Nội",
-    desc: "120 nhà máy gốm sứ, nội thất, vệ sinh có booth tại Hà Nội. Đăng ký vé miễn phí cho buyer AlibabaVN, đặt lịch họp 30 phút/booth.",
+    desc: "120 nhà máy gốm sứ, nội thất, vệ sinh có booth tại Hà Nội. Đăng ký vé miễn phí cho buyer Cybersilkroads, đặt lịch họp 30 phút/booth.",
     color: "bg-brand",
     cta: "Lấy vé miễn phí",
   },
@@ -27,7 +27,7 @@ const EVENTS = [
     title: "Furniture China 2026 – Shanghai",
     date: "10/09 – 13/09/2026",
     location: "Thượng Hải · NECC Hongqiao",
-    desc: "Riêng cho ngành nội thất: KUKA, Landbond, OPPEIN, ZuoYou đều có booth. AlibabaVN tổ chức factory tour Phật Sơn ngay sau hội chợ (3 ngày).",
+    desc: "Riêng cho ngành nội thất: KUKA, Landbond, OPPEIN, ZuoYou đều có booth. Cybersilkroads tổ chức factory tour Phật Sơn ngay sau hội chợ (3 ngày).",
     color: "bg-gold text-brand-dark",
     cta: "Xem chi tiết tour",
   },
@@ -37,7 +37,7 @@ const BOOKING_STEPS = [
   { n: 1, title: "Chọn NCC bạn quan tâm", desc: "Lọc theo ngành / vùng sản xuất / năm lập, tick chọn 1–3 nhà máy." },
   { n: 2, title: "Chọn khung giờ họp", desc: "Đặt 30–60 phút, qua Zoom/Teams hoặc gặp trực tiếp tại Foshan/Shenzhen." },
   { n: 3, title: "Gửi agenda + tài liệu", desc: "Yêu cầu báo giá, sample, capacity report — chuẩn bị trước cho buổi họp hiệu quả." },
-  { n: 4, title: "Họp 1-1 với phiên dịch", desc: "AlibabaVN cung cấp phiên dịch Việt–Trung free cho 60 phút đầu tiên." },
+  { n: 4, title: "Họp 1-1 với phiên dịch", desc: "Cybersilkroads cung cấp phiên dịch Việt–Trung free cho 60 phút đầu tiên." },
 ];
 
 const SUPPLIERS = FACTORIES.slice(0, 6);
@@ -45,15 +45,15 @@ const SUPPLIERS = FACTORIES.slice(0, 6);
 export default function MeetSuppliersPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Gặp nhà cung cấp" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Gặp nhà cung cấp" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/meet-suppliers" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 MEET SUPPLIERS</div>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 GẶP NHÀ CUNG CẤP</div>
             <h1 className="text-[22px] font-bold text-ink">Gặp nhà cung cấp</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Gặp trực tiếp luôn hiệu quả hơn email. Từ hội chợ ngành đến phòng họp video 1-1, AlibabaVN giúp bạn tiếp cận nhà máy đúng cách: phiên dịch sẵn, agenda chuẩn, follow-up rõ ràng.
+              Gặp trực tiếp luôn hiệu quả hơn email. Từ hội chợ ngành đến phòng họp video 1-1, Cybersilkroads giúp bạn tiếp cận nhà máy đúng cách: phiên dịch sẵn, agenda chuẩn, follow-up rõ ràng.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export default function MeetSuppliersPage() {
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <b className="block text-[15px] text-ink mb-1">🎯 Đặt lịch họp 1-1 với nhà máy</b>
-            <p className="text-[12px] text-mute mb-4">Quy trình 4 bước, AlibabaVN lo logistics + phiên dịch.</p>
+            <p className="text-[12px] text-mute mb-4">Quy trình 4 bước, Cybersilkroads lo logistics + phiên dịch.</p>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 mb-5">
               {BOOKING_STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-3">

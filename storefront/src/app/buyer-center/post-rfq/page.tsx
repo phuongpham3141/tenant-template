@@ -6,7 +6,7 @@ import { NAV_CATEGORIES } from "@/data/home";
 const TIPS = [
   { icon: "📐", t: "Mô tả kỹ thông số kỹ thuật", d: "Kích thước, vật liệu, màu, trọng lượng — càng cụ thể, báo giá càng chính xác." },
   { icon: "🖼", t: "Đính kèm ảnh tham khảo", d: "1 ảnh đáng giá 1.000 chữ — NCC sẽ hiểu nhanh hơn 10x." },
-  { icon: "📅", t: "Ghi rõ deadline", d: "Có deadline cụ thể (vd: nhận hàng trước 15/06) giúp NCC từ chối sớm nếu không kịp." },
+  { icon: "📅", t: "Ghi rõ thời hạn", d: "Có thời hạn cụ thể (vd: nhận hàng trước 15/06) giúp NCC từ chối sớm nếu không kịp." },
   { icon: "💵", t: "Cho khoảng ngân sách", d: "Báo trước budget giúp NCC chọn đúng phân khúc — tránh báo giá quá cao/thấp lệch lạc." },
 ];
 
@@ -19,7 +19,7 @@ export default async function PostRfqPage({
 
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Đăng yêu cầu báo giá" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Đăng yêu cầu báo giá" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/post-rfq" />
         <div>
@@ -27,7 +27,7 @@ export default async function PostRfqPage({
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📨 RFQ — REQUEST FOR QUOTATION</div>
             <h1 className="text-[22px] font-bold leading-tight">Đăng yêu cầu báo giá</h1>
             <p className="text-[13px] opacity-90 mt-2 leading-relaxed">
-              Mô tả 1 lần — gửi đến 5–10 nhà máy phù hợp. Báo giá kèm sample, lead time, DDP về VN trong 24h. Free, không cần đặt cọc.
+              Mô tả 1 lần — gửi đến 5–10 nhà máy phù hợp. Báo giá kèm sample, thời gian giao, DDP về VN trong 24h. Free, không cần đặt cọc.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default async function PostRfqPage({
               <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Sản phẩm cần tìm <span className="text-accent">*</span></label>
-                  <input name="q" defaultValue={sp.q ?? ""} placeholder="Vd: porcelain tile 600x1200 calacatta white" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+                  <input name="q" defaultValue={sp.q ?? ""} placeholder="Vd: gạch porcelain 600x1200 calacatta white" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
                 </div>
                 <div>
                   <label className="block text-[12px] font-semibold text-ink mb-1">Danh mục</label>
@@ -54,7 +54,7 @@ export default async function PostRfqPage({
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Mô tả chi tiết</label>
-                  <textarea name="desc" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, deadline..." className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand resize-none" />
+                  <textarea name="desc" defaultValue={sp.desc ?? ""} rows={5} placeholder="Mô tả sản phẩm: kích thước, màu sắc, vật liệu, tiêu chuẩn, thời hạn..." className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand resize-none" />
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12px] font-semibold text-ink mb-1">Ảnh tham khảo</label>
@@ -92,7 +92,7 @@ export default async function PostRfqPage({
                   </div>
                 </div>
                 <label className="col-span-2 flex items-center gap-2 text-[12px] text-mute pt-2">
-                  <input type="checkbox" defaultChecked className="accent-brand" /> Bật <b className="text-ink">Secured Trading Service</b> cho RFQ này (escrow + QC + bảo hiểm)
+                  <input type="checkbox" defaultChecked className="accent-brand" /> Bật <b className="text-ink">Dịch vụ giao dịch bảo đảm</b> cho RFQ này (trung gian + QC + bảo hiểm)
                 </label>
               </div>
               <div className="mt-4 pt-3 border-t border-line flex gap-3 items-center max-md:flex-col max-md:items-start">
@@ -123,11 +123,11 @@ export default async function PostRfqPage({
               </div>
 
               <div className="bg-success/5 border border-success/30 rounded p-4">
-                <b className="block text-[13px] text-success mb-2">🛡 Cam kết AlibabaVN</b>
+                <b className="block text-[13px] text-success mb-2">🛡 Cam kết Cybersilkroads</b>
                 <ul className="text-[11.5px] text-ink space-y-1">
                   <li>✓ Báo giá free, không cam kết đặt</li>
                   <li>✓ Audit nhà máy miễn phí trước đặt</li>
-                  <li>✓ Bảo vệ thanh toán Trade Assurance</li>
+                  <li>✓ Bảo vệ thanh toán Bảo đảm Giao dịch</li>
                   <li>✓ Hỗ trợ tiếng Việt 24/7</li>
                 </ul>
               </div>

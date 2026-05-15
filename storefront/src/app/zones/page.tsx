@@ -47,7 +47,7 @@ export default function ZonesPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
         <h2 className="text-[18px] font-bold text-ink mb-3">📍 Bản đồ cluster Trung Quốc</h2>
         <div className="relative rounded overflow-hidden h-[420px] bg-brand-dark">
-          <img src="https://picsum.photos/seed/china-map/1400/420" alt="map" className="w-full h-full object-cover opacity-50" />
+          <img src="/img/china-map.jpg?v=4" alt="map" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.5)" }}>
             <div className="text-center">
               <div className="text-[42px] mb-2">🗺️</div>
@@ -72,4 +72,4 @@ export default function ZonesPage() {
   );
 }
 
-export const metadata = { title: "Trading Zones — AlibabaVN" };
+export const metadata = { title: "Trading Zones — Cybersilkroads" };

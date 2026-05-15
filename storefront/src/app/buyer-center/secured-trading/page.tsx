@@ -5,8 +5,8 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 const LAYERS = [
   {
     icon: "💰",
-    title: "Escrow thanh toán",
-    desc: "Tiền của bạn được giữ tại tài khoản ký quỹ AlibabaVN, chỉ giải ngân cho NCC khi hàng đạt QC và bạn xác nhận đã nhận đủ.",
+    title: "Trung gian thanh toán",
+    desc: "Tiền của bạn được giữ tại tài khoản ký quỹ Cybersilkroads, chỉ giải ngân cho NCC khi hàng đạt QC và bạn xác nhận đã nhận đủ.",
     bullets: ["Ký quỹ tại ngân hàng đối tác (Vietcombank / BIDV)", "Giải ngân theo milestone: 30% cọc – 40% xuất xưởng – 30% nhận hàng", "Hoàn 100% nếu giao trễ > 30 ngày"],
   },
   {
@@ -18,41 +18,41 @@ const LAYERS = [
   {
     icon: "🚢",
     title: "Bảo hiểm vận chuyển",
-    desc: "Mọi container đi qua Secured Trading Service đều được mua bảo hiểm All-Risk với mức bồi thường lên đến 110% giá trị hàng.",
+    desc: "Mọi container đi qua Dịch vụ giao dịch bảo đảm đều được mua bảo hiểm All-Risk với mức bồi thường lên đến 110% giá trị hàng.",
     bullets: ["Bảo hiểm hợp tác cùng PVI / Bảo Việt", "Cover từ kho NCC đến kho buyer (DDP)", "Khiếu nại xử lý trong 14 ngày"],
   },
 ];
 
 const TIMELINE = [
-  { n: 1, title: "Ký hợp đồng & cọc qua escrow", desc: "Buyer chuyển 30% giá trị đơn vào tài khoản ký quỹ. NCC thấy 'đã đặt cọc' và bắt đầu sản xuất." },
+  { n: 1, title: "Ký hợp đồng & cọc qua tài khoản trung gian", desc: "Buyer chuyển 30% giá trị đơn vào tài khoản ký quỹ. NCC thấy 'đã đặt cọc' và bắt đầu sản xuất." },
   { n: 2, title: "Sản xuất + theo dõi tiến độ", desc: "NCC update ảnh dây chuyền hàng tuần. Bạn có thể đặt thêm QC giai đoạn (in-line inspection) tuỳ chọn." },
-  { n: 3, title: "QC kiểm hàng trước xuất", desc: "Sau khi NCC báo hoàn thành, đội QC AlibabaVN đến xưởng kiểm 10% lô. Đạt → niêm phong container." },
+  { n: 3, title: "QC kiểm hàng trước xuất", desc: "Sau khi NCC báo hoàn thành, đội QC Cybersilkroads đến xưởng kiểm 10% lô. Đạt → niêm phong container." },
   { n: 4, title: "Vận chuyển + bảo hiểm", desc: "Container ra cảng Yantian/Shanghai. Tự động kích hoạt bảo hiểm All-Risk. Tracking realtime trên Buyer Center." },
-  { n: 5, title: "Nhận hàng & xác nhận", desc: "Bạn kiểm hàng tại kho VN. Bấm 'Xác nhận đã nhận đủ' → escrow giải ngân nốt cho NCC. Đơn đóng." },
+  { n: 5, title: "Nhận hàng & xác nhận", desc: "Bạn kiểm hàng tại kho VN. Bấm 'Xác nhận đã nhận đủ' → tài khoản trung gian giải ngân nốt cho NCC. Đơn đóng." },
 ];
 
 const FEES = [
-  { service: "Escrow service", fee: "0.5%", per: "trên giá trị giao dịch", note: "Áp dụng tự động cho mọi đơn STS" },
+  { service: "Dịch vụ trung gian", fee: "0.5%", per: "trên giá trị giao dịch", note: "Áp dụng tự động cho mọi đơn STS" },
   { service: "Bảo hiểm All-Risk", fee: "1.2%", per: "trên giá trị FOB", note: "Có thể tăng/giảm tuỳ tuyến và giá trị hàng" },
   { service: "QC kiểm hàng tại xưởng", fee: "$300", per: "/lần kiểm 1 nhà máy", note: "Tuỳ chọn — buyer có thể bỏ qua nếu NCC đã có chứng chỉ" },
   { service: "QC giai đoạn (in-line)", fee: "$220", per: "/lần", note: "Khuyến nghị cho đơn > $50,000 hoặc OEM" },
-  { service: "Phiên dịch hợp đồng VN-CN", fee: "Free", per: "60 phút đầu", note: "$50/giờ tiếp theo" },
+  { service: "Phiên dịch hợp đồng VN-CN", fee: "Miễn phí", per: "60 phút đầu", note: "$50/giờ tiếp theo" },
 ];
 
 const CASES = [
   {
     title: "Showroom HCM mua $42K gạch porcelain",
-    desc: "QC phát hiện 8% lô hàng nứt do vận chuyển nội địa CN. Buyer được đổi 100% lô lỗi, NCC phải chịu phí, escrow giữ tiền cho đến khi nhận lô mới đạt QC.",
+    desc: "QC phát hiện 8% lô hàng nứt do vận chuyển nội địa CN. Buyer được đổi 100% lô lỗi, NCC phải chịu phí, tài khoản trung gian giữ tiền cho đến khi nhận lô mới đạt QC.",
     saved: "$3,360",
   },
   {
     title: "Hotel 4-sao Đà Nẵng đặt 80 smart toilet",
-    desc: "Container bị cháy 1 phần khi quá cảnh Singapore. Bảo hiểm AlibabaVN bồi thường $14,400 (110% giá FOB) trong 9 ngày — buyer kịp đặt lại lô mới cho khai trương.",
+    desc: "Container bị cháy 1 phần khi quá cảnh Singapore. Bảo hiểm Cybersilkroads bồi thường $14,400 (110% giá FOB) trong 9 ngày — buyer kịp đặt lại lô mới cho khai trương.",
     saved: "$14,400",
   },
   {
     title: "Đại lý nội thất Hà Nội ký hợp đồng OEM $120K",
-    desc: "NCC chậm sản xuất 45 ngày so với hợp đồng. Buyer kích hoạt điều khoản phạt — escrow tự động hoàn 30% giá trị về buyer, đơn được huỷ không phí.",
+    desc: "NCC chậm sản xuất 45 ngày so với hợp đồng. Buyer kích hoạt điều khoản phạt — tài khoản trung gian tự động hoàn 30% giá trị về buyer, đơn được huỷ không phí.",
     saved: "$36,000",
   },
 ];
@@ -60,12 +60,12 @@ const CASES = [
 export default function SecuredTradingPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Dịch vụ giao dịch bảo đảm" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Dịch vụ giao dịch bảo đảm" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/secured-trading" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🔒 SECURED TRADING SERVICE</div>
+            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🔒 GIAO DỊCH BẢO ĐẢM</div>
             <h1 className="text-[22px] font-bold text-ink">Dịch vụ giao dịch bảo đảm</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
               Mua sỉ xuyên biên giới — rủi ro thường lớn hơn lợi nhuận: hàng giả mô tả, chậm giao, NCC ôm tiền, container hỏng. STS là lá chắn 3 lớp giúp bạn yên tâm chuyển khoản: tiền chỉ đến NCC khi hàng đến tay bạn đúng cam kết.

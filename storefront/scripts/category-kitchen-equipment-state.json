@@ -1,0 +1,58 @@
+{
+  "category": "kitchen-equipment",
+  "startedAt": "2026-05-12T03:43:43.123Z",
+  "items": [
+    {
+      "slug": "cat4-s7-3",
+      "vn": "Hộp đựng thực phẩm BPA-free 18 món",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Clear plastic food storage containers with blue lids, stacked in a pantry.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat4-s4-1",
+      "vn": "Bếp gas âm 3 vùng inox",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "A professional-grade 6-burner stainless steel gas range with cast iron grates.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat4-s8-0",
+      "vn": "Bếp công nghiệp gas 2 lò + bồn",
+      "status": "error",
+      "tries": 3,
+      "actual": "Silver stainless steel commercial gas range with two burners and sink.",
+      "confidence": 0.9,
+      "error": "safety filter"
+    },
+    {
+      "slug": "cat4-s8-2",
+      "vn": "Tủ đông 4 cánh inox 304",
+      "status": "mismatch",
+      "tries": 4,
+      "error": "safety filter",
+      "actual": "A 4-door stainless steel commercial refrigerator on white background.",
+      "confidence": 0.8
+    },
+    {
+      "slug": "cat4-s8-4",
+      "vn": "Bàn chế biến inox 2 tầng 1.5m",
+      "status": "error",
+      "tries": 2,
+      "error": "safety filter",
+      "actual": "A 2-tier stainless steel prep table with vegetables and a knife.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat4-s8-3",
+      "vn": "Tủ hấp dim sum 24 khay",
+      "status": "ok",
+      "tries": 4,
+      "actual": "Large stainless steel commercial dim sum steamer with 24 trays",
+      "confidence": 0.9
+    }
+  ],
+  "updatedAt": "2026-05-12T03:46:54.949Z"
+}

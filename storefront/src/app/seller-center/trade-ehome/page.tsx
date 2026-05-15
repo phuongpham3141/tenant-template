@@ -3,8 +3,8 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TOOLS = [
-  { icon: "📦", name: "Quản lý sản phẩm", desc: "Upload bulk CSV, gán thuộc tính theo ngành, version pricing OEM/ODM, kiểm tra chuẩn AlibabaVN listing.", count: "412 SKU đang hoạt động" },
-  { icon: "📋", name: "Quản lý đơn hàng", desc: "Pipeline kanban: RFQ → Báo giá → PI → Cọc → Sản xuất → Xuất xưởng → Giao. Tích hợp escrow.", count: "23 đơn đang xử lý" },
+  { icon: "📦", name: "Quản lý sản phẩm", desc: "Upload bulk CSV, gán thuộc tính theo ngành, version pricing OEM/ODM, kiểm tra chuẩn Cybersilkroads listing.", count: "412 SKU đang hoạt động" },
+  { icon: "📋", name: "Quản lý đơn hàng", desc: "Pipeline kanban: RFQ → Báo giá → PI → Cọc → Sản xuất → Xuất xưởng → Giao. Tích hợp trung gian.", count: "23 đơn đang xử lý" },
   { icon: "📨", name: "RFQ inbox", desc: "Toàn bộ yêu cầu báo giá từ buyer Việt Nam, lọc theo ngành/giá trị/MOQ. AI gợi ý template trả lời.", count: "23 RFQ chưa trả lời" },
   { icon: "💲", name: "Báo giá nhanh", desc: "Tạo PI / quote chuyên nghiệp song ngữ VN-CN trong 30 giây. Tự sync với pricing matrix.", count: "Trung bình 18 phút/quote" },
   { icon: "🚚", name: "Theo dõi vận chuyển", desc: "Tracking realtime container từ Yantian/Shanghai → Hải Phòng/HCM. Auto cập nhật buyer.", count: "8 container in-transit" },
@@ -23,7 +23,7 @@ const INTEGRATIONS = [
 ];
 
 const STEPS = [
-  { n: 1, title: "Đăng nhập một lần", desc: "Single Sign-On với tài khoản Gold AlibabaVN" },
+  { n: 1, title: "Đăng nhập một lần", desc: "Đăng nhập một lần (SSO) với tài khoản Vàng Cybersilkroads" },
   { n: 2, title: "Kết nối ERP/WMS", desc: "Wizard tự động map fields, đồng bộ sản phẩm + tồn kho 2 chiều" },
   { n: 3, title: "Vận hành thống nhất", desc: "Toàn bộ team thấy cùng pipeline đơn hàng — không còn Excel rời rạc" },
 ];
@@ -31,7 +31,7 @@ const STEPS = [
 export default function TradeEhomePage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Foreign Trade e-Home" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Foreign Trade e-Home" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/trade-ehome" />
         <div>
@@ -66,7 +66,7 @@ export default function TradeEhomePage() {
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {INTEGRATIONS.map((i) => (
                 <div key={i.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
-                  <img src={`https://picsum.photos/seed/seller-ehome-int-${i.logo}/40/40`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
+                  <img src={`/img/seller-ehome-int-${i.logo}.jpg?v=4`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
                   <div className="min-w-0">
                     <b className="block text-[12px] text-ink truncate">{i.name}</b>
                     <span className="text-[10.5px] text-mute">{i.type}</span>

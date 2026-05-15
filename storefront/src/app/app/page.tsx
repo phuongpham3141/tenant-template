@@ -8,7 +8,7 @@ export default function AppPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
         <div className="bg-paper border border-line rounded grid grid-cols-[1fr_360px] gap-7 p-7 max-md:grid-cols-1 max-md:p-5">
           <div className="flex flex-col justify-center">
-            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 ALIBABAVN APP</span>
+            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 ỨNG DỤNG CYBERSILKROADS</span>
             <h1 className="text-[34px] font-extrabold text-ink leading-tight mb-3 max-md:text-[24px]">
               Sourcing tận tay — <span className="text-brand">không lỡ deal</span>
             </h1>
@@ -33,7 +33,7 @@ export default function AppPage() {
             </div>
             <div className="mt-5 pt-5 border-t border-line flex items-center gap-4 max-md:flex-col max-md:items-start">
               <div className="w-28 h-28 bg-paper border border-line rounded p-1.5 flex-shrink-0">
-                <img src="https://picsum.photos/seed/qrcode/200/200" alt="QR" className="w-full h-full object-cover rounded-sm" />
+                <img src="/img/qrcode.jpg?v=4" alt="QR" className="w-full h-full object-cover rounded-sm" />
               </div>
               <div>
                 <b className="block text-[13px] text-ink mb-1">Quét mã QR để tải nhanh</b>
@@ -54,7 +54,7 @@ export default function AppPage() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <img src="https://picsum.photos/seed/app-phone/360/640" alt="App screenshot" className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
+              <img src="/img/app-phone.jpg?v=4" alt="App screenshot" className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
               <div className="absolute -top-3 -right-3 bg-gold text-brand-dark px-3 py-1.5 rounded-full text-[11px] font-bold rotate-12 shadow">
                 +5% OFF
               </div>
@@ -79,4 +79,4 @@ export default function AppPage() {
   );
 }
 
-export const metadata = { title: "Tải app — AlibabaVN" };
+export const metadata = { title: "Tải app — Cybersilkroads" };

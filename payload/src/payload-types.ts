@@ -68,8 +68,36 @@ export interface Config {
   blocks: {};
   collections: {
     users: User;
-    pages: Page;
     media: Media;
+    pages: Page;
+    'blog-articles': BlogArticle;
+    banners: Banner;
+    'category-content': CategoryContent;
+    'industry-channels': IndustryChannel;
+    zones: Zone;
+    'trade-shows': TradeShow;
+    'trade-show-booths': TradeShowBooth;
+    'tour-packages': TourPackage;
+    'visa-applications': VisaApplication;
+    'hotel-bookings': HotelBooking;
+    associations: Association;
+    'association-events': AssociationEvent;
+    'trade-alert-subscriptions': TradeAlertSubscription;
+    'trade-alert-content': TradeAlertContent;
+    'email-templates': EmailTemplate;
+    'email-campaigns': EmailCampaign;
+    'supplier-site-pages': SupplierSitePage;
+    'site-blocks': SiteBlock;
+    'site-templates': SiteTemplate;
+    'supplier-brand-kits': SupplierBrandKit;
+    'help-articles': HelpArticle;
+    faqs: Faq;
+    'privacy-policy-versions': PrivacyPolicyVersion;
+    'tos-versions': TosVersion;
+    'ai-prompt-templates': AiPromptTemplate;
+    'ai-personas': AiPersona;
+    'ai-script-templates': AiScriptTemplate;
+    'avatar-library': AvatarLibrary;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,8 +106,36 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
-    pages: PagesSelect<false> | PagesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    'blog-articles': BlogArticlesSelect<false> | BlogArticlesSelect<true>;
+    banners: BannersSelect<false> | BannersSelect<true>;
+    'category-content': CategoryContentSelect<false> | CategoryContentSelect<true>;
+    'industry-channels': IndustryChannelsSelect<false> | IndustryChannelsSelect<true>;
+    zones: ZonesSelect<false> | ZonesSelect<true>;
+    'trade-shows': TradeShowsSelect<false> | TradeShowsSelect<true>;
+    'trade-show-booths': TradeShowBoothsSelect<false> | TradeShowBoothsSelect<true>;
+    'tour-packages': TourPackagesSelect<false> | TourPackagesSelect<true>;
+    'visa-applications': VisaApplicationsSelect<false> | VisaApplicationsSelect<true>;
+    'hotel-bookings': HotelBookingsSelect<false> | HotelBookingsSelect<true>;
+    associations: AssociationsSelect<false> | AssociationsSelect<true>;
+    'association-events': AssociationEventsSelect<false> | AssociationEventsSelect<true>;
+    'trade-alert-subscriptions': TradeAlertSubscriptionsSelect<false> | TradeAlertSubscriptionsSelect<true>;
+    'trade-alert-content': TradeAlertContentSelect<false> | TradeAlertContentSelect<true>;
+    'email-templates': EmailTemplatesSelect<false> | EmailTemplatesSelect<true>;
+    'email-campaigns': EmailCampaignsSelect<false> | EmailCampaignsSelect<true>;
+    'supplier-site-pages': SupplierSitePagesSelect<false> | SupplierSitePagesSelect<true>;
+    'site-blocks': SiteBlocksSelect<false> | SiteBlocksSelect<true>;
+    'site-templates': SiteTemplatesSelect<false> | SiteTemplatesSelect<true>;
+    'supplier-brand-kits': SupplierBrandKitsSelect<false> | SupplierBrandKitsSelect<true>;
+    'help-articles': HelpArticlesSelect<false> | HelpArticlesSelect<true>;
+    faqs: FaqsSelect<false> | FaqsSelect<true>;
+    'privacy-policy-versions': PrivacyPolicyVersionsSelect<false> | PrivacyPolicyVersionsSelect<true>;
+    'tos-versions': TosVersionsSelect<false> | TosVersionsSelect<true>;
+    'ai-prompt-templates': AiPromptTemplatesSelect<false> | AiPromptTemplatesSelect<true>;
+    'ai-personas': AiPersonasSelect<false> | AiPersonasSelect<true>;
+    'ai-script-templates': AiScriptTemplatesSelect<false> | AiScriptTemplatesSelect<true>;
+    'avatar-library': AvatarLibrarySelect<false> | AvatarLibrarySelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -88,10 +144,18 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
-  locale: null;
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('vi' | 'en' | 'cn') | ('vi' | 'en' | 'cn')[];
+  globals: {
+    'site-settings': SiteSetting;
+    navigation: Navigation;
+    footer: Footer;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    navigation: NavigationSelect<false> | NavigationSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
+  };
+  locale: 'vi' | 'en' | 'cn';
   widgets: {
     collections: CollectionsWidget;
   };
@@ -125,8 +189,33 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  displayName: string;
+  /**
+   * PG tenant_id (UUID). null = global superadmin.
+   */
+  tenantId?: string | null;
+  /**
+   * Link to Medusa identity.user.id for cross-system identity
+   */
+  medusaUserId?: string | null;
+  supplierId?: string | null;
+  roles: (
+    | 'superadmin'
+    | 'tenant_admin'
+    | 'content_editor'
+    | 'marketing_manager'
+    | 'support_agent'
+    | 'supplier_admin'
+    | 'supplier_user'
+  )[];
+  locale?: ('vi' | 'en' | 'cn') | null;
+  avatar?: (number | null) | Media;
+  lastSignInAt?: string | null;
   updatedAt: string;
   createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -146,13 +235,257 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  alt: string;
+  caption?: string | null;
+  credit?: string | null;
+  /**
+   * PG media.media_asset.id (sync target via afterChange hook)
+   */
+  mediaAssetId?: string | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  tenantId?: string | null;
+  uploadedBy?: (number | null) | User;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumb?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    card?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    tablet?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+    desktop?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
   id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
   title: string;
   slug: string;
-  content?: {
+  pageType: 'landing' | 'about' | 'contact' | 'legal' | 'help' | 'campaign';
+  sections?:
+    | (
+        | {
+            heading: string;
+            subheading?: string | null;
+            image?: (number | null) | Media;
+            ctaLabel?: string | null;
+            ctaUrl?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            content?: {
+              root: {
+                type: string;
+                children: {
+                  type: any;
+                  version: number;
+                  [k: string]: unknown;
+                }[];
+                direction: ('ltr' | 'rtl') | null;
+                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                indent: number;
+                version: number;
+              };
+              [k: string]: unknown;
+            } | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'richText';
+          }
+        | {
+            media?: (number | null) | Media;
+            caption?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'mediaBlock';
+          }
+        | {
+            items?:
+              | {
+                  title?: string | null;
+                  description?: string | null;
+                  image?: (number | null) | Media;
+                  link?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cards';
+          }
+        | {
+            heading?: string | null;
+            description?: string | null;
+            buttonLabel?: string | null;
+            buttonUrl?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+      )[]
+    | null;
+  publishWindow?: {
+    startAt?: string | null;
+    endAt?: string | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-articles".
+ */
+export interface BlogArticle {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  title: string;
+  slug: string;
+  excerpt?: string | null;
+  coverImage: number | Media;
+  category:
+    | 'market_news'
+    | 'trends'
+    | 'buyer_guide'
+    | 'supplier_story'
+    | 'policy'
+    | 'trade_show'
+    | 'product_launch'
+    | 'case_study';
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  author: number | User;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  relatedArticles?: (number | BlogArticle)[] | null;
+  industry?: (number | IndustryChannel)[] | null;
+  publishedAt?: string | null;
+  readTimeMinutes?: number | null;
+  allowComments?: boolean | null;
+  publishWindow?: {
+    startAt?: string | null;
+    endAt?: string | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industry-channels".
+ */
+export interface IndustryChannel {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  code: string;
+  name: string;
+  slug: string;
+  /**
+   * For sub-channels (e.g., electronics → consumer-electronics)
+   */
+  parentChannel?: (number | null) | IndustryChannel;
+  icon?: (number | null) | Media;
+  cover?: (number | null) | Media;
+  tagline?: string | null;
+  introduction?: {
     root: {
       type: string;
       children: {
@@ -167,32 +500,1847 @@ export interface Page {
     };
     [k: string]: unknown;
   } | null;
-  meta?: {
+  majorCategories?:
+    | {
+        medusaCategoryId: string;
+        label?: string | null;
+        order?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  spotlight?: {
+    headline?: string | null;
     description?: string | null;
-    image?: (number | null) | Media;
+    video?: (number | null) | Media;
   };
+  reportLinks?:
+    | {
+        title?: string | null;
+        pdf?: (number | null) | Media;
+        externalUrl?: string | null;
+        publishDate?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  tradeShows?: (number | TradeShow)[] | null;
+  displayOrder?: number | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
+ * via the `definition` "trade-shows".
  */
-export interface Media {
+export interface TradeShow {
   id: number;
-  alt: string;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  slug: string;
+  shortName?: string | null;
+  /**
+   * e.g., 2026 Spring, 134th edition
+   */
+  editionNumber?: string | null;
+  organizer?: {
+    name?: string | null;
+    website?: string | null;
+    logo?: (number | null) | Media;
+  };
+  industry?: (number | IndustryChannel)[] | null;
+  venue: {
+    name?: string | null;
+    addressLine1?: string | null;
+    city?: string | null;
+    country: string;
+    lat?: number | null;
+    lng?: number | null;
+  };
+  startDate: string;
+  endDate: string;
+  coverImage?: (number | null) | Media;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  introduction?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  highlights?:
+    | {
+        title?: string | null;
+        description?: string | null;
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  stats?: {
+    exhibitorCount?: number | null;
+    visitorCount?: number | null;
+    boothSpaceSqm?: number | null;
+    pavilionCount?: number | null;
+  };
+  pavilions?:
+    | {
+        code?: string | null;
+        name?: string | null;
+        theme?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  registrationUrl?: string | null;
+  price?: {
+    visitorTicketUsd?: number | null;
+    boothRentUsdPerSqm?: number | null;
+  };
+  website?: string | null;
+  relatedTours?: (number | TourPackage)[] | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tour-packages".
+ */
+export interface TourPackage {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  slug: string;
+  tourType: 'factory_tour' | 'show_tour' | 'sourcing_trip' | 'study_tour';
+  /**
+   * If show_tour type
+   */
+  tradeShow?: (number | null) | TradeShow;
+  durationDays: number;
+  departureCity: string;
+  destinations?:
+    | {
+        city?: string | null;
+        country?: string | null;
+        nights?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  itinerary?:
+    | {
+        day: number;
+        title?: string | null;
+        description?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        /**
+         * B/L/D codes
+         */
+        meals?: string | null;
+        accommodation?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  inclusions?:
+    | {
+        item?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  exclusions?:
+    | {
+        item?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  priceFromUsd: number;
+  minGroupSize?: number | null;
+  maxGroupSize?: number | null;
+  departureDates?:
+    | {
+        date: string;
+        available?: boolean | null;
+        priceUsd?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  visaRequired?: boolean | null;
+  interpreterLanguages?: ('vi' | 'en' | 'zh' | 'yue')[] | null;
+  coverImage: number | Media;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "banners".
+ */
+export interface Banner {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  /**
+   * Internal label
+   */
+  name: string;
+  placement:
+    | 'home_hero'
+    | 'home_secondary'
+    | 'category_top'
+    | 'search_top'
+    | 'product_side'
+    | 'checkout'
+    | 'email_header'
+    | 'supplier_site';
+  targetType: 'global' | 'category' | 'industry' | 'supplier' | 'country' | 'locale';
+  /**
+   * Category id, country code, locale, etc.
+   */
+  targetValue?: string | null;
+  creatives: {
+    image: number | Media;
+    imageMobile?: (number | null) | Media;
+    alt?: string | null;
+    headline?: string | null;
+    subheadline?: string | null;
+    ctaLabel?: string | null;
+    ctaUrl?: string | null;
+    locale?: ('all' | 'vi' | 'en' | 'cn') | null;
+    id?: string | null;
+  }[];
+  /**
+   * Higher = shown first
+   */
+  priority?: number | null;
+  rotationStrategy?: ('priority' | 'random' | 'weighted' | 'ab_test') | null;
+  weight?: number | null;
+  /**
+   * Link to A/B platform experiment_id
+   */
+  experimentId?: string | null;
+  publishWindow?: {
+    startAt?: string | null;
+    endAt?: string | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "category-content".
+ */
+export interface CategoryContent {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  /**
+   * PG catalog.category.id — content overlay for Medusa category
+   */
+  medusaCategoryId: string;
+  name: string;
+  slug: string;
+  shortDescription?: string | null;
+  longDescription?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  heroImage?: (number | null) | Media;
+  heroVideo?: (number | null) | Media;
+  featuredSuppliers?:
+    | {
+        supplierId: string;
+        displayOrder?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  featuredProducts?:
+    | {
+        productId: string;
+        displayOrder?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Buying guide content shown to buyers
+   */
+  buyersGuide?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  industryStats?:
+    | {
+        label?: string | null;
+        value?: string | null;
+        unit?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  relatedCategories?: (number | CategoryContent)[] | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zones".
+ */
+export interface Zone {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  slug: string;
+  industry: number | IndustryChannel;
+  /**
+   * ISO alpha-2
+   */
+  country: string;
+  region?: string | null;
+  city?: string | null;
+  coordinates?: {
+    lat?: number | null;
+    lng?: number | null;
+  };
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  images?:
+    | {
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  specialties?:
+    | {
+        specialty?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  stats?: {
+    factoryCount?: number | null;
+    annualExportUsdMillions?: number | null;
+    yearsEstablished?: number | null;
+    workforce?: number | null;
+  };
+  logistics?: {
+    nearestPort?: string | null;
+    nearestAirport?: string | null;
+    transitDaysToVN?: number | null;
+    transitDaysToUS?: number | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-show-booths".
+ */
+export interface TradeShowBooth {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  displayName: string;
+  tradeShow: number | TradeShow;
+  supplierId: string;
+  boothNumber?: string | null;
+  pavilion?: string | null;
+  boothSizeSqm?: number | null;
+  mapPosition?: {
+    x?: number | null;
+    y?: number | null;
+    floor?: string | null;
+  };
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  logo?: (number | null) | Media;
+  gallery?:
+    | {
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  featuredProducts?:
+    | {
+        productId: string;
+        displayOrder?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  video360?: {
+    tourUrl?: string | null;
+    previewImage?: (number | null) | Media;
+  };
+  staffOnDuty?:
+    | {
+        name?: string | null;
+        title?: string | null;
+        /**
+         * Comma separated, e.g., zh,en,vi
+         */
+        languages?: string | null;
+        whatsapp?: string | null;
+        wechat?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  appointmentEnabled?: boolean | null;
+  appointmentSlots?:
+    | {
+        startAt?: string | null;
+        durationMinutes?: number | null;
+        capacity?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visa-applications".
+ */
+export interface VisaApplication {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  customerId: string;
+  tourPackage?: (number | null) | TourPackage;
+  applicantName: string;
+  /**
+   * Encrypted at rest in PG, stored hash here for indexing
+   */
+  passportNumber: string;
+  nationality: string;
+  dateOfBirth: string;
+  gender?: ('male' | 'female' | 'other') | null;
+  destinationCountry: 'CN' | 'HK' | 'TW' | 'TH' | 'JP' | 'KR' | 'SG' | 'MY' | 'ID' | 'PH';
+  travelStartDate: string;
+  travelEndDate: string;
+  visaType: 'tourist' | 'business' | 'multi' | 'group';
+  documents?:
+    | {
+        docType?:
+          | (
+              | 'passport'
+              | 'photo'
+              | 'invitation'
+              | 'employment'
+              | 'bank_statement'
+              | 'flight_booking'
+              | 'hotel_booking'
+              | 'itinerary'
+            )
+          | null;
+        file?: (number | null) | Media;
+        uploadedAt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  status?: ('draft' | 'submitted' | 'review' | 'approved' | 'rejected' | 'cancelled') | null;
+  submittedAt?: string | null;
+  approvedAt?: string | null;
+  rejectionReason?: string | null;
+  visaServiceFeeUsd?: number | null;
+  /**
+   * Support agent handling this application
+   */
+  assignedAgent?: (number | null) | User;
+  /**
+   * Not visible to applicant
+   */
+  internalNotes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hotel-bookings".
+ */
+export interface HotelBooking {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  customerId: string;
+  tourPackage?: (number | null) | TourPackage;
+  tradeShow?: (number | null) | TradeShow;
+  hotelName: string;
+  hotelAddress: {
+    line1?: string | null;
+    city?: string | null;
+    country: string;
+  };
+  starRating?: number | null;
+  checkInDate: string;
+  checkOutDate: string;
+  roomCount?: number | null;
+  roomType?: ('single' | 'twin' | 'double' | 'triple' | 'suite' | 'family') | null;
+  guestCount?: number | null;
+  guestList?:
+    | {
+        name: string;
+        passportNumber?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  mealPlan?: ('none' | 'breakfast' | 'half_board' | 'full_board') | null;
+  specialRequests?: string | null;
+  totalPriceUsd?: number | null;
+  confirmationNumber?: string | null;
+  cancellationDeadline?: string | null;
+  status?: ('pending' | 'confirmed' | 'cancelled' | 'no_show' | 'completed') | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "associations".
+ */
+export interface Association {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  slug: string;
+  /**
+   * Abbreviation, e.g., VINASA, CCCME
+   */
+  shortName?: string | null;
+  country: 'VN' | 'CN' | 'TH' | 'ID' | 'PH' | 'MY' | 'SG' | 'LA' | 'KH' | 'MM';
+  associationType: 'industry_chamber' | 'trade_promotion' | 'standards' | 'cooperative' | 'export_council';
+  industry?: (number | IndustryChannel)[] | null;
+  logo?: (number | null) | Media;
+  website?: string | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  contact?: {
+    email?: string | null;
+    phone?: string | null;
+    address?: string | null;
+  };
+  memberCount?: number | null;
+  foundedYear?: number | null;
+  /**
+   * Cybersilkroads tenant partnership info
+   */
+  partnership?: {
+    isPartner?: boolean | null;
+    partnershipStartDate?: string | null;
+    mou?: (number | null) | Media;
+    contactPerson?: string | null;
+    /**
+     * Percentage discount for members
+     */
+    preferredMemberDiscount?: number | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "association-events".
+ */
+export interface AssociationEvent {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  slug: string;
+  association: number | Association;
+  eventType: 'conference' | 'webinar' | 'workshop' | 'networking' | 'matchmaking' | 'awards';
+  mode: 'online' | 'offline' | 'hybrid';
+  startDate: string;
+  endDate?: string | null;
+  venue?: {
+    name?: string | null;
+    address?: string | null;
+    city?: string | null;
+    country?: string | null;
+  };
+  streamUrl?: string | null;
+  description?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  agenda?:
+    | {
+        time?: string | null;
+        title?: string | null;
+        speaker?: string | null;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  speakers?:
+    | {
+        name: string;
+        title?: string | null;
+        company?: string | null;
+        bio?: string | null;
+        photo?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  coverImage?: (number | null) | Media;
+  registrationUrl?: string | null;
+  registrationFeeUsd?: number | null;
+  memberDiscountPct?: number | null;
+  capacity?: number | null;
+  publishWindow?: {
+    startAt?: string | null;
+    endAt?: string | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-alert-subscriptions".
+ */
+export interface TradeAlertSubscription {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  email: string;
+  fullName?: string | null;
+  phone?: string | null;
+  company?: string | null;
+  country?: string | null;
+  role?: string | null;
+  subscribedAs?: ('buyer' | 'supplier' | 'analyst' | 'journalist' | 'other') | null;
+  industry?: (number | IndustryChannel)[] | null;
+  productKeywords?:
+    | {
+        keyword?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  frequency?: ('daily' | 'weekly' | 'monthly' | 'realtime') | null;
+  channels?: ('email' | 'sms' | 'whatsapp' | 'zalo' | 'wechat')[] | null;
+  locale?: ('vi' | 'en' | 'cn') | null;
+  status?: ('active' | 'paused' | 'unsubscribed' | 'bounced' | 'complained') | null;
+  unsubscribeToken?: string | null;
+  lastSentAt?: string | null;
+  lastOpenedAt?: string | null;
+  totalSent?: number | null;
+  totalOpened?: number | null;
+  consentGdpr?: {
+    givenAt?: string | null;
+    ipAddress?: string | null;
+    consentVersion?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-alert-content".
+ */
+export interface TradeAlertContent {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  headline: string;
+  slug: string;
+  alertType: 'price' | 'trend' | 'policy' | 'shortage' | 'new_supplier' | 'trade_show' | 'regulatory';
+  severity?: ('info' | 'low' | 'medium' | 'high' | 'critical') | null;
+  industries?: (number | IndustryChannel)[] | null;
+  productKeywords?:
+    | {
+        keyword?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  countries?:
+    | {
+        code?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  summary: string;
+  fullContent?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  coverImage?: (number | null) | Media;
+  dataPoints?:
+    | {
+        label?: string | null;
+        value?: string | null;
+        unit?: string | null;
+        changePct?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  attachments?:
+    | {
+        name?: string | null;
+        file?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  pushChannels?: ('email' | 'sms' | 'whatsapp' | 'zalo' | 'wechat' | 'in_app')[] | null;
+  sentAt?: string | null;
+  recipientCount?: number | null;
+  publishWindow?: {
+    startAt?: string | null;
+    endAt?: string | null;
+  };
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-templates".
+ */
+export interface EmailTemplate {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  /**
+   * Unique key referenced by Medusa email service
+   */
+  code: string;
+  category:
+    | 'transactional'
+    | 'marketing'
+    | 'welcome'
+    | 'order'
+    | 'payment'
+    | 'shipping'
+    | 'kyc'
+    | 'security'
+    | 'newsletter'
+    | 'promotional';
+  subject: string;
+  preheader?: string | null;
+  /**
+   * MJML markup (compiled to HTML on send)
+   */
+  mjmlSource: string;
+  /**
+   * Plain text fallback
+   */
+  textVersion?: string | null;
+  variables?:
+    | {
+        key: string;
+        description?: string | null;
+        defaultValue?: string | null;
+        required?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  fromAddress?: {
+    name?: string | null;
+    email?: string | null;
+  };
+  replyTo?: string | null;
+  attachments?:
+    | {
+        file?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Bypass suppression list (e.g., password reset)
+   */
+  transactional?: boolean | null;
+  unsubscribeFooter?: boolean | null;
+  usageCount?: number | null;
+  lastSentAt?: string | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-campaigns".
+ */
+export interface EmailCampaign {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  description?: string | null;
+  template: number | EmailTemplate;
+  segmentSource: 'medusa' | 'trade_alert' | 'manual' | 'industry';
+  /**
+   * PG marketing.segment.id or industry id
+   */
+  segmentId?: string | null;
+  segmentLabel?: string | null;
+  /**
+   * Additional filters layered on top of segment
+   */
+  recipientFilter?: {
+    country?: string | null;
+    locale?: ('vi' | 'en' | 'cn') | null;
+    lastOrderAfter?: string | null;
+  };
+  abTest?: {
+    enabled?: boolean | null;
+    variants?:
+      | {
+          subject?: string | null;
+          previewText?: string | null;
+          weight?: number | null;
+          id?: string | null;
+        }[]
+      | null;
+    winnerMetric?: ('open_rate' | 'click_rate' | 'conversion') | null;
+    testWindowHours?: number | null;
+  };
+  scheduleAt?: string | null;
+  timezone?: string | null;
+  sendStrategy?: ('all_at_once' | 'throttled' | 'optimized') | null;
+  throttlePerMinute?: number | null;
+  sentCount?: number | null;
+  deliveredCount?: number | null;
+  openedCount?: number | null;
+  clickedCount?: number | null;
+  unsubscribedCount?: number | null;
+  sentAt?: string | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supplier-site-pages".
+ */
+export interface SupplierSitePage {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  supplierId: string;
+  supplierSlug: string;
+  title: string;
+  slug: string;
+  pageType: 'home' | 'about' | 'products' | 'factory' | 'certifications' | 'contact' | 'custom';
+  /**
+   * Base template, blocks can be customized after
+   */
+  template?: (number | null) | SiteTemplate;
+  /**
+   * Block instances composing the page
+   */
+  blocks?: (number | SiteBlock)[] | null;
+  /**
+   * Computed layout config (grid positions, breakpoints, etc.)
+   */
+  layoutJson?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-templates".
+ */
+export interface SiteTemplate {
+  id: number;
+  name: string;
+  slug: string;
+  description?: string | null;
+  industry?: (number | IndustryChannel)[] | null;
+  category: 'modern' | 'classic' | 'industrial' | 'luxury' | 'minimalist' | 'bold';
+  previewImage: number | Media;
+  previewImages?:
+    | {
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  demoUrl?: string | null;
+  /**
+   * Default page composition (array of block configs)
+   */
+  blockTemplate:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  defaultColors?: {
+    primary?: string | null;
+    secondary?: string | null;
+    accent?: string | null;
+    background?: string | null;
+    text?: string | null;
+  };
+  defaultFonts?: {
+    heading?: string | null;
+    body?: string | null;
+  };
+  minPlanTier?: ('starter' | 'growth' | 'enterprise') | null;
+  price?: number | null;
+  usageCount?: number | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-blocks".
+ */
+export interface SiteBlock {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  supplierId: string;
+  name: string;
+  blockType:
+    | 'hero'
+    | 'about'
+    | 'product_grid'
+    | 'product_carousel'
+    | 'featured_product'
+    | 'category_showcase'
+    | 'gallery'
+    | 'video'
+    | 'live_stream'
+    | 'spin_360'
+    | 'factory_tour'
+    | 'timeline'
+    | 'team'
+    | 'testimonials'
+    | 'certifications'
+    | 'awards'
+    | 'map'
+    | 'contact_form'
+    | 'chat_button'
+    | 'newsletter'
+    | 'news'
+    | 'stats'
+    | 'faq'
+    | 'pricing'
+    | 'catalog_download'
+    | 'rfq_widget'
+    | 'custom_html'
+    | 'embed'
+    | 'divider'
+    | 'cta';
+  /**
+   * Block-specific structured content (varies by blockType)
+   */
+  content?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  media?:
+    | {
+        asset?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  style?: {
+    background?: string | null;
+    foreground?: string | null;
+    paddingY?: number | null;
+    paddingX?: number | null;
+    maxWidth?: number | null;
+  };
+  visibility?: {
+    desktop?: boolean | null;
+    tablet?: boolean | null;
+    mobile?: boolean | null;
+  };
+  animation?: ('none' | 'fade' | 'slide_up' | 'slide_left' | 'zoom') | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supplier-brand-kits".
+ */
+export interface SupplierBrandKit {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  supplierId: string;
+  supplierName: string;
+  logos?: {
+    primary?: (number | null) | Media;
+    horizontal?: (number | null) | Media;
+    vertical?: (number | null) | Media;
+    icon?: (number | null) | Media;
+    monochrome?: (number | null) | Media;
+    favicon?: (number | null) | Media;
+  };
+  colors: {
+    primary: string;
+    secondary?: string | null;
+    accent?: string | null;
+    success?: string | null;
+    warning?: string | null;
+    error?: string | null;
+    background?: string | null;
+    foreground?: string | null;
+  };
+  typography?: {
+    headingFont?: string | null;
+    bodyFont?: string | null;
+    monoFont?: string | null;
+    headingFontWeight?: ('400' | '500' | '600' | '700' | '800' | '900') | null;
+    bodyFontWeight?: ('300' | '400' | '500') | null;
+  };
+  voiceAndTone?: {
+    voiceDescription?: string | null;
+    doList?:
+      | {
+          item?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    dontList?:
+      | {
+          item?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  brandAssets?:
+    | {
+        label?: string | null;
+        asset?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  brandGuidelinesPdf?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "help-articles".
+ */
+export interface HelpArticle {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  title: string;
+  slug: string;
+  summary?: string | null;
+  category:
+    | 'getting_started'
+    | 'account_security'
+    | 'buying'
+    | 'selling'
+    | 'orders'
+    | 'payments'
+    | 'shipping'
+    | 'disputes'
+    | 'kyc'
+    | 'pricing'
+    | 'api'
+    | 'trade_alerts'
+    | 'live';
+  audience?: ('all' | 'buyer' | 'supplier' | 'dealer' | 'developer')[] | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  relatedArticles?: (number | HelpArticle)[] | null;
+  relatedFaqs?: (number | Faq)[] | null;
+  attachments?:
+    | {
+        name?: string | null;
+        file?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  viewCount?: number | null;
+  helpfulYes?: number | null;
+  helpfulNo?: number | null;
+  searchKeywords?: string | null;
+  displayOrder?: number | null;
+  /**
+   * SEO metadata
+   */
+  seo?: {
+    title?: string | null;
+    description?: string | null;
+    keywords?: string | null;
+    image?: (number | null) | Media;
+    noIndex?: boolean | null;
+  };
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  question: string;
+  answer: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  category: 'general' | 'account' | 'payment' | 'shipping' | 'returns' | 'kyc' | 'pricing' | 'b2b' | 'live';
+  audience?: ('all' | 'buyer' | 'supplier' | 'dealer')[] | null;
+  helpfulYes?: number | null;
+  helpfulNo?: number | null;
+  displayOrder?: number | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "privacy-policy-versions".
+ */
+export interface PrivacyPolicyVersion {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  /**
+   * e.g., v2.1, 2026-05-11
+   */
+  versionLabel: string;
+  jurisdictionScope: ('global' | 'EU' | 'US' | 'VN' | 'CN' | 'APAC')[];
+  effectiveDate: string;
+  expiresAt?: string | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  sections?:
+    | {
+        sectionId: string;
+        title?: string | null;
+        content?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Diff vs prior version (for audit)
+   */
+  changeNotes?: string | null;
+  approvedBy?: (number | null) | User;
+  approvedAt?: string | null;
+  requiresReConsent?: boolean | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tos-versions".
+ */
+export interface TosVersion {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  versionLabel: string;
+  audience: 'buyer' | 'supplier' | 'dealer' | 'developer' | 'service_provider';
+  jurisdictionScope?: ('global' | 'VN' | 'CN' | 'EU' | 'US')[] | null;
+  effectiveDate: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  sections?:
+    | {
+        sectionId: string;
+        title?: string | null;
+        content?: {
+          root: {
+            type: string;
+            children: {
+              type: any;
+              version: number;
+              [k: string]: unknown;
+            }[];
+            direction: ('ltr' | 'rtl') | null;
+            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+            indent: number;
+            version: number;
+          };
+          [k: string]: unknown;
+        } | null;
+        id?: string | null;
+      }[]
+    | null;
+  governingLaw?: ('VN' | 'SG' | 'HK' | 'CN') | null;
+  changeNotes?: string | null;
+  approvedBy?: (number | null) | User;
+  approvedAt?: string | null;
+  requiresReAcceptance?: boolean | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-prompt-templates".
+ */
+export interface AiPromptTemplate {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  /**
+   * Referenced by AI service
+   */
+  code: string;
+  description?: string | null;
+  feature:
+    | 'product_translation'
+    | 'product_description'
+    | 'seo_meta'
+    | 'image_alt'
+    | 'rfq_matching'
+    | 'chat_summary'
+    | 'chat_translate'
+    | 'visual_search'
+    | 'sentiment'
+    | 'spam_fraud'
+    | 'auto_category'
+    | 'live_highlight'
+    | 'email_subject_ab'
+    | 'personalization'
+    | 'compliance';
+  model:
+    | 'claude-opus-4-7'
+    | 'claude-sonnet-4-6'
+    | 'claude-haiku-4-5'
+    | 'gpt-5'
+    | 'gpt-5-mini'
+    | 'gemini-2-5-pro'
+    | 'qwen-local';
+  modelFallback?: ('claude-haiku-4-5' | 'gpt-5-mini' | 'qwen-local') | null;
+  /**
+   * Used as system message
+   */
+  systemPrompt?: string | null;
+  /**
+   * Mustache-style {{variable}} placeholders
+   */
+  userPromptTemplate: string;
+  /**
+   * JSONSchema for input validation
+   */
+  inputSchema?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  /**
+   * JSONSchema for output validation
+   */
+  outputSchema?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
+  parameters?: {
+    temperature?: number | null;
+    maxTokens?: number | null;
+    topP?: number | null;
+    enableStreaming?: boolean | null;
+    /**
+     * 0 = no cache
+     */
+    cacheTtlSeconds?: number | null;
+  };
+  /**
+   * Criteria for human reviewers to score outputs
+   */
+  evaluationRubric?: string | null;
+  /**
+   * Few-shot examples (will be inlined)
+   */
+  examples?:
+    | {
+        input?:
+          | {
+              [k: string]: unknown;
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null;
+        output?:
+          | {
+              [k: string]: unknown;
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  usageCount?: number | null;
+  lastUsedAt?: string | null;
+  estimatedCostPerCallUsd?: number | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-personas".
+ */
+export interface AiPersona {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  /**
+   * Owner supplier UUID (null = platform-managed)
+   */
+  supplierId?: string | null;
+  /**
+   * PG live.ai_persona.id (sync target)
+   */
+  medusaPersonaId?: string | null;
+  slug: string;
+  displayName: string;
+  personaDescription?: string | null;
+  voiceStyle?:
+    | ('friendly_sales' | 'formal' | 'energetic' | 'warm_advisor' | 'professional_news' | 'casual_streamer')
+    | null;
+  primaryLocale: 'vi' | 'en' | 'cn';
+  supportedLocales?: ('vi' | 'en' | 'cn')[] | null;
+  /**
+   * Upload 30-120s voice samples per locale to clone
+   */
+  voiceSamples?:
+    | {
+        locale: 'vi' | 'en' | 'cn';
+        audio: number | Media;
+        transcript?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Photo for D-ID / talking head provider
+   */
+  avatarImage?: (number | null) | Media;
+  /**
+   * Optional reference video for HeyGen avatar clone
+   */
+  avatarReferenceVideo?: (number | null) | Media;
+  /**
+   * Phrases the persona uses frequently
+   */
+  catchphrases?:
+    | {
+        phrase?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Override default system prompt for chat
+   */
+  systemPromptOverride?: string | null;
+  brandColors?: {
+    primary?: string | null;
+    accent?: string | null;
+  };
+  trainingStatus?: ('draft' | 'training' | 'active' | 'paused' | 'archived') | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-script-templates".
+ */
+export interface AiScriptTemplate {
+  id: number;
+  /**
+   * Multi-tenant scope (UUID, mirrors PG tenant_id)
+   */
+  tenantId: string;
+  name: string;
+  description?: string | null;
+  category:
+    | 'product_showcase'
+    | 'flash_sale'
+    | 'new_arrival'
+    | 'qa_marathon'
+    | 'brand_story'
+    | 'tutorial'
+    | 'event_coverage';
+  /**
+   * Auto-suggest this template to suppliers in these industries
+   */
+  industryChannel?: (number | IndustryChannel)[] | null;
+  estimatedDurationMin?: number | null;
+  loopable?: boolean | null;
+  segments: {
+    /**
+     * Unique within this script
+     */
+    tempId: string;
+    segmentType:
+      | 'intro'
+      | 'product_showcase'
+      | 'qa'
+      | 'cta'
+      | 'auction'
+      | 'flash_sale'
+      | 'break'
+      | 'outro'
+      | 'transition'
+      | 'testimonial'
+      | 'news_update'
+      | 'poll';
+    orderHint?: number | null;
+    /**
+     * Mustache {{var}} interpolation supported
+     */
+    dialogue: string;
+    durationSecondsEstimate?: number | null;
+    /**
+     * Optional PG product UUID to feature
+     */
+    productId?: string | null;
+    ctaUrl?: string | null;
+    id?: string | null;
+  }[];
+  transitions?:
+    | {
+        fromTempId: string;
+        toTempId: string;
+        /**
+         * JSONSchema-shaped condition. e.g. {"viewerCountGt": 100, "hourOfDayIn": [9,10,11]}
+         */
+        condition?:
+          | {
+              [k: string]: unknown;
+            }
+          | unknown[]
+          | string
+          | number
+          | boolean
+          | null;
+        weight?: number | null;
+        priority?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  startSegmentTempId: string;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "avatar-library".
+ */
+export interface AvatarLibrary {
+  id: number;
+  displayName: string;
+  assetType: '2d_talking_head' | '3d_full_body' | 'generated_photo' | 'live_actor_capture';
+  provider: 'heygen' | 'did' | 'synthesia' | 'local_wav2lip' | 'custom';
+  /**
+   * Provider's internal asset ID (e.g., HeyGen avatar_id)
+   */
+  providerAssetId?: string | null;
+  thumbnail?: (number | null) | Media;
+  idleLoopVideo?: (number | null) | Media;
+  ethnicity?: ('asian_east' | 'asian_southeast' | 'caucasian' | 'african' | 'latin' | 'mixed' | 'stylized') | null;
+  ageBand?: ('20-30' | '30-40' | '40-50' | '50+') | null;
+  gender?: ('female' | 'male' | 'non_binary') | null;
+  aspectRatio?: ('16:9' | '9:16' | '1:1' | '4:3') | null;
+  resolution?: ('720p' | '1080p' | '4k') | null;
+  costPerMinuteUsd?: number | null;
+  readyForRealtime?: boolean | null;
+  tags?:
+    | {
+        tag?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  editorialStatus?: ('in_review' | 'approved' | 'archived') | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -223,12 +2371,124 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
+        relationTo: 'media';
+        value: number | Media;
+      } | null)
+    | ({
         relationTo: 'pages';
         value: number | Page;
       } | null)
     | ({
-        relationTo: 'media';
-        value: number | Media;
+        relationTo: 'blog-articles';
+        value: number | BlogArticle;
+      } | null)
+    | ({
+        relationTo: 'banners';
+        value: number | Banner;
+      } | null)
+    | ({
+        relationTo: 'category-content';
+        value: number | CategoryContent;
+      } | null)
+    | ({
+        relationTo: 'industry-channels';
+        value: number | IndustryChannel;
+      } | null)
+    | ({
+        relationTo: 'zones';
+        value: number | Zone;
+      } | null)
+    | ({
+        relationTo: 'trade-shows';
+        value: number | TradeShow;
+      } | null)
+    | ({
+        relationTo: 'trade-show-booths';
+        value: number | TradeShowBooth;
+      } | null)
+    | ({
+        relationTo: 'tour-packages';
+        value: number | TourPackage;
+      } | null)
+    | ({
+        relationTo: 'visa-applications';
+        value: number | VisaApplication;
+      } | null)
+    | ({
+        relationTo: 'hotel-bookings';
+        value: number | HotelBooking;
+      } | null)
+    | ({
+        relationTo: 'associations';
+        value: number | Association;
+      } | null)
+    | ({
+        relationTo: 'association-events';
+        value: number | AssociationEvent;
+      } | null)
+    | ({
+        relationTo: 'trade-alert-subscriptions';
+        value: number | TradeAlertSubscription;
+      } | null)
+    | ({
+        relationTo: 'trade-alert-content';
+        value: number | TradeAlertContent;
+      } | null)
+    | ({
+        relationTo: 'email-templates';
+        value: number | EmailTemplate;
+      } | null)
+    | ({
+        relationTo: 'email-campaigns';
+        value: number | EmailCampaign;
+      } | null)
+    | ({
+        relationTo: 'supplier-site-pages';
+        value: number | SupplierSitePage;
+      } | null)
+    | ({
+        relationTo: 'site-blocks';
+        value: number | SiteBlock;
+      } | null)
+    | ({
+        relationTo: 'site-templates';
+        value: number | SiteTemplate;
+      } | null)
+    | ({
+        relationTo: 'supplier-brand-kits';
+        value: number | SupplierBrandKit;
+      } | null)
+    | ({
+        relationTo: 'help-articles';
+        value: number | HelpArticle;
+      } | null)
+    | ({
+        relationTo: 'faqs';
+        value: number | Faq;
+      } | null)
+    | ({
+        relationTo: 'privacy-policy-versions';
+        value: number | PrivacyPolicyVersion;
+      } | null)
+    | ({
+        relationTo: 'tos-versions';
+        value: number | TosVersion;
+      } | null)
+    | ({
+        relationTo: 'ai-prompt-templates';
+        value: number | AiPromptTemplate;
+      } | null)
+    | ({
+        relationTo: 'ai-personas';
+        value: number | AiPersona;
+      } | null)
+    | ({
+        relationTo: 'ai-script-templates';
+        value: number | AiScriptTemplate;
+      } | null)
+    | ({
+        relationTo: 'avatar-library';
+        value: number | AvatarLibrary;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -277,8 +2537,19 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  displayName?: T;
+  tenantId?: T;
+  medusaUserId?: T;
+  supplierId?: T;
+  roles?: T;
+  locale?: T;
+  avatar?: T;
+  lastSignInAt?: T;
   updatedAt?: T;
   createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;
@@ -296,28 +2567,21 @@ export interface UsersSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages_select".
- */
-export interface PagesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  content?: T;
-  meta?:
-    | T
-    | {
-        description?: T;
-        image?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  _status?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  caption?: T;
+  credit?: T;
+  mediaAssetId?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  tenantId?: T;
+  uploadedBy?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -329,6 +2593,1436 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+  sizes?:
+    | T
+    | {
+        thumb?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        card?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        tablet?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+        desktop?:
+          | T
+          | {
+              url?: T;
+              width?: T;
+              height?: T;
+              mimeType?: T;
+              filesize?: T;
+              filename?: T;
+            };
+      };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  tenantId?: T;
+  title?: T;
+  slug?: T;
+  pageType?: T;
+  sections?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              heading?: T;
+              subheading?: T;
+              image?: T;
+              ctaLabel?: T;
+              ctaUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+        richText?:
+          | T
+          | {
+              content?: T;
+              id?: T;
+              blockName?: T;
+            };
+        mediaBlock?:
+          | T
+          | {
+              media?: T;
+              caption?: T;
+              id?: T;
+              blockName?: T;
+            };
+        cards?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    image?: T;
+                    link?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        cta?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              buttonLabel?: T;
+              buttonUrl?: T;
+              id?: T;
+              blockName?: T;
+            };
+      };
+  publishWindow?:
+    | T
+    | {
+        startAt?: T;
+        endAt?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog-articles_select".
+ */
+export interface BlogArticlesSelect<T extends boolean = true> {
+  tenantId?: T;
+  title?: T;
+  slug?: T;
+  excerpt?: T;
+  coverImage?: T;
+  category?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  author?: T;
+  content?: T;
+  relatedArticles?: T;
+  industry?: T;
+  publishedAt?: T;
+  readTimeMinutes?: T;
+  allowComments?: T;
+  publishWindow?:
+    | T
+    | {
+        startAt?: T;
+        endAt?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "banners_select".
+ */
+export interface BannersSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  placement?: T;
+  targetType?: T;
+  targetValue?: T;
+  creatives?:
+    | T
+    | {
+        image?: T;
+        imageMobile?: T;
+        alt?: T;
+        headline?: T;
+        subheadline?: T;
+        ctaLabel?: T;
+        ctaUrl?: T;
+        locale?: T;
+        id?: T;
+      };
+  priority?: T;
+  rotationStrategy?: T;
+  weight?: T;
+  experimentId?: T;
+  publishWindow?:
+    | T
+    | {
+        startAt?: T;
+        endAt?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "category-content_select".
+ */
+export interface CategoryContentSelect<T extends boolean = true> {
+  tenantId?: T;
+  medusaCategoryId?: T;
+  name?: T;
+  slug?: T;
+  shortDescription?: T;
+  longDescription?: T;
+  heroImage?: T;
+  heroVideo?: T;
+  featuredSuppliers?:
+    | T
+    | {
+        supplierId?: T;
+        displayOrder?: T;
+        id?: T;
+      };
+  featuredProducts?:
+    | T
+    | {
+        productId?: T;
+        displayOrder?: T;
+        id?: T;
+      };
+  buyersGuide?: T;
+  industryStats?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        unit?: T;
+        id?: T;
+      };
+  relatedCategories?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "industry-channels_select".
+ */
+export interface IndustryChannelsSelect<T extends boolean = true> {
+  tenantId?: T;
+  code?: T;
+  name?: T;
+  slug?: T;
+  parentChannel?: T;
+  icon?: T;
+  cover?: T;
+  tagline?: T;
+  introduction?: T;
+  majorCategories?:
+    | T
+    | {
+        medusaCategoryId?: T;
+        label?: T;
+        order?: T;
+        id?: T;
+      };
+  spotlight?:
+    | T
+    | {
+        headline?: T;
+        description?: T;
+        video?: T;
+      };
+  reportLinks?:
+    | T
+    | {
+        title?: T;
+        pdf?: T;
+        externalUrl?: T;
+        publishDate?: T;
+        id?: T;
+      };
+  tradeShows?: T;
+  displayOrder?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "zones_select".
+ */
+export interface ZonesSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  slug?: T;
+  industry?: T;
+  country?: T;
+  region?: T;
+  city?: T;
+  coordinates?:
+    | T
+    | {
+        lat?: T;
+        lng?: T;
+      };
+  description?: T;
+  images?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  specialties?:
+    | T
+    | {
+        specialty?: T;
+        id?: T;
+      };
+  stats?:
+    | T
+    | {
+        factoryCount?: T;
+        annualExportUsdMillions?: T;
+        yearsEstablished?: T;
+        workforce?: T;
+      };
+  logistics?:
+    | T
+    | {
+        nearestPort?: T;
+        nearestAirport?: T;
+        transitDaysToVN?: T;
+        transitDaysToUS?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-shows_select".
+ */
+export interface TradeShowsSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  slug?: T;
+  shortName?: T;
+  editionNumber?: T;
+  organizer?:
+    | T
+    | {
+        name?: T;
+        website?: T;
+        logo?: T;
+      };
+  industry?: T;
+  venue?:
+    | T
+    | {
+        name?: T;
+        addressLine1?: T;
+        city?: T;
+        country?: T;
+        lat?: T;
+        lng?: T;
+      };
+  startDate?: T;
+  endDate?: T;
+  coverImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        caption?: T;
+        id?: T;
+      };
+  introduction?: T;
+  highlights?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+        id?: T;
+      };
+  stats?:
+    | T
+    | {
+        exhibitorCount?: T;
+        visitorCount?: T;
+        boothSpaceSqm?: T;
+        pavilionCount?: T;
+      };
+  pavilions?:
+    | T
+    | {
+        code?: T;
+        name?: T;
+        theme?: T;
+        id?: T;
+      };
+  registrationUrl?: T;
+  price?:
+    | T
+    | {
+        visitorTicketUsd?: T;
+        boothRentUsdPerSqm?: T;
+      };
+  website?: T;
+  relatedTours?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-show-booths_select".
+ */
+export interface TradeShowBoothsSelect<T extends boolean = true> {
+  tenantId?: T;
+  displayName?: T;
+  tradeShow?: T;
+  supplierId?: T;
+  boothNumber?: T;
+  pavilion?: T;
+  boothSizeSqm?: T;
+  mapPosition?:
+    | T
+    | {
+        x?: T;
+        y?: T;
+        floor?: T;
+      };
+  description?: T;
+  logo?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  featuredProducts?:
+    | T
+    | {
+        productId?: T;
+        displayOrder?: T;
+        id?: T;
+      };
+  video360?:
+    | T
+    | {
+        tourUrl?: T;
+        previewImage?: T;
+      };
+  staffOnDuty?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        languages?: T;
+        whatsapp?: T;
+        wechat?: T;
+        id?: T;
+      };
+  appointmentEnabled?: T;
+  appointmentSlots?:
+    | T
+    | {
+        startAt?: T;
+        durationMinutes?: T;
+        capacity?: T;
+        id?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tour-packages_select".
+ */
+export interface TourPackagesSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  slug?: T;
+  tourType?: T;
+  tradeShow?: T;
+  durationDays?: T;
+  departureCity?: T;
+  destinations?:
+    | T
+    | {
+        city?: T;
+        country?: T;
+        nights?: T;
+        id?: T;
+      };
+  itinerary?:
+    | T
+    | {
+        day?: T;
+        title?: T;
+        description?: T;
+        meals?: T;
+        accommodation?: T;
+        id?: T;
+      };
+  inclusions?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  exclusions?:
+    | T
+    | {
+        item?: T;
+        id?: T;
+      };
+  priceFromUsd?: T;
+  minGroupSize?: T;
+  maxGroupSize?: T;
+  departureDates?:
+    | T
+    | {
+        date?: T;
+        available?: T;
+        priceUsd?: T;
+        id?: T;
+      };
+  visaRequired?: T;
+  interpreterLanguages?: T;
+  coverImage?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  description?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "visa-applications_select".
+ */
+export interface VisaApplicationsSelect<T extends boolean = true> {
+  tenantId?: T;
+  customerId?: T;
+  tourPackage?: T;
+  applicantName?: T;
+  passportNumber?: T;
+  nationality?: T;
+  dateOfBirth?: T;
+  gender?: T;
+  destinationCountry?: T;
+  travelStartDate?: T;
+  travelEndDate?: T;
+  visaType?: T;
+  documents?:
+    | T
+    | {
+        docType?: T;
+        file?: T;
+        uploadedAt?: T;
+        id?: T;
+      };
+  status?: T;
+  submittedAt?: T;
+  approvedAt?: T;
+  rejectionReason?: T;
+  visaServiceFeeUsd?: T;
+  assignedAgent?: T;
+  internalNotes?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "hotel-bookings_select".
+ */
+export interface HotelBookingsSelect<T extends boolean = true> {
+  tenantId?: T;
+  customerId?: T;
+  tourPackage?: T;
+  tradeShow?: T;
+  hotelName?: T;
+  hotelAddress?:
+    | T
+    | {
+        line1?: T;
+        city?: T;
+        country?: T;
+      };
+  starRating?: T;
+  checkInDate?: T;
+  checkOutDate?: T;
+  roomCount?: T;
+  roomType?: T;
+  guestCount?: T;
+  guestList?:
+    | T
+    | {
+        name?: T;
+        passportNumber?: T;
+        id?: T;
+      };
+  mealPlan?: T;
+  specialRequests?: T;
+  totalPriceUsd?: T;
+  confirmationNumber?: T;
+  cancellationDeadline?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "associations_select".
+ */
+export interface AssociationsSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  slug?: T;
+  shortName?: T;
+  country?: T;
+  associationType?: T;
+  industry?: T;
+  logo?: T;
+  website?: T;
+  description?: T;
+  contact?:
+    | T
+    | {
+        email?: T;
+        phone?: T;
+        address?: T;
+      };
+  memberCount?: T;
+  foundedYear?: T;
+  partnership?:
+    | T
+    | {
+        isPartner?: T;
+        partnershipStartDate?: T;
+        mou?: T;
+        contactPerson?: T;
+        preferredMemberDiscount?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "association-events_select".
+ */
+export interface AssociationEventsSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  slug?: T;
+  association?: T;
+  eventType?: T;
+  mode?: T;
+  startDate?: T;
+  endDate?: T;
+  venue?:
+    | T
+    | {
+        name?: T;
+        address?: T;
+        city?: T;
+        country?: T;
+      };
+  streamUrl?: T;
+  description?: T;
+  agenda?:
+    | T
+    | {
+        time?: T;
+        title?: T;
+        speaker?: T;
+        description?: T;
+        id?: T;
+      };
+  speakers?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        company?: T;
+        bio?: T;
+        photo?: T;
+        id?: T;
+      };
+  coverImage?: T;
+  registrationUrl?: T;
+  registrationFeeUsd?: T;
+  memberDiscountPct?: T;
+  capacity?: T;
+  publishWindow?:
+    | T
+    | {
+        startAt?: T;
+        endAt?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-alert-subscriptions_select".
+ */
+export interface TradeAlertSubscriptionsSelect<T extends boolean = true> {
+  tenantId?: T;
+  email?: T;
+  fullName?: T;
+  phone?: T;
+  company?: T;
+  country?: T;
+  role?: T;
+  subscribedAs?: T;
+  industry?: T;
+  productKeywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
+  frequency?: T;
+  channels?: T;
+  locale?: T;
+  status?: T;
+  unsubscribeToken?: T;
+  lastSentAt?: T;
+  lastOpenedAt?: T;
+  totalSent?: T;
+  totalOpened?: T;
+  consentGdpr?:
+    | T
+    | {
+        givenAt?: T;
+        ipAddress?: T;
+        consentVersion?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "trade-alert-content_select".
+ */
+export interface TradeAlertContentSelect<T extends boolean = true> {
+  tenantId?: T;
+  headline?: T;
+  slug?: T;
+  alertType?: T;
+  severity?: T;
+  industries?: T;
+  productKeywords?:
+    | T
+    | {
+        keyword?: T;
+        id?: T;
+      };
+  countries?:
+    | T
+    | {
+        code?: T;
+        id?: T;
+      };
+  summary?: T;
+  fullContent?: T;
+  coverImage?: T;
+  dataPoints?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        unit?: T;
+        changePct?: T;
+        id?: T;
+      };
+  attachments?:
+    | T
+    | {
+        name?: T;
+        file?: T;
+        id?: T;
+      };
+  pushChannels?: T;
+  sentAt?: T;
+  recipientCount?: T;
+  publishWindow?:
+    | T
+    | {
+        startAt?: T;
+        endAt?: T;
+      };
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-templates_select".
+ */
+export interface EmailTemplatesSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  code?: T;
+  category?: T;
+  subject?: T;
+  preheader?: T;
+  mjmlSource?: T;
+  textVersion?: T;
+  variables?:
+    | T
+    | {
+        key?: T;
+        description?: T;
+        defaultValue?: T;
+        required?: T;
+        id?: T;
+      };
+  fromAddress?:
+    | T
+    | {
+        name?: T;
+        email?: T;
+      };
+  replyTo?: T;
+  attachments?:
+    | T
+    | {
+        file?: T;
+        id?: T;
+      };
+  transactional?: T;
+  unsubscribeFooter?: T;
+  usageCount?: T;
+  lastSentAt?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "email-campaigns_select".
+ */
+export interface EmailCampaignsSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  description?: T;
+  template?: T;
+  segmentSource?: T;
+  segmentId?: T;
+  segmentLabel?: T;
+  recipientFilter?:
+    | T
+    | {
+        country?: T;
+        locale?: T;
+        lastOrderAfter?: T;
+      };
+  abTest?:
+    | T
+    | {
+        enabled?: T;
+        variants?:
+          | T
+          | {
+              subject?: T;
+              previewText?: T;
+              weight?: T;
+              id?: T;
+            };
+        winnerMetric?: T;
+        testWindowHours?: T;
+      };
+  scheduleAt?: T;
+  timezone?: T;
+  sendStrategy?: T;
+  throttlePerMinute?: T;
+  sentCount?: T;
+  deliveredCount?: T;
+  openedCount?: T;
+  clickedCount?: T;
+  unsubscribedCount?: T;
+  sentAt?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supplier-site-pages_select".
+ */
+export interface SupplierSitePagesSelect<T extends boolean = true> {
+  tenantId?: T;
+  supplierId?: T;
+  supplierSlug?: T;
+  title?: T;
+  slug?: T;
+  pageType?: T;
+  template?: T;
+  blocks?: T;
+  layoutJson?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-blocks_select".
+ */
+export interface SiteBlocksSelect<T extends boolean = true> {
+  tenantId?: T;
+  supplierId?: T;
+  name?: T;
+  blockType?: T;
+  content?: T;
+  media?:
+    | T
+    | {
+        asset?: T;
+        id?: T;
+      };
+  style?:
+    | T
+    | {
+        background?: T;
+        foreground?: T;
+        paddingY?: T;
+        paddingX?: T;
+        maxWidth?: T;
+      };
+  visibility?:
+    | T
+    | {
+        desktop?: T;
+        tablet?: T;
+        mobile?: T;
+      };
+  animation?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-templates_select".
+ */
+export interface SiteTemplatesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  description?: T;
+  industry?: T;
+  category?: T;
+  previewImage?: T;
+  previewImages?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
+  demoUrl?: T;
+  blockTemplate?: T;
+  defaultColors?:
+    | T
+    | {
+        primary?: T;
+        secondary?: T;
+        accent?: T;
+        background?: T;
+        text?: T;
+      };
+  defaultFonts?:
+    | T
+    | {
+        heading?: T;
+        body?: T;
+      };
+  minPlanTier?: T;
+  price?: T;
+  usageCount?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "supplier-brand-kits_select".
+ */
+export interface SupplierBrandKitsSelect<T extends boolean = true> {
+  tenantId?: T;
+  supplierId?: T;
+  supplierName?: T;
+  logos?:
+    | T
+    | {
+        primary?: T;
+        horizontal?: T;
+        vertical?: T;
+        icon?: T;
+        monochrome?: T;
+        favicon?: T;
+      };
+  colors?:
+    | T
+    | {
+        primary?: T;
+        secondary?: T;
+        accent?: T;
+        success?: T;
+        warning?: T;
+        error?: T;
+        background?: T;
+        foreground?: T;
+      };
+  typography?:
+    | T
+    | {
+        headingFont?: T;
+        bodyFont?: T;
+        monoFont?: T;
+        headingFontWeight?: T;
+        bodyFontWeight?: T;
+      };
+  voiceAndTone?:
+    | T
+    | {
+        voiceDescription?: T;
+        doList?:
+          | T
+          | {
+              item?: T;
+              id?: T;
+            };
+        dontList?:
+          | T
+          | {
+              item?: T;
+              id?: T;
+            };
+      };
+  brandAssets?:
+    | T
+    | {
+        label?: T;
+        asset?: T;
+        id?: T;
+      };
+  brandGuidelinesPdf?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "help-articles_select".
+ */
+export interface HelpArticlesSelect<T extends boolean = true> {
+  tenantId?: T;
+  title?: T;
+  slug?: T;
+  summary?: T;
+  category?: T;
+  audience?: T;
+  content?: T;
+  relatedArticles?: T;
+  relatedFaqs?: T;
+  attachments?:
+    | T
+    | {
+        name?: T;
+        file?: T;
+        id?: T;
+      };
+  viewCount?: T;
+  helpfulYes?: T;
+  helpfulNo?: T;
+  searchKeywords?: T;
+  displayOrder?: T;
+  seo?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        noIndex?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs_select".
+ */
+export interface FaqsSelect<T extends boolean = true> {
+  tenantId?: T;
+  question?: T;
+  answer?: T;
+  category?: T;
+  audience?: T;
+  helpfulYes?: T;
+  helpfulNo?: T;
+  displayOrder?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "privacy-policy-versions_select".
+ */
+export interface PrivacyPolicyVersionsSelect<T extends boolean = true> {
+  tenantId?: T;
+  versionLabel?: T;
+  jurisdictionScope?: T;
+  effectiveDate?: T;
+  expiresAt?: T;
+  content?: T;
+  sections?:
+    | T
+    | {
+        sectionId?: T;
+        title?: T;
+        content?: T;
+        id?: T;
+      };
+  changeNotes?: T;
+  approvedBy?: T;
+  approvedAt?: T;
+  requiresReConsent?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tos-versions_select".
+ */
+export interface TosVersionsSelect<T extends boolean = true> {
+  tenantId?: T;
+  versionLabel?: T;
+  audience?: T;
+  jurisdictionScope?: T;
+  effectiveDate?: T;
+  content?: T;
+  sections?:
+    | T
+    | {
+        sectionId?: T;
+        title?: T;
+        content?: T;
+        id?: T;
+      };
+  governingLaw?: T;
+  changeNotes?: T;
+  approvedBy?: T;
+  approvedAt?: T;
+  requiresReAcceptance?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-prompt-templates_select".
+ */
+export interface AiPromptTemplatesSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  code?: T;
+  description?: T;
+  feature?: T;
+  model?: T;
+  modelFallback?: T;
+  systemPrompt?: T;
+  userPromptTemplate?: T;
+  inputSchema?: T;
+  outputSchema?: T;
+  parameters?:
+    | T
+    | {
+        temperature?: T;
+        maxTokens?: T;
+        topP?: T;
+        enableStreaming?: T;
+        cacheTtlSeconds?: T;
+      };
+  evaluationRubric?: T;
+  examples?:
+    | T
+    | {
+        input?: T;
+        output?: T;
+        id?: T;
+      };
+  usageCount?: T;
+  lastUsedAt?: T;
+  estimatedCostPerCallUsd?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-personas_select".
+ */
+export interface AiPersonasSelect<T extends boolean = true> {
+  tenantId?: T;
+  supplierId?: T;
+  medusaPersonaId?: T;
+  slug?: T;
+  displayName?: T;
+  personaDescription?: T;
+  voiceStyle?: T;
+  primaryLocale?: T;
+  supportedLocales?: T;
+  voiceSamples?:
+    | T
+    | {
+        locale?: T;
+        audio?: T;
+        transcript?: T;
+        id?: T;
+      };
+  avatarImage?: T;
+  avatarReferenceVideo?: T;
+  catchphrases?:
+    | T
+    | {
+        phrase?: T;
+        id?: T;
+      };
+  systemPromptOverride?: T;
+  brandColors?:
+    | T
+    | {
+        primary?: T;
+        accent?: T;
+      };
+  trainingStatus?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ai-script-templates_select".
+ */
+export interface AiScriptTemplatesSelect<T extends boolean = true> {
+  tenantId?: T;
+  name?: T;
+  description?: T;
+  category?: T;
+  industryChannel?: T;
+  estimatedDurationMin?: T;
+  loopable?: T;
+  segments?:
+    | T
+    | {
+        tempId?: T;
+        segmentType?: T;
+        orderHint?: T;
+        dialogue?: T;
+        durationSecondsEstimate?: T;
+        productId?: T;
+        ctaUrl?: T;
+        id?: T;
+      };
+  transitions?:
+    | T
+    | {
+        fromTempId?: T;
+        toTempId?: T;
+        condition?: T;
+        weight?: T;
+        priority?: T;
+        id?: T;
+      };
+  startSegmentTempId?: T;
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "avatar-library_select".
+ */
+export interface AvatarLibrarySelect<T extends boolean = true> {
+  displayName?: T;
+  assetType?: T;
+  provider?: T;
+  providerAssetId?: T;
+  thumbnail?: T;
+  idleLoopVideo?: T;
+  ethnicity?: T;
+  ageBand?: T;
+  gender?: T;
+  aspectRatio?: T;
+  resolution?: T;
+  costPerMinuteUsd?: T;
+  readyForRealtime?: T;
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  editorialStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -369,6 +4063,372 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  tenantId: string;
+  branding: {
+    siteName: string;
+    tagline?: string | null;
+    logo?: (number | null) | Media;
+    logoDark?: (number | null) | Media;
+    favicon?: (number | null) | Media;
+    ogImage?: (number | null) | Media;
+  };
+  defaultLocale?: ('vi' | 'en' | 'cn') | null;
+  supportedLocales?: ('vi' | 'en' | 'cn')[] | null;
+  defaultCurrency?: ('VND' | 'USD' | 'CNY' | 'EUR') | null;
+  supportedCurrencies?: ('VND' | 'USD' | 'CNY' | 'EUR' | 'JPY' | 'KRW' | 'SGD' | 'THB')[] | null;
+  contact?: {
+    email?: string | null;
+    phone?: string | null;
+    whatsapp?: string | null;
+    zalo?: string | null;
+    wechat?: string | null;
+    address?: string | null;
+  };
+  social?: {
+    facebook?: string | null;
+    linkedin?: string | null;
+    youtube?: string | null;
+    twitter?: string | null;
+    instagram?: string | null;
+    tiktok?: string | null;
+    weibo?: string | null;
+  };
+  analytics?: {
+    googleAnalyticsId?: string | null;
+    gtmId?: string | null;
+    facebookPixelId?: string | null;
+    hotjarId?: string | null;
+  };
+  featureFlags?:
+    | {
+        flagKey: string;
+        enabled?: boolean | null;
+        rolloutPercentage?: number | null;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  maintenance?: {
+    enabled?: boolean | null;
+    message?: string | null;
+    estimatedEndAt?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "navigation".
+ */
+export interface Navigation {
+  id: number;
+  /**
+   * Top header navigation
+   */
+  mainNav?:
+    | {
+        label: string;
+        url?: string | null;
+        linkType?: ('url' | 'page' | 'category' | 'industry' | 'mega') | null;
+        page?: (number | null) | Page;
+        industry?: (number | null) | IndustryChannel;
+        megaItems?:
+          | {
+              columnTitle?: string | null;
+              links?:
+                | {
+                    label?: string | null;
+                    url?: string | null;
+                    icon?: (number | null) | Media;
+                    id?: string | null;
+                  }[]
+                | null;
+              id?: string | null;
+            }[]
+          | null;
+        /**
+         * e.g., NEW, HOT
+         */
+        badge?: string | null;
+        openInNewTab?: boolean | null;
+        displayOrder?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Top utility nav (help, login, etc.)
+   */
+  utilityNav?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        icon?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Default filters shown on category/search pages
+   */
+  sidebarFilters?:
+    | {
+        filterKey?: string | null;
+        label?: string | null;
+        order?: number | null;
+        expandedByDefault?: boolean | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  columns?:
+    | {
+        title: string;
+        links?:
+          | {
+              label: string;
+              url: string;
+              openInNewTab?: boolean | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  paymentMethods?:
+    | {
+        name?: string | null;
+        logo?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  certifications?:
+    | {
+        name?: string | null;
+        logo?: (number | null) | Media;
+        verifyUrl?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  awards?:
+    | {
+        name?: string | null;
+        year?: number | null;
+        logo?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  newsletter?: {
+    heading?: string | null;
+    description?: string | null;
+    enabled?: boolean | null;
+  };
+  copyright?: string | null;
+  legalLinks?:
+    | {
+        label?: string | null;
+        url?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  tenantId?: T;
+  branding?:
+    | T
+    | {
+        siteName?: T;
+        tagline?: T;
+        logo?: T;
+        logoDark?: T;
+        favicon?: T;
+        ogImage?: T;
+      };
+  defaultLocale?: T;
+  supportedLocales?: T;
+  defaultCurrency?: T;
+  supportedCurrencies?: T;
+  contact?:
+    | T
+    | {
+        email?: T;
+        phone?: T;
+        whatsapp?: T;
+        zalo?: T;
+        wechat?: T;
+        address?: T;
+      };
+  social?:
+    | T
+    | {
+        facebook?: T;
+        linkedin?: T;
+        youtube?: T;
+        twitter?: T;
+        instagram?: T;
+        tiktok?: T;
+        weibo?: T;
+      };
+  analytics?:
+    | T
+    | {
+        googleAnalyticsId?: T;
+        gtmId?: T;
+        facebookPixelId?: T;
+        hotjarId?: T;
+      };
+  featureFlags?:
+    | T
+    | {
+        flagKey?: T;
+        enabled?: T;
+        rolloutPercentage?: T;
+        description?: T;
+        id?: T;
+      };
+  maintenance?:
+    | T
+    | {
+        enabled?: T;
+        message?: T;
+        estimatedEndAt?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "navigation_select".
+ */
+export interface NavigationSelect<T extends boolean = true> {
+  mainNav?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        linkType?: T;
+        page?: T;
+        industry?: T;
+        megaItems?:
+          | T
+          | {
+              columnTitle?: T;
+              links?:
+                | T
+                | {
+                    label?: T;
+                    url?: T;
+                    icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+        badge?: T;
+        openInNewTab?: T;
+        displayOrder?: T;
+        id?: T;
+      };
+  utilityNav?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        icon?: T;
+        id?: T;
+      };
+  sidebarFilters?:
+    | T
+    | {
+        filterKey?: T;
+        label?: T;
+        order?: T;
+        expandedByDefault?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  columns?:
+    | T
+    | {
+        title?: T;
+        links?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+              openInNewTab?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  paymentMethods?:
+    | T
+    | {
+        name?: T;
+        logo?: T;
+        id?: T;
+      };
+  certifications?:
+    | T
+    | {
+        name?: T;
+        logo?: T;
+        verifyUrl?: T;
+        id?: T;
+      };
+  awards?:
+    | T
+    | {
+        name?: T;
+        year?: T;
+        logo?: T;
+        id?: T;
+      };
+  newsletter?:
+    | T
+    | {
+        heading?: T;
+        description?: T;
+        enabled?: T;
+      };
+  copyright?: T;
+  legalLinks?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

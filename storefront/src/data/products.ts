@@ -81,7 +81,7 @@ export type LeafSeed = {
   };
 };
 
-const photo = (seed: string) => `https://picsum.photos/seed/${seed}/400/400`;
+const photo = (seed: string) => `/img/${seed}.jpg?v=4`;
 
 export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
   "ghe-van-phong": {
@@ -116,7 +116,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
       },
       {
         q: "Có thể mua ghế văn phòng giá sỉ không?",
-        a: "Hầu hết các nhà máy trên AlibabaVN đều hỗ trợ giá sỉ với MOQ từ 10–50 chiếc tùy mẫu. Bạn có thể gửi RFQ với số lượng cụ thể, các NCC sẽ phản hồi báo giá CIF/DDP về kho Việt Nam trong vòng 24 giờ. Đơn từ 100 chiếc thường được giảm 8–15% so với giá niêm yết. OEM đổi logo, đổi màu da, đổi đệm khả dụng cho đơn từ 200 chiếc.",
+        a: "Hầu hết các nhà máy trên Cybersilkroads đều hỗ trợ giá sỉ với MOQ từ 10–50 chiếc tùy mẫu. Bạn có thể gửi RFQ với số lượng cụ thể, các NCC sẽ phản hồi báo giá CIF/DDP về kho Việt Nam trong vòng 24 giờ. Đơn từ 100 chiếc thường được giảm 8–15% so với giá niêm yết. OEM đổi logo, đổi màu da, đổi đệm khả dụng cho đơn từ 200 chiếc.",
       },
       {
         q: "Làm sao chọn ghế văn phòng phù hợp với nhu cầu?",
@@ -199,7 +199,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
     },
     products: [
       {
-        id: "p1",
+        id: "ghe-van-phong-1",
         title: "Ghế văn phòng lưới công thái học chân nhôm có gối tựa đầu điều chỉnh",
         desc: "Khung thép sơn tĩnh điện, lưới thoáng khí Đức, tựa lưng cong S 3D, tay vịn 4D, cơ chế tilt khoá 3 vị trí. Sản xuất tại Quảng Đông, OEM 200pcs+.",
         priceFrom: "30,00$",
@@ -217,7 +217,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p2",
+        id: "ghe-van-phong-2",
         title: "Ghế điều hành da bò Ý cao cấp tựa đầu massage cơ học chân nhôm đúc",
         desc: "Da bò Italia 1.6mm, đệm mút cao su tự nhiên, hệ thống massage 8 điểm chạy bằng pin. Bảo hành 5 năm. Phù hợp phòng giám đốc, văn phòng cao cấp.",
         priceFrom: "189,00$",
@@ -234,7 +234,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p3",
+        id: "ghe-van-phong-3",
         title: "Ghế phòng họp xếp chồng được khung thép bọc vải nỉ chống cháy",
         desc: "Vải nỉ chống cháy BS5852, khung thép sơn tĩnh điện, đệm mút PU đúc. Xếp chồng 10 ghế. Lý tưởng cho phòng họp, hội trường, khu vực sự kiện.",
         priceFrom: "18,50$",
@@ -251,7 +251,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p4",
+        id: "ghe-van-phong-4",
         title: "Ghế công thái học AKF-X3 lưới Mỹ chân nhôm đỡ thắt lưng năng động",
         desc: "Lưới USA Matrex2, đỡ thắt lưng khí nén tự điều chỉnh, tay vịn 5D, gối tựa đầu xoay 360. Đạt chứng nhận BIFMA, GREENGUARD GOLD. Bảo hành khung 12 năm.",
         priceFrom: "98,00$",
@@ -270,7 +270,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p5",
+        id: "ghe-van-phong-5",
         title: "Ghế nhân viên xoay 360 lưng lưới có tay vịn cố định, chân nhựa 5 cánh",
         desc: "Lưng lưới poly, đệm mút PU, tay vịn cố định bọc PU, chân nhựa nylon 5 cánh, xy-lanh khí nén loại 4. Phù hợp văn phòng startup, coworking.",
         priceFrom: "12,80$",
@@ -286,7 +286,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p6",
+        id: "ghe-van-phong-6",
         title: "Ghế công thái học YAFON YF-A88 lưới Đức tựa đầu 4D bảo hành 10 năm",
         desc: "Lưới Đức Matrex, khung thép cường độ cao, tay vịn 4D điều chỉnh độ cao/sâu/xoay/nghiêng. Đệm ngồi mềm độ dày 12cm. Đạt SGS và BIFMA-X5.",
         priceFrom: "155,00$",
@@ -304,7 +304,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p7",
+        id: "ghe-van-phong-7",
         title: "Ghế xoay làm việc đệm da PU chân nhôm 5 cánh, tay vịn cố định",
         desc: "Da PU 1.2mm chống xước, đệm mút PU đúc cao 10cm, chân nhôm sơn đen mờ, bánh xe PU 60mm di chuyển êm. Phù hợp cả nhà và văn phòng.",
         priceFrom: "42,00$",
@@ -321,7 +321,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
         },
       },
       {
-        id: "p8",
+        id: "ghe-van-phong-8",
         title: "Ghế khách văn phòng chân chữ A khung thép, đệm bouclé màu kem",
         desc: "Bouclé Pháp 100% polyester, khung thép mạ chrome, đệm mút HD 8cm, khả năng chịu tải 150kg. Style Bắc Âu sang trọng, tinh tế.",
         priceFrom: "55,00$",
@@ -475,12 +475,12 @@ function buildLeafFromSeed(slug: string, seed: LeafSeed): LeafCategoryPage {
       audited: true,
       rating: 4 + ((hashSeed(slug + "::rate") % 2)),
       videoCaption: fs.videoCaption,
-      videoSrc: photo(slug + "-fvideo"),
+      videoSrc: photo(seed.parentSlug + "-sc-fvideo"),
       miniProducts: fs.products.map((p, i) => ({
         title: p.title,
         price: p.price,
         unit: i % 2 === 0 ? "/ Bộ" : "/ Cái",
-        img: photo(slug + "-fmini-" + i),
+        img: photo(seed.parentSlug + "-sc-fmini-" + i),
       })),
     };
   } else {
@@ -492,14 +492,14 @@ function buildLeafFromSeed(slug: string, seed: LeafSeed): LeafCategoryPage {
       audited: true,
       rating: 4 + ((hashSeed(slug + "::rate") % 2)),
       videoCaption: FEATURED_VIDEO_CAPTIONS[captionIdx],
-      videoSrc: photo(slug + "-fvideo"),
+      videoSrc: photo(seed.parentSlug + "-sc-fvideo"),
       miniProducts: seed.productNames.slice(0, 5).map((title, i) => {
         const p = priceTier(slug, i + 100);
         return {
           title: title.length > 60 ? title.slice(0, 57) + "…" : title,
           price: `${p.from}-${p.to}`,
           unit: p.unit,
-          img: photo(slug + "-fmini-" + i),
+          img: photo(seed.parentSlug + "-sc-fmini-" + i),
         };
       }),
     };
@@ -514,14 +514,14 @@ function buildLeafFromSeed(slug: string, seed: LeafSeed): LeafCategoryPage {
     const h = hashSeed(slug + "::p::" + i);
     const desc = buildProductDesc(name, seed, i);
     return {
-      id: `p${i + 1}`,
+      id: `demo-${seed.parentSlug}-1`,
       title: name,
       desc,
       priceFrom: p.from,
       priceTo: p.to,
       unit: p.unit,
       moq: moqPool[(h + i) % moqPool.length],
-      img: { src: photo(slug + "-prod-" + i), total: 3 + ((h >> 3) % 6) },
+      img: { src: photo(seed.parentSlug + "-sc-prod-" + i), total: 3 + ((h >> 3) % 6) },
       isVideo: i % 3 === 0,
       amazing: i % 2 === 0,
       monthLabel: i % 4 === 0 ? monthLabels[(h >> 5) % monthLabels.length] : undefined,
@@ -540,16 +540,16 @@ function buildLeafFromSeed(slug: string, seed: LeafSeed): LeafCategoryPage {
       ? seed.faqs
       : [
           {
-            q: `MOQ tối thiểu cho ${seed.title.toLowerCase()} là bao nhiêu?`,
+            q: `MOQ của ${seed.title.toLowerCase()} là bao nhiêu?`,
             a: `MOQ phổ biến cho ${seed.title.toLowerCase()} dao động từ 1–50 đơn vị tùy mẫu và mức độ tùy chỉnh. Đơn từ 100 đơn vị thường được giảm 8–15% so với giá niêm yết. Nhà máy có thể nhận sample 1 cái để kiểm tra chất lượng trước khi đặt số lượng lớn — phí sample sẽ được trừ vào đơn chính thức.`,
           },
           {
             q: `Có thể đặt ${seed.title.toLowerCase()} theo OEM/ODM không?`,
-            a: `Hầu hết các nhà máy trong danh mục này hỗ trợ OEM (in logo, đổi màu, đổi bao bì) từ 200 đơn vị và ODM (thiết kế riêng) từ 500 đơn vị. Thời gian sản xuất trung bình 25–40 ngày kể từ khi duyệt mẫu. AlibabaVN có hỗ trợ kỹ thuật phối hợp với nhà máy nếu bạn cần tư vấn vật liệu, kết cấu, kích thước.`,
+            a: `Hầu hết các nhà máy trong danh mục này hỗ trợ OEM (in logo, đổi màu, đổi bao bì) từ 200 đơn vị và ODM (thiết kế riêng) từ 500 đơn vị. Thời gian sản xuất trung bình 25–40 ngày kể từ khi duyệt mẫu. Cybersilkroads có hỗ trợ kỹ thuật phối hợp với nhà máy nếu bạn cần tư vấn vật liệu, kết cấu, kích thước.`,
           },
           {
             q: `Vận chuyển ${seed.title.toLowerCase()} về Việt Nam như thế nào?`,
-            a: `Các đơn ${seed.title.toLowerCase()} thường được vận chuyển bằng đường biển LCL/FCL từ cảng Quảng Châu, Ninh Ba, Hạ Môn về Hải Phòng/TP.HCM. AlibabaVN cung cấp dịch vụ DDP — bao thuế, bao thông quan, giao tận kho — cho 99% mã sản phẩm trong danh mục. Thời gian door-to-door 14–21 ngày tùy cảng đi và thời điểm.`,
+            a: `Các đơn ${seed.title.toLowerCase()} thường được vận chuyển bằng đường biển LCL/FCL từ cảng Quảng Châu, Ninh Ba, Hạ Môn về Hải Phòng/TP.HCM. Cybersilkroads cung cấp dịch vụ DDP — bao thuế, bao thông quan, giao tận kho — cho 99% mã sản phẩm trong danh mục. Thời gian door-to-door 14–21 ngày tùy cảng đi và thời điểm.`,
           },
         ];
 
@@ -752,7 +752,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Cây ô liu giả 4 thân cao 200cm, hiệu ứng cây thật 95%",
       "Cây ô liu giả treo tường 80cm, khung dây thép uốn",
     ],
-    styles: ["Tuscany", "Bắc Âu", "Tối giản", "Hiện đại", "Mediterranean"],
+    styles: ["Tuscany", "Bắc Âu", "Tối giản", "Hiện đại", "Địa Trung Hải"],
     materials: ["Lá EVA UV", "Lá latex real-touch", "Gốc gỗ thật", "Thân nhựa PE"],
     extraFilters: [
       { title: "Chiều cao", options: ["<60cm", "60-100cm", "100-150cm", "150-200cm", ">200cm"] },
@@ -855,7 +855,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bình thủy tinh bong bóng art glass đa sắc 28cm",
       "Bình ceramic vintage chạm nổi hoa văn cobalt 50cm",
     ],
-    styles: ["Trung Hoa cổ", "Bắc Âu", "Hiện đại", "Vintage", "Industrial", "Art-deco"],
+    styles: ["Trung Hoa cổ", "Bắc Âu", "Hiện đại", "Vintage", "Công nghiệp", "Art-deco"],
     materials: ["Gốm sứ", "Thủy tinh handmade", "Kim loại đồng", "Resin", "Mây tre"],
     extraFilters: [SIZE_FILTER],
   },
@@ -887,7 +887,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Tường cây giả nhỏ 40×60cm dùng đầu giường, decor sofa",
       "Tường cây 3D module có chống ẩm, dùng ban công",
     ],
-    styles: ["Tropical", "Bắc Âu", "Tự nhiên", "Modern jungle"],
+    styles: ["Nhiệt đới", "Bắc Âu", "Tự nhiên", "Rừng nhiệt đới hiện đại"],
     materials: ["Lá nhựa PE", "Lá EVA UV", "Khung nhôm", "Khung nhựa PP"],
     extraFilters: [
       { title: "Khả năng chống cháy", options: ["B1 chống cháy", "Tiêu chuẩn (không CC)"] },
@@ -922,7 +922,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Vách ngăn gấp 5 cánh mặt gương, decor phòng khách",
       "Vách ngăn gấp 4 cánh khung nhôm kính mờ phun cát",
     ],
-    styles: ["Trung Hoa", "Hiện đại", "Bắc Âu", "Industrial", "Vintage"],
+    styles: ["Trung Hoa", "Hiện đại", "Bắc Âu", "Công nghiệp", "Vintage"],
     materials: ["Gỗ MDF", "Gỗ sồi", "Kim loại", "Nhôm", "Tre tự nhiên", "Vải nhung"],
     extraFilters: [
       { title: "Số cánh", options: ["3 cánh", "4 cánh", "5 cánh", "6 cánh"] },
@@ -956,7 +956,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Khung canvas mỏng art-deco khổ 100×150cm viền vàng",
       "Bộ 4 tranh canvas trừu tượng tone xanh navy 40×60cm",
     ],
-    styles: ["Bắc Âu", "Tân cổ điển", "Hiện đại", "Industrial", "Art-deco", "Vintage"],
+    styles: ["Bắc Âu", "Tân cổ điển", "Hiện đại", "Công nghiệp", "Art-deco", "Vintage"],
     materials: ["Composite", "Gỗ sồi", "Gỗ óc chó", "Nhôm", "PS chạm cổ điển"],
     extraFilters: [
       { title: "Kích thước", options: ["A4-A3", "30×40-50×70", "60×90", "80×120", "Trên 100cm"] },
@@ -1157,7 +1157,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đài phun cá chép vượt vũ môn cao 1.6m, có hệ thống tuần hoàn",
       "Đài phun nước stone bowl đường kính 80cm, dùng ban công",
     ],
-    styles: ["Cổ điển châu Âu", "Trung Hoa cổ", "Hiện đại", "Mediterranean"],
+    styles: ["Cổ điển châu Âu", "Trung Hoa cổ", "Hiện đại", "Địa Trung Hải"],
     materials: ["Composite GFRC", "Đá granite", "Đá tổng hợp", "Composite + LED"],
     extraFilters: [
       { title: "Số tầng", options: ["1 tầng", "2 tầng", "3 tầng", "5 tầng"] },
@@ -1192,7 +1192,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đèn lồng treo solar LED, vỏ kim loại đen mờ, 4 chiếc/set",
       "Đèn cột vườn cao 80cm dáng nấm, vỏ nhôm hoàn thiện đồng",
     ],
-    styles: ["Hiện đại", "Cổ điển châu Âu", "Tối giản", "Industrial"],
+    styles: ["Hiện đại", "Cổ điển châu Âu", "Tối giản", "Công nghiệp"],
     materials: ["Vỏ nhôm đúc", "Inox 304", "Vỏ nhựa PC chống UV"],
     extraFilters: [
       { title: "Cấp bảo vệ IP", options: ["IP44", "IP65", "IP66", "IP67"] },
@@ -1365,7 +1365,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Set 6 chậu PE mini tròn 12cm tone trắng kem để bàn",
       "Chậu PE chống tia UV 100×40cm, lined đen, dáng trụ",
     ],
-    styles: ["Hiện đại", "Tối giản", "Mediterranean", "Bắc Âu"],
+    styles: ["Hiện đại", "Tối giản", "Địa Trung Hải", "Bắc Âu"],
     materials: ["Nhựa PE rotomold", "Nhựa PE chống UV", "PE rattan-effect"],
     extraFilters: [
       SIZE_FILTER,
@@ -1400,7 +1400,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Set 2 chậu composite trụ tone xanh navy cao 80-100cm",
       "Chậu sợi thủy tinh đường kính 1.5m cao 60cm dùng cây cọ lớn",
     ],
-    styles: ["Hiện đại", "Tối giản", "Mediterranean", "Industrial"],
+    styles: ["Hiện đại", "Tối giản", "Địa Trung Hải", "Công nghiệp"],
     materials: ["Composite GFRC", "Fiberclay", "Fiberglass GRP"],
     extraFilters: [
       SIZE_FILTER,
@@ -1469,7 +1469,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Chậu xi măng landscape vuông 1×1×0.6m chống nứt",
       "Chậu xi măng mini hexagon 15cm, set 6 cái decor",
     ],
-    styles: ["Tối giản", "Industrial", "Hiện đại", "Brutalist"],
+    styles: ["Tối giản", "Công nghiệp", "Hiện đại", "Brutalist"],
     materials: ["Xi măng đúc", "Xi măng GFRC siêu nhẹ", "Xi măng polymer"],
     extraFilters: [
       SIZE_FILTER,
@@ -1504,7 +1504,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Set 3 chậu inox vàng PVD 18-25-32cm decor căn hộ cao cấp",
       "Chậu inox 304 hình hexagon đường kính 50cm dùng sảnh tòa nhà",
     ],
-    styles: ["Hiện đại", "Industrial", "Sang trọng", "Vintage"],
+    styles: ["Hiện đại", "Công nghiệp", "Sang trọng", "Vintage"],
     materials: ["Inox 304", "Inox vàng PVD", "Tôn galvanized", "Đồng đỏ"],
     extraFilters: [
       { title: "Hoàn thiện", options: ["Hairline", "Mirror polished", "Mạ vàng PVD", "Patina cổ"] },
@@ -1573,7 +1573,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Giá đỡ chậu industrial ống nước đen, 4 tầng treo tường",
       "Giá đỡ chậu modular ghép module mỗi tầng cao 25cm",
     ],
-    styles: ["Bắc Âu", "Industrial", "Hiện đại", "Vintage"],
+    styles: ["Bắc Âu", "Công nghiệp", "Hiện đại", "Vintage"],
     materials: ["Kim loại sơn tĩnh điện", "Gỗ thông", "Gỗ sồi", "Inox 304"],
     extraFilters: [
       { title: "Số tầng", options: ["1-2 tầng", "3 tầng", "4 tầng", "5+ tầng"] },
@@ -1608,7 +1608,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Chậu treo trần ceramic dáng quả lê 25cm, dây cotton xoắn",
       "Chậu treo cửa sổ mini set 4 cái dây da bò 50cm",
     ],
-    styles: ["Bohemian", "Bắc Âu", "Hiện đại", "Tropical"],
+    styles: ["Bohemian", "Bắc Âu", "Hiện đại", "Nhiệt đới"],
     materials: ["Cotton macrame", "Inox 304", "Nhựa PE", "Ceramic"],
     extraFilters: [
       { title: "Kiểu treo", options: ["Treo trần", "Treo tường", "Treo cửa sổ", "Treo balcony"] },
@@ -1965,7 +1965,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đèn pha LED solar 60W rời panel, pin lithium 12000mAh",
       "Đèn pha LED 150W chiếu nhà xưởng IK10 chống va đập",
     ],
-    styles: ["Industrial", "Hiện đại", "Sân thể thao"],
+    styles: ["Công nghiệp", "Hiện đại", "Sân thể thao"],
     materials: ["Vỏ nhôm đúc", "Vỏ nhôm sơn tĩnh điện", "Kính cường lực"],
     extraFilters: [
       { title: "Công suất", options: ["10-30W", "30-50W", "50-100W", "100-200W", "Trên 200W"] },
@@ -2001,7 +2001,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đèn cắm cỏ uplight chiếu tường 9W IP65, chùm 60°",
       "Đèn cắm cỏ mini decor 1W warm white, set 10 cái IP44",
     ],
-    styles: ["Hiện đại", "Tối giản", "Industrial"],
+    styles: ["Hiện đại", "Tối giản", "Công nghiệp"],
     materials: ["Inox 304", "Inox 316", "Vỏ nhôm đúc"],
     extraFilters: [
       { title: "Công suất", options: ["1-3W", "3-5W", "5-9W", "Trên 9W"] },
@@ -2213,7 +2213,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Móc treo inox 304 dán keo dùng tủ bếp, set 10 cái",
       "Kệ tường gắn lò vi sóng inox 304 chịu tải 25kg",
     ],
-    styles: ["Industrial", "Bắc Âu", "Tối giản"],
+    styles: ["Công nghiệp", "Bắc Âu", "Tối giản"],
     materials: ["Inox 304", "Nhựa ABS", "Gỗ thông + sắt", "Hợp kim kẽm"],
     extraFilters: [
       { title: "Cách lắp", options: ["Dán keo 3M", "Khoan vít", "Đè trên cửa"] },
@@ -2282,7 +2282,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Giỏ phân loại đồ giặt 3 ngăn vải canvas + sắt",
       "Móc treo phơi tất 16 ngạnh nhựa ABS, kẹp lò xo inox",
     ],
-    styles: ["Tối giản", "Industrial", "Hiện đại"],
+    styles: ["Tối giản", "Công nghiệp", "Hiện đại"],
     materials: ["Inox 304", "Nhôm rút", "Nhựa ABS", "Cotton + sắt"],
     extraFilters: [
       { title: "Loại sản phẩm", options: ["Giá phơi", "Giỏ laundry", "Móc kẹp", "Móc treo tất"] },
@@ -2491,7 +2491,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Khung tranh kim loại đường viền hand-cut đường kính 60cm",
       "Đèn kim loại handmade dáng cage industrial cao 60cm",
     ],
-    styles: ["Industrial", "Vintage", "Tân cổ điển", "Bắc Âu"],
+    styles: ["Công nghiệp", "Vintage", "Tân cổ điển", "Bắc Âu"],
     materials: ["Đồng đúc", "Sắt rèn", "Inox 304 hand-cut", "Hợp kim mạ vàng"],
     extraFilters: [
       { title: "Hoàn thiện", options: ["Brass cổ", "Patina", "Mạ vàng PVD", "Đen mờ powder coat"] },
@@ -2562,7 +2562,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Ghế tắm nắng nhôm + textilene gấp gọn, có gối kê đầu",
       "Set 4 ghế bar outdoor PE rattan + bàn cao chân nhôm",
     ],
-    styles: ["Hiện đại", "Bắc Âu", "Mediterranean", "Resort"],
+    styles: ["Hiện đại", "Bắc Âu", "Địa Trung Hải", "Resort"],
     materials: ["PE rattan + nhôm", "Aluminum đúc", "Teak Indonesia", "Inox 316 + textilene"],
     extraFilters: [
       { title: "Số chỗ ngồi", options: ["2 chỗ", "4 chỗ", "6 chỗ", "8 chỗ", "10+ chỗ"] },
@@ -2782,7 +2782,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bộ 3 mèo thần tài Maneki-Neko vàng nhũ resin 18cm chống ẩm",
       "Đồng hồ treo tường nan gỗ MDF 50cm, kim trượt Nhật chính hãng",
     ],
-    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Tối giản", "Phật giáo", "Light Luxury"],
+    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Tối giản", "Phật giáo", "Sang trọng nhẹ"],
     materials: ["Resin", "Gốm sứ", "Inox 304", "Composite", "Gỗ MDF phủ Acrylic", "Lụa polyester"],
     extraFilters: [
       SIZE_FILTER,
@@ -2824,7 +2824,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bộ cờ trang trí vườn vải polyester 30×45cm, in UV 4 mùa",
       "Phong linh kim loại đồng cao 60cm, 6 ống tone Tây Tạng",
     ],
-    styles: ["Tân cổ điển", "Bắc Âu", "Mediterranean", "Tự nhiên", "Trung Hoa", "Tropical"],
+    styles: ["Tân cổ điển", "Bắc Âu", "Địa Trung Hải", "Tự nhiên", "Trung Hoa", "Nhiệt đới"],
     materials: ["Đá granite", "Composite", "Nhựa PU", "Inox 304", "Đồng đúc", "Gốm sứ men ngoài trời"],
     extraFilters: [
       SIZE_FILTER,
@@ -2866,7 +2866,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bộ decor bàn trà 5 món: tray gỗ + nến + tượng + bình + sách",
       "Vách ngăn 4 cánh khung gỗ sồi cao 1.8m, mặt phim mờ ánh vàng",
     ],
-    styles: ["Hiện đại", "Tân cổ điển", "Bắc Âu", "Industrial", "Light Luxury", "Boho"],
+    styles: ["Hiện đại", "Tân cổ điển", "Bắc Âu", "Công nghiệp", "Sang trọng nhẹ", "Boho"],
     materials: ["Gốm sứ", "Resin", "Vải linen", "Gỗ sồi", "Đá cẩm thạch", "Polypropylene"],
     extraFilters: [
       SIZE_FILTER,
@@ -2908,7 +2908,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đèn chân nến 5 ngọn kim loại đồng cao 60cm, dùng banquet",
       "Lọ tiêu muối ceramic vuông 8cm, set 24 cặp logo khách sạn 5 sao",
     ],
-    styles: ["5 sao quốc tế", "Tân cổ điển", "Á Đông", "Light Luxury", "Industrial F&B"],
+    styles: ["5 sao quốc tế", "Tân cổ điển", "Á Đông", "Sang trọng nhẹ", "Công nghiệp F&B"],
     materials: ["Pha lê K9", "Inox 304", "Gốm sứ men matte", "Đồng đúc", "Gỗ veneer óc chó"],
     extraFilters: [
       { title: "Loại không gian F&B", options: ["Buffet sảnh", "Fine dining", "À la carte", "Banquet", "Pool bar"] },
@@ -2916,7 +2916,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Foshan Hospitality Decor Factory",
-      logo: "https://picsum.photos/seed/sup-hotel-fs/120/120",
+      logo: "/img/sup-hotel-fs.jpg?v=4",
       loc: "Foshan, Guangdong",
       videoCaption: "Xưởng decor F&B 5 sao — chuyên cung cấp Marriott, Hilton",
       products: [
@@ -2960,7 +2960,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Tượng decor cao mảnh resin 60cm, hình dáng nghệ thuật abstract",
       "Đồng hồ treo tường thiết kế dài đứng 80cm, kim Nhật im lặng",
     ],
-    styles: ["Hiện đại", "Tối giản", "Bắc Âu", "Tân cổ điển", "Industrial"],
+    styles: ["Hiện đại", "Tối giản", "Bắc Âu", "Tân cổ điển", "Công nghiệp"],
     materials: ["Gỗ sồi", "Kim loại sơn tĩnh điện", "Polypropylene", "Resin", "Vải canvas"],
     extraFilters: [
       { title: "Chiều rộng hành lang", options: ["<1m", "1-1.5m", "1.5-2m", "Trên 2m"] },
@@ -3001,7 +3001,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Lưới che nắng HDPE 70% UV 5×3m, khoen inox cách 50cm",
       "Bồn trồng tự tưới balcony nhựa PE 60×25cm, có hồ chứa nước 4L",
     ],
-    styles: ["Tropical", "Bắc Âu", "Mediterranean", "Industrial", "Boho"],
+    styles: ["Nhiệt đới", "Bắc Âu", "Địa Trung Hải", "Công nghiệp", "Boho"],
     materials: ["Khung nhôm", "Thép sơn tĩnh điện", "WPC", "Nhựa PE", "Vải Oxford 600D"],
     extraFilters: [
       { title: "Diện tích ban công", options: ["<5m²", "5-10m²", "10-20m²", "Trên 20m²"] },
@@ -3043,7 +3043,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bồn cây sợi thủy tinh đại Φ80×H100cm, lót lớp chống thấm EPDM",
       "Bộ centerpiece reception 7 món: bình + tượng + nến + tray gương",
     ],
-    styles: ["5 sao quốc tế", "Tân cổ điển", "Light Luxury", "Trung Hoa", "Hiện đại sang trọng"],
+    styles: ["5 sao quốc tế", "Tân cổ điển", "Sang trọng nhẹ", "Trung Hoa", "Hiện đại sang trọng"],
     materials: ["Pha lê K9", "Đá granite", "Sợi thủy tinh", "Gỗ veneer", "Đá nhân tạo Solid Surface"],
     extraFilters: [
       { title: "Loại sảnh", options: ["Khách sạn", "Văn phòng", "Chung cư cao cấp", "Showroom", "Resort"] },
@@ -3051,7 +3051,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Guangzhou Lobby Decor Co., Ltd.",
-      logo: "https://picsum.photos/seed/sup-lobby-gz/120/120",
+      logo: "/img/sup-lobby-gz.jpg?v=4",
       loc: "Guangzhou, Guangdong",
       videoCaption: "Tour xưởng decor sảnh — đã cung cấp 200+ khách sạn 5 sao châu Á",
       products: [
@@ -3140,7 +3140,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bồn tự tưới balcony PP 60×25cm, hồ chứa 4L nước, ống dẫn mao mạch",
       "Bộ 3 chậu treo lan can nhựa ABS, móc inox điều chỉnh 0–180mm",
     ],
-    styles: ["Hiện đại", "Tối giản", "Bắc Âu", "Mediterranean", "Industrial", "Tropical"],
+    styles: ["Hiện đại", "Tối giản", "Bắc Âu", "Địa Trung Hải", "Công nghiệp", "Nhiệt đới"],
     materials: ["Composite", "Nhựa PE", "Gốm sứ", "Xi măng", "Inox 304", "Sợi thủy tinh"],
     extraFilters: [
       SIZE_FILTER,
@@ -3183,7 +3183,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bình pha lê K9 cắt khía Bohemia cao 22cm, đáy dày 15mm cao cấp",
       "Bình resin abstract face hiện đại trắng 35cm, finish matte epoxy",
     ],
-    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Trung Hoa", "Vintage", "Light Luxury"],
+    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Trung Hoa", "Vintage", "Sang trọng nhẹ"],
     materials: ["Thủy tinh borosilicate", "Gốm sứ", "Kim loại đồng/brass", "Pha lê K9", "Resin"],
     extraFilters: [
       SIZE_FILTER,
@@ -3225,7 +3225,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Set 5 quyển sách giả decor bìa cứng vintage, dùng tủ trang trí",
       "Bộ 3 lọ trang trí ceramic matte set, cao 15-20-25cm cùng tone",
     ],
-    styles: ["Hiện đại", "Bắc Âu", "Light Luxury", "Vintage", "Industrial", "Phong thủy"],
+    styles: ["Hiện đại", "Bắc Âu", "Sang trọng nhẹ", "Vintage", "Công nghiệp", "Phong thủy"],
     materials: ["Resin", "Gốm sứ", "Kim loại đồng/brass", "Inox 304 PVD", "Đá cẩm thạch", "Gỗ óc chó"],
     extraFilters: [
       SIZE_FILTER,
@@ -3267,7 +3267,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Đèn chiếu cây spotlight LED 12W IP66 cọc cắm điều chỉnh góc 360°",
       "Đèn solar wall lắp tường ngoài trời 6W IP65, motion sensor PIR",
     ],
-    styles: ["Hiện đại", "Cổ điển", "Tropical", "Industrial", "Bắc Âu"],
+    styles: ["Hiện đại", "Cổ điển", "Nhiệt đới", "Công nghiệp", "Bắc Âu"],
     materials: ["Vỏ nhôm đúc", "Inox 304", "Nhựa PC chống UV", "Đồng nguyên chất"],
     extraFilters: [
       { title: "Nguồn điện", options: ["Solar", "Điện 220V", "DC 12V", "DC 24V", "Pin sạc lithium"] },
@@ -3313,7 +3313,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Tượng sư tử composite phủ đá nhân tạo cao 1m, độ bền 15 năm",
       "Lan can WPC 100m, post 100×100mm + nan 30×80mm chống mục",
     ],
-    styles: ["Hiện đại", "Tân cổ điển", "Tropical", "Mediterranean"],
+    styles: ["Hiện đại", "Tân cổ điển", "Nhiệt đới", "Địa Trung Hải"],
     extraFilters: [
       SIZE_FILTER,
       { title: "Ứng dụng", options: ["Sân vườn", "Sảnh", "Công viên", "Resort", "Villa"] },
@@ -3355,7 +3355,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bể chứa nước PE 1000L, dày 5mm food-grade, chống tảo",
       "Hộp PE trồng rau hữu cơ vuông 30×30cm, có chân + khay đáy",
     ],
-    styles: ["Tropical", "Industrial", "Tối giản"],
+    styles: ["Nhiệt đới", "Công nghiệp", "Tối giản"],
     extraFilters: [
       SIZE_FILTER,
       { title: "Cấp độ PE", options: ["LDPE", "HDPE", "LLDPE", "Roto-mold PE", "PE food-grade"] },
@@ -3397,7 +3397,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Hộp khăn giấy ceramic Bắc Âu Bear, men matte trắng 25cm",
       "Đèn bàn ceramic men rạn cao 45cm, chao vải linen, bóng E27",
     ],
-    styles: ["Trung Hoa cổ điển", "Bắc Âu", "Mediterranean", "Hiện đại"],
+    styles: ["Trung Hoa cổ điển", "Bắc Âu", "Địa Trung Hải", "Hiện đại"],
     extraFilters: [
       { title: "Loại men", options: ["Men rạn", "Men ngọc", "Men matte", "Men bóng", "Men sần"] },
       { title: "Vùng sản xuất", options: ["Cảnh Đức", "Long Tuyền", "Đức Hóa", "Quảng Đông"] },
@@ -3446,7 +3446,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Quanzhou Natural Stone Carving",
-      logo: "https://picsum.photos/seed/sup-stone-qz/120/120",
+      logo: "/img/sup-stone-qz.jpg?v=4",
       loc: "Quanzhou, Fujian",
       videoCaption: "Xưởng đá Tuyền Châu — chuyên tượng đá granite tự nhiên xuất khẩu",
       products: [
@@ -3490,7 +3490,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Khung pergola thép sơn 3×3m, mái vải Oxford 600D chống thấm",
       "Bộ giá đỡ chậu 3 tầng kim loại đen 80cm, sơn epoxy nhám",
     ],
-    styles: ["Industrial", "Hiện đại", "Vintage Pháp", "Tối giản"],
+    styles: ["Công nghiệp", "Hiện đại", "Vintage Pháp", "Tối giản"],
     extraFilters: [
       { title: "Cấp độ sơn", options: ["1 lớp", "2 lớp epoxy + polyester", "3 lớp marine", "Anti-rust C5"] },
       { title: "Màu sơn", options: ["Đen RAL 9005", "Trắng RAL 9010", "Xám RAL 7016", "Đồng vintage", "Tùy chọn"] },
@@ -3532,7 +3532,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Bộ 3 chậu fiberglass matte ngoài trời, vuông 30/40/50cm cùng tone",
       "Bồn fiberglass dáng côn cao 70cm, miệng 50/đáy 35, decor minimalist",
     ],
-    styles: ["Hiện đại", "Tối giản", "Tân cổ điển", "Light Luxury"],
+    styles: ["Hiện đại", "Tối giản", "Tân cổ điển", "Sang trọng nhẹ"],
     extraFilters: [
       SIZE_FILTER,
       { title: "Hoàn thiện", options: ["Matte", "Bóng", "Faux-marble", "Faux-stone", "Anti-graffiti"] },
@@ -3574,7 +3574,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Ghế bập bênh mây tự nhiên cao 95cm, đan tay Indonesia style",
       "Khay phục vụ tre đan thủ công chữ nhật 40×25cm, chống ẩm",
     ],
-    styles: ["Tropical", "Boho", "Bắc Âu", "Á Đông", "Vintage"],
+    styles: ["Nhiệt đới", "Boho", "Bắc Âu", "Á Đông", "Vintage"],
     extraFilters: [
       { title: "Loại mây/tre", options: ["Mây tự nhiên", "PE rattan tổng hợp", "Tre thật", "Tre ép"] },
       { title: "Xuất xứ", options: ["Indonesia style", "Việt Nam style", "Trung Hoa", "Bali"] },
@@ -3616,7 +3616,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
       "Tay vịn inox 304 brushed satin Φ42.4 dài 6m, khớp 90° linh hoạt",
       "Cột đèn cảnh quan inox 304 cao 3m, chao kép LED 60W IP66",
     ],
-    styles: ["Hiện đại", "Industrial", "Light Luxury", "5 sao quốc tế"],
+    styles: ["Hiện đại", "Công nghiệp", "Sang trọng nhẹ", "5 sao quốc tế"],
     extraFilters: [
       { title: "Hoàn thiện", options: ["Mirror (gương)", "Brushed satin", "PVD vàng", "PVD đồng", "PVD đen"] },
       { title: "Cấp độ inox", options: ["304", "304L", "316", "316L (marine grade)"] },
@@ -3666,7 +3666,7 @@ function findLeafContext(
   return null;
 }
 
-const DEFAULT_STYLES = ["Hiện đại", "Cổ điển", "Tối giản", "Industrial", "Châu Âu"];
+const DEFAULT_STYLES = ["Hiện đại", "Cổ điển", "Tối giản", "Công nghiệp", "Châu Âu"];
 const DEFAULT_PRODUCT_VARIANTS = [
   "bản tiêu chuẩn xuất khẩu, đóng gói carton 5 lớp",
   "phiên bản cao cấp dành cho dự án khách sạn 5 sao",
@@ -3678,6 +3678,190 @@ const DEFAULT_PRODUCT_VARIANTS = [
   "phiên bản OEM cho thị trường EU, dày dặn cường độ cao",
 ];
 
+/**
+ * Per-parent-category content templates — used by buildDefaultSeed so that
+ * any leaf URL we don't have a hand-curated seed for still produces
+ * contextually relevant product names, materials, styles.
+ *
+ * Each entry overrides the fallback defaults; missing fields fall back.
+ */
+type CategoryTemplate = {
+  variants?: string[];
+  styles?: string[];
+  materials?: string[];
+};
+
+const CATEGORY_TEMPLATES: Record<string, CategoryTemplate> = {
+  electrical: {
+    variants: [
+      "16A 250V chuẩn IEC, vỏ PC chống cháy V0",
+      "âm tường chuẩn EU, thân đồng mạ niken",
+      "công nghệ chống giật ELCB 30mA",
+      "phiên bản chống nước IP65 ngoài trời",
+      "tích hợp cổng USB-C 20W và Type-A 2.4A",
+      "OEM in logo, đóng gói display box riêng",
+      "đời 2026, kèm tem CE / CCC / TUV",
+      "bảo hành 5 năm, MOQ linh hoạt",
+    ],
+    styles: ["Tiêu chuẩn EU", "Kiểu Mỹ", "Kiểu Anh BS", "Kiểu Nhật JIS", "Tiêu chuẩn TQ"],
+    materials: ["Nhựa PC chống cháy", "Hợp kim nhôm", "Đồng mạ niken", "Thép không gỉ", "Kim loại sơn tĩnh điện"],
+  },
+  lighting: {
+    variants: [
+      "LED COB chip Bridgelux 9W-36W, CRI ≥80",
+      "ánh sáng 3000K/4000K/6500K điều chỉnh được",
+      "vỏ nhôm đúc tản nhiệt, IP44 cho phòng tắm",
+      "tích hợp dimmer + smart Wi-Fi Tuya",
+      "tuổi thọ 50.000h, bảo hành 3 năm",
+      "OEM ODM theo yêu cầu — logo trên driver",
+      "chứng nhận CE / RoHS / FCC / SAA",
+      "không nhấp nháy <8%, an toàn cho mắt",
+    ],
+    styles: ["Hiện đại", "Bắc Âu", "Công nghiệp", "Cổ điển", "Nhà thông minh"],
+    materials: ["Nhôm đúc", "Hợp kim nhẹ", "Acrylic PMMA", "Thuỷ tinh borosilicate", "Thép sơn tĩnh điện"],
+  },
+  "bathroom-sanitary": {
+    variants: [
+      "đồng thau brass đặc, mạ chrome 5 lớp PVD",
+      "công nghệ ổn nhiệt thermostatic ±0.5°C",
+      "ceramic men nano kháng khuẩn, dễ vệ sinh",
+      "kết cấu xả đôi 3L/6L tiết kiệm nước",
+      "kính cường lực 8mm chống xước, tự sạch",
+      "OEM theo bản vẽ, MOQ 50-100 bộ",
+      "đạt CE / WaterSense / WRAS",
+      "bảo hành 10 năm cho thân vòi, 5 năm cho ceramic",
+    ],
+    styles: ["Hiện đại", "Tân cổ điển", "Tối giản", "Sang trọng", "Spa"],
+    materials: ["Đồng thau", "Hợp kim kẽm", "Ceramic", "Đá nhân tạo", "Acrylic", "Đồng thau mạ chrome"],
+  },
+  "doors-windows": {
+    variants: [
+      "khung nhôm 6063-T5 dày 1.4mm, sơn tĩnh điện",
+      "kính 2 lớp Low-E + argon, cách nhiệt U=1.6",
+      "ray trượt rãnh đôi êm chống bụi, gioăng EPDM",
+      "phụ kiện Roto/Sheba/Hopo cao cấp",
+      "kích thước custom theo bản vẽ, MOQ 1 bộ",
+      "chống nước IP65, kháng gió cấp 12",
+      "OEM logo, đóng gói pallet xuất khẩu",
+      "đời 2026, đạt CE / AAMA / WERS-A",
+    ],
+    styles: ["Cửa nhôm hệ", "Cửa nhôm xingfa", "Cửa nhôm Bertelsmann", "Cửa kính cường lực", "Cửa gỗ công nghiệp"],
+    materials: ["Nhôm 6063", "Thép sơn tĩnh điện", "Kính cường lực", "Gỗ MDF veneer", "Nhựa uPVC"],
+  },
+  "construction-materials": {
+    variants: [
+      "porcelain 600×600 / 800×800 / 1000×1000mm",
+      "men matte / glossy / sand-stone, chống trượt R10",
+      "độ bền uốn ≥35 N/mm², hấp thụ nước <0.5%",
+      "tone marble / granite / cement-look 2026",
+      "đóng gói pallet 1.4 tấn, đi container 40HQ",
+      "OEM mã model + logo trong đáy gạch",
+      "chứng nhận CE / ISO 13006 / Class A1 fire",
+      "bảo hành 25 năm chống bay màu",
+    ],
+    styles: ["Marble", "Granite", "Concrete", "Wood-look", "Terrazzo"],
+    materials: ["Porcelain", "Đá tự nhiên", "Đá nhân tạo Quartz", "Vật liệu composite", "Sintered stone"],
+  },
+  "hardware-tools": {
+    variants: [
+      "thép không gỉ 304 / 316, chống ăn mòn nước biển",
+      "động cơ chổi than 800-2200W, tốc độ điều chỉnh",
+      "pin Lithium 18V/20V/40V, 2-6Ah, sạc nhanh 1h",
+      "vỏ nhôm magnesium chịu va đập IP54",
+      "tay cầm cao su soft-grip, giảm rung 60%",
+      "OEM in laser logo lên thân máy",
+      "kèm vali blow-mold, phụ kiện đầy đủ",
+      "đạt CE / GS / EMC / RoHS / Bảo hành 2 năm",
+    ],
+    styles: ["Chuyên nghiệp", "Gia đình DIY", "Công nghiệp"],
+    materials: ["Thép không gỉ 304", "Thép cacbon", "Nhôm hợp kim", "Nhựa ABS", "Đồng thau"],
+  },
+  "kitchen-equipment": {
+    variants: [
+      "thân thép không gỉ 304 brushed, dễ vệ sinh",
+      "bếp từ inverter 2200W, 9 mức nhiệt cảm ứng",
+      "tủ lạnh inverter cấp năng lượng A++, làm lạnh đa luồng",
+      "máy rửa chén 14 bộ, 6 chương trình + sấy nóng",
+      "hood hút khói 950m³/h, ống khói inox 304",
+      "OEM cho khách sạn / nhà hàng / căn hộ cao cấp",
+      "đạt CE / GS / EMC / ETL / NSF",
+      "bảo hành 2 năm động cơ, 1 năm linh kiện",
+    ],
+    styles: ["Đảo bếp", "Bếp âm tủ", "Built-in", "Free-standing", "Thương mại"],
+    materials: ["Thép không gỉ 304", "Thép cacbon sơn tĩnh điện", "Đá nhân tạo Quartz", "Tempered glass", "Aluminum"],
+  },
+  "hotel-supplies": {
+    variants: [
+      "100% cotton Egyptian 60S/2, 600 thread count",
+      "lông vũ ngỗng trắng 90/10, dày 200gsm",
+      "polyester memory-foam 5cm, kháng khuẩn ProBact",
+      "kích thước King 200×220cm / Queen 180×200cm",
+      "OEM logo thêu, MOQ 50 bộ cho boutique hotel",
+      "đạt OEKO-TEX 100 / ISO 9001 / Greenguard",
+      "đóng gói cá nhân polybag + pallet xuất khẩu",
+      "bảo hành 2 năm chống xù lông, không phai",
+    ],
+    styles: ["5-sao luxury", "Boutique", "Resort", "Business", "Eco-friendly"],
+    materials: ["Cotton 100%", "Linen", "Microfiber", "Bamboo fiber", "Memory foam", "Lông vũ"],
+  },
+  decoration: {
+    variants: [
+      "khung gỗ đặc + canvas 380gsm in giclée 8 màu",
+      "hoàn thiện antique vintage / brushed gold / matte black",
+      "kích thước A0/A1/A2 + custom theo yêu cầu",
+      "MOQ 30-50 chiếc, đóng gói carton 5 lớp riêng",
+      "OEM logo backside, hỗ trợ thiết kế Adobe AI/PSD",
+      "đạt FSC / CE / California Prop 65",
+      "thiết kế bestseller 2025-2026 từ studio Hangzhou",
+      "ship sample miễn phí cho dự án ≥$5K",
+    ],
+    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Công nghiệp", "Boho"],
+    materials: ["Gỗ MDF", "Resin polyurethane", "Composite", "Đồng đúc", "Sợi thủy tinh", "Canvas"],
+  },
+  "outdoor-garden": {
+    variants: [
+      "khung nhôm 6063-T5 sơn tĩnh điện chống UV 7 năm",
+      "rattan PE-HDPE chịu nhiệt -20°C đến +70°C",
+      "đệm Sunbrella® / Olefin chống nước, chống mốc",
+      "BBQ inox 304, nắp đôi 4-6 đầu đốt, kèm xe đẩy",
+      "ô che nắng cantilever 3×3m / 3.5×3.5m",
+      "OEM cho resort / villa / nhà hàng outdoor",
+      "đóng gói flat-pack tiết kiệm container, hướng dẫn lắp",
+      "đạt CE / TUV / SGS / chứng nhận chống ăn mòn",
+    ],
+    styles: ["Resort nhiệt đới", "Địa Trung Hải", "Hiện đại ngoài trời", "Công nghiệp", "Bắc Âu"],
+    materials: ["Nhôm 6063", "Rattan PE-HDPE", "Teak gỗ tự nhiên", "Inox 304", "Polywood", "Đá granite"],
+  },
+  "noi-that": {
+    variants: [
+      "khung gỗ sồi/óc chó/MDF veneer + đệm cao su tự nhiên",
+      "kích thước King/Queen/Single + custom theo bản vẽ",
+      "vải bọc velvet/cotton-linen/da PU/da bò Ý",
+      "ray trượt Hettich/Blum, soft-close, 3 phân đoạn",
+      "OEM cho dự án khách sạn / căn hộ / showroom",
+      "đóng gói flat-pack, lắp ráp <30 phút",
+      "đạt FSC / CARB-P2 / E0 phát thải formaldehyde",
+      "bảo hành khung 10 năm, vải bọc 3 năm",
+    ],
+    styles: ["Hiện đại", "Bắc Âu", "Tân cổ điển", "Nhật-Hàn minimal", "Công nghiệp"],
+    materials: ["Gỗ sồi tự nhiên", "Gỗ óc chó", "MDF veneer", "Đệm cao su tự nhiên", "Vải velvet", "Da PU"],
+  },
+  "home-garden": {
+    variants: [
+      "vật liệu cao cấp, sơn powder-coat 7 năm chống fade",
+      "kết cấu chịu lực 200kg, bền 10 năm ngoài trời",
+      "thiết kế modular, dễ ghép nhiều cấu hình",
+      "OEM logo, MOQ linh hoạt 50-100 chiếc",
+      "đóng gói flat-pack, lắp ráp tự thân",
+      "phù hợp khí hậu nhiệt đới ẩm Việt Nam",
+      "đạt CE / TUV / SGS / chống tia UV",
+      "bảo hành 5 năm, hỗ trợ tư vấn dự án",
+    ],
+    styles: ["Bắc Âu", "Địa Trung Hải", "Nhiệt đới", "Công nghiệp", "Bohemian"],
+    materials: ["Gỗ tự nhiên", "Rattan PE", "Nhôm sơn", "Composite", "Đá nhân tạo"],
+  },
+};
+
 function buildDefaultSeed(
   parentSlug: string,
   parentName: string,
@@ -3687,6 +3871,9 @@ function buildDefaultSeed(
 ): LeafSeed {
   const h = hashSeed(slug);
   const lower = title.toLowerCase();
+  const tpl = CATEGORY_TEMPLATES[parentSlug] || {};
+  const variants = tpl.variants || DEFAULT_PRODUCT_VARIANTS;
+  const styles = tpl.styles || DEFAULT_STYLES;
   return {
     parentSlug,
     parentName,
@@ -3711,15 +3898,78 @@ function buildDefaultSeed(
       `${title} tiêu chuẩn quốc tế`,
       `${title} chứng nhận CE`,
     ],
-    productNames: DEFAULT_PRODUCT_VARIANTS.map((v, i) => {
+    productNames: variants.map((v, i) => {
       const tag = (h + i) % 4 === 0 ? "Bộ" : (h + i) % 4 === 1 ? "Mẫu" : (h + i) % 4 === 2 ? "Series" : "Dòng";
       return `${tag} ${lower} — ${v}`;
     }),
-    styles: DEFAULT_STYLES,
+    styles,
+    materials: tpl.materials,
+  };
+}
+
+// Showcase products: 12 demo products (1 per main category) — used by all
+// subcat product cards which redirect to /product/demo-<parent>-1.
+const SHOWCASE_PRODUCTS: Record<string, { title: string; parentName: string }> = {
+  "home-garden":            { title: "Bộ chậu cây composite trang trí 80cm cao cấp kèm cây xanh nhân tạo cao cấp",                parentName: "Nhà & Sân vườn" },
+  "construction-materials": { title: "Tấm Porcelain marble Calacatta hoàn thiện 1200×2400mm vân gold-gray cao cấp",               parentName: "Vật liệu xây dựng" },
+  "bathroom-sanitary":      { title: "Bồn cầu thông minh tích hợp LED bidet liền khối, tankless, điều khiển cảm ứng",             parentName: "Phòng tắm & Vệ sinh" },
+  "noi-that":               { title: "Sofa góc chữ L 6 chỗ ngồi bọc nhung Italy, chân kim loại mạ vàng PVD",                       parentName: "Nội thất" },
+  "kitchen-equipment":      { title: "Tủ bếp module OPPEIN acrylic bóng tùy chỉnh, không tay nắm hiện đại",                        parentName: "Thiết bị nhà bếp" },
+  "lighting":               { title: "Đèn chùm pha lê hiện đại 12 bóng LED dimmable cao cấp dành cho phòng khách",                 parentName: "Đèn & Chiếu sáng" },
+  "doors-windows":          { title: "Cửa nhôm Xingfa hệ 55 4 cánh kính cường lực 12mm, khung xám than",                           parentName: "Cửa & Cửa sổ" },
+  "hotel-supplies":         { title: "Bộ chăn ga gối khách sạn 5 sao 4 món cotton 60s 250 thread count cao cấp",                   parentName: "Đồ dùng khách sạn" },
+  "hardware-tools":         { title: "Bộ tay nắm tủ inox 304 mạ vàng PVD brushed gold sang trọng 10 chiếc",                        parentName: "Phụ kiện & Dụng cụ" },
+  "decoration":             { title: "Bộ tượng nghệ thuật resin phong cách Italy tối giản 3 chiếc trắng-kem",                       parentName: "Trang trí" },
+  "outdoor-garden":         { title: "Bộ bàn ghế sân vườn PE rattan 6 chỗ chống nắng kèm đệm cao cấp",                              parentName: "Ngoài trời & Sân vườn" },
+  "electrical":             { title: "Bộ công tắc cảm ứng thông minh WiFi 4 phím Tuya Smart Life mặt kính cường lực",              parentName: "Điện & Thiết bị điện" },
+};
+
+function buildShowcaseLeaf(parent: string): LeafCategoryPage | null {
+  const sc = SHOWCASE_PRODUCTS[parent];
+  if (!sc) return null;
+  const supplier: Supplier = { name: "Cybersilkroads Demo Factory", audited: true, loc: "Quảng Đông, Trung Quốc" };
+  const lp: ListingProduct = {
+    id: `demo-${parent}-1`,
+    title: sc.title,
+    desc: `${sc.title}. Sản phẩm demo đại diện cho ngành hàng ${sc.parentName}. Liên hệ Cybersilkroads để xem catalog đầy đủ.`,
+    priceFrom: "$120",
+    priceTo: "$280",
+    unit: "/ Bộ",
+    moq: "10 Bộ",
+    img: { src: `/img/demo-${parent}-1-1.jpg?v=4`, total: 8 },
+    guaranteed: true,
+    supplier,
+  };
+  return {
+    slug: `demo-${parent}`,
+    parentSlug: parent,
+    parentName: sc.parentName,
+    l2Name: "Sản phẩm demo",
+    title: `Demo ${sc.parentName}`,
+    resultsCount: "1",
+    chips: [{ name: sc.title.split(" ").slice(0, 4).join(" "), active: true }],
+    trendingChips: [],
+    faqs: [],
+    filters: [],
+    featured: {
+      logo: "/logo/cybersilkroads-icon.png?v=5",
+      name: "Cybersilkroads Demo",
+      audited: true,
+      rating: 5,
+      videoCaption: "Demo showcase",
+      videoSrc: `/img/${parent}-sc-fvideo.jpg?v=4`,
+      miniProducts: [],
+    },
+    products: [lp],
   };
 }
 
 export function getLeafCategory(parent: string, leaf: string): LeafCategoryPage | null {
+  // Showcase demo leaves: demo-<parent>
+  if (leaf === `demo-${parent}`) {
+    return buildShowcaseLeaf(parent);
+  }
+
   const data = LEAF_CATEGORIES[leaf];
   if (data && data.parentSlug === parent) return data;
 

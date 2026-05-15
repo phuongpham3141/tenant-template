@@ -1,0 +1,4794 @@
+[
+  {
+    "slug": "ban-an",
+    "status": "ok",
+    "actual": "A simple, rectangular wooden dining table.",
+    "confidence": 1
+  },
+  {
+    "slug": "ao-choang-tam-waffle",
+    "status": "ok",
+    "actual": "white waffle weave bathrobe with tie belt",
+    "confidence": 1
+  },
+  {
+    "slug": "ao-trum-bep-bbq",
+    "status": "ok",
+    "actual": "Black, octagonal cover for an outdoor appliance.",
+    "confidence": 1
+  },
+  {
+    "slug": "ao-choang-tam-cotton-terry",
+    "status": "ok",
+    "actual": "blue terry cloth bathrobe hanging on wall",
+    "confidence": 1
+  },
+  {
+    "slug": "bain-marie-dien",
+    "status": "ok",
+    "actual": "Small white electric food warmer with a lid",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ban-ca-phe",
+    "status": "ok",
+    "actual": "Modern white coffee table with metallic base",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-lam-viec",
+    "status": "ok",
+    "actual": "A modern wooden office desk with drawers.",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-che-bien-inox",
+    "status": "ok",
+    "actual": "Simple stainless steel commercial preparation table on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-ghe-san-vuon",
+    "status": "ok",
+    "actual": "blurry image of a dark outdoor dining set",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ban-le-cua",
+    "status": "ok",
+    "actual": "Small silver metal hinge with screw holes",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-le-cua-kinh",
+    "status": "ok",
+    "actual": "Small, blurry, metallic hinge with translucent parts.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "ban-chai-danh-rang-kem",
+    "status": "ok",
+    "actual": "single toothbrush with white substance on bristles",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ban-le-tu-bep",
+    "status": "ok",
+    "actual": "Small metallic hinge with screw holes on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-le",
+    "status": "ok",
+    "actual": "Small, silver-colored metal door hinge",
+    "confidence": 1
+  },
+  {
+    "slug": "bac-cau-thang-chong-truot",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Grey textured anti-slip mat or stair tread",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ban-ui-cau-la",
+    "status": "ok",
+    "actual": "Ironing board with an iron on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-picnic",
+    "status": "ok",
+    "actual": "A wooden outdoor picnic table with attached benches.",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-picnic-gap-gon",
+    "status": "ok",
+    "actual": "Small wooden picnic table with attached benches",
+    "confidence": 0.9
+  },
+  {
+    "slug": "banh-dai-rong-roc",
+    "status": "ok",
+    "actual": "Dark grey industrial belt pulley wheel on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "banh-xe-chan-ghe",
+    "status": "ok",
+    "actual": "A single metal caster wheel on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bang-ten-name-tag",
+    "status": "ok",
+    "actual": "white rectangular name tag badge with text",
+    "confidence": 1
+  },
+  {
+    "slug": "banner-do-trang-tri",
+    "status": "ok",
+    "actual": "Three small, textured pennants on a string banner.",
+    "confidence": 1
+  },
+  {
+    "slug": "bao-dung-amenity",
+    "status": "ok",
+    "actual": "plain white rectangular storage bag with logo",
+    "confidence": 1
+  },
+  {
+    "slug": "ban-le-tu-giam-chan",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "small silver metal cabinet hinge on white",
+    "confidence": 0.8
+  },
+  {
+    "slug": "bat-sup-bat-pho",
+    "status": "ok",
+    "actual": "small white ceramic bowl on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "bao-giat-kho",
+    "status": "ok",
+    "actual": "Dark blue rectangular bag on white background",
+    "confidence": 0.7
+  },
+  {
+    "slug": "backdrop-hoa-cuoi",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "white floral arch wedding backdrop with arrangements",
+    "confidence": 1
+  },
+  {
+    "slug": "bat3",
+    "status": "ok",
+    "actual": "Modern golden faucet on a white bathroom sink.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bat6",
+    "status": "ok",
+    "actual": "A sleek black freestanding bathtub with a black faucet.",
+    "confidence": 1
+  },
+  {
+    "slug": "bang-dinh-cach-dien",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A single roll of black electrical tape.",
+    "confidence": 1
+  },
+  {
+    "slug": "bat5",
+    "status": "ok",
+    "actual": "Double bathroom vanity with two sinks and faucets",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bat2",
+    "status": "ok",
+    "actual": "Oval natural stone vessel sink on wooden surface",
+    "confidence": 0.9
+  },
+  {
+    "slug": "be-boi-bom-hoi-gia-dinh",
+    "status": "ok",
+    "actual": "Small round yellow and blue inflatable kiddie pool",
+    "confidence": 1
+  },
+  {
+    "slug": "be-boi-khung-sat-pvc",
+    "status": "ok",
+    "actual": "Blue square frame swimming pool on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "bat1",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A brown bat with wings spread on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "banner-poster",
+    "status": "error",
+    "error": "imagen no data"
+  },
+  {
+    "slug": "be-cat-bong",
+    "status": "ok",
+    "actual": "Round ball pit filled with colorful plastic balls",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bec-phun-mist",
+    "status": "ok",
+    "actual": "Small metallic threaded mist spray nozzle component",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bep-bbq-dien",
+    "status": "ok",
+    "actual": "Black electric griddle or indoor grill appliance",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-bbq-gas",
+    "status": "ok",
+    "actual": "A stainless steel gas barbecue grill.",
+    "confidence": 1
+  },
+  {
+    "slug": "bat7",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A brown bat with outstretched wings.",
+    "confidence": 1
+  },
+  {
+    "slug": "bat8",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Two wooden baseball bats on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-bbq-ngoai-troi",
+    "status": "ok",
+    "actual": "A black and silver outdoor barbecue grill.",
+    "confidence": 1
+  },
+  {
+    "slug": "bat4",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A black bat with wings spread on white.",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-bbq-than-cui",
+    "status": "ok",
+    "actual": "A black, round, portable charcoal barbecue grill",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bep-cong-nghiep-gas",
+    "status": "ok",
+    "actual": "Stainless steel commercial-style gas stove with four burners.",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-lua-fire-pit",
+    "status": "ok",
+    "actual": "Small, dark, bowl-shaped fire pit with flames",
+    "confidence": 1
+  },
+  {
+    "slug": "bi-ngo-led-halloween",
+    "status": "ok",
+    "actual": "Lit orange Halloween pumpkin decoration on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "be-boi-phao-spa",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bidet-roi",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "binh-ca-phe-tra",
+    "status": "ok",
+    "actual": "A white ceramic coffee or tea pot.",
+    "confidence": 1
+  },
+  {
+    "slug": "binh-gom-canh-duc",
+    "status": "ok",
+    "actual": "White ceramic vase with a prominent wing-like shape",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-gas-am",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White built-in gas hob with four burners",
+    "confidence": 1
+  },
+  {
+    "slug": "binh-hoa-lo-hoa",
+    "status": "ok",
+    "actual": "A simple black ceramic vase on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bien-tan-vfd",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "binh-hoa-thuy-tinh",
+    "status": "ok",
+    "actual": "Clear, slender glass vase on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "binh-thuy-am-dun-sieu-toc",
+    "status": "ok",
+    "actual": "Stainless steel electric kettle on a white background",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-tu",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black two-burner induction cooktop on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "bec-phun-pop-up-san-co",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bo-amenity-5-7-mon",
+    "status": "ok",
+    "actual": "Small bottles, soap, and toiletries on a tray",
+    "confidence": 1
+  },
+  {
+    "slug": "binh-tuoi-voi-tuoi",
+    "status": "ok",
+    "actual": "Blue watering can with a rose nozzle",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-ban-ghe-go-teak",
+    "status": "ok",
+    "actual": "Wooden dining table with four chairs",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-ban-ghe-pe-rattan",
+    "status": "ok",
+    "actual": "Corner PE rattan outdoor sofa with cushions",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-ban-ghe-nhom-vai-textilene",
+    "status": "ok",
+    "actual": "Outdoor furniture set with two sofas and a table",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bo-ban-cao-bar-ngoai-troi",
+    "status": "ok",
+    "actual": "Dark bar table with four matching stools",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bo-chong-set-lan-truyen",
+    "status": "ok",
+    "actual": "Small white electrical device with three ports",
+    "confidence": 0.95
+  },
+  {
+    "slug": "bo-chan-ga-goi-khach-san",
+    "status": "ok",
+    "actual": "White bedding linen set on a bed",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-dao-bep",
+    "status": "ok",
+    "actual": "Multiple kitchen knives laid out on a surface",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-choi-lien-hoan",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bo-chuyen-nguon-ac-dc",
+    "status": "ok",
+    "actual": "Small black electronic device, likely a power converter.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bo-dao-nia-thia-inox-304",
+    "status": "ok",
+    "actual": "Three shiny stainless steel spoons and a fork",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-dieu-khien-dmx",
+    "status": "ok",
+    "actual": "Black electronic control console with faders and screen",
+    "confidence": 1
+  },
+  {
+    "slug": "bep-tu-cong-nghiep",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bo-dieu-khien-plc",
+    "status": "ok",
+    "actual": "Gray industrial programmable logic controller (PLC) unit",
+    "confidence": 0.95
+  },
+  {
+    "slug": "bo-dieu-khien-tu-xa",
+    "status": "ok",
+    "actual": "Black electronic remote control with many buttons",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-dung-cu-bbq",
+    "status": "ok",
+    "actual": "Three stainless steel barbecue grilling tools set",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-ly-champagne-wine",
+    "status": "ok",
+    "actual": "Two elegant clear champagne and wine glasses",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-hoa-co-dau",
+    "status": "ok",
+    "actual": "Elegant white bridal bouquet and matching floral accessory",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-duvet-5-sao",
+    "status": "ok",
+    "actual": "Simple grey folded duvet or large pillow",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bo-ly-cocktail",
+    "status": "ok",
+    "actual": "A single, empty, clear cocktail glass",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-menu-thiep-cuoi",
+    "status": "ok",
+    "actual": "Two elegant white cards, possibly invitation and menu.",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-noi-inox-304",
+    "status": "ok",
+    "actual": "A set of shiny stainless steel pots and pans.",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-noi-gang-trang-men",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bo-to-vit",
+    "status": "ok",
+    "actual": "Set of assorted screwdriver bits in a holder",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-phu-kien-dong-5-7-mon",
+    "status": "ok",
+    "actual": "Five brass-colored decorative accessories on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-tra-ca-phe-don-khach",
+    "status": "ok",
+    "actual": "White ceramic tea and coffee set with cups",
+    "confidence": 1
+  },
+  {
+    "slug": "bom-tang-ap",
+    "status": "ok",
+    "actual": "Small black electric pump with brass fitting",
+    "confidence": 1
+  },
+  {
+    "slug": "bo-tool-kit-hop",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "bon-cau-mot-khoi",
+    "status": "ok",
+    "actual": "Sleek white one-piece toilet bowl",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bo-tube-khau",
+    "status": "ok",
+    "actual": "Tools resembling a socket wrench set in a holder",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-cau-thong-minh-say-kho",
+    "status": "ok",
+    "actual": "Modern white toilet on a plain background",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-cau-thong-minh-khu-mui",
+    "status": "ok",
+    "actual": "A modern white toilet on a white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-cau-hai-khoi",
+    "status": "ok",
+    "actual": "Modern white one-piece toilet with sleek design",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-cau-thong-minh-suoi-ghe",
+    "status": "ok",
+    "actual": "A white, modern toilet on a plain background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-cau-thong-minh-tu-dong-xa",
+    "status": "ok",
+    "actual": "Modern white toilet, front view, on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-cau-treo-tuong",
+    "status": "ok",
+    "actual": "Modern white wall-hung toilet bowl on white wall",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-cau-thong-minh",
+    "status": "ok",
+    "actual": "A modern white toilet system on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-tam-doc-lap-freestanding",
+    "status": "ok",
+    "actual": "White freestanding bathtub with faucet on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-tam-gang-trang-men",
+    "status": "ok",
+    "actual": "White freestanding bathtub in a minimalist setting.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-tam-massage-nuoc",
+    "status": "ok",
+    "actual": "White rectangular bathtub with visible water jets and headrest",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-bay-banner-halloween",
+    "status": "ok",
+    "actual": "Orange Halloween balloon and 'Happy Halloween' banner",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-tam-massage-suc-khi",
+    "status": "ok",
+    "actual": "White modern bathtub with bubbling water",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-trong-tu-tuoi",
+    "status": "ok",
+    "actual": "Simple white rectangular sink with faucet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-tieu-nam",
+    "status": "ok",
+    "actual": "White men's urinal fixture mounted on a wall",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-bay-cuoi",
+    "status": "ok",
+    "actual": "A single plain green party balloon",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-led-bulb",
+    "status": "ok",
+    "actual": "A clear, small LED light bulb.",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-polyester",
+    "status": "ok",
+    "actual": "White, fluffy, soft fiber filling material",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bon-tam-go",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A light-colored wooden bathtub on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-khoang-rockwool",
+    "status": "ok",
+    "actual": "Rectangular block of fibrous green insulation material",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-rgb-color-change",
+    "status": "ok",
+    "actual": "RGB color changing LED light bulb illuminated",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-tam-goc",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A white corner bathtub with faucet",
+    "confidence": 1
+  },
+  {
+    "slug": "bon-tam-acrylic",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Sleek, modern white rectangular freestanding bathtub",
+    "confidence": 1
+  },
+  {
+    "slug": "bong-thuy-tinh-cach-nhiet",
+    "status": "ok",
+    "actual": "Rectangular block of light green insulation material",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bu-long-dai-oc",
+    "status": "ok",
+    "actual": "A single bolt with a nut attached.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "bua-riu",
+    "status": "ok",
+    "actual": "Axe and hammer multi-tool with wooden handle.",
+    "confidence": 1
+  },
+  {
+    "slug": "cabin-tam-cong",
+    "status": "ok",
+    "actual": "White curved shower cabin enclosure on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "cam-bien-nhiet-do-do-am",
+    "status": "ok",
+    "actual": "Small green electronic sensor module with brass connector",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cam-bien-tiem-can",
+    "status": "ok",
+    "actual": "Small rectangular industrial proximity sensor with circular face.",
+    "confidence": 1
+  },
+  {
+    "slug": "cam-bien-chuyen-dong",
+    "status": "ok",
+    "actual": "Small white cube-like electronic sensor device",
+    "confidence": 0.9
+  },
+  {
+    "slug": "can-dien-tu-bep",
+    "status": "ok",
+    "actual": "white electronic digital kitchen weighing scale",
+    "confidence": 1
+  },
+  {
+    "slug": "cap-cxv-cv-pvc-boc-dong",
+    "status": "ok",
+    "actual": "Close-up of a single insulated copper wire",
+    "confidence": 1
+  },
+  {
+    "slug": "cap-day-cap-phu-kien",
+    "status": "ok",
+    "actual": "Yellow coiled cable wire with black connectors",
+    "confidence": 1
+  },
+  {
+    "slug": "cap-mang-cat5e-cat6",
+    "status": "ok",
+    "actual": "Network cable with blue RJ45 connector",
+    "confidence": 1
+  },
+  {
+    "slug": "cap-xlpe-chong-chay",
+    "status": "ok",
+    "actual": "Grey electrical cable with exposed copper wire",
+    "confidence": 0.9
+  },
+  {
+    "slug": "buc-trung-bay-pop",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Simple white point of purchase display stand",
+    "confidence": 1
+  },
+  {
+    "slug": "bracket-khung-den",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Silver metal mounting bracket with threaded collar",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cau-truot-nhua-pe",
+    "status": "ok",
+    "actual": "A yellow plastic playground slide on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "cay-bonsai-gia",
+    "status": "ok",
+    "actual": "Artificial bonsai tree in a brown pot",
+    "confidence": 1
+  },
+  {
+    "slug": "cap-dieu-khien-nhieu-ruot",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black multi-core cable with connector and exposed wires",
+    "confidence": 1
+  },
+  {
+    "slug": "cay-kim-tien-gia",
+    "status": "ok",
+    "actual": "Potted artificial money tree plant with green leaves.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cay-gia-cao-1-2m",
+    "status": "ok",
+    "actual": "A rendered artificial tree with green leaves",
+    "confidence": 1
+  },
+  {
+    "slug": "cay-o-liu",
+    "status": "ok",
+    "actual": "Small potted olive tree plant with green leaves",
+    "confidence": 1
+  },
+  {
+    "slug": "cabin-tam-vuong",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Modern square glass shower cabin enclosure with controls",
+    "confidence": 1
+  },
+  {
+    "slug": "cay-thong-fiber-optic-led",
+    "status": "ok",
+    "actual": "Small pink illuminated Christmas tree with stand",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cay-thong-noel-pvc",
+    "status": "ok",
+    "actual": "A green artificial Christmas tree on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "cer1",
+    "status": "ok",
+    "actual": "White marble-look ceramic floor tiles with grey veins.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cer3",
+    "status": "ok",
+    "actual": "Beige textured stone or ceramic tile surface",
+    "confidence": 0.8
+  },
+  {
+    "slug": "cap-dong-truc-tv",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Close-up of a black coaxial cable with silver connector.",
+    "confidence": 1
+  },
+  {
+    "slug": "cer5",
+    "status": "ok",
+    "actual": "A rectangular grey ceramic-like tile with subtle lines.",
+    "confidence": 1
+  },
+  {
+    "slug": "cer4",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "cap-quang-outdoor",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Coiled gray fiber optic cable with connectors",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cer8",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "cau-chi-hop",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Electrical circuit breaker panel with multiple terminals",
+    "confidence": 1
+  },
+  {
+    "slug": "chafing-dish-round",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "chan-ban-chan-ghe-kim-loai",
+    "status": "ok",
+    "actual": "Modern dark metal table or furniture legs",
+    "confidence": 1
+  },
+  {
+    "slug": "chan-long-cuu-chan-fleece",
+    "status": "ok",
+    "actual": "Two white rolled blankets or towels",
+    "confidence": 0.9
+  },
+  {
+    "slug": "chao-gang-duc",
+    "status": "ok",
+    "actual": "A dark, heavy-looking frying pan on a surface.",
+    "confidence": 1
+  },
+  {
+    "slug": "chao-chong-dinh-day-da",
+    "status": "ok",
+    "actual": "Dark grey non-stick frying pan with handle",
+    "confidence": 0.9
+  },
+  {
+    "slug": "chafing-dish-vuong-gn",
+    "status": "ok",
+    "actual": "Stainless steel rectangular chafing dish with stand",
+    "confidence": 1
+  },
+  {
+    "slug": "cer7",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A dark grey sphere with 'Cer7' written on it.",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-au",
+    "status": "ok",
+    "actual": "Stainless steel kitchen sink with faucet",
+    "confidence": 1
+  },
+  {
+    "slug": "chao-wok-can-dai",
+    "status": "ok",
+    "actual": "Dark long-handle wok pan on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-composite-soi-thuy-tinh",
+    "status": "ok",
+    "actual": "Grey kitchen sink with draining board",
+    "confidence": 1
+  },
+  {
+    "slug": "cer2",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Small blue teardrop-shaped object with 'cer2' label",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-inox-304-doi",
+    "status": "ok",
+    "actual": "A double basin stainless steel kitchen sink.",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-da-granite",
+    "status": "ok",
+    "actual": "A simple grey rectangular kitchen sink",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cer6",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "chau-inox-304-don",
+    "status": "ok",
+    "actual": "Single stainless steel kitchen sink with grate",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-gom-su",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "chau-gang-trang-men",
+    "status": "ok",
+    "actual": "White rectangular enameled utility sink with drain",
+    "confidence": 0.9
+  },
+  {
+    "slug": "chau-inox-kim-loai",
+    "status": "ok",
+    "actual": "Stainless steel sink integrated into a white countertop",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-solid-surface",
+    "status": "ok",
+    "actual": "White rectangular solid surface sink basin with drain",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-nhua-pe",
+    "status": "ok",
+    "actual": "A simple white plastic bowl or basin.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "chau-su-ceramic",
+    "status": "ok",
+    "actual": "White rectangular ceramic bathroom or kitchen sink",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-undermount",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "chau-xi-mang",
+    "status": "ok",
+    "actual": "Dark grey cement planter pot on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "cleats-bollards",
+    "status": "ok",
+    "actual": "A silver metal marine cleat on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "chau-workstation-da-nang",
+    "status": "ok",
+    "actual": "A stainless steel kitchen sink with faucet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "co-ban-cong-san-thuong",
+    "status": "ok",
+    "actual": "A small square sample of artificial green grass.",
+    "confidence": 1
+  },
+  {
+    "slug": "co-banner-trang-tri",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "chip-led-smd-cob",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "co-cau-ghe-xoay-khi-nen",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "co-dien-anh",
+    "status": "ok",
+    "actual": "Dark wood classic style bookshelf on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "co-cau-nang-tu-bep",
+    "status": "ok",
+    "actual": "Small, blurry metallic mechanical lift mechanism on white",
+    "confidence": 0.85
+  },
+  {
+    "slug": "co-canh-quan-25-40mm",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "co-dien-chau-au",
+    "status": "ok",
+    "actual": "Ornate wooden armchair with light upholstery in a white room.",
+    "confidence": 1
+  },
+  {
+    "slug": "co-le-mo-let",
+    "status": "ok",
+    "actual": "A silver adjustable wrench tool on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "co-dien-phap",
+    "status": "ok",
+    "actual": "Ornate blue chaise lounge, classic French style furniture",
+    "confidence": 1
+  },
+  {
+    "slug": "co-nhan-tao-trang-tri-cua-hang",
+    "status": "ok",
+    "actual": "small rectangular patch of artificial green grass",
+    "confidence": 0.9
+  },
+  {
+    "slug": "co-san-bong-da",
+    "status": "ok",
+    "actual": "Small rectangular sample of artificial green grass",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cong-tac-o-cam-tich-hop",
+    "status": "ok",
+    "actual": "white integrated electrical switch and socket",
+    "confidence": 1
+  },
+  {
+    "slug": "cong-cuoi-chu-a",
+    "status": "ok",
+    "actual": "Wooden A-frame structure with greenery, resembling a wedding arch",
+    "confidence": 1
+  },
+  {
+    "slug": "co-san-tennis-padel",
+    "status": "ok",
+    "actual": "Small square sample of artificial green grass",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cong-tac-smart-wi-fi",
+    "status": "ok",
+    "actual": "White smart Wi-Fi light switch with toggle",
+    "confidence": 1
+  },
+  {
+    "slug": "cong-tac-tuong-1-4-nut",
+    "status": "ok",
+    "actual": "White wall plate with three rectangular light switches.",
+    "confidence": 1
+  },
+  {
+    "slug": "contactor-khoi-dong-tu",
+    "status": "ok",
+    "actual": "Industrial electrical contactor with attached overload relay",
+    "confidence": 1
+  },
+  {
+    "slug": "container-house-mo-rong-expandable",
+    "status": "ok",
+    "actual": "Grey modular container house with windows",
+    "confidence": 1
+  },
+  {
+    "slug": "container-nha-tam",
+    "status": "ok",
+    "actual": "Minimalist grey container unit with faucet on top.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "co-san-golf-putting-green",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Green artificial grass golf putting mat with flag",
+    "confidence": 1
+  },
+  {
+    "slug": "co-dien",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A tall, classic wooden grandfather clock.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-cach-am-phong-thu",
+    "status": "ok",
+    "actual": "Simple white door with a black handle",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-chi-phong-x-ray",
+    "status": "ok",
+    "actual": "Plain silver-grey door in a white room.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-cuon-nan-keo",
+    "status": "ok",
+    "actual": "White rolling shutter, partially extended, on a wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-cuon-motor-duc",
+    "status": "ok",
+    "actual": "A simple, light grey rolling shutter door.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-cuon-nhanh-pvc",
+    "status": "ok",
+    "actual": "A simple grey industrial rolling door or shutter.",
+    "confidence": 1
+  },
+  {
+    "slug": "cong-tac-zigbee",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White smart light switch with Zigbee branding",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-garage-motor-remote",
+    "status": "ok",
+    "actual": "modern gray garage door with remote control",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-bluetooth-wi-fi",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White door with Wi-Fi and Bluetooth symbols",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-garage-gap",
+    "status": "ok",
+    "actual": "A light gray sectional garage door.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-inox-304",
+    "status": "ok",
+    "actual": "Rectangular metallic panel, possibly a door, reflective surface",
+    "confidence": 0.85
+  },
+  {
+    "slug": "cua-kin-nuoc-kin-khi",
+    "status": "ok",
+    "actual": "A simple brown door with a handle.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "container-house-tieu-chuan-20ft",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Grey shipping container house with windows and door",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-kho-lanh",
+    "status": "ok",
+    "actual": "A simple, grey, metallic commercial door.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-kinh-khung-inox",
+    "status": "ok",
+    "actual": "Clear glass door with a shiny metallic frame",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-kinh-cuong-luc-ban-le-san",
+    "status": "ok",
+    "actual": "Side view of a frosted glass door",
+    "confidence": 0.8
+  },
+  {
+    "slug": "cua-kinh-treo-sliding-hanging",
+    "status": "ok",
+    "actual": "Clear glass sliding door with top rail",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-chong-chay",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A solid red panel door with a black handle.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-kinh-phong-tam-truot",
+    "status": "ok",
+    "actual": "clear glass shower door panel with hardware",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-kinh-phong-tam",
+    "status": "ok",
+    "actual": "A modern clear glass shower door with frame.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-kinh-truot-tu-dong",
+    "status": "ok",
+    "actual": "minimalist automatic sliding glass door in white room",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-ky-thuat-phong-may",
+    "status": "ok",
+    "actual": "Plain white utility door or access panel",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-luoi-chong-con-trung-inox",
+    "status": "ok",
+    "actual": "Stylized grey rectangular mesh screen door graphic",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhan-dien-khuon-mat",
+    "status": "ok",
+    "actual": "dark rectangular access control panel with central sensor",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhom-chau-au-pmi-sch-co",
+    "status": "ok",
+    "actual": "A sleek, modern aluminum door panel.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhom-folding",
+    "status": "ok",
+    "actual": "Two panels of an aluminum folding door",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-garage-truot-tran",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Gray corrugated overhead garage door",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-nhom-he-55-65-80",
+    "status": "ok",
+    "actual": "A minimalist white door system, side view.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhom-mo-quay",
+    "status": "ok",
+    "actual": "A simple, light grey single panel door.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-nhom-kinh-lua-lon",
+    "status": "ok",
+    "actual": "Aluminum framed glass door with push bar",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhom-xingfa",
+    "status": "ok",
+    "actual": "A simple, modern door in a white room.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-go",
+    "status": "ok",
+    "actual": "A simple wooden framed window with two panes.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-cuon-khe-thoang",
+    "status": "retry-failed",
+    "actual": "still mismatched after 3 tries"
+  },
+  {
+    "slug": "cua-luoi-cua",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Rectangular panel with fine mesh screen texture",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-mai-skylight",
+    "status": "ok",
+    "actual": "White framed roof skylight window",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-so-kinh-kep-cach-nhiet",
+    "status": "ok",
+    "actual": "A white framed window on a white wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-nhom-mo-truot",
+    "status": "ok",
+    "actual": "White framed sliding window with two panes",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-nhom-mo-quay",
+    "status": "ok",
+    "actual": "Simple white framed window with clear pane",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-nhom-mo-hat",
+    "status": "ok",
+    "actual": "Small aluminum-framed window, partially open, on white.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-so-upvc",
+    "status": "ok",
+    "actual": "White rectangular window frame on a wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-the-tu-khach-san",
+    "status": "ok",
+    "actual": "White smart card reader panel on wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-nhom-mo-truot",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Modern single panel aluminum sliding door",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-thep-chong-chay-ei-90p",
+    "status": "ok",
+    "actual": "Dark grey steel door with a black handle",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-thep-chong-trom",
+    "status": "ok",
+    "actual": "Dark grey metallic security door with frame",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-thep-chong-chay",
+    "status": "ok",
+    "actual": "A plain dark grey steel door with handle.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-thep-pano-co-dien",
+    "status": "ok",
+    "actual": "Grey classic panel design door with frame",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-thep-chong-chay-ei-60p",
+    "status": "ok",
+    "actual": "A dark, simple, steel-like door.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "cua-thep-van-go",
+    "status": "ok",
+    "actual": "A door with a wood grain finish",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-tu-dong-truot-cam-ung",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "cuoc-xeng-cao",
+    "status": "ok",
+    "actual": "Two garden tools, a shovel and a hoe.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-thong-minh-van-tay",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "cua-tu-dong-xoay-revolving",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "da-granite-tu-nhien",
+    "status": "ok",
+    "actual": "Small square speckled grey stone slab",
+    "confidence": 1
+  },
+  {
+    "slug": "da-marble-tu-nhien",
+    "status": "ok",
+    "actual": "White marble stone slab with grey veining",
+    "confidence": 1
+  },
+  {
+    "slug": "da-sintered-da-thieu-ket",
+    "status": "ok",
+    "actual": "Small rectangular light grey slab material sample",
+    "confidence": 1
+  },
+  {
+    "slug": "da",
+    "status": "ok",
+    "actual": "Small, rough, light-colored natural stone on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "da-mosaic-trang-tri",
+    "status": "ok",
+    "actual": "Single decorative geometric patterned stone tile",
+    "confidence": 0.9
+  },
+  {
+    "slug": "da-quartz-nhan-tao",
+    "status": "ok",
+    "actual": "A small, light-colored rectangular block of material",
+    "confidence": 0.8
+  },
+  {
+    "slug": "da-op-ngoai-that",
+    "status": "ok",
+    "actual": "Stacked grey stone wall cladding samples",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-phong-sach",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Simple white door with small window and handle.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "dao-cao-bong-tam",
+    "status": "ok",
+    "actual": "Razor and a container of cotton swabs",
+    "confidence": 1
+  },
+  {
+    "slug": "dai-phun-nuoc",
+    "status": "ok",
+    "actual": "Stylized white decorative object, possibly a fountain",
+    "confidence": 0.7
+  },
+  {
+    "slug": "dat-trong-gia-the",
+    "status": "ok",
+    "actual": "Compressed peat pellet or soil growing medium disc",
+    "confidence": 1
+  },
+  {
+    "slug": "dao-damascus",
+    "status": "ok",
+    "actual": "A knife with a patterned blade and dark handle.",
+    "confidence": 1
+  },
+  {
+    "slug": "cua-thep-chong-chay-ei-120p",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A plain dark grey single steel door.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "dau-cot-domino",
+    "status": "ok",
+    "actual": "Grey multi-way electrical terminal block with screws",
+    "confidence": 1
+  },
+  {
+    "slug": "dem-latex-memory-foam",
+    "status": "ok",
+    "actual": "Folded light-colored mattress or thick mattress topper",
+    "confidence": 0.9
+  },
+  {
+    "slug": "day-don-loi-mem",
+    "status": "ok",
+    "actual": "Thin dark line with two dark rectangular sections",
+    "confidence": 0.8
+  },
+  {
+    "slug": "dau-goi-sua-tam-30-40ml",
+    "status": "ok",
+    "actual": "Small, light-colored toiletry bottle, possibly shampoo or gel",
+    "confidence": 1
+  },
+  {
+    "slug": "den-am-tu-bep",
+    "status": "ok",
+    "actual": "A minimalist, illuminated LED light bar on a wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "dem-pocket-spring",
+    "status": "ok",
+    "actual": "White mattress on a plain white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-ban-de-ban",
+    "status": "ok",
+    "actual": "A white lampshade on a dark base table lamp.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-cam-co",
+    "status": "ok",
+    "actual": "A single, dark outdoor garden spike light.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-canh-quan-day",
+    "status": "ok",
+    "actual": "A simple string of decorative lights on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-cam-co-solar",
+    "status": "ok",
+    "actual": "Black solar powered garden spike light",
+    "confidence": 1
+  },
+  {
+    "slug": "den-cam-bien-chuyen-dong",
+    "status": "ok",
+    "actual": "Square LED security light mounted on a wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-canh-quan-duong-vien",
+    "status": "ok",
+    "actual": "A glowing rectangular outline light on a plain background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-canh-quan-solar",
+    "status": "ok",
+    "actual": "A single modern solar-style landscape light.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-chum-chandelier",
+    "status": "ok",
+    "actual": "Elegant gold chandelier ceiling light with multiple arms",
+    "confidence": 1
+  },
+  {
+    "slug": "den-chieu-cay",
+    "status": "ok",
+    "actual": "Small, dark, rectangular spotlight on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-chong-no",
+    "status": "ok",
+    "actual": "Round black industrial light with clear lens",
+    "confidence": 0.9
+  },
+  {
+    "slug": "day-don-loi-cung",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Coiled black braided string or cord material",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-cot-san-vuon",
+    "status": "ok",
+    "actual": "Single dark garden post pillar light",
+    "confidence": 1
+  },
+  {
+    "slug": "den-duong-led",
+    "status": "ok",
+    "actual": "Modern wall-mounted LED light fixture",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-duong-solar-all-in-one",
+    "status": "ok",
+    "actual": "A minimalist all-in-one solar street light.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-led-chuoi-noel",
+    "status": "ok",
+    "actual": "Warm white string lights on a light background",
+    "confidence": 1
+  },
+  {
+    "slug": "den-laser-san-khau",
+    "status": "ok",
+    "actual": "Small black light projector emitting blue light",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-led-display",
+    "status": "ok",
+    "actual": "A large, rectangular, grey display screen.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-led-day",
+    "status": "ok",
+    "actual": "A flexible LED strip light bent into a curve.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-cang-bien",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black rectangular marine light with clear lens",
+    "confidence": 1
+  },
+  {
+    "slug": "den-led-downlight",
+    "status": "ok",
+    "actual": "Blurry, circular white light fixture with central illumination",
+    "confidence": 0.8
+  },
+  {
+    "slug": "den-led-tuyp-t5-t8",
+    "status": "ok",
+    "actual": "White cylindrical tube light with caps on ends",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-led-grow-light",
+    "status": "ok",
+    "actual": "Small, cylindrical LED light with a black base",
+    "confidence": 0.8
+  },
+  {
+    "slug": "den-led-panel",
+    "status": "ok",
+    "actual": "A rectangular, slim, white LED panel light.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-motif-su-kien",
+    "status": "ok",
+    "actual": "Starburst decorative light fixture for events",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-motif-trang-tri",
+    "status": "ok",
+    "actual": "Spherical decorative ceiling light fixture with intricate pattern",
+    "confidence": 1
+  },
+  {
+    "slug": "den-lowbay",
+    "status": "ok",
+    "actual": "A silver industrial low bay light fixture",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-nghe-thuat-trang-tri",
+    "status": "ok",
+    "actual": "Ornate, artistic wall-mounted light fixture with warm glow",
+    "confidence": 1
+  },
+  {
+    "slug": "den-nha-xuong-highbay",
+    "status": "ok",
+    "actual": "Silver industrial-style pendant light fixture on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-nen-trang-tri",
+    "status": "ok",
+    "actual": "Spherical patterned ambient light fixture glowing softly",
+    "confidence": 1
+  },
+  {
+    "slug": "den-par-led-rgb",
+    "status": "ok",
+    "actual": "Single black cylindrical stage light on a stand",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-pha-le-k9",
+    "status": "ok",
+    "actual": "A gold-toned chandelier with crystal accents.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-pendant",
+    "status": "ok",
+    "actual": "single black and white hanging pendant light",
+    "confidence": 1
+  },
+  {
+    "slug": "den-beam-light",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Black stage light fixture emitting a powerful beam",
+    "confidence": 1
+  },
+  {
+    "slug": "den-pha-led-ngoai-troi",
+    "status": "ok",
+    "actual": "Rectangular LED floodlight with black frame, white background",
+    "confidence": 1
+  },
+  {
+    "slug": "den-roi-ray-track-light",
+    "status": "ok",
+    "actual": "Single metallic adjustable track spotlight on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "den-san-van-dong",
+    "status": "ok",
+    "actual": "Green sports field illuminated by bright stadium lights",
+    "confidence": 1
+  },
+  {
+    "slug": "den-san-floor-lamp",
+    "status": "ok",
+    "actual": "Modern tripod floor lamp with drum shade",
+    "confidence": 1
+  },
+  {
+    "slug": "den-tripod-khan-cap",
+    "status": "ok",
+    "actual": "Black tripod work light with square head",
+    "confidence": 1
+  },
+  {
+    "slug": "den-solar-san-vuon",
+    "status": "ok",
+    "actual": "Modern black solar garden path light",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-op-tran",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Modern white ceiling-mounted light fixture with intersecting bars.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-tuong-solar",
+    "status": "ok",
+    "actual": "Black solar-powered wall light mounted on white wall",
+    "confidence": 1
+  },
+  {
+    "slug": "den-smart-wi-fi",
+    "status": "ok",
+    "actual": "A single white LED light bulb.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-tuong-ngoai-troi",
+    "status": "ok",
+    "actual": "Modern wall-mounted light fixture with up-down illumination",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-tuong-wall-sconce",
+    "status": "ok",
+    "actual": "Two-bulb decorative wall sconce light fixture",
+    "confidence": 1
+  },
+  {
+    "slug": "den-vuon-led",
+    "status": "ok",
+    "actual": "A black and silver spotlight light fixture.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "den-vuon-solar",
+    "status": "ok",
+    "actual": "black solar powered garden light stake",
+    "confidence": 1
+  },
+  {
+    "slug": "den-underwater-be-boi",
+    "status": "ok",
+    "actual": "Small round black light fixture with textured face.",
+    "confidence": 0.85
+  },
+  {
+    "slug": "dep-eva-dung-1-lan",
+    "status": "ok",
+    "actual": "Single white disposable-looking slipper on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-zigbee",
+    "status": "ok",
+    "actual": "A single, illuminated white LED light bulb.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "dep-cotton-terry",
+    "status": "ok",
+    "actual": "A single grey soft terry cloth slipper.",
+    "confidence": 1
+  },
+  {
+    "slug": "den-pha-solar",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "black solar-powered outdoor floodlight with integrated panel",
+    "confidence": 1
+  },
+  {
+    "slug": "dia-su-nha-hang",
+    "status": "ok",
+    "actual": "A plain white ceramic or porcelain plate.",
+    "confidence": 1
+  },
+  {
+    "slug": "dep-sang-trong-5",
+    "status": "ok",
+    "actual": "Single beige suede moccasin-style indoor slipper",
+    "confidence": 0.9
+  },
+  {
+    "slug": "do-do-luong",
+    "status": "ok",
+    "actual": "A white ruler or measuring device with markings.",
+    "confidence": 1
+  },
+  {
+    "slug": "dinh-dinh-tan",
+    "status": "ok",
+    "actual": "small, shiny metal fastener with a hole",
+    "confidence": 0.9
+  },
+  {
+    "slug": "do-thu-cong-halloween",
+    "status": "ok",
+    "actual": "Small orange smiling jack-o'-lantern on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "do-phuc-sinh-trung",
+    "status": "ok",
+    "actual": "A single pink decorated Easter egg with a bow.",
+    "confidence": 1
+  },
+  {
+    "slug": "do-trang-tri-cay-thong",
+    "status": "ok",
+    "actual": "A single colorful festive Christmas tree ornament.",
+    "confidence": 1
+  },
+  {
+    "slug": "do-tiec-trang-tri-su-kien",
+    "status": "ok",
+    "actual": "Colorful party hats and decorations arranged in a circle",
+    "confidence": 1
+  },
+  {
+    "slug": "do-trang-tri-san-golf",
+    "status": "ok",
+    "actual": "Miniature golf green with flag and trees",
+    "confidence": 1
+  },
+  {
+    "slug": "do-trang-tri-gom-su",
+    "status": "ok",
+    "actual": "Small, glazed ceramic vase with blue-green drip glaze",
+    "confidence": 1
+  },
+  {
+    "slug": "dong-ho-do-dien",
+    "status": "ok",
+    "actual": "Analog measuring device with a circular dial and connectors",
+    "confidence": 0.9
+  },
+  {
+    "slug": "dong-ho-tuong-nghe-thuat",
+    "status": "ok",
+    "actual": "White abstract artistic wall clock with gold hands",
+    "confidence": 1
+  },
+  {
+    "slug": "driver-led-nguon",
+    "status": "ok",
+    "actual": "Small black electronic power supply driver module",
+    "confidence": 1
+  },
+  {
+    "slug": "dung-cu-inox-bep",
+    "status": "ok",
+    "actual": "Two stainless steel chopsticks on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "elcb-rcbo",
+    "status": "ok",
+    "actual": "A white electrical circuit breaker device",
+    "confidence": 1
+  },
+  {
+    "slug": "den-duong-solar-tach-roi",
+    "status": "retry-failed",
+    "actual": "still mismatched after 3 tries"
+  },
+  {
+    "slug": "fav-led",
+    "status": "ok",
+    "actual": "A white LED light bulb.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur1",
+    "status": "ok",
+    "actual": "Large green velvet sectional sofa with gold legs.",
+    "confidence": 1
+  },
+  {
+    "slug": "fav-powerbank",
+    "status": "ok",
+    "actual": "A black mobile power bank with cables plugged in.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur3",
+    "status": "ok",
+    "actual": "Wooden bed frame with grey upholstered headboard",
+    "confidence": 1
+  },
+  {
+    "slug": "dong-phuc-bep-phuc-vu",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "folded white chef uniform jacket on wooden hanger",
+    "confidence": 1
+  },
+  {
+    "slug": "fur5",
+    "status": "ok",
+    "actual": "A black leather office chair with headrest.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur4",
+    "status": "ok",
+    "actual": "A dining table with six black chairs.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur6",
+    "status": "ok",
+    "actual": "A complete bedroom furniture set with bed and wardrobe.",
+    "confidence": 1
+  },
+  {
+    "slug": "dong-phuc-bellboy",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Blue uniform jacket hanging on a wooden hanger",
+    "confidence": 0.9
+  },
+  {
+    "slug": "fur8",
+    "status": "ok",
+    "actual": "A wooden wardrobe with sliding doors",
+    "confidence": 1
+  },
+  {
+    "slug": "gang-tay-lam-vuon",
+    "status": "ok",
+    "actual": "Single grey and black work glove with reinforcements.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur2",
+    "status": "ok",
+    "actual": "Two-seater brown leather reclining sofa with console.",
+    "confidence": 1
+  },
+  {
+    "slug": "fur7",
+    "status": "ok",
+    "actual": "Modern gray and white kitchen cabinets with appliances",
+    "confidence": 1
+  },
+  {
+    "slug": "ghe-an",
+    "status": "ok",
+    "actual": "A modern upholstered dining chair with dark legs.",
+    "confidence": 1
+  },
+  {
+    "slug": "ghe-bar",
+    "status": "ok",
+    "actual": "A stylish black bar counter stool.",
+    "confidence": 1
+  },
+  {
+    "slug": "fav-oxford",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A single dark blue leather oxford shoe.",
+    "confidence": 1
+  },
+  {
+    "slug": "ghe-tam-nang",
+    "status": "ok",
+    "actual": "Woven outdoor sunbathing lounge chair with armrests",
+    "confidence": 1
+  },
+  {
+    "slug": "ghe-van-phong",
+    "status": "ok",
+    "actual": "Black ergonomic office desk chair with mesh back",
+    "confidence": 1
+  },
+  {
+    "slug": "gia-de-dao-keo",
+    "status": "ok",
+    "actual": "White kitchen knife holder with three knives",
+    "confidence": 1
+  },
+  {
+    "slug": "gia-de-mi-chao",
+    "status": "ok",
+    "actual": "Metal wok pan holder on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "gia-do-chau",
+    "status": "ok",
+    "actual": "White minimalist plant pot stand holder",
+    "confidence": 1
+  },
+  {
+    "slug": "gia-treo-quan-ao",
+    "status": "ok",
+    "actual": "Minimalist black clothes garment hanging rack",
+    "confidence": 1
+  },
+  {
+    "slug": "giay",
+    "status": "ok",
+    "actual": "Stack of various colored paper or cardstock samples",
+    "confidence": 1
+  },
+  {
+    "slug": "goi-long-vu-microfiber",
+    "status": "ok",
+    "actual": "A soft white pillow on a light background.",
+    "confidence": 1
+  },
+  {
+    "slug": "go",
+    "status": "ok",
+    "actual": "A rectangular piece of light and dark wood.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "guong-chong-dong-suong",
+    "status": "ok",
+    "actual": "A rectangular, unfogged mirror mounted on a white wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "gia-treo-khan",
+    "status": "ok",
+    "actual": "Wall-mounted metallic bathroom towel rack with two bars.",
+    "confidence": 1
+  },
+  {
+    "slug": "guong-khung-trang-tri",
+    "status": "ok",
+    "actual": "A decorative, ornate framed mirror on a wall.",
+    "confidence": 1
+  },
+  {
+    "slug": "guong-led-cam-ung",
+    "status": "ok",
+    "actual": "Rectangular LED mirror with a touch sensor",
+    "confidence": 1
+  },
+  {
+    "slug": "guong",
+    "status": "ok",
+    "actual": "An ornate, frameless, reflective wall mirror",
+    "confidence": 1
+  },
+  {
+    "slug": "hanh-lang",
+    "status": "ok",
+    "actual": "Minimalist white empty hallway interior design",
+    "confidence": 1
+  },
+  {
+    "slug": "dong-phuc-le-tan",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Black professional jacket on wooden hanger, laid flat.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "he-thong-chieu-sang-knx",
+    "status": "ok",
+    "actual": "Black electronic control panel with green display",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hardware-hang-hai-inox-316",
+    "status": "ok",
+    "actual": "Small, shiny, metallic cylindrical hardware piece",
+    "confidence": 0.9
+  },
+  {
+    "slug": "gia-up-bat-da-tang",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Three-tier metal dish drying rack with baskets",
+    "confidence": 1
+  },
+  {
+    "slug": "he-thong-tuoi-nho-giot",
+    "status": "ok",
+    "actual": "Small 4-way cross connector for irrigation tubing",
+    "confidence": 0.9
+  },
+  {
+    "slug": "gia-de-gia-vi",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Dark wooden rack holding multiple spice jars",
+    "confidence": 1
+  },
+  {
+    "slug": "hero-ddp-logistics",
+    "status": "ok",
+    "actual": "Cargo ships and cranes at a port at sunset.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hien-dai-bac-au",
+    "status": "ok",
+    "actual": "A minimalist wooden coffee table or bench.",
+    "confidence": 1
+  },
+  {
+    "slug": "hero-buyer-promo",
+    "status": "ok",
+    "actual": "Office desk with laptop, gift, and promo tag",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hero-factory-tour",
+    "status": "ok",
+    "actual": "Screens displaying a modern factory floor with machinery.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hien-dai-industrial",
+    "status": "ok",
+    "actual": "Modern industrial style upholstered bench with metal legs",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hien-dai-toi-gian",
+    "status": "ok",
+    "actual": "Modern minimalist wooden top coffee table with black frame",
+    "confidence": 1
+  },
+  {
+    "slug": "hoa-cao-su-latex",
+    "status": "ok",
+    "actual": "A single red artificial flower on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "heroint",
+    "status": "error",
+    "error": "imagen no data"
+  },
+  {
+    "slug": "hoa-chat-be-boi",
+    "status": "ok",
+    "actual": "A white bottle with a blue label, likely a chemical.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "hoa-cai-tay-hoa-ban",
+    "status": "ok",
+    "actual": "Single artificial yellow flower with green leaves.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hoa-gia-cay-gia",
+    "status": "ok",
+    "actual": "Pink flower with green leaves on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "hoa-lua-cao-cap",
+    "status": "ok",
+    "actual": "A single orange artificial fabric flower",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hoa-lua",
+    "status": "ok",
+    "actual": "Single artificial reddish-pink flower on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hop-dung-do",
+    "status": "ok",
+    "actual": "A simple white rectangular box on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "hien-dai",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Modern wooden credenza with tall panel on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hop-giay-ve-sinh",
+    "status": "ok",
+    "actual": "Sleek metallic wall-mounted toilet paper dispenser",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hop-dung-thuc-pham",
+    "status": "ok",
+    "actual": "clear square plastic food storage container with lid",
+    "confidence": 1
+  },
+  {
+    "slug": "joints-gioang-cao-su",
+    "status": "ok",
+    "actual": "Black rubber gaskets and a joint component",
+    "confidence": 1
+  },
+  {
+    "slug": "ke-sach",
+    "status": "ok",
+    "actual": "Tall wooden bookshelf with multiple empty shelves.",
+    "confidence": 1
+  },
+  {
+    "slug": "ke-trang-tri",
+    "status": "ok",
+    "actual": "Simple wooden wall shelf mounted on a wall",
+    "confidence": 1
+  },
+  {
+    "slug": "ket-sat-mini-ket-san",
+    "status": "ok",
+    "actual": "Small grey home safe box with lock",
+    "confidence": 1
+  },
+  {
+    "slug": "keo-dao-lam-vuon",
+    "status": "ok",
+    "actual": "A pair of black gardening pruning shears.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ket-sat-khach-san",
+    "status": "ok",
+    "actual": "Small dark grey safe box with dial",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hot-tub-spa-massage",
+    "status": "ok",
+    "actual": "Modern square hot tub spa on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khac",
+    "status": "ok",
+    "actual": "A small, light brown, cylindrical object on white.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khan-tam-bath-towel",
+    "status": "ok",
+    "actual": "Stack of folded white towels on a white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khan-mat-face-towel",
+    "status": "ok",
+    "actual": "Two white, folded, soft towels",
+    "confidence": 1
+  },
+  {
+    "slug": "khan-quang-co-ca-vat",
+    "status": "ok",
+    "actual": "a dark grey necktie, tied, hanging",
+    "confidence": 1
+  },
+  {
+    "slug": "khan-tam-bath-sheet",
+    "status": "ok",
+    "actual": "A folded white textile, likely a bath sheet.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khay-buffet-inox",
+    "status": "ok",
+    "actual": "stainless steel rectangular serving tray with handles",
+    "confidence": 1
+  },
+  {
+    "slug": "khan-tay-hand-towel",
+    "status": "ok",
+    "actual": "small, folded blue hand towel on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khay-decor-ban-coffee",
+    "status": "ok",
+    "actual": "Round brown decorative tray on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khay-chia-ngan-keo",
+    "status": "ok",
+    "actual": "Gray multi-compartment drawer organizer tray",
+    "confidence": 1
+  },
+  {
+    "slug": "khay-phuc-vu",
+    "status": "ok",
+    "actual": "A round, dark brown, wooden serving tray.",
+    "confidence": 1
+  },
+  {
+    "slug": "khay-vi-uom-hat",
+    "status": "ok",
+    "actual": "seedling starter tray with small green plants",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-cac-loai-khoa-mortise",
+    "status": "ok",
+    "actual": "Silver rectangular door lock faceplate with keyhole",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khoa-cua-cac-loai-khoa-cylinder",
+    "status": "ok",
+    "actual": "Silver cylinder door lock mechanism on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-cac-loai-khoa-tay-gat",
+    "status": "ok",
+    "actual": "Silver lever handle door lock mechanism on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-cac-loai",
+    "status": "ok",
+    "actual": "Various styles of door handles and lock hardware",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-van-tay",
+    "status": "ok",
+    "actual": "Modern black smart door lock with key inserted",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-nhan-dien-khuon-mat",
+    "status": "ok",
+    "actual": "Sleek black door lock with integrated sensor",
+    "confidence": 0.9
+  },
+  {
+    "slug": "hoa-lan-gia",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "white and pink artificial orchid flower arrangement",
+    "confidence": 1
+  },
+  {
+    "slug": "hop-dung-xa-phong",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "White cardboard box for a soap dispenser.",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-tu-dien-tu-kim-loai",
+    "status": "ok",
+    "actual": "small rectangular metallic electronic component or device",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khay-cap-ladder",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "metallic industrial cable ladder tray on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-wi-fi-bluetooth",
+    "status": "ok",
+    "actual": "Modern silver smart door lock with lever handle",
+    "confidence": 0.9
+  },
+  {
+    "slug": "khoan-van-vit-pin-li-ion",
+    "status": "ok",
+    "actual": "A black cordless drill driver with battery.",
+    "confidence": 1
+  },
+  {
+    "slug": "khung-guong-trang-tri",
+    "status": "ok",
+    "actual": "rectangular decorative mirror with a detailed frame",
+    "confidence": 1
+  },
+  {
+    "slug": "khung-tranh-nghe-thuat",
+    "status": "ok",
+    "actual": "Simple wooden picture frame on white wall",
+    "confidence": 1
+  },
+  {
+    "slug": "khung-ket-cau-thep-tien-che",
+    "status": "ok",
+    "actual": "A simple, flat, grid-like metal frame.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "kim-loai",
+    "status": "ok",
+    "actual": "A plain, rectangular, grey block or bar.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "kim",
+    "status": "ok",
+    "actual": "A close-up of the eye of a sewing needle.",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-tay-nam",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Silver door lock cylinder with keyhole on white.",
+    "confidence": 1
+  },
+  {
+    "slug": "kinh",
+    "status": "ok",
+    "actual": "A small, clear, empty glass bowl.",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-the-tu-rfid",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Sleek white smart lock on a wall",
+    "confidence": 1
+  },
+  {
+    "slug": "lamp-shade-chup-den",
+    "status": "ok",
+    "actual": "A small, decorative, patterned lamp shade.",
+    "confidence": 1
+  },
+  {
+    "slug": "lavabo-chan-dung",
+    "status": "ok",
+    "actual": "White freestanding pedestal washbasin on a plain background",
+    "confidence": 1
+  },
+  {
+    "slug": "khoa-cua-cac-loai-khoa-multipoint",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Silver multipoint door lock mechanism",
+    "confidence": 1
+  },
+  {
+    "slug": "lavabo-dat-ban",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "lavabo-gom-su",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "lavabo-treo-tuong",
+    "status": "ok",
+    "actual": "White modern wall-mounted washbasin with faucet and plumbing",
+    "confidence": 1
+  },
+  {
+    "slug": "khoan-tuong-impact",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Dark grey cordless power drill with a metal bit.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "linh-kien-bang-tai",
+    "status": "ok",
+    "actual": "A single metal pulley or roller component.",
+    "confidence": 1
+  },
+  {
+    "slug": "led-day-smart",
+    "status": "ok",
+    "actual": "Two illuminated LED tube lights mounted on wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "lavabo-doi",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "linh-kien-phu-kien-canh-tu",
+    "status": "ok",
+    "actual": "Small metallic cabinet hardware component or hook",
+    "confidence": 1
+  },
+  {
+    "slug": "linh-kien-phu-kien-chan-noi-that",
+    "status": "ok",
+    "actual": "Wooden cylindrical furniture legs and small components",
+    "confidence": 0.9
+  },
+  {
+    "slug": "lavabo-da-nhan-tao",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Grey artificial stone or concrete bowl washbasin",
+    "confidence": 1
+  },
+  {
+    "slug": "linh-kien-phu-kien-co-cau-ghe",
+    "status": "ok",
+    "actual": "Blurry metallic mechanical component, possibly a chair part",
+    "confidence": 0.8
+  },
+  {
+    "slug": "linh-kien-phu-kien-nep-vien",
+    "status": "ok",
+    "actual": "A single, long, thin, silver trim component.",
+    "confidence": 1
+  },
+  {
+    "slug": "linh-kien-phu-kien-khung-noi-that",
+    "status": "ok",
+    "actual": "A simple light wooden rectangular frame component.",
+    "confidence": 1
+  },
+  {
+    "slug": "linh-kien-phu-kien",
+    "status": "ok",
+    "actual": "A small, golden, metallic component or fitting.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "lo-gia-vi-buffet",
+    "status": "ok",
+    "actual": "Small clear spice grinder or shaker with brown spice",
+    "confidence": 0.9
+  },
+  {
+    "slug": "lavabo-am-ban",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White wall-mounted ceramic bathroom washbasin with drain",
+    "confidence": 0.8
+  },
+  {
+    "slug": "lo-nuong-doi-luu-cong-nghiep",
+    "status": "ok",
+    "actual": "Stainless steel industrial or commercial convection oven.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "lo-vi-song-am-tu",
+    "status": "ok",
+    "actual": "White built-in microwave oven on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "lo-pizza-ngoai-troi",
+    "status": "ok",
+    "actual": "Modern metallic outdoor pizza oven on pedestal.",
+    "confidence": 1
+  },
+  {
+    "slug": "long-den-lock-washer",
+    "status": "ok",
+    "actual": "Silver split metal ring, likely a lock washer",
+    "confidence": 1
+  },
+  {
+    "slug": "lot-ban-khan-an",
+    "status": "ok",
+    "actual": "Grey placemat with white plate and rolled napkin",
+    "confidence": 1
+  },
+  {
+    "slug": "loi-di-nen-led",
+    "status": "ok",
+    "actual": "Minimalist LED light illuminating a dark tiled pathway",
+    "confidence": 0.9
+  },
+  {
+    "slug": "luoc-bong-tai",
+    "status": "ok",
+    "actual": "Hair comb with pearl-like decorative elements",
+    "confidence": 1
+  },
+  {
+    "slug": "lo-nuong-doi-luu",
+    "status": "ok",
+    "actual": "Modern black built-in kitchen oven appliance",
+    "confidence": 1
+  },
+  {
+    "slug": "luoi-thep-han",
+    "status": "ok",
+    "actual": "Flat rectangular grid of welded steel mesh",
+    "confidence": 1
+  },
+  {
+    "slug": "mat-na-phuc-trang-halloween",
+    "status": "ok",
+    "actual": "Scary clown mask with white face and red nose",
+    "confidence": 1
+  },
+  {
+    "slug": "marble1",
+    "status": "ok",
+    "actual": "Various marble-patterned tiles displayed in a showroom.",
+    "confidence": 1
+  },
+  {
+    "slug": "mannequin-nam-nu",
+    "status": "ok",
+    "actual": "Two generic white display mannequins wearing clothes",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-co-ngoi-lai",
+    "status": "ok",
+    "actual": "Red ride-on lawn mower tractor from front view.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-co-dien-pin",
+    "status": "ok",
+    "actual": "Black and red cordless electric lawn mower",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-co-xang",
+    "status": "ok",
+    "actual": "Black gasoline-powered push lawn mower on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-co",
+    "status": "ok",
+    "actual": "Red riding lawn mower machine on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-hang-rao",
+    "status": "ok",
+    "actual": "An electric hedge trimmer tool on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cua-xich",
+    "status": "ok",
+    "actual": "Orange and gray gasoline chainsaw tool",
+    "confidence": 1
+  },
+  {
+    "slug": "luoi-che-nang-70-90",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Rectangular light gray mesh sun shade net",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-sat",
+    "status": "ok",
+    "actual": "A small table-top cutting machine or tile saw.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "mang-chong-tham-bitum",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A dark, cylindrical roll on a white surface.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "may-han-mig",
+    "status": "ok",
+    "actual": "A black, compact welding machine with cables.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-ep-trai-cay-thuong-mai",
+    "status": "ok",
+    "actual": "Stainless steel commercial fruit juice extractor machine",
+    "confidence": 1
+  },
+  {
+    "slug": "may-han-que-mma",
+    "status": "ok",
+    "actual": "Compact black portable welding machine with handle",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-go-tron",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A single, metallic, circular saw blade.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-han-tig",
+    "status": "ok",
+    "actual": "A compact, silver portable welding machine.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-cat-plasma",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Industrial CNC plasma cutting machine with gantry system",
+    "confidence": 1
+  },
+  {
+    "slug": "may-hut-mui",
+    "status": "ok",
+    "actual": "Modern minimalist kitchen range hood extractor",
+    "confidence": 1
+  },
+  {
+    "slug": "mang-cap-ton-son-tinh-dien",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "White U-shaped metal cable tray channel",
+    "confidence": 1
+  },
+  {
+    "slug": "may-mai-goc",
+    "status": "ok",
+    "actual": "An electric angle grinder tool with a black disc.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-loc-nuoc-ho-boi",
+    "status": "ok",
+    "actual": "A generic electric water pump on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "may-danh-rap",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Heavy-duty metal stapler on a white background",
+    "confidence": 1
+  },
+  {
+    "slug": "may-phay-router",
+    "status": "ok",
+    "actual": "A silver and black woodworking router machine.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-nen-khi-piston",
+    "status": "ok",
+    "actual": "Small red and silver piston engine or compressor",
+    "confidence": 0.9
+  },
+  {
+    "slug": "may-xoi-dat",
+    "status": "ok",
+    "actual": "Gray agricultural rotary tiller cultivator attachment",
+    "confidence": 1
+  },
+  {
+    "slug": "may-rua-bat",
+    "status": "ok",
+    "actual": "A silver automatic kitchen dishwasher appliance.",
+    "confidence": 1
+  },
+  {
+    "slug": "may-khuech-tan-huong",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black electric aroma diffuser with control buttons",
+    "confidence": 1
+  },
+  {
+    "slug": "mcb-1p-2p-3p-4p",
+    "status": "ok",
+    "actual": "White miniature circuit breaker with blue switch",
+    "confidence": 1
+  },
+  {
+    "slug": "may-dan-lat",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Industrial automatic machine with control panel and work surface",
+    "confidence": 0.9
+  },
+  {
+    "slug": "moc-treo-ke",
+    "status": "ok",
+    "actual": "A simple metal S-hook on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "moc-treo-tuong-bep",
+    "status": "ok",
+    "actual": "Minimalist dark grey wall mounted hanger hook",
+    "confidence": 1
+  },
+  {
+    "slug": "moc-treo-ke-tuong",
+    "status": "ok",
+    "actual": "A single black wall-mounted hanger hook.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "may-phun-thuoc",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Green tank agricultural pesticide sprayer machine with boom",
+    "confidence": 1
+  },
+  {
+    "slug": "may-rua-bat-bang-tai",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Stainless steel commercial conveyor belt dishwasher machine",
+    "confidence": 1
+  },
+  {
+    "slug": "may-say-toc-treo-tuong",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A black hair dryer on a white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "moving-head-light",
+    "status": "ok",
+    "actual": "A black moving head stage light fixture.",
+    "confidence": 1
+  },
+  {
+    "slug": "nen-coc-thuy-tinh",
+    "status": "ok",
+    "actual": "A white candle in a clear glass cup.",
+    "confidence": 1
+  },
+  {
+    "slug": "mural-giay-dan",
+    "status": "ok",
+    "actual": "geometric patterned decorative wall mural wallpaper",
+    "confidence": 1
+  },
+  {
+    "slug": "nen-thom-sap-dau-nanh",
+    "status": "ok",
+    "actual": "Small, light-colored candle in a simple container",
+    "confidence": 0.9
+  },
+  {
+    "slug": "my",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "nep-inox-trang-tri",
+    "status": "ok",
+    "actual": "A shiny, metallic decorative trim strip with cutouts.",
+    "confidence": 1
+  },
+  {
+    "slug": "nguon-switching-12v-24v",
+    "status": "ok",
+    "actual": "Compact electronic power supply module with green connector",
+    "confidence": 0.9
+  },
+  {
+    "slug": "network-bu-long-minifix",
+    "status": "ok",
+    "actual": "Small metallic furniture connector bolt with blue head",
+    "confidence": 0.9
+  },
+  {
+    "slug": "nen-thom-sap-paraffin",
+    "status": "ok",
+    "actual": "A small, lit candle in a glass holder.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "nha-cho-be-ngoai-troi",
+    "status": "ok",
+    "actual": "Small blue playhouse with red roof and yellow door.",
+    "confidence": 1
+  },
+  {
+    "slug": "nha-kinh-trong-cay",
+    "status": "ok",
+    "actual": "Minimalist white greenhouse structure with a potted plant inside",
+    "confidence": 1
+  },
+  {
+    "slug": "may-phun-khoi-bong-bong",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "White automatic bubble blowing machine emitting many bubbles.",
+    "confidence": 1
+  },
+  {
+    "slug": "nha-kinh-nhua-pe",
+    "status": "ok",
+    "actual": "Translucent plastic film greenhouse on a white background",
+    "confidence": 1
+  },
+  {
+    "slug": "mccb-100-630a",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "nha-kinh-polycarbonate",
+    "status": "ok",
+    "actual": "A simple, empty polycarbonate panel greenhouse structure.",
+    "confidence": 1
+  },
+  {
+    "slug": "nha-ve-sinh-di-dong",
+    "status": "ok",
+    "actual": "blue portable mobile toilet unit",
+    "confidence": 1
+  },
+  {
+    "slug": "nha-luoi-chong-con-trung",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "nha-gap-gon-folding-house",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "noi-ap-suat",
+    "status": "ok",
+    "actual": "stainless steel kitchen pressure cooker appliance",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-hap-da-tang",
+    "status": "ok",
+    "actual": "Shiny multi-tier stainless steel food steamer pot",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-benh-vien",
+    "status": "ok",
+    "actual": "A modern hospital bed on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-bom-hoi",
+    "status": "ok",
+    "actual": "A small purple inflatable couch or chair.",
+    "confidence": 1
+  },
+  {
+    "slug": "nhua",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "noi-that-cu-ton-kho",
+    "status": "ok",
+    "actual": "A simple wooden bookshelf with three shelves.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-cua-hang",
+    "status": "ok",
+    "actual": "White rectangular cabinet or counter on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-khach-san-ban-tra-tiep-khach",
+    "status": "ok",
+    "actual": "Dark brown rectangular coffee table on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-khach-san-giuong-khach-san",
+    "status": "ok",
+    "actual": "A minimalist bed with white sheets and pillows.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-gap-gon",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "noi-that-khach-san",
+    "status": "ok",
+    "actual": "blurry image of a hotel room furniture set",
+    "confidence": 0.9
+  },
+  {
+    "slug": "noi-that-khach-san-tu-minibar",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "noi-that-nha-hang-ban-buffet",
+    "status": "ok",
+    "actual": "Long wooden buffet serving table with food dishes",
+    "confidence": 1
+  },
+  {
+    "slug": "nhat-ban",
+    "status": "ok",
+    "actual": "Minimalist white pleated round object, possibly dumpling.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "noi-that-nha-hang-ghe-nha-hang",
+    "status": "ok",
+    "actual": "A blue upholstered dining chair with black legs.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-nha-hang",
+    "status": "ok",
+    "actual": "A single dark wooden dining chair on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-led",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "noi-that-nha-hang-quay-bar",
+    "status": "ok",
+    "actual": "A dark wooden L-shaped bar counter.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-truong-hoc",
+    "status": "ok",
+    "actual": "Single school desk and chair with metal frame",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-van-phong-ban-lam-viec",
+    "status": "ok",
+    "actual": "Dark wooden office desk with accessories on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-van-phong-tu-tai-lieu",
+    "status": "ok",
+    "actual": "Plain grey rectangular cabinet with three sections",
+    "confidence": 1
+  },
+  {
+    "slug": "noi-that-van-phong-vach-ngan",
+    "status": "ok",
+    "actual": "Simple grey rectangular office cubicle partition wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-chong-nuoc-ip65",
+    "status": "ok",
+    "actual": "A dark, square electrical socket or connector.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "nut-nhan-den-bao",
+    "status": "ok",
+    "actual": "Yellow industrial indicator light or push button",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-co-chong-set",
+    "status": "ok",
+    "actual": "White cube-shaped multi-outlet power adapter",
+    "confidence": 0.9
+  },
+  {
+    "slug": "noi-that-van-phong",
+    "status": "ok",
+    "actual": "Modern red minimalist sofa on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-da-nang-quoc-te",
+    "status": "ok",
+    "actual": "Black power adapter with two-prong plug",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-keo-dai-2-6-lo",
+    "status": "ok",
+    "actual": "White multi-outlet extension power strip with cord",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-de-ban-workstation",
+    "status": "ok",
+    "actual": "White universal travel power adapter on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-tuong-tieu-chuan",
+    "status": "ok",
+    "actual": "White standard wall mounted electrical power outlet",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-usb-tuong-usb-a-2-1a",
+    "status": "ok",
+    "actual": "White wall outlet with integrated USB-A port",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-usb-tuong-combo-usb-a-usb-c",
+    "status": "ok",
+    "actual": "White wall outlet with USB-A and other ports",
+    "confidence": 1
+  },
+  {
+    "slug": "o-du-leu-bai",
+    "status": "ok",
+    "actual": "Blue beach umbrella on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "o-du-leu",
+    "status": "ok",
+    "actual": "Dark blue outdoor canopy umbrella with wooden pole",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-co-cong-tac-rieng-tung-lo",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "black power strip with five red individual switches",
+    "confidence": 1
+  },
+  {
+    "slug": "on-ap-1-pha-3-pha",
+    "status": "ok",
+    "actual": "Grey and blue electrical device with red knobs",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-smart-wi-fi",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White multi-socket electrical power outlet on a wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-usb-tuong-usb-c-pd-20w",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White wall outlet with electrical socket and USB-C port",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-am-ban-pop-up",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Grey square pop-up recessed desk power outlet",
+    "confidence": 0.95
+  },
+  {
+    "slug": "ong-mem-tu-cuon",
+    "status": "ok",
+    "actual": "A silver hose reel with black hose.",
+    "confidence": 1
+  },
+  {
+    "slug": "ong-thep-luon-day-imc",
+    "status": "ok",
+    "actual": "Short metallic electrical conduit pipe section",
+    "confidence": 0.95
+  },
+  {
+    "slug": "phan-bon-thuy-canh",
+    "status": "ok",
+    "actual": "Small dark bottle with green label, white cap",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phong-an",
+    "status": "ok",
+    "actual": "Modern dining table and chairs in a minimalist room.",
+    "confidence": 1
+  },
+  {
+    "slug": "o-cam-san-floor-socket",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "White recessed electrical power outlet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phong-khach",
+    "status": "ok",
+    "actual": "A modern, minimalist living room with sofa.",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-bep",
+    "status": "ok",
+    "actual": "Modern kitchen interior with island and appliances",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-ngu",
+    "status": "ok",
+    "actual": "Minimalist modern bedroom with bed and two nightstands.",
+    "confidence": 1
+  },
+  {
+    "slug": "ong-luon-day-pvc-mem",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Grey corrugated flexible pipe coiled into a circle",
+    "confidence": 1
+  },
+  {
+    "slug": "ong-luon-day-hdpe-cung",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A single, grey, rigid plastic pipe.",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam-hoi-xong",
+    "status": "ok",
+    "actual": "Modern glass shower cabin unit with showerhead",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam-kinh-khong-khung",
+    "status": "ok",
+    "actual": "A clear, frameless glass shower door or enclosure.",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam-di-dong-prefab",
+    "status": "ok",
+    "actual": "grey prefabricated portable toilet unit",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam-kinh-khung-nhom",
+    "status": "ok",
+    "actual": "Minimalist aluminum framed glass shower door",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-dieu-tuong-vuon",
+    "status": "ok",
+    "actual": "Circular floral relief sculpture, light grey, decorative medallion",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam-vi-tinh-computerized",
+    "status": "ok",
+    "actual": "blurry, simple glass shower cabin enclosure",
+    "confidence": 0.9
+  },
+  {
+    "slug": "o-cam-usb-tuong",
+    "status": "retried-ok",
+    "tries": 3,
+    "actual": "White wall-mounted electrical outlet with USB ports",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-cho-khach-san-5",
+    "status": "ok",
+    "actual": "Small pump bottle, likely hotel amenity supply.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phao-chi-pu-ps",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White decorative molding trim piece on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "phong-tam",
+    "status": "ok",
+    "actual": "Very blurry white bathroom interior with bathtub",
+    "confidence": 0.8
+  },
+  {
+    "slug": "phu-kien-co-nhan-tao",
+    "status": "ok",
+    "actual": "Small green cylindrical object, possibly artificial grass related.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "phu-kien-cua-kinh",
+    "status": "ok",
+    "actual": "Metallic hardware fitting attached to a clear glass panel",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-cua-cuon",
+    "status": "ok",
+    "actual": "A single metallic cylindrical rod or pin",
+    "confidence": 0.8
+  },
+  {
+    "slug": "phong-tam-tich-hop-smc",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Modern white wall-mounted bathroom vanity or cabinet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phu-kien-kim-khi-bu-long",
+    "status": "ok",
+    "actual": "A single metal bolt with a hexagonal head.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-kim-khi-ban-le",
+    "status": "ok",
+    "actual": "A single silver metal door hinge.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-kim-khi-banh-xe",
+    "status": "ok",
+    "actual": "A single metal caster wheel on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-khi-nen-tube",
+    "status": "ok",
+    "actual": "Small brass hexagonal tube fitting connector",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phu-kien-kim-khi-tay-nam",
+    "status": "ok",
+    "actual": "A single antique brass metal door knob.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-kim-khi",
+    "status": "ok",
+    "actual": "A single metal bolt or specialized fastener.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-san-khau-su-kien",
+    "status": "ok",
+    "actual": "Speaker stands, speaker, microphone stand, mixer, cables",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-be-boi",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A small grey inline flow meter or gauge.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "phu-kien-mang-cap",
+    "status": "ok",
+    "actual": "Small white hardware accessory with gold end",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phu-kien-ong-thep",
+    "status": "ok",
+    "actual": "Dark metallic threaded industrial components and fittings.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phu-kien-san-nep-len",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "phu-kien-shop-window",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "phu-kien-smart-home",
+    "status": "ok",
+    "actual": "A minimalist grey and white cylindrical smart device.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "phu-kien-tu-bep-tay-nam",
+    "status": "ok",
+    "actual": "Various styles of cabinet handles and knobs",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-tu-bep-ray-truot-em",
+    "status": "ok",
+    "actual": "Silver metallic drawer slide mechanism on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-tu-bep-ban-le-giam-chan",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "phu-kien-tu-bep",
+    "status": "ok",
+    "actual": "A single brass kitchen cabinet handle pull",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-voi",
+    "status": "ok",
+    "actual": "A modern chrome kitchen or bathroom faucet.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-tung-dung-cu",
+    "status": "ok",
+    "actual": "A single metallic mechanical component or spare part.",
+    "confidence": 1
+  },
+  {
+    "slug": "phu-kien-kim-khi-ray-truot-ngan-keo",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Shiny metal linear slide hardware component",
+    "confidence": 0.95
+  },
+  {
+    "slug": "phu-kien-vien-mat-na",
+    "status": "ok",
+    "actual": "Thin metallic wavy ring on white background",
+    "confidence": 0.7
+  },
+  {
+    "slug": "phu-tung-may-cat-co",
+    "status": "ok",
+    "actual": "A metallic, two-bladed mechanical part on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "pin-lithium-ion-module",
+    "status": "ok",
+    "actual": "Small electronic module with dark top and green board",
+    "confidence": 0.85
+  },
+  {
+    "slug": "phu-kien-tu-bep-gia-da-nang",
+    "status": "ok",
+    "actual": "Open storage cabinet with shelves and various items",
+    "confidence": 0.9
+  },
+  {
+    "slug": "profile-len-chan-tuong",
+    "status": "ok",
+    "actual": "White rectangular building profile on a white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "profile-pvc-tran-tuong",
+    "status": "ok",
+    "actual": "Several grey ribbed profiles on a white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "qua-cau-thuy-tinh-trang-tri",
+    "status": "ok",
+    "actual": "Clear faceted decorative glass sphere on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "profile-nhom-tran",
+    "status": "ok",
+    "actual": "A long, white, rectangular profile or channel.",
+    "confidence": 1
+  },
+  {
+    "slug": "push-button-mat-86mm",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "qua-tang-thu-cong-noel",
+    "status": "ok",
+    "actual": "Rustic star-shaped Christmas ornament with a loop",
+    "confidence": 1
+  },
+  {
+    "slug": "que-tam-huong-reed-diffuser",
+    "status": "ok",
+    "actual": "Clear glass reed diffuser with sticks",
+    "confidence": 1
+  },
+  {
+    "slug": "ray-truot-cua-lua",
+    "status": "ok",
+    "actual": "Long metallic track or rail hardware component",
+    "confidence": 1
+  },
+  {
+    "slug": "rem-tam",
+    "status": "ok",
+    "actual": "A single, light-colored curtain panel hanging from a rod.",
+    "confidence": 1
+  },
+  {
+    "slug": "rem-manh-cua-chop",
+    "status": "ok",
+    "actual": "Rectangular louvered panel with horizontal slats",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ray-truot-ngan-keo",
+    "status": "ok",
+    "actual": "A single metallic hardware rail on a white surface.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ro-le-trung-gian",
+    "status": "ok",
+    "actual": "Small grey electrical control relay component",
+    "confidence": 0.95
+  },
+  {
+    "slug": "ro-le-nhiet-overload",
+    "status": "ok",
+    "actual": "Small grey electrical relay or contactor component",
+    "confidence": 0.9
+  },
+  {
+    "slug": "roller-cua-lua",
+    "status": "ok",
+    "actual": "White rolling insect screen or blind",
+    "confidence": 0.9
+  },
+  {
+    "slug": "rem-motor-smart",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "san-cao-su-an-toan",
+    "status": "ok",
+    "actual": "Dark blue segmented rubber flooring mat or tiles",
+    "confidence": 0.9
+  },
+  {
+    "slug": "san-laminate",
+    "status": "ok",
+    "actual": "A single rectangular wood-grain flooring plank",
+    "confidence": 1
+  },
+  {
+    "slug": "san-go-engineered",
+    "status": "ok",
+    "actual": "Single brown wood plank, likely flooring",
+    "confidence": 0.9
+  },
+  {
+    "slug": "san-nang-ky-thuat",
+    "status": "ok",
+    "actual": "single light grey square floor panel",
+    "confidence": 0.9
+  },
+  {
+    "slug": "san-pham-to-chuc-tu",
+    "status": "ok",
+    "actual": "Drawer organizer with cutlery and kitchen utensils",
+    "confidence": 1
+  },
+  {
+    "slug": "san-pham-giat-la",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "san-pham-ve-sinh-nha-cua",
+    "status": "ok",
+    "actual": "A teal spray bottle for cleaning.",
+    "confidence": 1
+  },
+  {
+    "slug": "san-spc-lvt",
+    "status": "ok",
+    "actual": "A single light wood-grain flooring plank.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "san-the-thao",
+    "status": "ok",
+    "actual": "Green sports court flooring with white lines",
+    "confidence": 1
+  },
+  {
+    "slug": "sandwich-panel-rockwool",
+    "status": "ok",
+    "actual": "A rectangular block of fibrous insulation material",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sen-tam-am-tuong",
+    "status": "ok",
+    "actual": "Chrome wall-mounted shower spout and control",
+    "confidence": 0.9
+  },
+  {
+    "slug": "showcase-construction-materials",
+    "status": "ok",
+    "actual": "bricks, rebar, cement bags, and grey boards",
+    "confidence": 1
+  },
+  {
+    "slug": "sen-cay-tam-dung",
+    "status": "ok",
+    "actual": "Modern silver shower column set with handheld shower",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-bathroom-sanitary",
+    "status": "ok",
+    "actual": "Modern bathroom with shower, bathtub, and double vanity",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-decoration",
+    "status": "ok",
+    "actual": "White vases, candles, and silver abstract sculptures on a shelf.",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-doors-windows",
+    "status": "ok",
+    "actual": "Modern building facade with large windows and sliding door",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-electrical",
+    "status": "ok",
+    "actual": "various electrical switches, sockets, circuit breakers, and cables",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-hardware-tools",
+    "status": "ok",
+    "actual": "Various hardware tools including a drill, wrenches, and hammer.",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-home-garden",
+    "status": "ok",
+    "actual": "Patios with outdoor furniture, potted plants, and lighting.",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-hotel-supplies",
+    "status": "ok",
+    "actual": "white bathrobes, folded towels, and small toiletries",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-lighting",
+    "status": "ok",
+    "actual": "A collection of modern and stylish pendant lights and a chandelier.",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-kitchen-equipment",
+    "status": "ok",
+    "actual": "Professional stainless steel kitchen with range, oven, sink.",
+    "confidence": 1
+  },
+  {
+    "slug": "san-vinyl-cuon",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "rolled blue patterned sheet vinyl flooring",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-outdoor-garden",
+    "status": "ok",
+    "actual": "Outdoor patio furniture, grill, plants on wooden deck",
+    "confidence": 1
+  },
+  {
+    "slug": "smart-hub-gateway",
+    "status": "ok",
+    "actual": "Small white electronic hub or gateway device",
+    "confidence": 0.9
+  },
+  {
+    "slug": "smart-panel-4-6-nut-tuya",
+    "status": "ok",
+    "actual": "White wall switch panel with two buttons",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sofa1",
+    "status": "ok",
+    "actual": "Pink L-shaped sofa with cushions in a room",
+    "confidence": 1
+  },
+  {
+    "slug": "sofa-san-vuon-modular",
+    "status": "ok",
+    "actual": "Dark woven corner outdoor sofa with light cushions",
+    "confidence": 1
+  },
+  {
+    "slug": "sofa-rattan",
+    "status": "ok",
+    "actual": "Brown woven rattan sofa with checkered backrest",
+    "confidence": 1
+  },
+  {
+    "slug": "sandwich-panel-eps",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White rectangular block of foam insulation material",
+    "confidence": 0.9
+  },
+  {
+    "slug": "solid-surface-corian-like",
+    "status": "ok",
+    "actual": "A plain white rectangular solid surface slab.",
+    "confidence": 1
+  },
+  {
+    "slug": "san-tre-ep",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Light brown bamboo wood flooring planks",
+    "confidence": 1
+  },
+  {
+    "slug": "sol-custom",
+    "status": "ok",
+    "actual": "color swatches, 3D prototypes, blueprints for custom design",
+    "confidence": 0.7
+  },
+  {
+    "slug": "son-chong-chay-ket-cau",
+    "status": "ok",
+    "actual": "A white and orange can of paint.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sol-expo",
+    "status": "ok",
+    "actual": "Computer screen displaying virtual exhibition booths and industrial products.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "sol-hubs",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Small black round device labeled 'SOL HBS'",
+    "confidence": 1
+  },
+  {
+    "slug": "su-tu-da",
+    "status": "ok",
+    "actual": "Small stone lion statue on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "sub-case",
+    "status": "ok",
+    "actual": "A black and green smartphone case with blue accents.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "son-chong-tham-goc-xi-mang",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Grey dome-shaped object with rough, textured surface",
+    "confidence": 0.8
+  },
+  {
+    "slug": "sub-electric",
+    "status": "ok",
+    "actual": "Circuit board with microchip and glowing blue lights",
+    "confidence": 1
+  },
+  {
+    "slug": "sol-mei",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "son-ngoai-that",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "son-noi-that",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "sub-expo1",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Small black electronic device labeled 'sub expo1'",
+    "confidence": 1
+  },
+  {
+    "slug": "showcase-noi-that",
+    "status": "retry-failed",
+    "actual": "still mismatched after 3 tries"
+  },
+  {
+    "slug": "sub-expo3",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "sub-metal",
+    "status": "ok",
+    "actual": "Stylized stack of silver ingots and a glowing mineral.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "son-epoxy-san",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "sub-mfg",
+    "status": "ok",
+    "actual": "Stylized 3D icon of a CNC milling machine.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sub-gifts",
+    "status": "ok",
+    "actual": "stylized red gift box with yellow ribbon",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sub-pack",
+    "status": "ok",
+    "actual": "Stack of three stylized blue and green packages.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "sub-expo2",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Circular product bottom with 'SUB EXPO' text",
+    "confidence": 1
+  },
+  {
+    "slug": "sub-slip",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "sung-ban-vit",
+    "status": "ok",
+    "actual": "black electric screwdriver power tool on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "sub-transport",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "sub-umb",
+    "status": "ok",
+    "actual": "Multiple colorful umbrellas with shadows on a white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "sung-dinh-khi-nen",
+    "status": "ok",
+    "actual": "a gray and black pneumatic nail gun tool",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-3d-nghe-thuat",
+    "status": "ok",
+    "actual": "White geometric textured 3D decorative wall panel",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tam-cach-am",
+    "status": "ok",
+    "actual": "Light grey square panel with four horizontal ribs",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-eps-xps",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tam-op-go-composite",
+    "status": "ok",
+    "actual": "Three vertical brown wood-like cladding panels",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-op-go-tu-nhien",
+    "status": "ok",
+    "actual": "Rectangular natural wood panel with subtle texture",
+    "confidence": 1
+  },
+  {
+    "slug": "tac-ke-cac-loai",
+    "status": "ok",
+    "actual": "Assortment of metal screws and fasteners on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tam-op-acoustic-tieu-am",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tam-op-kinh",
+    "status": "ok",
+    "actual": "Rectangular glass panel mounted on a light surface",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-op-pvc",
+    "status": "ok",
+    "actual": "Light grey rectangular panel with horizontal ridges",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-phu-dieu-trang-tri",
+    "status": "ok",
+    "actual": "White square decorative bas-relief wall panel",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tam-thach-cao-thach-cao-tieu-chuan",
+    "status": "ok",
+    "actual": "White rectangular panel, resembling a drywall sheet",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-thach-cao-chong-am",
+    "status": "ok",
+    "actual": "A plain white rectangular building panel or board.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tam-thach-cao-chong-chay",
+    "status": "ok",
+    "actual": "A plain white rectangular panel leaning against a wall.",
+    "confidence": 0.85
+  },
+  {
+    "slug": "tam-thach-cao",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tat-noel-tui-qua",
+    "status": "ok",
+    "actual": "Red and white Christmas stocking with festive pattern",
+    "confidence": 1
+  },
+  {
+    "slug": "tay-co-thuy-luc-door-closer",
+    "status": "ok",
+    "actual": "Metallic hydraulic door closer arm on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tang-do-ma-ni-rigging",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tay-nam-tu",
+    "status": "ok",
+    "actual": "A single, metallic cabinet pull handle.",
+    "confidence": 1
+  },
+  {
+    "slug": "tay-nam-cua",
+    "status": "ok",
+    "actual": "Silver lever door handle on a white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tam-thach-cao-tam-tran-tha",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tham-chong-truot",
+    "status": "ok",
+    "actual": "A rectangular dark grey textured floor mat.",
+    "confidence": 1
+  },
+  {
+    "slug": "tham-chan-tam",
+    "status": "ok",
+    "actual": "A plain dark grey rectangular mat.",
+    "confidence": 1
+  },
+  {
+    "slug": "thanh-vin-an-toan",
+    "status": "ok",
+    "actual": "Metallic bronze safety grab bar handrail",
+    "confidence": 1
+  },
+  {
+    "slug": "thep-ong-steel-pipe-thep-han-xoan",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "thep-ong-steel-pipe-thep-khong-gi",
+    "status": "ok",
+    "actual": "Single, shiny, metallic pipe or fitting on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "thep-hinh-h-i-u-v",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "thep-ong-steel-pipe",
+    "status": "ok",
+    "actual": "Several vertical metallic pipes or rods",
+    "confidence": 1
+  },
+  {
+    "slug": "thep-ong-steel-pipe-thep-ma-kem",
+    "status": "ok",
+    "actual": "Grey metal pipe, possibly galvanized steel",
+    "confidence": 1
+  },
+  {
+    "slug": "thep-tam-cuon",
+    "status": "ok",
+    "actual": "dark gray metallic coil on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "thep-ong-steel-pipe-thep-ong-den",
+    "status": "ok",
+    "actual": "Black elbow pipe fitting on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tho-phuc-sinh-resin",
+    "status": "ok",
+    "actual": "Small, light-colored bunny figurine on white background.",
+    "confidence": 1
+  },
+  {
+    "slug": "thot-go-tu-nhien",
+    "status": "ok",
+    "actual": "Light natural wood cutting board with handle",
+    "confidence": 1
+  },
+  {
+    "slug": "thu-cong-go",
+    "status": "ok",
+    "actual": "Small, round, light brown handcrafted decorative object",
+    "confidence": 0.9
+  },
+  {
+    "slug": "thot-nhua-khang-khuan",
+    "status": "ok",
+    "actual": "White translucent plastic rectangular cutting board with handle.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "thu-cong-kim-loai",
+    "status": "ok",
+    "actual": "Dark, intricate metal sculpture or decorative art piece",
+    "confidence": 0.9
+  },
+  {
+    "slug": "thuoc-do",
+    "status": "ok",
+    "actual": "Tape measure, level, measuring cup, and other tools",
+    "confidence": 1
+  },
+  {
+    "slug": "toilet1",
+    "status": "ok",
+    "actual": "Modern white smart toilet in a bathroom.",
+    "confidence": 1
+  },
+  {
+    "slug": "tinh-dau-thom",
+    "status": "ok",
+    "actual": "Small glass bottle with pink label, silver cap.",
+    "confidence": 1
+  },
+  {
+    "slug": "to-chuc-tu-bep-xoay",
+    "status": "ok",
+    "actual": "Modern grey rotating kitchen cabinet organizer",
+    "confidence": 1
+  },
+  {
+    "slug": "thanh-ren-bu-long-ket-cau",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A metal bolt with a nut.",
+    "confidence": 1
+  },
+  {
+    "slug": "ton-lop-ton-cach-nhiet",
+    "status": "ok",
+    "actual": "Grey textured roofing panels or shingles",
+    "confidence": 1
+  },
+  {
+    "slug": "tram-sac-xe-dien",
+    "status": "ok",
+    "actual": "White minimalist electric vehicle charging station with cable",
+    "confidence": 0.75
+  },
+  {
+    "slug": "thiep-noel-card",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White greeting card with 'MERRY CHRISTMAS' text",
+    "confidence": 1
+  },
+  {
+    "slug": "tranh-canvas-in",
+    "status": "ok",
+    "actual": "Abstract geometric printed canvas wall art",
+    "confidence": 1
+  },
+  {
+    "slug": "thu-cong-nhua-resin",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Small round clear resin art piece with golden inclusions",
+    "confidence": 1
+  },
+  {
+    "slug": "tranh-tuong-nghe-thuat",
+    "status": "ok",
+    "actual": "Abstract artistic wall painting with light, muted tones",
+    "confidence": 1
+  },
+  {
+    "slug": "tranh-son-dau-ve-tay",
+    "status": "ok",
+    "actual": "Hand-painted still life oil painting of produce",
+    "confidence": 1
+  },
+  {
+    "slug": "timer-hen-gio-tuoi",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black mechanical timer with multiple dials and cable",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tranh-kim-loai-3d",
+    "status": "ok",
+    "actual": "Abstract 3D metallic geometric art piece",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tre-em-em-be",
+    "status": "ok",
+    "actual": "A plush bear head baby rattle with wooden ring.",
+    "confidence": 1
+  },
+  {
+    "slug": "truss-khung-san-khau",
+    "status": "ok",
+    "actual": "A single vertical segment of a metal truss.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "trung-hoa",
+    "status": "ok",
+    "actual": "White bottle with green label, chemical product",
+    "confidence": 0.9
+  },
+  {
+    "slug": "trampoline",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Green and black outdoor trampoline with safety net",
+    "confidence": 1
+  },
+  {
+    "slug": "treo-tran-treo-tuong",
+    "status": "ok",
+    "actual": "A blurry grey ceiling-mounted object or light.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "tu-bep-go-tu-nhien",
+    "status": "ok",
+    "actual": "Blurry natural wood cabinet with two doors",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-bep-dao",
+    "status": "ok",
+    "actual": "Light wood kitchen cabinet with white countertop",
+    "confidence": 1
+  },
+  {
+    "slug": "topper-bao-ve-dem",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White quilted mattress protector or topper on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-dien-cong-nghiep-3-pha",
+    "status": "ok",
+    "actual": "Grey industrial electrical control cabinet with components.",
+    "confidence": 1
+  },
+  {
+    "slug": "tre",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "A single, light brown bamboo cylinder or tube.",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-bep-pvc",
+    "status": "ok",
+    "actual": "Simple white two-door kitchen cabinet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-dien-db-trong-nha",
+    "status": "ok",
+    "actual": "Gray electrical distribution board cabinet with switches",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-guong-tich-hop",
+    "status": "ok",
+    "actual": "Minimalist wall-mounted mirrored storage cabinet",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-dien-ngoai-troi-ip54",
+    "status": "ok",
+    "actual": "Simple gray electrical enclosure cabinet with door.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-bep-module-san",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Simple white two-door cabinet on a white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-bep-laminate",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Wooden cabinet with two doors, laminate finish",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-bep-inox-304",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Stainless steel two-door cabinet on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-bep-acrylic-gloss",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White glossy three-door cabinet on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-lavabo-pvc",
+    "status": "ok",
+    "actual": "White wall-mounted lavabo vanity cabinet with faucet",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-ke-trung-bay-kinh",
+    "status": "ok",
+    "actual": "Single clear glass shelf mounted on a white wall.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-lavabo-treo",
+    "status": "ok",
+    "actual": "White wall-mounted bathroom vanity cabinet with drawers",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-minibar-nho",
+    "status": "ok",
+    "actual": "Small white compact refrigerator or minibar cabinet",
+    "confidence": 1
+  },
+  {
+    "slug": "tui-dung-giat-la",
+    "status": "ok",
+    "actual": "A simple green fabric storage container or hamper.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tui-dung-giay",
+    "status": "ok",
+    "actual": "A plain brown paper bag standing upright.",
+    "confidence": 1
+  },
+  {
+    "slug": "tui-vai-gio-dung",
+    "status": "ok",
+    "actual": "White fabric drawstring storage pouch or bag",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tu-dong-tu-mat",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "White two-door refrigerator freezer combo unit",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-hap-dim-sum",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Stainless steel dim sum steamer with bamboo baskets",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tuong-cay-nhan-tao",
+    "status": "ok",
+    "actual": "Stylized artificial green tree on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tu-lanh-side-by-side",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "tu-lavabo-go-chong-am",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Modern wooden wall-mounted bathroom vanity with sink",
+    "confidence": 1
+  },
+  {
+    "slug": "tuong-angel-ong-gia-noel",
+    "status": "ok",
+    "actual": "Small Christmas snow globe with figurine on white shelf.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tuong-dong-vat",
+    "status": "ok",
+    "actual": "Small carved wooden monkey animal statue on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "tuong-gom-su",
+    "status": "ok",
+    "actual": "Small abstract light ceramic decorative sculpture",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tuong-phat-ngoai-troi",
+    "status": "ok",
+    "actual": "Small grey Buddha statue on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tuong-kim-loai",
+    "status": "ok",
+    "actual": "Small, dark, metallic gargoyle-like decorative statue",
+    "confidence": 1
+  },
+  {
+    "slug": "tuong-vat-pham-trang-tri",
+    "status": "ok",
+    "actual": "Small brown sitting fox or cat statue",
+    "confidence": 1
+  },
+  {
+    "slug": "tuong-resin-trang-tri",
+    "status": "ok",
+    "actual": "Abstract brown and white decorative teardrop sculpture",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tuong-vuon",
+    "status": "ok",
+    "actual": "Small grey statue of two birds on a branch",
+    "confidence": 0.9
+  },
+  {
+    "slug": "ups-gia-dinh-office",
+    "status": "ok",
+    "actual": "Compact, dark gray home or office UPS system",
+    "confidence": 0.9
+  },
+  {
+    "slug": "vach-ngan-gap",
+    "status": "ok",
+    "actual": "A grey, accordion-style folding room partition",
+    "confidence": 1
+  },
+  {
+    "slug": "ups-cong-nghiep-online",
+    "status": "ok",
+    "actual": "Dark grey industrial electronic equipment, likely a UPS",
+    "confidence": 0.95
+  },
+  {
+    "slug": "vai",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "van-phong-tai-nha",
+    "status": "ok",
+    "actual": "Minimalist white modern home office desk and chair.",
+    "confidence": 1
+  },
+  {
+    "slug": "vach-ngan-kinh-van-phong",
+    "status": "ok",
+    "actual": "Minimalist glass partition wall with metal frame",
+    "confidence": 1
+  },
+  {
+    "slug": "vit-go",
+    "status": "ok",
+    "actual": "A single, blurry, metallic screw standing upright.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "tui-may-do-bo-kim-chi",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "vit-kim-loai",
+    "status": "ok",
+    "actual": "several small metal screws and bolts",
+    "confidence": 1
+  },
+  {
+    "slug": "vit-neo-be-tong",
+    "status": "ok",
+    "actual": "A single, long, metallic screw or bolt.",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-3-way-loc-nuoc",
+    "status": "ok",
+    "actual": "Modern kitchen faucet with two spouts",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-cam-ung",
+    "status": "ok",
+    "actual": "modern chrome automatic sensor activated faucet",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-bon-tam",
+    "status": "ok",
+    "actual": "Minimalist modern faucet on a white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "vo-chan-cotton-60s-80s",
+    "status": "ok",
+    "actual": "White soft fabric pillow or folded bedding",
+    "confidence": 0.9
+  },
+  {
+    "slug": "voi-cam-ung-tu-dong",
+    "status": "ok",
+    "actual": "chrome automatic sensor activated water faucet",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-keo-day",
+    "status": "ok",
+    "actual": "Modern kitchen sink faucet with high arc design",
+    "confidence": 0.9
+  },
+  {
+    "slug": "voi-lavabo",
+    "status": "ok",
+    "actual": "Modern chrome faucet on a white bathroom sink",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-nuoc-uong-bep-voi-rua-bat",
+    "status": "ok",
+    "actual": "chrome kitchen sink faucet with water flowing",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-gap-gap-gon",
+    "status": "ok",
+    "actual": "Blurry metallic water faucet on white background",
+    "confidence": 0.9
+  },
+  {
+    "slug": "voi-can-xoay-360",
+    "status": "ok",
+    "actual": "Modern chrome single lever kitchen or bathroom faucet",
+    "confidence": 0.9
+  },
+  {
+    "slug": "voi-nuoc-uong-bep-voi-3-way-loc-nuoc",
+    "status": "ok",
+    "actual": "A modern kitchen faucet with two spouts",
+    "confidence": 0.9
+  },
+  {
+    "slug": "voi-doi-cao-thap",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "vong-dem",
+    "status": "ok",
+    "actual": "A single metallic washer with a square hole.",
+    "confidence": 1
+  },
+  {
+    "slug": "vong-hoa-vong-nguyet-que",
+    "status": "ok",
+    "actual": "green laurel leaf wreath on white background",
+    "confidence": 1
+  },
+  {
+    "slug": "vong-hoa-cua-wreath",
+    "status": "ok",
+    "actual": "Decorative autumn wreath with red and orange leaves",
+    "confidence": 1
+  },
+  {
+    "slug": "voi-nuoc-uong-bep",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "wallpaper-pvc",
+    "status": "error",
+    "error": "imagen 429: {\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/d"
+  },
+  {
+    "slug": "voi-tuoi-sen-tay",
+    "status": "ok",
+    "actual": "Chrome shower mixer with hose connection on white wall",
+    "confidence": 0.9
+  },
+  {
+    "slug": "xe-day-hanh-ly",
+    "status": "ok",
+    "actual": "silver hotel luggage cart trolley on wheels",
+    "confidence": 1
+  },
+  {
+    "slug": "xe-day-vuon",
+    "status": "ok",
+    "actual": "Grey four-wheeled garden utility cart with handle",
+    "confidence": 1
+  },
+  {
+    "slug": "xich-du-san-vuon",
+    "status": "ok",
+    "actual": "Brown outdoor patio egg-shaped hanging swing chair",
+    "confidence": 1
+  },
+  {
+    "slug": "xich-du-vong",
+    "status": "ok",
+    "actual": "Minimalist brown hammock on a stand",
+    "confidence": 1
+  },
+  {
+    "slug": "y-italian-luxury",
+    "status": "ok",
+    "actual": "A single light brown leather loafer shoe.",
+    "confidence": 1
+  },
+  {
+    "slug": "xich-du-tre-em",
+    "status": "ok",
+    "actual": "Red children's playground swing set with two swings.",
+    "confidence": 1
+  },
+  {
+    "slug": "y-italian-postmodern",
+    "status": "ok",
+    "actual": "A unique, sculptural, light-colored chair on white background.",
+    "confidence": 0.9
+  },
+  {
+    "slug": "zone1",
+    "status": "ok",
+    "actual": "Aerial view of a large industrial zone with many buildings",
+    "confidence": 0.9
+  },
+  {
+    "slug": "y-italian",
+    "status": "ok",
+    "actual": "A classic wooden table lamp with fabric shade.",
+    "confidence": 0.85
+  },
+  {
+    "slug": "voi-xit-ve-sinh-phu",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Silver wall-mounted faucet with spray hose attachment",
+    "confidence": 0.9
+  },
+  {
+    "slug": "wallpaper-non-woven",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Plain light grey textured material sample",
+    "confidence": 0.9
+  },
+  {
+    "slug": "zone4",
+    "status": "ok",
+    "actual": "Aerial view of a large industrial or business zone",
+    "confidence": 0.9
+  },
+  {
+    "slug": "zone2",
+    "status": "ok",
+    "actual": "Aerial view of a vast industrial industrial zone with factories.",
+    "confidence": 0.8
+  },
+  {
+    "slug": "zone3",
+    "status": "ok",
+    "actual": "aerial view of a large industrial zone",
+    "confidence": 0.8
+  },
+  {
+    "slug": "zone6",
+    "status": "ok",
+    "actual": "Aerial view of a large industrial park, many factories.",
+    "confidence": 0.7
+  },
+  {
+    "slug": "zone5",
+    "status": "retried-ok",
+    "tries": 1,
+    "actual": "Black oval device with 'ZONE5' text",
+    "confidence": 1
+  },
+  {
+    "slug": "xe-day-phong-housekeeping",
+    "status": "retried-ok",
+    "tries": 2,
+    "actual": "Modern grey utility service cart with wheels",
+    "confidence": 1
+  }
+]

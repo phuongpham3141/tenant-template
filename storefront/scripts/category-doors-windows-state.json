@@ -1,0 +1,73 @@
+{
+  "category": "doors-windows",
+  "startedAt": "2026-05-12T03:49:43.555Z",
+  "items": [
+    {
+      "slug": "cat6-1",
+      "vn": "Cửa nhôm Xingfa 4 cánh",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Dark grey aluminum 4-panel swing door system, modern office entrance.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat6-6",
+      "vn": "Cửa sổ uPVC mở quay 2 cánh",
+      "status": "ok",
+      "tries": 3,
+      "actual": "White uPVC double casement window viewing modern living room.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat6-s1-2",
+      "vn": "Cửa nhôm hệ 80 chịu lực gió",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Robust dark aluminum System 80 door on high-rise facade.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat6-s1-4",
+      "vn": "Cửa nhôm mở quay 2 cánh",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Dark grey aluminum 2-panel swing door with clear glass.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat6-s1-0",
+      "vn": "Cửa nhôm Xingfa hệ 55 4 cánh",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Large dark grey 2-panel swing door with glass sidelights.",
+      "confidence": 0.9,
+      "error": "safety filter"
+    },
+    {
+      "slug": "cat6-s3-0",
+      "vn": "Cửa kính cường lực 12mm bản lề sàn",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Frameless clear glass pivot door with polished hardware in a modern interior.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat6-s2-0",
+      "vn": "Cửa thép vân gỗ 4 cánh",
+      "status": "ok",
+      "tries": 3,
+      "actual": "Brown 4-panel steel door with wood grain finish.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat6-s5-4",
+      "vn": "Cửa sổ gỗ tự nhiên cổ điển",
+      "status": "ok",
+      "tries": 2,
+      "error": "safety filter",
+      "actual": "Dark-stained classic wooden casement window with clear glass.",
+      "confidence": 0.9
+    }
+  ],
+  "updatedAt": "2026-05-12T03:53:51.470Z"
+}

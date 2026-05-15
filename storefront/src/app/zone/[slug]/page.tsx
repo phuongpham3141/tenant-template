@@ -9,7 +9,7 @@ function getZone(slug: string): Zone {
       slug,
       name: slug.split("-").map((w) => w[0]?.toUpperCase() + w.slice(1)).join(" "),
       count: "100+ factories",
-      image: `https://picsum.photos/seed/${slug}/600/600`,
+      image: `/img/${slug}.jpg?v=4`,
     }
   );
 }
@@ -47,7 +47,7 @@ export default async function ZonePage({
           {z.image ? <img src={z.image} alt={z.name} className="w-full h-full object-cover opacity-65" /> : null}
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-end text-white" style={{ background: "linear-gradient(transparent 30%, rgba(0,37,87,0.95))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📍 TRADING ZONE</span>
-            <h1 className="text-[32px] font-extrabold leading-tight max-md:text-[24px]">{z.name} Industrial Cluster</h1>
+            <h1 className="text-[32px] font-extrabold leading-tight max-md:text-[24px]">Cụm Công nghiệp {z.name}</h1>
             <p className="text-[13px] opacity-90 max-w-[600px] mt-2">{z.count} chuyên sản xuất {z.name.toLowerCase()} với chuỗi cung ứng hoàn chỉnh từ nguyên liệu thô đến thành phẩm xuất khẩu.</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default async function ZonePage({
           <div className="text-[13px] text-ink leading-relaxed space-y-3">
             <p>{z.name} là một trong những cụm công nghiệp lớn nhất Trung Quốc, hình thành từ đầu thập niên 1980 và phát triển mạnh sau khi Trung Quốc gia nhập WTO năm 2001. Với hơn {z.count}, cluster này đóng góp khoảng 35% tổng sản lượng ngành tại Trung Quốc.</p>
             <p>Cluster sở hữu chuỗi cung ứng hoàn chỉnh từ nguyên liệu thô (silica, đất sét, kim loại), thiết bị máy móc, đến đóng gói và logistics xuất khẩu. Các nhà máy được phân tầng rõ ràng: tier 1 phục vụ thị trường EU/US với tiêu chuẩn cao, tier 2 phục vụ thị trường Đông Nam Á và Trung Đông, tier 3 OEM cho các thương hiệu nội địa.</p>
-            <p>AlibabaVN có văn phòng đại diện tại {z.name.split(" ")[0]} từ 2018 với đội ngũ 12 người, tổ chức audit nhà máy trực tiếp 2 lần/tháng cho buyer Việt Nam. Các thương hiệu lớn từ cluster này bao gồm: Dongpeng, Monalisa, Ortonbaths, KUKA — đã có mặt trên AlibabaVN.</p>
+            <p>Cybersilkroads có văn phòng đại diện tại {z.name.split(" ")[0]} từ 2018 với đội ngũ 12 người, tổ chức audit nhà máy trực tiếp 2 lần/tháng cho buyer Việt Nam. Các thương hiệu lớn từ cluster này bao gồm: Dongpeng, Monalisa, Ortonbaths, KUKA — đã có mặt trên Cybersilkroads.</p>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@ export default async function ZonePage({
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
         <h2 className="text-[16px] font-bold text-ink mb-3">Bản đồ cluster</h2>
         <div className="relative rounded overflow-hidden h-[280px] bg-brand-dark">
-          <img src={`https://picsum.photos/seed/${slug}-map/1400/280`} alt="map" className="w-full h-full object-cover opacity-60" />
+          <img src={`/img/${slug}-map.jpg?v=4`} alt="map" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.55)" }}>
             <div className="text-center">
               <div className="text-[36px] mb-2">🗺️</div>
@@ -159,5 +159,5 @@ export default async function ZonePage({
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const z = getZone(slug);
-  return { title: `${z.name} Trading Zone — AlibabaVN` };
+  return { title: `${z.name} Trading Zone — Cybersilkroads` };
 }

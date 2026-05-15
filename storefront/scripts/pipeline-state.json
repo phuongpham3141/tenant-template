@@ -1,0 +1,2030 @@
+{
+  "startedAt": "2026-05-11T02:56:12.652Z",
+  "updatedAt": "2026-05-11T03:11:18.817Z",
+  "categories": {
+    "danh_muc": {
+      "folder": "danh_muc",
+      "paths": [
+        "/category/home-garden",
+        "/category/construction-materials",
+        "/category/bathroom-sanitary",
+        "/category/noi-that",
+        "/category/kitchen-equipment",
+        "/category/lighting",
+        "/category/doors-windows",
+        "/category/hotel-supplies",
+        "/category/hardware-tools",
+        "/category/decoration",
+        "/category/outdoor-garden",
+        "/category/electrical"
+      ],
+      "total": 888,
+      "ok": 155,
+      "retried": 0,
+      "failed": 45,
+      "skipped": 0,
+      "items": [
+        {
+          "slug": "cat1-s1-2",
+          "status": "ok-existing",
+          "description": "Product in minimalist studio, black background, dramatic lighting",
+          "actual": "Dark product bottle, dramatic lighting, minimalist studio",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-1",
+          "status": "ok-existing",
+          "description": "Elegant product, minimalist design, studio lighting",
+          "actual": "Elegant black journal, minimalist design, studio lighting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-3",
+          "status": "ok-existing",
+          "description": "Product on grassy hill, distant mountains, clear sky",
+          "actual": "Headphones on grassy hill, distant mountains, clear sky",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-1",
+          "status": "ok-existing",
+          "description": "Product on modern coffee table, stylish living room decor",
+          "actual": "Laptop on modern coffee table, stylish living room",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-2",
+          "status": "ok-existing",
+          "description": "Product near flowing stream, forest background, peaceful scene",
+          "actual": "Black kettle near flowing stream, forest background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-0",
+          "status": "ok-existing",
+          "description": "Product in cozy living room, warm lighting, comfortable setting",
+          "actual": "Camera lens in cozy living room, warm lighting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-0",
+          "status": "ok-existing",
+          "description": "Product in clean studio, white background, soft light",
+          "actual": "Black electronic devices and spray bottle on white surface",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-2",
+          "status": "ok-existing",
+          "description": "Product in bright living room, natural light, contemporary design",
+          "actual": "Black product in bright, contemporary living room",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-2",
+          "status": "ok-existing",
+          "description": "Sleek product, modern aesthetic, clean background",
+          "actual": "Sleek modern product on a clean white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-1",
+          "status": "ok-existing",
+          "description": "Product on wooden bench, sunny park setting, outdoor vibe",
+          "actual": "Dark product on wooden bench, sunny park",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-0",
+          "status": "ok-existing",
+          "description": "Product in lush green park, natural light, serene atmosphere",
+          "actual": "Black laptop on white surface in green park",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-1",
+          "status": "ok-existing",
+          "description": "Product in professional studio, grey background, sharp focus",
+          "actual": "Black biometric scanner in professional studio, grey background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-2",
+          "status": "ok-existing",
+          "description": "Product on minimalist desk, natural light, productive atmosphere",
+          "actual": "Black notebook on minimalist desk, natural light",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-0",
+          "status": "ok-existing",
+          "description": "Product on modern office desk, laptop, organized workspace",
+          "actual": "Modern office desk with laptop and organized workspace",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-2",
+          "status": "ok-existing",
+          "description": "Product with geometric patterns, futuristic design, bold aesthetic",
+          "actual": "Dark product with vibrant geometric patterns, futuristic aesthetic.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-1",
+          "status": "ok-existing",
+          "description": "Product in creative studio, art supplies, inspiring environment",
+          "actual": "Art supplies, watercolors, pencils, brushes on white",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-1",
+          "status": "ok-existing",
+          "description": "Hands holding product, close-up, natural light, authentic moment",
+          "actual": "Hands holding black product, close-up, soft light",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-0",
+          "status": "ok-existing",
+          "description": "Product with abstract shapes, vibrant colors, artistic composition",
+          "actual": "Abstract product with vibrant shapes, artistic composition",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-3",
+          "status": "ok-existing",
+          "description": "Product reflected on water, artistic blur, ethereal mood",
+          "actual": "Blurred product bottle reflected on rippled water",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-0",
+          "status": "ok-existing",
+          "description": "Extreme close-up of product texture, intricate details visible",
+          "actual": "Extreme close-up of grey textured product surface",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-1",
+          "status": "ok-existing",
+          "description": "Product in surreal environment, dreamlike quality, creative lighting",
+          "actual": "Electric toothbrush in abstract environment with creative lighting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-3",
+          "status": "ok-existing",
+          "description": "Close-up of product material, high quality, tactile feel",
+          "actual": "Close-up of textured grey sphere, tactile material",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-1",
+          "status": "ok-existing",
+          "description": "Detailed shot of product features, macro photography style",
+          "actual": "Detailed macro shot of a small brass component",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-2",
+          "status": "ok-existing",
+          "description": "Product component highlighted, sharp focus, technical precision",
+          "actual": "Small electronic component on circuit board, sharp focus",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-0",
+          "status": "ok-existing",
+          "description": "Product in motion blur, dynamic action shot, energetic scene",
+          "actual": "Tennis ball with motion blur, dynamic action shot",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-2",
+          "status": "ok-existing",
+          "description": "Modern decor item in an industrial loft, design 2.",
+          "actual": "Clear geometric modern decor item on white",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-1",
+          "status": "ok-existing",
+          "description": "Product demonstrating function, active use, engaging scenario",
+          "actual": "Hand holding electric toothbrush, ready for use",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-3",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 3.",
+          "actual": "Minimalist white ceramic modern decor item",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-4",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 4.",
+          "actual": "Gold textured modern decorative vase",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-3",
+          "status": "ok-existing",
+          "description": "Modern decor item in an industrial loft, design 3.",
+          "actual": "White modern decor item in industrial loft",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-5",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 5.",
+          "actual": "Minimalist white modern decor item with angled top",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-7",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 7.",
+          "actual": "Small white abstract minimalist modern decor item",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-9",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 9.",
+          "actual": "Abstract white modern decor item with warm glow",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-6",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 6.",
+          "actual": "White ceramic bowl with wavy texture and number 6",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-10",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 10.",
+          "actual": "Circular modern decor item with 'modernn 10' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-8",
+          "status": "ok-existing",
+          "description": "Modern decor item, design 8.",
+          "actual": "Small, modern, minimalist white ceramic decor vase",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-3",
+          "status": "ok-existing",
+          "description": "Modern decor item in a minimalist living room, design 3.",
+          "actual": "Abstract white decor item in minimalist setting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-5",
+          "status": "ok-existing",
+          "description": "Modern decor item in a minimalist living room, design 5.",
+          "actual": "Geometric modern decor item on a minimalist white wall",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-7",
+          "status": "ok-existing",
+          "description": "Modern decor item in a minimalist living room, design 7.",
+          "actual": "White modern abstract vase on minimalist background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-6",
+          "status": "ok-existing",
+          "description": "Modern decor item in a minimalist living room, design 6.",
+          "actual": "Abstract black marble decor item in minimalist setting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-5",
+          "status": "ok-existing",
+          "description": "Modern decor item in a cozy bedroom, design 5.",
+          "actual": "White geometric decor item on a bed in a bedroom",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s1-4",
+          "status": "ok-existing",
+          "description": "Modern decor item in a minimalist living room, design 4.",
+          "actual": "Black abstract modern decor sculpture on white",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-3",
+          "status": "ok-existing",
+          "description": "Modern decor item in a cozy bedroom, design 3.",
+          "actual": "Blue vase on nightstand in modern bedroom",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-6",
+          "status": "ok-existing",
+          "description": "Modern decor item in a cozy bedroom, design 6.",
+          "actual": "Beige storage trunk in modern bedroom",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-4",
+          "status": "ok-existing",
+          "description": "Modern decor item in a cozy bedroom, design 4.",
+          "actual": "Modern wooden shelf in a cozy bedroom",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-4",
+          "status": "ok-existing",
+          "description": "Modern decor item in a modern office, design 4.",
+          "actual": "Modern table lamp on a minimalist white surface.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-5",
+          "status": "ok-existing",
+          "description": "Modern decor item in a modern office, design 5.",
+          "actual": "Black geometric modern decor item on a white surface",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s2-7",
+          "status": "ok-existing",
+          "description": "Modern decor item in a cozy bedroom, design 7.",
+          "actual": "Modern bedside table and lamp in a bedroom",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-7",
+          "status": "ok-existing",
+          "description": "Modern decor item in a modern office, design 7.",
+          "actual": "Modern chrome desk lamp on a white surface",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s3-6",
+          "status": "ok-existing",
+          "description": "Modern decor item in a modern office, design 6.",
+          "actual": "Geometric light blue decor item on wooden desk",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-4",
+          "status": "ok-existing",
+          "description": "Modern decor item in an elegant dining area, design 4.",
+          "actual": "Modern wooden cabinet with decorative vases on top.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-5",
+          "status": "ok-existing",
+          "description": "Modern decor item in an elegant dining area, design 5.",
+          "actual": "Modern abstract sculpture centerpiece in minimalist dining room",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-7",
+          "status": "ok-existing",
+          "description": "Modern decor item in an elegant dining area, design 7.",
+          "actual": "Modern abstract decor item on dining table",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-5",
+          "status": "ok-existing",
+          "description": "Modern decor item in an outdoor patio, design 5.",
+          "actual": "Modern black framed outdoor chair with grey cushions.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-4",
+          "status": "ok-existing",
+          "description": "Minimalist product shot, simple background, variant 4",
+          "actual": "Minimalist black vase on simple white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-7",
+          "status": "ok-existing",
+          "description": "Modern product display, clean background, variant 7",
+          "actual": "Modern black product, clean background, variant 7",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-6",
+          "status": "ok-existing",
+          "description": "Modern product display, clean background, variant 6",
+          "actual": "Minimalist white product display on clean background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-6",
+          "status": "ok-existing",
+          "description": "Minimalist product shot, simple background, variant 6",
+          "actual": "Minimalist white mug product shot on simple background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-5",
+          "status": "ok-existing",
+          "description": "Rustic product display, natural elements, variant 5",
+          "actual": "Rustic display with cream tube, dried flowers, wood.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-5",
+          "status": "ok-existing",
+          "description": "Minimalist product shot, simple background, variant 5",
+          "actual": "Minimalist brown leather handbag product shot",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-4",
+          "status": "ok-existing",
+          "description": "Rustic product display, natural elements, variant 4",
+          "actual": "Rustic flat lay display with woven natural elements",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-6",
+          "status": "ok-existing",
+          "description": "Rustic product display, natural elements, variant 6",
+          "actual": "Rustic woven basket with dried natural elements",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s6-7",
+          "status": "ok-existing",
+          "description": "Minimalist product shot, simple background, variant 7",
+          "actual": "Minimalist shot of a single textured sphere",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s7-7",
+          "status": "ok-existing",
+          "description": "Rustic product display, natural elements, variant 7",
+          "actual": "Rustic display of woven items, dried herbs, natural elements",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-5",
+          "status": "ok-existing",
+          "description": "Elegant product presentation, luxurious setting, variant 5",
+          "actual": "Elegant white and gold product in luxurious setting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-4",
+          "status": "ok-existing",
+          "description": "Elegant product presentation, luxurious setting, variant 4",
+          "actual": "Ornate silver pendant, elegant white display, luxurious presentation",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-6",
+          "status": "ok-existing",
+          "description": "Elegant product presentation, luxurious setting, variant 6",
+          "actual": "Elegant cosmetic product presentation with black box and gold ring.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s8-7",
+          "status": "ok-existing",
+          "description": "Elegant product presentation, luxurious setting, variant 7",
+          "actual": "Elegant black product bottles and device presentation",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-0",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 2, style 0.",
+          "actual": "Minimalist studio shot of a 'CATEGORY 2' product.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-2",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 1, style 2.",
+          "actual": "Black circular product, isolated on white background, minimalist",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-2",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 2, style 2.",
+          "actual": "Round woven mat with 'Category 2' text.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-1",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 1, style 1.",
+          "actual": "A beige cylindrical product with a black cap.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-1",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 2, style 1.",
+          "actual": "Black industrial component, possibly a valve or connector",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-2",
+          "status": "ok-existing",
+          "description": "Cozy home setting, warm lighting, comfortable seating.",
+          "actual": "Cozy living room with fireplace and comfortable sofas",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-1",
+          "status": "ok-existing",
+          "description": "Elegant interior design, modern furniture, bright ambiance.",
+          "actual": "Modern grey sofa, minimalist design, bright white background.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-0",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 3, style 0.",
+          "actual": "Black industrial product labeled 'Category 2'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-0",
+          "status": "ok-existing",
+          "description": "Category 2 product, scene 1, style 0.",
+          "actual": "small dark cylindrical minimalist object",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-3",
+          "status": "ok-existing",
+          "description": "Minimalist room decor, clean lines, serene atmosphere.",
+          "actual": "Minimalist white room decor with clean lines",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-1",
+          "status": "ok-existing",
+          "description": "Tranquil garden patio, lush greenery, peaceful setting.",
+          "actual": "Garden patio with chairs, lush greenery",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-0",
+          "status": "ok-existing",
+          "description": "Outdoor cafe scene, sunny day, bustling street.",
+          "actual": "Outdoor cafe table under awning on city street",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-3",
+          "status": "ok-existing",
+          "description": "Rustic backyard gathering, string lights, relaxed mood.",
+          "actual": "Rustic backyard fence, string lights, chairs, table",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-0",
+          "status": "ok-existing",
+          "description": "Professional office space, sleek desk, computer setup.",
+          "actual": "Sleek wooden desk with computer and office chair",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-2",
+          "status": "ok-existing",
+          "description": "Urban rooftop lounge, city skyline view, evening.",
+          "actual": "Modern outdoor lounge furniture with evening city skyline backdrop.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-1",
+          "status": "ok-existing",
+          "description": "Creative workspace, art supplies, inspiring environment.",
+          "actual": "Art supplies, sketchbook, paintbrushes, colored pencils, watercolor palette",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-2",
+          "status": "ok-existing",
+          "description": "Home office nook, cozy chair, books, plants.",
+          "actual": "Cozy chair, books, and plants in a minimalist setting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-0",
+          "status": "ok-existing",
+          "description": "Modern kitchen interior, stainless steel appliances, clean.",
+          "actual": "Modern kitchen, stainless steel appliances, clean design.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-3",
+          "status": "ok-existing",
+          "description": "Collaborative meeting room, large table, presentation screen.",
+          "actual": "Modern meeting room with large table and presentation screen.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-1",
+          "status": "ok-existing",
+          "description": "Rustic farmhouse kitchen, wooden cabinets, warm feel.",
+          "actual": "Rustic wooden kitchen cabinets, farmhouse style, warm.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-0",
+          "status": "ok-existing",
+          "description": "Luxurious bedroom, king-size bed, soft lighting.",
+          "actual": "Minimalist bedroom, large bed, soft lighting.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-3",
+          "status": "ok-existing",
+          "description": "Spacious kitchen island, cooking area, family hub.",
+          "actual": "Modern kitchen island with integrated cooking hob",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-2",
+          "status": "ok-existing",
+          "description": "Compact kitchen design, efficient layout, bright light.",
+          "actual": "Minimalist compact kitchen unit with bright lighting",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-1",
+          "status": "ok-existing",
+          "description": "Children's bedroom, playful decor, colorful toys.",
+          "actual": "Children's bedroom with crib, toys, and playful decor.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-2",
+          "status": "ok-existing",
+          "description": "Guest bedroom, simple design, comfortable bedding.",
+          "actual": "Minimalist bed with light comfortable bedding in simple room.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-3",
+          "status": "ok-existing",
+          "description": "Master bedroom suite, balcony access, elegant furnishings.",
+          "actual": "Modern bedroom suite with balcony access",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-0",
+          "status": "ok-existing",
+          "description": "Modern bathroom, walk-in shower, clean aesthetic.",
+          "actual": "Modern bathroom with walk-in shower and vanity",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-3",
+          "status": "ok-existing",
+          "description": "Luxurious bathroom, double vanity, large mirror.",
+          "actual": "Modern double bathroom vanity with large mirror",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-1",
+          "status": "ok-existing",
+          "description": "Spa-like bathroom, bathtub, candles, relaxing ambiance.",
+          "actual": "Modern bathroom with freestanding bathtub, candles, and soft lighting.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-2",
+          "status": "ok-existing",
+          "description": "Small bathroom, functional design, bright and airy.",
+          "actual": "Minimalist white bathroom, functional design, bright.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-3",
+          "status": "ok-existing",
+          "description": "Minimalist product display, clean background, studio shot.",
+          "actual": "Minimalist white product on pedestal, clean studio shot",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-2",
+          "status": "ok-existing",
+          "description": "Abstract geometric pattern, vibrant colors, modern art.",
+          "actual": "Vibrant abstract geometric pattern, modern art style",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-5",
+          "status": "ok-existing",
+          "description": "High-tech gadget, sleek metallic finish, futuristic look.",
+          "actual": "Sleek VR headset with metallic finish, futuristic design",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-4",
+          "status": "ok-existing",
+          "description": "Nature-inspired design element, organic shapes, earthy tones.",
+          "actual": "Lichen branch with organic shapes and earthy tones",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-6",
+          "status": "ok-existing",
+          "description": "Handcrafted item, artisanal quality, natural materials.",
+          "actual": "Small woven basket, natural materials, handcrafted artisanal quality.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-7",
+          "status": "ok-existing",
+          "description": "Vintage style object, retro aesthetic, nostalgic feel.",
+          "actual": "Vintage brass table lamp, retro aesthetic, nostalgic design",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-8",
+          "status": "ok-existing",
+          "description": "Urban street art mural, vibrant colors, dynamic composition.",
+          "actual": "Vibrant urban street art portrait, dynamic splatters",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-3",
+          "status": "ok-existing",
+          "description": "Product 3 in scene 1, Category 2",
+          "actual": "White bottle with 'Product 3' text in studio",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-4",
+          "status": "ok-existing",
+          "description": "Product 4 in scene 1, Category 2",
+          "actual": "Black bubble level labeled 'Product 4' on white",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-5",
+          "status": "ok-existing",
+          "description": "Product 5 in scene 1, Category 2",
+          "actual": "A minimalist black spherical product on a white surface.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-7",
+          "status": "ok-existing",
+          "description": "Product 7 in scene 1, Category 2",
+          "actual": "A silver and black cylindrical B2B product with number 7.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-4",
+          "status": "ok-existing",
+          "description": "Product 4 in scene 2, Category 2",
+          "actual": "A white and black cordless screwdriver on a white background.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s1-6",
+          "status": "failed",
+          "description": "Product 6 in scene 1, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-10",
+          "status": "failed",
+          "description": "Product 10 from Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-5",
+          "status": "failed",
+          "description": "Product 5 in scene 2, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-7",
+          "status": "ok-existing",
+          "description": "Product 7 in scene 2, Category 2",
+          "actual": "black rectangular container with a lid",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-3",
+          "status": "failed",
+          "description": "Product 3 in scene 2, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-9",
+          "status": "failed",
+          "description": "Product 9 from Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-5",
+          "status": "ok-existing",
+          "description": "Product 5 in scene 3, Category 2",
+          "actual": "Two stacked black and silver mechanical parts.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-7",
+          "status": "ok-existing",
+          "description": "Product 7 in scene 3, Category 2",
+          "actual": "Rectangular wooden block on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-5",
+          "status": "ok-existing",
+          "description": "Product 5 in scene 4, Category 2",
+          "actual": "A single dark grey textured stone-like object",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-0",
+          "status": "failed",
+          "description": "Person interacting with product, casual setting, happy expression",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-3",
+          "status": "failed",
+          "description": "Friends sharing product, outdoor cafe, lively conversation",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-1",
+          "status": "failed",
+          "description": "Category 2 product, item 1.",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-3",
+          "status": "failed",
+          "description": "Product in collaborative office, team meeting, dynamic setting",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-4",
+          "status": "ok-existing",
+          "description": "Product 4 in scene 5, Category 2",
+          "actual": "Product 4, a silver industrial device on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-6",
+          "status": "ok-existing",
+          "description": "Product 6 in scene 4, Category 2",
+          "actual": "Grey round ribbed decorative cushion",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-6",
+          "status": "ok-existing",
+          "description": "Product 6 in scene 5, Category 2",
+          "actual": "Black cylindrical electronic device on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-2",
+          "status": "failed",
+          "description": "Family enjoying product, home environment, joyful atmosphere",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s5-4",
+          "status": "failed",
+          "description": "Modern decor item in an outdoor patio, design 4.",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat1-s4-6",
+          "status": "failed",
+          "description": "Modern decor item in an elegant dining area, design 6.",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-7",
+          "status": "ok-existing",
+          "description": "Product 7 in scene 6, Category 2",
+          "actual": "Black bottle labeled 'Product 7' on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-5",
+          "status": "ok-existing",
+          "description": "Product 5 in scene 7, Category 2",
+          "actual": "A minimalist white table lamp on a white surface.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-4",
+          "status": "ok-existing",
+          "description": "Product 4 in scene 7, Category 2",
+          "actual": "Small beige two-part product with number 4",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-6",
+          "status": "ok-existing",
+          "description": "Product display scene 7, item 6",
+          "actual": "A silver laptop on a plain white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-4",
+          "status": "ok-existing",
+          "description": "Product display scene 8, item 4",
+          "actual": "A silver laptop displayed on a white pedestal",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s7-7",
+          "status": "ok-existing",
+          "description": "Product display scene 7, item 7",
+          "actual": "Dark grey laptop on white background, top view",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-5",
+          "status": "ok-existing",
+          "description": "Product display scene 8, item 5",
+          "actual": "Small round beige textured ceramic bowl",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-7",
+          "status": "ok-existing",
+          "description": "Product display scene 8, item 7",
+          "actual": "Minimalist grey spherical container on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-1",
+          "status": "ok-existing",
+          "description": "Category 3, sub-category 1 concept",
+          "actual": "Cylindrical metallic industrial component with black band",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-0",
+          "status": "ok-existing",
+          "description": "Category 3, scene 1, initial design",
+          "actual": "Small grey rectangular electronic device on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-1",
+          "status": "ok-existing",
+          "description": "Category 3, scene 1, variation one",
+          "actual": "Black bottle labeled 'CATEGORY 3' and circular object",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-2",
+          "status": "ok-existing",
+          "description": "Category 3, scene 1, variation two",
+          "actual": "Dark grey shoe-like object with 'Category 3' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s2-6",
+          "status": "failed",
+          "description": "Product 6 in scene 2, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-1",
+          "status": "ok-existing",
+          "description": "Category 3, scene 2, variation one",
+          "actual": "Black rectangular device labeled 'CATEGORY 3'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-4",
+          "status": "failed",
+          "description": "Product 4 in scene 3, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-4",
+          "status": "failed",
+          "description": "Product 4 in scene 4, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-0",
+          "status": "ok-existing",
+          "description": "Category 3, scene 3, initial design",
+          "actual": "Black rectangular device with lens, labeled Category 3",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-1",
+          "status": "ok-existing",
+          "description": "Category 3, scene 3, variation one",
+          "actual": "Black and beige circular product with 'Category 3' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-3",
+          "status": "ok-existing",
+          "description": "Category 3, scene 2, variation three",
+          "actual": "Minimalist gray oval product with a button",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-2",
+          "status": "ok-existing",
+          "description": "Category 3, scene 3, variation two",
+          "actual": "Black optical device labeled 'Category 3'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s4-0",
+          "status": "ok-existing",
+          "description": "Category 3, scene 4, initial design",
+          "actual": "Black spherical object with 'CATEGORY 3' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s4-7",
+          "status": "failed",
+          "description": "Product 7 in scene 4, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-7",
+          "status": "failed",
+          "description": "Product 7 in scene 5, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s3-6",
+          "status": "failed",
+          "description": "Product 6 in scene 3, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-5",
+          "status": "failed",
+          "description": "Product 5 in scene 6, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s5-0",
+          "status": "ok-existing",
+          "description": "Category 3, scene 5, initial design",
+          "actual": "Black Canon camera with 'Category 3' on lens",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s5-5",
+          "status": "failed",
+          "description": "Product 5 in scene 5, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-6",
+          "status": "failed",
+          "description": "Product 6 in scene 6, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s6-4",
+          "status": "failed",
+          "description": "Product 4 in scene 6, Category 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat2-s8-6",
+          "status": "failed",
+          "description": "Product display scene 8, item 6",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s6-1",
+          "status": "ok-existing",
+          "description": "Category 3, scene 6, variation one",
+          "actual": "Small black B2B product component with metal ring",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s6-3",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 6, style 3",
+          "actual": "A black camera lens with 'CATEGORY 3' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-0",
+          "status": "failed",
+          "description": "Category 3, scene 2, initial design",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-2",
+          "status": "failed",
+          "description": "Category 3, scene 2, variation two",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s7-1",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 7, style 1",
+          "actual": "Product box for Category 3 item",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-3",
+          "status": "failed",
+          "description": "Category 3, scene 3, variation three",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s4-1",
+          "status": "failed",
+          "description": "Category 3, scene 4, variation one",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s4-2",
+          "status": "failed",
+          "description": "Category 3, scene 4, variation two",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s8-1",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 8, style 1",
+          "actual": "A black, smooth, abstract, teardrop-shaped object on white.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s8-3",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 8, style 3",
+          "actual": "White sphere labeled 'Category 3' on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s4-3",
+          "status": "failed",
+          "description": "Category 3, scene 4, variation three",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-2",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 2",
+          "actual": "Black spherical product with central hole and cap.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-4",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 4",
+          "actual": "Dark spherical object labeled 'Category 3 variation 4'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s5-1",
+          "status": "failed",
+          "description": "Category 3, scene 5, variation one",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-5",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 5",
+          "actual": "Industrial mechanical coupling with threaded end",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-7",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 7",
+          "actual": "Black conical Category 3 product",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-8",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 8",
+          "actual": "A minimalist dark grey product with red interior and circular face.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s5-3",
+          "status": "failed",
+          "description": "Category 3, scene 5, variation three",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s5-2",
+          "status": "failed",
+          "description": "Category 3, scene 5, variation two",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-10",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 10",
+          "actual": "Black device labeled 'Category 3 Variation 10'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-3",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 1, style 3",
+          "actual": "Black capsule with 'CATEGORY 3' text",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-9",
+          "status": "ok-existing",
+          "description": "Category 3 product, variation 9",
+          "actual": "Minimalist light-colored ceramic cup on white background.",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-4",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 1, style 4",
+          "actual": "Black product labeled 'CATEGORY 3' on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-6",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 1, style 6",
+          "actual": "Small grey jar labeled 'Category 3' on white",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-7",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 1, style 7",
+          "actual": "Grey bag with 'Category 3' label",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s6-0",
+          "status": "failed",
+          "description": "Category 3, scene 6, initial design",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s6-2",
+          "status": "failed",
+          "description": "Category 3 item in scene 6, style 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-7",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 2, style 7",
+          "actual": "Black electronic device labeled 'CATEGORY 3'",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-4",
+          "status": "ok-existing",
+          "description": "Category 3 item in scene 3, style 4",
+          "actual": "Black container with 'Category 3' label",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s7-0",
+          "status": "failed",
+          "description": "Category 3 item in scene 7, style 0",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s7-2",
+          "status": "failed",
+          "description": "Category 3 item in scene 7, style 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s3-7",
+          "status": "ok-existing",
+          "description": "Category 3 product, scene 3, style 7.",
+          "actual": "Black tube labeled 'CATEGORY 3' on white background",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s8-0",
+          "status": "failed",
+          "description": "Category 3 item in scene 8, style 0",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s7-3",
+          "status": "failed",
+          "description": "Category 3 item in scene 7, style 3",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s8-2",
+          "status": "failed",
+          "description": "Category 3 item in scene 8, style 2",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-3",
+          "status": "failed",
+          "description": "Category 3 product, variation 3",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-6",
+          "status": "failed",
+          "description": "Category 3 product, variation 6",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-4",
+          "status": "failed",
+          "description": "Category 3 item in scene 2, style 4",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s1-5",
+          "status": "failed",
+          "description": "Category 3 item in scene 1, style 5",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-6",
+          "status": "failed",
+          "description": "Category 3 item in scene 2, style 6",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        },
+        {
+          "slug": "cat3-s2-5",
+          "status": "failed",
+          "description": "Category 3 item in scene 2, style 5",
+          "error": "imagen rate-limited all keys",
+          "sizes": {
+            "w": 300,
+            "h": 300
+          }
+        }
+      ]
+    }
+  }
+}

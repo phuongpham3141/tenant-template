@@ -1,0 +1,39 @@
+{
+  "category": "noi-that",
+  "startedAt": "2026-05-12T03:41:25.019Z",
+  "items": [
+    {
+      "slug": "cat44",
+      "vn": "Vách ngăn văn phòng acoustic",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Light grey freestanding modular acoustic office partition panel in office.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat66",
+      "vn": "Sofa Mỹ chesterfield",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Dark brown distressed leather Chesterfield sofa with tufting",
+      "confidence": 0.98
+    },
+    {
+      "slug": "cat84",
+      "vn": "Cánh tủ HDF phủ melamine",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Smooth white melamine-coated cabinet door on kitchen unit.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat70",
+      "vn": "Ghế xoay lưới chân nhôm",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Black mesh swivel office chair with aluminum base.",
+      "confidence": 0.9
+    }
+  ],
+  "updatedAt": "2026-05-12T03:42:52.313Z"
+}

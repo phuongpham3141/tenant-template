@@ -110,4 +110,4 @@ export default async function SearchPage({
   );
 }
 
-export const metadata = { title: "Tìm kiếm — AlibabaVN" };
+export const metadata = { title: "Tìm kiếm — Cybersilkroads" };

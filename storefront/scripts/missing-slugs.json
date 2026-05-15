@@ -1,0 +1,84 @@
+{
+  "noi-that": [
+    {
+      "slug": "cat70",
+      "vn": "Ghế xoay lưới chân nhôm"
+    }
+  ],
+  "kitchen-equipment": [
+    {
+      "slug": "cat4-s4-1",
+      "vn": "Bếp gas âm 3 vùng inox"
+    },
+    {
+      "slug": "cat4-s8-0",
+      "vn": "Bếp công nghiệp gas 2 lò + bồn"
+    },
+    {
+      "slug": "cat4-s8-2",
+      "vn": "Tủ đông 4 cánh inox 304"
+    },
+    {
+      "slug": "cat4-s8-4",
+      "vn": "Bàn chế biến inox 2 tầng 1.5m"
+    }
+  ],
+  "lighting": [
+    {
+      "slug": "cat5-s1-2",
+      "vn": "Đèn LED tuýp T8 18W 1.2m"
+    }
+  ],
+  "doors-windows": [
+    {
+      "slug": "cat6-s1-0",
+      "vn": "Cửa nhôm Xingfa hệ 55 4 cánh"
+    }
+  ],
+  "hotel-supplies": [
+    {
+      "slug": "cat7-s8-0",
+      "vn": "Vest lễ tân nam-nữ may đo"
+    },
+    {
+      "slug": "cat7-s8-1",
+      "vn": "Đồng phục bellboy 5*"
+    },
+    {
+      "slug": "cat7-s8-2",
+      "vn": "Áo bếp đầu bếp 2 hàng nút"
+    },
+    {
+      "slug": "cat7-s8-5",
+      "vn": "Xe đẩy hành lý lobby vàng"
+    },
+    {
+      "slug": "cat7-s8-6",
+      "vn": "Xe đẩy housekeeping 3 ngăn"
+    },
+    {
+      "slug": "cat7-s8-7",
+      "vn": "Tạp dề phục vụ thêu logo"
+    }
+  ],
+  "hardware-tools": [
+    {
+      "slug": "cat8-s7-4",
+      "vn": "Bollard cảng inox 304 cao 50cm"
+    },
+    {
+      "slug": "cat8-s8-3",
+      "vn": "Khóa khuôn mặt 3D + vân tay"
+    },
+    {
+      "slug": "cat8-s8-7",
+      "vn": "Khóa cabinet locker tủ thay đồ"
+    }
+  ],
+  "decoration": [
+    {
+      "slug": "cat9-s8-6",
+      "vn": "Mannequin trẻ em 1m fiber"
+    }
+  ]
+}

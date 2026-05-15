@@ -1,0 +1,182 @@
+{
+  "category": "hardware-tools",
+  "startedAt": "2026-05-12T04:07:54.688Z",
+  "items": [
+    {
+      "slug": "cat8-s4-1",
+      "vn": "Bộ cờ lê 24 món crom-vanadi",
+      "status": "ok",
+      "tries": 3,
+      "error": "safety filter",
+      "actual": "A 24-piece polished metallic combination wrench set.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-5",
+      "vn": "Bản lề giảm chấn 35mm 2 cái",
+      "status": "ok",
+      "tries": 3,
+      "actual": "Two silver soft-close cabinet hinges on a gray door.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s6-4",
+      "vn": "Súng đinh F30 khí nén",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Hand holding silver and black pneumatic nail gun fastening trim.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s6-1",
+      "vn": "Máy hàn TIG AC/DC 200A",
+      "status": "ok",
+      "tries": 2,
+      "actual": "Blue and black 200A AC/DC TIG welder in shop",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s7-0",
+      "vn": "Tăng đơ inox 316 M10",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Polished silver open-body turnbuckle tensioning marine cable on deck.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s6-7",
+      "vn": "Súng phun sơn HVLP",
+      "status": "ok",
+      "tries": 3,
+      "actual": "Silver HVLP spray gun with opaque cup, held by painter, spraying in booth.",
+      "confidence": 0.85
+    },
+    {
+      "slug": "cat8-s7-1",
+      "vn": "Ma ní U inox 316 M10",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Polished silver D-shackle with screw pin connecting heavy chain.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s7-3",
+      "vn": "Cleat tàu inox 316 250mm",
+      "status": "ok",
+      "tries": 2,
+      "error": "rate limited all attempts",
+      "actual": "Sleek polished stainless steel boat cleat with blue rope on white deck.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s7-2",
+      "vn": "Cáp inox 316 7×7 5mm 100m",
+      "status": "ok",
+      "tries": 3,
+      "error": "rate limited all attempts",
+      "actual": "Large, neatly coiled bright silver wire rope on wood",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s7-4",
+      "vn": "Bollard cảng inox 304 cao 50cm",
+      "status": "error",
+      "tries": 0,
+      "error": "rate limited all attempts"
+    },
+    {
+      "slug": "cat8-s7-5",
+      "vn": "Ròng rọc inox 316 đường kính 50",
+      "status": "ok",
+      "tries": 4,
+      "error": "rate limited all attempts",
+      "actual": "Polished stainless steel single pulley block on sailboat mast",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s7-7",
+      "vn": "Móc cẩu xoay inox 316 1T",
+      "status": "ok",
+      "tries": 2,
+      "error": "rate limited all attempts",
+      "actual": "Robust polished silver swivel hoist hook with safety latch.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s7-6",
+      "vn": "Khóa cáp wire rope clip M8",
+      "status": "ok",
+      "tries": 4,
+      "error": "rate limited all attempts",
+      "actual": "M8 wire rope clip fastening a loop in thick silver cable.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s8-1",
+      "vn": "Khóa Wi-Fi cửa chính Bluetooth",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Modern silver smart door lock with keypad on wooden door.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s8-0",
+      "vn": "Khóa cửa vân tay 6-in-1 Tuya",
+      "status": "ok",
+      "tries": 2,
+      "error": "safety filter",
+      "actual": "Sleek black smart door lock with keypad and fingerprint scanner.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s8-2",
+      "vn": "Khóa thẻ từ RFID khách sạn",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Sleek brushed silver RFID hotel card lock on dark wood door.",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s8-3",
+      "vn": "Khóa khuôn mặt 3D + vân tay",
+      "status": "error",
+      "tries": 0,
+      "error": "rate limited all attempts"
+    },
+    {
+      "slug": "cat8-s8-4",
+      "vn": "Khóa tủ điện 3 điểm SUS304",
+      "status": "ok",
+      "tries": 4,
+      "error": "rate limited all attempts",
+      "actual": "Brushed silver three-point lock on industrial electrical cabinet.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat8-s8-5",
+      "vn": "Két sắt mini khách sạn vân tay",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Black mini hotel safe with fingerprint and keypad.",
+      "confidence": 1
+    },
+    {
+      "slug": "cat8-s8-6",
+      "vn": "Két sàn chống cháy 60p",
+      "status": "ok",
+      "tries": 1,
+      "actual": "Dark grey heavy-duty floor safe flush with concrete",
+      "confidence": 0.95
+    },
+    {
+      "slug": "cat8-s8-7",
+      "vn": "Khóa cabinet locker tủ thay đồ",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Silver and black cam lock with a key inserted",
+      "confidence": 0.9,
+      "error": "safety filter"
+    }
+  ],
+  "updatedAt": "2026-05-12T04:40:00.729Z"
+}

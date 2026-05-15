@@ -22,8 +22,8 @@ const CHANNELS = [
   {
     icon: "💬",
     title: "Chat trực tiếp",
-    primary: "Zalo: AlibabaVN-Buyer",
-    secondary: "WeChat: AlibabaVN_Service",
+    primary: "Zalo: Cybersilkroads-Buyer",
+    secondary: "WeChat: Cybersilkroads_Service",
     hours: "Online 8h–22h · phản hồi < 5 phút",
     color: "bg-success/10 text-success",
   },
@@ -79,7 +79,7 @@ const SUBJECTS = [
 export default function ContactPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Liên hệ chúng tôi" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Liên hệ chúng tôi" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/contact" />
         <div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📞 CONTACT US</div>
             <h1 className="text-[22px] font-bold text-ink">Liên hệ chúng tôi</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Đội Buyer Success của AlibabaVN có mặt tại Hà Nội, TP.HCM, Quảng Châu và Phật Sơn. Mọi yêu cầu của bạn đều được xử lý bởi người Việt nói tiếng Việt — không qua chatbot, không lạc dịch.
+              Đội Buyer Success của Cybersilkroads có mặt tại Hà Nội, TP.HCM, Quảng Châu và Phật Sơn. Mọi yêu cầu của bạn đều được xử lý bởi người Việt nói tiếng Việt — không qua chatbot, không lạc dịch.
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export default function ContactPage() {
               </select>
               <textarea placeholder="Nội dung chi tiết *" rows={5} className="col-span-2 px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand resize-none" />
               <label className="col-span-2 flex items-center gap-2 text-[12px] text-mute">
-                <input type="checkbox" className="accent-brand" /> Tôi đồng ý cho AlibabaVN sử dụng email/số điện thoại để liên hệ về vấn đề này.
+                <input type="checkbox" className="accent-brand" /> Tôi đồng ý cho Cybersilkroads sử dụng email/số điện thoại để liên hệ về vấn đề này.
               </label>
               <button type="button" className="col-span-2 px-5 py-3 bg-accent text-white rounded-sm font-bold text-[13.5px] hover:opacity-90 max-md:col-span-1">Gửi tin nhắn 📨</button>
             </form>

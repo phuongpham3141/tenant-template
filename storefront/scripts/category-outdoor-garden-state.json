@@ -1,0 +1,16 @@
+{
+  "category": "outdoor-garden",
+  "startedAt": "2026-05-12T04:40:54.252Z",
+  "items": [
+    {
+      "slug": "cat10-s7-0",
+      "vn": "Bể bơi bơm hơi 3m gia đình",
+      "status": "ok",
+      "tries": 3,
+      "error": "rate limited all attempts",
+      "actual": "A blue and white striped 3m inflatable family swimming pool.",
+      "confidence": 0.95
+    }
+  ],
+  "updatedAt": "2026-05-12T04:44:29.351Z"
+}

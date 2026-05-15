@@ -1,0 +1,67 @@
+{
+  "category": "hotel-supplies",
+  "startedAt": "2026-05-12T03:54:13.273Z",
+  "items": [
+    {
+      "slug": "cat7-s6-5",
+      "vn": "Khay phục vụ chữ nhật 35cm",
+      "status": "ok",
+      "tries": 2,
+      "error": "safety filter",
+      "actual": "Dark wooden rectangular tray with breakfast, carried for room service.",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat7-s8-0",
+      "vn": "Vest lễ tân nam-nữ may đo",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Dark blue receptionist vests displayed, with a hotel lobby background.",
+      "confidence": 0.9,
+      "error": "safety filter"
+    },
+    {
+      "slug": "cat7-s8-1",
+      "vn": "Đồng phục bellboy 5*",
+      "status": "error",
+      "tries": 2,
+      "error": "rate limited all attempts",
+      "actual": "Dark blue uniform with gold trim and brass buttons on mannequin",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat7-s8-2",
+      "vn": "Áo bếp đầu bếp 2 hàng nút",
+      "status": "error",
+      "tries": 3,
+      "error": "safety filter",
+      "actual": "White double-breasted chef's jacket with long sleeves, no chef or kitchen.",
+      "confidence": 0.7
+    },
+    {
+      "slug": "cat7-s8-5",
+      "vn": "Xe đẩy hành lý lobby vàng",
+      "status": "error",
+      "tries": 0,
+      "error": "rate limited all attempts"
+    },
+    {
+      "slug": "cat7-s8-6",
+      "vn": "Xe đẩy housekeeping 3 ngăn",
+      "status": "mismatch",
+      "tries": 4,
+      "error": "safety filter",
+      "actual": "Grey housekeeping cart with three compartments and linens",
+      "confidence": 0.9
+    },
+    {
+      "slug": "cat7-s8-7",
+      "vn": "Tạp dề phục vụ thêu logo",
+      "status": "mismatch",
+      "tries": 4,
+      "actual": "Black bib apron with embroidered logo, not worn.",
+      "confidence": 0.9
+    }
+  ],
+  "updatedAt": "2026-05-12T04:07:41.160Z"
+}
