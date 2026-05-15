@@ -274,3 +274,23 @@ Sẵn sàng cho Sprint 2 planning. Đợi user confirm priority order (xem câu 
 - [x] **P1.4-F3** · Payload user tenant_id NULL → 'cybersilkroads'
   - Action: UPDATE payload.users SET tenant_id='cybersilkroads' WHERE id=1
   - Note: Đây là data update, không phải schema change → KHÔNG cần migration file (Rule 6 exception)
+
+## 🟢 Day 5 Bước 2 — P1.4-F2 RE-CLASSIFIED (false positive)
+
+### [✅ RE-AUDIT] P1.4-F2 — Cybersilkroads seed THỰC RA đã apply thành công
+
+- **Sprint 1 finding (wrong):** "25 products seed bị skip, chỉ 4 default visible"
+- **Day 5 audit (correct):** Seed apply OK vào `catalog.product` (canonical schema):
+  - `public.product` = 4 (Medusa core default — T-Shirt, etc.)
+  - `catalog.product` = 25 (cybersilkroads seed, with i18n + supplier_id + status='published')
+- **Root cause Sprint 1 confusion:** Query `SELECT COUNT(*) FROM product` defaults to `public.product` (Medusa namespace), không catch `catalog.product`.
+- **Architecture confirmed:** 2-tier design
+  - `catalog.*` = canonical product data (rich, multi-locale, supplier-owned)
+  - `public.*` (Medusa core) = subset synced FROM catalog cho commerce flow
+- **Actual work needed (Sprint 3):** Build catalog → public sync (commerce-required products only). KHÔNG phải re-seed.
+
+→ **P1.4-F2 status: FALSE POSITIVE — Closed. Re-assigned to Sprint 3 sync workflow.**
+
+### Apply Rule 5 lesson
+
+Đây là FALSE POSITIVE thứ 2 (sau R23 CHECK 03 mig 42 redundancy). Cả 2 đều do query/check assumption sai về schema layout. **Lesson reinforced:** Validation finding cần audit ground truth (cả 2-3 layer của design).
