@@ -29,6 +29,7 @@ const NAV_GROUPS = [
     title: "Công cụ",
     items: [
       { label: "Trợ lý AI Maike", href: "/seller-center/ai-assistant", icon: "🤖" },
+      { label: "Livestream AI", href: "/seller-center/ai-livestream", icon: "📡" },
     ],
   },
 ];
