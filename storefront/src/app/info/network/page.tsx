@@ -639,7 +639,7 @@ function LogoCard({ a }: { a: Association }) {
       {/* Body */}
       <div className="px-4 py-3 flex-1 flex flex-col">
         {a.borderProvince && (
-          <div className="text-[10.5px] bg-[#A21CAF]/10 border border-[#A21CAF]/30 text-[#A21CAF] px-2 py-1 rounded-sm mb-2 font-bold flex items-center gap-1.5">
+          <div className="text-[10.5px] bg-purple/10 border border-purple/30 text-purple px-2 py-1 rounded-sm mb-2 font-bold flex items-center gap-1.5">
             🌐 GIÁP BIÊN GIỚI VIỆT NAM
           </div>
         )}
@@ -820,7 +820,7 @@ export default function KetNoiPage() {
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1 flex-wrap">
-                <span className="inline-block bg-[#A21CAF] text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm">
+                <span className="inline-block bg-purple text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm">
                   ƯU TIÊN CHIẾN LƯỢC
                 </span>
                 <h3 className="text-[18px] font-bold text-ink">Hai đối tác CCPIT giáp biên giới Việt Nam</h3>
@@ -829,10 +829,10 @@ export default function KetNoiPage() {
                 <b>CCPIT Quảng Tây</b> và <b>CCPIT Vân Nam</b> là hai cửa ngõ đường bộ giữa Trung Quốc và Việt Nam. Toàn bộ thương mại cross-border land transport (~38% kim ngạch xuất khẩu TQ → VN) đi qua các cửa khẩu thuộc hai tỉnh này: Hữu Nghị Quan (Lạng Sơn), Đông Hưng - Móng Cái, Hekou - Lào Cai. CSR phối hợp với hai CCPIT cấp tỉnh để điều phối lịch tàu, customs e-clearance, và truy cập trực tiếp NCC địa phương.
               </p>
               <div className="flex gap-2 flex-wrap">
-                <span className="text-[11px] bg-paper border border-[#A21CAF]/40 text-[#A21CAF] px-2 py-0.5 rounded-sm font-semibold">🚛 Hữu Nghị Quan (Lạng Sơn)</span>
-                <span className="text-[11px] bg-paper border border-[#A21CAF]/40 text-[#A21CAF] px-2 py-0.5 rounded-sm font-semibold">🚛 Đông Hưng - Móng Cái</span>
-                <span className="text-[11px] bg-paper border border-[#A21CAF]/40 text-[#A21CAF] px-2 py-0.5 rounded-sm font-semibold">🚛 Hekou - Lào Cai</span>
-                <span className="text-[11px] bg-paper border border-[#A21CAF]/40 text-[#A21CAF] px-2 py-0.5 rounded-sm font-semibold">🎫 CAEXPO Nam Ninh 09/2026</span>
+                <span className="text-[11px] bg-paper border border-purple/40 text-purple px-2 py-0.5 rounded-sm font-semibold">🚛 Hữu Nghị Quan (Lạng Sơn)</span>
+                <span className="text-[11px] bg-paper border border-purple/40 text-purple px-2 py-0.5 rounded-sm font-semibold">🚛 Đông Hưng - Móng Cái</span>
+                <span className="text-[11px] bg-paper border border-purple/40 text-purple px-2 py-0.5 rounded-sm font-semibold">🚛 Hekou - Lào Cai</span>
+                <span className="text-[11px] bg-paper border border-purple/40 text-purple px-2 py-0.5 rounded-sm font-semibold">🎫 CAEXPO Nam Ninh 09/2026</span>
               </div>
             </div>
           </div>
@@ -1028,7 +1028,7 @@ export default function KetNoiPage() {
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/trade-shows"
-              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               ✈️ Đăng ký trade mission 2026
             </Link>

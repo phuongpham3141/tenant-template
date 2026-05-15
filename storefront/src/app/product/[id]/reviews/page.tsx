@@ -155,7 +155,7 @@ export default async function ReviewsPage({
       {/* Header card with product summary */}
       <div className="max-w-[1100px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-4 flex gap-4 items-center max-md:flex-col max-md:items-start">
-          <Link href={`/product/${p.id}`} className="w-20 h-20 bg-[#F5F5F5] rounded-sm overflow-hidden flex-shrink-0 cursor-pointer">
+          <Link href={`/product/${p.id}`} className="w-20 h-20 bg-surface-1 rounded-sm overflow-hidden flex-shrink-0 cursor-pointer">
             {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
           </Link>
           <div className="flex-1 min-w-0">

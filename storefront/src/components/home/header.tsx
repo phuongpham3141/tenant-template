@@ -91,7 +91,7 @@ export function Header() {
           method="get"
           className="search-form form-products col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
-          <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
+          <div className="px-3.5 bg-surface-3 flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
             Tất cả ▾
           </div>
           <input
@@ -102,7 +102,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Tìm bằng hình ảnh"
             title="Tải ảnh lên để tìm sản phẩm tương tự"
           >
@@ -122,7 +122,7 @@ export function Header() {
           method="get"
           className="search-form form-suppliers col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
-          <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
+          <div className="px-3.5 bg-surface-3 flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
             Tất cả ▾
           </div>
           <input
@@ -133,7 +133,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Tìm NCC bằng ảnh sản phẩm"
             title="Tải ảnh sản phẩm để tìm nhà cung cấp"
           >
@@ -153,7 +153,7 @@ export function Header() {
           method="get"
           className="search-form form-rfq col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
-          <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
+          <div className="px-3.5 bg-surface-3 flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
             Tất cả ▾
           </div>
           <input
@@ -164,7 +164,7 @@ export function Header() {
           <button
             type="submit"
             formAction="/search/by-image"
-            className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
+            className="px-3 bg-surface-3 hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
             aria-label="Đính kèm ảnh khi gửi RFQ"
             title="Đính kèm ảnh sản phẩm để mô tả rõ hơn"
           >

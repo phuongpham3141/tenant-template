@@ -18,7 +18,7 @@ export function MobileBottomNav() {
           <Link
             key={item.label}
             href={item.href}
-            className={`flex flex-col items-center justify-center gap-0.5 py-2 active:bg-[#F5F5F5] ${
+            className={`flex flex-col items-center justify-center gap-0.5 py-2 active:bg-surface-1 ${
               item.primary ? "text-accent" : "text-mute"
             }`}
           >

@@ -33,12 +33,12 @@ export default function TradeShowsPage() {
             <h2 className="text-[22px] font-bold text-ink mb-1">🇨🇳 Canton Fair 2026 — Hội chợ Quảng Châu</h2>
             <p className="text-[13px] text-mute leading-relaxed mb-3">Hội chợ B2B lớn nhất thế giới — diễn ra 2 lần/năm tại Quảng Châu Pazhou với 60.000+ NCC, 200.000+ buyer quốc tế. Cybersilkroads tổ chức đoàn 50 dealer VN tham dự mỗi kỳ.</p>
             <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
-              <div className="border border-line rounded p-3 bg-[#FAFBFC]">
+              <div className="border border-line rounded p-3 bg-surface-2">
                 <b className="block text-[13px] text-ink">📅 Phase 1 — Spring 2026</b>
                 <span className="text-[12px] text-mute">15 Apr – 5 May 2026 (3 đợt)</span>
                 <p className="text-[11.5px] text-mute mt-1">Vật liệu xây dựng, máy móc, năng lượng</p>
               </div>
-              <div className="border border-line rounded p-3 bg-[#FAFBFC]">
+              <div className="border border-line rounded p-3 bg-surface-2">
                 <b className="block text-[13px] text-ink">📅 Phase 2 — Autumn 2026</b>
                 <span className="text-[12px] text-mute">15 Oct – 4 Nov 2026 (3 đợt)</span>
                 <p className="text-[11.5px] text-mute mt-1">Nội thất, sanitary, đèn, dệt may</p>
@@ -58,7 +58,7 @@ export default function TradeShowsPage() {
         <h2 className="text-[18px] font-bold text-ink mb-3">Hội chợ sắp diễn ra</h2>
         <div className="bg-paper border border-line rounded overflow-hidden">
           {UPCOMING.map((s, i) => (
-            <div key={s.name} className={`grid grid-cols-[1fr_180px_220px_140px_120px] gap-4 px-4 py-3.5 text-[13px] hover:bg-[#FAFBFC] max-md:grid-cols-1 max-md:gap-1 ${i > 0 ? "border-t border-line" : ""}`}>
+            <div key={s.name} className={`grid grid-cols-[1fr_180px_220px_140px_120px] gap-4 px-4 py-3.5 text-[13px] hover:bg-surface-2 max-md:grid-cols-1 max-md:gap-1 ${i > 0 ? "border-t border-line" : ""}`}>
               <b className="text-ink">{s.name}</b>
               <span className="text-mute">📅 {s.date}</span>
               <span className="text-mute">📍 {s.venue}</span>
@@ -74,7 +74,7 @@ export default function TradeShowsPage() {
         <h2 className="text-[18px] font-bold text-ink mb-3">Xem lại các kỳ trước</h2>
         <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div key={i} className="aspect-video bg-[#F5F5F5] rounded overflow-hidden">
+            <div key={i} className="aspect-video bg-surface-1 rounded overflow-hidden">
               <img src={`/img/tradeshow-past-${i}.jpg?v=3`} alt="" className="w-full h-full object-cover" />
             </div>
           ))}

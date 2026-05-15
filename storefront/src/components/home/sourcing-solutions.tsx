@@ -125,7 +125,7 @@ export function SourcingSolutions() {
                   href={sub.href}
                   className="flex flex-col items-center gap-1.5 group/sub"
                 >
-                  <div className="w-[52px] h-[52px] rounded-full bg-[#F5F5F5] overflow-hidden border border-line group-hover/sub:border-accent transition-colors max-md:w-[44px] max-md:h-[44px]">
+                  <div className="w-[52px] h-[52px] rounded-full bg-surface-1 overflow-hidden border border-line group-hover/sub:border-accent transition-colors max-md:w-[44px] max-md:h-[44px]">
                     <img
                       src={sub.image}
                       alt={sub.name}

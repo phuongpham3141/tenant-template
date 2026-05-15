@@ -60,7 +60,7 @@ export default function BrowsingHistoryPage() {
               <h1 className="text-[22px] font-bold text-ink">Lịch sử duyệt</h1>
               <p className="text-[12.5px] text-mute mt-1">{total} sản phẩm trong 30 ngày qua · Đồng bộ giữa thiết bị</p>
             </div>
-            <label className="flex items-center gap-2 text-[12px] text-mute bg-[#F5F7FA] px-3 py-2 rounded-sm cursor-pointer">
+            <label className="flex items-center gap-2 text-[12px] text-mute bg-surface-3 px-3 py-2 rounded-sm cursor-pointer">
               <input type="checkbox" defaultChecked className="accent-brand" />
               <span>Bật theo dõi lịch sử</span>
             </label>
@@ -88,7 +88,7 @@ export default function BrowsingHistoryPage() {
                 {g.items.map((item, idx) => (
                   <div key={`${g.title}-${idx}`} className="border border-line rounded-sm overflow-hidden hover:border-brand group">
                     <Link href={`/product/${item.p.id}`} className="block">
-                      <div className="aspect-square bg-[#F5F5F5]">
+                      <div className="aspect-square bg-surface-1">
                         {item.p.image ? <img src={item.p.image} alt={item.p.title} className="w-full h-full object-cover" /> : null}
                       </div>
                     </Link>

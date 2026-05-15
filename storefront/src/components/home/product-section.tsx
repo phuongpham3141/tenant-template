@@ -33,7 +33,7 @@ function ProductCard({ p }: { p: Product }) {
       href={`/product/${p.id}`}
       className="border border-line rounded-sm bg-white transition cursor-pointer overflow-hidden hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] hover:-translate-y-0.5 block"
     >
-      <div className="aspect-square overflow-hidden relative bg-[#F5F5F5]">
+      <div className="aspect-square overflow-hidden relative bg-surface-1">
         {p.badges && p.badges.length > 0 && (
           <div className="absolute top-1.5 left-1.5 flex gap-0.5 flex-wrap">
             {p.badges.map((b) => (

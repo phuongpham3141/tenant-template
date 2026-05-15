@@ -69,7 +69,7 @@ export default async function SearchPage({
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {results.map((p) => (
               <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
-                <div className="aspect-square bg-[#F5F5F5]">
+                <div className="aspect-square bg-surface-1">
                   {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
                 </div>
                 <div className="p-2.5">

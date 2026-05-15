@@ -30,7 +30,7 @@ export function NavBar() {
                 <div key={c.slug} className="mm-cat">
                   <Link
                     href={`/category/${c.slug}`}
-                    className="flex justify-between items-center px-3.5 py-2.5 text-[13px] border-b border-[#F5F5F5] last:border-b-0 hover:bg-brand hover:text-white"
+                    className="flex justify-between items-center px-3.5 py-2.5 text-[13px] border-b border-surface-1 last:border-b-0 hover:bg-brand hover:text-white"
                   >
                     <b className="font-medium">
                       {c.icon} {c.name}
@@ -96,7 +96,7 @@ export function NavBar() {
               <Link
                 key={c.slug}
                 href={`/category/${c.slug}`}
-                className="flex items-center gap-2 px-3.5 py-3 text-[13px] border-b border-[#F5F5F5] active:bg-brand active:text-white hover:bg-bg"
+                className="flex items-center gap-2 px-3.5 py-3 text-[13px] border-b border-surface-1 active:bg-brand active:text-white hover:bg-bg"
               >
                 <span className="text-[16px]">{c.icon}</span>
                 <span className="flex-1 leading-tight">{c.name}</span>

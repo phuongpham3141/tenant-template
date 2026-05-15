@@ -52,7 +52,7 @@ export function StickyHeader() {
         >
           <select
             name="type"
-            className="px-3 py-1.5 text-[12.5px] text-mute bg-[#F5F7FA] border-r border-line outline-none cursor-pointer max-md:hidden"
+            className="px-3 py-1.5 text-[12.5px] text-mute bg-surface-3 border-r border-line outline-none cursor-pointer max-md:hidden"
             defaultValue="products"
           >
             <option value="products">Sản phẩm</option>

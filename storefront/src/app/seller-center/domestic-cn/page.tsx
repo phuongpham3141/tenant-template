@@ -97,7 +97,7 @@ export default function DomesticCnPage() {
                       {c.cons.map((p) => <li key={p} className="text-[11.5px] text-mute flex gap-1"><span className="text-accent">!</span> {p}</li>)}
                     </ul>
                   </div>
-                  <div className="bg-[#FAFBFC] rounded-sm px-2 py-1.5 text-[11px] text-accent font-semibold">{c.fee}</div>
+                  <div className="bg-surface-2 rounded-sm px-2 py-1.5 text-[11px] text-accent font-semibold">{c.fee}</div>
                 </div>
               </div>
             ))}
@@ -106,7 +106,7 @@ export default function DomesticCnPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4 overflow-x-auto">
             <b className="block text-[15px] text-ink mb-4">📊 So sánh 3 kênh nội địa</b>
             <table className="w-full text-[12.5px] min-w-[560px]">
-              <thead className="bg-[#FAFBFC] text-mute">
+              <thead className="bg-surface-2 text-mute">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Yếu tố</th>
                   <th className="text-left px-3 py-2.5 font-medium">Tmall</th>

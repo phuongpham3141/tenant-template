@@ -1329,7 +1329,7 @@ export default async function InfoPage({
               <div className="flex gap-2 max-md:flex-col">
                 <Link
                   href={t.primaryCta?.href || "/buying-request"}
-                  className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] cursor-pointer text-center inline-block whitespace-nowrap"
+                  className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-warm cursor-pointer text-center inline-block whitespace-nowrap"
                 >
                   📩 {t.primaryCta?.label || "Gửi RFQ ngay"}
                 </Link>

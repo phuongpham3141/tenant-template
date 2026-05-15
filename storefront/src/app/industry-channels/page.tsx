@@ -33,7 +33,7 @@ export default function IndustryChannelsPage() {
           const stats = STATS_BY_INDUSTRY[c.slug] ?? { factories: "100+", sku: "2,000", lead: "20-30 ngày" };
           return (
             <Link key={c.slug} href={`/category/${c.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
-              <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
+              <div className="aspect-[16/9] bg-surface-1 relative overflow-hidden">
                 <img src={`/img/industry-${c.slug}.jpg?v=3`} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
                 <div className="absolute top-3 left-3 bg-white px-3 py-1.5 rounded-sm text-[24px] leading-none">{c.icon}</div>
                 {c.isNew && <div className="absolute top-3 right-3 bg-accent text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">MỚI</div>}

@@ -97,7 +97,7 @@ export default function SmartExpoPage() {
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-2">
               {BOOTHS.map((b) => (
                 <div key={b.name} className="border border-line rounded overflow-hidden hover:border-brand">
-                  <div className="aspect-video bg-[#F5F5F5] relative">
+                  <div className="aspect-video bg-surface-1 relative">
                     <img src={`/img/seller-booth-${b.img}.jpg?v=3`} alt="" className="w-full h-full object-cover" />
                     <span className="absolute top-2 right-2 bg-success text-white text-[10px] font-bold px-2 py-0.5 rounded-sm">3D</span>
                   </div>

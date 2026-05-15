@@ -7,7 +7,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
     <div className="bg-paper border border-line rounded grid grid-cols-[220px_1fr_220px] gap-4 p-3.5 hover:border-brand hover:shadow-[0_4px_12px_rgba(0,60,143,0.08)] transition max-[900px]:grid-cols-[180px_1fr] max-[900px]:gap-3 max-md:grid-cols-1">
       {/* Image — wrapped in Link to product detail */}
       <Link href={href} className="relative cursor-pointer block">
-        <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden">
+        <div className="aspect-square bg-surface-1 rounded-sm overflow-hidden">
           <img src={p.img.src} alt={p.title} className="w-full h-full object-cover" />
         </div>
         {(p.amazing || p.monthLabel) && (

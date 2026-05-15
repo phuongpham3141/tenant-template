@@ -118,7 +118,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="bg-[#F5F7FA] border border-line rounded p-3 mb-4 text-center">
+          <div className="bg-surface-3 border border-line rounded p-3 mb-4 text-center">
             <div className="aspect-[3/1] bg-paper border border-dashed border-line rounded flex items-center justify-center text-mute text-[13px]">
               🗺️ Bản đồ Google Maps – văn phòng Hà Nội (Lotte Center)
             </div>

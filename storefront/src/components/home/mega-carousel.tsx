@@ -39,7 +39,7 @@ export function MegaCarousel({ items }: { items: CarouselItem[] }) {
             href={it.href}
             className="flex-shrink-0 w-[68px] text-center snap-start group/cm"
           >
-            <div className="w-[68px] h-[68px] bg-[#F5F5F5] rounded overflow-hidden border border-line">
+            <div className="w-[68px] h-[68px] bg-surface-1 rounded overflow-hidden border border-line">
               <img
                 src={it.image}
                 alt={it.name}

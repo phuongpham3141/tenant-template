@@ -95,7 +95,7 @@ export default function BuyerCenterPage() {
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {FEATURED.map((p) => (
                 <Link key={p.id} href={`/product/${p.id}`} className="border border-line rounded-sm overflow-hidden hover:border-brand block">
-                  <div className="aspect-square bg-[#F5F5F5]">
+                  <div className="aspect-square bg-surface-1">
                     {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
                   </div>
                   <div className="p-2">

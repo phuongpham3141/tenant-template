@@ -54,7 +54,7 @@ export function SellerSidebar({ active }: { active?: string }) {
                 <Link
                   href={n.href}
                   className={`flex items-center gap-2 px-3 py-2 rounded-sm text-[13px] ${
-                    active === n.href ? "bg-brand text-white font-semibold" : "text-ink hover:bg-[#F5F7FA]"
+                    active === n.href ? "bg-brand text-white font-semibold" : "text-ink hover:bg-surface-3"
                   }`}
                 >
                   <span className="w-5 text-center">{n.icon}</span>

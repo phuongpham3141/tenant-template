@@ -113,7 +113,7 @@ export default function NewUserGuidePage() {
             <div className="space-y-2">
               {FAQS.map((f, i) => (
                 <details key={i} className="border border-line rounded group" open={i === 0}>
-                  <summary className="px-4 py-3 cursor-pointer text-[13px] font-semibold text-ink list-none flex justify-between items-center hover:bg-[#FAFBFC]">
+                  <summary className="px-4 py-3 cursor-pointer text-[13px] font-semibold text-ink list-none flex justify-between items-center hover:bg-surface-2">
                     <span>{f.q}</span>
                     <span className="text-mute text-[16px] group-open:rotate-180 transition-transform">⌃</span>
                   </summary>

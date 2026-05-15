@@ -57,7 +57,7 @@ export default function AiAssistantPage() {
           <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded p-4">
               <b className="block text-[14px] text-ink mb-3">💬 Demo: Maike xử lý RFQ thực tế</b>
-              <div className="bg-[#F5F7FA] rounded p-3 space-y-2 max-h-[420px] overflow-y-auto">
+              <div className="bg-surface-3 rounded p-3 space-y-2 max-h-[420px] overflow-y-auto">
                 {CHAT.map((c, i) => (
                   <div key={i} className={`flex ${c.who === "user" ? "justify-end" : "justify-start"}`}>
                     <div className={`max-w-[85%] rounded-md p-2.5 text-[12px] leading-relaxed whitespace-pre-line ${
@@ -122,7 +122,7 @@ export default function AiAssistantPage() {
             <div className="space-y-2">
               {FAQ.map((f, i) => (
                 <details key={i} className="border border-line rounded group">
-                  <summary className="flex justify-between items-center p-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden hover:bg-[#FAFBFC]">
+                  <summary className="flex justify-between items-center p-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden hover:bg-surface-2">
                     <b className="text-[12.5px] text-ink">{f.q}</b>
                     <span className="text-[12px] text-mute group-open:rotate-180 transition-transform">▾</span>
                   </summary>

@@ -222,7 +222,7 @@ export default async function BlogIndexPage({
               />
               <button
                 type="submit"
-                className="w-full py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A]"
+                className="w-full py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-warm"
               >
                 Đăng ký miễn phí
               </button>

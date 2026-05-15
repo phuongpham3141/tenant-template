@@ -118,7 +118,7 @@ export function TradeShowsSection() {
                 </span>
               </div>
               <div className="flex items-center gap-3 mt-3">
-                <span className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-[#E8943A] transition">
+                <span className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-warm transition">
                   📩 Đăng ký tham gia →
                 </span>
                 <span className="text-[11.5px] opacity-80">
@@ -141,7 +141,7 @@ export function TradeShowsSection() {
                 className="relative flex-1 flex gap-2.5 items-center border border-line rounded p-2 hover:border-brand hover:shadow-sm hover:bg-[#FCFBF8] cursor-pointer group/item transition"
               >
                 {/* Thumbnail — 96×60 landscape, never crops the subject */}
-                <div className="w-24 h-[60px] flex-shrink-0 rounded-sm overflow-hidden bg-[#F5F5F5] border border-line max-md:w-20 max-md:h-[52px]">
+                <div className="w-24 h-[60px] flex-shrink-0 rounded-sm overflow-hidden bg-surface-1 border border-line max-md:w-20 max-md:h-[52px]">
                   <img
                     src={show.banner}
                     alt={show.name}
@@ -193,7 +193,7 @@ export function TradeShowsSection() {
               </div>
               <Link
                 href="/trade-alert"
-                className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm cursor-pointer hover:bg-[#E8943A] flex-shrink-0 whitespace-nowrap"
+                className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm cursor-pointer hover:bg-warm flex-shrink-0 whitespace-nowrap"
               >
                 Đăng ký →
               </Link>

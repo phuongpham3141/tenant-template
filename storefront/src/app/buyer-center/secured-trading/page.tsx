@@ -111,7 +111,7 @@ export default function SecuredTradingPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <b className="block text-[15px] text-ink mb-4">💵 Bảng phí dịch vụ</b>
             <table className="w-full text-[12.5px]">
-              <thead className="bg-[#FAFBFC] text-mute text-[11.5px]">
+              <thead className="bg-surface-2 text-mute text-[11.5px]">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Dịch vụ</th>
                   <th className="text-left px-3 py-2.5 font-medium">Phí</th>
@@ -139,7 +139,7 @@ export default function SecuredTradingPage() {
             </div>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
-                <div key={c.title} className="border border-line rounded p-4 bg-[#FAFBFC]">
+                <div key={c.title} className="border border-line rounded p-4 bg-surface-2">
                   <b className="block text-[13px] text-ink leading-tight mb-2">{c.title}</b>
                   <p className="text-[11.5px] text-mute leading-relaxed mb-3">{c.desc}</p>
                   <div className="border-t border-line pt-2 flex justify-between items-baseline">

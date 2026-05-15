@@ -57,7 +57,7 @@ export default function FactoryTourPage() {
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {TOURS.map(({ factory, duration }) => (
             <Link key={factory.slug} href={`/supplier/${factory.slug}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
-              <div className="relative aspect-video bg-[#F5F5F5]">
+              <div className="relative aspect-video bg-surface-1">
                 <img src={`/img/tour-${factory.slug}.jpg?v=3`} alt={factory.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/15">
                   <div className="w-12 h-12 bg-white/95 rounded-full flex items-center justify-center text-[18px]">▶</div>

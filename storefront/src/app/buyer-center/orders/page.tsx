@@ -46,7 +46,7 @@ export default function OrdersPage() {
               ))}
             </div>
             <table className="w-full text-[12.5px]">
-              <thead className="bg-[#FAFBFC] text-mute">
+              <thead className="bg-surface-2 text-mute">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Mã đơn</th>
                   <th className="text-left px-3 py-2.5 font-medium">Nhà cung cấp</th>
@@ -60,7 +60,7 @@ export default function OrdersPage() {
               </thead>
               <tbody>
                 {ORDERS.map((o) => (
-                  <tr key={o.id} className="border-t border-line hover:bg-[#FAFBFC]">
+                  <tr key={o.id} className="border-t border-line hover:bg-surface-2">
                     <td className="px-3 py-3 text-brand font-semibold">{o.id}</td>
                     <td className="px-3 py-3 text-ink">{o.supplier}</td>
                     <td className="px-3 py-3 text-ink truncate max-w-[200px]">{o.product}</td>

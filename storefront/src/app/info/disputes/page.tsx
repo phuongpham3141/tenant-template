@@ -339,7 +339,7 @@ export default function KhieuNaiPage() {
           <div className="mt-6 flex gap-3 flex-wrap">
             <a
               href="#mo-disputes"
-              className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               📝 Mở khiếu nại ngay
             </a>
@@ -669,7 +669,7 @@ export default function KhieuNaiPage() {
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buyer-center/orders"
-              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               📝 Đi tới Buyer Dashboard
             </Link>

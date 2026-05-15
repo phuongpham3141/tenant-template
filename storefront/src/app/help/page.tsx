@@ -406,7 +406,7 @@ export default function HelpPage() {
             </span>
             <Link
               href="/buying-request"
-              className="px-4 py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A] whitespace-nowrap"
+              className="px-4 py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-warm whitespace-nowrap"
             >
               🚀 Gửi RFQ ngay
             </Link>

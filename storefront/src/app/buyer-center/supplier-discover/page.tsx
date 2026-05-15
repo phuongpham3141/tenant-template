@@ -76,22 +76,22 @@ export default function SupplierDiscoverPage() {
                   </div>
                 </div>
                 <div className="grid grid-cols-3 gap-2 mb-3 text-center">
-                  <div className="bg-[#FAFBFC] rounded-sm py-1.5">
+                  <div className="bg-surface-2 rounded-sm py-1.5">
                     <b className="block text-[12px] text-success">★ {f.rating}</b>
                     <span className="text-[9.5px] text-mute">{f.reviews} đánh giá</span>
                   </div>
-                  <div className="bg-[#FAFBFC] rounded-sm py-1.5">
+                  <div className="bg-surface-2 rounded-sm py-1.5">
                     <b className="block text-[11px] text-ink">{f.meta}</b>
                     <span className="text-[9.5px] text-mute">Năng lực</span>
                   </div>
-                  <div className="bg-[#FAFBFC] rounded-sm py-1.5">
+                  <div className="bg-surface-2 rounded-sm py-1.5">
                     <b className="block text-[12px] text-brand">DDP ✓</b>
                     <span className="text-[9.5px] text-mute">Về VN</span>
                   </div>
                 </div>
                 <div className="flex gap-1 flex-wrap mb-3">
                   {f.tags.slice(0, 3).map((t) => (
-                    <span key={t} className="text-[10.5px] bg-[#F5F7FA] text-mute px-1.5 py-0.5 rounded-sm">{t}</span>
+                    <span key={t} className="text-[10.5px] bg-surface-3 text-mute px-1.5 py-0.5 rounded-sm">{t}</span>
                   ))}
                 </div>
                 <div className="flex gap-2">

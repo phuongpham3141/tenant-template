@@ -254,7 +254,7 @@ export default async function ProductPage({
                 <label
                   key={i}
                   htmlFor={`ig-${p.id}-${i}`}
-                  className={`ig-thumb ig-thumb-${i} aspect-square w-full bg-[#F5F5F5] rounded overflow-hidden cursor-pointer hover:border-brand max-md:w-[64px] max-md:flex-shrink-0`}
+                  className={`ig-thumb ig-thumb-${i} aspect-square w-full bg-surface-1 rounded overflow-hidden cursor-pointer hover:border-brand max-md:w-[64px] max-md:flex-shrink-0`}
                   aria-label={`Ảnh ${i}`}
                 >
                   <img
@@ -267,7 +267,7 @@ export default async function ProductPage({
             </div>
 
             {/* Main image area — 5 images stacked, only the active one shown */}
-            <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden relative group max-md:order-1">
+            <div className="aspect-square bg-surface-1 rounded overflow-hidden relative group max-md:order-1">
               {[1, 2, 3, 4, 5].map((i) => (
                 <img
                   key={i}
@@ -307,12 +307,12 @@ export default async function ProductPage({
 
           {/* Tier price table */}
           <div className="mt-5 border border-line rounded">
-            <div className="bg-[#FAFBFC] px-4 py-2.5 border-b border-line text-[13px] font-semibold text-ink flex justify-between items-center">
+            <div className="bg-surface-2 px-4 py-2.5 border-b border-line text-[13px] font-semibold text-ink flex justify-between items-center">
               <span>Bảng giá theo MOQ <span className="text-mute font-normal">· FOB Trung Quốc</span></span>
               <span className="text-[11.5px] text-success font-medium">⏱ Thời gian giao 20-30 ngày</span>
             </div>
             <table className="w-full text-[13px]">
-              <thead className="bg-[#F5F7FA]">
+              <thead className="bg-surface-3">
                 <tr>
                   <th className="text-left px-4 py-2 font-medium text-mute">Số lượng</th>
                   <th className="text-left px-4 py-2 font-medium text-mute">Giá / đơn vị</th>
@@ -322,7 +322,7 @@ export default async function ProductPage({
               </thead>
               <tbody>
                 {tiers.map((t) => (
-                  <tr key={t.range} className="border-t border-line hover:bg-[#FAFBFC]">
+                  <tr key={t.range} className="border-t border-line hover:bg-surface-2">
                     <td className="px-4 py-2 text-ink">{t.range} {p.unit}</td>
                     <td className="px-4 py-2 text-accent font-bold">${t.price}{p.unit}</td>
                     <td className="px-4 py-2 text-success">{t.discount === 0 ? "Giá gốc" : `-${t.discount}%`}</td>
@@ -792,7 +792,7 @@ export default async function ProductPage({
                 {...(i === 0 ? { open: true } : {})}
                 className="border border-line rounded group/faq"
               >
-                <summary className="px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex justify-between items-center hover:bg-[#FAFBFC]">
+                <summary className="px-4 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden flex justify-between items-center hover:bg-surface-2">
                   <b className="text-[13px] text-ink leading-snug">{f.q}</b>
                   <span className="text-mute2 text-[14px] group-open/faq:rotate-180 transition-transform flex-shrink-0 ml-3">▾</span>
                 </summary>
@@ -812,7 +812,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {sameSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
-              <div className="aspect-square bg-[#F5F5F5]">
+              <div className="aspect-square bg-surface-1">
                 {x.image ? <img src={x.image} alt={x.title} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
@@ -830,7 +830,7 @@ export default async function ProductPage({
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {otherSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
-              <div className="aspect-square bg-[#F5F5F5]">
+              <div className="aspect-square bg-surface-1">
                 {x.image ? <img src={x.image} alt={x.title} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">

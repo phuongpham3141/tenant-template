@@ -165,7 +165,7 @@ export function HeroSlider() {
             <div className="flex gap-2.5 max-md:flex-col max-md:gap-2 max-md:w-full">
               <Link
                 href={slide.primary.href}
-                className="px-6 py-3 font-semibold text-[13.5px] rounded-sm bg-gold text-brand-dark text-center cursor-pointer hover:bg-[#E8943A] max-md:px-4 max-md:py-2.5 max-md:text-[12.5px]"
+                className="px-6 py-3 font-semibold text-[13.5px] rounded-sm bg-gold text-brand-dark text-center cursor-pointer hover:bg-warm max-md:px-4 max-md:py-2.5 max-md:text-[12.5px]"
               >
                 {slide.primary.label}
               </Link>

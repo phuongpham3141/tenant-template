@@ -111,7 +111,7 @@ export default async function ZonePage({
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {products.map((p) => (
             <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
-              <div className="aspect-square bg-[#F5F5F5]">
+              <div className="aspect-square bg-surface-1">
                 {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
@@ -128,7 +128,7 @@ export default async function ZonePage({
         <h2 className="text-[16px] font-bold text-ink mb-3">Sự kiện & Hội chợ trong vùng</h2>
         <div className="bg-paper border border-line rounded overflow-hidden">
           {TRADE_SHOWS.map((t, i) => (
-            <Link key={t.name} href="/trade-shows" className={`grid grid-cols-[1fr_180px_180px_140px] gap-4 px-4 py-3 text-[13px] hover:bg-[#FAFBFC] max-md:grid-cols-1 max-md:gap-1 ${i > 0 ? "border-t border-line" : ""}`}>
+            <Link key={t.name} href="/trade-shows" className={`grid grid-cols-[1fr_180px_180px_140px] gap-4 px-4 py-3 text-[13px] hover:bg-surface-2 max-md:grid-cols-1 max-md:gap-1 ${i > 0 ? "border-t border-line" : ""}`}>
               <b className="text-ink">{t.name}</b>
               <span className="text-mute">{t.date}</span>
               <span className="text-mute">{t.venue}</span>

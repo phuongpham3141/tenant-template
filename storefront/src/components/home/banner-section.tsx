@@ -14,7 +14,7 @@ function CategoryMenu() {
           <div key={c.slug} className="mm-cat flex-1 min-h-0">
             <Link
               href={`/category/${c.slug}`}
-              className="flex justify-between items-center h-full px-3.5 py-2 text-[13px] text-ink border-b border-[#F5F5F5] last:border-b-0 cursor-pointer hover:bg-brand hover:text-white"
+              className="flex justify-between items-center h-full px-3.5 py-2 text-[13px] text-ink border-b border-surface-1 last:border-b-0 cursor-pointer hover:bg-brand hover:text-white"
             >
               <b className="font-medium">
                 {c.icon} {c.name}

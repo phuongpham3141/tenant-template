@@ -120,7 +120,7 @@ export default function ProductDirectoryPage() {
               <ul className="space-y-1">
                 {VERTICALS.map((v) => (
                   <li key={v.name}>
-                    <Link href={`/category/${v.name.toLowerCase().replace(/\s+/g, "-").replace(/[&]/g, "")}`} className="flex items-center gap-2 px-2 py-1.5 rounded-sm text-[12px] text-ink hover:bg-[#F5F7FA]">
+                    <Link href={`/category/${v.name.toLowerCase().replace(/\s+/g, "-").replace(/[&]/g, "")}`} className="flex items-center gap-2 px-2 py-1.5 rounded-sm text-[12px] text-ink hover:bg-surface-3">
                       <span className="w-5 text-center">{v.icon}</span>
                       <span className="flex-1 leading-tight">{v.name}</span>
                       <span className="text-[10px] text-mute">{v.count}</span>

@@ -344,7 +344,7 @@ export default function SellOnCsrPage() {
             ))}
           </div>
           <div className="mt-6 flex gap-3 flex-wrap">
-            <Link href="/register/factory" className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]">
+            <Link href="/register/factory" className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm">
               🚀 Đăng ký nhà máy ngay
             </Link>
             <Link href="/info/audit-process" className="px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10">
@@ -470,7 +470,7 @@ export default function SellOnCsrPage() {
             </div>
             <Link
               href="/info/contact"
-              className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] whitespace-nowrap"
+              className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-warm whitespace-nowrap"
             >
               Trao đổi với BD →
             </Link>
@@ -668,7 +668,7 @@ export default function SellOnCsrPage() {
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/register/factory"
-              className="inline-block px-8 py-3.5 bg-gold text-brand-dark rounded-sm font-bold text-[15px] hover:bg-[#E8943A]"
+              className="inline-block px-8 py-3.5 bg-gold text-brand-dark rounded-sm font-bold text-[15px] hover:bg-warm"
             >
               🚀 Đăng ký nhà máy ngay
             </Link>

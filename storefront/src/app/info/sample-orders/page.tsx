@@ -352,7 +352,7 @@ export default function DatMauPage() {
           <div className="mt-6 flex gap-3 flex-wrap">
             <Link
               href="/products"
-              className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               🔍 Tìm sản phẩm để đặt mẫu
             </Link>
@@ -452,13 +452,13 @@ export default function DatMauPage() {
 
       {/* === Giải thích Trung tâm Mẫu ========================================= */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
-        <div className="rounded p-6 max-md:p-4 border-2 border-[#A21CAF]" style={{ background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
+        <div className="rounded p-6 max-md:p-4 border-2 border-purple" style={{ background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
           <div className="flex items-start gap-4 max-md:flex-col">
             <div className="w-16 h-16 rounded-md flex items-center justify-center text-[30px] flex-shrink-0" style={{ background: "#A21CAF20" }}>
               🏪
             </div>
             <div className="flex-1">
-              <span className="inline-block bg-[#A21CAF] text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm mb-2">
+              <span className="inline-block bg-purple text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm mb-2">
                 INNOVATION CỦA CSR
               </span>
               <h2 className="text-[20px] font-bold text-ink mb-2">Trung tâm Mẫu Quảng Châu — Gom shipping tiết kiệm 50-60%</h2>
@@ -467,11 +467,11 @@ export default function DatMauPage() {
               </p>
               <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
                 <div className="bg-paper border border-line rounded p-3 text-center">
-                  <div className="text-[22px] font-extrabold text-[#A21CAF]">$60-120</div>
+                  <div className="text-[22px] font-extrabold text-purple">$60-120</div>
                   <div className="text-[11px] text-mute">Ship riêng (per sample)</div>
                 </div>
                 <div className="bg-paper border border-line rounded p-3 text-center">
-                  <div className="text-[22px] font-extrabold text-[#A21CAF]">$20-40</div>
+                  <div className="text-[22px] font-extrabold text-purple">$20-40</div>
                   <div className="text-[11px] text-mute">Qua Trung tâm Mẫu (gom)</div>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-3 text-center">
@@ -701,7 +701,7 @@ export default function DatMauPage() {
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/products"
-              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               🔍 Browse 200K+ sản phẩm
             </Link>

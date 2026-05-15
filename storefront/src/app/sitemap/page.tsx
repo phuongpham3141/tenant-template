@@ -306,7 +306,7 @@ export default function SitemapPage() {
                 Xem tất cả →
               </Link>
               <div className="text-right">
-                <div className="text-[22px] font-extrabold leading-none text-[#E8943A]">{ARTICLES.length}</div>
+                <div className="text-[22px] font-extrabold leading-none text-warm">{ARTICLES.length}</div>
                 <div className="text-[10.5px] uppercase tracking-wider text-mute">bài</div>
               </div>
             </div>

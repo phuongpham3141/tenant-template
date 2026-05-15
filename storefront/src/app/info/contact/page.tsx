@@ -638,7 +638,7 @@ export default function LienHePage() {
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buying-request"
-              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
+              className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-warm"
             >
               🚀 Gửi RFQ ngay
             </Link>

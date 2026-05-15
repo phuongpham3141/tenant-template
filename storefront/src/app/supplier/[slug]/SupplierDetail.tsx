@@ -129,7 +129,7 @@ export function SupplierDetail({
             <b className="block text-[13px] font-semibold text-ink mb-2">Thẻ chính</b>
             <div className="flex gap-1 flex-wrap">
               {f.tags.map((t) => (
-                <span key={t} className="text-[11px] bg-[#F5F5F5] text-mute px-2 py-1 rounded-sm">{t}</span>
+                <span key={t} className="text-[11px] bg-surface-1 text-mute px-2 py-1 rounded-sm">{t}</span>
               ))}
             </div>
           </div>
@@ -204,7 +204,7 @@ function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: nu
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {heroProducts.map((p) => (
             <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
-              <div className="aspect-square bg-[#F5F5F5]">
+              <div className="aspect-square bg-surface-1">
                 {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
@@ -220,7 +220,7 @@ function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: nu
         <h2 className="text-[16px] font-bold text-ink mb-3">Dây chuyền sản xuất</h2>
         <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="aspect-video bg-[#F5F5F5] rounded overflow-hidden">
+            <div key={i} className="aspect-video bg-surface-1 rounded overflow-hidden">
               <img src={`/img/${f.slug}-line-${i}.jpg?v=3`} alt="" className="w-full h-full object-cover" />
             </div>
           ))}
@@ -275,7 +275,7 @@ function ProductsTab({ f, products, radioName }: { f: Factory; products: Product
       <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-3 max-md:grid-cols-2">
         {products.map((p) => (
           <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand transition block">
-            <div className="aspect-square bg-[#F5F5F5] relative">
+            <div className="aspect-square bg-surface-1 relative">
               {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
               {p.badges?.includes("new") && (
                 <span className="absolute top-1.5 left-1.5 bg-success text-white text-[9px] px-1.5 py-0.5 rounded-sm font-bold">MỚI</span>
@@ -468,7 +468,7 @@ function CapacityTab({ f }: { f: Factory }) {
             { n: 4, name: "Dây chuyền R&D / mẫu mới", capacity: "200 đơn vị/tháng", auto: "Thủ công", staff: "20 kỹ sư" },
           ].map((l) => (
             <div key={l.n} className="bg-bg border border-line rounded p-3 flex gap-3">
-              <div className="aspect-video w-32 flex-shrink-0 bg-[#F5F5F5] rounded overflow-hidden">
+              <div className="aspect-video w-32 flex-shrink-0 bg-surface-1 rounded overflow-hidden">
                 <img src={`/img/${f.slug}-line${l.n}.jpg?v=3`} alt="" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
@@ -769,7 +769,7 @@ function Vr360Tab({ f }: { f: Factory }) {
           </div>
           <Link
             href="/factory-tour"
-            className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm text-[13px] font-bold hover:bg-[#E8943A] whitespace-nowrap"
+            className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm text-[13px] font-bold hover:bg-warm whitespace-nowrap"
           >
             ✈ Đăng ký tham quan thực
           </Link>

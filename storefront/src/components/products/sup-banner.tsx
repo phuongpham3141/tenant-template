@@ -63,7 +63,7 @@ export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
                 key={i}
                 className="border border-line rounded-sm p-1.5 cursor-pointer hover:border-brand block"
               >
-                <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-1">
+                <div className="aspect-square bg-surface-1 rounded-sm overflow-hidden mb-1">
                   <img src={mp.img} alt={mp.title} className="w-full h-full object-cover" />
                 </div>
                 <span className="block text-[10.5px] text-ink leading-tight line-clamp-2 min-h-[26px]">

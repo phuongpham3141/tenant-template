@@ -131,7 +131,7 @@ export function Factories() {
                 {f.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[10.5px] bg-[#F5F5F5] text-mute px-2 py-0.5 rounded-sm"
+                    className="text-[10.5px] bg-surface-1 text-mute px-2 py-0.5 rounded-sm"
                   >
                     {t}
                   </span>

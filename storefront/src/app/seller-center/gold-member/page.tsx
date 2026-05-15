@@ -119,7 +119,7 @@ export default function GoldMemberPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4 overflow-x-auto">
             <b className="block text-[15px] text-ink mb-4">📋 So sánh tính năng chi tiết</b>
             <table className="w-full text-[12.5px] min-w-[640px]">
-              <thead className="bg-[#FAFBFC] text-mute">
+              <thead className="bg-surface-2 text-mute">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Tính năng</th>
                   <th className="text-center px-3 py-2.5 font-medium">Miễn phí</th>
@@ -144,7 +144,7 @@ export default function GoldMemberPage() {
             <b className="block text-[15px] text-ink mb-4">💬 Nhà cung cấp đã thành công với Vàng</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {TESTIMONIALS.map((t) => (
-                <div key={t.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
+                <div key={t.company} className="border border-line rounded p-4 bg-surface-2">
                   <div className="flex items-center gap-3 mb-3">
                     <img src={`/img/seller-gold-${t.avatar}.jpg?v=3`} alt="" className="w-12 h-12 rounded-full object-cover" />
                     <div>

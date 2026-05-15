@@ -70,11 +70,11 @@ export default function LogisticsPage() {
                 <div className="text-[32px] mb-2">{m.icon}</div>
                 <b className="block text-[14px] text-ink mb-2">{m.title}</b>
                 <div className="grid grid-cols-2 gap-2 mb-3">
-                  <div className="bg-[#FAFBFC] rounded p-2">
+                  <div className="bg-surface-2 rounded p-2">
                     <span className="text-[10px] text-mute block">Thời gian giao</span>
                     <b className="text-[12px] text-brand">{m.leadtime}</b>
                   </div>
-                  <div className="bg-[#FAFBFC] rounded p-2">
+                  <div className="bg-surface-2 rounded p-2">
                     <span className="text-[10px] text-mute block">Chi phí</span>
                     <b className="text-[12px] text-accent">{m.cost}</b>
                   </div>
@@ -127,7 +127,7 @@ export default function LogisticsPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <b className="block text-[15px] text-ink mb-4">🗺 Lộ trình phổ biến TQ → VN</b>
             <table className="w-full text-[12.5px]">
-              <thead className="bg-[#FAFBFC] text-mute">
+              <thead className="bg-surface-2 text-mute">
                 <tr>
                   <th className="text-left px-3 py-2.5 font-medium">Cảng đi</th>
                   <th className="text-left px-3 py-2.5 font-medium">Cảng đến</th>
@@ -138,7 +138,7 @@ export default function LogisticsPage() {
               </thead>
               <tbody>
                 {ROUTES.map((r, i) => (
-                  <tr key={i} className="border-t border-line hover:bg-[#FAFBFC]">
+                  <tr key={i} className="border-t border-line hover:bg-surface-2">
                     <td className="px-3 py-2.5 text-ink font-semibold">{r.from}</td>
                     <td className="px-3 py-2.5 text-ink">{r.to}</td>
                     <td className="px-3 py-2.5 text-mute">{r.mode}</td>
@@ -152,7 +152,7 @@ export default function LogisticsPage() {
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <b className="block text-[15px] text-ink mb-3">📍 Tracking trực tuyến (demo)</b>
-            <div className="border border-line rounded p-4 bg-[#FAFBFC]">
+            <div className="border border-line rounded p-4 bg-surface-2">
               <div className="flex justify-between items-center mb-3">
                 <div>
                   <b className="text-[13px] text-ink">Container TEMU-928412 · MAEU-7821</b>

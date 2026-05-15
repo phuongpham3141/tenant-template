@@ -53,7 +53,7 @@ export function OverviewCard({ data }: { data: CategoryPage }) {
               <span className="text-[12px] text-ink font-medium leading-tight line-clamp-2 min-h-[32px]">
                 {p.name}
               </span>
-              <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden">
+              <div className="aspect-square bg-surface-1 rounded-sm overflow-hidden">
                 {p.image && <img src={p.image} alt={p.name} className="w-full h-full object-cover" />}
               </div>
             </a>

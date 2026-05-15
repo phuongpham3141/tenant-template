@@ -51,7 +51,7 @@ export default async function ByImageSearchPage({
           <form
             action="/search"
             method="get"
-            className="border-2 border-dashed border-brand/40 hover:border-brand bg-[#F5F7FA] rounded-lg p-10 text-center transition cursor-pointer block max-md:p-6"
+            className="border-2 border-dashed border-brand/40 hover:border-brand bg-surface-3 rounded-lg p-10 text-center transition cursor-pointer block max-md:p-6"
           >
             <label htmlFor="img-upload" className="cursor-pointer block">
               <div className="text-[64px] mb-3">🖼️</div>
@@ -95,7 +95,7 @@ export default async function ByImageSearchPage({
                   href={`/search?q=${encodeURIComponent(s.label)}`}
                   className="group block"
                 >
-                  <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden border border-line group-hover:border-brand">
+                  <div className="aspect-square bg-surface-1 rounded overflow-hidden border border-line group-hover:border-brand">
                     <img
                       src={`/img/${s.seed}.jpg?v=3`}
                       alt={s.label}

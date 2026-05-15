@@ -26,7 +26,7 @@ export default function ZonesPage() {
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
           {ZONES.map((z) => (
             <Link key={z.slug} href={`/zone/${z.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
-              <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
+              <div className="aspect-[16/9] bg-surface-1 relative overflow-hidden">
                 {z.image ? <img src={z.image} alt={z.name} className="w-full h-full object-cover group-hover:scale-105 transition" /> : null}
                 <div className="absolute inset-0" style={{ background: "linear-gradient(transparent 60%, rgba(0,37,87,0.85))" }} />
                 <div className="absolute bottom-3 left-3 right-3 text-white">
