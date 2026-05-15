@@ -162,4 +162,4 @@ export default async function PostRfqPage({
   );
 }
 
-export const metadata = { title: "Đăng yêu cầu báo giá — Buyer Center" };
+export const metadata = { title: "Đăng yêu cầu báo giá — Trung tâm Buyer" };

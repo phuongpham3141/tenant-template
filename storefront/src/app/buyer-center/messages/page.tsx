@@ -137,4 +137,4 @@ export default function BuyerMessagesPage() {
   );
 }
 
-export const metadata = { title: "Tin nhắn — Buyer Center" };
+export const metadata = { title: "Tin nhắn — Trung tâm Buyer" };

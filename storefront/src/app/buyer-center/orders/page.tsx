@@ -96,4 +96,4 @@ export default function OrdersPage() {
   );
 }
 
-export const metadata = { title: "Đơn hàng — Buyer Center" };
+export const metadata = { title: "Đơn hàng — Trung tâm Buyer" };

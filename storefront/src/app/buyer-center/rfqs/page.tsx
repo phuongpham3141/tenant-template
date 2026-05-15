@@ -111,4 +111,4 @@ export default function BuyerRfqsPage() {
   );
 }
 
-export const metadata = { title: "Yêu cầu báo giá — Buyer Center" };
+export const metadata = { title: "Yêu cầu báo giá — Trung tâm Buyer" };

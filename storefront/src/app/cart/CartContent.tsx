@@ -99,7 +99,7 @@ export function CartContent() {
             </div>
             <div className="flex justify-between text-mute">
               <span>Phí vận chuyển</span>
-              <span>Tính khi checkout</span>
+              <span>Tính khi thanh toán</span>
             </div>
           </div>
           <div className="flex justify-between font-semibold text-ink mb-4">

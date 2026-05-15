@@ -81,4 +81,4 @@ export default function BuyerProfilePage() {
   );
 }
 
-export const metadata = { title: "Hồ sơ — Buyer Center" };
+export const metadata = { title: "Hồ sơ — Trung tâm Buyer" };
