@@ -90,7 +90,7 @@ BEGIN
   CREATE INDEX IF NOT EXISTS idx_embed_scope_active
     ON ai.ai_embedding_doc (scope_type, scope_id)
     INCLUDE (embedding_model)
-    WHERE deleted_at IS NULL OR deleted_at IS NULL;  -- ai_embedding_doc may not have deleted_at; safe NOOP if not
+    ; -- (Day 4 Rule 6 fix: removed broken WHERE clause — ai_embedding_doc has no deleted_at column)
 
   -- 6. Stats for query planner
   ANALYZE ai.ai_embedding_doc;
