@@ -71,7 +71,7 @@ export default function DomesticCnPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/domestic-cn" />
         <div>
-          <div className="bg-gradient-to-br from-red-700 to-yellow-500 text-white rounded p-6 mb-4" style={{ background: "linear-gradient(135deg,#b91c1c,#eab308)" }}>
+          <div className="bg-gradient-to-br from-red-700 to-yellow-500 text-white rounded p-6 mb-4">
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🇨🇳 MIC DOMESTIC TRADE</div>
             <h1 className="text-[26px] font-bold leading-tight">Bán hàng nội địa Trung Quốc</h1>
             <p className="text-[14px] opacity-95 mt-2 leading-relaxed max-w-[680px]">

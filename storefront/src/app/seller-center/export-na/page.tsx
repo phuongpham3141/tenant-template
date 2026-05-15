@@ -55,7 +55,7 @@ export default function ExportNaPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/export-na" />
         <div>
-          <div className="bg-gradient-to-br from-blue-700 to-red-600 text-white rounded p-6 mb-4" style={{ background: "linear-gradient(135deg,#1e40af,#dc2626)" }}>
+          <div className="bg-gradient-to-br from-blue-700 to-red-600 text-white rounded p-6 mb-4">
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🌎 NORTH AMERICA OMNI-CHANNEL</div>
             <h1 className="text-[26px] font-bold leading-tight">Xuất khẩu đa kênh Bắc Mỹ — Mỹ · Canada · Mexico</h1>
             <p className="text-[14px] opacity-90 mt-2 leading-relaxed max-w-[680px]">
