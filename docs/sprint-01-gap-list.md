@@ -236,3 +236,35 @@ git push origin cms
 **Sprint 1 status: CLOSED**
 
 Sẵn sàng cho Sprint 2 planning. Đợi user confirm priority order (xem câu hỏi mở phía trên) trước khi bắt đầu.
+
+## 🟡 Findings Sprint 2 Day 4 Bước 2 (2026-05-15)
+
+### Deferred to Sprint 8
+
+- [ ] **P3.D4-F1** · 10 tables không có time column cho partition (defer Sprint 8)
+  - Tables: ai.inference_log, api.webhook_delivery_log, email_mkt.email_event_log,
+    experiment.experiment_event_log, fraud.fraud_score_log, live.livestream_event_log,
+    media.media_view_event, notification.notification_log, payment.payment_event_log,
+    vn_sourcing.sourcing_event_log
+  - Risk: khi traffic tăng, các tables này sẽ chậm do không partition
+  - Action: Sprint 8 — partition design decision per-table dựa trên use case
+
+- [ ] **P3.D4-F2** · audit.audit_event có 37 rows existing data, cần runbook conversion
+  - Status: Deferred Sprint 8 (per mig 40/46 design `has_data` skip rule)
+  - Action: Follow `medusa/devops/runbooks/partition-conversion.md` để safely convert in-place
+  - Risk: low — chỉ 1 table, 37 rows nhỏ
+
+### Resolved Day 4
+
+- [x] **P3.D4-F3** · pg_partman yêu cầu control column NOT NULL
+  - Status: ✅ Fixed (mig 40 + mig 46 đều có ALTER COLUMN SET NOT NULL step)
+  - Issue: `partman.create_parent()` reject nullable control column
+  - Day 4 fix: Thêm ALTER COLUMN SET NOT NULL trước partman.create_parent
+  - Sprint 8 audit: Check schema generator (R13/R23) có enforce NOT NULL trên partition keys không
+
+### Sprint 8 backlog (semantics)
+
+- [ ] **P3.D4-F4** · `admin.migration_log.status` field semantics chưa rõ ràng
+  - Issue: status='success' cho run có 10/13 failed entries (misleading audit trail)
+  - Sprint 8 action: Redefine enum thành ('success', 'partial', 'failed', 'rolled_back')
+  - Add NOT NULL constraint on `notes` field nếu status != 'success'

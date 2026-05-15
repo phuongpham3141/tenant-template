@@ -24,29 +24,29 @@ DECLARE
   -- (schema.table, control_column, interval, premake)
   v_targets TEXT[][] := ARRAY[
     ARRAY['audit',           'audit_event',                 'occurred_at',  '1 month', '3'],
-    ARRAY['advertising',     'ads_impression_log',          'occurred_at',  '1 month', '3'],
-    ARRAY['advertising',     'ads_click_log',               'occurred_at',  '1 month', '3'],
-    ARRAY['advertising',     'ads_conversion_log',          'occurred_at',  '1 month', '3'],
+    ARRAY['advertising', 'ads_impression_log', 'served_at',  '1 month', '3'],
+    ARRAY['advertising', 'ads_click_log', 'clicked_at',  '1 month', '3'],
+    ARRAY['advertising', 'ads_conversion_log', 'conversion_at',  '1 month', '3'],
     ARRAY['search',          'search_query_log',            'executed_at',  '1 month', '2'],
-    ARRAY['personalization', 'user_behavior_event',         'occurred_at',  '1 month', '3'],
+    ARRAY['personalization', 'user_behavior_event', 'event_at',  '1 month', '3'],
     ARRAY['email_mkt',       'email_log',                   'sent_at',      '1 month', '2'],
-    ARRAY['email_mkt',       'email_event_log',             'occurred_at',  '1 month', '2'],
-    ARRAY['communication',   'conversation_message',        'occurred_at',  '1 month', '3'],
-    ARRAY['live',            'livestream_chat_message',     'occurred_at',  '1 month', '3'],
-    ARRAY['live',            'livestream_event_log',        'occurred_at',  '1 month', '2'],
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): email_mkt.email_event_log
+    ARRAY['communication', 'conversation_message', 'created_at',  '1 month', '3'],
+    ARRAY['live', 'livestream_chat_message', 'sent_at',  '1 month', '3'],
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): live.livestream_event_log
     ARRAY['live',            'ai_compute_ledger',           'occurred_at',  '1 month', '2'],
-    ARRAY['auth',            'login_attempt_log',           'occurred_at',  '1 month', '2'],
+    ARRAY['auth', 'login_attempt_log', 'attempted_at',  '1 month', '2'],
     ARRAY['auth',            'security_event_log',          'occurred_at',  '1 month', '2'],
-    ARRAY['api',             'api_call_log',                'occurred_at',  '1 month', '2'],
-    ARRAY['api',             'webhook_delivery_log',        'occurred_at',  '1 month', '2'],
-    ARRAY['payment',         'payment_event_log',           'occurred_at',  '1 month', '3'],
-    ARRAY['notification',    'notification_log',            'occurred_at',  '1 month', '2'],
-    ARRAY['experiment',      'experiment_event_log',        'occurred_at',  '1 month', '2'],
-    ARRAY['ai',              'inference_log',               'occurred_at',  '1 month', '2'],
-    ARRAY['tax',             'tax_calculation_log',         'occurred_at',  '1 month', '2'],
-    ARRAY['media',           'media_view_event',            'occurred_at',  '1 month', '2'],
-    ARRAY['fraud',           'fraud_score_log',             'occurred_at',  '1 month', '2'],
-    ARRAY['vn_sourcing',     'sourcing_event_log',          'occurred_at',  '1 month', '2']
+    ARRAY['api', 'api_call_log', 'called_at',  '1 month', '2'],
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): api.webhook_delivery_log
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): payment.payment_event_log
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): notification.notification_log
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): experiment.experiment_event_log
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): ai.inference_log
+    ARRAY['tax', 'tax_calculation_log', 'calculated_at',  '1 month', '2']
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): media.media_view_event
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): fraud.fraud_score_log
+    -- REMOVED Day 4 Bước 2b (no time column, defer Sprint 8 design): vn_sourcing.sourcing_event_log
   ];
   i INT;
   v_schema TEXT;
@@ -120,6 +120,13 @@ BEGIN
       EXECUTE format(
         'CREATE TABLE %I.%I (LIKE %I.%I_template INCLUDING DEFAULTS INCLUDING IDENTITY INCLUDING CONSTRAINTS INCLUDING STORAGE INCLUDING COMMENTS) PARTITION BY RANGE (%I)',
         v_schema, v_table, v_schema, v_table, v_control
+      );
+
+      -- pg_partman requires control column NOT NULL (Day 4 Buoc 2b.4 finding)
+      -- Safe vì table vừa được DROP CASCADE + CREATE PARTITIONED LIKE template (0 rows)
+      EXECUTE format(
+        'ALTER TABLE %I.%I ALTER COLUMN %I SET NOT NULL',
+        v_schema, v_table, v_control
       );
 
       PERFORM partman.create_parent(
