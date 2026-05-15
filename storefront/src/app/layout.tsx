@@ -7,6 +7,7 @@ import { NavBar } from "@/components/home/navbar";
 import { Footer } from "@/components/home/footer";
 import { MobileBottomNav } from "@/components/home/mobile-bottom-nav";
 import { StickyHeader } from "@/components/home/sticky-header";
+import { CartProvider } from "@/components/providers/CartProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,13 +37,15 @@ export default function RootLayout({
   return (
     <html lang="vi" className={`${inter.variable} antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-ink">
-        <StickyHeader />
-        <TopStrip />
-        <Header />
-        <NavBar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileBottomNav />
+        <CartProvider>
+          <StickyHeader />
+          <TopStrip />
+          <Header />
+          <NavBar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <MobileBottomNav />
+        </CartProvider>
       </body>
     </html>
   );

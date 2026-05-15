@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { CartDrawer } from "@/components/cart/CartDrawer";
 
 export function StickyHeader() {
   const [show, setShow] = useState(false);
@@ -89,13 +90,7 @@ export function StickyHeader() {
           <span className="text-[16px]">📨</span>
           <span>Gửi RFQ</span>
         </Link>
-        <Link
-          href="/buyer-center/favorites"
-          className="flex items-center gap-1.5 text-[12.5px] text-ink hover:text-brand flex-shrink-0 max-xl:hidden"
-        >
-          <span className="text-[16px]">🛒</span>
-          <span>Giỏ hàng</span>
-        </Link>
+        <CartDrawer />
       </div>
     </div>
   );
