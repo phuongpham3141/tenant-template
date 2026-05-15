@@ -84,13 +84,37 @@ Pattern: Sprint 1 audit single-layer / snapshot cũ → bỏ sót state đúng.
 
 ---
 
-## 3 NEW Rules codified Sprint 2
+## 4 NEW Rules codified Sprint 2
 
-- Rule 4 — Không đụng main/develop đến Sprint 7
+- Rule 4 — Không đụng main/develop đến Sprint 7 (D-08 LOCKED)
 - Rule 5 — Validation script ≠ ground truth
 - Rule 6 — Schema change qua migration file
+- **Rule 7 — Multi-layer ground truth audit (≥2 layers: filesystem/schema/runtime/git)** ← codified after 4 false positives caught
 
-Cộng 3 rules Sprint 1 → 6 HARD RULES total.
+Cộng 3 rules Sprint 1 → **7 HARD RULES total.**
+
+### Rule 7 retroactive application
+
+Day 6 P1.5-F2 audit ban đầu chỉ check 3 layers (filesystem + route exports + runtime). Hot-fix Day 6 close — added Layer 4 git history:
+
+```
+Layer 4 — Git history /api routes:
+  cms branch: 9 files (from commit 084e296 R14-R23 ship)
+  develop: 0 files
+  giaodien: 0 files
+  main: 0 files
+  backup/vm-state-pre-sprint2-20260515: 0 files
+```
+
+→ Confirms /api routes shipped from R19 commit 084e296. cms branch only. Sprint 1 audit đọc working tree pre-Option B sync (state before cms branch loaded). FALSE POSITIVE conclusion verified với 4/4 layers (exceeded Rule 7 minimum 2 layers).
+
+### P1.4-F6 Day 6 audit (hot-fix)
+
+Verified via Layer 1 + Layer 3:
+- Filesystem: payload/src/migrations/ + payload/scripts/ + 4 migrate:* scripts in package.json
+- Runtime: `npm run migrate:status` → "No migrations found" (expected, baseline defer Sprint 3)
+
+→ P1.4-F6 minimum viable closed Day 4 confirmed correct.
 
 ---
 
