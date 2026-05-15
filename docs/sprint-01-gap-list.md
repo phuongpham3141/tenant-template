@@ -336,3 +336,61 @@ Cả 3 false positives Sprint 1 đều do audit không multi-layer:
 
 **Pattern chung:** Audit Sprint 1 dùng quick query / partial read → bỏ sót state đúng.
 **Action Sprint 3:** Re-run TOÀN BỘ Sprint 1 P1.X audits với multi-layer ground truth check.
+
+## 🟢 Day 6 Bước 1b — P1.5-F2 RE-CLASSIFIED (false positive thứ 4)
+
+### [✅ RE-AUDIT] P1.5-F2 — Storefront /api routes THỰC RA architecture-by-design
+
+- **Sprint 1 finding (wrong):** "Storefront thiếu toàn bộ /api/* route handlers (auth, cart, rfq, ~6 route groups, estimate 22h)"
+- **Day 6 multi-layer audit (correct):**
+
+**Layer 1 — Filesystem:**
+```
+src/app/api/auth/register/route.ts      (POST)
+src/app/api/auth/login/route.ts         (POST)
+src/app/api/auth/logout/route.ts        (POST)
+src/app/api/auth/refresh/route.ts       (POST)
+src/app/api/auth/password-reset/route.ts (POST)
+src/app/api/auth/verify-otp/route.ts    (POST)
+src/app/api/me/route.ts                 (GET)
+src/app/api/search/visual-upload/route.ts (POST)
+src/app/api/webhooks/payload-revalidate/route.ts (POST)
+```
+**9 route files EXIST** (Sprint 1 nói "empty").
+
+**Layer 2 — Runtime HTTP test:** All 9 endpoints return 405 (method allowed, just GET on POST route) or 404 (path mismatch like `/api/auth/me` vs `/api/me`). ALL EXIST.
+
+**Layer 3 — Architecture audit:**
+- `src/lib/api/client.ts` chứa `api()` helper:
+  - Reads session từ cookie (server-side via `getSession()`)
+  - Calls Medusa direct với `Authorization`, `x-publishable-api-key`, `x-tenant-id`
+- SDK clients (`src/lib/sdk/rfq/`, `order/`, etc.) wrap `api()` calls
+- **Pattern:** Next.js Server Component / Server Action → `api()` helper → Medusa backend (direct, không qua proxy)
+
+**Why /api/auth/* exists (correctly):**
+- Auth flow set HTTP-only session cookie → cần server-side route, không thể từ client JS
+- `/api/auth/login` POST → call Medusa `/auth/login` → `setSession()` set cookie
+
+**Why /api/cart và /api/rfqs KHÔNG exist (correct design):**
+- Cart + RFQ operations qua SDK clients (`cartApi`, `rfqApi`)
+- SDK calls Medusa direct via `api()` helper với publishable key + session cookie
+- Storefront calls Medusa native API → KHÔNG cần Next.js proxy
+
+→ **P1.5-F2 status: FALSE POSITIVE — Closed. Estimate 22h work saved.**
+
+### Real impact
+
+Sprint 1 P1.5-F2 estimate 22h cho implement 6 route groups. Audit Day 6 phát hiện:
+- 6/6 route groups KHÔNG cần implement
+- 5/6 auth routes đã exist từ R19 commit
+- 2/6 (cart, rfqs) by-design không cần (SDK + api() helper architecture)
+
+**Day 6 saved 22h work.** Day 5 đã saved 5-7h. Total Sprint 2 false positives discovery saved ~27-29h.
+
+### Architecture documentation (NEW carry-over Sprint 3)
+
+Storefront architecture nên document rõ pattern này trong `docs/architecture.md` (Sprint 3 task):
+- Server Components / Server Actions call Medusa direct
+- `api()` helper handles session + publishable key + tenant
+- /api/auth/* only — cho cookie management
+- KHÔNG dùng client-side fetch trừ proxy upload (visual-upload đặc biệt)
