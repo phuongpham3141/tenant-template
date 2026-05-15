@@ -115,6 +115,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
     schemaName: process.env.PAYLOAD_SCHEMA || 'payload',
+    migrationDir: path.resolve(dirname, 'migrations'),
   }),
   upload: {
     limits: { fileSize: 100_000_000 },
