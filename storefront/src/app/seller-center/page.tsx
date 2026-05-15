@@ -73,9 +73,9 @@ export default function SellerCenterPage() {
                   const x = 20 + i * 50;
                   return (
                     <g key={c.m}>
-                      <rect x={x} y={120 - h} width="34" height={h} fill={i === CHART.length - 1 ? "#E8302C" : "#1F4F8E"} rx="2" />
-                      <text x={x + 17} y={135} fontSize="10" textAnchor="middle" fill="#6B7280">{c.m}</text>
-                      <text x={x + 17} y={115 - h} fontSize="9.5" textAnchor="middle" fill="#0B1220" fontWeight="bold">{c.v}</text>
+                      <rect x={x} y={120 - h} width="34" height={h} fill={i === CHART.length - 1 ? "var(--color-accent)" : "var(--color-brand)"} rx="2" />
+                      <text x={x + 17} y={135} fontSize="10" textAnchor="middle" fill="var(--color-mute)">{c.m}</text>
+                      <text x={x + 17} y={115 - h} fontSize="9.5" textAnchor="middle" fill="var(--color-ink)" fontWeight="bold">{c.v}</text>
                     </g>
                   );
                 })}
