@@ -188,6 +188,7 @@ services:
       NODE_ENV: development
       NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://api.huayuesc.local
       NEXT_PUBLIC_BASE_URL: http://shop.huayuesc.local
+      NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
     volumes:
       - ../storefront/src:/app/src
       - ../storefront/public:/app/public
