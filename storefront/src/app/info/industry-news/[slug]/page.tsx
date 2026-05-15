@@ -124,7 +124,7 @@ export default async function ArticlePage({
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
       >
         <div className="max-w-[900px] mx-auto px-4 py-10 max-md:py-7">
           <Link
@@ -208,7 +208,7 @@ export default async function ArticlePage({
           {/* CTA */}
           <div
             className="mt-6 rounded p-5 text-white max-md:p-4"
-            style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+            style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
           >
             <div className="grid grid-cols-[1fr_auto] gap-4 items-center max-md:grid-cols-1">
               <div>

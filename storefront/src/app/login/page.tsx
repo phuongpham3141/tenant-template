@@ -158,7 +158,7 @@ export default function LoginPage() {
           {/* Hero card */}
           <div
             className="rounded text-white p-5 relative overflow-hidden"
-            style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+            style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
           >
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
               ⚡ Cybersilkroads 2026

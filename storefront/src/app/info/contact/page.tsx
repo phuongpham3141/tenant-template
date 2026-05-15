@@ -431,7 +431,7 @@ export default function LienHePage() {
           {/* Office header */}
           <div
             className="px-6 py-5 text-white max-md:px-4 max-md:py-4"
-            style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+            style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
           >
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div>

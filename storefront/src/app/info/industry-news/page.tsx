@@ -60,7 +60,7 @@ export default async function BlogIndexPage({
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
       >
         <div className="max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
@@ -204,7 +204,7 @@ export default async function BlogIndexPage({
           {/* Newsletter signup */}
           <div
             className="rounded p-4 text-white"
-            style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+            style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[18px]">📬</span>

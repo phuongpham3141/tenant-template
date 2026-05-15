@@ -38,7 +38,7 @@ export default function RegisterBuyerPage() {
         {/* HEADER BANNER */}
         <div
           className="rounded text-white px-7 py-6 mb-5 grid grid-cols-[1fr_auto] gap-5 items-center max-md:grid-cols-1 max-md:px-5 max-md:py-4"
-          style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
         >
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2.5">
@@ -322,7 +322,7 @@ export default function RegisterBuyerPage() {
 
             <div
               className="rounded p-4 text-white"
-              style={{ background: "linear-gradient(135deg,#E85D4E,#E8364A)" }}
+              style={{ background: "linear-gradient(135deg,var(--color-accent),#E8364A)" }}
             >
               <b className="block text-[14px] font-bold mb-1">🏭 Bạn là nhà máy?</b>
               <p className="text-[11.5px] opacity-90 leading-snug mb-2.5">

@@ -15,7 +15,7 @@ type SitemapSection = {
 const SECTIONS: SitemapSection[] = [
   {
     icon: "🏠",
-    color: "#005F6B",
+    color: "var(--color-brand)",
     title: "Trang chủ & Khám phá",
     subtitle: "Điểm vào chính của nền tảng",
     links: [
@@ -156,7 +156,7 @@ export default function SitemapPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />

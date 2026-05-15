@@ -15,12 +15,12 @@ export type BlogCategory =
   | "ncc-profile";
 
 export const CATEGORIES: Record<BlogCategory, { label: string; color: string }> = {
-  "xu-huong-gia": { label: "Xu hướng giá", color: "#E85D4E" },
+  "xu-huong-gia": { label: "Xu hướng giá", color: "var(--color-accent)" },
   "san-pham-moi": { label: "Sản phẩm mới", color: "#2A9D8F" },
   "hoi-cho": { label: "Hội chợ & Sự kiện", color: "#F4A261" },
   "chinh-sach-thue": { label: "Chính sách thuế", color: "#6B7880" },
   "case-study": { label: "Câu chuyện thành công", color: "#8B5CF6" },
-  "phan-tich-thi-truong": { label: "Phân tích thị trường", color: "#005F6B" },
+  "phan-tich-thi-truong": { label: "Phân tích thị trường", color: "var(--color-brand)" },
   "huong-dan": { label: "Hướng dẫn sourcing", color: "#0EA5E9" },
   "ncc-profile": { label: "Profile NCC", color: "#D97706" },
 };

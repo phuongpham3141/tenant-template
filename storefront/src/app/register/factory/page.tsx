@@ -67,7 +67,7 @@ export default function RegisterFactoryPage() {
         {/* HEADER BANNER */}
         <div
           className="rounded text-white px-7 py-6 mb-5 grid grid-cols-[1fr_auto] gap-5 items-center max-md:grid-cols-1 max-md:px-5 max-md:py-4"
-          style={{ background: "linear-gradient(135deg, #003A42 0%, #001F26 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-brand-dark) 0%, #001F26 100%)" }}
         >
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2.5">
@@ -504,7 +504,7 @@ export default function RegisterFactoryPage() {
 
             <div
               className="rounded p-4 text-white"
-              style={{ background: "linear-gradient(135deg,#005F6B,#003A42)" }}
+              style={{ background: "linear-gradient(135deg,var(--color-brand),var(--color-brand-dark))" }}
             >
               <b className="block text-[14px] font-bold mb-1">💬 Cần tư vấn trước?</b>
               <p className="text-[11.5px] opacity-90 leading-snug mb-2.5">

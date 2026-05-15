@@ -79,7 +79,7 @@ function RightWidgets() {
       </form>
       <div
         className="text-white p-4 rounded flex-1 flex flex-col justify-between min-h-[120px]"
-        style={{ background: "linear-gradient(135deg,#E85D4E,#E8364A)" }}
+        style={{ background: "linear-gradient(135deg,var(--color-accent),#E8364A)" }}
       >
         <div>
           <b className="block text-[15px] font-bold mb-1">🎁 Ưu đãi đại lý mới</b>

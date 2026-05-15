@@ -759,7 +759,7 @@ function Vr360Tab({ f }: { f: Factory }) {
       </div>
 
       {/* CTA */}
-      <div className="rounded p-5 text-white mt-4" style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}>
+      <div className="rounded p-5 text-white mt-4" style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}>
         <div className="flex items-start justify-between gap-4 max-md:flex-col">
           <div>
             <h3 className="text-[16px] font-bold mb-1">Muốn xem nhà máy thực, không phải VR?</h3>
@@ -840,7 +840,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
     <>
       <div className="bg-paper border border-line rounded p-5 mb-4">
         <div className="flex items-start gap-4 max-md:flex-col">
-          <div className="w-14 h-14 rounded-full flex items-center justify-center text-white text-[26px] flex-shrink-0" style={{ background: "linear-gradient(135deg, #005F6B 0%, #008899 100%)" }}>
+          <div className="w-14 h-14 rounded-full flex items-center justify-center text-white text-[26px] flex-shrink-0" style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, #008899 100%)" }}>
             🤖
           </div>
           <div className="flex-1">
@@ -887,7 +887,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
       </div>
 
       <div className="border border-line rounded overflow-hidden bg-paper">
-        <div className="px-4 py-2.5 flex items-center justify-between text-white" style={{ background: "linear-gradient(90deg, #005F6B, #066875)" }}>
+        <div className="px-4 py-2.5 flex items-center justify-between text-white" style={{ background: "linear-gradient(90deg, var(--color-brand), #066875)" }}>
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center text-[14px]">🤖</div>
             <div>
@@ -903,7 +903,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
             if (m.role === "ai") {
               return (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, #005F6B, #008899)" }}>
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), #008899)" }}>
                     🤖
                   </div>
                   <div className="max-w-[80%]">
@@ -922,7 +922,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
             return (
               <div key={i} className="flex items-start gap-2 justify-end">
                 <div className="max-w-[80%]">
-                  <div className="text-white rounded-lg rounded-tr-none px-3 py-2 text-[12.5px] leading-relaxed" style={{ background: "linear-gradient(135deg, #005F6B, #066875)" }}>
+                  <div className="text-white rounded-lg rounded-tr-none px-3 py-2 text-[12.5px] leading-relaxed" style={{ background: "linear-gradient(135deg, var(--color-brand), #066875)" }}>
                     {m.text}
                   </div>
                   <div className="text-[10px] text-mute2 mt-1 mr-1 text-right">Bạn · {m.time}</div>
@@ -935,7 +935,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
           })}
 
           <div className="flex items-start gap-2">
-            <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, #005F6B, #008899)" }}>
+            <div className="w-7 h-7 rounded-full flex items-center justify-center text-white text-[13px] flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(135deg, var(--color-brand), #008899)" }}>
               🤖
             </div>
             <div className="bg-white border border-line rounded-lg rounded-tl-none px-4 py-3 flex items-center gap-1">

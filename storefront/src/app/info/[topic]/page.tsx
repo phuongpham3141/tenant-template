@@ -1213,7 +1213,7 @@ export default async function InfoPage({
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
       >
         <div className="max-w-[1100px] mx-auto px-4 py-10 max-md:py-7 grid grid-cols-[auto_1fr] gap-6 items-center max-md:grid-cols-1 max-md:gap-3">
           <div className="w-20 h-20 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center text-[40px] flex-shrink-0 max-md:w-14 max-md:h-14 max-md:text-[28px]">
@@ -1317,7 +1317,7 @@ export default async function InfoPage({
           {/* Bottom CTA card */}
           <div
             className="mt-8 rounded p-6 text-white max-md:p-4"
-            style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+            style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
           >
             <div className="grid grid-cols-[1fr_auto] gap-4 items-center max-md:grid-cols-1">
               <div>

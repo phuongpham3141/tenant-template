@@ -178,7 +178,7 @@ export function TradeShowsSection() {
             {/* Subscribe CTA — fills remaining space */}
             <div
               className="rounded p-3.5 text-white flex items-center gap-3 max-md:flex-col max-md:items-start max-md:gap-2"
-              style={{ background: "linear-gradient(135deg,#005F6B,#003A42)" }}
+              style={{ background: "linear-gradient(135deg,var(--color-brand),var(--color-brand-dark))" }}
             >
               <div className="flex-shrink-0 w-10 h-10 rounded bg-gold flex items-center justify-center text-[20px]">
                 🔔

@@ -327,7 +327,7 @@ export default function DatMauPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
@@ -692,7 +692,7 @@ export default function DatMauPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12 mb-10">
         <div
           className="rounded p-8 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Đặt sample đầu tiên ngay hôm nay</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">

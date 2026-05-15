@@ -44,7 +44,7 @@ export function Vr360Frame({
 
   const html = `
 <style>
-  .csr-vr-btn{padding:9px 16px;background:#005f6b;color:#fff;border:0;border-radius:3px;font-weight:bold;cursor:pointer;font-size:13px;white-space:nowrap;font-family:inherit;transition:background .15s}
+  .csr-vr-btn{padding:9px 16px;background:var(--color-brand);color:#fff;border:0;border-radius:3px;font-weight:bold;cursor:pointer;font-size:13px;white-space:nowrap;font-family:inherit;transition:background .15s}
   .csr-vr-btn:hover{background:#066875}
 
   #csr-vr-wrap{position:relative;width:100%;height:700px;background:#000;border:1px solid #e5e7eb;border-radius:4px;overflow:hidden}
@@ -52,10 +52,10 @@ export function Vr360Frame({
   #csr-vr-wrap iframe{width:100%;height:100%;border:0;display:block}
   body.csr-vr-lock{overflow:hidden}
 
-  .csr-vr-ov1{position:absolute;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;border-radius:6px;z-index:10}
-  .csr-vr-ov2{position:absolute;bottom:0;right:0;width:140px;height:100px;background:linear-gradient(135deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;text-align:center;line-height:1.3;border-radius:6px;z-index:10}
+  .csr-vr-ov1{position:absolute;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,var(--color-brand),#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;border-radius:6px;z-index:10}
+  .csr-vr-ov2{position:absolute;bottom:0;right:0;width:140px;height:100px;background:linear-gradient(135deg,var(--color-brand),#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:14px;font-weight:bold;text-align:center;line-height:1.3;border-radius:6px;z-index:10}
 
-  .csr-vr-exit{position:absolute;top:16px;right:16px;background:#fff;color:#005f6b;padding:8px 14px;border-radius:3px;font-weight:bold;border:0;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.3);font-size:12px;display:none}
+  .csr-vr-exit{position:absolute;top:16px;right:16px;background:#fff;color:var(--color-brand);padding:8px 14px;border-radius:3px;font-weight:bold;border:0;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.3);font-size:12px;display:none}
   #csr-vr-wrap.css-fs .csr-vr-exit{display:block}
 </style>
 
@@ -140,9 +140,9 @@ export function Vr360Frame({
       '<!doctype html><html><head><meta charset="utf-8"><title>Tour 360° ' + FACTORY + '</title><style>' +
       'html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;font-family:Arial,sans-serif}' +
       'iframe{width:100%;height:100%;border:0;display:block}' +
-      '.ov1{position:fixed;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:16px;border-radius:6px;z-index:10}' +
-      '.ov2{position:fixed;bottom:0;right:0;width:140px;height:100px;background:linear-gradient(135deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;text-align:center;line-height:1.3;border-radius:6px;z-index:10}' +
-      '.cls{position:fixed;top:14px;right:14px;background:#fff;color:#005f6b;border:0;padding:8px 14px;border-radius:3px;font-weight:bold;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.4);font-size:13px}' +
+      '.ov1{position:fixed;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,var(--color-brand),#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:16px;border-radius:6px;z-index:10}' +
+      '.ov2{position:fixed;bottom:0;right:0;width:140px;height:100px;background:linear-gradient(135deg,var(--color-brand),#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:14px;text-align:center;line-height:1.3;border-radius:6px;z-index:10}' +
+      '.cls{position:fixed;top:14px;right:14px;background:#fff;color:var(--color-brand);border:0;padding:8px 14px;border-radius:3px;font-weight:bold;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.4);font-size:13px}' +
       '</style></head><body>' +
       '<iframe src="' + url + '" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>' +
       '<div class="ov1">🏭 ' + OVERLAY + '</div>' +

@@ -22,7 +22,7 @@ type Association = {
 
 const TIER_LABEL: Record<Tier, { label: string; bg: string; fg: string }> = {
   national: { label: "Cấp quốc gia", bg: "#C8102E", fg: "#fff" },
-  provincial: { label: "Cấp tỉnh", bg: "#005F6B", fg: "#fff" },
+  provincial: { label: "Cấp tỉnh", bg: "var(--color-brand)", fg: "#fff" },
   city: { label: "Cấp thành phố", bg: "#7C5A1F", fg: "#fff" },
   industry: { label: "Hiệp hội ngành", bg: "#475569", fg: "#fff" },
 };
@@ -745,7 +745,7 @@ export default function KetNoiPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
@@ -923,7 +923,7 @@ export default function KetNoiPage() {
             <div key={q.quarter} className="bg-paper border border-line rounded overflow-hidden">
               <div
                 className="px-4 py-3 text-white"
-                style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+                style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
               >
                 <b className="block text-[16px] font-extrabold">{q.quarter} 2026</b>
                 <span className="text-[11px] opacity-85">{q.events.length} sự kiện</span>
@@ -1019,7 +1019,7 @@ export default function KetNoiPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12 mb-10 max-md:mt-9">
         <div
           className="rounded p-8 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Tham gia con đường tơ lụa số</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">

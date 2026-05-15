@@ -19,7 +19,7 @@ const TOPIC_CATEGORIES = [
     icon: "🛒",
     title: "Tìm sản phẩm & Đặt hàng",
     desc: "RFQ, MOQ, sample order, OEM/ODM, AI matching",
-    color: "#005F6B",
+    color: "var(--color-brand)",
     articles: [
       { label: "Cách gửi RFQ hiệu quả", href: "/info/find-products" },
       { label: "Hướng dẫn nhập khẩu 6 bước", href: "/info/import-guide" },
@@ -31,7 +31,7 @@ const TOPIC_CATEGORIES = [
     icon: "💳",
     title: "Thanh toán & Bảo đảm Giao dịch",
     desc: "T/T trung gian, hoàn tiền, dispute resolution, payment methods",
-    color: "#E85D4E",
+    color: "var(--color-accent)",
     articles: [
       { label: "Bảo đảm Giao dịch (Trung gian) là gì?", href: "/info/payment-protection" },
       { label: "Phương thức thanh toán T/T", href: "/info/payment-protection" },
@@ -230,7 +230,7 @@ export default function HelpPage() {
       {/* === HERO + Search ============================================== */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
       >
         <div className="max-w-[1100px] mx-auto px-4 py-12 max-md:py-7 text-center">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
@@ -380,7 +380,7 @@ export default function HelpPage() {
         {/* === Contact Channels ========================================== */}
         <div
           className="rounded p-6 text-white max-md:p-4"
-          style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-dark) 100%)" }}
         >
           <h2 className="text-[18px] font-bold mb-1 max-md:text-[16px]">Vẫn cần hỗ trợ trực tiếp?</h2>
           <p className="text-[12.5px] opacity-85 mb-4 max-md:text-[12px]">
