@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+import { ContactForm } from "./_components/ContactForm";
 
 type Office = {
   id: string;
@@ -624,6 +625,9 @@ export default function LienHePage() {
           ))}
         </div>
       </div>
+
+      {/* === Contact form (D7 Sprint 9A Pha 2a) =============================== */}
+      <ContactForm />
 
       {/* === FAQ + CTA ===================================================== */}
       <div className="max-w-[1100px] mx-auto px-4 mb-10">
