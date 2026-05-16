@@ -1,0 +1,64 @@
+# Staging compose cho VM csr-app (Medusa + Storefront + Payload)
+# Stateless tier — kết nối tới csr-data (10.10.1.11) + csr-storage (10.10.1.12)
+# Bridge: vmbr10 — IP 10.10.1.10
+
+services:
+  medusa:
+    image: ghcr.io/phuongpham3141/csr-medusa:staging
+    container_name: csr-medusa-staging
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@10.10.1.11:5432/medusa?sslmode=disable
+      REDIS_URL: redis://default:${REDIS_PASSWORD}@10.10.1.11:6379
+      JWT_SECRET: ${JWT_SECRET}
+      COOKIE_SECRET: ${COOKIE_SECRET}
+      TENANT_ID: ${TENANT_ID}
+      MEDUSA_ADMIN_BACKEND_URL: ${MEDUSA_ADMIN_BACKEND_URL}
+      # MinIO + Meilisearch (csr-storage)
+      MINIO_ENDPOINT: http://10.10.1.12:9000
+      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER}
+      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD}
+      MEILI_HOST: http://10.10.1.12:7700
+      MEILI_API_KEY: ${MEILI_MASTER_KEY}
+    ports:
+      - "10.10.1.10:9000:9000"
+      - "10.10.1.10:7001:7001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  storefront:
+    image: ghcr.io/phuongpham3141/csr-storefront:staging
+    container_name: csr-storefront-staging
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: ${MEDUSA_BACKEND_URL}
+      NEXT_PUBLIC_TENANT: ${TENANT_ID}
+      NEXT_PUBLIC_TENANT_DOMAIN: ${TENANT_DOMAIN}
+    ports:
+      - "10.10.1.10:3000:3000"
+    restart: unless-stopped
+    depends_on:
+      medusa:
+        condition: service_healthy
+
+  payload:
+    image: ghcr.io/phuongpham3141/csr-payload:staging
+    container_name: csr-payload-staging
+    environment:
+      NODE_ENV: production
+      DATABASE_URI: postgresql://postgres:${POSTGRES_PASSWORD}@10.10.1.11:5432/payload?sslmode=disable
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_SERVER_URL: ${PAYLOAD_PUBLIC_SERVER_URL}
+    ports:
+      - "10.10.1.10:3001:3001"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: csr-network-staging
+    external: true

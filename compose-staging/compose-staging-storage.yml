@@ -1,0 +1,47 @@
+# Staging compose cho VM csr-storage (MinIO + Meilisearch)
+# Object storage + search engine
+# Bridge: vmbr10 — IP 10.10.1.12
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: csr-minio-staging
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_BROWSER_REDIRECT_URL: https://minio.staging.cybersilkroads.vn
+    volumes:
+      - /rpool-data/cybersilkroads/minio:/data
+    ports:
+      - "10.10.1.12:9000:9000"
+      - "10.10.1.12:9001:9001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.10
+    container_name: csr-meilisearch-staging
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_ENV: production
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - /rpool-data/cybersilkroads/meilisearch:/meili_data
+    ports:
+      - "10.10.1.12:7700:7700"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:7700/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  default:
+    name: csr-network-staging
+    external: true

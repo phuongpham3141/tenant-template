@@ -1,0 +1,48 @@
+# Staging compose cho VM csr-obs (Loki + Grafana + Prometheus)
+# Observability stack
+# Bridge: vmbr10 — IP 10.10.1.13
+
+services:
+  loki:
+    image: grafana/loki:2.9.0
+    container_name: csr-loki-staging
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - /rpool-data/cybersilkroads/loki:/loki
+    ports:
+      - "10.10.1.13:3100:3100"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.0.0
+    container_name: csr-grafana-staging
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-piechart-panel
+      GF_SERVER_DOMAIN: metrics.staging.cybersilkroads.vn
+    volumes:
+      - /rpool-data/cybersilkroads/grafana:/var/lib/grafana
+    ports:
+      - "10.10.1.13:3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - loki
+      - prometheus
+
+  prometheus:
+    image: prom/prometheus:v2.45.0
+    container_name: csr-prometheus-staging
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=30d
+    volumes:
+      - /rpool-data/cybersilkroads/prometheus:/prometheus
+    ports:
+      - "10.10.1.13:9090:9090"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: csr-network-staging
+    external: true
