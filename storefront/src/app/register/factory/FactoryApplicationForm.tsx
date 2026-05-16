@@ -74,7 +74,7 @@ export function FactoryApplicationForm() {
         headers: {
           "Content-Type": "application/json",
           "x-publishable-api-key": PUBLISHABLE_KEY,
-          "x-tenant-id": "cybersilkroads",
+          "x-tenant-id": "csr",
         },
         body: JSON.stringify(body),
       })

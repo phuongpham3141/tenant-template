@@ -5,7 +5,7 @@ const BACKEND_URL =
   process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL ??
   "http://api.huayuesc.local"
 const PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ?? ""
-const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID ?? "cybersilkroads"
+const TENANT_ID = process.env.NEXT_PUBLIC_TENANT_ID ?? "csr"
 
 export interface ContactFormData {
   name: string

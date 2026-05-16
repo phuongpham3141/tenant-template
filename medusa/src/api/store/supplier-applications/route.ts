@@ -38,7 +38,7 @@ export async function POST(req: MedusaRequest, res: MedusaResponse) {
     }
   }
 
-  const tenantId = (req.headers["x-tenant-id"] as string) || "cybersilkroads"
+  const tenantId = (req.headers["x-tenant-id"] as string) || "csr"
 
   try {
     const apps = await supplierAppService.createSupplierApplications([
