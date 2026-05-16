@@ -326,7 +326,7 @@ export default function LienHePage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%)" }}
       >
         <div className="max-w-[1100px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
@@ -629,7 +629,7 @@ export default function LienHePage() {
       <div className="max-w-[1100px] mx-auto px-4 mb-10">
         <div
           className="rounded p-7 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-dark) 100%)" }}
         >
           <h3 className="text-[24px] font-bold mb-2 max-md:text-[20px]">Cần tư vấn doanh nghiệp 1-1?</h3>
           <p className="text-[13.5px] opacity-85 mb-5 max-w-[640px] mx-auto leading-relaxed">

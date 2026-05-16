@@ -47,7 +47,7 @@ const COMPLAINT_TYPES = [
   },
   {
     icon: "📦",
-    color: "#0E7490",
+    color: "var(--color-teal-dark)",
     title: "Hư hỏng do đóng gói",
     desc: "Hư hỏng do NCC đóng gói sai chuẩn — carton ướt, không pallet, không corner protector cho hàng fragile, không bubble wrap...",
     successRate: "85%",
@@ -115,7 +115,7 @@ const ESCALATION_TIERS = [
   {
     tier: "3",
     label: "Trọng tài VIAC / CIETAC",
-    color: "#A21CAF",
+    color: "var(--color-purple)",
     duration: "60-180 ngày",
     bgRate: "7%",
     description: "Nếu một bên không chấp nhận phán quyết tier 2, có quyền đưa ra trọng tài chính thức — VIAC (Vietnam International Arbitration Centre) cho luật Việt Nam, hoặc CIETAC (China International Economic and Trade Arbitration Commission) cho luật Trung Quốc, theo điều khoản đã chọn trong PI. Phán quyết trọng tài có giá trị thi hành quốc tế (Công ước New York 1958).",
@@ -314,7 +314,7 @@ export default function KhieuNaiPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
@@ -660,7 +660,7 @@ export default function KhieuNaiPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12 mb-10">
         <div
           className="rounded p-8 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Cần mở khiếu nại ngay bây giờ?</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">

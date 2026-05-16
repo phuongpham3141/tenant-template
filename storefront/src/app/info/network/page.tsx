@@ -82,7 +82,7 @@ const ASSOCIATIONS: Association[] = [
     mouStatus: "MOU 2025",
   },
   {
-    region: "VN", tier: "industry", flag: "🇻🇳", abbr: "VEIA", color: "#0E7490",
+    region: "VN", tier: "industry", flag: "🇻🇳", abbr: "VEIA", color: "var(--color-teal-dark)",
     name: "Hiệp hội Doanh nghiệp Điện tử Việt Nam",
     nameEn: "Vietnam Electronic Industries Association",
     domain: "veia.org.vn",
@@ -172,7 +172,7 @@ const ASSOCIATIONS: Association[] = [
     mouStatus: "MOU 2025",
   },
   {
-    region: "VN", tier: "industry", flag: "🇻🇳", abbr: "VPA-PORTS", color: "#0E7490",
+    region: "VN", tier: "industry", flag: "🇻🇳", abbr: "VPA-PORTS", color: "var(--color-teal-dark)",
     name: "Hiệp hội Cảng biển Việt Nam",
     nameEn: "Vietnam Seaports Association",
     domain: "vpa.org.vn",
@@ -237,7 +237,7 @@ const ASSOCIATIONS: Association[] = [
     mouStatus: "MOU 2025",
   },
   {
-    region: "CN", tier: "industry", flag: "🇨🇳", abbr: "CCCME", color: "#0E7490",
+    region: "CN", tier: "industry", flag: "🇨🇳", abbr: "CCCME", color: "var(--color-teal-dark)",
     name: "Phòng Thương mại Xuất nhập khẩu Cơ khí và Điện tử",
     nameEn: "China Chamber of Commerce for Import & Export of Machinery and Electronic Products · 中国机电产品进出口商会",
     domain: "cccme.org.cn",
@@ -299,7 +299,7 @@ const ASSOCIATIONS: Association[] = [
     mouStatus: "MOU 2024",
   },
   {
-    region: "CN", tier: "provincial", flag: "🇨🇳", abbr: "GX-CCPIT", color: "#A21CAF",
+    region: "CN", tier: "provincial", flag: "🇨🇳", abbr: "GX-CCPIT", color: "var(--color-purple)",
     name: "Hội đồng Xúc tiến Thương mại Quảng Tây",
     nameEn: "CCPIT Guangxi Sub-Council · 广西国际贸易促进委员会",
     domain: "ccpitgx.org.cn",
@@ -595,7 +595,7 @@ function LogoCard({ a }: { a: Association }) {
   return (
     <article
       className="group bg-paper border rounded overflow-hidden hover:shadow-md transition flex flex-col"
-      style={a.borderProvince ? { borderColor: "#A21CAF", borderWidth: 2 } : undefined}
+      style={a.borderProvince ? { borderColor: "var(--color-purple)", borderWidth: 2 } : undefined}
     >
       {/* Header — accent stripe with flag */}
       <div className="px-4 pt-4 pb-3 border-b border-line flex items-center gap-3" style={{ background: `linear-gradient(135deg, ${a.color}10, ${a.color}03)` }}>
@@ -745,7 +745,7 @@ export default function KetNoiPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
@@ -813,7 +813,7 @@ export default function KetNoiPage() {
 
       {/* === Border highlight =============================================== */}
       <div className="max-w-[1200px] mx-auto px-4 mt-7">
-        <div className="rounded p-5 border-2" style={{ borderColor: "#A21CAF", background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
+        <div className="rounded p-5 border-2" style={{ borderColor: "var(--color-purple)", background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
           <div className="flex items-start gap-4 max-md:flex-col">
             <div className="w-14 h-14 rounded-full flex items-center justify-center text-[26px] flex-shrink-0" style={{ background: "#A21CAF20" }}>
               🌐
@@ -1019,7 +1019,7 @@ export default function KetNoiPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12 mb-10 max-md:mt-9">
         <div
           className="rounded p-8 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Tham gia con đường tơ lụa số</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">

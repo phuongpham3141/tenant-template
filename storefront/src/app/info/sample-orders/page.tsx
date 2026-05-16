@@ -47,7 +47,7 @@ const PROCESS_STEPS = [
     icon: "🔍",
     title: "Tìm sản phẩm & request sample",
     duration: "5 phút",
-    color: "#0E7490",
+    color: "var(--color-teal-dark)",
     desc: "Trên trang chi tiết sản phẩm, click nút 'Yêu cầu mẫu' — form auto-fill productId, NCC info, MOQ price tham chiếu. Buyer chỉ cần điền địa chỉ giao hàng và lựa chọn variant nếu cần.",
     actions: [
       "Click 'Yêu cầu mẫu' trên product detail",
@@ -101,7 +101,7 @@ const PROCESS_STEPS = [
     icon: "📦",
     title: "Trung tâm Mẫu gom hàng tại Quảng Châu",
     duration: "1-3 ngày",
-    color: "#A21CAF",
+    color: "var(--color-purple)",
     desc: "NCC ship sample về kho CSR Trung tâm Mẫu tại Quảng Châu (cách Foshan 25 km, Đông Quan 80 km — đa số NCC đã ký giao trong 24-48h). CSR gom 8-15 sample mỗi tuần thành 1 master shipment air về Hà Nội — tiết kiệm 50-60% cước cho buyer.",
     actions: [
       "Trung tâm Mẫu mở thứ 2 - thứ 6, ship batch thứ 6 hàng tuần",
@@ -129,7 +129,7 @@ const PROCESS_STEPS = [
 const SAMPLE_TYPES = [
   {
     type: "Standard",
-    color: "#0E7490",
+    color: "var(--color-teal-dark)",
     icon: "📦",
     fee: "$30-100",
     leadtime: "8-10 ngày",
@@ -151,7 +151,7 @@ const SAMPLE_TYPES = [
   },
   {
     type: "OEM",
-    color: "#A21CAF",
+    color: "var(--color-purple)",
     icon: "🏷",
     fee: "$80-300 + mock-up",
     leadtime: "12-21 ngày",
@@ -327,7 +327,7 @@ export default function DatMauPage() {
       {/* === HERO ============================================================ */}
       <section
         className="relative overflow-hidden text-white"
-        style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+        style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
       >
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gold blur-3xl" />
@@ -692,7 +692,7 @@ export default function DatMauPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12 mb-10">
         <div
           className="rounded p-8 text-white text-center max-md:p-5"
-          style={{ background: "linear-gradient(135deg, #002557 0%, var(--color-brand) 50%, #001A3F 100%)" }}
+          style={{ background: "linear-gradient(135deg, var(--color-navy) 0%, var(--color-brand) 50%, var(--color-navy-dark) 100%)" }}
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Đặt sample đầu tiên ngay hôm nay</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
