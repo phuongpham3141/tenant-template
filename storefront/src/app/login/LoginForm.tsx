@@ -88,7 +88,7 @@ export function LoginForm() {
           />
           Ghi nhớ đăng nhập
         </label>
-        <Link href="/info/contact" className="text-brand hover:underline cursor-pointer">
+        <Link href="/forgot-password" className="text-brand hover:underline cursor-pointer">
           Quên mật khẩu?
         </Link>
       </div>
