@@ -26,6 +26,11 @@
   --color-red:       #B81827;  /* Chinese red — accent hover / danger states */
   --color-cream:     #FCFBF8;  /* warm cream hover surface */
 
+  /* Sprint 6 Pha 3 — info pages cluster tokens */
+  --color-navy:      #002557;  /* 8 lần dùng — info network primary */
+  --color-navy-dark: #001A3F;  /* 8 lần dùng — info hover state */
+  --color-teal-dark: #0E7490;  /* 6 lần dùng — info accent variant */
+
   --font-sans: var(--font-inter), Arial, sans-serif;
 }
 
