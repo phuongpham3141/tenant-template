@@ -79,5 +79,6 @@ module.exports = defineConfig({
     { resolve: "./src/modules/vn-sourcing" },
     { resolve: "./src/modules/communication" },
     { resolve: "./src/modules/ai-livestream" },
+    { resolve: "./src/modules/supplier_application" },
   ],
 })
