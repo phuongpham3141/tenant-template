@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { LOGIN_PROVIDERS } from "@/components/icons/social";
+import { LoginForm } from "./LoginForm";
 
 /**
  * /login — full standalone page (used when user lands here directly).
@@ -77,44 +78,7 @@ export default function LoginPage() {
           </div>
 
           {/* Form */}
-          <form action="/buyer-center" method="get" className="space-y-3">
-            <div>
-              <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                Email hoặc số điện thoại
-              </label>
-              <input
-                name="login"
-                placeholder="email@example.com hoặc 09xx xxx xxx"
-                className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
-              />
-            </div>
-            <div>
-              <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                Mật khẩu
-              </label>
-              <input
-                name="password"
-                type="password"
-                placeholder="••••••••"
-                className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
-              />
-            </div>
-            <div className="flex justify-between items-center text-[12px]">
-              <label className="flex items-center gap-1.5 text-mute cursor-pointer">
-                <input type="checkbox" className="accent-brand" />
-                Ghi nhớ đăng nhập
-              </label>
-              <Link href="/info/quen-mat-khau" className="text-brand hover:underline cursor-pointer">
-                Quên mật khẩu?
-              </Link>
-            </div>
-            <button
-              type="submit"
-              className="w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light"
-            >
-              Đăng nhập
-            </button>
-          </form>
+          <LoginForm />
 
           {/* Register CTAs */}
           <div className="mt-6 pt-5 border-t border-line">
