@@ -1,31 +1,27 @@
-import type { MedusaContainer } from "@medusajs/framework"
-import { ESCROW_MODULE } from "../modules/escrow"
-import type EscrowService from "../modules/escrow/service"
-import { adminContext } from "../lib/tenant/context"
-import { IntegrationError } from "../lib/errors"
+/**
+ * FX snapshot poller job (stub Sprint 10 Pha 2c v2 D23-EXPANDED Option C2)
+ *
+ * STATUS: No-op. Original job called escrow.captureFxSnapshot (dropped Bước 2).
+ *
+ * Architectural gap: schema fx_snapshot model = date-range rates set (10 cols
+ * với rates jsonb + applied_from_at/until_at + buffer_pct), original job
+ * captured single rate per call — incompatible patterns.
+ *
+ * Sprint 11+ TODO: Re-enable khi escrow service rewrite implements
+ * proper FX snapshot model. Original PAIRS: USD-VND/CNY, VND-USD, CNY-USD/VND,
+ * EUR-USD, JPY-USD. Schedule: every 6 hours (0 *​/6 * * *).
+ *
+ * Pattern reference: P10-PHA2C-ESCALATE-D23-EXPANDED.md.
+ */
 
-const FX_API_URL = process.env.FX_API_URL ?? "https://api.exchangerate.host/latest"
-const PAIRS: Array<[string, string]> = [
-  ["USD", "VND"], ["USD", "CNY"], ["VND", "USD"], ["CNY", "USD"], ["CNY", "VND"], ["EUR", "USD"], ["JPY", "USD"],
-]
+import type { MedusaContainer } from "@medusajs/framework"
 
 export default async function fxSnapshotPoller(container: MedusaContainer) {
-  const escrow = container.resolve<EscrowService>(ESCROW_MODULE)
-  const tenantId = process.env.SYSTEM_TENANT_ID
-  if (!tenantId) return
-  for (const [from, to] of PAIRS) {
-    try {
-      const res = await fetch(`${FX_API_URL}?base=${from}&symbols=${to}`)
-      if (!res.ok) throw new IntegrationError("fx-api", `${res.status}`)
-      const json = await res.json() as any
-      const rate = json.rates?.[to]
-      if (rate && typeof rate === "number") {
-        await escrow.captureFxSnapshot(adminContext(tenantId), from, to, rate, "exchangerate.host")
-      }
-    } catch (err) {
-      container.resolve("logger").warn(`fx-snapshot-poller: failed ${from}->${to}: ${err}`)
-    }
-  }
+  // No-op Sprint 10 Pha 2c v2 D23-EXPANDED Option C2.
+  // Sprint 11+: re-enable with escrow service rewrite.
+  container.resolve("logger").debug(
+    "[fx-snapshot-poller] No-op stub (Sprint 10 Pha 2c v2 D23-EXPANDED defer Sprint 11+)"
+  )
 }
 
 export const config = {

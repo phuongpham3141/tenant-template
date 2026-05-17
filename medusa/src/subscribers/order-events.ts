@@ -1,6 +1,4 @@
 import type { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { ESCROW_MODULE } from "../modules/escrow"
-import type EscrowService from "../modules/escrow/service"
 import { SEARCH_PLATFORM_MODULE } from "../modules/search-platform"
 import type SearchPlatformService from "../modules/search-platform/service"
 import { NOTIFICATION_BUS_MODULE } from "../modules/notification-bus"
@@ -34,9 +32,14 @@ export default async function orderEventsHandler({ event, container }: Subscribe
     }
   }
 
+  // Sprint 10 Pha 2c v2 D23-EXPANDED Option C2 — order.payment_funded → escrow.fundEscrow stubbed.
+  // Original: const escrow = container.resolve<EscrowService>(ESCROW_MODULE)
+  //           await escrow.fundEscrow(ctx, escrow_id, payment_tx_id)
+  // Sprint 11+ TODO: re-enable khi escrow service rewrite.
   if (event.name === "order.payment_funded") {
-    const escrow = container.resolve<EscrowService>(ESCROW_MODULE)
-    await escrow.fundEscrow(ctx, (event.data as any).escrow_id, (event.data as any).payment_tx_id)
+    container.resolve("logger").debug(
+      `[order-events] order.payment_funded no-op for order ${data.id} (escrow service drop)`
+    )
   }
 }
 
