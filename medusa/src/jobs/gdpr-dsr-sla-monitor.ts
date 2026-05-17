@@ -1,29 +1,36 @@
+/**
+ * GDPR DSR SLA monitor (Sprint 11 Pha 2b D28 stubbed)
+ *
+ * STATUS: Notification dispatch commented out do notification-bus drop.
+ *
+ * Original job: query GDPR data_subject_requests breaching SLA + email DPO.
+ * Now: query only (preserve audit trail), no email dispatch.
+ *
+ * Sprint 12+ TODO: Re-enable email when notification-bus rewrite.
+ */
 import type { MedusaContainer } from "@medusajs/framework"
 import { queryT } from "../lib/db/pg"
-import { NOTIFICATION_BUS_MODULE } from "../modules/notification-bus"
-import type NotificationBusService from "../modules/notification-bus/service"
 import { adminContext } from "../lib/tenant/context"
 
 export default async function gdprDsrSlaMonitor(container: MedusaContainer) {
-  const notif = container.resolve<NotificationBusService>(NOTIFICATION_BUS_MODULE)
-  const tenants = await queryT<{ id: string }>(adminContext(process.env.SYSTEM_TENANT_ID ?? ""), `SELECT id FROM admin.tenant WHERE status = 'active'`, []).catch(() => [])
+  const tenants = await queryT<{ id: string }>(
+    adminContext(process.env.SYSTEM_TENANT_ID ?? ""),
+    "SELECT id FROM admin.tenant WHERE status = 'active'",
+    []
+  ).catch(() => [])
+
   for (const t of tenants) {
     const ctx = adminContext(t.id)
-    const breached = await queryT<any>(
+    const breached = await queryT<{ id: string; user_id: string }>(
       ctx,
-      `SELECT id, user_id FROM gdpr.data_subject_request
-       WHERE status IN ('received','verifying_identity','in_progress')
-         AND sla_due_at < NOW() + INTERVAL '5 days'`, []
+      "SELECT id, user_id FROM gdpr.data_subject_request WHERE status IN ('received','verifying_identity','in_progress') AND sla_due_at < NOW() + INTERVAL '5 days'",
+      []
     ).catch(() => [])
-    for (const r of breached) {
-      await notif.send(ctx, {
-        channel: "email",
-        toAddress: process.env.DPO_EMAIL ?? "dpo@huayuesc.vn",
-        templateCode: "gdpr_dsr_sla_warning",
-        variables: { dsr_id: r.id, user_id: r.user_id },
-        priority: "critical",
-        groupingKey: `gdpr_sla_${r.id}`,
-      }).catch(() => undefined)
+
+    if (breached.length > 0) {
+      container.resolve("logger").warn(
+        \`[gdpr-dsr-sla-monitor] \${breached.length} DSR breaching SLA for tenant \${t.id} (notification dispatch stubbed Sprint 11 Pha 2b)\`
+      )
     }
   }
 }

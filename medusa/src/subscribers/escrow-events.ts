@@ -1,36 +1,16 @@
 import type { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { NOTIFICATION_BUS_MODULE } from "../modules/notification-bus"
-import type NotificationBusService from "../modules/notification-bus/service"
-import { adminContext } from "../lib/tenant/context"
+
+// Sprint 11 Pha 2b D28: notification-bus drop, all 3 notif.send calls stubbed.
+// Original: escrow.funded supplier email + escrow.milestone.released supplier email +
+// escrow.refunded buyer email.
+// Note: Pha 2c v2 (Sprint 10) already dropped escrow service. This subscriber
+// further stubs notification side. No active escrow events expected runtime.
 
 export default async function escrowEventsHandler({ event, container }: SubscriberArgs<{ id: string; tenant_id: string; buyer_user_id?: string; supplier_id?: string; milestone_id?: string; reason?: string }>) {
-  const ctx = adminContext(event.data.tenant_id)
-  const notif = container.resolve<NotificationBusService>(NOTIFICATION_BUS_MODULE)
-
-  if (event.name === "escrow.funded") {
-    if (event.data.supplier_id) {
-      await notif.send(ctx, {
-        channel: "email", toUserId: event.data.supplier_id,
-        templateCode: "escrow_funded_supplier", variables: { escrow_id: event.data.id }, priority: "high",
-      })
-    }
-  }
-  if (event.name === "escrow.milestone.released") {
-    if (event.data.supplier_id) {
-      await notif.send(ctx, {
-        channel: "email", toUserId: event.data.supplier_id,
-        templateCode: "escrow_milestone_released", variables: { escrow_id: event.data.id, milestone_id: event.data.milestone_id },
-      })
-    }
-  }
-  if (event.name === "escrow.refunded") {
-    if (event.data.buyer_user_id) {
-      await notif.send(ctx, {
-        channel: "email", toUserId: event.data.buyer_user_id,
-        templateCode: "escrow_refunded_buyer", variables: { escrow_id: event.data.id, reason: event.data.reason }, priority: "high",
-      })
-    }
-  }
+  container.resolve("logger").debug(
+    \`[escrow-events] event \${event.name} for \${event.data.id} (notification + escrow service both stubbed)\`
+  )
+  // Sprint 12+ TODO: re-enable when notification-bus AND escrow rewrite.
 }
 
 export const config: SubscriberConfig = {

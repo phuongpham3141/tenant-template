@@ -1,27 +1,16 @@
 import type { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { NOTIFICATION_BUS_MODULE } from "../modules/notification-bus"
-import type NotificationBusService from "../modules/notification-bus/service"
-import { LIVE_COMMERCE_MODULE } from "../modules/live-commerce"
-import type LiveCommerceService from "../modules/live-commerce/service"
-import { adminContext } from "../lib/tenant/context"
+
+// Sprint 11 Pha 2b D28: notification-bus drop, sendBatch stubbed.
+// Original: livestream.starting_soon → push notification batch to followers.
+// PRESERVED: livestream.ended hook reserved for future analytics rollup.
 
 export default async function livestreamEventsHandler({ event, container }: SubscriberArgs<{ id: string; tenant_id: string; supplier_id?: string; follower_ids?: string[] }>) {
-  const ctx = adminContext(event.data.tenant_id)
-  const notif = container.resolve<NotificationBusService>(NOTIFICATION_BUS_MODULE)
-
   if (event.name === "livestream.starting_soon") {
-    const followers = event.data.follower_ids ?? []
-    await notif.sendBatch(ctx, followers.map((uid) => ({
-      channel: "push" as const, toUserId: uid, templateCode: "livestream_starting_soon",
-      variables: { stream_id: event.data.id }, priority: "high" as const,
-      groupingKey: `live_starting_${event.data.id}_${uid}`,
-    })))
+    container.resolve("logger").debug(
+      \`[livestream-events] livestream.starting_soon \${event.data.id} \${event.data.follower_ids?.length ?? 0} followers (notification dispatch stubbed Sprint 11 Pha 2b)\`
+    )
   }
-
-  if (event.name === "livestream.ended") {
-    const svc = container.resolve<LiveCommerceService>(LIVE_COMMERCE_MODULE)
-    void svc // future: post-stream analytics rollup
-  }
+  // livestream.ended hook reserved for future LiveCommerceService analytics
 }
 
 export const config: SubscriberConfig = {

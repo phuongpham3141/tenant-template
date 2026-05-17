@@ -1,7 +1,7 @@
 import type { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { NOTIFICATION_BUS_MODULE } from "../modules/notification-bus"
-import type NotificationBusService from "../modules/notification-bus/service"
-import { adminContext } from "../lib/tenant/context"
+
+// Sprint 11 Pha 2b D28: notification-bus drop, all 3 notif.send calls stubbed.
+// Original: ai_livestream quota_warning + quota_paused + persona_ready emails.
 
 interface EventData {
   id: string
@@ -13,31 +13,10 @@ interface EventData {
 }
 
 export default async function aiLivestreamEventsHandler({ event, container }: SubscriberArgs<EventData>) {
-  const ctx = adminContext(event.data.tenant_id)
-  const notif = container.resolve<NotificationBusService>(NOTIFICATION_BUS_MODULE)
-
-  if (event.name === "ai_livestream.quota_warning" && event.data.supplier_id) {
-    await notif.send(ctx, {
-      channel: "email", toUserId: event.data.supplier_id,
-      templateCode: "ai_livestream_quota_warning",
-      variables: { percent_used: event.data.percent_used }, priority: "high",
-      groupingKey: `quota_${event.data.tenant_id}_${new Date().toISOString().slice(0, 10)}`,
-    })
-  }
-  if (event.name === "ai_livestream.quota_paused" && event.data.supplier_id) {
-    await notif.send(ctx, {
-      channel: "email", toUserId: event.data.supplier_id,
-      templateCode: "ai_livestream_quota_paused",
-      variables: { stream_id: event.data.stream_id }, priority: "critical",
-    })
-  }
-  if (event.name === "ai_livestream.persona_ready" && event.data.supplier_id) {
-    await notif.send(ctx, {
-      channel: "email", toUserId: event.data.supplier_id,
-      templateCode: "ai_persona_training_complete",
-      variables: { persona_id: event.data.persona_id },
-    })
-  }
+  container.resolve("logger").debug(
+    \`[ai-livestream-events] event \${event.name} for \${event.data.id} (notification dispatch stubbed Sprint 11 Pha 2b)\`
+  )
+  // Sprint 12+ TODO: re-enable when notification-bus rewrite.
 }
 
 export const config: SubscriberConfig = {
