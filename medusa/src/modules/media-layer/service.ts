@@ -1,8 +1,28 @@
+/**
+ * Media-layer module service (Sprint 11 Pha 2e Module 1 D-PARTIAL drop)
+ *
+ * D37 Path D-partial: dropped 3 methods touching media.processing_job (MISSING).
+ *
+ * DROPPED methods:
+ * - queueProcessing (INSERT INTO media.processing_job — MISSING)
+ * - markJobCompleted (UPDATE media.processing_job — MISSING)
+ * - markJobFailed (UPDATE media.processing_job — MISSING)
+ * - mapJob helper, ProcessingJob type
+ *
+ * PRESERVED methods (4 functional):
+ * - register (INSERT INTO media.media_asset — EXISTS)
+ * - addVariant (INSERT INTO media.media_variant — EXISTS)
+ * - findByOwner (SELECT media.media_asset)
+ * - archive (UPDATE media.media_asset)
+ *
+ * Sprint 12+ TODO: Re-implement processing pipeline when media processing
+ * feature drives (transcode, thumbnail, watermark, AI tagging, moderation).
+ */
+
 import { MedusaService } from "@medusajs/framework/utils"
 import { queryT, type TenantContext } from "../../lib/db/pg"
 import { emitAudit } from "../../lib/audit/emit"
-import { NotFoundError } from "../../lib/errors"
-import type { MediaAsset, MediaVariant, ProcessingJob } from "./types"
+import type { MediaAsset, MediaVariant } from "./types"
 
 class MediaLayerService extends MedusaService({}) {
   async register(ctx: TenantContext, input: Omit<MediaAsset, "id" | "tenantId" | "createdAt" | "status">): Promise<MediaAsset> {
@@ -37,38 +57,6 @@ class MediaLayerService extends MedusaService({}) {
     return mapVariant(rows[0])
   }
 
-  async queueProcessing(ctx: TenantContext, mediaAssetId: string, jobType: ProcessingJob["jobType"]): Promise<ProcessingJob> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO media.processing_job (id, tenant_id, media_asset_id, job_type, status, output_asset_ids, created_at, updated_at)
-       VALUES (public.uuidv7(), $1, $2, $3, 'queued', '{}', NOW(), NOW()) RETURNING *`,
-      [ctx.tenantId, mediaAssetId, jobType]
-    )
-    return mapJob(rows[0])
-  }
-
-  async markJobCompleted(ctx: TenantContext, jobId: string, outputAssetIds: string[]): Promise<ProcessingJob> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE media.processing_job SET status = 'completed', completed_at = NOW(), output_asset_ids = $1::uuid[], updated_at = NOW()
-       WHERE id = $2 AND tenant_id = $3 RETURNING *`,
-      [outputAssetIds, jobId, ctx.tenantId]
-    )
-    if (!rows[0]) throw new NotFoundError("ProcessingJob", jobId)
-    await queryT(ctx, `UPDATE media.media_asset SET status = 'ready' WHERE id = $1`, [rows[0].media_asset_id])
-    return mapJob(rows[0])
-  }
-
-  async markJobFailed(ctx: TenantContext, jobId: string, error: string): Promise<ProcessingJob> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE media.processing_job SET status = 'failed', completed_at = NOW(), error_message = $1, updated_at = NOW()
-       WHERE id = $2 AND tenant_id = $3 RETURNING *`,
-      [error, jobId, ctx.tenantId]
-    )
-    return mapJob(rows[0])
-  }
-
   async findByOwner(ctx: TenantContext, ownerType: string, ownerId: string): Promise<MediaAsset[]> {
     const rows = await queryT<any>(
       ctx,
@@ -100,13 +88,6 @@ function mapVariant(r: any): MediaVariant {
     storageKey: r.storage_key, cdnUrl: r.cdn_url,
     width: r.width, height: r.height, bitrateKbps: r.bitrate_kbps,
     fileSizeBytes: BigInt(r.file_size_bytes), format: r.format,
-  }
-}
-function mapJob(r: any): ProcessingJob {
-  return {
-    id: r.id, mediaAssetId: r.media_asset_id, jobType: r.job_type, status: r.status,
-    startedAt: r.started_at, completedAt: r.completed_at,
-    errorMessage: r.error_message, outputAssetIds: r.output_asset_ids ?? [],
   }
 }
 

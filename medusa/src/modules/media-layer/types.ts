@@ -1,3 +1,10 @@
+/**
+ * Media-layer module types (Sprint 11 Pha 2e Module 1 D-PARTIAL)
+ *
+ * DROPPED: ProcessingJob (table missing)
+ * PRESERVED: MediaType, MediaStatus, MediaAsset, MediaVariant
+ */
+
 export type MediaType = "image" | "video" | "spin_360" | "ar" | "panorama" | "audio" | "document" | "vector_3d"
 export type MediaStatus = "uploaded" | "processing" | "ready" | "failed" | "archived"
 
@@ -31,15 +38,4 @@ export interface MediaVariant {
   bitrateKbps?: number
   fileSizeBytes: bigint
   format: string
-}
-
-export interface ProcessingJob {
-  id: string
-  mediaAssetId: string
-  jobType: "transcode" | "thumbnail" | "watermark" | "spin_360_compile" | "ai_tagging" | "moderation"
-  status: "queued" | "running" | "completed" | "failed"
-  startedAt?: Date
-  completedAt?: Date
-  errorMessage?: string
-  outputAssetIds: string[]
 }
