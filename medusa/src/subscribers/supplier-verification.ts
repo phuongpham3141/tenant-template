@@ -3,7 +3,7 @@ import { SEARCH_PLATFORM_MODULE } from "../modules/search-platform"
 import type SearchPlatformService from "../modules/search-platform/service"
 import { adminContext } from "../lib/tenant/context"
 
-// Sprint 11 Pha 2b D28: notification-bus drop, notif.send calls stubbed.
+// Sprint 11 Pha 2b D28: notification-bus drop, notif.send calls removed.
 // PRESERVED: search.indexDocument logic intact.
 
 export default async function supplierVerificationHandler({ event, container }: SubscriberArgs<{ id: string; tenant_id: string; from_tier?: number; to_tier?: number; document_id?: string; rejection_reason?: string }>) {

@@ -1,9 +1,7 @@
 /**
  * GDPR DSR SLA monitor (Sprint 11 Pha 2b D28 stubbed)
  *
- * STATUS: Notification dispatch commented out do notification-bus drop.
- *
- * Original job: query GDPR data_subject_requests breaching SLA + email DPO.
+ * STATUS: Notification dispatch removed do notification-bus drop.
  * Now: query only (preserve audit trail), no email dispatch.
  *
  * Sprint 12+ TODO: Re-enable email when notification-bus rewrite.
@@ -29,7 +27,7 @@ export default async function gdprDsrSlaMonitor(container: MedusaContainer) {
 
     if (breached.length > 0) {
       container.resolve("logger").warn(
-        \`[gdpr-dsr-sla-monitor] \${breached.length} DSR breaching SLA for tenant \${t.id} (notification dispatch stubbed Sprint 11 Pha 2b)\`
+        "[gdpr-dsr-sla-monitor] " + breached.length + " DSR breaching SLA for tenant " + t.id + " (notification dispatch stubbed Sprint 11 Pha 2b)"
       )
     }
   }

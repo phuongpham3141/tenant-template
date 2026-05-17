@@ -1,8 +1,7 @@
 /**
  * SendGrid webhook (Sprint 11 Pha 2b D28 stubbed)
  *
- * STATUS: Webhook accepts payloads to keep SendGrid happy, no-op processing.
- *
+ * Accepts payloads to keep SendGrid happy, no-op processing.
  * Sprint 12+ TODO: Re-enable when notification-bus rewrite.
  */
 import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"

@@ -22,7 +22,7 @@ export default async function orderEventsHandler({ event, container }: Subscribe
 
   if (event.name === "order.payment_funded") {
     container.resolve("logger").debug(
-      \`[order-events] order.payment_funded no-op for order \${data.id} (escrow + notification both stubbed)\`
+      "[order-events] order.payment_funded no-op for order " + data.id + " (escrow + notification both stubbed)"
     )
   }
 }

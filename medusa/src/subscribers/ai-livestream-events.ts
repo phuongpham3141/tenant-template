@@ -14,9 +14,8 @@ interface EventData {
 
 export default async function aiLivestreamEventsHandler({ event, container }: SubscriberArgs<EventData>) {
   container.resolve("logger").debug(
-    \`[ai-livestream-events] event \${event.name} for \${event.data.id} (notification dispatch stubbed Sprint 11 Pha 2b)\`
+    "[ai-livestream-events] event " + event.name + " for " + event.data.id + " (notification dispatch stubbed Sprint 11 Pha 2b)"
   )
-  // Sprint 12+ TODO: re-enable when notification-bus rewrite.
 }
 
 export const config: SubscriberConfig = {
