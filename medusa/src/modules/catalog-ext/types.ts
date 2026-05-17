@@ -47,16 +47,6 @@ export interface BuyBoxCandidate {
   reasonCodes: string[]
 }
 
-export interface CustomizationOption {
-  id: string
-  productId: string
-  optionType: "logo" | "color" | "size" | "material" | "engraving" | "packaging" | "branding" | "custom"
-  label: I18nText
-  required: boolean
-  freeOfCharge: boolean
-  upchargeMinor?: bigint
-  values?: Array<{ value: string; labelI18n: I18nText; upchargeMinor?: bigint }>
-}
 
 export interface UnitMaster {
   code: string

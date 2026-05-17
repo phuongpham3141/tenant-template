@@ -2,7 +2,7 @@ import { MedusaService } from "@medusajs/framework/utils"
 import { queryT, withTenant, type TenantContext } from "../../lib/db/pg"
 import { emitAudit } from "../../lib/audit/emit"
 import { NotFoundError, ValidationError } from "../../lib/errors"
-import type { ProductExtension, MasterProduct, BuyBoxCandidate, CustomizationOption } from "./types"
+import type { ProductExtension, MasterProduct, BuyBoxCandidate } from "./types"
 
 class CatalogExtService extends MedusaService({}) {
   async listProducts(
@@ -158,31 +158,6 @@ class CatalogExtService extends MedusaService({}) {
     }).sort((a, b) => b.score - a.score)
   }
 
-  async addCustomization(
-    ctx: TenantContext,
-    productId: string,
-    option: Omit<CustomizationOption, "id" | "productId">
-  ): Promise<CustomizationOption> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO catalog.product_customization_option (
-         id, tenant_id, product_id, option_type, label_i18n, required, free_of_charge, upcharge_minor, values, created_at, updated_at
-       ) VALUES (
-         public.uuidv7(), $1, $2, $3, $4::jsonb, $5, $6, $7, $8::jsonb, NOW(), NOW()
-       ) RETURNING *`,
-      [
-        ctx.tenantId,
-        productId,
-        option.optionType,
-        JSON.stringify(option.label ?? {}),
-        option.required,
-        option.freeOfCharge,
-        option.upchargeMinor ? String(option.upchargeMinor) : null,
-        JSON.stringify(option.values ?? []),
-      ]
-    )
-    return mapCustomization(rows[0])
-  }
 }
 
 function mapProduct(row: any): ProductExtension {
@@ -225,17 +200,5 @@ function mapMaster(row: any): MasterProduct {
   }
 }
 
-function mapCustomization(row: any): CustomizationOption {
-  return {
-    id: row.id,
-    productId: row.product_id,
-    optionType: row.option_type,
-    label: row.label_i18n ?? {},
-    required: row.required,
-    freeOfCharge: row.free_of_charge,
-    upchargeMinor: row.upcharge_minor ? BigInt(row.upcharge_minor) : undefined,
-    values: row.values ?? [],
-  }
-}
 
 export default CatalogExtService
