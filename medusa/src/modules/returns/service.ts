@@ -1,72 +1,63 @@
+/**
+ * Returns module service (minimal stub)
+ *
+ * Sprint 11 Pha 2a (D27 Path D drop, revised from Path B after Bước 0 audit)
+ *
+ * STATUS: All 4 service methods dropped do schema reality mismatch deep.
+ *
+ * Service was written cho simplistic RMA model:
+ * - Cols: order_item_ids (text[]), buyer_user_id, reason (text), description,
+ *   desired_outcome, evidence_photos, total_refund_minor, currency
+ * - Status enum: requested/approved/rejected/shipped_by_buyer/received/
+ *   inspecting/refunded/exchanged/closed (9 values)
+ * - Service queried ord.return_request + ord.return_inspection
+ *
+ * Schema reality is 7 tables in returns schema (production-grade RMA system):
+ * - returns.return_request (18 cols, NEW: code unique, requested_by_user_id,
+ *   reason_code FK, description_i18n jsonb, photos_urls, video_url,
+ *   requested_action 4-enum: refund/replace/exchange/credit,
+ *   status 8-enum: submitted/approved/rejected/in_transit/received/inspected/
+ *   resolved/cancelled, rma_window_expires_at)
+ * - returns.return_item (6 cols, MOVED order items to separate table với
+ *   quantity_returning + condition_claimed + unit_refund_amount_minor)
+ * - returns.return_inspection (10 cols, condition_received 6-enum,
+ *   accept_decision boolean, warehouse_facility_id FK)
+ * - returns.refund_record (13 cols, fee breakdown, refund_method 5-enum,
+ *   status 4-enum, escrow_transaction_id FK)
+ * - returns.return_authorization (carrier label storage)
+ * - returns.return_disposition (post-inspection routing)
+ * - returns.return_reason_master (FK lookup, EMPTY needs seed)
+ *
+ * Two different business models:
+ * - Service = simple RMA (1-table model với inline cols)
+ * - Schema = production marketplace RMA (7-table normalized với FK chains)
+ *
+ * Cross-module Bước 0 verified (L25):
+ * - 0 UI consumers (storefront actions + admin UI + SDK + API endpoints)
+ * - 0 external RETURNS_MODULE refs medusa/src/
+ * - 0 cascade (jobs/subs/workers)
+ * - Pha 1 audit ActionRefs=2 = FALSE POSITIVE (text match "returns" keyword)
+ * - 0 rows existing (all 7 returns.* tables)
+ * - returns.return_reason_master EMPTY (FK lookup unseeded)
+ *
+ * Sprint 12+ TODO (MEDIUM priority — RMA UX flow drives):
+ * - Rewrite full module với schema reality cols (~12-15h)
+ * - Seed return_reason_master (defective/wrong_item/damaged/etc enum codes)
+ * - 6 CRUD methods (request/list/retrieve/transition/inspect/refund)
+ * - Pattern reference: Pha 2a communication (raw-SQL + queryT/withTenant)
+ * - Pre-requisite: RMA UX design freeze + business decision on disposition workflow
+ *
+ * Schema tables PRESERVED (no migration):
+ * - returns.return_request, return_item, return_inspection, refund_record
+ * - returns.return_authorization, return_disposition, return_reason_master
+ */
+
 import { MedusaService } from "@medusajs/framework/utils"
-import { queryT, type TenantContext } from "../../lib/db/pg"
-import { emitAudit } from "../../lib/audit/emit"
-import { NotFoundError, ConflictError } from "../../lib/errors"
-import type { RmaRequest, RmaStatus, RmaInspection } from "./types"
 
 class ReturnsService extends MedusaService({}) {
-  async createRequest(ctx: TenantContext, input: Omit<RmaRequest, "id" | "tenantId" | "status" | "createdAt">): Promise<RmaRequest> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO ord.return_request (
-         id, tenant_id, order_id, order_item_ids, buyer_user_id, reason, description, desired_outcome,
-         status, evidence_photos, created_at, updated_at
-       ) VALUES (
-         public.uuidv7(), $1, $2, $3::uuid[], $4, $5, $6, $7,
-         'requested', $8::text[], NOW(), NOW()
-       ) RETURNING *`,
-      [ctx.tenantId, input.orderId, input.orderItemIds, input.buyerId, input.reason, input.description, input.desiredOutcome, input.evidencePhotos ?? []]
-    )
-    const r = mapRma(rows[0])
-    await emitAudit(ctx, { actionCode: "rma.create", resourceType: "ord.return_request", resourceId: r.id, after: r })
-    return r
-  }
-
-  async transition(ctx: TenantContext, rmaId: string, to: RmaStatus, notes?: string): Promise<RmaRequest> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE ord.return_request SET status = $1, updated_at = NOW(),
-       metadata = COALESCE(metadata, '{}'::jsonb) || jsonb_build_object('last_note', $2)
-       WHERE id = $3 AND tenant_id = $4 RETURNING *`,
-      [to, notes ?? null, rmaId, ctx.tenantId]
-    )
-    if (!rows[0]) throw new NotFoundError("RMA", rmaId)
-    await emitAudit(ctx, { actionCode: `rma.transition.${to}`, resourceType: "ord.return_request", resourceId: rmaId })
-    return mapRma(rows[0])
-  }
-
-  async recordInspection(ctx: TenantContext, input: Omit<RmaInspection, "id" | "completedAt">): Promise<RmaInspection> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO ord.return_inspection (id, tenant_id, rma_id, inspector_user_id, disposition, notes, photo_urls, completed_at, created_at)
-       VALUES (public.uuidv7(), $1, $2, $3, $4, $5, $6::text[], NOW(), NOW()) RETURNING *`,
-      [ctx.tenantId, input.rmaId, input.inspectorUserId, input.disposition, input.notes ?? null, input.photoUrls]
-    )
-    await this.transition(ctx, input.rmaId, input.disposition === "restock" || input.disposition === "refurbish" ? "refunded" : "closed")
-    return { ...input, id: rows[0].id, completedAt: rows[0].completed_at }
-  }
-
-  async refund(ctx: TenantContext, rmaId: string, amountMinor: bigint, currency: string): Promise<RmaRequest> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE ord.return_request SET status = 'refunded', total_refund_minor = $1, currency = $2, updated_at = NOW()
-       WHERE id = $3 AND tenant_id = $4 AND status IN ('received','inspecting') RETURNING *`,
-      [String(amountMinor), currency, rmaId, ctx.tenantId]
-    )
-    if (!rows[0]) throw new ConflictError("RMA not refundable in current state")
-    await emitAudit(ctx, { actionCode: "rma.refund", resourceType: "ord.return_request", resourceId: rmaId, after: { amount: String(amountMinor), currency }, severity: "high" })
-    return mapRma(rows[0])
-  }
-}
-
-function mapRma(r: any): RmaRequest {
-  return {
-    id: r.id, tenantId: r.tenant_id, orderId: r.order_id, orderItemIds: r.order_item_ids ?? [],
-    buyerId: r.buyer_user_id, reason: r.reason, description: r.description, desiredOutcome: r.desired_outcome,
-    status: r.status, evidencePhotos: r.evidence_photos ?? [],
-    totalRefundMinor: r.total_refund_minor ? BigInt(r.total_refund_minor) : undefined,
-    currency: r.currency, carrierReturnLabelUrl: r.carrier_return_label_url, createdAt: r.created_at,
-  }
+  // STUB: All methods dropped Sprint 11 Pha 2a D27 Path D.
+  // See class docstring above for rationale.
+  // Sprint 12+ rewrite: Pha 2a communication pattern + RMA UX freeze.
 }
 
 export default ReturnsService

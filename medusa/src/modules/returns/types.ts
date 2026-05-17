@@ -1,29 +1,23 @@
-export type RmaStatus = "requested" | "approved" | "rejected" | "shipped_by_buyer" | "received" | "inspecting" | "refunded" | "exchanged" | "closed"
-export type RmaReason = "defective" | "wrong_item" | "not_as_described" | "damaged" | "missing_parts" | "no_longer_needed" | "size_fit" | "quality" | "other"
+/**
+ * Returns module types (minimal stub)
+ *
+ * Sprint 11 Pha 2a (D27 Path D drop)
+ *
+ * STATUS: 4 type definitions dropped:
+ * - RmaStatus (9 values, broken vs schema 8 values different semantic)
+ * - RmaReason (9 values, replaced by reason_code FK lookup)
+ * - RmaRequest interface (broken cols ord.return_* mapping)
+ * - RmaInspection interface (broken cols)
+ *
+ * See service.ts class docstring for full architectural rationale.
+ *
+ * Sprint 12+ TODO: Rewrite với schema reality cols matching:
+ * - ReturnRequest (18 cols, status 8-enum, requested_action 4-enum)
+ * - ReturnItem (6 cols, separate table for order items)
+ * - ReturnInspection (10 cols, condition_received 6-enum)
+ * - RefundRecord (13 cols, refund_method 5-enum)
+ * - ReturnAuthorization (carrier label)
+ * - ReturnDisposition (post-inspection)
+ */
 
-export interface RmaRequest {
-  id: string
-  tenantId: string
-  orderId: string
-  orderItemIds: string[]
-  buyerId: string
-  reason: RmaReason
-  description: string
-  desiredOutcome: "refund" | "exchange" | "store_credit"
-  status: RmaStatus
-  evidencePhotos: string[]
-  totalRefundMinor?: bigint
-  currency?: string
-  carrierReturnLabelUrl?: string
-  createdAt: Date
-}
-
-export interface RmaInspection {
-  id: string
-  rmaId: string
-  inspectorUserId: string
-  disposition: "restock" | "refurbish" | "destroy" | "return_to_supplier" | "donate"
-  notes?: string
-  photoUrls: string[]
-  completedAt: Date
-}
+export {}
