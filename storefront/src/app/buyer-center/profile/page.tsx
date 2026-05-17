@@ -1,84 +1,153 @@
-import { Breadcrumb } from "@/components/category/breadcrumb";
-import { BuyerSidebar } from "@/components/buyer/sidebar";
+import Link from "next/link"
+import { redirect } from "next/navigation"
+import { Breadcrumb } from "@/components/category/breadcrumb"
+import { BuyerSidebar } from "@/components/buyer/sidebar"
+import { api, ApiError } from "@/lib/api/client"
 
-const PERSONAL = [
-  { label: "Họ và tên", value: "Trần Văn A" },
-  { label: "Email", value: "tran.van.a@example.com" },
-  { label: "Số điện thoại", value: "+84 901 234 567" },
-  { label: "Địa chỉ", value: "Số 12 Nguyễn Trãi, Hà Nội, Việt Nam" },
-];
+// Standard Medusa Customer shape (relevant fields only)
+interface Customer {
+  id: string
+  email: string
+  first_name?: string | null
+  last_name?: string | null
+  phone?: string | null
+  has_account: boolean
+  metadata?: Record<string, unknown> | null
+  created_at: string
+}
 
-const BUSINESS = [
-  { label: "Tên công ty", value: "Công ty TNHH Thương mại ABC" },
-  { label: "Mã số thuế", value: "0312345678" },
-  { label: "Ngành hàng chính", value: "Nội thất, Xây dựng" },
-  { label: "Quy mô", value: "10–50 nhân viên" },
-  { label: "Năm thành lập", value: "2018" },
-];
+function fullName(c: Customer): string {
+  const parts = [c.first_name, c.last_name].filter(Boolean)
+  return parts.length > 0 ? parts.join(" ") : "(chưa cập nhật)"
+}
 
-const PREFERENCES = [
-  { label: "Ngôn ngữ ưu tiên", value: "Tiếng Việt" },
-  { label: "Tiền tệ hiển thị", value: "USD ($)" },
-  { label: "Cảng đích mặc định", value: "Cát Lái — HCM" },
-  { label: "Đơn vị đo lường", value: "Mét (m, m², m³)" },
-];
+function joinedDate(iso: string): string {
+  try {
+    return new Date(iso).toLocaleDateString("vi-VN", {
+      month: "2-digit",
+      year: "numeric",
+    })
+  } catch {
+    return "—"
+  }
+}
 
-const SECURITY = [
-  { label: "Mật khẩu", value: "••••••••" },
-  { label: "Xác thực 2 lớp (2FA)", value: "Chưa bật" },
-  { label: "Phiên đăng nhập đang hoạt động", value: "2 thiết bị" },
-];
+function initialLetter(c: Customer): string {
+  if (c.first_name) return c.first_name[0]!.toUpperCase()
+  if (c.email) return c.email[0]!.toUpperCase()
+  return "?"
+}
 
-function ProfileSection({ title, items, ctaLabel }: { title: string; items: { label: string; value: string }[]; ctaLabel: string }) {
+function ProfileSection({
+  title,
+  items,
+  ctaLabel,
+  ctaHref,
+}: {
+  title: string
+  items: { label: string; value: string }[]
+  ctaLabel: string
+  ctaHref?: string
+}) {
+  const CtaTag = ctaHref ? Link : "button"
+  const ctaProps: any = ctaHref
+    ? { href: ctaHref }
+    : { type: "button" }
+
   return (
     <div className="bg-paper border border-line rounded overflow-hidden">
       <div className="flex justify-between items-center px-4 py-3 border-b border-line bg-surface-2">
         <h2 className="font-bold text-ink text-[14px]">{title}</h2>
-        <button type="button" className="text-brand text-[12px] hover:underline">
+        <CtaTag {...ctaProps} className="text-brand text-[12px] hover:underline">
           {ctaLabel}
-        </button>
+        </CtaTag>
       </div>
       <dl className="divide-y divide-line">
         {items.map((item) => (
-          <div key={item.label} className="grid grid-cols-[160px_1fr] gap-3 px-4 py-3 text-[13px] max-md:grid-cols-1 max-md:gap-0.5">
+          <div
+            key={item.label}
+            className="grid grid-cols-[160px_1fr] gap-3 px-4 py-3 text-[13px] max-md:grid-cols-1 max-md:gap-0.5"
+          >
             <dt className="text-mute">{item.label}</dt>
             <dd className="text-ink">{item.value}</dd>
           </div>
         ))}
       </dl>
     </div>
-  );
+  )
 }
 
-export default function BuyerProfilePage() {
+export default async function BuyerProfilePage() {
+  let customer: Customer
+
+  try {
+    const data = await api<{ customer: Customer }>("/store/customers/me")
+    customer = data.customer
+  } catch (err) {
+    if (err instanceof ApiError && err.status === 401) {
+      redirect("/login?redirect=/buyer-center/profile")
+    }
+    throw err
+  }
+
+  const PERSONAL = [
+    { label: "Họ và tên", value: fullName(customer) },
+    { label: "Email", value: customer.email },
+    { label: "Số điện thoại", value: customer.phone || "(chưa cập nhật)" },
+  ]
+
+  const md = (customer.metadata ?? {}) as Record<string, string | undefined>
+  const BUSINESS = [
+    { label: "Tên công ty", value: md.company_name || "(chưa cập nhật)" },
+    { label: "Mã số thuế", value: md.tax_id || "(chưa cập nhật)" },
+    { label: "Ngành hàng chính", value: md.industries || "(chưa cập nhật)" },
+    { label: "Quy mô", value: md.company_size || "(chưa cập nhật)" },
+  ]
+
+  const SECURITY = [
+    { label: "Mật khẩu", value: "••••••••" },
+    { label: "Xác thực 2 lớp (2FA)", value: "Chưa bật" },
+  ]
+
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Hồ sơ" }]} />
+      <Breadcrumb
+        trail={[
+          { label: "Trang chủ", href: "/" },
+          { label: "Khu vực người mua", href: "/buyer-center" },
+          { label: "Hồ sơ" },
+        ]}
+      />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/profile" />
         <div className="space-y-4">
           <div className="bg-paper border border-line rounded p-5 flex items-center gap-4 max-md:flex-col max-md:items-start max-md:gap-3">
             <div className="w-16 h-16 rounded-full bg-brand text-paper flex items-center justify-center text-[28px] font-bold flex-shrink-0">
-              T
+              {initialLetter(customer)}
             </div>
             <div className="flex-1">
-              <h1 className="text-[22px] font-bold text-ink">Trần Văn A</h1>
-              <p className="text-[12.5px] text-mute mt-0.5">Buyer · Hà Nội · Tham gia 03/2024</p>
-              <p className="text-[11.5px] text-success mt-1">✓ Hồ sơ đã xác thực</p>
+              <h1 className="text-[22px] font-bold text-ink">{fullName(customer)}</h1>
+              <p className="text-[12.5px] text-mute mt-0.5">
+                Buyer · Tham gia {joinedDate(customer.created_at)}
+              </p>
+              {customer.has_account ? (
+                <p className="text-[11.5px] text-success mt-1">✓ Hồ sơ đã xác thực</p>
+              ) : null}
             </div>
-            <button type="button" className="px-4 py-2 border border-brand text-brand rounded-sm font-semibold text-[12.5px] hover:bg-brand hover:text-paper transition">
-              Đổi ảnh đại diện
-            </button>
           </div>
 
           <ProfileSection title="Thông tin cá nhân" items={PERSONAL} ctaLabel="Chỉnh sửa" />
           <ProfileSection title="Thông tin doanh nghiệp" items={BUSINESS} ctaLabel="Chỉnh sửa" />
-          <ProfileSection title="Sở thích & Mặc định" items={PREFERENCES} ctaLabel="Chỉnh sửa" />
-          <ProfileSection title="Bảo mật" items={SECURITY} ctaLabel="Quản lý" />
+          <ProfileSection
+            title="Bảo mật"
+            items={SECURITY}
+            ctaLabel="Đổi mật khẩu"
+            ctaHref="/forgot-password"
+          />
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export const metadata = { title: "Hồ sơ — Trung tâm Buyer" };
+export const metadata = { title: "Hồ sơ — Trung tâm Buyer" }
