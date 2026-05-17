@@ -188,7 +188,11 @@ class AiLivestreamService extends MedusaService({}) {
        ) RETURNING *`,
       [ctx.tenantId, input.streamId, input.scriptId, input.personaId, script[0].start_segment_id]
     )
-    await queryT(ctx, `UPDATE live.livestream SET director_session_id = $1, active_script_id = $2, persona_id = $3, updated_at = NOW() WHERE id = $4`, [rows[0].id, input.scriptId, input.personaId, input.streamId])
+    // Sprint 11 Pha 2f D40: UPDATE live.livestream stubbed (live.livestream table MISSING from schema).
+    // Director session created in live.ai_director_session (EXISTS). Cross-link to livestream table
+    // deferred Sprint 12+ when live.livestream table created or director_session_id moved elsewhere.
+    // Original: await queryT(ctx, `UPDATE live.livestream SET director_session_id = $1, ...`,
+    //   [rows[0].id, input.scriptId, input.personaId, input.streamId])
     await emitAudit(ctx, { actionCode: "director.start", resourceType: "live.ai_director_session", resourceId: rows[0].id, after: rows[0], severity: "high" })
     return mapDirector(rows[0])
   }
