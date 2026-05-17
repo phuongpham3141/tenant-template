@@ -301,3 +301,59 @@ Sprint 9A D14 fix focused Medusa framework naming. DB schema names = Sprint 1 R2
 - **Tenant config storefront:** `storefront/src/lib/tenant/index.ts`
 - **Env example:** `medusa/.env.example` (Mini-Pha 4 Bước 1)
 - **Migration tracking:** `admin.migration_log` (DB table)
+
+---
+
+## Lesson 24 codified (Sprint 10 Pha 2d Bước 5 SWC syntax fix)
+
+**L24 — Stub docstring cấm `*/` sequence trong path notation:**
+
+SWC TypeScript parser (Medusa v2 build pipeline) silently fails khi gặp `*/` sequence trong JSDoc comment. Parser interprets `*/` as JSDoc terminator → comment ends early → next characters parsed as code → silent build success but module load fail at runtime.
+
+**Pattern fix:**
+
+```typescript
+// FAIL — SWC parser silent fail
+/**
+ * Schema cols: geo_*/primary_currency, support_languages
+ */
+
+// PASS — comma separator
+/**
+ * Schema cols: geo lat/lng, primary_currency, support_languages
+ */
+```
+
+**Discovery context:** Sprint 10 Pha 2d marketplace Bước 5 — `types.ts` stub docstring described schema cols using `geo_*/primary` notation → build PASS silently → runtime module load fail sau restart → commit `2011654` fix.
+
+**Audit pattern khi viết stub docstrings:**
+1. Search `*/` sequences trong JSDoc comments (TS/JS files)
+2. Replace với comma separator hoặc backslash escape
+3. Verify module load post-restart
+
+**Hệ quả:** Sprint 11+ stub patterns (escrow, marketplace, catalog-ext defer modules) PHẢI follow L24.
+
+---
+
+## Lesson 25 codified (Sprint 10 Pha 2d Path D surprise)
+
+**L25 — Cross-module dependency check critical Pha 1 audit:**
+
+Sprint 10 Pha 1 L20 audit ranked marketplace RED based trên service ↔ schema column mismatch. Pre-emptive Coordinator estimate: Path B (refactor 6-10h) vì assumes UI consumers exist (Admin Supplier UI Sprint 9A).
+
+Reality Bước 0 Pha 2d audit revealed:
+- Sprint 9A NEW supplier-application backend dùng `public.supplier_application` table (KHÔNG `identity.supplier`)
+- Admin Supplier UI Sprint 9A fetch `/admin/supplier-applications` (NOT marketplace endpoints)
+- `marketplace.supplier` service methods HAS **0 UI consumers** (supplier-application module Sprint 9A independent)
+- Path D drop SAFE (3h vs 6-10h Path B)
+
+**Pattern: Pha 1 audit MUST include cross-module dependency mapping:**
+
+1. Service A queries table T
+2. Service B (Sprint 9A NEW) queries different table T2 với related semantic
+3. UI consumer X fetches endpoint of A or B (verify which)
+4. Path D safe ONLY IF UI consumer maps to B (not A)
+
+**Sprint 11+ implications:**
+- 20 TBD modules column-level audit Sprint 11+ MUST include UI consumer mapping
+- Severity ranking refinement: RED + UI dependent → A/B path; RED + 0 UI → D drop safe
