@@ -1,29 +1,26 @@
-export type Channel = "email" | "sms" | "whatsapp" | "zalo" | "wechat" | "push" | "in_app" | "webhook"
+/**
+ * Notification-bus module types (minimal stub)
+ *
+ * Sprint 11 Pha 2b (D28 Path D drop)
+ *
+ * STATUS: Channel enum + 2 interfaces dropped:
+ * - Channel enum (8 values: email/sms/whatsapp/zalo/wechat/push/in_app/webhook)
+ * - NotificationRequest interface (11 input fields)
+ * - NotificationDelivery interface (13 entity fields, broken cols)
+ *
+ * See service.ts class docstring for full rationale.
+ *
+ * PRESERVED minimal types so cascade files (10 backend files referencing module)
+ * can stub gracefully without ripple TS errors.
+ *
+ * Sprint 12+ TODO: Rewrite với schema reality cols:
+ * - NotificationDeliveryAttempt (match notification_delivery_attempt)
+ * - NotificationEvent (match notification_event)
+ * - SubscriptionRule (match notification_subscription_rule)
+ * - EventType (match notification_event_type_master)
+ */
 
-export interface NotificationRequest {
-  channel: Channel
-  toUserId?: string
-  toAddress?: string
-  templateCode: string
-  variables?: Record<string, unknown>
-  locale?: "vi" | "en" | "cn"
-  priority?: "low" | "normal" | "high" | "critical"
-  scheduledAt?: Date
-  groupingKey?: string
-  metadata?: Record<string, unknown>
-}
-
-export interface NotificationDelivery {
-  id: string
-  tenantId: string
-  channel: Channel
-  toUserId?: string
-  toAddress: string
-  templateCode: string
-  status: "pending" | "queued" | "sending" | "sent" | "delivered" | "failed" | "bounced" | "suppressed"
-  attempts: number
-  sentAt?: Date
-  deliveredAt?: Date
-  failureReason?: string
-  provider?: string
-}
+// Minimal type aliases for cascade compatibility
+export type Channel = string
+export type NotificationRequest = Record<string, unknown>
+export type NotificationDelivery = { id: string; tenantId: string }

@@ -1,111 +1,50 @@
-import { MedusaService } from "@medusajs/framework/utils"
-import { queryT, type TenantContext } from "../../lib/db/pg"
-import type { NotificationRequest, NotificationDelivery, Channel } from "./types"
+/**
+ * Notification-bus module service (minimal stub)
+ *
+ * Sprint 11 Pha 2b (D28 Path D drop)
+ *
+ * STATUS: All 6 service methods dropped do 2/2 INSERT target tables MISSING.
+ *
+ * Service methods dropped:
+ * - send (notification.notification_delivery INSERT — table MISSING)
+ * - sendBatch (calls send loop)
+ * - markDelivered (notification.notification_delivery UPDATE — table MISSING)
+ * - markFailed (notification.notification_delivery UPDATE)
+ * - suppress (notification.suppression_list INSERT — table MISSING)
+ * - get (notification.notification_delivery SELECT)
+ *
+ * Schema reality notification.* (9 tables, none match service):
+ * - notification_batch, notification_dead_letter_queue, notification_dedup_record,
+ *   notification_delivery_attempt, notification_event, notification_event_type_master,
+ *   notification_subscription_rule, notification_template_per_channel,
+ *   notification_throttle_state
+ *
+ * Service expected:
+ * - notification.notification_delivery (NOT EXISTS — closest is notification_delivery_attempt)
+ * - notification.suppression_list (NOT EXISTS)
+ *
+ * Cross-module L27 verified:
+ * - 0 storefront imports notification-bus
+ * - 0 admin UI routes
+ * - 10 backend cascade files (1 job + 6 subs + 1 worker + 2 webhooks)
+ *
+ * Sprint 12+ TODO (MEDIUM priority):
+ * - Rewrite full module với schema reality cols
+ * - Use notification_delivery_attempt + notification_event + suppression via
+ *   subscription_rule pattern
+ * - 8-12h estimate Pha 2a pattern
+ * - Pre-requisite: business decision on event bus implementation
+ *   (Postgres pub/sub / Redis / Kafka)
+ *
+ * Schema tables PRESERVED (no migration).
+ */
 
-const DEDUP_WINDOW_MIN = 5
+import { MedusaService } from "@medusajs/framework/utils"
 
 class NotificationBusService extends MedusaService({}) {
-  async send(ctx: TenantContext, req: NotificationRequest): Promise<NotificationDelivery> {
-    if (req.groupingKey) {
-      const recent = await queryT<any>(
-        ctx,
-        `SELECT id FROM notification.notification_delivery
-         WHERE tenant_id = $1 AND grouping_key = $2
-           AND created_at > NOW() - ($3 || ' minutes')::interval
-           AND status IN ('queued','sending','sent','delivered')
-         LIMIT 1`,
-        [ctx.tenantId, req.groupingKey, String(DEDUP_WINDOW_MIN)]
-      )
-      if (recent[0]) {
-        return this.get(ctx, recent[0].id)
-      }
-    }
-    if (req.toAddress) {
-      const suppressed = await queryT<any>(
-        ctx,
-        `SELECT 1 FROM notification.suppression_list WHERE address = $1 AND channel = $2 LIMIT 1`,
-        [req.toAddress, req.channel]
-      )
-      if (suppressed[0]) {
-        return this.recordSuppressed(ctx, req)
-      }
-    }
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO notification.notification_delivery (
-         id, tenant_id, channel, to_user_id, to_address, template_code, variables, locale, priority,
-         scheduled_at, grouping_key, status, attempts, metadata, created_at, updated_at
-       ) VALUES (
-         public.uuidv7(), $1, $2, $3, $4, $5, $6::jsonb, $7, $8,
-         $9, $10, 'queued', 0, $11::jsonb, NOW(), NOW()
-       ) RETURNING *`,
-      [
-        ctx.tenantId, req.channel, req.toUserId ?? null, req.toAddress ?? "", req.templateCode,
-        JSON.stringify(req.variables ?? {}), req.locale ?? "vi", req.priority ?? "normal",
-        req.scheduledAt ?? null, req.groupingKey ?? null, JSON.stringify(req.metadata ?? {}),
-      ]
-    )
-    return mapDelivery(rows[0])
-  }
-
-  async sendBatch(ctx: TenantContext, requests: NotificationRequest[]): Promise<NotificationDelivery[]> {
-    return Promise.all(requests.map((r) => this.send(ctx, r)))
-  }
-
-  async markDelivered(ctx: TenantContext, deliveryId: string, providerData: { provider: string; messageId?: string }): Promise<NotificationDelivery> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE notification.notification_delivery
-       SET status = 'delivered', delivered_at = NOW(), provider = $1,
-           metadata = metadata || jsonb_build_object('messageId', $2), updated_at = NOW()
-       WHERE id = $3 AND tenant_id = $4 RETURNING *`,
-      [providerData.provider, providerData.messageId ?? null, deliveryId, ctx.tenantId]
-    )
-    return mapDelivery(rows[0])
-  }
-
-  async markFailed(ctx: TenantContext, deliveryId: string, reason: string): Promise<NotificationDelivery> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE notification.notification_delivery
-       SET status = 'failed', failure_reason = $1, attempts = attempts + 1, updated_at = NOW()
-       WHERE id = $2 AND tenant_id = $3 RETURNING *`,
-      [reason, deliveryId, ctx.tenantId]
-    )
-    return mapDelivery(rows[0])
-  }
-
-  async suppress(ctx: TenantContext, address: string, channel: Channel, reason: string): Promise<void> {
-    await queryT(
-      ctx,
-      `INSERT INTO notification.suppression_list (tenant_id, address, channel, reason, created_at)
-       VALUES ($1, $2, $3, $4, NOW()) ON CONFLICT DO NOTHING`,
-      [ctx.tenantId, address, channel, reason]
-    )
-  }
-
-  async get(ctx: TenantContext, id: string): Promise<NotificationDelivery> {
-    const rows = await queryT<any>(ctx, `SELECT * FROM notification.notification_delivery WHERE id = $1`, [id])
-    return mapDelivery(rows[0])
-  }
-
-  private async recordSuppressed(ctx: TenantContext, req: NotificationRequest): Promise<NotificationDelivery> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO notification.notification_delivery (id, tenant_id, channel, to_address, template_code, status, attempts, created_at, updated_at)
-       VALUES (public.uuidv7(), $1, $2, $3, $4, 'suppressed', 0, NOW(), NOW()) RETURNING *`,
-      [ctx.tenantId, req.channel, req.toAddress, req.templateCode]
-    )
-    return mapDelivery(rows[0])
-  }
-}
-
-function mapDelivery(r: any): NotificationDelivery {
-  return {
-    id: r.id, tenantId: r.tenant_id, channel: r.channel, toUserId: r.to_user_id, toAddress: r.to_address,
-    templateCode: r.template_code, status: r.status, attempts: Number(r.attempts ?? 0),
-    sentAt: r.sent_at, deliveredAt: r.delivered_at, failureReason: r.failure_reason, provider: r.provider,
-  }
+  // STUB: All 6 methods dropped Sprint 11 Pha 2b D28 Path D.
+  // See class docstring above for rationale.
+  // Sprint 12+ rewrite: Pha 2a communication pattern + event bus design.
 }
 
 export default NotificationBusService
