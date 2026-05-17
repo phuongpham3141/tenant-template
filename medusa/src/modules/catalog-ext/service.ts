@@ -2,7 +2,16 @@ import { MedusaService } from "@medusajs/framework/utils"
 import { queryT, withTenant, type TenantContext } from "../../lib/db/pg"
 import { emitAudit } from "../../lib/audit/emit"
 import { NotFoundError, ValidationError } from "../../lib/errors"
-import type { ProductExtension, MasterProduct, BuyBoxCandidate } from "./types"
+import type {
+  ProductExtension,
+  MasterProduct,
+  BuyBoxCandidate,
+  CustomizationRequest,
+  CustomizationRequestStatus,
+  CreateCustomizationRequestInput,
+  ListCustomizationRequestsFilters,
+  ListCustomizationRequestsOpts,
+} from "./types"
 
 class CatalogExtService extends MedusaService({}) {
   async listProducts(
@@ -158,6 +167,181 @@ class CatalogExtService extends MedusaService({}) {
     }).sort((a, b) => b.score - a.score)
   }
 
+  // =========================================================================
+  // Sprint 10 Pha 2b v2 — D25 Option B refactor
+  // CustomizationRequest CRUD (catalog.customization_request, 24 cols)
+  // Pattern: Pha 2a communication repeat (raw-SQL + queryT/withTenant)
+  // =========================================================================
+
+  async createCustomizationRequest(
+    ctx: TenantContext,
+    input: CreateCustomizationRequestInput
+  ): Promise<CustomizationRequest> {
+    return withTenant(ctx, async (client) => {
+      // Generate code từ sequence (mig 52)
+      const { rows: codeRows } = await client.query<{ num: string }>(
+        "SELECT nextval('catalog.customization_request_code_seq')::text AS num"
+      )
+      const code = `CUST-REQ-${codeRows[0].num}`
+
+      const { rows } = await client.query<any>(
+        `INSERT INTO catalog.customization_request (
+          tenant_id, code,
+          buyer_id, supplier_id,
+          product_id, rfq_id,
+          request_type, description_i18n,
+          artwork_urls,
+          target_quantity, unit_code,
+          budget_min_usd_minor, budget_max_usd_minor,
+          max_revisions,
+          status,
+          expires_at,
+          metadata
+        ) VALUES (
+          $1, $2,
+          $3, $4,
+          $5, $6,
+          $7, $8::jsonb,
+          $9::text[],
+          $10, $11,
+          $12, $13,
+          $14,
+          'draft',
+          $15,
+          $16::jsonb
+        ) RETURNING *`,
+        [
+          ctx.tenantId,
+          code,
+          input.buyer_id,
+          input.supplier_id,
+          input.product_id ?? null,
+          input.rfq_id ?? null,
+          input.request_type,
+          JSON.stringify(input.description_i18n),
+          input.artwork_urls ?? [],
+          input.target_quantity,
+          input.unit_code,
+          input.budget_min_usd_minor
+            ? input.budget_min_usd_minor.toString()
+            : null,
+          input.budget_max_usd_minor
+            ? input.budget_max_usd_minor.toString()
+            : null,
+          input.max_revisions ?? 5,
+          input.expires_at ?? null,
+          JSON.stringify(input.metadata ?? {}),
+        ]
+      )
+      return mapCustomizationRequest(rows[0])
+    })
+  }
+
+  async listCustomizationRequests(
+    ctx: TenantContext,
+    filters: ListCustomizationRequestsFilters = {},
+    opts: ListCustomizationRequestsOpts = {}
+  ): Promise<{ requests: CustomizationRequest[]; count: number }> {
+    const conditions: string[] = ["tenant_id = $1"]
+    const params: unknown[] = [ctx.tenantId]
+    let paramIdx = 2
+
+    if (filters.buyer_id) {
+      conditions.push(`buyer_id = $${paramIdx++}`)
+      params.push(filters.buyer_id)
+    }
+    if (filters.supplier_id) {
+      conditions.push(`supplier_id = $${paramIdx++}`)
+      params.push(filters.supplier_id)
+    }
+    if (filters.product_id) {
+      conditions.push(`product_id = $${paramIdx++}`)
+      params.push(filters.product_id)
+    }
+    if (filters.rfq_id) {
+      conditions.push(`rfq_id = $${paramIdx++}`)
+      params.push(filters.rfq_id)
+    }
+    if (filters.request_type) {
+      conditions.push(`request_type = $${paramIdx++}`)
+      params.push(filters.request_type)
+    }
+    if (filters.status) {
+      if (Array.isArray(filters.status)) {
+        const placeholders = filters.status.map((_, i) => `$${paramIdx + i}`).join(",")
+        conditions.push(`status IN (${placeholders})`)
+        params.push(...filters.status)
+        paramIdx += filters.status.length
+      } else {
+        conditions.push(`status = $${paramIdx++}`)
+        params.push(filters.status)
+      }
+    }
+
+    const where = conditions.join(" AND ")
+    const allowedOrder = ["created_at", "updated_at", "code", "expires_at"]
+    const orderBy = allowedOrder.includes(opts.order_by ?? "")
+      ? opts.order_by
+      : "created_at"
+    const orderDir = opts.order_dir === "ASC" ? "ASC" : "DESC"
+    const limit = Math.min(opts.limit ?? 20, 100)
+    const offset = Math.max(opts.offset ?? 0, 0)
+
+    return withTenant(ctx, async (client) => {
+      const countRes = await client.query<{ total: string }>(
+        `SELECT COUNT(*)::text AS total FROM catalog.customization_request WHERE ${where}`,
+        params
+      )
+      const count = parseInt(countRes.rows[0].total, 10)
+
+      const listRes = await client.query<any>(
+        `SELECT * FROM catalog.customization_request WHERE ${where}
+         ORDER BY ${orderBy} ${orderDir}
+         LIMIT $${paramIdx} OFFSET $${paramIdx + 1}`,
+        [...params, limit, offset]
+      )
+
+      return {
+        requests: listRes.rows.map((r) => mapCustomizationRequest(r)),
+        count,
+      }
+    })
+  }
+
+  async retrieveCustomizationRequest(
+    ctx: TenantContext,
+    id: string
+  ): Promise<CustomizationRequest | null> {
+    const rows = await queryT<any>(
+      ctx,
+      `SELECT * FROM catalog.customization_request WHERE id = $1 AND tenant_id = $2`,
+      [id, ctx.tenantId]
+    )
+    if (rows.length === 0) return null
+    return mapCustomizationRequest(rows[0])
+  }
+
+  async updateCustomizationRequestStatus(
+    ctx: TenantContext,
+    id: string,
+    status: CustomizationRequestStatus
+  ): Promise<CustomizationRequest | null> {
+    const workflowCols: string[] = []
+    if (status === "approved") workflowCols.push("approval_gate_at = NOW()")
+
+    const workflowSet = workflowCols.length > 0 ? `, ${workflowCols.join(", ")}` : ""
+
+    const rows = await queryT<any>(
+      ctx,
+      `UPDATE catalog.customization_request
+       SET status = $1, version = version + 1, updated_at = NOW()${workflowSet}
+       WHERE id = $2 AND tenant_id = $3
+       RETURNING *`,
+      [status, id, ctx.tenantId]
+    )
+    if (rows.length === 0) return null
+    return mapCustomizationRequest(rows[0])
+  }
 }
 
 function mapProduct(row: any): ProductExtension {
@@ -200,5 +384,38 @@ function mapMaster(row: any): MasterProduct {
   }
 }
 
+
+function mapCustomizationRequest(row: any): CustomizationRequest {
+  return {
+    id: row.id,
+    tenant_id: row.tenant_id,
+    code: row.code,
+    buyer_id: row.buyer_id,
+    supplier_id: row.supplier_id,
+    product_id: row.product_id || undefined,
+    rfq_id: row.rfq_id || undefined,
+    request_type: row.request_type,
+    description_i18n: row.description_i18n || {},
+    artwork_urls: row.artwork_urls || [],
+    target_quantity: row.target_quantity,
+    unit_code: row.unit_code,
+    budget_min_usd_minor: row.budget_min_usd_minor
+      ? BigInt(row.budget_min_usd_minor)
+      : undefined,
+    budget_max_usd_minor: row.budget_max_usd_minor
+      ? BigInt(row.budget_max_usd_minor)
+      : undefined,
+    revision_round: row.revision_round,
+    max_revisions: row.max_revisions,
+    status: row.status,
+    approval_gate_at: row.approval_gate_at || undefined,
+    converted_order_id: row.converted_order_id || undefined,
+    expires_at: row.expires_at || undefined,
+    version: row.version,
+    metadata: row.metadata || {},
+    created_at: row.created_at,
+    updated_at: row.updated_at,
+  }
+}
 
 export default CatalogExtService
