@@ -3,16 +3,16 @@ import { SEARCH_PLATFORM_MODULE } from "../modules/search-platform"
 import type SearchPlatformService from "../modules/search-platform/service"
 import { CATALOG_EXT_MODULE } from "../modules/catalog-ext"
 import type CatalogExtService from "../modules/catalog-ext/service"
-import { AI_PLATFORM_MODULE } from "../modules/ai-platform"
-import type AiPlatformService from "../modules/ai-platform/service"
 import { adminContext } from "../lib/tenant/context"
+
+// Sprint 11 Pha 2c D32: ai-platform drop, ai.embed call removed.
+// PRESERVED: catalog.getProduct + search.indexDocument logic intact.
 
 export default async function catalogIndexerHandler({ event, container }: SubscriberArgs<{ id: string; tenant_id: string }>) {
   const ctx = adminContext(event.data.tenant_id)
   if (event.name === "product.created" || event.name === "product.updated") {
     const catalog = container.resolve<CatalogExtService>(CATALOG_EXT_MODULE)
     const search = container.resolve<SearchPlatformService>(SEARCH_PLATFORM_MODULE)
-    const ai = container.resolve<AiPlatformService>(AI_PLATFORM_MODULE)
 
     const product = await catalog.getProduct(ctx, event.data.id)
     await search.indexDocument(ctx, "product", product.id, {
@@ -24,10 +24,7 @@ export default async function catalogIndexerHandler({ event, container }: Subscr
       tags: product.tags ?? [], base_price_minor: product.basePriceMinor?.toString() ?? null,
       base_currency: product.baseCurrency, updated_at: product.updatedAt.toISOString(),
     })
-    const text = `${product.titleI18n.en ?? product.titleI18n.vi ?? ""} ${product.descriptionI18n.en ?? product.descriptionI18n.vi ?? ""}`.slice(0, 8000)
-    if (text.trim()) {
-      await ai.embed(ctx, { texts: [text], resourceType: "product", resourceIds: [product.id] }).catch(() => undefined)
-    }
+    // Sprint 12+ TODO: re-enable ai.embed call when ai-platform rewrite (Pha 2f)
   }
   if (event.name === "product.deleted") {
     // Index deletion would happen here in real impl
