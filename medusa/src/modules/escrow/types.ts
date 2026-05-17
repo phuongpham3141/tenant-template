@@ -1,78 +1,17 @@
-export type EscrowStatus = "draft" | "funded" | "partially_released" | "released" | "refunded" | "disputed" | "cancelled"
-export type MilestoneStatus = "pending" | "ready_to_release" | "released" | "disputed" | "cancelled"
+/**
+ * Escrow module types (minimal stub)
+ *
+ * Sprint 10 Pha 2c v2 (D23-EXPANDED Option C2 drop)
+ *
+ * STATUS: 5 entity interfaces + input shape dropped (Escrow, EscrowMilestone,
+ * CreateEscrowInput, FxSnapshot, Payout, EscrowStatus, MilestoneStatus).
+ * See service.ts class docstring for full architectural rationale.
+ *
+ * Sprint 11+ TODO: Rewrite với schema reality cols matching:
+ * - Escrow (18 cols, holding_bank_account_id, amount_held_minor, withholding_*)
+ * - EscrowMilestone (trigger_event + grace_period_hours + release_mode + position)
+ * - FxSnapshot (10 cols, date-range với rates jsonb + applied_from_at/until_at)
+ * - Payout (24 cols, full fee breakdown gross/commission/withholding/fee/net)
+ */
 
-export interface Escrow {
-  id: string
-  tenantId: string
-  orderId: string
-  buyerId: string
-  supplierId: string
-  totalAmountMinor: bigint
-  currency: string
-  totalUsdMinor: bigint
-  fxSnapshotId: string
-  releasedAmountMinor: bigint
-  refundedAmountMinor: bigint
-  status: EscrowStatus
-  fundedAt?: Date | null
-  fullyReleasedAt?: Date | null
-  expiresAt?: Date | null
-  metadata?: Record<string, unknown>
-  createdAt: Date
-}
-
-export interface EscrowMilestone {
-  id: string
-  escrowId: string
-  tenantId: string
-  milestoneType: "deposit" | "production" | "shipment" | "delivery" | "qc_passed" | "final_payment"
-  amountMinor: bigint
-  currency: string
-  status: MilestoneStatus
-  dueDate?: Date | null
-  releaseConditions: Record<string, unknown>
-  releasedAt?: Date | null
-  releasedBy?: string | null
-  notes?: string
-}
-
-export interface CreateEscrowInput {
-  orderId: string
-  buyerId: string
-  supplierId: string
-  totalAmountMinor: bigint
-  currency: string
-  fxSnapshotId: string
-  totalUsdMinor: bigint
-  expiresAt?: Date
-  milestones: Array<{
-    milestoneType: EscrowMilestone["milestoneType"]
-    amountMinor: bigint
-    dueDate?: Date
-    releaseConditions?: Record<string, unknown>
-  }>
-}
-
-export interface FxSnapshot {
-  id: string
-  tenantId: string
-  fromCurrency: string
-  toCurrency: string
-  rate: number
-  source: string
-  capturedAt: Date
-}
-
-export interface Payout {
-  id: string
-  tenantId: string
-  supplierId: string
-  escrowId?: string | null
-  amountMinor: bigint
-  currency: string
-  bankAccountId: string
-  status: "pending" | "processing" | "completed" | "failed" | "cancelled"
-  scheduledAt?: Date | null
-  processedAt?: Date | null
-  failureReason?: string | null
-}
+export {}
