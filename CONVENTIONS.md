@@ -357,3 +357,110 @@ Reality Bước 0 Pha 2d audit revealed:
 **Sprint 11+ implications:**
 - 20 TBD modules column-level audit Sprint 11+ MUST include UI consumer mapping
 - Severity ranking refinement: RED + UI dependent → A/B path; RED + 0 UI → D drop safe
+
+
+---
+
+## Sprint 11 Lessons Codified (L23 final + L26-L29)
+
+### Lesson 23 FINAL FORM (Sprint 11 closing — 10 reinforcements)
+
+**L23 — Pha 1 RED ranking = noise filter only, bi-directional errors confirmed:**
+
+10 reinforcements across Sprint 10-11:
+
+**OVERSTATED examples (4 cases):**
+- catalog-ext (Sprint 10): RED → ORANGE downgrade (1/6 broken)
+- marketplace (Sprint 10): RED Path B prediction → Path D (0 UI consumers actual)
+- returns (Sprint 11 Pha 2a): RED Path B → Path D drop (false positive ActionRefs)
+- ai-livestream (Sprint 11 Pha 2f): RED biggest 8-12h → Path A 30min (1/11 broken)
+
+**UNDERSTATED examples (2 cases):**
+- escrow (Sprint 10): RED 1 method → DEEPER RED 8/8 broken + 3 cascade
+- fulfillment-pro (Sprint 11 Pha 2e): YELLOW 1/4 → ORANGE 4/8 broken (SELECT gap)
+
+**L23 final rules:**
+- Pha 1 schema-name fail = inaccurate severity estimator
+- Pha 1 method count = INSERT only (misses SELECT + UPDATE — L23 9th)
+- Pha 1 UI consumer text-match = false positives (L27 fix needed)
+- Pha 1 cascade depth = ONLY reliable dimension
+
+**Sprint 12+ MANDATORY:** Bước 0 STRICT method-level audit BEFORE any plan commitment.
+
+---
+
+### Lesson 26 — Bulk SQL audit pattern (Sprint 11 Pha 1)
+
+**L26 — `information_schema` EXISTS bulk verification 3-10x faster than per-module bash:**
+
+Pattern: Extract INSERT targets grep → format as VALUES tuples → single SQL EXISTS query → instant verification across many modules.
+
+**Sprint 11 metrics:**
+- Sprint 10 per-module bash: 6 modules in 2h
+- Sprint 11 bulk SQL: 20 modules in 3h = 3x speedup
+
+Sprint 12+ Pha 1 audit MUST use L26 bulk pattern.
+
+---
+
+### Lesson 27 — Import-based UI consumer audit (Sprint 11 Pha 2a)
+
+**L27 — UI consumer audit MUST distinguish import refs vs text matches:**
+
+- FAIL pattern: `grep -rln $MODULE storefront/src/actions/` (text match → false positives from function names, JSON keys, comments)
+- PASS pattern: `grep -rln 'from.*$MODULE|MODULE_CONST' storefront/src/actions/` (import-based, MODULE_CONST refs only)
+
+**Sprint 11 Pha 2a returns:** Pha 1 ActionRefs=2 false positive → predicted Path B 4-6h → reality Path D drop 1.5h.
+
+Sprint 12+ audit MUST use L27 import-based grep.
+
+---
+
+### Lesson 28 — Python+scp safe file writing pattern (Sprint 11 Pha 2b)
+
+**L28 — Avoid SSH heredoc with template literals (backtick escape trap):**
+
+FAIL pattern (Sprint 11 Pha 2b Bước 4 incident): SSH heredoc + TS template literals (backticks) → bash preserves backslashes literally → SWC parser fails with Unterminated template error.
+
+PASS pattern (Sprint 11+ MUST use): Python script with plain string concat + scp transfer. Avoid template literals when writing files via SSH.
+
+**L24 + L28 family (SWC silent failure traps):**
+- L24 JSDoc */ terminator (Sprint 10 Pha 2d)
+- L28 Heredoc backslash-backtick (Sprint 11 Pha 2b)
+
+Sprint 12+ TS file writing MUST use Python+scp OR plain string concat.
+
+---
+
+### Lesson 29 — Strict module path grep pattern (Sprint 11 Pha 2d)
+
+**L29 — Module audit grep MUST use strict path pattern:**
+
+- FAIL pattern: `grep -rln 'from.*$M' path/` (substring match → 49 false positives for tenant from lib/tenant/context unrelated)
+- PASS pattern: `grep -rln 'from.*modules/$M|${CONST}_MODULE' path/` (strict module path → 0 real cascade)
+
+**L27 + L29 cumulative refinement (audit tooling progressive precision):**
+- L27 (Pha 2a): bare keyword → import-based
+- L29 (Pha 2d): substring from.*$M → strict from.*modules/$M
+
+Sprint 12+ audit template MUST use L29 strict pattern by default.
+
+---
+
+## Sprint 12+ Audit Template (synthesized Sprint 10-11)
+
+5-Dimension audit + L23-L29 lessons cumulative:
+
+- **D1 Schema-name (L20):** docker compose exec postgres psql -c `\dt $SCHEMA.*`
+- **D2 Method-level INSERT + SELECT + UPDATE (L23 9th — ALL types, not just INSERT):** grep service.ts
+- **D3 Cascade depth (L29 strict):** grep `from.*modules/$M|${CONST}_MODULE` in jobs/workers/subs/api
+- **D4 UI consumer (L27 import-based):** grep `from.*modules/$M|${CONST}_MODULE` in storefront/src/* + admin/routes
+- **D5 Bulk INSERT targets verify (L26):** single SQL VALUES + EXISTS query
+
+**Decision matrix:**
+- Path A adapt (≥80% match + 1-2 broken): 4-6h
+- Path B rewrite (40-79% OR 3+ broken): 6-10h
+- Path C escalate (<40% + arch mismatch): TBD
+- Path D drop (0 UI consumers + functional methods low): 1-2h
+- Path D-partial (1-2 broken, preserve functional): 2-4h
+- Path A minimal (1 line broken, 95% preserved): 0.5-1h
