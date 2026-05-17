@@ -1,53 +1,34 @@
+/**
+ * Fulfillment-pro module service (Sprint 11 Pha 2e Module 3 D-PARTIAL drop)
+ *
+ * D39 Path D-partial: dropped 4 methods touching MISSING tables.
+ *
+ * BƯỚC 0 audit revealed worse than Pha 1 (Pha 1 said 1/4 broken, actual 4/8):
+ * MISSING tables: warehouse, shipment, inventory_level
+ *
+ * DROPPED methods (4):
+ * - listWarehouses (SELECT fulfillment.warehouse — MISSING)
+ * - createShipment (INSERT fulfillment.shipment — MISSING)
+ * - updateShipmentStatus (UPDATE fulfillment.shipment — MISSING)
+ * - getInventory (SELECT fulfillment.inventory_level — MISSING)
+ *
+ * PRESERVED methods (4 functional):
+ * - submitCustomsDeclaration (INSERT customs_declaration — EXISTS)
+ * - startQcInspection (INSERT qc_inspection — EXISTS)
+ * - completeQc (UPDATE qc_inspection)
+ * - issueInsurance (INSERT insurance_policy — EXISTS)
+ *
+ * Sprint 12+ TODO: Re-implement warehouse + shipment + inventory tables
+ * when shipping/warehouse management feature drives.
+ */
+
 import { MedusaService } from "@medusajs/framework/utils"
-import { queryT, withTenant, type TenantContext } from "../../lib/db/pg"
+import { queryT, type TenantContext } from "../../lib/db/pg"
 import { emitAudit } from "../../lib/audit/emit"
 import { NotFoundError } from "../../lib/errors"
-import type { Warehouse, InventorySnapshot, Shipment, ShipmentStatus, CustomsDeclaration, QcInspection, InsurancePolicy } from "./types"
+import type { CustomsDeclaration, QcInspection, InsurancePolicy } from "./types"
 
 class FulfillmentProService extends MedusaService({}) {
-  async listWarehouses(ctx: TenantContext): Promise<Warehouse[]> {
-    const rows = await queryT<any>(ctx, `SELECT * FROM fulfillment.warehouse WHERE active = TRUE ORDER BY code`, [])
-    return rows.map(mapWarehouse)
-  }
-
-  async createShipment(ctx: TenantContext, input: Omit<Shipment, "id" | "tenantId" | "status">): Promise<Shipment> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO fulfillment.shipment (
-         id, tenant_id, order_id, from_warehouse_id, to_address,
-         carrier, service_level, weight_kg, dimensions_cm,
-         status, estimated_delivery_at, metadata, created_at, updated_at
-       ) VALUES (
-         public.uuidv7(), $1, $2, $3, $4::jsonb,
-         $5, $6, $7, $8::jsonb,
-         'draft', $9, $10::jsonb, NOW(), NOW()
-       ) RETURNING *`,
-      [
-        ctx.tenantId, input.orderId, input.fromWarehouseId, JSON.stringify(input.toAddress),
-        input.carrier, input.serviceLevel, input.weightKg, JSON.stringify(input.dimensionsCm),
-        input.estimatedDeliveryAt ?? null, JSON.stringify(input.metadata ?? {}),
-      ]
-    )
-    const ship = mapShipment(rows[0])
-    await emitAudit(ctx, { actionCode: "shipment.create", resourceType: "fulfillment.shipment", resourceId: ship.id, after: ship })
-    return ship
-  }
-
-  async updateShipmentStatus(ctx: TenantContext, shipmentId: string, status: ShipmentStatus, trackingNumber?: string): Promise<Shipment> {
-    const rows = await queryT<any>(
-      ctx,
-      `UPDATE fulfillment.shipment
-       SET status = $1, tracking_number = COALESCE($2, tracking_number),
-           actual_delivery_at = CASE WHEN $1 = 'delivered' THEN NOW() ELSE actual_delivery_at END,
-           updated_at = NOW()
-       WHERE id = $3 AND tenant_id = $4 RETURNING *`,
-      [status, trackingNumber ?? null, shipmentId, ctx.tenantId]
-    )
-    if (!rows[0]) throw new NotFoundError("Shipment", shipmentId)
-    await emitAudit(ctx, { actionCode: "shipment.status_update", resourceType: "fulfillment.shipment", resourceId: shipmentId, after: { status, trackingNumber } })
-    return mapShipment(rows[0])
-  }
-
   async submitCustomsDeclaration(ctx: TenantContext, input: Omit<CustomsDeclaration, "id" | "status">): Promise<CustomsDeclaration> {
     const rows = await queryT<any>(
       ctx,
@@ -111,51 +92,8 @@ class FulfillmentProService extends MedusaService({}) {
     )
     return mapInsurance(rows[0])
   }
-
-  async getInventory(ctx: TenantContext, warehouseId: string, skuIds?: string[]): Promise<InventorySnapshot[]> {
-    const params: unknown[] = [warehouseId]
-    let where = "WHERE warehouse_id = $1"
-    if (skuIds?.length) {
-      params.push(skuIds)
-      where += ` AND sku_id = ANY($${params.length}::uuid[])`
-    }
-    const rows = await queryT<any>(
-      ctx,
-      `SELECT warehouse_id, sku_id,
-              COALESCE(on_hand,0) AS on_hand, COALESCE(reserved,0) AS reserved,
-              COALESCE(on_hand,0) - COALESCE(reserved,0) AS available,
-              COALESCE(inbound,0) AS inbound, COALESCE(damaged,0) AS damaged
-       FROM fulfillment.inventory_level ${where}`,
-      params
-    )
-    return rows.map((r) => ({
-      warehouseId: r.warehouse_id,
-      skuId: r.sku_id,
-      onHand: Number(r.on_hand),
-      reserved: Number(r.reserved),
-      available: Number(r.available),
-      inbound: Number(r.inbound),
-      damaged: Number(r.damaged),
-    }))
-  }
 }
 
-function mapWarehouse(r: any): Warehouse {
-  return {
-    id: r.id, tenantId: r.tenant_id, code: r.code, name: r.name, type: r.type,
-    addressLine1: r.address_line1, city: r.city, country: r.country, postalCode: r.postal_code,
-    lat: r.lat, lng: r.lng, active: r.active, metadata: r.metadata ?? {},
-  }
-}
-function mapShipment(r: any): Shipment {
-  return {
-    id: r.id, tenantId: r.tenant_id, orderId: r.order_id, fromWarehouseId: r.from_warehouse_id,
-    toAddress: r.to_address, carrier: r.carrier, serviceLevel: r.service_level,
-    trackingNumber: r.tracking_number, weightKg: Number(r.weight_kg), dimensionsCm: r.dimensions_cm,
-    status: r.status, estimatedDeliveryAt: r.estimated_delivery_at, actualDeliveryAt: r.actual_delivery_at,
-    metadata: r.metadata ?? {},
-  }
-}
 function mapCustoms(r: any): CustomsDeclaration {
   return {
     id: r.id, shipmentId: r.shipment_id, originCountry: r.origin_country, destCountry: r.dest_country,

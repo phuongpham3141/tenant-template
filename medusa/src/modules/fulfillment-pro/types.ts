@@ -1,57 +1,11 @@
-export type ShipmentStatus = "draft" | "label_created" | "picked_up" | "in_transit" | "at_customs" | "out_for_delivery" | "delivered" | "exception" | "returned"
+/**
+ * Fulfillment-pro module types (Sprint 11 Pha 2e Module 3 D-PARTIAL)
+ *
+ * DROPPED: ShipmentStatus, Warehouse, InventorySnapshot, Shipment (tables missing)
+ * PRESERVED: QcStatus, CustomsDeclaration, QcInspection, InsurancePolicy
+ */
+
 export type QcStatus = "pending" | "in_progress" | "passed" | "failed" | "waived"
-
-export interface Warehouse {
-  id: string
-  tenantId: string
-  code: string
-  name: string
-  type: "fba" | "supplier_owned" | "3pl" | "consolidation"
-  addressLine1: string
-  city: string
-  country: string
-  postalCode: string
-  lat?: number
-  lng?: number
-  active: boolean
-  metadata?: Record<string, unknown>
-}
-
-export interface InventorySnapshot {
-  warehouseId: string
-  skuId: string
-  onHand: number
-  reserved: number
-  available: number
-  inbound: number
-  damaged: number
-}
-
-export interface Shipment {
-  id: string
-  tenantId: string
-  orderId: string
-  fromWarehouseId: string
-  toAddress: {
-    line1: string
-    line2?: string
-    city: string
-    state?: string
-    country: string
-    postalCode: string
-    phone?: string
-    contactName?: string
-  }
-  carrier: string
-  serviceLevel: string
-  trackingNumber?: string | null
-  weightKg: number
-  dimensionsCm: { length: number; width: number; height: number }
-  status: ShipmentStatus
-  estimatedDeliveryAt?: Date | null
-  actualDeliveryAt?: Date | null
-  metadata?: Record<string, unknown>
-}
 
 export interface CustomsDeclaration {
   id: string
