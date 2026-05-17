@@ -237,12 +237,67 @@ hotfix/*  ←  critical fixes
 
 ---
 
+## 9. MODULE_CONST naming ≠ DB schema naming (L22 — Sprint 10 Pha 1)
+
+### Insight
+
+Sprint 9A D14 fix renamed `_MODULE` constants từ hyphen sang underscore (e.g., `AI_LIVESTREAM_MODULE = "ai_livestream"`) — đây là **Medusa v2 framework requirement**, KHÔNG correlate với DB schema names. DB schemas designed semantic-first (Sprint 1 R20 era).
+
+### Sprint 10 Pha 1 discovery — 17/26 modules mismatch
+
+| MODULE_CONST | DB schema queried | Schema table count |
+|---|---|---|
+| `ai_livestream` | `live.*` | 78 tables |
+| `ai_platform` | `ai.*` | 18 tables |
+| `escrow` | `payment.*` | 19 tables |
+| `marketing_ads` | `advertising.*` | 44 tables |
+| `marketing_email` | `email_mkt.*` | 25 tables |
+| `live_commerce` | `live.*` (cùng ai_livestream) | 78 tables |
+| `tax_engine` | `tax.*` | 17 tables |
+| `auth_security` | `auth.*` | 29 tables |
+| `audit_log` | `audit.*` | 22 tables |
+| `notification_bus` | `notification.*` | 9 tables |
+| `payment_abstract` | `payment.*` | 19 tables |
+| `search_platform` | `search.*` | 19 tables |
+| `media_layer` | `media.*` | 28 tables |
+| `fulfillment_pro` | `fulfillment.*` | 15 tables |
+| `catalog_ext` | `catalog.*` | 14 tables |
+| `marketplace` | `identity.*` | 8 tables |
+| `tenant` | `admin.*` + `tenant.*` | 13 tables |
+
+### Pattern audit — TRƯỚC assume schema based on MODULE_CONST
+
+```bash
+# Step 1: Extract actual schema refs từ service
+grep -oE "(FROM|INTO|UPDATE)\s+[a-z_]+\.[a-z_]+" service.ts | sort -u
+
+# Step 2: Cross-reference với existing schemas
+docker compose exec -T postgres psql -U postgres -d medusa \
+  -c "SELECT schemaname FROM pg_tables GROUP BY schemaname"
+
+# Step 3: Schema name pass ≠ column-level pass (L19 separate concern)
+```
+
+### Hệ quả Sprint 10 audit
+
+- Schema-name pass: 24/26 modules (chỉ `returns` suspect + `supplier_application` factory)
+- Column-level pass: 2/26 confirmed (rfq + supplier_application)
+- Column-level fail: 4/26 RED confirmed (communication D21, escrow D23, marketplace D24, catalog-ext D25)
+- Column-level TBD: 20/26 (Sprint 11+ per-module STRICT audit needed)
+
+### Bài học correction
+
+Sprint 9A D14 fix focused Medusa framework naming. DB schema names = Sprint 1 R20 design layer (semantic grouping). **Two convention layers độc lập, không correlate.**
+
+---
+
 ## References
 
 - **Sprint roadmap:** `CMS/sprint-roadmap.md`
 - **Sprint 9A reports:** `CMS/report/P9A-*.md`
 - **Sprint 9B reports:** `CMS/report/P9B-*.md`
 - **Audit closure:** `CMS/P9-AUDIT-CLOSURE.md`
+- **Sprint 10 Pha 1 L20 audit:** `docs/sprint-10/L20-audit-report.md`
 - **Tenant config storefront:** `storefront/src/lib/tenant/index.ts`
 - **Env example:** `medusa/.env.example` (Mini-Pha 4 Bước 1)
 - **Migration tracking:** `admin.migration_log` (DB table)
