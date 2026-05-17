@@ -1,76 +1,26 @@
-import type { I18nText } from "../../lib/i18n"
+/**
+ * Marketplace module types (minimal stub)
+ *
+ * Sprint 10 Pha 2d (D24 Path D drop)
+ *
+ * STATUS: 9 type definitions dropped:
+ * - SupplierTier (0-6)
+ * - SupplierStatus enum
+ * - OperationMode enum
+ * - Supplier interface (broken cols dealerCapabilities/operationMode/yearEstablished/primaryIndustryCode)
+ * - CreateSupplierInput (broken)
+ * - UpdateSupplierInput (broken)
+ * - KycDocument (clean NHƯNG context dropped với service)
+ * - VerificationRecord (clean NHƯNG context dropped với service)
+ *
+ * See service.ts class docstring for full architectural rationale.
+ *
+ * Sprint 11+ TODO: Rewrite với schema reality cols matching:
+ * - Supplier (60+ cols, supplier_type/province/city/geo_*/primary_currency/
+ *   support_languages/is_audited/membership_tier/rolling_12m_gmv/7 ratings/etc)
+ * - DealerCapability (separate table identity.dealer_capability)
+ * - KycDocument (10+ cols matching identity.kyc_document)
+ * - VerificationRecord (matching identity.verification_record)
+ */
 
-export type SupplierTier = 0 | 1 | 2 | 3 | 4 | 5 | 6
-export type SupplierStatus = "draft" | "pending" | "active" | "suspended" | "banned" | "archived"
-export type OperationMode = "direct" | "intermediary"
-
-export interface Supplier {
-  id: string
-  tenantId: string
-  slug: string
-  legalName: string
-  displayNameI18n: I18nText
-  countryCode: string
-  status: SupplierStatus
-  verificationTier: SupplierTier
-  operationMode: OperationMode
-  dealerCapabilities: {
-    canSellWholesale: boolean
-    canSellRetail: boolean
-    canActAsAgent: boolean
-  }
-  yearEstablished?: number
-  employeeCount?: number
-  annualRevenueUsdMinor?: bigint
-  exportRatioPct?: number
-  primaryIndustryCode?: string
-  certifications?: string[]
-  tags?: string[]
-  categoryIds?: string[]
-  metadata?: Record<string, unknown>
-  createdAt: Date
-  updatedAt: Date
-}
-
-export interface CreateSupplierInput {
-  slug: string
-  legalName: string
-  displayName: I18nText
-  countryCode: string
-  operationMode?: OperationMode
-  dealerCapabilities?: Partial<Supplier["dealerCapabilities"]>
-  yearEstablished?: number
-  primaryIndustryCode?: string
-  metadata?: Record<string, unknown>
-}
-
-export interface UpdateSupplierInput extends Partial<CreateSupplierInput> {
-  status?: SupplierStatus
-  verificationTier?: SupplierTier
-}
-
-export interface KycDocument {
-  id: string
-  tenantId: string
-  supplierId: string
-  documentType: string
-  fileUrl: string
-  status: "pending" | "approved" | "rejected" | "expired"
-  reviewedBy?: string | null
-  reviewedAt?: Date | null
-  rejectionReason?: string | null
-  expiresAt?: Date | null
-  metadata?: Record<string, unknown>
-}
-
-export interface VerificationRecord {
-  id: string
-  tenantId: string
-  supplierId: string
-  fromTier: SupplierTier
-  toTier: SupplierTier
-  verifierId: string
-  verifiedAt: Date
-  evidenceDocumentIds: string[]
-  notes?: string
-}
+export {}
