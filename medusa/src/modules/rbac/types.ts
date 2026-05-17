@@ -1,18 +1,15 @@
+/**
+ * RBAC module types (Sprint 11 Pha 2e Module 2 D-PARTIAL)
+ *
+ * DROPPED: Role (table missing)
+ * PRESERVED: Permission, RolePermissionGrant, UserRoleAssignment, BreakGlassAccess
+ */
+
 export interface Permission {
   code: string
   resource: string
   action: string
   description?: string
-}
-
-export interface Role {
-  id: string
-  tenantId: string
-  code: string
-  name: string
-  description?: string
-  isSystemRole: boolean
-  isAssignable: boolean
 }
 
 export interface RolePermissionGrant {

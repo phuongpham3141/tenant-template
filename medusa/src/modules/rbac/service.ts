@@ -1,38 +1,35 @@
+/**
+ * RBAC module service (Sprint 11 Pha 2e Module 2 D-PARTIAL drop)
+ *
+ * D38 Path D-partial: dropped 2 methods touching rbac.role (MISSING).
+ *
+ * DROPPED methods:
+ * - listRoles (SELECT rbac.role — MISSING)
+ * - createRole (INSERT rbac.role — MISSING)
+ *
+ * PRESERVED methods (6 functional):
+ * - listPermissions (SELECT rbac.permission_master — EXISTS)
+ * - assignRole (INSERT rbac.user_role_assignment — EXISTS)
+ * - revokeRole (DELETE rbac.user_role_assignment)
+ * - hasPermission (SELECT public.has_permission function)
+ * - requirePermission (calls hasPermission)
+ * - openBreakGlass (INSERT rbac.break_glass_access — EXISTS)
+ *
+ * Sprint 12+ TODO: Re-implement role CRUD when RBAC management UI drives.
+ * Schema has role_permission_grant + user_role_assignment + break_glass_access
+ * but no role table — may need migration to add or restructure.
+ */
+
 import { MedusaService } from "@medusajs/framework/utils"
 import { queryT, type TenantContext } from "../../lib/db/pg"
 import { emitAudit } from "../../lib/audit/emit"
 import { PermissionDeniedError, NotFoundError } from "../../lib/errors"
-import type { Permission, Role, UserRoleAssignment, BreakGlassAccess } from "./types"
+import type { Permission, UserRoleAssignment, BreakGlassAccess } from "./types"
 
 class RbacService extends MedusaService({}) {
   async listPermissions(ctx: TenantContext): Promise<Permission[]> {
     const rows = await queryT<any>(ctx, `SELECT * FROM rbac.permission_master ORDER BY resource, action`, [])
     return rows.map((r) => ({ code: r.code, resource: r.resource, action: r.action, description: r.description }))
-  }
-
-  async listRoles(ctx: TenantContext): Promise<Role[]> {
-    const rows = await queryT<any>(ctx, `SELECT * FROM rbac.role WHERE tenant_id = $1 OR tenant_id IS NULL ORDER BY code`, [ctx.tenantId])
-    return rows.map((r) => ({
-      id: r.id, tenantId: r.tenant_id, code: r.code, name: r.name,
-      description: r.description, isSystemRole: r.is_system_role, isAssignable: r.is_assignable,
-    }))
-  }
-
-  async createRole(ctx: TenantContext, input: { code: string; name: string; description?: string; permissionCodes: string[] }): Promise<Role> {
-    const rows = await queryT<any>(
-      ctx,
-      `INSERT INTO rbac.role (id, tenant_id, code, name, description, is_system_role, is_assignable, created_at, updated_at)
-       VALUES (public.uuidv7(), $1, $2, $3, $4, FALSE, TRUE, NOW(), NOW()) RETURNING *`,
-      [ctx.tenantId, input.code, input.name, input.description ?? null]
-    )
-    const role = rows[0]
-    for (const p of input.permissionCodes) {
-      await queryT(ctx,
-        `INSERT INTO rbac.role_permission_grant (role_id, permission_code, granted_at, granted_by_user_id) VALUES ($1, $2, NOW(), $3) ON CONFLICT DO NOTHING`,
-        [role.id, p, ctx.userId])
-    }
-    await emitAudit(ctx, { actionCode: "rbac.role.create", resourceType: "rbac.role", resourceId: role.id, after: role, severity: "high" })
-    return { id: role.id, tenantId: role.tenant_id, code: role.code, name: role.name, description: role.description, isSystemRole: false, isAssignable: true }
   }
 
   async assignRole(ctx: TenantContext, input: Omit<UserRoleAssignment, "id" | "grantedAt" | "grantedBy">): Promise<UserRoleAssignment> {
