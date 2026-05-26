@@ -68,6 +68,38 @@ export const NAV_CATEGORIES = [
   { icon: "🛋", name: "Nội thất", slug: "noi-that" },
 ];
 
+/** Hierarchical sidebar menu — 2 main groups, each with ~8 sub-items.
+ *  Sub-items link to category leaf pages. Hovering opens mega panel
+ *  showing the parent main cat's full sections grid. */
+export const NAV_MENU = [
+  {
+    main: { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
+    items: [
+      { name: "Thép & Kim loại", slug: "ket-cau-thep-khung" },
+      { name: "Tấm ốp tường & Trần", slug: "tam-op-tuong-tran" },
+      { name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san" },
+      { name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat" },
+      { name: "Sơn & Lớp phủ", slug: "son-lop-phu" },
+      { name: "Cách âm & Cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet" },
+      { name: "Chống thấm", slug: "vat-lieu-chong-tham" },
+      { name: "Xi măng & Vữa", slug: "vat-lieu-kho-xi-mang-vua" },
+    ],
+  },
+  {
+    main: { icon: "🛋", name: "Nội thất", slug: "noi-that" },
+    items: [
+      { name: "Phòng khách", slug: "phong-khach" },
+      { name: "Phòng ngủ", slug: "phong-ngu" },
+      { name: "Phòng ăn", slug: "phong-an" },
+      { name: "Tủ bếp", slug: "tu-bep" },
+      { name: "Tủ quần áo", slug: "tu-quan-ao" },
+      { name: "Văn phòng tại nhà", slug: "van-phong-tai-nha" },
+      { name: "Nội thất khách sạn", slug: "noi-that-khach-san" },
+      { name: "Trẻ em & Em bé", slug: "tre-em-em-be" },
+    ],
+  },
+];
+
 export const STATS = [
   { value: "960+", label: "SKU đang bán" },
   { value: "20+", label: "Nhà máy đã thẩm định" },

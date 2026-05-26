@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_CATEGORIES } from "@/data/home";
+import { NAV_CATEGORIES, NAV_MENU } from "@/data/home";
 import { SubmenuContent } from "@/components/home/mega-submenu";
 
 export function NavBar() {
@@ -26,22 +26,27 @@ export function NavBar() {
           </div>
           <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
             <aside className="mm-l1 w-[240px] border-r border-line">
-              {NAV_CATEGORIES.map((c) => (
-                <div key={c.slug} className="mm-cat">
+              {NAV_MENU.map((group) => (
+                <div key={group.main.slug} className="mm-cat">
+                  {/* Main category header */}
                   <Link
-                    href={`/category/${c.slug}`}
-                    className="flex justify-between items-center px-3.5 py-2.5 text-[13px] border-b border-[#F5F5F5] last:border-b-0 hover:bg-brand hover:text-white"
+                    href={`/category/${group.main.slug}`}
+                    className="flex justify-between items-center px-3.5 py-2.5 text-[13px] bg-[#F8F9FA] border-b border-line hover:bg-brand hover:text-white font-semibold"
                   >
-                    <b className="font-medium">
-                      {c.icon} {c.name}
-                      {c.isNew && (
-                        <span className="bg-accent text-white text-[9px] px-1.5 py-px rounded-sm ml-1.5">
-                          MỚI
-                        </span>
-                      )}
-                    </b>
+                    <b className="font-bold">{group.main.icon} {group.main.name}</b>
                     <span className="text-mute2 text-[11px]">▸</span>
                   </Link>
+                  {/* Sub-items */}
+                  {group.items.map((it) => (
+                    <Link
+                      key={it.slug}
+                      href={`/category/${group.main.slug}/${it.slug}`}
+                      className="flex justify-between items-center px-3.5 py-1.5 text-[12.5px] text-mute border-b border-[#F5F5F5] hover:bg-brand hover:text-white hover:pl-5 transition-all"
+                    >
+                      <span className="pl-3 truncate">{it.name}</span>
+                      <span className="text-mute2 text-[10px] ml-1">▸</span>
+                    </Link>
+                  ))}
                 </div>
               ))}
             </aside>
