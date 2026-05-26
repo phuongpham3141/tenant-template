@@ -22,7 +22,7 @@ export default async function BuyingRequestPage({
       <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Yêu cầu báo giá" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[180px] bg-brand-dark">
-          <img src="/img/rfq-hero.jpg?v=4" alt="" className="w-full h-full object-cover opacity-55" />
+          <img src="/img/rfq-hero.jpg?v=5" alt="" className="w-full h-full object-cover opacity-55" />
           <div className="absolute inset-0 px-8 py-6 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📨 RFQ — REQUEST FOR QUOTATION</span>
             <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">Gửi yêu cầu — Nhận báo giá trong 24h</h1>

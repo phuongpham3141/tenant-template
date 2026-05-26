@@ -63,7 +63,7 @@ export default function SmartExpoPage() {
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
               {UPCOMING.map((u) => (
                 <div key={u.title} className="border border-line rounded overflow-hidden hover:border-brand grid grid-cols-[120px_1fr] max-md:grid-cols-1">
-                  <img src={`/img/seller-expo-${u.img}.jpg?v=4`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
+                  <img src={`/img/seller-expo-${u.img}.jpg?v=5`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
                   <div className="p-3">
                     <span className="text-[10.5px] text-accent font-bold uppercase tracking-wider">{u.date}</span>
                     <b className="block text-[13.5px] text-ink mt-1 mb-1">{u.title}</b>
@@ -98,7 +98,7 @@ export default function SmartExpoPage() {
               {BOOTHS.map((b) => (
                 <div key={b.name} className="border border-line rounded overflow-hidden hover:border-brand">
                   <div className="aspect-video bg-[#F5F5F5] relative">
-                    <img src={`/img/seller-booth-${b.img}.jpg?v=4`} alt="" className="w-full h-full object-cover" />
+                    <img src={`/img/seller-booth-${b.img}.jpg?v=5`} alt="" className="w-full h-full object-cover" />
                     <span className="absolute top-2 right-2 bg-success text-white text-[10px] font-bold px-2 py-0.5 rounded-sm">3D</span>
                   </div>
                   <div className="p-3">

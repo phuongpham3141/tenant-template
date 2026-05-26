@@ -48,7 +48,7 @@ export function SupplierDetail({
       {/* Banner */}
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[220px] bg-brand-dark">
-          <img src={`/img/${f.slug}-cover.jpg?v=4`} alt="" className="w-full h-full object-cover opacity-60" />
+          <img src={`/img/${f.slug}-cover.jpg?v=5`} alt="" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 px-7 py-6 flex items-end gap-5 text-white" style={{ background: "linear-gradient(transparent 30%, rgba(0,37,87,0.95))" }}>
             <div className="w-20 h-20 bg-white border-4 border-gold rounded flex items-center justify-center font-extrabold text-[28px] text-brand flex-shrink-0">
               {f.initials}
@@ -221,7 +221,7 @@ function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: nu
         <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="aspect-video bg-[#F5F5F5] rounded overflow-hidden">
-              <img src={`/img/${f.slug}-line-${i}.jpg?v=4`} alt="" className="w-full h-full object-cover" />
+              <img src={`/img/${f.slug}-line-${i}.jpg?v=5`} alt="" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
@@ -469,7 +469,7 @@ function CapacityTab({ f }: { f: Factory }) {
           ].map((l) => (
             <div key={l.n} className="bg-bg border border-line rounded p-3 flex gap-3">
               <div className="aspect-video w-32 flex-shrink-0 bg-[#F5F5F5] rounded overflow-hidden">
-                <img src={`/img/${f.slug}-line${l.n}.jpg?v=4`} alt="" className="w-full h-full object-cover" />
+                <img src={`/img/${f.slug}-line${l.n}.jpg?v=5`} alt="" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <b className="block text-[13px] text-ink">Dây chuyền {l.n} — {l.name}</b>

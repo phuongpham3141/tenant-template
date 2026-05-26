@@ -9,7 +9,7 @@ function getZone(slug: string): Zone {
       slug,
       name: slug.split("-").map((w) => w[0]?.toUpperCase() + w.slice(1)).join(" "),
       count: "100+ factories",
-      image: `/img/${slug}.jpg?v=4`,
+      image: `/img/${slug}.jpg?v=5`,
     }
   );
 }
@@ -142,7 +142,7 @@ export default async function ZonePage({
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
         <h2 className="text-[16px] font-bold text-ink mb-3">Bản đồ cluster</h2>
         <div className="relative rounded overflow-hidden h-[280px] bg-brand-dark">
-          <img src={`/img/${slug}-map.jpg?v=4`} alt="map" className="w-full h-full object-cover opacity-60" />
+          <img src={`/img/${slug}-map.jpg?v=5`} alt="map" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.55)" }}>
             <div className="text-center">
               <div className="text-[36px] mb-2">🗺️</div>

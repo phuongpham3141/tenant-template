@@ -23,7 +23,7 @@ const HERO_SLIDES: HeroSlide[] = [
     desc: "960+ sản phẩm từ 20+ nhà máy gốm sứ (Phật Sơn) và nội thất (Tấn Giang, KUKA, OPPEIN). Báo giá trực tiếp, không qua trung gian.",
     primary: { label: "📨 Gửi yêu cầu báo giá", href: "/buying-request" },
     secondary: { label: "🏭 Xem nhà máy →", href: "/suppliers" },
-    image: "/img/heroint.jpg?v=4",
+    image: "/img/heroint.jpg?v=5",
   },
   {
     badge: "🎁 Ưu đãi buyer mới",
@@ -33,7 +33,7 @@ const HERO_SLIDES: HeroSlide[] = [
     desc: "Đăng ký buyer mới nhận audit nhà máy trị giá $300 miễn phí, miễn phí vận chuyển DDP và giảm 10% đơn hàng đầu tiên.",
     primary: { label: "🎁 Đăng ký Người mua", href: "/register/buyer" },
     secondary: { label: "Tìm hiểu thêm →", href: "/info/gold-membership" },
-    image: "/img/hero-buyer-promo.jpg?v=4",
+    image: "/img/hero-buyer-promo.jpg?v=5",
   },
   {
     badge: "📹 Smart Expo Online",
@@ -43,7 +43,7 @@ const HERO_SLIDES: HeroSlide[] = [
     desc: "Live video factory tour, gặp QC manager, xem dây chuyền sản xuất real-time. Tiết kiệm 5-7 ngày so với đi thực tế.",
     primary: { label: "🏭 Tham quan ngay", href: "/factory-tour" },
     secondary: { label: "Đặt lịch tour →", href: "/buyer-center/meet-suppliers" },
-    image: "/img/hero-factory-tour.jpg?v=4",
+    image: "/img/hero-factory-tour.jpg?v=5",
   },
   {
     badge: "🚢 Logistics DDP",
@@ -53,7 +53,7 @@ const HERO_SLIDES: HeroSlide[] = [
     desc: "Trọn gói: vận chuyển + thuế + thông quan. LCL/FCL từ Quảng Châu, Ninh Ba, Hạ Môn. Báo giá cước trong 1h.",
     primary: { label: "💰 Tính cước DDP", href: "/info/ddp-calculator" },
     secondary: { label: "Xem cảng đi →", href: "/info/shipping-policy" },
-    image: "/img/hero-ddp-logistics.jpg?v=4",
+    image: "/img/hero-ddp-logistics.jpg?v=5",
   },
 ];
 

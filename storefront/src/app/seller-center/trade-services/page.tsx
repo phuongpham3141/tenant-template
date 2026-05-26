@@ -149,7 +149,7 @@ export default function TradeServicesPage() {
             <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
               {TOP_PROVIDERS.map((p, i) => (
                 <div key={p.name} className="border border-line rounded p-3 text-center hover:border-brand">
-                  <img src={`/img/seller-trade-prov-${i}.jpg?v=4`} alt="" className="w-12 h-12 mx-auto mb-2 rounded object-cover" />
+                  <img src={`/img/seller-trade-prov-${i}.jpg?v=5`} alt="" className="w-12 h-12 mx-auto mb-2 rounded object-cover" />
                   <b className="block text-[11.5px] text-ink leading-tight mb-1">{p.name}</b>
                   <div className="text-[10.5px] text-gold mb-1">★ {p.rating}</div>
                   <span className="text-[10px] text-mute block">{p.jobs}</span>

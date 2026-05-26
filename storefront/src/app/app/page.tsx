@@ -33,7 +33,7 @@ export default function AppPage() {
             </div>
             <div className="mt-5 pt-5 border-t border-line flex items-center gap-4 max-md:flex-col max-md:items-start">
               <div className="w-28 h-28 bg-paper border border-line rounded p-1.5 flex-shrink-0">
-                <img src="/img/qrcode.jpg?v=4" alt="QR" className="w-full h-full object-cover rounded-sm" />
+                <img src="/img/qrcode.jpg?v=5" alt="QR" className="w-full h-full object-cover rounded-sm" />
               </div>
               <div>
                 <b className="block text-[13px] text-ink mb-1">Quét mã QR để tải nhanh</b>
@@ -54,7 +54,7 @@ export default function AppPage() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <img src="/img/app-phone.jpg?v=4" alt="App screenshot" className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
+              <img src="/img/app-phone.jpg?v=5" alt="App screenshot" className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
               <div className="absolute -top-3 -right-3 bg-gold text-brand-dark px-3 py-1.5 rounded-full text-[11px] font-bold rotate-12 shadow">
                 +5% OFF
               </div>

@@ -66,7 +66,7 @@ export default function TradeEhomePage() {
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {INTEGRATIONS.map((i) => (
                 <div key={i.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
-                  <img src={`/img/seller-ehome-int-${i.logo}.jpg?v=4`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
+                  <img src={`/img/seller-ehome-int-${i.logo}.jpg?v=5`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
                   <div className="min-w-0">
                     <b className="block text-[12px] text-ink truncate">{i.name}</b>
                     <span className="text-[10.5px] text-mute">{i.type}</span>

@@ -146,7 +146,7 @@ export default function GoldMemberPage() {
               {TESTIMONIALS.map((t) => (
                 <div key={t.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
                   <div className="flex items-center gap-3 mb-3">
-                    <img src={`/img/seller-gold-${t.avatar}.jpg?v=4`} alt="" className="w-12 h-12 rounded-full object-cover" />
+                    <img src={`/img/seller-gold-${t.avatar}.jpg?v=5`} alt="" className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <b className="block text-[12.5px] text-ink leading-tight">{t.company}</b>
                       <span className="text-[11px] text-mute">{t.role}</span>

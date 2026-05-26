@@ -13,7 +13,7 @@ export default function FactoryTourPage() {
       <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Factory Tour" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[240px] bg-brand-dark">
-          <img src="/img/factory-tour.jpg?v=4" alt="" className="w-full h-full object-cover opacity-55" />
+          <img src="/img/factory-tour.jpg?v=5" alt="" className="w-full h-full object-cover opacity-55" />
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 FACTORY TOUR</span>
             <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">Khám phá nhà máy trực tuyến</h1>
@@ -27,7 +27,7 @@ export default function FactoryTourPage() {
         <h2 className="text-[18px] font-bold text-ink mb-3">🎬 Tour featured tuần này</h2>
         <div className="bg-paper border border-line rounded overflow-hidden grid grid-cols-[1fr_320px] max-md:grid-cols-1">
           <div className="relative aspect-video bg-brand-dark">
-            <img src="/img/factory-tour-featured.jpg?v=4" alt="Featured tour" className="w-full h-full object-cover opacity-80" />
+            <img src="/img/factory-tour-featured.jpg?v=5" alt="Featured tour" className="w-full h-full object-cover opacity-80" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center text-[34px] cursor-pointer hover:scale-110 transition">
                 ▶
@@ -58,7 +58,7 @@ export default function FactoryTourPage() {
           {TOURS.map(({ factory, duration }) => (
             <Link key={factory.slug} href={`/supplier/${factory.slug}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
               <div className="relative aspect-video bg-[#F5F5F5]">
-                <img src={`/img/tour-${factory.slug}.jpg?v=4`} alt={factory.name} className="w-full h-full object-cover" />
+                <img src={`/img/tour-${factory.slug}.jpg?v=5`} alt={factory.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/15">
                   <div className="w-12 h-12 bg-white/95 rounded-full flex items-center justify-center text-[18px]">▶</div>
                 </div>

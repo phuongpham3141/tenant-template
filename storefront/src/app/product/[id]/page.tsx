@@ -258,7 +258,7 @@ export default async function ProductPage({
                   aria-label={`Ảnh ${i}`}
                 >
                   <img
-                    src={`/img/${p.id}-${i}.jpg?v=4`}
+                    src={`/img/${p.id}-${i}.jpg?v=5`}
                     alt=""
                     className="w-full h-full object-cover"
                   />
@@ -274,7 +274,7 @@ export default async function ProductPage({
                   src={
                     i === 1 && p.image
                       ? p.image
-                      : `/img/${p.id}-${i}.jpg?v=4`
+                      : `/img/${p.id}-${i}.jpg?v=5`
                   }
                   alt={p.title}
                   className={`ig-img ig-img-${i} absolute inset-0 w-full h-full object-cover`}
@@ -580,13 +580,13 @@ export default async function ProductPage({
           <p className="text-[13px] text-ink leading-relaxed mb-4">
             <b>{p.title}</b> được sản xuất bởi <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link>, một trong những nhà máy hàng đầu tại Trung Quốc với <b>{p.years} kinh nghiệm</b> xuất khẩu. Sản phẩm đạt tiêu chuẩn quốc tế, phù hợp cho dự án thương mại và dân dụng cao cấp.
           </p>
-          <img src={`/img/${p.id}-desc1.jpg?v=4`} alt="" className="w-full rounded mb-4" loading="lazy" />
+          <img src={`/img/${p.id}-desc1.jpg?v=5`} alt="" className="w-full rounded mb-4" loading="lazy" />
           <p className="text-[13px] text-ink leading-relaxed mb-4">
             Quy trình kiểm soát chất lượng nghiêm ngặt theo <b>ISO 9001:2015</b>. Mỗi lô hàng đều được audit bởi đội ngũ Cybersilkroads tại Quảng Châu trước khi xuất xưởng. Hỗ trợ <b>OEM/ODM</b> theo bản vẽ khách hàng, MOQ linh hoạt, thời gian giao 20-30 ngày.
           </p>
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
-            <img src={`/img/${p.id}-desc2.jpg?v=4`} alt="" className="w-full rounded" loading="lazy" />
-            <img src={`/img/${p.id}-desc3.jpg?v=4`} alt="" className="w-full rounded" loading="lazy" />
+            <img src={`/img/${p.id}-desc2.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
+            <img src={`/img/${p.id}-desc3.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
           </div>
           <p className="text-[13px] text-ink leading-relaxed">
             Vận chuyển <b>DDP về Việt Nam</b> — không phải lo thủ tục hải quan, không phát sinh phí. Kho trung chuyển tại Bằng Tường (Lạng Sơn) và Hữu Nghị (cảng Hải Phòng) đảm bảo thời gian giao 5-7 ngày từ Trung Quốc về kho buyer.

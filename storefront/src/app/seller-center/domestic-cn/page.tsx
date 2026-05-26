@@ -82,7 +82,7 @@ export default function DomesticCnPage() {
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-1">
             {CHANNELS.map((c) => (
               <div key={c.name} className="bg-paper border border-line rounded overflow-hidden hover:border-brand">
-                <img src={`/img/seller-cn-${c.img}.jpg?v=4`} alt="" className="w-full h-[120px] object-cover" />
+                <img src={`/img/seller-cn-${c.img}.jpg?v=5`} alt="" className="w-full h-[120px] object-cover" />
                 <div className="p-4">
                   <b className="block text-[14px] text-ink">{c.name}</b>
                   <span className="text-[11px] text-mute mb-2 block">Vận hành: {c.operator}</span>
@@ -145,7 +145,7 @@ export default function DomesticCnPage() {
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
                 <div key={c.company} className="border border-line rounded overflow-hidden hover:border-brand grid grid-cols-[140px_1fr] max-md:grid-cols-1">
-                  <img src={`/img/seller-cn-case-${c.img}.jpg?v=4`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
+                  <img src={`/img/seller-cn-case-${c.img}.jpg?v=5`} alt="" className="w-full h-full object-cover max-md:h-[140px]" />
                   <div className="p-4">
                     <b className="block text-[13px] text-ink mb-2">{c.company}</b>
                     <p className="text-[11.5px] text-mute leading-relaxed mb-3">{c.desc}</p>

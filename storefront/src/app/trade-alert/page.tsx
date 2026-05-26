@@ -27,7 +27,7 @@ export default function TradeAlertPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-4 grid grid-cols-[1fr_360px] gap-5 max-md:grid-cols-1">
         <div>
           <div className="relative rounded overflow-hidden h-[200px] bg-brand-dark">
-            <img src="/img/tradealert.jpg?v=4" alt="" className="w-full h-full object-cover opacity-55" />
+            <img src="/img/tradealert.jpg?v=5" alt="" className="w-full h-full object-cover opacity-55" />
             <div className="absolute inset-0 px-7 py-6 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
               <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📬 NEWSLETTER B2B</span>
               <h1 className="text-[28px] font-extrabold leading-tight max-md:text-[22px]">Nhận thông báo sản phẩm & xu hướng ngành mỗi tuần</h1>

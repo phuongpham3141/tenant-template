@@ -24,7 +24,7 @@ export function SubmenuContent({ slug }: { slug: string }) {
       const subSlug = sc.slug;
       carouselItems.push({
         name: sc.name,
-        image: `/img/${(subSlug ?? sc.name).replace(/\s+/g, "")}.jpg?v=4`,
+        image: `/img/${(subSlug ?? sc.name).replace(/\s+/g, "")}.jpg?v=5`,
         href: subSlug
           ? `/category/${slug}/${subSlug}`
           : `/category/${slug}#sec-${s.id}`,
@@ -34,7 +34,7 @@ export function SubmenuContent({ slug }: { slug: string }) {
           const it = norm(raw);
           carouselItems.push({
             name: it.name,
-            image: `/img/${(it.slug ?? it.name).replace(/\s+/g, "")}.jpg?v=4`,
+            image: `/img/${(it.slug ?? it.name).replace(/\s+/g, "")}.jpg?v=5`,
             href: it.slug
               ? `/category/${slug}/${it.slug}`
               : `/category/${slug}#sec-${s.id}`,

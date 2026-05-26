@@ -81,7 +81,7 @@ export type LeafSeed = {
   };
 };
 
-const photo = (seed: string) => `/img/${seed}.jpg?v=4`;
+const photo = (seed: string) => `/img/${seed}.jpg?v=5`;
 
 export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
   "ghe-van-phong": {
@@ -2916,7 +2916,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Foshan Hospitality Decor Factory",
-      logo: "/img/sup-hotel-fs.jpg?v=4",
+      logo: "/img/sup-hotel-fs.jpg?v=5",
       loc: "Foshan, Guangdong",
       videoCaption: "Xưởng decor F&B 5 sao — chuyên cung cấp Marriott, Hilton",
       products: [
@@ -3051,7 +3051,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Guangzhou Lobby Decor Co., Ltd.",
-      logo: "/img/sup-lobby-gz.jpg?v=4",
+      logo: "/img/sup-lobby-gz.jpg?v=5",
       loc: "Guangzhou, Guangdong",
       videoCaption: "Tour xưởng decor sảnh — đã cung cấp 200+ khách sạn 5 sao châu Á",
       products: [
@@ -3446,7 +3446,7 @@ export const HOME_GARDEN_LEAVES: Record<string, LeafSeed> = {
     ],
     featuredSupplier: {
       name: "Quanzhou Natural Stone Carving",
-      logo: "/img/sup-stone-qz.jpg?v=4",
+      logo: "/img/sup-stone-qz.jpg?v=5",
       loc: "Quanzhou, Fujian",
       videoCaption: "Xưởng đá Tuyền Châu — chuyên tượng đá granite tự nhiên xuất khẩu",
       products: [
@@ -3936,7 +3936,7 @@ function buildShowcaseLeaf(parent: string): LeafCategoryPage | null {
     priceTo: "$280",
     unit: "/ Bộ",
     moq: "10 Bộ",
-    img: { src: `/img/demo-${parent}-1-1.jpg?v=4`, total: 8 },
+    img: { src: `/img/demo-${parent}-1-1.jpg?v=5`, total: 8 },
     guaranteed: true,
     supplier,
   };
@@ -3957,7 +3957,7 @@ function buildShowcaseLeaf(parent: string): LeafCategoryPage | null {
       audited: true,
       rating: 5,
       videoCaption: "Demo showcase",
-      videoSrc: `/img/${parent}-sc-fvideo.jpg?v=4`,
+      videoSrc: `/img/${parent}-sc-fvideo.jpg?v=5`,
       miniProducts: [],
     },
     products: [lp],

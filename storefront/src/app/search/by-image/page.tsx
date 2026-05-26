@@ -97,7 +97,7 @@ export default async function ByImageSearchPage({
                 >
                   <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden border border-line group-hover:border-brand">
                     <img
-                      src={`/img/${s.seed}.jpg?v=4`}
+                      src={`/img/${s.seed}.jpg?v=5`}
                       alt={s.label}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />

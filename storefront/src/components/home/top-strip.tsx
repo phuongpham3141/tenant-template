@@ -79,19 +79,19 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/cer1.jpg?v=4",
+    thumb: "/img/cer1.jpg?v=5",
     label: "Gạch Porcelain Calacatta 600×1200",
     href: "/product/ceramic-1",
     desc: "Dongpeng Ceramics · $8.50/m²",
   },
   {
-    thumb: "/img/fur1.jpg?v=4",
+    thumb: "/img/fur1.jpg?v=5",
     label: "Sofa góc chữ L 6 chỗ bọc nhung",
     href: "/product/furniture-1",
     desc: "KUKA Home · $420/bộ",
   },
   {
-    thumb: "/img/fur7.jpg?v=4",
+    thumb: "/img/fur7.jpg?v=5",
     label: "Tủ bếp OPPEIN acrylic bóng",
     href: "/product/furniture-7",
     desc: "OPPEIN Home · $210/m",
