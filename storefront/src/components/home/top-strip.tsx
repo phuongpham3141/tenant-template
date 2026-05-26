@@ -79,22 +79,22 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/fav-oxford.jpg?v=4",
-    label: "Vải Oxford 420D chống thấm",
-    href: "/products/vai-oxford-420d",
-    desc: "Hồ Bắc Textile · $3.20/m",
+    thumb: "/img/cer1.jpg?v=4",
+    label: "Gạch Porcelain Calacatta 600×1200",
+    href: "/product/ceramic-1",
+    desc: "Dongpeng Ceramics · $8.50/m²",
   },
   {
-    thumb: "/img/fav-led.jpg?v=4",
-    label: "Đèn LED panel 60×60",
-    href: "/products/den-led-panel",
-    desc: "Quảng Đông Lighting · $12/cái",
+    thumb: "/img/fur1.jpg?v=4",
+    label: "Sofa góc chữ L 6 chỗ bọc nhung",
+    href: "/product/furniture-1",
+    desc: "KUKA Home · $420/bộ",
   },
   {
-    thumb: "/img/fav-powerbank.jpg?v=4",
-    label: "Pin sạc dự phòng 20000mAh",
-    href: "/products/pin-sac-20000",
-    desc: "Thâm Quyến Power · $8.50/cái",
+    thumb: "/img/fur7.jpg?v=4",
+    label: "Tủ bếp OPPEIN acrylic bóng",
+    href: "/product/furniture-7",
+    desc: "OPPEIN Home · $210/m",
   },
 ];
 

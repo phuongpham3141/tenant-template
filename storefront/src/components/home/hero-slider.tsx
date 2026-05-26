@@ -16,11 +16,11 @@ type HeroSlide = {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "⚡ Canton Fair 2026",
-    titleStart: "Tìm nhà máy tốt nhất\ntừ ",
-    titleGold: "Trung Quốc",
-    titleEnd: ".",
-    desc: "2,400+ sản phẩm từ 40+ nhà máy đã được kiểm định. Báo giá trực tiếp, không qua trung gian.",
+    badge: "🏭 Chuyên ngành Nội thất & VLXD",
+    titleStart: "Nguồn ",
+    titleGold: "gốm sứ & nội thất",
+    titleEnd: "\ntrực tiếp từ Trung Quốc.",
+    desc: "960+ sản phẩm từ 20+ nhà máy gốm sứ (Phật Sơn) và nội thất (Tấn Giang, KUKA, OPPEIN). Báo giá trực tiếp, không qua trung gian.",
     primary: { label: "📨 Gửi yêu cầu báo giá", href: "/buying-request" },
     secondary: { label: "🏭 Xem nhà máy →", href: "/suppliers" },
     image: "/img/heroint.jpg?v=4",
