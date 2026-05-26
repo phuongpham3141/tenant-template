@@ -56,33 +56,23 @@ export type Zone = {
 
 export const HOT_SEARCHES = [
   "gạch porcelain",
-  "bộ sofa",
-  "bồn cầu thông minh",
-  "đèn thả LED",
-  "tủ bếp",
   "đá marble tấm lớn",
+  "bộ sofa",
+  "tủ bếp",
+  "sàn gỗ kỹ thuật",
+  "giường khách sạn",
 ];
 
 export const NAV_CATEGORIES = [
-  { icon: "🏠", name: "Nhà & Sân vườn", slug: "home-garden" },
   { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
-  { icon: "🚿", name: "Phòng tắm & Vệ sinh", slug: "bathroom-sanitary" },
-  { icon: "🛋", name: "Nội thất", slug: "noi-that", isNew: true },
-  { icon: "🍳", name: "Thiết bị nhà bếp", slug: "kitchen-equipment" },
-  { icon: "💡", name: "Đèn & Chiếu sáng", slug: "lighting" },
-  { icon: "🪟", name: "Cửa & Cửa sổ", slug: "doors-windows" },
-  { icon: "🛏", name: "Đồ dùng khách sạn", slug: "hotel-supplies" },
-  { icon: "🔨", name: "Phụ kiện & Dụng cụ", slug: "hardware-tools" },
-  { icon: "🎨", name: "Trang trí", slug: "decoration" },
-  { icon: "🌿", name: "Ngoài trời & Sân vườn", slug: "outdoor-garden" },
-  { icon: "⚡", name: "Điện & Thiết bị điện", slug: "electrical" },
+  { icon: "🛋", name: "Nội thất", slug: "noi-that" },
 ];
 
 export const STATS = [
-  { value: "2.400+", label: "SKU đang bán" },
-  { value: "40+", label: "Nhà máy đã thẩm định" },
+  { value: "960+", label: "SKU đang bán" },
+  { value: "20+", label: "Nhà máy đã thẩm định" },
   { value: "<24h", label: "Thời gian báo giá" },
-  { value: "600+", label: "Đại lý VN" },
+  { value: "300+", label: "Đại lý VN" },
   { value: "12 năm", label: "Lịch sử giao dịch" },
 ];
 
@@ -90,10 +80,10 @@ export const SECTIONS: Section[] = [
   {
     id: "ceramic",
     num: 1,
-    title: "Gạch & Đá ốp lát",
+    title: "Vật liệu xây dựng",
     cn: "建材",
-    tabs: ["Tất cả", "Gạch lát sàn", "Gạch ốp tường", "Gạch porcelain", "Đá marble tấm", "Gạch mosaic"],
-    totalCount: "1.200",
+    tabs: ["Tất cả", "Gạch porcelain", "Đá marble tấm", "Gạch lát sàn", "Gạch ốp tường", "Sàn gỗ kỹ thuật"],
+    totalCount: "480",
     categorySlug: "construction-materials",
     featureSlug: "dongpeng-ceramics",
     feature: {
@@ -117,9 +107,9 @@ export const SECTIONS: Section[] = [
   {
     id: "furniture",
     num: 2,
-    title: "Nội thất & Đồ gia dụng",
+    title: "Nội thất",
     cn: "家具",
-    tabs: ["Tất cả", "Phòng khách", "Phòng ngủ", "Phòng ăn", "Văn phòng", "Khách sạn"],
+    tabs: ["Tất cả", "Phòng khách", "Phòng ngủ", "Phòng ăn", "Tủ bếp & Tủ áo", "Văn phòng", "Khách sạn"],
     totalCount: "480",
     categorySlug: "noi-that",
     featureSlug: "kuka-home",
@@ -141,52 +131,23 @@ export const SECTIONS: Section[] = [
       { id: "furniture-8", title: "Tủ quần áo cửa trượt 4 cánh MDF melamine hiện đại", price: "$340", unit: "/cái", moq: "MOQ: 10 cái", rating: 4.8, seller: "Suofeiya Home", years: "12 năm", image: "/img/fur8.jpg?v=4", tags: ["Phòng ngủ"] },
     ],
   },
-  {
-    id: "bathroom",
-    num: 3,
-    title: "Phòng tắm & Vệ sinh",
-    cn: "卫浴",
-    tabs: ["Tất cả", "Bồn cầu", "Lavabo", "Vòi", "Sen tắm", "Bồn tắm"],
-    totalCount: "340",
-    categorySlug: "bathroom-sanitary",
-    featureSlug: "ortonbaths-group",
-    feature: {
-      badge: "CÔNG NGHỆ THÔNG MINH",
-      title: "Bồn cầu thông minh Ortonbaths",
-      desc: "Tự xả · Màn hình LED · Cảm biến chân · Tiêu chuẩn khách sạn 5 sao",
-      cta: "Xem Dongpeng & Ortonbaths →",
-      image: "/img/toilet1.jpg?v=4",
-    },
-    products: [
-      { id: "bathroom-1", title: "Bồn cầu thông minh tự xả màn hình LED tích hợp bidet liền khối", price: "$180", unit: "/cái", moq: "MOQ: 50 cái", rating: 4.9, seller: "Ortonbaths Group", years: "7 năm", badges: ["top"], image: "/img/bat1.jpg?v=4", tags: ["Bồn cầu"] },
-      { id: "bathroom-2", title: "Lavabo đá Onyx tự nhiên 600×420mm đánh bóng", price: "$95", unit: "/cái", moq: "MOQ: 20 cái", rating: 4.8, seller: "Foshan GuCi Industry", years: "9 năm", image: "/img/bat2.jpg?v=4", tags: ["Lavabo"] },
-      { id: "bathroom-3", title: "Vòi trộn đồng vàng brushed tay đơn cần 35cm", price: "$38", unit: "/cái", moq: "MOQ: 100 cái", rating: 4.9, seller: "Taizhou Faucet Group", years: "13 năm", badges: ["new"], image: "/img/bat3.jpg?v=4", tags: ["Vòi"] },
-      { id: "bathroom-4", title: "Bộ sen mưa âm tường ổn nhiệt đầu sen 30×30cm", price: "$85", unit: "/bộ", moq: "MOQ: 30 bộ", rating: 4.7, seller: "Guangdong Difan K&B", years: "10 năm", image: "/img/bat4.jpg?v=4", tags: ["Sen tắm", "Vòi"] },
-      { id: "bathroom-5", title: "Tủ lavabo phòng tắm 2 chậu 1800mm gỗ tự nhiên", price: "$520", unit: "/bộ", moq: "MOQ: 5 bộ", rating: 4.8, seller: "Shenzhen Sanitary", years: "8 năm", badges: ["deal"], image: "/img/bat5.jpg?v=4", tags: ["Lavabo"] },
-      { id: "bathroom-6", title: "Bồn tắm acrylic độc lập hình oval 1700mm đen mờ", price: "$320", unit: "/cái", moq: "MOQ: 10 cái", rating: 4.9, seller: "Dongpeng Sanitary", years: "12 năm", badges: ["top"], image: "/img/bat6.jpg?v=4", tags: ["Bồn tắm"] },
-      { id: "bathroom-7", title: "Phòng tắm kính walk-in 1200×900×2000mm không khung", price: "$240", unit: "/bộ", moq: "MOQ: 10 bộ", rating: 4.7, seller: "Foshan Orient Bath", years: "6 năm", image: "/img/bat7.jpg?v=4", tags: ["Sen tắm", "Bồn tắm"] },
-      { id: "bathroom-8", title: "Gương tròn LED chống mờ cảm ứng phòng tắm 800mm", price: "$58", unit: "/cái", moq: "MOQ: 50 cái", rating: 4.8, seller: "Orton Group", years: "7 năm", badges: ["oem"], image: "/img/bat8.jpg?v=4", tags: ["Lavabo"] },
-    ],
-  },
 ];
 
 export const FACTORIES: Factory[] = [
-  { initials: "DP", slug: "dongpeng-ceramics", name: "Guangdong Dongpeng Ceramics Co., Ltd.", location: "Foshan, Guangdong · CN", rating: 4.9, reviews: "2,340", meta: "50M m²/năm", badges: { gold: true, audited: true, years: "12 năm" }, tags: ["Porcelain", "Marble", "Vệ sinh"] },
+  // Construction materials (gạch, đá, sàn)
+  { initials: "DP", slug: "dongpeng-ceramics", name: "Guangdong Dongpeng Ceramics Co., Ltd.", location: "Foshan, Guangdong · CN", rating: 4.9, reviews: "2,340", meta: "50M m²/năm", badges: { gold: true, audited: true, years: "12 năm" }, tags: ["Porcelain", "Marble", "Gạch ốp lát"] },
+  { initials: "MN", slug: "monalisa-group", name: "Monalisa Group Co., Ltd.", location: "Foshan, Guangdong · CN", rating: 4.9, reviews: "1,540", meta: "25M m²/năm", badges: { gold: true, audited: true, years: "10 năm" }, tags: ["Gốm sứ", "Tấm lớn", "Tấm đá"] },
+  { initials: "NP", slug: "newpearl-ceramics", name: "NewPearl Ceramics Group", location: "Foshan · CN", rating: 4.7, reviews: "680", meta: "200M m²/năm", badges: { audited: true, years: "11 năm" }, tags: ["Gạch ốp tường", "Gạch lát sàn", "Porcelain"] },
+  // Nội thất
   { initials: "KK", slug: "kuka-home", name: "Hangzhou KUKA Home Co., Ltd.", location: "Hangzhou, Zhejiang · CN", rating: 4.8, reviews: "1,810", meta: "6K+ cửa hàng", badges: { gold: true, audited: true, years: "9 năm" }, tags: ["Sofa", "Ghế thư giãn", "Nội thất khách sạn"] },
   { initials: "OP", slug: "oppein-home", name: "OPPEIN Home Group Inc.", location: "Guangzhou · CN", rating: 5.0, reviews: "3,120", meta: "#1 châu Á — tủ", badges: { gold: true, audited: true, years: "15 năm" }, tags: ["Tủ bếp", "Tủ quần áo", "Nội thất nguyên căn"], vr360ComId: "eKtTcaCAvhrm" },
-  { initials: "MN", slug: "monalisa-group", name: "Monalisa Group Co., Ltd.", location: "Foshan, Guangdong · CN", rating: 4.9, reviews: "1,540", meta: "25M m²/năm", badges: { gold: true, audited: true, years: "10 năm" }, tags: ["Gốm sứ", "Tấm lớn", "Tấm đá"] },
-  { initials: "OB", slug: "ortonbaths-group", name: "Ortonbaths Group Co., Ltd.", location: "Shenzhen · CN", rating: 4.8, reviews: "920", meta: "Phòng tắm thông minh", badges: { gold: true, audited: true, years: "7 năm" }, tags: ["Bồn cầu thông minh", "Tủ lavabo", "Vòi"] },
   { initials: "LB", slug: "landbond-furniture", name: "Landbond Furniture Group", location: "Foshan & Linyi · CN", rating: 5.0, reviews: "1,230", meta: "40 năm gỗ tự nhiên", badges: { gold: true, audited: true, years: "14 năm" }, tags: ["Gỗ tự nhiên", "Phòng ngủ", "Phòng khách"] },
-  { initials: "NP", slug: "newpearl-ceramics", name: "NewPearl Ceramics Group", location: "Foshan · CN", rating: 4.7, reviews: "680", meta: "200M m²/năm", badges: { audited: true, years: "11 năm" }, tags: ["Gạch ốp tường", "Gạch lát sàn", "Vệ sinh"] },
   { initials: "ZY", slug: "zuoyou-furniture", name: "ZuoYou Furniture Co., Ltd.", location: "Shenzhen · CN", rating: 4.8, reviews: "540", meta: "Thiết kế trọng tâm", badges: { audited: true, years: "8 năm" }, tags: ["Bọc nệm", "Sofa", "Hiện đại"] },
   { initials: "RA", slug: "redapple-furniture", name: "RedApple Furniture (HK)", location: "Hong Kong · CN", rating: 4.9, reviews: "1,050", meta: "Từ năm 1981", badges: { audited: true, years: "18 năm" }, tags: ["Tùy chỉnh", "Đệm", "Khách sạn"] },
 ];
 
 export const ZONES: Zone[] = [
   { slug: "foshan-ceramic", name: "Phật Sơn — Gốm sứ", count: "1.200 nhà máy", image: "/img/zone1.jpg?v=4" },
-  { slug: "taizhou-faucet", name: "Đài Châu — Vòi nước", count: "480 nhà máy", image: "/img/zone2.jpg?v=4" },
   { slug: "foshan-furniture", name: "Phật Sơn — Nội thất", count: "3.000+ nhà máy", image: "/img/zone3.jpg?v=4" },
-  { slug: "zhongshan-light", name: "Trung Sơn — Đèn chiếu sáng", count: "2.200 nhà máy", image: "/img/zone4.jpg?v=4" },
   { slug: "jinjiang-wood", name: "Tấn Giang — Gỗ", count: "340 nhà máy", image: "/img/zone5.jpg?v=4" },
-  { slug: "chaozhou-sanitary", name: "Triều Châu — Vệ sinh", count: "520 nhà máy", image: "/img/zone6.jpg?v=4" },
 ];

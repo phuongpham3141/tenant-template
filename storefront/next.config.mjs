@@ -24,6 +24,9 @@ const nextConfig = {
     '*.huayuesc.vn',
     'cybersilkroads.com',
     '*.cybersilkroads.com',
+    'huayuesc.vn',
+    '10.0.0.2',
+    '10.0.0.3',
   ],
   images: {
     remotePatterns: [
