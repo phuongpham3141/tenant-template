@@ -68,34 +68,235 @@ export const NAV_CATEGORIES = [
   { icon: "🛋", name: "Nội thất", slug: "noi-that" },
 ];
 
-/** Hierarchical sidebar menu — 2 main groups, each with ~8 sub-items.
- *  Sub-items link to category leaf pages. Hovering opens mega panel
- *  showing the parent main cat's full sections grid. */
-export const NAV_MENU = [
+export type NavSubItem = {
+  name: string;
+  slug: string;
+  image: string;
+  /** Tagline shown next to hero image in the sub-panel. */
+  tagline: string;
+  /** 6 related products/sub-cats shown as grid in the sub-panel. */
+  highlights: { name: string; image: string; slug?: string }[];
+};
+
+/** Hierarchical sidebar menu — 2 main groups × 8 sub-items.
+ *  Hovering a sub-item shows a dedicated sub-panel (image + highlights). */
+export const NAV_MENU: { main: { icon: string; name: string; slug: string }; items: NavSubItem[] }[] = [
   {
     main: { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
     items: [
-      { name: "Thép & Kim loại",       slug: "ket-cau-thep-khung",          image: "/img/thep-hinh-h-i-u-v.jpg?v=5" },
-      { name: "Tấm ốp tường & Trần",   slug: "tam-op-tuong-tran",           image: "/img/cer6.jpg?v=5" },
-      { name: "Vật liệu lát sàn",      slug: "vat-lieu-lat-san",            image: "/img/cer7.jpg?v=5" },
-      { name: "Đá ốp lát & Nhân tạo",  slug: "da-op-lat",                   image: "/img/da-marble-tu-nhien.jpg?v=5" },
-      { name: "Sơn & Lớp phủ",         slug: "son-lop-phu",                 image: "/img/son-epoxy-san.jpg?v=5" },
-      { name: "Cách âm & Cách nhiệt",  slug: "vat-lieu-cach-am-cach-nhiet", image: "/img/tam-cach-am.jpg?v=5" },
-      { name: "Chống thấm",            slug: "vat-lieu-chong-tham",         image: "/img/mang-chong-tham-bitum.jpg?v=5" },
-      { name: "Xi măng & Vữa",         slug: "vat-lieu-kho-xi-mang-vua",    image: "/img/chau-xi-mang.jpg?v=5" },
+      {
+        name: "Thép & Kim loại", slug: "ket-cau-thep-khung",
+        image: "/img/thep-hinh-h-i-u-v.jpg?v=5",
+        tagline: "Thép hình H/I/U/V, ống thép, tấm thép — báo giá theo tấn FOB Quảng Châu.",
+        highlights: [
+          { name: "Thép hình H/I/U/V",  image: "/img/thep-hinh-h-i-u-v.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "Ống thép đen / mạ",  image: "/img/ceramic-1-2.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "Tấm thép cuộn",      image: "/img/ceramic-1-3.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "Thép hộp",           image: "/img/ceramic-1-4.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "Lưới thép hàn",      image: "/img/ceramic-1-5.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "Thép không gỉ",      image: "/img/cer3.jpg?v=5", slug: "ket-cau-thep-khung" },
+        ],
+      },
+      {
+        name: "Tấm ốp tường & Trần", slug: "tam-op-tuong-tran",
+        image: "/img/cer6.jpg?v=5",
+        tagline: "Tấm porcelain, gốm sứ, MDF — thiết kế nội thất khách sạn & biệt thự.",
+        highlights: [
+          { name: "Tấm porcelain lớn",  image: "/img/cer6.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "Tấm 3D tường",       image: "/img/cer4.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "Trần thạch cao",     image: "/img/cer5.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "Ốp gỗ MDF",          image: "/img/cer8.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "Trần kim loại",      image: "/img/cer3.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "Ốp đá tự nhiên",     image: "/img/cer2.jpg?v=5", slug: "tam-op-tuong-tran" },
+        ],
+      },
+      {
+        name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san",
+        image: "/img/cer7.jpg?v=5",
+        tagline: "Gạch porcelain, gỗ kỹ thuật, vinyl SPC — DDP tận kho Hà Nội/HCM 18 ngày.",
+        highlights: [
+          { name: "Gạch porcelain",     image: "/img/cer1.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Sàn gỗ kỹ thuật",    image: "/img/cer8.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Vinyl SPC",          image: "/img/cer7.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Gạch terrazzo",      image: "/img/cer2.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Đá granite tấm",     image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Sàn ngoài trời",     image: "/img/cer5.jpg?v=5", slug: "vat-lieu-lat-san" },
+        ],
+      },
+      {
+        name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat",
+        image: "/img/da-marble-tu-nhien.jpg?v=5",
+        tagline: "Marble Phúc Kiến, granite, quartz — tấm lớn cho mặt bàn bếp & lobby.",
+        highlights: [
+          { name: "Marble tự nhiên",    image: "/img/da-marble-tu-nhien.jpg?v=5", slug: "da-op-lat" },
+          { name: "Granite tấm",        image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "da-op-lat" },
+          { name: "Quartz nhân tạo",    image: "/img/da-quartz-nhan-tao.jpg?v=5", slug: "da-op-lat" },
+          { name: "Đá mosaic",          image: "/img/da-mosaic-trang-tri.jpg?v=5", slug: "da-op-lat" },
+          { name: "Đá op ngoại thất",   image: "/img/da-op-ngoai-that.jpg?v=5", slug: "da-op-lat" },
+          { name: "Đá sintered",        image: "/img/da-sintered-da-thieu-ket.jpg?v=5", slug: "da-op-lat" },
+        ],
+      },
+      {
+        name: "Sơn & Lớp phủ", slug: "son-lop-phu",
+        image: "/img/son-epoxy-san.jpg?v=5",
+        tagline: "Sơn epoxy sàn, sơn chống cháy, vữa trang trí — đạt chuẩn QCVN.",
+        highlights: [
+          { name: "Sơn epoxy sàn",      image: "/img/son-epoxy-san.jpg?v=5", slug: "son-lop-phu" },
+          { name: "Sơn polyurethane",   image: "/img/ceramic-2-1.jpg?v=5", slug: "son-lop-phu" },
+          { name: "Sơn ngoại thất",     image: "/img/ceramic-2-2.jpg?v=5", slug: "son-lop-phu" },
+          { name: "Sơn nội thất",       image: "/img/ceramic-2-3.jpg?v=5", slug: "son-lop-phu" },
+          { name: "Vữa trang trí",      image: "/img/ceramic-2-4.jpg?v=5", slug: "son-lop-phu" },
+          { name: "Sơn chống thấm",     image: "/img/ceramic-2-5.jpg?v=5", slug: "son-lop-phu" },
+        ],
+      },
+      {
+        name: "Cách âm & Cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet",
+        image: "/img/tam-cach-am.jpg?v=5",
+        tagline: "Bông khoáng, EPS/XPS, mút cao su — phòng karaoke, nhà xưởng, kho lạnh.",
+        highlights: [
+          { name: "Bông khoáng rockwool", image: "/img/bong-khoang-rockwool.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+          { name: "Tấm cách âm tường",   image: "/img/tam-cach-am.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+          { name: "Bông thủy tinh",      image: "/img/bong-thuy-tinh-cach-nhiet.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+          { name: "Bông polyester",      image: "/img/bong-polyester.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+          { name: "Tấm EPS/XPS",         image: "/img/ceramic-3-1.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+          { name: "Foil cách nhiệt",     image: "/img/ceramic-3-2.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+        ],
+      },
+      {
+        name: "Chống thấm", slug: "vat-lieu-chong-tham",
+        image: "/img/mang-chong-tham-bitum.jpg?v=5",
+        tagline: "Màng bitum tự dính, sơn polyurethane, keo PU — bảo hành 10-15 năm.",
+        highlights: [
+          { name: "Màng bitum tự dính",  image: "/img/mang-chong-tham-bitum.jpg?v=5", slug: "vat-lieu-chong-tham" },
+          { name: "Sơn PU chống thấm",   image: "/img/ceramic-4-1.jpg?v=5", slug: "vat-lieu-chong-tham" },
+          { name: "Keo silicone",        image: "/img/ceramic-4-2.jpg?v=5", slug: "vat-lieu-chong-tham" },
+          { name: "Phụ gia xi măng",     image: "/img/ceramic-4-3.jpg?v=5", slug: "vat-lieu-chong-tham" },
+          { name: "Băng cản nước PVC",   image: "/img/ceramic-4-4.jpg?v=5", slug: "vat-lieu-chong-tham" },
+          { name: "Vữa chống thấm",      image: "/img/ceramic-4-5.jpg?v=5", slug: "vat-lieu-chong-tham" },
+        ],
+      },
+      {
+        name: "Xi măng & Vữa", slug: "vat-lieu-kho-xi-mang-vua",
+        image: "/img/chau-xi-mang.jpg?v=5",
+        tagline: "Xi măng Hà Tiên, vữa khô trộn sẵn, phụ gia bê tông — giao tận công trình.",
+        highlights: [
+          { name: "Xi măng đa dụng",     image: "/img/chau-xi-mang.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+          { name: "Vữa trộn sẵn",        image: "/img/ceramic-5-1.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+          { name: "Phụ gia bê tông",     image: "/img/ceramic-5-2.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+          { name: "Vữa rót non-shrink",  image: "/img/ceramic-5-3.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+          { name: "Keo dán gạch",        image: "/img/ceramic-5-4.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+          { name: "Vữa kháng axit",      image: "/img/ceramic-5-5.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+        ],
+      },
     ],
   },
   {
     main: { icon: "🛋", name: "Nội thất", slug: "noi-that" },
     items: [
-      { name: "Phòng khách",           slug: "phong-khach",         image: "/img/phong-khach.jpg?v=5" },
-      { name: "Phòng ngủ",             slug: "phong-ngu",           image: "/img/phong-ngu.jpg?v=5" },
-      { name: "Phòng ăn",              slug: "phong-an",            image: "/img/phong-an.jpg?v=5" },
-      { name: "Tủ bếp",                slug: "tu-bep",              image: "/img/fur7.jpg?v=5" },
-      { name: "Tủ quần áo",            slug: "tu-quan-ao",          image: "/img/fur8.jpg?v=5" },
-      { name: "Văn phòng tại nhà",     slug: "van-phong-tai-nha",   image: "/img/van-phong-tai-nha.jpg?v=5" },
-      { name: "Nội thất khách sạn",    slug: "noi-that-khach-san",  image: "/img/noi-that-khach-san.jpg?v=5" },
-      { name: "Trẻ em & Em bé",        slug: "tre-em-em-be",        image: "/img/tre-em-em-be.jpg?v=5" },
+      {
+        name: "Phòng khách", slug: "phong-khach",
+        image: "/img/phong-khach.jpg?v=5",
+        tagline: "Sofa, bàn cà phê, kệ TV — set trọn gói cho biệt thự & căn hộ cao cấp.",
+        highlights: [
+          { name: "Sofa hiện đại",       image: "/img/fur1.jpg?v=5", slug: "phong-khach" },
+          { name: "Sofa cổ điển",        image: "/img/fur2.jpg?v=5", slug: "phong-khach" },
+          { name: "Bàn cà phê",          image: "/img/ban-ca-phe.jpg?v=5", slug: "phong-khach" },
+          { name: "Kệ TV",               image: "/img/fur4.jpg?v=5", slug: "phong-khach" },
+          { name: "Ghế thư giãn",        image: "/img/fur5.jpg?v=5", slug: "phong-khach" },
+          { name: "Bàn console",         image: "/img/furniture-1-3.jpg?v=5", slug: "phong-khach" },
+        ],
+      },
+      {
+        name: "Phòng ngủ", slug: "phong-ngu",
+        image: "/img/phong-ngu.jpg?v=5",
+        tagline: "Giường, tủ áo, bàn trang điểm — phong cách hiện đại & tân cổ điển.",
+        highlights: [
+          { name: "Giường ngủ",          image: "/img/fur3.jpg?v=5", slug: "phong-ngu" },
+          { name: "Tủ quần áo",          image: "/img/fur8.jpg?v=5", slug: "phong-ngu" },
+          { name: "Bàn trang điểm",      image: "/img/furniture-2-1.jpg?v=5", slug: "phong-ngu" },
+          { name: "Táp đầu giường",      image: "/img/furniture-2-2.jpg?v=5", slug: "phong-ngu" },
+          { name: "Đệm latex",           image: "/img/dem-latex-memory-foam.jpg?v=5", slug: "phong-ngu" },
+          { name: "Đệm pocket spring",   image: "/img/dem-pocket-spring.jpg?v=5", slug: "phong-ngu" },
+        ],
+      },
+      {
+        name: "Phòng ăn", slug: "phong-an",
+        image: "/img/phong-an.jpg?v=5",
+        tagline: "Bộ bàn ăn, tủ rượu, ghế ăn — gỗ tự nhiên & MDF veneer cao cấp.",
+        highlights: [
+          { name: "Bàn ăn 6-8 chỗ",      image: "/img/ban-an.jpg?v=5", slug: "phong-an" },
+          { name: "Ghế ăn",              image: "/img/ghe-an.jpg?v=5", slug: "phong-an" },
+          { name: "Bàn cà phê",          image: "/img/ban-ca-phe.jpg?v=5", slug: "phong-an" },
+          { name: "Ghế bar",             image: "/img/ghe-bar.jpg?v=5", slug: "phong-an" },
+          { name: "Đèn chùm pha lê",     image: "/img/den-pha-le-k9.jpg?v=5", slug: "phong-an" },
+          { name: "Đèn pendant",         image: "/img/den-pendant.jpg?v=5", slug: "phong-an" },
+        ],
+      },
+      {
+        name: "Tủ bếp", slug: "tu-bep",
+        image: "/img/fur7.jpg?v=5",
+        tagline: "Tủ bếp OPPEIN, gỗ acrylic & laminate — thiết kế 3D miễn phí từ đơn 30 bộ.",
+        highlights: [
+          { name: "Tủ bếp chữ L",        image: "/img/fur7.jpg?v=5", slug: "tu-bep" },
+          { name: "Tủ bếp chữ U",        image: "/img/furniture-7-1.jpg?v=5", slug: "tu-bep" },
+          { name: "Đảo bếp",             image: "/img/furniture-7-2.jpg?v=5", slug: "tu-bep" },
+          { name: "Mặt đá quartz",       image: "/img/da-quartz-nhan-tao.jpg?v=5", slug: "tu-bep" },
+          { name: "Bản lề tủ bếp",       image: "/img/ban-le-tu-bep.jpg?v=5", slug: "tu-bep" },
+          { name: "Bản lề giảm chấn",    image: "/img/ban-le-tu-giam-chan.jpg?v=5", slug: "tu-bep" },
+        ],
+      },
+      {
+        name: "Tủ quần áo", slug: "tu-quan-ao",
+        image: "/img/fur8.jpg?v=5",
+        tagline: "Tủ áo âm tường, walk-in closet — OEM theo kích thước phòng.",
+        highlights: [
+          { name: "Tủ áo cánh trượt",    image: "/img/fur8.jpg?v=5", slug: "tu-quan-ao" },
+          { name: "Walk-in closet",      image: "/img/furniture-8-1.jpg?v=5", slug: "tu-quan-ao" },
+          { name: "Tủ áo trẻ em",        image: "/img/furniture-8-2.jpg?v=5", slug: "tu-quan-ao" },
+          { name: "Tủ giày",             image: "/img/furniture-8-3.jpg?v=5", slug: "tu-quan-ao" },
+          { name: "Bản lề tủ",           image: "/img/ban-le.jpg?v=5", slug: "tu-quan-ao" },
+          { name: "Bản lề cửa",          image: "/img/ban-le-cua.jpg?v=5", slug: "tu-quan-ao" },
+        ],
+      },
+      {
+        name: "Văn phòng tại nhà", slug: "van-phong-tai-nha",
+        image: "/img/van-phong-tai-nha.jpg?v=5",
+        tagline: "Bàn làm việc, ghế ergonomic, kệ sách — chuẩn home-office hybrid.",
+        highlights: [
+          { name: "Bàn làm việc",        image: "/img/ban-lam-viec.jpg?v=5", slug: "van-phong-tai-nha" },
+          { name: "Ghế văn phòng",       image: "/img/ghe-van-phong.jpg?v=5", slug: "van-phong-tai-nha" },
+          { name: "Bàn picnic gập",      image: "/img/ban-picnic-gap-gon.jpg?v=5", slug: "van-phong-tai-nha" },
+          { name: "Đèn bàn LED",         image: "/img/den-ban-de-ban.jpg?v=5", slug: "van-phong-tai-nha" },
+          { name: "Đèn floor lamp",      image: "/img/den-san-floor-lamp.jpg?v=5", slug: "van-phong-tai-nha" },
+          { name: "Đèn smart Wi-Fi",     image: "/img/den-smart-wi-fi.jpg?v=5", slug: "van-phong-tai-nha" },
+        ],
+      },
+      {
+        name: "Nội thất khách sạn", slug: "noi-that-khach-san",
+        image: "/img/noi-that-khach-san.jpg?v=5",
+        tagline: "Trọn gói FF&E 3-5 sao — thiết kế phù hợp chuẩn Marriott/Hilton.",
+        highlights: [
+          { name: "Giường khách sạn",    image: "/img/fur6.jpg?v=5", slug: "noi-that-khach-san" },
+          { name: "Bàn lobby",           image: "/img/furniture-6-1.jpg?v=5", slug: "noi-that-khach-san" },
+          { name: "Ghế sảnh chờ",        image: "/img/furniture-6-2.jpg?v=5", slug: "noi-that-khach-san" },
+          { name: "Đèn pha lê chandelier", image: "/img/den-chum-chandelier.jpg?v=5", slug: "noi-that-khach-san" },
+          { name: "Đèn wall sconce",     image: "/img/den-tuong-wall-sconce.jpg?v=5", slug: "noi-that-khach-san" },
+          { name: "Đèn ốp trần",         image: "/img/den-op-tran.jpg?v=5", slug: "noi-that-khach-san" },
+        ],
+      },
+      {
+        name: "Trẻ em & Em bé", slug: "tre-em-em-be",
+        image: "/img/tre-em-em-be.jpg?v=5",
+        tagline: "Giường trẻ em, bàn học, đồ chơi an toàn — chứng nhận E0/E1.",
+        highlights: [
+          { name: "Giường trẻ em",       image: "/img/furniture-3-1.jpg?v=5", slug: "tre-em-em-be" },
+          { name: "Bàn học",             image: "/img/furniture-3-2.jpg?v=5", slug: "tre-em-em-be" },
+          { name: "Tủ đồ chơi",          image: "/img/furniture-3-3.jpg?v=5", slug: "tre-em-em-be" },
+          { name: "Ghế tâm năng",        image: "/img/ghe-tam-nang.jpg?v=5", slug: "tre-em-em-be" },
+          { name: "Đèn để bàn trẻ em",   image: "/img/den-ban-de-ban.jpg?v=5", slug: "tre-em-em-be" },
+          { name: "Đèn LED dây trang trí", image: "/img/den-led-day.jpg?v=5", slug: "tre-em-em-be" },
+        ],
+      },
     ],
   },
 ];

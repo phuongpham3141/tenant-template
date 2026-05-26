@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { NAV_CATEGORIES, NAV_MENU } from "@/data/home";
-import { SubmenuContent } from "@/components/home/mega-submenu";
 
 export function NavBar() {
   const links: { label: string; href: string }[] = [
@@ -13,56 +12,123 @@ export function NavBar() {
     { label: "Yêu cầu mua hàng", href: "/buying-request" },
     { label: "Bán trên CSR", href: "/sell-on-csr" },
   ];
+
+  // Flatten sub-items with global index so each gets a unique mm-sub-N class
+  // matched by globals.css :has() rules to show the matching mm-sub-panel-N.
+  const flatSubs: { groupSlug: string; idx: number; item: typeof NAV_MENU[number]["items"][number] }[] = [];
+  let g = 0;
+  for (const group of NAV_MENU) {
+    for (const item of group.items) {
+      g += 1;
+      flatSubs.push({ groupSlug: group.main.slug, idx: g, item });
+    }
+  }
+
   return (
     <nav className="bg-brand text-white">
       <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0 max-md:flex-col md:max-xl:flex-col">
-        {/* DESKTOP: hover-based mega-menu (shared-panel pattern).
-            mm-root = trigger + dropdown wrap. mm-wrap = mm-l1 (sidebar) +
-            mm-panel (shared 720px area). All 12 submenus stack in mm-panel;
-            only the one matching the hovered mm-cat is shown via :has(). */}
+        {/* DESKTOP mega-menu. mm-l1 sidebar = 2 mm-cat groups × 8 mm-sub
+            items. mm-panel stacks 16 mm-sub-panel-N (one per sub-item).
+            CSS :has(.mm-sub-N:hover) reveals the matching panel. */}
         <div className="mm-root relative max-xl:hidden">
           <div className="px-6 py-3.5 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[13.5px] cursor-pointer w-[280px]">
             <span>☰</span> TẤT CẢ DANH MỤC <span className="ml-auto">▾</span>
           </div>
           <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
-            <aside className="mm-l1 w-[280px] border-r border-line">
-              {NAV_MENU.map((group) => (
-                <div key={group.main.slug} className="mm-cat">
-                  {/* Main category header */}
-                  <Link
-                    href={`/category/${group.main.slug}`}
-                    className="flex justify-between items-center px-3.5 py-2.5 text-[13px] bg-[#F8F9FA] border-b border-line hover:bg-brand hover:text-white font-semibold"
-                  >
-                    <b className="font-bold">{group.main.icon} {group.main.name}</b>
-                    <span className="text-mute2 text-[11px]">▸</span>
-                  </Link>
-                  {/* Sub-items — thumbnail + name */}
-                  {group.items.map((it) => (
+            <aside className="mm-l1 w-[260px] border-r border-line py-2">
+              {(() => {
+                let n = 0;
+                return NAV_MENU.map((group) => (
+                  <div key={group.main.slug} className="mm-cat mb-2">
                     <Link
-                      key={it.slug}
-                      href={`/category/${group.main.slug}/${it.slug}`}
-                      className="flex items-center gap-2 px-3.5 py-1.5 text-[12.5px] text-fg border-b border-[#F5F5F5] hover:bg-brand hover:text-white group/li"
+                      href={`/category/${group.main.slug}`}
+                      className="flex justify-between items-center px-4 py-2 text-[13px] hover:bg-[#F5F5F5] font-semibold text-ink"
                     >
-                      <img
-                        src={it.image}
-                        alt=""
-                        loading="lazy"
-                        className="w-7 h-7 object-cover rounded-sm border border-line bg-bg flex-shrink-0 group-hover/li:border-white"
-                      />
-                      <span className="flex-1 truncate leading-tight">{it.name}</span>
-                      <span className="text-mute2 text-[10px] group-hover/li:text-white">▸</span>
+                      <b className="font-bold">{group.main.icon} {group.main.name}</b>
+                      <span className="text-mute2 text-[11px]">▸</span>
                     </Link>
-                  ))}
-                </div>
-              ))}
+                    <ul className="pl-7 pr-3 mt-0.5">
+                      {group.items.map((it) => {
+                        n += 1;
+                        return (
+                          <li key={it.slug}>
+                            <Link
+                              href={`/category/${group.main.slug}/${it.slug}`}
+                              className={`mm-sub mm-sub-${n} block py-[3px] text-[12.5px] text-accent hover:text-brand hover:font-bold leading-snug truncate`}
+                            >
+                              - {it.name}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ));
+              })()}
             </aside>
             <div className="mm-panel w-[720px] grid">
-              {NAV_CATEGORIES.map((c) => (
+              {flatSubs.map(({ groupSlug, idx, item }) => (
                 <div
-                  key={c.slug}
-                  className="mm-l2 row-start-1 col-start-1 p-5 grid-cols-4 gap-x-4 gap-y-3"
+                  key={`${groupSlug}-${item.slug}`}
+                  className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1 p-5`}
                 >
-                  <SubmenuContent slug={c.slug} />
+                  {/* Hero strip */}
+                  <Link
+                    href={`/category/${groupSlug}/${item.slug}`}
+                    className="block relative aspect-[16/6] rounded overflow-hidden mb-3 group/hero"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover group-hover/hero:scale-105 transition-transform"
+                      loading="lazy"
+                    />
+                    <div
+                      className="absolute inset-0 px-4 py-3 flex flex-col justify-end text-white"
+                      style={{ background: "linear-gradient(180deg, rgba(0,37,87,0.0) 40%, rgba(0,37,87,0.85) 100%)" }}
+                    >
+                      <h3 className="text-[16px] font-bold leading-tight">{item.name}</h3>
+                      <p className="text-[11.5px] opacity-90 leading-snug line-clamp-2 mt-0.5">
+                        {item.tagline}
+                      </p>
+                    </div>
+                  </Link>
+                  {/* 6 highlight thumbnails — 3 cols × 2 rows */}
+                  <div className="grid grid-cols-3 gap-2.5">
+                    {item.highlights.slice(0, 6).map((h) => (
+                      <Link
+                        key={h.name}
+                        href={
+                          h.slug
+                            ? `/category/${groupSlug}/${h.slug}`
+                            : `/category/${groupSlug}/${item.slug}`
+                        }
+                        className="group/h flex flex-col"
+                      >
+                        <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden border border-line group-hover/h:border-brand transition-colors">
+                          <img
+                            src={h.image}
+                            alt={h.name}
+                            className="w-full h-full object-cover group-hover/h:scale-105 transition-transform"
+                            loading="lazy"
+                          />
+                        </div>
+                        <span className="text-[11.5px] text-ink group-hover/h:text-brand mt-1 leading-snug line-clamp-2">
+                          {h.name}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  {/* CTA */}
+                  <div className="mt-3 pt-2 border-t border-line flex justify-between items-center">
+                    <span className="text-[11px] text-mute">{item.highlights.length}+ sản phẩm</span>
+                    <Link
+                      href={`/category/${groupSlug}/${item.slug}`}
+                      className="text-[12px] text-accent font-semibold hover:underline"
+                    >
+                      Xem toàn bộ {item.name} →
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
@@ -91,17 +157,13 @@ export function NavBar() {
           </Link>
         </div>
 
-        {/* TABLET + MOBILE: hamburger drawer for "Tất cả danh mục"
-            (replaces the desktop hover mega-menu — click-driven so the
-            720px panel doesn't overflow viewport on iPad). Renders ABOVE
-            the nav links via order-1 on tablet. */}
+        {/* TABLET + MOBILE: hamburger drawer for "Tất cả danh mục" */}
         <details className="hidden max-xl:block group md:max-xl:order-1">
           <summary className="px-4 py-3 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[14px] cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <span className="text-[18px]">☰</span>
             <span className="flex-1">TẤT CẢ DANH MỤC</span>
             <span className="group-open:rotate-180 transition-transform">▾</span>
           </summary>
-          {/* Drawer body: 12 categories — 3 cols on tablet, 2 on mobile */}
           <div className="bg-paper text-ink border-t border-brand-dark grid grid-cols-2 md:max-xl:grid-cols-3 gap-0 max-h-[60vh] overflow-y-auto">
             {NAV_CATEGORIES.map((c) => (
               <Link
@@ -111,11 +173,6 @@ export function NavBar() {
               >
                 <span className="text-[16px]">{c.icon}</span>
                 <span className="flex-1 leading-tight">{c.name}</span>
-                {c.isNew && (
-                  <span className="bg-accent text-white text-[9px] px-1.5 py-px rounded-sm">
-                    MỚI
-                  </span>
-                )}
               </Link>
             ))}
           </div>

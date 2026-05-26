@@ -1,50 +1,41 @@
 import Link from "next/link";
-import { NAV_CATEGORIES } from "@/data/home";
-import { SubmenuContent } from "@/components/home/mega-submenu";
+import { NAV_MENU } from "@/data/home";
 import { HeroSlider } from "@/components/home/hero-slider";
 
+/**
+ * Left sidebar in BannerSection — static categorized link list.
+ * The interactive mega-menu lives in NavBar's TẤT CẢ DANH MỤC dropdown;
+ * this sidebar just gives quick visual access to the 2 industries.
+ */
 function CategoryMenu() {
   return (
-    // mm-wrap = sidebar (mm-l1) + shared panel (mm-panel). Panel is fixed
-    // 720px on the right, all 12 submenus stacked at inset:0; only the
-    // hovered one is shown (via .mm-wrap:has(:nth-child(N):hover) rule).
-    <div className="mm-wrap relative h-full">
-      <aside className="mm-l1 bg-paper border border-line rounded h-full flex flex-col">
-        {NAV_CATEGORIES.map((c) => (
-          <div key={c.slug} className="mm-cat flex-1 min-h-0">
-            <Link
-              href={`/category/${c.slug}`}
-              className="flex justify-between items-center h-full px-3.5 py-2 text-[13px] text-ink border-b border-[#F5F5F5] last:border-b-0 cursor-pointer hover:bg-brand hover:text-white"
-            >
-              <b className="font-medium">
-                {c.icon} {c.name}
-                {c.isNew && (
-                  <span className="bg-accent text-white text-[9px] px-1.5 py-px rounded-sm ml-1.5">
-                    MỚI
-                  </span>
-                )}
-              </b>
-              <span className="text-mute2 text-[11px]">▸</span>
-            </Link>
-          </div>
-        ))}
-      </aside>
-      <div className="mm-panel absolute left-full top-0 w-[720px] grid bg-paper border border-line rounded shadow-xl z-50">
-        {NAV_CATEGORIES.map((c) => (
-          <div
-            key={c.slug}
-            className="mm-l2 row-start-1 col-start-1 p-5 grid-cols-4 gap-x-4 gap-y-3"
+    <aside className="bg-paper border border-line rounded h-full overflow-y-auto py-2">
+      {NAV_MENU.map((group) => (
+        <div key={group.main.slug} className="mb-2">
+          <Link
+            href={`/category/${group.main.slug}`}
+            className="flex justify-between items-center px-3.5 py-2 text-[13px] hover:bg-[#F5F5F5] font-semibold text-ink"
           >
-            <SubmenuContent slug={c.slug} />
-          </div>
-        ))}
-      </div>
-    </div>
+            <b className="font-bold">{group.main.icon} {group.main.name}</b>
+            <span className="text-mute2 text-[11px]">▸</span>
+          </Link>
+          <ul className="pl-6 pr-2">
+            {group.items.map((it) => (
+              <li key={it.slug}>
+                <Link
+                  href={`/category/${group.main.slug}/${it.slug}`}
+                  className="block py-[3px] text-[12px] text-accent hover:text-brand hover:font-semibold leading-snug truncate"
+                >
+                  - {it.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </aside>
   );
 }
-
-// Hero slider lives in ./hero-slider.tsx as a client component (auto-rotate
-// + swipe require JS state). Imported as <HeroSlider /> below.
 
 function RightWidgets() {
   return (
@@ -99,8 +90,6 @@ export function BannerSection() {
   return (
     <section className="py-4 bg-paper max-md:py-2">
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_240px] gap-3 items-stretch h-[504px] max-[1280px]:grid-cols-1 max-[1280px]:h-auto max-md:gap-2 max-md:px-3">
-        {/* CategoryMenu ẩn trên tablet & mobile — mega-panel 720px sẽ
-            tràn ngoài viewport iPad. Tablet/mobile có drawer ở NavBar. */}
         <div className="max-xl:hidden h-full">
           <CategoryMenu />
         </div>
