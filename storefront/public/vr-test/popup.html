@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<title>VR Tour 360°</title>
+<style>
+  html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden}
+  iframe{width:100%;height:100%;border:0;display:block}
+  .ov{position:fixed;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#0066cc,#003d7a);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-family:Arial;border-radius:6px;z-index:10}
+  .close{position:fixed;top:14px;right:14px;background:#fff;color:#0066cc;border:0;padding:8px 14px;border-radius:4px;font-weight:bold;cursor:pointer;z-index:20;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+  <iframe src="https://world-port.made-in-china.com/viewVR?comId=eKtTcaCAvhrm"
+          allow="accelerometer; gyroscope; magnetometer; vr; xr-spatial-tracking"></iframe>
+  <div class="ov">🏭 OPPEIN HOME GROUP</div>
+  <button class="close" onclick="window.close()">✕ Đóng</button>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VR Fullscreen — Test Index</title>
+<style>
+  body{font-family:system-ui,Arial;max-width:760px;margin:24px auto;padding:0 16px;line-height:1.55}
+  h1{font-size:22px;margin:0 0 4px}
+  .sub{color:#666;font-size:13px;margin-bottom:24px}
+  ol{padding-left:22px}
+  li{margin:10px 0}
+  a{color:#0066cc;text-decoration:none;font-weight:600}
+  a:hover{text-decoration:underline}
+  .desc{color:#444;font-size:13px;display:block;margin-top:2px}
+  .box{background:#f6f8fa;border:1px solid #d0d7de;border-radius:6px;padding:14px;margin-top:24px}
+  code{background:#eaeef2;padding:2px 6px;border-radius:3px;font-size:12px}
+</style>
+</head>
+<body>
+  <h1>🧪 VR Fullscreen — 6 phương án test</h1>
+  <p class="sub">Mở từng phương án, bấm nút Toàn màn hình, ghi nhận cái nào hoạt động (đúng = phóng to KÍN MÀN HÌNH thật, không phải mở tab Made-in-China). Kết quả mỗi approach in ra ngay trên trang.</p>
+
+  <ol>
+    <li>
+      <a href="approach1.html">Approach 1 — Native Fullscreen API trên wrapper div</a>
+      <span class="desc">Cách hiện đang dùng trong Vr360Frame.tsx. Gọi <code>wrapper.requestFullscreen()</code>.</span>
+    </li>
+    <li>
+      <a href="approach2.html">Approach 2 — Native Fullscreen API trên iframe trực tiếp</a>
+      <span class="desc">Gọi <code>iframe.requestFullscreen()</code>. Mất overlay nhưng giữ iframe content.</span>
+    </li>
+    <li>
+      <a href="approach3.html">Approach 3 — CSS pseudo-fullscreen ONLY</a>
+      <span class="desc">Không dùng API native, chỉ <code>position:fixed; inset:0; z-index:9999</code>. Domain giữ nguyên.</span>
+    </li>
+    <li>
+      <a href="approach4.html">Approach 4 — Native API + CSS fallback combined (chi tiết log)</a>
+      <span class="desc">Như Approach 1 nhưng có log đầy đủ để xem API có throw lỗi không.</span>
+    </li>
+    <li>
+      <a href="approach5.html">Approach 5 — window.open popup fullscreen</a>
+      <span class="desc">Mở cửa sổ mới (vẫn chứa iframe Made-in-China nhưng wrapped bởi page mình).</span>
+    </li>
+    <li>
+      <a href="approach6.html">Approach 6 — Native API trên iframe + allowfullscreen attr</a>
+      <span class="desc">Dùng <code>allowfullscreen</code> attribute (cũ) thay vì <code>allow="fullscreen"</code>.</span>
+    </li>
+  </ol>
+
+  <div class="box">
+    <strong>📋 Cách báo kết quả:</strong> mỗi approach có vùng log màu xanh/đỏ. Chụp màn hình hoặc copy text log gửi lại. Tôi sẽ chọn approach hoạt động và áp vào React component.
+  </div>
+</body>
+</html>

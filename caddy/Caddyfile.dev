@@ -2,7 +2,36 @@
     auto_https off
 }
 
-http://shop.huayuesc.local {
+# Reusable: dev-mode no-cache headers for storefront (and catch-all)
+(no_cache_dev) {
+    header /_next/* {
+        Cache-Control "no-store, must-revalidate"
+        -ETag
+        -Last-Modified
+    }
+    header / {
+        Cache-Control "no-store, must-revalidate"
+    }
+}
+
+# === Storefront — multi-locale subdomains ============================
+# `shop.` = default Vietnamese (vi locale)
+# `en.`   = English locale
+# `cn.`   = Chinese locale
+# All proxy to the same Next.js storefront; locale is read from the
+# request's `Host` header by middleware.ts and stored as cookie.
+
+http://shop.huayuesc.local,
+http://en.huayuesc.local,
+http://cn.huayuesc.local,
+http://vi.huayuesc.local {
+    import no_cache_dev
+    reverse_proxy storefront:3001
+}
+
+# Catch-all (raw IP, external domain, etc.) — also storefront (defaults to vi)
+:80 {
+    import no_cache_dev
     reverse_proxy storefront:3001
 }
 
