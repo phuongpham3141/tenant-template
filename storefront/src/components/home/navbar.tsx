@@ -21,11 +21,11 @@ export function NavBar() {
             mm-panel (shared 720px area). All 12 submenus stack in mm-panel;
             only the one matching the hovered mm-cat is shown via :has(). */}
         <div className="mm-root relative max-xl:hidden">
-          <div className="px-6 py-3.5 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[13.5px] cursor-pointer w-[240px]">
+          <div className="px-6 py-3.5 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[13.5px] cursor-pointer w-[280px]">
             <span>☰</span> TẤT CẢ DANH MỤC <span className="ml-auto">▾</span>
           </div>
           <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
-            <aside className="mm-l1 w-[240px] border-r border-line">
+            <aside className="mm-l1 w-[280px] border-r border-line">
               {NAV_MENU.map((group) => (
                 <div key={group.main.slug} className="mm-cat">
                   {/* Main category header */}
@@ -36,15 +36,21 @@ export function NavBar() {
                     <b className="font-bold">{group.main.icon} {group.main.name}</b>
                     <span className="text-mute2 text-[11px]">▸</span>
                   </Link>
-                  {/* Sub-items */}
+                  {/* Sub-items — thumbnail + name */}
                   {group.items.map((it) => (
                     <Link
                       key={it.slug}
                       href={`/category/${group.main.slug}/${it.slug}`}
-                      className="flex justify-between items-center px-3.5 py-1.5 text-[12.5px] text-mute border-b border-[#F5F5F5] hover:bg-brand hover:text-white hover:pl-5 transition-all"
+                      className="flex items-center gap-2 px-3.5 py-1.5 text-[12.5px] text-fg border-b border-[#F5F5F5] hover:bg-brand hover:text-white group/li"
                     >
-                      <span className="pl-3 truncate">{it.name}</span>
-                      <span className="text-mute2 text-[10px] ml-1">▸</span>
+                      <img
+                        src={it.image}
+                        alt=""
+                        loading="lazy"
+                        className="w-7 h-7 object-cover rounded-sm border border-line bg-bg flex-shrink-0 group-hover/li:border-white"
+                      />
+                      <span className="flex-1 truncate leading-tight">{it.name}</span>
+                      <span className="text-mute2 text-[10px] group-hover/li:text-white">▸</span>
                     </Link>
                   ))}
                 </div>
