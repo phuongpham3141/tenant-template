@@ -11,7 +11,7 @@ import { HOT_SEARCHES } from "@/data/home";
  */
 export function Header() {
   return (
-    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40">
+    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40 max-md:relative max-md:top-auto max-md:z-auto max-md:py-3">
       {/* Hidden radios — drive .search-root:has() rules in globals.css */}
       <input
         type="radio"
@@ -50,15 +50,14 @@ export function Header() {
             height={200}
             className="w-[240px] h-auto max-md:hidden md:max-xl:w-[200px]"
           />
-          {/* Mobile: compact horizontal logo (400×120 — wider, shorter
-              aspect than the 400×200 used on desktop). At 80% width the
-              height stays ~64px so the header remains tidy. */}
+          {/* Mobile: compact horizontal logo. Capped at max-w to keep header
+              tidy on small screens (avoids huge logo dominating viewport). */}
           <img
             src="/logo/cybersilkroads-horizontal-compact.png?v=5"
-            alt="Cybersilkroads"
+            alt="Huayuesc"
             width={400}
             height={120}
-            className="hidden w-4/5 h-auto max-md:block"
+            className="hidden h-auto max-md:block max-md:max-h-[56px] max-md:w-auto"
           />
         </Link>
 
