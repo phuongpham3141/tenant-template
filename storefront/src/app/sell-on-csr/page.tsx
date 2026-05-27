@@ -2,32 +2,32 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const HERO_STATS = [
-  { n: "1.840+", l: "Nhà cung cấp đã xác minh", icon: "🏭" },
-  { n: "600+", l: "Đại lý doanh nghiệp Việt Nam", icon: "🇻🇳" },
-  { n: "42 triệu $", l: "Giá trị đơn được bảo đảm 2025", icon: "🛡" },
+  { n: "20+", l: "Nhà cung cấp đã xác minh", icon: "🏭" },
+  { n: "Đối tác phân phối VN", l: "Đại lý doanh nghiệp Việt Nam", icon: "🇻🇳" },
+  { n: "Tăng đều mỗi năm", l: "Giá trị đơn được bảo vệ", icon: "🛡" },
   { n: "32%", l: "Tỷ lệ vượt kiểm định nhà máy", icon: "✅" },
 ];
 
 const VALUE_PROPS = [
   {
     icon: "🇻🇳",
-    title: "600+ đại lý Việt Nam đã xác minh",
+    title: "Đối tác phân phối VN đại lý Việt Nam đã xác minh",
     desc: "Đại lý đã xác minh doanh nghiệp đầy đủ, có lịch sử nhập khẩu thực. Phân bố theo ngành: nội thất 35%, vật liệu xây dựng 22%, thiết bị vệ sinh 15%, điện gia dụng 12%, các ngành khác 16%.",
   },
   {
     icon: "🤝",
     title: "Đội ngũ song ngữ Trung – Việt",
-    desc: "8 nhân sự chuyên trách thị trường Việt Nam tại văn phòng Quảng Châu Tianhe + 6 tại Hà Nội. Hỗ trợ qua WeChat, DingTalk, Zalo — phản hồi trong giờ làm việc dưới 30 phút.",
+    desc: "Đội Quảng Châu (sourcing, QC, audit) + đội Hải Phòng (kho, thông quan, sales). Hỗ trợ qua WeChat, DingTalk, Zalo — phản hồi trong giờ làm việc dưới 30 phút.",
   },
   {
     icon: "🛡",
     title: "Bảo đảm Giao dịch — người mua trả 0% phí",
-    desc: "Tài khoản trung gian qua Vietcombank · BIDV · Bank of China. Nhà cung cấp đóng 1,5% (đã bao gồm trong giá niêm yết). Loại bỏ rào cản tin tưởng — đại lý Việt Nam tự tin đặt đơn lớn.",
+    desc: "Tài khoản trung gian qua ngân hàng đối tác Việt Nam và Trung Quốc. Nhà cung cấp đóng 1,5% (đã bao gồm trong giá niêm yết). Loại bỏ rào cản tin tưởng — đại lý Việt Nam tự tin đặt đơn lớn.",
   },
   {
     icon: "🚢",
-    title: "Kết nối 5 cảng biển + đường bộ biên giới",
-    desc: "Lạch Huyện · Cát Lái · Đà Nẵng · Tiên Sa · Cái Mép, kèm tuyến đường bộ Hữu Nghị (Lạng Sơn) 5–7 ngày cho đơn nhỏ. Đối tác vận chuyển sẵn: COSCO, MSC, OOCL, ONE.",
+    title: "Kết nối cảng Hải Phòng (chính) + cảng phụ + đường bộ biên giới",
+    desc: "Lạch Huyện (Hải Phòng chính) · Cát Lái · Cái Mép, kèm tuyến đường bộ Hữu Nghị (Lạng Sơn) 5–7 ngày cho đơn nhỏ. Đối tác vận chuyển sẵn: COSCO, MSC, OOCL, ONE.",
   },
   {
     icon: "📊",
@@ -67,7 +67,7 @@ const PRICING_PILLARS = [
     priceSub: "Trên giá trị đơn",
     color: "#005F6B",
     headline: "Bảo đảm Giao dịch — phí duy nhất, chỉ thu khi đã giao hàng thành công",
-    desc: "Chúng tôi chỉ kiếm tiền khi nhà cung cấp đã nhận được đơn hàng và đại lý Việt Nam đã xác nhận. Phí 1,5% bao trọn dịch vụ tài khoản trung gian qua Vietcombank · BIDV · Bank of China — bảo vệ niềm tin cho người mua. Người mua trả 0 đ, nhà cung cấp đã bao gồm 1,5% trong giá niêm yết, không phí ẩn.",
+    desc: "Chúng tôi chỉ kiếm tiền khi nhà cung cấp đã nhận được đơn hàng và đại lý Việt Nam đã xác nhận. Phí 1,5% bao trọn dịch vụ tài khoản trung gian qua ngân hàng đối tác Việt Nam và Trung Quốc — bảo vệ niềm tin cho người mua. Người mua trả 0 đ, nhà cung cấp đã bao gồm 1,5% trong giá niêm yết, không phí ẩn.",
     items: [
       "Tài khoản trung gian qua 3 ngân hàng quốc tế",
       "Người mua Việt Nam trả 0% phí — yên tâm đặt đơn lớn",
@@ -275,7 +275,7 @@ const FAQ = [
   },
   {
     q: "Tôi đã có gian hàng trên Alibaba.com — có cần thêm Huayuesc không?",
-    a: "Có nếu thị trường Việt Nam quan trọng với chiến lược của bạn. Alibaba.com là sàn toàn cầu chung; Huayuesc là kênh chuyên biệt cho Việt Nam — hồ sơ đại lý khác (doanh nghiệp B2B vừa – lớn của Việt Nam, không phải dropshipper), giá và Incoterms khác (mạnh DDP, ít FOB), cơ chế tin tưởng khác (Bảo đảm Giao dịch qua Vietcombank/BIDV thay vì Alipay). Nhiều nhà cung cấp dùng cả hai song song.",
+    a: "Có nếu thị trường Việt Nam quan trọng với chiến lược của bạn. Alibaba.com là sàn toàn cầu chung; Huayuesc là kênh chuyên biệt cho Việt Nam — hồ sơ đại lý khác (doanh nghiệp B2B vừa – lớn của Việt Nam, không phải dropshipper), giá và Incoterms khác (mạnh DDP, ít FOB), cơ chế tin tưởng khác (Bảo đảm Giao dịch qua ngân hàng đối tác VN+TQ thay vì Alipay). Nhiều nhà cung cấp dùng cả hai song song.",
   },
   {
     q: "Huayuesc kiếm tiền bằng cách nào nếu mọi thứ đều miễn phí?",
@@ -361,7 +361,7 @@ export default function SellOnCsrPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-9">
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">VÌ SAO CHỌN HUAYUESC</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 lý do 1.840+ nhà máy chọn nền tảng của chúng tôi</h2>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 lý do 20+ nhà máy chọn nền tảng của chúng tôi</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
             Không phải sàn toàn cầu — Huayuesc là kênh chuyên sâu cho thị trường Việt Nam với hạ tầng và đội ngũ riêng cho mỗi giao dịch.
           </p>
@@ -635,7 +635,7 @@ export default function SellOnCsrPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU HỎI THƯỜNG GẶP</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">8 câu hỏi quan trọng nhất từ nhà cung cấp</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Tổng hợp từ phỏng vấn 600+ nhà cung cấp đã đăng ký và 1.840+ đối tác hiện hữu trong 12 tháng qua.
+            Tổng hợp từ phỏng vấn Đối tác phân phối VN nhà cung cấp đã đăng ký và 20+ đối tác hiện hữu trong 12 tháng qua.
           </p>
         </div>
         <div className="space-y-2">
@@ -663,7 +663,7 @@ export default function SellOnCsrPage() {
             Sẵn sàng tăng doanh thu xuất khẩu Việt Nam?
           </h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[680px] mx-auto leading-relaxed">
-            Đăng ký miễn phí, kiểm định miễn phí. Trung bình 30 ngày để lên gian hàng và nhận đơn đầu tiên. 1.840+ nhà cung cấp đã chọn Huayuesc — không phí giao dịch ẩn, quản lý tài khoản 1-1 song ngữ Trung – Việt.
+            Đăng ký miễn phí, kiểm định miễn phí. Trung bình 30 ngày để lên gian hàng và nhận đơn đầu tiên. 20+ nhà cung cấp đã chọn Huayuesc — không phí giao dịch ẩn, quản lý tài khoản 1-1 song ngữ Trung – Việt.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -693,5 +693,5 @@ export default function SellOnCsrPage() {
 export const metadata = {
   title: "Bán Trên CSR — Bán hàng B2B sang Việt Nam qua Huayuesc",
   description:
-    "Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc. 600+ đại lý Việt Nam đã xác minh, Bảo đảm Giao dịch qua Vietcombank · BIDV · Bank of China, quản lý tài khoản song ngữ Trung – Việt. 1.840+ nhà cung cấp đã đăng ký, kiểm định miễn phí, 30 ngày từ đăng ký đến đơn đầu.",
+    "Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc. Đối tác phân phối VN đại lý Việt Nam đã xác minh, Bảo đảm Giao dịch qua ngân hàng đối tác Việt Nam và Trung Quốc, quản lý tài khoản song ngữ Trung – Việt. 20+ nhà cung cấp đã đăng ký, kiểm định miễn phí, 30 ngày từ đăng ký đến đơn đầu.",
 };

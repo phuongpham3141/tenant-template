@@ -2,19 +2,20 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
 
-const STATS_BY_INDUSTRY: Record<string, { factories: string; sku: string; lead: string }> = {
-  "home-garden": { factories: "320+", sku: "8,400", lead: "20-25 ngày" },
-  "construction-materials": { factories: "1,200+", sku: "24,000", lead: "25-30 ngày" },
-  "bathroom-sanitary": { factories: "520+", sku: "11,000", lead: "20-30 ngày" },
-  "noi-that": { factories: "3,000+", sku: "45,000", lead: "30-40 ngày" },
-  "kitchen-equipment": { factories: "180+", sku: "4,200", lead: "25-30 ngày" },
-  "lighting": { factories: "2,200+", sku: "32,000", lead: "15-20 ngày" },
-  "doors-windows": { factories: "440+", sku: "6,800", lead: "30-35 ngày" },
-  "hotel-supplies": { factories: "260+", sku: "5,400", lead: "20-30 ngày" },
-  "hardware-tools": { factories: "680+", sku: "12,000", lead: "15-20 ngày" },
-  "decoration": { factories: "190+", sku: "3,800", lead: "20-25 ngày" },
-  "outdoor-garden": { factories: "150+", sku: "2,900", lead: "25-30 ngày" },
-  "electrical": { factories: "880+", sku: "15,000", lead: "20-25 ngày" },
+const STATS_BY_INDUSTRY: Record<string, { factories: string; sku: string; lead: string; cluster: string }> = {
+  "construction-materials": {
+    factories: "20+", sku: "480+", lead: "18-25 ngày",
+    cluster: "Phật Sơn (gốm sứ, sanitary) · Triều Châu (gạch men) · Phúc Kiến (đá tự nhiên)",
+  },
+  "noi-that": {
+    factories: "20+", sku: "480+", lead: "20-30 ngày",
+    cluster: "Lecong Phật Sơn (sofa) · Đông Quan (tủ bếp/tủ áo) · Tấn Giang (gỗ kỹ thuật)",
+  },
+  // Kitchen-bathroom appliances — ngành thứ 3 từ PDF (chưa có trong NAV_CATEGORIES, fallback)
+  "kitchen-bathroom-appliances": {
+    factories: "15+", sku: "320+", lead: "20-25 ngày",
+    cluster: "Trung Sơn (đèn, bếp gas) · Mỹ Đích (đồ điện gia dụng) · Cự Hà (nắp bồn cầu thông minh)",
+  },
 };
 
 export default function IndustryChannelsPage() {
@@ -24,7 +25,7 @@ export default function IndustryChannelsPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
           <h1 className="text-[24px] font-extrabold text-ink leading-tight">Kênh ngành — Industry Channels</h1>
-          <p className="text-[13px] text-mute mt-1">12 ngành chính, hơn 932 phân loại con. Mỗi kênh được vận hành bởi sourcing manager chuyên ngành tại Quảng Châu.</p>
+          <p className="text-[13px] text-mute mt-1">Huayue tập trung sâu vào 3 ngành chính: Vật liệu xây dựng (建材), Vật liệu trang trí nội thất (装饰材料) và Đồ điện gia dụng nhà bếp – phòng tắm (厨卫小家电). Mỗi kênh được vận hành bởi đội sourcing manager chuyên ngành tại văn phòng Quảng Châu, kết nối trực tiếp với các cụm nhà máy hàng đầu Trung Quốc.</p>
         </div>
       </div>
 
@@ -40,19 +41,22 @@ export default function IndustryChannelsPage() {
               </div>
               <div className="p-4">
                 <h3 className="text-[16px] font-bold text-ink mb-2">{c.name}</h3>
-                <div className="grid grid-cols-3 gap-2 text-[11.5px]">
+                <div className="grid grid-cols-3 gap-2 text-[11.5px] mb-2">
                   <div>
-                    <div className="text-mute">Nhà máy</div>
+                    <div className="text-mute">NCC đã audit</div>
                     <b className="text-brand">{stats.factories}</b>
                   </div>
                   <div>
-                    <div className="text-mute">SKU</div>
+                    <div className="text-mute">SKU đang bán</div>
                     <b className="text-brand">{stats.sku}</b>
                   </div>
                   <div>
-                    <div className="text-mute">Thời gian giao</div>
+                    <div className="text-mute">DDP về VN</div>
                     <b className="text-brand">{stats.lead}</b>
                   </div>
+                </div>
+                <div className="text-[11px] text-mute leading-snug border-t border-line pt-2">
+                  <b className="text-ink">Cluster:</b> {stats.cluster}
                 </div>
                 <span className="text-brand text-[12.5px] font-semibold mt-3 block">Khám phá kênh →</span>
               </div>
