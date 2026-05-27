@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Huayue — Output Fix Nội Dung (review)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", "Inter", sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; background: #f6f4ef; color: #2A3439; line-height: 1.55; }
+  h1 { color: #002557; border-bottom: 3px solid #E85D4E; padding-bottom: 10px; }
+  h2 { color: #005F6B; margin-top: 36px; padding-left: 12px; border-left: 4px solid #E85D4E; }
+  h3 { color: #002557; margin-top: 24px; }
+  .sprint-badge { display: inline-block; background: #E85D4E; color: #fff; padding: 4px 12px; font-size: 12px; font-weight: 700; border-radius: 3px; letter-spacing: .5px; }
+  .status-done { background: #16A34A; }
+  .meta { color: #6B7880; font-size: 13px; margin-bottom: 24px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  table th, table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #DDE3E5; vertical-align: top; }
+  table th { background: #002557; color: #fff; font-weight: 600; font-size: 13px; }
+  table td:first-child { font-weight: 600; color: #002557; width: 28%; }
+  .cn { color: #E85D4E; font-weight: 600; }
+  .card { background: #fff; border: 1px solid #DDE3E5; border-radius: 6px; padding: 18px 22px; margin: 12px 0; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .badge { display: inline-block; padding: 3px 10px; background: #002557; color: #fff; font-size: 11px; font-weight: 600; border-radius: 3px; letter-spacing: .3px; }
+  .badge.gold { background: #F4A261; color: #002557; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  blockquote { border-left: 4px solid #F4A261; padding: 10px 18px; background: #FFF8EE; color: #2A3439; font-style: italic; margin: 14px 0; }
+  blockquote .author { display: block; margin-top: 8px; font-size: 12px; color: #6B7880; font-style: normal; }
+  .file-path { display: inline-block; background: #002557; color: #F4A261; padding: 2px 8px; border-radius: 3px; font-family: 'Consolas', monospace; font-size: 12px; }
+  .source { background: #FFF8EE; border: 1px dashed #F4A261; padding: 12px 16px; border-radius: 4px; font-size: 13px; }
+  hr { border: none; border-top: 1px solid #DDE3E5; margin: 32px 0; }
+  .review-banner { background: #FFF8EE; border: 2px solid #F4A261; padding: 14px 18px; border-radius: 6px; margin: 20px 0; }
+  .review-banner strong { color: #B81827; }
+</style>
+</head>
+<body>
+
+<h1>Huayue Việt Nam — Output review nội dung</h1>
+<div class="meta">File này tự động cập nhật sau mỗi sprint. Đọc kỹ và báo lại chỗ nào cần sửa.</div>
+
+<div class="review-banner">
+  <strong>📋 Hướng dẫn:</strong> Sau mỗi page tôi viết xong, đoạn nội dung sẽ được dump vào đây.
+  Bạn check (1) thông tin pháp nhân/địa chỉ đúng chưa, (2) số liệu có overclaim không, (3) ngôn ngữ có phù hợp không, (4) thiếu/thừa gì cần báo lại.
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<h2><span class="sprint-badge status-done">SPRINT 0 — DONE</span> Single Source of Truth</h2>
+
+<p>Tạo file <span class="file-path">storefront/src/data/company.ts</span> chứa toàn bộ thông tin pháp nhân Huayue. Các trang sẽ import từ đây thay vì hardcode → đổi 1 chỗ, toàn site cập nhật.</p>
+
+<h3>🏢 Pháp nhân</h3>
+<table>
+  <tr><td>Tên pháp lý VN</td><td><b>CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM</b></td></tr>
+  <tr><td>Tên Trung văn</td><td><span class="cn">华越供应链有限公司</span></td></tr>
+  <tr><td>Tên ngắn / Brand</td><td>Huayuesc · <span class="cn">华越供应链</span></td></tr>
+  <tr><td>Mã số thuế</td><td><b>0111453693</b></td></tr>
+  <tr><td>Domain</td><td><a href="https://huayuesc.vn">huayuesc.vn</a></td></tr>
+</table>
+
+<h3>🎯 Tầm nhìn & Sứ mệnh (từ PDF brochure)</h3>
+<div class="card">
+  <p><b>Tầm nhìn:</b> <span class="cn">成为中越供应链服务的标杆企业，引领中越建材家居贸易新生态</span></p>
+  <p>Trở thành công ty kiểu mẫu về dịch vụ chuỗi cung ứng Trung – Việt, dẫn dắt và kiến tạo nền sinh thái mới cho thương mại vật liệu xây dựng và đồ nội thất giữa Trung Quốc và Việt Nam.</p>
+</div>
+<div class="card">
+  <p><b>Sứ mệnh:</b> <span class="cn">通过专业、高效、可靠的一站式跨境供应链服务，助力中国制造闪耀越南，赋能越南市场升级发展</span></p>
+  <p>Thông qua dịch vụ chuỗi cung ứng một trạm chuyên nghiệp, hiệu quả cao và đáng tin cậy, giúp ngành chế tạo Trung Quốc tỏa sáng tại Việt Nam, đồng thời giúp thị trường Việt Nam phát triển lên tầng cao mới.</p>
+</div>
+<blockquote>
+  <span class="cn">无需赴华，一站式采购中国优质商品</span><br>
+  Đến với Huayue — bạn không cần đi Trung Quốc, vẫn mua được sản phẩm Trung Quốc ưu việt một cách nhanh chóng và tiện lợi.
+  <span class="author">Tagline Huayuesc</span>
+</blockquote>
+
+<h3>🏭 Ba ngành sản phẩm (brochure trang 4)</h3>
+<div class="grid-3">
+  <div class="card">
+    <span class="badge">01</span>
+    <h4>🧱 Vật liệu xây dựng <span class="cn">建材</span></h4>
+    <ul>
+      <li>Gạch men sứ porcelain</li>
+      <li>Thiết bị vệ sinh sanitaryware</li>
+      <li>Kim khí ngũ kim</li>
+      <li>Vật liệu cửa & profile</li>
+      <li>Sơn & lớp phủ</li>
+      <li>Ống nước & phụ kiện</li>
+      <li>Thiết bị chiếu sáng</li>
+    </ul>
+  </div>
+  <div class="card">
+    <span class="badge">02</span>
+    <h4>🛋 Vật liệu trang trí nội thất <span class="cn">装饰材料</span></h4>
+    <ul>
+      <li>Giấy/vải dán tường</li>
+      <li>Sàn gỗ công nghiệp / tự nhiên</li>
+      <li>Vật liệu trang trí trần</li>
+      <li>Đá tự nhiên & nhân tạo</li>
+      <li>Đồ trang trí nội thất</li>
+    </ul>
+  </div>
+  <div class="card">
+    <span class="badge">03</span>
+    <h4>🔌 Đồ điện bếp & phòng tắm <span class="cn">厨卫小家电</span></h4>
+    <ul>
+      <li>Bình nóng lạnh điện</li>
+      <li>Bếp gas</li>
+      <li>Máy hút mùi</li>
+      <li>Nồi cơm điện</li>
+      <li>Máy ép phá tế bào</li>
+      <li>Nắp bồn cầu thông minh</li>
+    </ul>
+  </div>
+</div>
+
+<h3>⚙️ Bốn dịch vụ trọng tâm (brochure trang 3)</h3>
+<table>
+  <tr><th>STT</th><th>Dịch vụ</th><th>Tên Trung văn</th><th>Mô tả</th></tr>
+  <tr><td>1</td><td><b>Tinh chọn nguồn gốc & Hỗ trợ thu mua</b></td><td class="cn">源头精选与采购支持</td><td>Sàng lọc NCC, kiểm soát chất lượng, quản lý đơn hàng, thu mua tập trung</td></tr>
+  <tr><td>2</td><td><b>Kho bãi TQ & Tập trung vận chuyển</b></td><td class="cn">中国境内仓储与集运</td><td>Kho hiện đại tại khu CN/bến cảng, quản lý kho an toàn và hiệu quả</td></tr>
+  <tr><td>3</td><td><b>Vận chuyển xuyên biên giới & Thông quan</b></td><td class="cn">跨境物流与高效清关</td><td>Door-to-door / port-to-port, đội thông quan cảng Hải Phòng</td></tr>
+  <tr><td>4</td><td><b>Phát triển kênh phân phối VN</b></td><td class="cn">本地化分销渠道拓展</td><td>Mạng lưới đối tác rộng lớn tại VN</td></tr>
+</table>
+
+<h3>📦 Ba loại kho chuyên dụng (brochure trang 6)</h3>
+<table>
+  <tr><th>Loại kho</th><th>Tên Trung văn</th></tr>
+  <tr><td>Kho nhiệt độ thường</td><td class="cn">常温仓储区</td></tr>
+  <tr><td>Kho riêng cho chất dễ cháy (sơn, dung môi)</td><td class="cn">易燃品库（如油漆、稀释剂）</td></tr>
+  <tr><td>Kho nhiệt độ & độ ẩm ổn định</td><td class="cn">恒温恒湿库</td></tr>
+</table>
+
+<h3>💻 Ba trụ cột số hóa chuỗi cung ứng (brochure trang 7)</h3>
+<div class="grid-3">
+  <div class="card">
+    <h4>Quyết sách dữ liệu hóa</h4>
+    <p class="cn">数据驱动决策</p>
+    <p>Phân tích big data để dự báo nhu cầu thị trường và tối ưu kho chứa.</p>
+  </div>
+  <div class="card">
+    <h4>Tự động hóa thông minh</h4>
+    <p class="cn">智能自动化</p>
+    <p>Thuật toán AI tự động xử lý đơn hàng, điều phối vận chuyển và tối ưu lộ trình.</p>
+  </div>
+  <div class="card">
+    <h4>Mạng lưới hợp tác</h4>
+    <p class="cn">协同网络</p>
+    <p>Nền tảng liên kết NCC, nhà sản xuất, vận chuyển và kênh bán lẻ cuối cùng.</p>
+  </div>
+</div>
+
+<h3>📍 Hai văn phòng thật (brochure trang 8)</h3>
+<div class="grid-2">
+  <div class="card">
+    <span class="badge gold">中国 · Trung Quốc</span>
+    <h4>Văn phòng Quảng Châu</h4>
+    <p><b>Vai trò:</b> Trung tâm thu mua, audit nhà máy, sourcing & QC</p>
+    <p><b>Địa chỉ (中文):</b><br><span class="cn">广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼</span></p>
+    <p><b>Địa chỉ (Việt):</b><br>Tầng 3, Tòa 1, Cảng Shuyu Chuangxing (数娱创兴港), bến tàu phía Bắc làng Hoàng Phố, đường Tân Cảng Đông (新港东路), quận Hải Châu, Quảng Châu</p>
+  </div>
+  <div class="card">
+    <span class="badge gold">越南 · Việt Nam</span>
+    <h4>Trụ sở chính Việt Nam</h4>
+    <p><b>Vai trò:</b> Trụ sở · Kho bãi · Thông quan · Phân phối VN</p>
+    <p><b>Địa chỉ (中文):</b><br><span class="cn">越南海防港南亭武工业区</span></p>
+    <p><b>Địa chỉ (Việt):</b><br>Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng, Việt Nam</p>
+  </div>
+</div>
+
+<h3>📞 Liên hệ</h3>
+<table>
+  <tr><td>Hotline</td><td><b>+86 181-2225-6999</b></td></tr>
+  <tr><td>Email sales</td><td>sales@huayuesc.vn</td></tr>
+  <tr><td>Email support</td><td>support@huayuesc.vn</td></tr>
+  <tr><td>Email HR</td><td>hr@huayuesc.vn</td></tr>
+  <tr><td>Email privacy/DPO</td><td>privacy@huayuesc.vn</td></tr>
+  <tr><td>Email partnership</td><td>partnership@huayuesc.vn</td></tr>
+  <tr><td>Zalo</td><td><a href="https://zalo.me/huayuesc">zalo.me/huayuesc</a></td></tr>
+  <tr><td>Facebook</td><td><a href="https://fb.com/huayuesc">fb.com/huayuesc</a></td></tr>
+  <tr><td>WeChat ID</td><td>huayuesc_qc</td></tr>
+</table>
+
+<h3>⚖️ Pháp lý / Quy định</h3>
+<table>
+  <tr><td>Trọng tài</td><td>VIAC Hà Nội</td></tr>
+  <tr><td>Luật áp dụng</td><td>Pháp luật Việt Nam</td></tr>
+  <tr><td>Bảo vệ dữ liệu</td><td>ISO/IEC 27001:2022 · NĐ 13/2023/NĐ-CP (VN) · PIPL (TQ) · GDPR (EU khi áp dụng)</td></tr>
+</table>
+
+<h3>📌 Footer line tự sinh</h3>
+<div class="card">
+  <code>COMPANY_FOOTER_LINE</code><br><br>
+  © 2026 CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM · huayuesc.vn · MST: 0111453693
+</div>
+
+<hr>
+
+<div class="source">
+  📄 <b>Nguồn:</b> 华越供应链画册.pdf (Huayue Supply Chain corporate brochure, 8 trang).<br>
+  📂 <b>File code:</b> <span class="file-path">storefront/src/data/company.ts</span> (~180 dòng TypeScript)<br>
+  🔄 <b>Cách dùng:</b> <code>import { COMPANY } from "@/data/company"</code> rồi dùng <code>COMPANY.legalNameVi</code>, <code>COMPANY.offices.cn</code>, v.v.
+</div>
+
+<h2 style="color:#6B7880;border-left-color:#DDE3E5">⏳ Tiếp theo: Sprint 1 — Pháp lý (terms-of-service + privacy-policy)</h2>
+<p style="color:#6B7880">Sẽ rewrite 2 trang pháp lý để thay <code>Beeagents.com (MST 0XXXXXXXXX)</code> → <code>Công ty TNHH Chuỗi Cung Ứng Huayue Việt Nam (MST 0111453693)</code> + xoá địa chỉ giả Diamond Flower HN. Output sẽ append vào file này.</p>
+
+</body>
+</html>
