@@ -11,7 +11,7 @@ import { HOT_SEARCHES } from "@/data/home";
  */
 export function Header() {
   return (
-    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40 max-md:relative max-md:top-auto max-md:z-auto max-md:py-3">
+    <header className="search-root bg-paper py-4 border-b-[3px] border-brand relative z-10 max-md:py-3">
       {/* Hidden radios — drive .search-root:has() rules in globals.css */}
       <input
         type="radio"
