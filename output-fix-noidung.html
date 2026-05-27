@@ -200,8 +200,173 @@
   🔄 <b>Cách dùng:</b> <code>import { COMPANY } from "@/data/company"</code> rồi dùng <code>COMPANY.legalNameVi</code>, <code>COMPANY.offices.cn</code>, v.v.
 </div>
 
-<h2 style="color:#6B7880;border-left-color:#DDE3E5">⏳ Tiếp theo: Sprint 1 — Pháp lý (terms-of-service + privacy-policy)</h2>
-<p style="color:#6B7880">Sẽ rewrite 2 trang pháp lý để thay <code>Beeagents.com (MST 0XXXXXXXXX)</code> → <code>Công ty TNHH Chuỗi Cung Ứng Huayue Việt Nam (MST 0111453693)</code> + xoá địa chỉ giả Diamond Flower HN. Output sẽ append vào file này.</p>
+<hr>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<h2><span class="sprint-badge status-done">SPRINT 1 — DONE</span> Pháp lý: Terms-of-Service + Privacy-Policy</h2>
+
+<p>Đã rewrite 2 trang pháp lý: tất cả ref <code>Beeagents.com (MST 0XXXXXXXXX)</code>, <code>CSR China Sourcing Co., Ltd.</code>, <code>Tầng 12 Toà Huayuesc 26 Phạm Hùng Hà Nội</code>, <code>+84 24 1234 5678</code>, <code>TDXBG-2026-XXXX</code>, <code>nhãn hiệu 4-202X-XXXXX</code> đã được thay bằng pháp nhân + địa chỉ thật.</p>
+
+<p>Footer cũng đã đổi <code>Vận hành bởi Beeagents.com</code> → <code>KCN Nam Đình Vũ, cảng Hải Phòng</code>.</p>
+
+<h3>📜 /info/terms-of-service — <span class="cn">Điều khoản sử dụng</span></h3>
+
+<div class="card">
+  <h4>Intro</h4>
+  <p>Đây là thoả thuận pháp lý ràng buộc giữa bạn và Huayuesc — tên thương mại của <b>CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM</b> (mã số thuế <b>0111453693</b>), trụ sở chính tại Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng, Việt Nam. Vui lòng đọc kỹ trước khi sử dụng nền tảng. Bằng việc đăng ký tài khoản, gửi RFQ, hoặc bất kỳ giao dịch nào trên nền tảng, bạn xác nhận đã hiểu, chấp nhận và đồng ý chịu sự ràng buộc của toàn bộ điều khoản dưới đây.</p>
+</div>
+
+<h4>Quick Facts (8 ô)</h4>
+<table>
+  <tr><td>Phiên bản</td><td>v1.0 (2026)</td></tr>
+  <tr><td>Hiệu lực từ</td><td>01/01/2026</td></tr>
+  <tr><td>Pháp luật áp dụng</td><td>Pháp luật Việt Nam</td></tr>
+  <tr><td>Trọng tài</td><td>VIAC Hà Nội</td></tr>
+  <tr><td>Liability cap</td><td>$10,000 / giao dịch</td></tr>
+  <tr><td>Notice period</td><td>30 ngày</td></tr>
+  <tr><td>Refund policy</td><td>100% qua Bảo đảm Giao dịch</td></tr>
+  <tr><td>Pháp nhân</td><td><b>CT TNHH Chuỗi Cung Ứng Huayue VN (MST 0111453693)</b></td></tr>
+</table>
+
+<h4>14 Sections (giữ nguyên cấu trúc)</h4>
+<ol style="columns:2">
+  <li>Phạm vi áp dụng & Định nghĩa</li>
+  <li>Đăng ký tài khoản & Xác minh</li>
+  <li>Quyền & Nghĩa vụ Buyer</li>
+  <li>Quyền & Nghĩa vụ Supplier</li>
+  <li>Giao dịch, Thanh toán & Bảo đảm Giao dịch</li>
+  <li>Vận chuyển, Hải quan & Thuế</li>
+  <li>Hoàn tiền, Đổi hàng & Bồi thường</li>
+  <li>Sở hữu trí tuệ & Cấm hành vi</li>
+  <li>Bảo mật, Cookies & Dữ liệu cá nhân</li>
+  <li>Trách nhiệm & Giới hạn pháp lý</li>
+  <li>Bất khả kháng (Force Majeure)</li>
+  <li>Tranh chấp, Trọng tài & Luật áp dụng</li>
+  <li>Chấm dứt & Đóng tài khoản</li>
+  <li>Sửa đổi điều khoản & Thông báo</li>
+</ol>
+
+<h4>Mục 1 — Phạm vi áp dụng (đoạn quan trọng nhất, đã rewrite)</h4>
+<div class="card">
+  <p><span class="badge">SECTION 1</span></p>
+  <p>Huayuesc (sau đây gọi tắt 'Huayue' hoặc 'Nền tảng') là nền tảng B2B chuỗi cung ứng kết nối người mua tại Việt Nam với nhà cung cấp <b>vật liệu xây dựng, vật liệu trang trí nội thất và đồ điện gia dụng nhà bếp – phòng tắm</b> tại Trung Quốc. Huayue vận hành tại tên miền <b>huayuesc.vn</b> cùng các mobile app phụ trợ.</p>
+  <p><b>Pháp nhân chính:</b> CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM (MST 0111453693), <b>trụ sở chính</b> tại Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng; <b>văn phòng đại diện thu mua</b> tại Tầng 3, Tòa 1, Cảng Shuyu Chuangxing (<span class="cn">数娱创兴港</span>), đường Tân Cảng Đông (<span class="cn">新港东路</span>), quận Hải Châu, Quảng Châu, Trung Quốc.</p>
+  <p>Huayue cung cấp chuỗi dịch vụ trọn gói: tinh chọn nguồn gốc và hỗ trợ thu mua, kho bãi tại Trung Quốc, vận chuyển xuyên biên giới và thông quan, phát triển kênh phân phối tại Việt Nam — kèm Bảo đảm Giao dịch cho mọi đơn hàng. Huayue KHÔNG sở hữu hàng hoá của nhà cung cấp, KHÔNG là bên bán hàng trực tiếp, mà đóng vai trò chuỗi cung ứng trung gian + dịch vụ logistics + audit nhà máy.</p>
+  <p><b>4 nhóm người dùng:</b> Visitor / Buyer (cá nhân hoặc doanh nghiệp VN) / Supplier (NCC đã được Huayue audit thực địa tại nhà máy) / Partner (đối tác chiến lược).</p>
+</div>
+
+<h4>Sections quan trọng khác — đã rewrite</h4>
+<table>
+  <tr><th>Section</th><th>Điểm chính (mới)</th></tr>
+  <tr><td>5. Bảo đảm Giao dịch</td><td>Tài khoản tín thác tại ngân hàng đối tác Việt Nam và Trung Quốc (bỏ tên VCB/BIDV/Bank of China giả). Commission 5% từ Supplier.</td></tr>
+  <tr><td>6. Vận chuyển & Hải quan</td><td>Đội thông quan Huayue đặt tại cảng Hải Phòng, tích hợp VNACCS/VCIS. Ưu đãi ACFTA/RCEP 0-10%. Không áp dụng thuế tiêu thụ đặc biệt cho 3 ngành Huayue.</td></tr>
+  <tr><td>7. Refund Policy</td><td>Khiếu nại qua support@huayuesc.vn. Đội Quảng Châu có thể đến nhà máy kiểm tra. 4 phương án: 100% hoàn / Đổi hàng / Bồi thường / Credit.</td></tr>
+  <tr><td>8. Sở hữu trí tuệ</td><td>Bản quyền thuộc CT TNHH Chuỗi Cung Ứng Huayue VN. Logo 'Huayuesc' và '<span class="cn">华越供应链</span>' <b>đang trong quá trình đăng ký</b> tại Cục SHTT VN (bỏ số đăng ký giả).</td></tr>
+  <tr><td>9. Bảo mật & Cookies</td><td>SCCs nội bộ giữa Hải Phòng và Quảng Châu. <b>Đang trong quá trình hoàn tất đăng ký</b> truyền dữ liệu xuyên biên giới (bỏ mã TDXBG giả).</td></tr>
+  <tr><td>11. Force Majeure</td><td>Bổ sung "đóng cửa khẩu Hữu Nghị / Móng Cái / cảng Hải Phòng" — phù hợp tuyến vận chuyển TQ-VN.</td></tr>
+  <tr><td>12. Tranh chấp 3 cấp</td><td>Mediation Huayue (đội Quảng Châu hỗ trợ verify) → VIAC → TAND HN. Bỏ con số "91% thoả thuận" overclaim.</td></tr>
+</table>
+
+<blockquote>
+  Điều khoản sử dụng không phải để bảo vệ chúng tôi khỏi bạn — mà để định nghĩa rõ ràng cách Huayue, Buyer và Supplier hợp tác công bằng. Sự minh bạch là nền tảng của niềm tin B2B.
+  <span class="author">— Cố vấn pháp lý, Huayue Việt Nam</span>
+</blockquote>
+
+<h4>Checklist (đã rewrite)</h4>
+<ul>
+  <li>Pháp nhân CT TNHH Chuỗi Cung Ứng Huayue Việt Nam — MST 0111453693</li>
+  <li>Trụ sở chính: KCN Nam Đình Vũ, cảng Hải Phòng · Văn phòng đại diện: Quảng Châu</li>
+  <li>Tuân thủ pháp luật VN: Bộ luật Dân sự, Luật Thương mại, Luật Quản lý thuế, NĐ 13/2023, NĐ 69/2018</li>
+  <li>Bảo đảm Giao dịch qua tài khoản tín thác tại ngân hàng đối tác VN và TQ</li>
+  <li>Trọng tài 3 cấp: Mediation Huayue → VIAC Hà Nội → TAND Hà Nội</li>
+  <li>Liability cap $10K hoặc giá trị giao dịch (tuỳ thấp hơn) — Điều 442 BLDS VN</li>
+  <li>Force majeure clause đầy đủ — bảo vệ cả 3 bên</li>
+  <li>Notice 30 ngày khi sửa đổi material + re-consent rõ ràng</li>
+</ul>
+
+<hr>
+
+<h3>🔒 /info/privacy-policy — <span class="cn">Chính sách bảo mật</span></h3>
+
+<div class="card">
+  <h4>Intro</h4>
+  <p>Huayuesc — tên thương mại của <b>CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM (MST 0111453693)</b> — cam kết bảo mật dữ liệu người dùng theo tiêu chuẩn ISO/IEC 27001:2022, Nghị định 13/2023/NĐ-CP của Việt Nam, Personal Information Protection Law (PIPL) của Trung Quốc và GDPR (EU) khi áp dụng.</p>
+</div>
+
+<h4>Quick Facts (8 ô — đã đổi DPO info)</h4>
+<table>
+  <tr><td>Phiên bản</td><td>v1.0 (2026)</td></tr>
+  <tr><td>Hiệu lực từ</td><td>01/01/2026</td></tr>
+  <tr><td>Pháp nhân kiểm soát</td><td><b>CT TNHH Chuỗi Cung Ứng Huayue VN (MST 0111453693)</b></td></tr>
+  <tr><td>Tuân thủ VN</td><td>NĐ 13/2023</td></tr>
+  <tr><td>Tuân thủ CN</td><td>PIPL 2021</td></tr>
+  <tr><td>Mã hoá</td><td>TLS 1.3 + AES-256</td></tr>
+  <tr><td>DPO email</td><td>privacy@huayuesc.vn</td></tr>
+  <tr><td>DPO hotline</td><td><b>+86 181-2225-6999</b></td></tr>
+</table>
+
+<h4>Section 1 — Phạm vi (đã rewrite)</h4>
+<div class="card">
+  <p>Chính sách này áp dụng cho toàn bộ dịch vụ tại Huayuesc (<b>huayuesc.vn</b>), bao gồm website B2B, mobile app, và mọi tương tác offline với đội Huayue tại <b>trụ sở chính Hải Phòng + văn phòng đại diện thu mua Quảng Châu</b>.</p>
+  <p><b>Bên kiểm soát dữ liệu:</b> CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM (MST 0111453693, trụ sở KCN Nam Đình Vũ, cảng Hải Phòng).</p>
+</div>
+
+<h4>Section 6 — Truyền dữ liệu xuyên biên giới (đã đổi)</h4>
+<div class="card">
+  <p>Huayue vận hành xuyên biên giới Việt Nam – Trung Quốc: dữ liệu Buyer Việt Nam có thể được transfer sang <b>văn phòng đại diện thu mua tại Quảng Châu</b> để đội Huayue hỗ trợ sourcing, audit nhà máy, kiểm hàng và xử lý dispute.</p>
+  <p>Truyền dữ liệu xuyên biên giới được bảo vệ bởi 3 lớp:</p>
+  <ul>
+    <li><b>Standard Contractual Clauses (SCCs)</b> — văn bản nội bộ giữa trụ sở Hải Phòng và văn phòng đại diện Quảng Châu của CT TNHH Chuỗi Cung Ứng Huayue Việt Nam</li>
+    <li><b>Encryption-in-transit</b> — TLS 1.3 + certificate pinning</li>
+    <li><b>Đăng ký với Cục An toàn thông tin</b> — Huayue <b>đang trong quá trình hoàn tất thủ tục</b> (bỏ mã giả TDXBG-2026-XXXX)</li>
+  </ul>
+</div>
+
+<h4>Section 12 — Liên hệ DPO (đã rewrite)</h4>
+<div class="card">
+  <p><b>DPO (Data Protection Officer):</b></p>
+  <ul>
+    <li>Email: <a href="mailto:privacy@huayuesc.vn">privacy@huayuesc.vn</a> — phản hồi &lt;72h</li>
+    <li>Hotline: <b>+86 181-2225-6999</b> (giờ hành chính) ← <span style="color:#16A34A">[ĐÃ ĐỔI từ +84 24 1234 5678 giả]</span></li>
+    <li>Thư tay: 'DPO — CT TNHH Chuỗi Cung Ứng Huayue Việt Nam', <b>Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng</b> ← <span style="color:#16A34A">[ĐÃ ĐỔI từ "Tầng 12, Tòa nhà Huayuesc, 26 Phạm Hùng, Cầu Giấy, Hà Nội" giả]</span></li>
+  </ul>
+  <p><b>Cơ quan khiếu nại độc lập:</b> Cục An toàn thông tin (Bộ TT&TT), 18 Nguyễn Du, Hà Nội — ais.gov.vn</p>
+</div>
+
+<blockquote>
+  Bảo mật không phải checkbox — nó là một quá trình. Huayue cam kết minh bạch về cách dữ liệu của Buyer Việt Nam được xử lý xuyên biên giới VN-TQ, không có bí mật, không có ngôn ngữ pháp lý đánh đố.
+  <span class="author">— Đội An toàn thông tin, Huayue Việt Nam</span>
+</blockquote>
+
+<h4>Checklist (đã rewrite)</h4>
+<ul>
+  <li>Pháp nhân kiểm soát dữ liệu: CT TNHH Chuỗi Cung Ứng Huayue VN (MST 0111453693)</li>
+  <li>Tuân thủ NĐ 13/2023/NĐ-CP (VN) + PIPL 2021 (TQ) + GDPR khi áp dụng</li>
+  <li>Hướng tới đạt chuẩn ISO/IEC 27001:2022</li>
+  <li>Mã hoá TLS 1.3 (transit) + AES-256-GCM (rest), bcrypt cho mật khẩu</li>
+  <li>11 quyền của chủ thể dữ liệu — phản hồi 7 ngày, xử lý 30 ngày</li>
+  <li>Truyền xuyên biên giới VN-CN qua SCCs + đang đăng ký Cục An toàn thông tin</li>
+  <li>Pen-test 2 lần/năm + Bug Bounty $100-5,000</li>
+  <li>Data breach notification trong 72 giờ theo Điều 23 NĐ 13/2023</li>
+  <li>DPO: privacy@huayuesc.vn — hotline +86 181-2225-6999</li>
+</ul>
+
+<hr>
+
+<h4>🔻 Footer (đã cập nhật trên mọi trang)</h4>
+<div class="card" style="background:#002557;color:#fff">
+  <p>© 2026 <b>CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM</b> · huayuesc.vn · MST: 0111453693 · KCN Nam Đình Vũ, cảng Hải Phòng</p>
+  <p style="font-size:11px;opacity:.7;margin-top:6px">[ĐÃ BỎ "Vận hành bởi Beeagents.com"]</p>
+</div>
+
+<div class="source">
+  📂 <b>Files edited:</b> <span class="file-path">storefront/src/app/info/[topic]/page.tsx</span> (terms-of-service + privacy-policy topics) · <span class="file-path">storefront/src/components/home/footer.tsx</span><br>
+  ✅ <b>Verified:</b> 0 mention "Beeagents", 0 "0XXXXXXXXX", 0 "Diamond Flower", 0 "26 Phạm Hùng", 0 "TDXBG-2026-XXXX" trong rendered HTML.<br>
+  🌐 <b>Live test:</b> <a href="http://10.0.0.2:18080/info/terms-of-service" target="_blank">http://10.0.0.2:18080/info/terms-of-service</a> · <a href="http://10.0.0.2:18080/info/privacy-policy" target="_blank">http://10.0.0.2:18080/info/privacy-policy</a>
+</div>
+
+<h2 style="color:#6B7880;border-left-color:#DDE3E5">⏳ Tiếp theo: Sprint 2 — Contact (2 văn phòng thật)</h2>
+<p style="color:#6B7880">Sẽ xoá data 8 văn phòng giả (HN Diamond Flower, HCM, ĐN, HP, Quảng Châu, Yiwu, BKK, Jakarta) — thay bằng 2 văn phòng thật từ PDF: trụ sở chính KCN Nam Đình Vũ Hải Phòng + văn phòng đại diện Quảng Châu. Hotline: +86 181-2225-6999.</p>
 
 </body>
 </html>
