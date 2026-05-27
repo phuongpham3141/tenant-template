@@ -74,8 +74,10 @@ export type NavSubItem = {
   image: string;
   /** Tagline shown next to hero image in the sub-panel. */
   tagline: string;
-  /** 6 related products/sub-cats shown as grid in the sub-panel. */
+  /** Legacy: 6 related thumbnails. Still used by sub-panel hero strip preview. */
   highlights: { name: string; image: string; slug?: string }[];
+  /** CSR-style sections grid: 4 sections × 4 sub-sub items as text links. */
+  sections: { title: string; items: { name: string; slug?: string }[] }[];
 };
 
 /** Hierarchical sidebar menu — 2 main groups × 8 sub-items.
@@ -96,6 +98,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Lưới thép hàn",      image: "/img/ceramic-1-5.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "Thép không gỉ",      image: "/img/cer3.jpg?v=5", slug: "ket-cau-thep-khung" },
         ],
+        sections: [
+          { title: "Theo dạng", items: [
+            { name: "Thép hình H/I", slug: "ket-cau-thep-khung" },
+            { name: "Thép hình U/V", slug: "ket-cau-thep-khung" },
+            { name: "Thép hộp vuông", slug: "ket-cau-thep-khung" },
+            { name: "Ống thép tròn", slug: "ket-cau-thep-khung" },
+          ]},
+          { title: "Theo bề mặt", items: [
+            { name: "Thép đen", slug: "ket-cau-thep-khung" },
+            { name: "Mạ kẽm nhúng nóng", slug: "ket-cau-thep-khung" },
+            { name: "Sơn tĩnh điện", slug: "ket-cau-thep-khung" },
+            { name: "Inox 304/316", slug: "ket-cau-thep-khung" },
+          ]},
+          { title: "Theo tiêu chuẩn", items: [
+            { name: "JIS SS400", slug: "ket-cau-thep-khung" },
+            { name: "EN S275JR", slug: "ket-cau-thep-khung" },
+            { name: "GB Q235", slug: "ket-cau-thep-khung" },
+            { name: "ASTM A36", slug: "ket-cau-thep-khung" },
+          ]},
+          { title: "Phụ kiện", items: [
+            { name: "Bu-lông neo M16+", slug: "ket-cau-thep-khung" },
+            { name: "Đinh ốc cường độ cao", slug: "ket-cau-thep-khung" },
+            { name: "Lưới thép hàn", slug: "ket-cau-thep-khung" },
+            { name: "Đinh tán thép", slug: "ket-cau-thep-khung" },
+          ]},
+        ],
       },
       {
         name: "Tấm ốp tường & Trần", slug: "tam-op-tuong-tran",
@@ -108,6 +136,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Ốp gỗ MDF",          image: "/img/cer8.jpg?v=5", slug: "tam-op-tuong-tran" },
           { name: "Trần kim loại",      image: "/img/cer3.jpg?v=5", slug: "tam-op-tuong-tran" },
           { name: "Ốp đá tự nhiên",     image: "/img/cer2.jpg?v=5", slug: "tam-op-tuong-tran" },
+        ],
+        sections: [
+          { title: "Tấm ốp tường", items: [
+            { name: "Porcelain tấm lớn", slug: "tam-op-tuong-tran" },
+            { name: "Tấm 3D PVC", slug: "tam-op-tuong-tran" },
+            { name: "Tấm composite", slug: "tam-op-tuong-tran" },
+            { name: "Tấm acrylic gloss", slug: "tam-op-tuong-tran" },
+          ]},
+          { title: "Trần thạch cao", items: [
+            { name: "Trần chìm phẳng", slug: "tam-op-tuong-tran" },
+            { name: "Trần thả 60×60", slug: "tam-op-tuong-tran" },
+            { name: "Trần caro 60×120", slug: "tam-op-tuong-tran" },
+            { name: "Trần nano đục lỗ", slug: "tam-op-tuong-tran" },
+          ]},
+          { title: "Ốp gỗ trang trí", items: [
+            { name: "MDF veneer sồi", slug: "tam-op-tuong-tran" },
+            { name: "HDF chống ẩm", slug: "tam-op-tuong-tran" },
+            { name: "Gỗ nhựa WPC", slug: "tam-op-tuong-tran" },
+            { name: "Phào nẹp gỗ thông", slug: "tam-op-tuong-tran" },
+          ]},
+          { title: "Phụ kiện", items: [
+            { name: "Khung xương kẽm", slug: "tam-op-tuong-tran" },
+            { name: "Keo dán tấm ốp", slug: "tam-op-tuong-tran" },
+            { name: "Đèn LED âm trần", slug: "tam-op-tuong-tran" },
+            { name: "Phào nẹp PVC", slug: "tam-op-tuong-tran" },
+          ]},
         ],
       },
       {
@@ -122,6 +176,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Đá granite tấm",     image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "vat-lieu-lat-san" },
           { name: "Sàn ngoài trời",     image: "/img/cer5.jpg?v=5", slug: "vat-lieu-lat-san" },
         ],
+        sections: [
+          { title: "Gạch porcelain", items: [
+            { name: "Bóng kính", slug: "vat-lieu-lat-san" },
+            { name: "Mờ matte", slug: "vat-lieu-lat-san" },
+            { name: "Vân 3D", slug: "vat-lieu-lat-san" },
+            { name: "Mosaic ghép", slug: "vat-lieu-lat-san" },
+          ]},
+          { title: "Sàn gỗ", items: [
+            { name: "Engineered 3 lớp", slug: "vat-lieu-lat-san" },
+            { name: "Laminate AC4", slug: "vat-lieu-lat-san" },
+            { name: "Vinyl SPC", slug: "vat-lieu-lat-san" },
+            { name: "Bamboo carbonized", slug: "vat-lieu-lat-san" },
+          ]},
+          { title: "Đá tự nhiên", items: [
+            { name: "Marble Carrara", slug: "vat-lieu-lat-san" },
+            { name: "Granite đen", slug: "vat-lieu-lat-san" },
+            { name: "Travertine", slug: "vat-lieu-lat-san" },
+            { name: "Slate đen Trung Quốc", slug: "vat-lieu-lat-san" },
+          ]},
+          { title: "Phụ kiện", items: [
+            { name: "Phào chân tường", slug: "vat-lieu-lat-san" },
+            { name: "Nẹp ngưỡng cửa", slug: "vat-lieu-lat-san" },
+            { name: "Keo dán sàn", slug: "vat-lieu-lat-san" },
+            { name: "Lớp lót underlay", slug: "vat-lieu-lat-san" },
+          ]},
+        ],
       },
       {
         name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat",
@@ -134,6 +214,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Đá mosaic",          image: "/img/da-mosaic-trang-tri.jpg?v=5", slug: "da-op-lat" },
           { name: "Đá op ngoại thất",   image: "/img/da-op-ngoai-that.jpg?v=5", slug: "da-op-lat" },
           { name: "Đá sintered",        image: "/img/da-sintered-da-thieu-ket.jpg?v=5", slug: "da-op-lat" },
+        ],
+        sections: [
+          { title: "Marble tự nhiên", items: [
+            { name: "Carrara trắng", slug: "da-op-lat" },
+            { name: "Marquina đen", slug: "da-op-lat" },
+            { name: "Beige vàng", slug: "da-op-lat" },
+            { name: "Rosa hồng Bồ Đào Nha", slug: "da-op-lat" },
+          ]},
+          { title: "Granite", items: [
+            { name: "Đen tuyền", slug: "da-op-lat" },
+            { name: "Đỏ Brazil", slug: "da-op-lat" },
+            { name: "Xám Sardo", slug: "da-op-lat" },
+            { name: "Vàng cây Vạn Niên", slug: "da-op-lat" },
+          ]},
+          { title: "Đá nhân tạo", items: [
+            { name: "Quartz vân marble", slug: "da-op-lat" },
+            { name: "Quartz vân kim loại", slug: "da-op-lat" },
+            { name: "Solid surface acrylic", slug: "da-op-lat" },
+            { name: "Terrazzo nhân tạo", slug: "da-op-lat" },
+          ]},
+          { title: "Sintered stone", items: [
+            { name: "Neolith", slug: "da-op-lat" },
+            { name: "Dekton", slug: "da-op-lat" },
+            { name: "Lapitec", slug: "da-op-lat" },
+            { name: "MaxFine", slug: "da-op-lat" },
+          ]},
         ],
       },
       {
@@ -148,6 +254,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Vữa trang trí",      image: "/img/ceramic-2-4.jpg?v=5", slug: "son-lop-phu" },
           { name: "Sơn chống thấm",     image: "/img/ceramic-2-5.jpg?v=5", slug: "son-lop-phu" },
         ],
+        sections: [
+          { title: "Sơn nội thất", items: [
+            { name: "Sơn lót kiềm", slug: "son-lop-phu" },
+            { name: "Sơn phủ bóng", slug: "son-lop-phu" },
+            { name: "Sơn texture vân", slug: "son-lop-phu" },
+            { name: "Sơn chống mốc", slug: "son-lop-phu" },
+          ]},
+          { title: "Sơn ngoại thất", items: [
+            { name: "Sơn nano siêu bền", slug: "son-lop-phu" },
+            { name: "Sơn cách nhiệt", slug: "son-lop-phu" },
+            { name: "Sơn vỉa hè / vạch kẻ", slug: "son-lop-phu" },
+            { name: "Sơn epoxy sàn", slug: "son-lop-phu" },
+          ]},
+          { title: "Sơn chuyên dụng", items: [
+            { name: "Sơn chống cháy", slug: "son-lop-phu" },
+            { name: "Sơn chống nước", slug: "son-lop-phu" },
+            { name: "Sơn chống tĩnh điện", slug: "son-lop-phu" },
+            { name: "Sơn cách điện", slug: "son-lop-phu" },
+          ]},
+          { title: "Phụ kiện sơn", items: [
+            { name: "Băng keo che", slug: "son-lop-phu" },
+            { name: "Lăn sơn / cọ", slug: "son-lop-phu" },
+            { name: "Vải bảo vệ sàn", slug: "son-lop-phu" },
+            { name: "Bột trét tường", slug: "son-lop-phu" },
+          ]},
+        ],
       },
       {
         name: "Cách âm & Cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet",
@@ -160,6 +292,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Bông polyester",      image: "/img/bong-polyester.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
           { name: "Tấm EPS/XPS",         image: "/img/ceramic-3-1.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
           { name: "Foil cách nhiệt",     image: "/img/ceramic-3-2.jpg?v=5", slug: "vat-lieu-cach-am-cach-nhiet" },
+        ],
+        sections: [
+          { title: "Bông khoáng", items: [
+            { name: "Rockwool tấm", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Glasswool cuộn", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Bông gốm chịu nhiệt", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Bông silica aerogel", slug: "vat-lieu-cach-am-cach-nhiet" },
+          ]},
+          { title: "Mút foam", items: [
+            { name: "PE foam cuộn", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "PU foam phun", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Phenolic foam", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "EPP định hình", slug: "vat-lieu-cach-am-cach-nhiet" },
+          ]},
+          { title: "EPS / XPS", items: [
+            { name: "Tấm EPS thường", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Tấm XPS chịu nén", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "EPS định hình SIPs", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "XPS lát mái", slug: "vat-lieu-cach-am-cach-nhiet" },
+          ]},
+          { title: "Phụ kiện cách nhiệt", items: [
+            { name: "Foil nhôm chống nóng", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Keo dán bông cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Thanh giằng / khung kẽm", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "Vít neo chuyên dụng", slug: "vat-lieu-cach-am-cach-nhiet" },
+          ]},
         ],
       },
       {
@@ -174,6 +332,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Băng cản nước PVC",   image: "/img/ceramic-4-4.jpg?v=5", slug: "vat-lieu-chong-tham" },
           { name: "Vữa chống thấm",      image: "/img/ceramic-4-5.jpg?v=5", slug: "vat-lieu-chong-tham" },
         ],
+        sections: [
+          { title: "Màng bitum", items: [
+            { name: "Tự dính SBS", slug: "vat-lieu-chong-tham" },
+            { name: "Khò nóng APP", slug: "vat-lieu-chong-tham" },
+            { name: "Cuộn dày 3mm", slug: "vat-lieu-chong-tham" },
+            { name: "Cuộn dày 4mm", slug: "vat-lieu-chong-tham" },
+          ]},
+          { title: "Sơn chống thấm", items: [
+            { name: "PU đàn hồi 1K", slug: "vat-lieu-chong-tham" },
+            { name: "PU đàn hồi 2K", slug: "vat-lieu-chong-tham" },
+            { name: "Acrylic gốc nước", slug: "vat-lieu-chong-tham" },
+            { name: "Polyurea phun cao áp", slug: "vat-lieu-chong-tham" },
+          ]},
+          { title: "Keo & Phụ gia", items: [
+            { name: "Silicone trung tính", slug: "vat-lieu-chong-tham" },
+            { name: "MS Polymer", slug: "vat-lieu-chong-tham" },
+            { name: "Phụ gia chống thấm xi măng", slug: "vat-lieu-chong-tham" },
+            { name: "Hồ chống thấm 2K", slug: "vat-lieu-chong-tham" },
+          ]},
+          { title: "Phụ kiện thi công", items: [
+            { name: "Băng cản nước PVC", slug: "vat-lieu-chong-tham" },
+            { name: "Lưới fiber gia cường", slug: "vat-lieu-chong-tham" },
+            { name: "Băng keo butyl", slug: "vat-lieu-chong-tham" },
+            { name: "Vữa rót non-shrink", slug: "vat-lieu-chong-tham" },
+          ]},
+        ],
       },
       {
         name: "Xi măng & Vữa", slug: "vat-lieu-kho-xi-mang-vua",
@@ -186,6 +370,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Vữa rót non-shrink",  image: "/img/ceramic-5-3.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
           { name: "Keo dán gạch",        image: "/img/ceramic-5-4.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
           { name: "Vữa kháng axit",      image: "/img/ceramic-5-5.jpg?v=5", slug: "vat-lieu-kho-xi-mang-vua" },
+        ],
+        sections: [
+          { title: "Xi măng bao", items: [
+            { name: "PCB30 đa dụng", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "PCB40 chịu nén cao", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "PCB50 cường độ cao", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Xi măng trắng", slug: "vat-lieu-kho-xi-mang-vua" },
+          ]},
+          { title: "Vữa khô trộn sẵn", items: [
+            { name: "Vữa xây tô", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Vữa lót", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Vữa trát hoàn thiện", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Vữa mài / self-leveling", slug: "vat-lieu-kho-xi-mang-vua" },
+          ]},
+          { title: "Phụ gia bê tông", items: [
+            { name: "Đông kết nhanh", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Đông kết chậm", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Siêu dẻo PCE", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Chống thấm bê tông", slug: "vat-lieu-kho-xi-mang-vua" },
+          ]},
+          { title: "Keo & Mạch", items: [
+            { name: "Keo dán gạch 1K", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Keo dán gạch 2K", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Mạch epoxy", slug: "vat-lieu-kho-xi-mang-vua" },
+            { name: "Mạch xi măng chống mốc", slug: "vat-lieu-kho-xi-mang-vua" },
+          ]},
         ],
       },
     ],
@@ -205,6 +415,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Ghế thư giãn",        image: "/img/fur5.jpg?v=5", slug: "phong-khach" },
           { name: "Bàn console",         image: "/img/furniture-1-3.jpg?v=5", slug: "phong-khach" },
         ],
+        sections: [
+          { title: "Sofa", items: [
+            { name: "Sofa hiện đại", slug: "phong-khach" },
+            { name: "Sofa cổ điển", slug: "phong-khach" },
+            { name: "Sofa da Italia", slug: "phong-khach" },
+            { name: "Sofa vải linen", slug: "phong-khach" },
+          ]},
+          { title: "Bàn & Kệ", items: [
+            { name: "Bàn cà phê", slug: "phong-khach" },
+            { name: "Bàn console", slug: "phong-khach" },
+            { name: "Kệ TV treo tường", slug: "phong-khach" },
+            { name: "Kệ TV đứng", slug: "phong-khach" },
+          ]},
+          { title: "Ghế thư giãn", items: [
+            { name: "Ghế bành cánh tay", slug: "phong-khach" },
+            { name: "Ghế thư giãn ngả", slug: "phong-khach" },
+            { name: "Ghế swing tổ chim", slug: "phong-khach" },
+            { name: "Ghế đôn / footstool", slug: "phong-khach" },
+          ]},
+          { title: "Đèn & Decor", items: [
+            { name: "Đèn sàn floor lamp", slug: "phong-khach" },
+            { name: "Đèn bàn cạnh sofa", slug: "phong-khach" },
+            { name: "Thảm trải phòng khách", slug: "phong-khach" },
+            { name: "Rèm cửa cao cấp", slug: "phong-khach" },
+          ]},
+        ],
       },
       {
         name: "Phòng ngủ", slug: "phong-ngu",
@@ -217,6 +453,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Táp đầu giường",      image: "/img/furniture-2-2.jpg?v=5", slug: "phong-ngu" },
           { name: "Đệm latex",           image: "/img/dem-latex-memory-foam.jpg?v=5", slug: "phong-ngu" },
           { name: "Đệm pocket spring",   image: "/img/dem-pocket-spring.jpg?v=5", slug: "phong-ngu" },
+        ],
+        sections: [
+          { title: "Giường ngủ", items: [
+            { name: "Giường 1m6", slug: "phong-ngu" },
+            { name: "Giường 1m8", slug: "phong-ngu" },
+            { name: "Giường King 2m", slug: "phong-ngu" },
+            { name: "Giường tầng", slug: "phong-ngu" },
+          ]},
+          { title: "Tủ áo", items: [
+            { name: "Tủ cánh trượt", slug: "phong-ngu" },
+            { name: "Tủ cánh mở", slug: "phong-ngu" },
+            { name: "Walk-in closet", slug: "phong-ngu" },
+            { name: "Tủ kết hợp gương", slug: "phong-ngu" },
+          ]},
+          { title: "Đệm cao cấp", items: [
+            { name: "Đệm cao su tự nhiên", slug: "phong-ngu" },
+            { name: "Đệm lò xo túi", slug: "phong-ngu" },
+            { name: "Đệm memory foam", slug: "phong-ngu" },
+            { name: "Đệm latex 7-zone", slug: "phong-ngu" },
+          ]},
+          { title: "Bàn / Phụ kiện", items: [
+            { name: "Bàn trang điểm có gương", slug: "phong-ngu" },
+            { name: "Táp đầu giường", slug: "phong-ngu" },
+            { name: "Ghế bench cuối giường", slug: "phong-ngu" },
+            { name: "Đèn ngủ cảm ứng", slug: "phong-ngu" },
+          ]},
         ],
       },
       {
@@ -231,6 +493,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Đèn chùm pha lê",     image: "/img/den-pha-le-k9.jpg?v=5", slug: "phong-an" },
           { name: "Đèn pendant",         image: "/img/den-pendant.jpg?v=5", slug: "phong-an" },
         ],
+        sections: [
+          { title: "Bàn ăn", items: [
+            { name: "Bàn 4 chỗ", slug: "phong-an" },
+            { name: "Bàn 6 chỗ", slug: "phong-an" },
+            { name: "Bàn 8 chỗ", slug: "phong-an" },
+            { name: "Bàn mở rộng", slug: "phong-an" },
+          ]},
+          { title: "Ghế ăn", items: [
+            { name: "Ghế gỗ tự nhiên", slug: "phong-an" },
+            { name: "Ghế bọc da", slug: "phong-an" },
+            { name: "Ghế bọc vải", slug: "phong-an" },
+            { name: "Ghế nhựa cao cấp", slug: "phong-an" },
+          ]},
+          { title: "Tủ rượu & Buffet", items: [
+            { name: "Tủ rượu cánh kính", slug: "phong-an" },
+            { name: "Tủ rượu module", slug: "phong-an" },
+            { name: "Tủ buffet trưng bày", slug: "phong-an" },
+            { name: "Tủ bar mini", slug: "phong-an" },
+          ]},
+          { title: "Đèn & Decor", items: [
+            { name: "Đèn chùm pha lê", slug: "phong-an" },
+            { name: "Đèn pendant đơn", slug: "phong-an" },
+            { name: "Lọ hoa bàn ăn", slug: "phong-an" },
+            { name: "Tranh trang trí", slug: "phong-an" },
+          ]},
+        ],
       },
       {
         name: "Tủ bếp", slug: "tu-bep",
@@ -243,6 +531,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Mặt đá quartz",       image: "/img/da-quartz-nhan-tao.jpg?v=5", slug: "tu-bep" },
           { name: "Bản lề tủ bếp",       image: "/img/ban-le-tu-bep.jpg?v=5", slug: "tu-bep" },
           { name: "Bản lề giảm chấn",    image: "/img/ban-le-tu-giam-chan.jpg?v=5", slug: "tu-bep" },
+        ],
+        sections: [
+          { title: "Hình dạng tủ", items: [
+            { name: "Chữ I cơ bản", slug: "tu-bep" },
+            { name: "Chữ L góc bếp", slug: "tu-bep" },
+            { name: "Chữ U khép kín", slug: "tu-bep" },
+            { name: "Có đảo bếp / island", slug: "tu-bep" },
+          ]},
+          { title: "Vật liệu cánh", items: [
+            { name: "Acrylic gloss", slug: "tu-bep" },
+            { name: "Laminate vân gỗ", slug: "tu-bep" },
+            { name: "Melamine MFC", slug: "tu-bep" },
+            { name: "Gỗ tự nhiên sồi/óc chó", slug: "tu-bep" },
+          ]},
+          { title: "Mặt đá", items: [
+            { name: "Quartz nhân tạo", slug: "tu-bep" },
+            { name: "Granite tự nhiên", slug: "tu-bep" },
+            { name: "Marble trắng", slug: "tu-bep" },
+            { name: "Solid surface Corian", slug: "tu-bep" },
+          ]},
+          { title: "Phụ kiện", items: [
+            { name: "Bản lề Blum giảm chấn", slug: "tu-bep" },
+            { name: "Ray trượt 3 tầng", slug: "tu-bep" },
+            { name: "Tay nắm tủ", slug: "tu-bep" },
+            { name: "Đèn LED âm tủ", slug: "tu-bep" },
+          ]},
         ],
       },
       {
@@ -257,6 +571,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Bản lề tủ",           image: "/img/ban-le.jpg?v=5", slug: "tu-quan-ao" },
           { name: "Bản lề cửa",          image: "/img/ban-le-cua.jpg?v=5", slug: "tu-quan-ao" },
         ],
+        sections: [
+          { title: "Kiểu tủ", items: [
+            { name: "Cánh trượt", slug: "tu-quan-ao" },
+            { name: "Cánh mở", slug: "tu-quan-ao" },
+            { name: "Walk-in closet", slug: "tu-quan-ao" },
+            { name: "Module âm tường", slug: "tu-quan-ao" },
+          ]},
+          { title: "Vật liệu", items: [
+            { name: "MDF veneer", slug: "tu-quan-ao" },
+            { name: "HDF chống ẩm", slug: "tu-quan-ao" },
+            { name: "Gỗ tự nhiên", slug: "tu-quan-ao" },
+            { name: "Acrylic gloss", slug: "tu-quan-ao" },
+          ]},
+          { title: "Phụ kiện trong", items: [
+            { name: "Rổ kéo Hafele", slug: "tu-quan-ao" },
+            { name: "Móc cà-vạt xoay", slug: "tu-quan-ao" },
+            { name: "Đèn cảm ứng LED", slug: "tu-quan-ao" },
+            { name: "Két sắt giấu trong tủ", slug: "tu-quan-ao" },
+          ]},
+          { title: "Tủ phụ kèm theo", items: [
+            { name: "Tủ giày kết hợp", slug: "tu-quan-ao" },
+            { name: "Tủ đầu giường", slug: "tu-quan-ao" },
+            { name: "Tủ ngăn kéo", slug: "tu-quan-ao" },
+            { name: "Kệ trang sức tích hợp", slug: "tu-quan-ao" },
+          ]},
+        ],
       },
       {
         name: "Văn phòng tại nhà", slug: "van-phong-tai-nha",
@@ -269,6 +609,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Đèn bàn LED",         image: "/img/den-ban-de-ban.jpg?v=5", slug: "van-phong-tai-nha" },
           { name: "Đèn floor lamp",      image: "/img/den-san-floor-lamp.jpg?v=5", slug: "van-phong-tai-nha" },
           { name: "Đèn smart Wi-Fi",     image: "/img/den-smart-wi-fi.jpg?v=5", slug: "van-phong-tai-nha" },
+        ],
+        sections: [
+          { title: "Bàn làm việc", items: [
+            { name: "Standing desk", slug: "van-phong-tai-nha" },
+            { name: "Bàn chữ L", slug: "van-phong-tai-nha" },
+            { name: "Bàn thẳng tối giản", slug: "van-phong-tai-nha" },
+            { name: "Bàn kết hợp kệ sách", slug: "van-phong-tai-nha" },
+          ]},
+          { title: "Ghế ngồi", items: [
+            { name: "Ghế ergonomic", slug: "van-phong-tai-nha" },
+            { name: "Ghế gaming", slug: "van-phong-tai-nha" },
+            { name: "Ghế da giám đốc", slug: "van-phong-tai-nha" },
+            { name: "Ghế lưới văn phòng", slug: "van-phong-tai-nha" },
+          ]},
+          { title: "Lưu trữ", items: [
+            { name: "Kệ sách open shelf", slug: "van-phong-tai-nha" },
+            { name: "Tủ tài liệu cánh kính", slug: "van-phong-tai-nha" },
+            { name: "Hộp đựng tài liệu", slug: "van-phong-tai-nha" },
+            { name: "Tủ ngăn kéo di động", slug: "van-phong-tai-nha" },
+          ]},
+          { title: "Phụ kiện làm việc", items: [
+            { name: "Đèn LED bàn cảm ứng", slug: "van-phong-tai-nha" },
+            { name: "Giá đỡ monitor", slug: "van-phong-tai-nha" },
+            { name: "Đèn smart Wi-Fi", slug: "van-phong-tai-nha" },
+            { name: "Khay đứng laptop", slug: "van-phong-tai-nha" },
+          ]},
         ],
       },
       {
@@ -283,6 +649,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Đèn wall sconce",     image: "/img/den-tuong-wall-sconce.jpg?v=5", slug: "noi-that-khach-san" },
           { name: "Đèn ốp trần",         image: "/img/den-op-tran.jpg?v=5", slug: "noi-that-khach-san" },
         ],
+        sections: [
+          { title: "Phòng ngủ khách sạn", items: [
+            { name: "Giường king/queen", slug: "noi-that-khach-san" },
+            { name: "Đầu giường bọc nệm", slug: "noi-that-khach-san" },
+            { name: "Bàn làm việc trong phòng", slug: "noi-that-khach-san" },
+            { name: "Tủ minibar gỗ veneer", slug: "noi-that-khach-san" },
+          ]},
+          { title: "Phòng tắm khách sạn", items: [
+            { name: "Khăn tắm 100% cotton", slug: "noi-that-khach-san" },
+            { name: "Đồ amenity hộp gói", slug: "noi-that-khach-san" },
+            { name: "Áo choàng tắm waffle", slug: "noi-that-khach-san" },
+            { name: "Dép đi trong phòng", slug: "noi-that-khach-san" },
+          ]},
+          { title: "Lobby & Sảnh chờ", items: [
+            { name: "Ghế sảnh chờ", slug: "noi-that-khach-san" },
+            { name: "Bàn lễ tân", slug: "noi-that-khach-san" },
+            { name: "Đèn chandelier pha lê", slug: "noi-that-khach-san" },
+            { name: "Kệ trưng bày kính", slug: "noi-that-khach-san" },
+          ]},
+          { title: "Phòng ăn / Bar", items: [
+            { name: "Bàn buffet inox", slug: "noi-that-khach-san" },
+            { name: "Ghế nhà hàng cao cấp", slug: "noi-that-khach-san" },
+            { name: "Đèn pendant bar", slug: "noi-that-khach-san" },
+            { name: "Quầy bar liền khối", slug: "noi-that-khach-san" },
+          ]},
+        ],
       },
       {
         name: "Trẻ em & Em bé", slug: "tre-em-em-be",
@@ -295,6 +687,32 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Ghế tâm năng",        image: "/img/ghe-tam-nang.jpg?v=5", slug: "tre-em-em-be" },
           { name: "Đèn để bàn trẻ em",   image: "/img/den-ban-de-ban.jpg?v=5", slug: "tre-em-em-be" },
           { name: "Đèn LED dây trang trí", image: "/img/den-led-day.jpg?v=5", slug: "tre-em-em-be" },
+        ],
+        sections: [
+          { title: "Phòng ngủ trẻ em", items: [
+            { name: "Giường tầng an toàn", slug: "tre-em-em-be" },
+            { name: "Cũi em bé MDF", slug: "tre-em-em-be" },
+            { name: "Tủ áo trẻ em", slug: "tre-em-em-be" },
+            { name: "Đèn ngủ cảm ứng", slug: "tre-em-em-be" },
+          ]},
+          { title: "Học tập", items: [
+            { name: "Bàn học chống gù", slug: "tre-em-em-be" },
+            { name: "Ghế học điều chỉnh", slug: "tre-em-em-be" },
+            { name: "Kệ sách trẻ em", slug: "tre-em-em-be" },
+            { name: "Đèn bàn LED chống cận", slug: "tre-em-em-be" },
+          ]},
+          { title: "Đồ chơi & Lưu trữ", items: [
+            { name: "Tủ đồ chơi modular", slug: "tre-em-em-be" },
+            { name: "Đồ chơi gỗ E0", slug: "tre-em-em-be" },
+            { name: "Xếp hình giáo dục", slug: "tre-em-em-be" },
+            { name: "Hộp lưu trữ vải", slug: "tre-em-em-be" },
+          ]},
+          { title: "Vệ sinh & Ăn uống", items: [
+            { name: "Ghế ăn em bé", slug: "tre-em-em-be" },
+            { name: "Khăn tắm trẻ em cotton", slug: "tre-em-em-be" },
+            { name: "Yếm ăn silicone", slug: "tre-em-em-be" },
+            { name: "Bồn rửa mini cho bé", slug: "tre-em-em-be" },
+          ]},
         ],
       },
     ],

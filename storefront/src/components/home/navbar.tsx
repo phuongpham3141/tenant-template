@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NAV_CATEGORIES, NAV_MENU } from "@/data/home";
+import { SubItemPanel } from "@/components/home/mega-submenu";
 
 export function NavBar() {
   const links: { label: string; href: string }[] = [
@@ -66,69 +67,13 @@ export function NavBar() {
                 ));
               })()}
             </aside>
-            <div className="mm-panel w-[720px] grid">
+            <div className="mm-panel w-[860px] grid">
               {flatSubs.map(({ groupSlug, idx, item }) => (
                 <div
                   key={`${groupSlug}-${item.slug}`}
-                  className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1 p-5`}
+                  className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1`}
                 >
-                  {/* Hero strip */}
-                  <Link
-                    href={`/category/${groupSlug}/${item.slug}`}
-                    className="block relative aspect-[16/6] rounded overflow-hidden mb-3 group/hero"
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover/hero:scale-105 transition-transform"
-                      loading="lazy"
-                    />
-                    <div
-                      className="absolute inset-0 px-4 py-3 flex flex-col justify-end text-white"
-                      style={{ background: "linear-gradient(180deg, rgba(0,37,87,0.0) 40%, rgba(0,37,87,0.85) 100%)" }}
-                    >
-                      <h3 className="text-[16px] font-bold leading-tight">{item.name}</h3>
-                      <p className="text-[11.5px] opacity-90 leading-snug line-clamp-2 mt-0.5">
-                        {item.tagline}
-                      </p>
-                    </div>
-                  </Link>
-                  {/* 6 highlight thumbnails — 3 cols × 2 rows */}
-                  <div className="grid grid-cols-3 gap-2.5">
-                    {item.highlights.slice(0, 6).map((h) => (
-                      <Link
-                        key={h.name}
-                        href={
-                          h.slug
-                            ? `/category/${groupSlug}/${h.slug}`
-                            : `/category/${groupSlug}/${item.slug}`
-                        }
-                        className="group/h flex flex-col"
-                      >
-                        <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden border border-line group-hover/h:border-brand transition-colors">
-                          <img
-                            src={h.image}
-                            alt={h.name}
-                            className="w-full h-full object-cover group-hover/h:scale-105 transition-transform"
-                            loading="lazy"
-                          />
-                        </div>
-                        <span className="text-[11.5px] text-ink group-hover/h:text-brand mt-1 leading-snug line-clamp-2">
-                          {h.name}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                  {/* CTA */}
-                  <div className="mt-3 pt-2 border-t border-line flex justify-between items-center">
-                    <span className="text-[11px] text-mute">{item.highlights.length}+ sản phẩm</span>
-                    <Link
-                      href={`/category/${groupSlug}/${item.slug}`}
-                      className="text-[12px] text-accent font-semibold hover:underline"
-                    >
-                      Xem toàn bộ {item.name} →
-                    </Link>
-                  </div>
+                  <SubItemPanel groupSlug={groupSlug} item={item} />
                 </div>
               ))}
             </div>

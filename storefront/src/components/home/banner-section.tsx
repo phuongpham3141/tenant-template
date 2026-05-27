@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NAV_MENU } from "@/data/home";
 import { HeroSlider } from "@/components/home/hero-slider";
+import { SubItemPanel } from "@/components/home/mega-submenu";
 
 /**
  * BannerSection sidebar — same mega-menu pattern as NavBar dropdown.
@@ -50,58 +51,16 @@ function CategoryMenu() {
           ));
         })()}
       </aside>
-      {/* Panel: absolute, pops out to the right of sidebar (240px),
-          overlays hero area. 720px wide, full sidebar height with scroll. */}
-      <div className="mm-panel absolute left-full top-0 ml-[12px] w-[720px] h-full bg-paper border border-line rounded shadow-xl z-50 grid overflow-hidden">
+      {/* Panel: absolute, pops out to right of sidebar, overlays hero.
+          860px wide × full sidebar height. SubItemPanel handles its own
+          internal scroll on the sections grid. */}
+      <div className="mm-panel absolute left-full top-0 ml-[12px] w-[860px] h-full bg-paper border border-line rounded shadow-xl z-50 grid overflow-hidden">
         {flatSubs.map(({ groupSlug, idx, item }) => (
           <div
             key={`${groupSlug}-${item.slug}`}
-            className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1 p-4 overflow-y-auto`}
+            className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1 h-full overflow-hidden`}
           >
-            <Link
-              href={`/category/${groupSlug}/${item.slug}`}
-              className="block relative aspect-[16/6] rounded overflow-hidden mb-3 group/hero"
-            >
-              <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover/hero:scale-105 transition-transform" loading="lazy" />
-              <div
-                className="absolute inset-0 px-4 py-3 flex flex-col justify-end text-white"
-                style={{ background: "linear-gradient(180deg, rgba(0,37,87,0.0) 40%, rgba(0,37,87,0.85) 100%)" }}
-              >
-                <h3 className="text-[15px] font-bold leading-tight">{item.name}</h3>
-                <p className="text-[11px] opacity-90 leading-snug line-clamp-2 mt-0.5">
-                  {item.tagline}
-                </p>
-              </div>
-            </Link>
-            <div className="grid grid-cols-3 gap-2.5">
-              {item.highlights.slice(0, 6).map((h) => (
-                <Link
-                  key={h.name}
-                  href={
-                    h.slug
-                      ? `/category/${groupSlug}/${h.slug}`
-                      : `/category/${groupSlug}/${item.slug}`
-                  }
-                  className="group/h flex flex-col"
-                >
-                  <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden border border-line group-hover/h:border-brand transition-colors">
-                    <img src={h.image} alt={h.name} className="w-full h-full object-cover group-hover/h:scale-105 transition-transform" loading="lazy" />
-                  </div>
-                  <span className="text-[11px] text-ink group-hover/h:text-brand mt-1 leading-snug line-clamp-2">
-                    {h.name}
-                  </span>
-                </Link>
-              ))}
-            </div>
-            <div className="mt-3 pt-2 border-t border-line flex justify-between items-center">
-              <span className="text-[10.5px] text-mute">{item.highlights.length}+ sản phẩm</span>
-              <Link
-                href={`/category/${groupSlug}/${item.slug}`}
-                className="text-[11.5px] text-accent font-semibold hover:underline"
-              >
-                Xem toàn bộ {item.name} →
-              </Link>
-            </div>
+            <SubItemPanel groupSlug={groupSlug} item={item} />
           </div>
         ))}
       </div>
@@ -162,10 +121,12 @@ export function BannerSection() {
   return (
     <section className="py-4 bg-paper max-md:py-2">
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_240px] gap-3 items-stretch h-[504px] max-[1280px]:grid-cols-1 max-[1280px]:h-auto max-md:gap-2 max-md:px-3">
-        <div className="max-xl:hidden h-full relative z-50">
+        <div className="max-xl:hidden h-full relative" style={{ zIndex: 100 }}>
           <CategoryMenu />
         </div>
-        <HeroSlider />
+        <div className="relative" style={{ zIndex: 1 }}>
+          <HeroSlider />
+        </div>
         <RightWidgets />
       </div>
     </section>

@@ -1,138 +1,91 @@
 import Link from "next/link";
-import { CATEGORIES, type CatSubcatItem } from "@/data/categories";
-import { MegaCarousel, type CarouselItem } from "@/components/home/mega-carousel";
+import type { NavSubItem } from "@/data/home";
 
-const norm = (i: string | CatSubcatItem): CatSubcatItem =>
-  typeof i === "string" ? { name: i } : i;
-
-/** Inner content of a category's submenu — caller wraps in mm-l2 grid container. */
-export function SubmenuContent({ slug }: { slug: string }) {
-  const cat = CATEGORIES[slug];
-  if (!cat) {
-    return (
-      <div className="col-span-4 flex items-center justify-center text-[12.5px] text-mute py-10">
-        Đang cập nhật danh sách subcategories cho danh mục này...
-      </div>
-    );
-  }
-  const sections = cat.sections.slice(0, 8);
-
-  // Flatten ALL subcats (including inline items) into carousel items
-  const carouselItems: CarouselItem[] = [];
-  for (const s of cat.sections) {
-    for (const sc of s.subcats) {
-      const subSlug = sc.slug;
-      carouselItems.push({
-        name: sc.name,
-        image: `/img/${(subSlug ?? sc.name).replace(/\s+/g, "")}.jpg?v=5`,
-        href: subSlug
-          ? `/category/${slug}/${subSlug}`
-          : `/category/${slug}#sec-${s.id}`,
-      });
-      if (sc.inline) {
-        for (const raw of sc.inline) {
-          const it = norm(raw);
-          carouselItems.push({
-            name: it.name,
-            image: `/img/${(it.slug ?? it.name).replace(/\s+/g, "")}.jpg?v=5`,
-            href: it.slug
-              ? `/category/${slug}/${it.slug}`
-              : `/category/${slug}#sec-${s.id}`,
-          });
-        }
-      }
-    }
-  }
-
-  // Hot products: 5 short keywords pulled from sections' subcats
-  const hotProducts: string[] = [];
-  for (const s of cat.sections) {
-    for (const sc of s.subcats) {
-      if (hotProducts.length < 5) hotProducts.push(sc.name);
-    }
-    if (hotProducts.length >= 5) break;
-  }
-
+/**
+ * CSR-style sub-item panel — renders the 4 sections × 4 sub-sub-items
+ * of a NAV_MENU sub-item as a 4-col text grid (like the original
+ * cybersilkroads design). Single hero image strip on top for branding.
+ */
+export function SubItemPanel({
+  groupSlug,
+  item,
+}: {
+  groupSlug: string;
+  item: NavSubItem;
+}) {
   return (
-    <>
-      {/* Top: 8 sections in 4-col grid (2 rows × 4 cols).
-          Each section uses class .mm-sec — items beyond 4 are hidden by
-          default and revealed on .mm-sec:hover (handled in globals.css). */}
-      {sections.map((s) => (
-        <div key={s.id} className="mm-sec min-w-0">
-          <Link
-            href={`/category/${slug}#sec-${s.id}`}
-            className="block text-[12px] font-bold text-brand mb-1 hover:underline truncate"
-          >
-            {s.title}
-            {s.subcats.length > 4 && (
-              <span className="ml-1 text-[10px] text-mute2 font-normal mm-sec-more">
-                ({s.subcats.length})
-              </span>
-            )}
-          </Link>
-          <ul className="space-y-0">
-            {s.subcats.map((sc) => (
-              <li key={sc.name}>
-                <Link
-                  href={
-                    sc.slug
-                      ? `/category/${slug}/${sc.slug}`
-                      : `/category/${slug}#sec-${s.id}`
-                  }
-                  className="block text-[11.5px] text-ink/85 hover:text-brand py-0.5 truncate"
-                >
-                  {sc.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-
-      {/* "More categories" link separator */}
-      <div className="col-span-4 pt-3 mt-2 border-t border-line">
-        <Link
-          href={`/category/${slug}`}
-          className="text-[12px] text-brand hover:underline font-medium"
+    <div className="p-4 h-full flex flex-col">
+      {/* Small hero strip with title + tagline */}
+      <Link
+        href={`/category/${groupSlug}/${item.slug}`}
+        className="block relative aspect-[16/4] rounded overflow-hidden mb-3 group/hero flex-shrink-0"
+      >
+        <img
+          src={item.image}
+          alt={item.name}
+          className="w-full h-full object-cover group-hover/hero:scale-105 transition-transform"
+          loading="lazy"
+        />
+        <div
+          className="absolute inset-0 px-4 py-2.5 flex flex-col justify-end text-white"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,37,87,0.0) 35%, rgba(0,37,87,0.88) 100%)",
+          }}
         >
-          More Categories →
-        </Link>
-      </div>
+          <h3 className="text-[15px] font-bold leading-tight">{item.name}</h3>
+          <p className="text-[10.5px] opacity-90 leading-snug line-clamp-1">
+            {item.tagline}
+          </p>
+        </div>
+      </Link>
 
-      {/* Carousel of ALL subcats with images (scroll buttons) */}
-      <div className="col-span-4">
-        <MegaCarousel items={carouselItems} />
-      </div>
-
-      {/* Hot products keywords row */}
-      <div className="col-span-4 pt-2 border-t border-line text-[11.5px] text-mute">
-        <b className="text-ink">Sản phẩm bán chạy:</b>{" "}
-        {hotProducts.map((kw, i) => (
-          <span key={kw}>
+      {/* CSR-style sections grid: 4 cols × N rows of text links */}
+      <div className="grid grid-cols-4 gap-x-4 gap-y-3 flex-1 min-h-0 overflow-y-auto">
+        {item.sections.map((s) => (
+          <div key={s.title} className="min-w-0">
             <Link
-              href={`/search?q=${encodeURIComponent(kw)}`}
-              className="text-mute hover:text-brand"
+              href={`/category/${groupSlug}/${item.slug}`}
+              className="flex items-baseline gap-1 mb-1.5 group/sect"
             >
-              {kw}
+              <h4 className="text-[12.5px] font-bold text-brand group-hover/sect:underline truncate">
+                {s.title}
+              </h4>
+              <span className="text-[10px] text-mute2 font-normal flex-shrink-0">
+                ({s.items.length})
+              </span>
             </Link>
-            {i < hotProducts.length - 1 && (
-              <span className="text-mute2 mx-1">,</span>
-            )}
-          </span>
+            <ul className="space-y-0">
+              {s.items.map((sub) => (
+                <li key={sub.name}>
+                  <Link
+                    href={
+                      sub.slug
+                        ? `/category/${groupSlug}/${sub.slug}`
+                        : `/category/${groupSlug}/${item.slug}`
+                    }
+                    className="block text-[11.5px] text-ink/85 hover:text-brand hover:underline truncate leading-snug py-0.5"
+                  >
+                    {sub.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
 
-      {/* Footer CTA */}
-      <div className="col-span-4 flex justify-between items-center pt-2 border-t border-line">
-        <span className="text-[11px] text-mute">{cat.title}</span>
+      <div className="mt-2 pt-2 border-t border-line flex justify-between items-center flex-shrink-0">
+        <span className="text-[10.5px] text-mute">
+          {item.sections.reduce((n, s) => n + s.items.length, 0)} sản phẩm
+        </span>
         <Link
-          href={`/category/${slug}`}
-          className="text-[12px] text-accent font-semibold hover:underline"
+          href={`/category/${groupSlug}/${item.slug}`}
+          className="text-[11.5px] text-accent font-semibold hover:underline"
         >
-          Xem toàn bộ {cat.title} →
+          Xem toàn bộ {item.name} →
         </Link>
       </div>
-    </>
+    </div>
   );
 }
