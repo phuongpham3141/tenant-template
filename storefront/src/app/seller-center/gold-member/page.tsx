@@ -60,7 +60,7 @@ const TESTIMONIALS = [
   {
     company: "Foshan Tile Master",
     role: "Sales Director Trương Mỹ",
-    quote: "Buyer HCM tìm gạch porcelain trên Cybersilkroads — Vàng đẩy chúng tôi lên top 3 kết quả. RFQ inbound từ 8/tháng lên 47/tháng. Audit TÜV miễn phí giúp ký được chuỗi khách sạn lớn.",
+    quote: "Buyer HCM tìm gạch porcelain trên Huayuesc — Vàng đẩy chúng tôi lên top 3 kết quả. RFQ inbound từ 8/tháng lên 47/tháng. Audit TÜV miễn phí giúp ký được chuỗi khách sạn lớn.",
     metric: "47 RFQ/tháng",
     avatar: 42,
   },
@@ -91,7 +91,7 @@ export default function GoldMemberPage() {
             <div className="inline-block bg-brand-dark text-gold px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🥇 GOLD MEMBERSHIP</div>
             <h1 className="text-[24px] font-bold text-ink">Trở thành NCC Vàng — đột phá xuất khẩu Việt Nam</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed max-w-[680px]">
-              91% đơn hàng B2B trên Cybersilkroads đến từ NCC Vàng/Kim cương. Khi buyer tìm kiếm "gạch porcelain MOQ 500m²" hay "OEM tủ bếp", thuật toán ưu tiên hiển thị suppliers có badge — Vàng = lòng tin + traffic + báo cáo audit minh bạch.
+              91% đơn hàng B2B trên Huayuesc đến từ NCC Vàng/Kim cương. Khi buyer tìm kiếm "gạch porcelain MOQ 500m²" hay "OEM tủ bếp", thuật toán ưu tiên hiển thị suppliers có badge — Vàng = lòng tin + traffic + báo cáo audit minh bạch.
             </p>
           </div>
 

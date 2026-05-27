@@ -80,4 +80,4 @@ export default function ProductsPage() {
   );
 }
 
-export const metadata = { title: "Tất cả sản phẩm — Cybersilkroads" };
+export const metadata = { title: "Tất cả sản phẩm — Huayuesc" };

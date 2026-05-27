@@ -6,7 +6,7 @@ const LAYERS = [
   {
     icon: "💰",
     title: "Trung gian thanh toán",
-    desc: "Tiền của bạn được giữ tại tài khoản ký quỹ Cybersilkroads, chỉ giải ngân cho NCC khi hàng đạt QC và bạn xác nhận đã nhận đủ.",
+    desc: "Tiền của bạn được giữ tại tài khoản ký quỹ Huayuesc, chỉ giải ngân cho NCC khi hàng đạt QC và bạn xác nhận đã nhận đủ.",
     bullets: ["Ký quỹ tại ngân hàng đối tác (Vietcombank / BIDV)", "Giải ngân theo milestone: 30% cọc – 40% xuất xưởng – 30% nhận hàng", "Hoàn 100% nếu giao trễ > 30 ngày"],
   },
   {
@@ -26,7 +26,7 @@ const LAYERS = [
 const TIMELINE = [
   { n: 1, title: "Ký hợp đồng & cọc qua tài khoản trung gian", desc: "Buyer chuyển 30% giá trị đơn vào tài khoản ký quỹ. NCC thấy 'đã đặt cọc' và bắt đầu sản xuất." },
   { n: 2, title: "Sản xuất + theo dõi tiến độ", desc: "NCC update ảnh dây chuyền hàng tuần. Bạn có thể đặt thêm QC giai đoạn (in-line inspection) tuỳ chọn." },
-  { n: 3, title: "QC kiểm hàng trước xuất", desc: "Sau khi NCC báo hoàn thành, đội QC Cybersilkroads đến xưởng kiểm 10% lô. Đạt → niêm phong container." },
+  { n: 3, title: "QC kiểm hàng trước xuất", desc: "Sau khi NCC báo hoàn thành, đội QC Huayuesc đến xưởng kiểm 10% lô. Đạt → niêm phong container." },
   { n: 4, title: "Vận chuyển + bảo hiểm", desc: "Container ra cảng Yantian/Shanghai. Tự động kích hoạt bảo hiểm All-Risk. Tracking realtime trên Buyer Center." },
   { n: 5, title: "Nhận hàng & xác nhận", desc: "Bạn kiểm hàng tại kho VN. Bấm 'Xác nhận đã nhận đủ' → tài khoản trung gian giải ngân nốt cho NCC. Đơn đóng." },
 ];
@@ -47,7 +47,7 @@ const CASES = [
   },
   {
     title: "Hotel 4-sao Đà Nẵng đặt 80 smart toilet",
-    desc: "Container bị cháy 1 phần khi quá cảnh Singapore. Bảo hiểm Cybersilkroads bồi thường $14,400 (110% giá FOB) trong 9 ngày — buyer kịp đặt lại lô mới cho khai trương.",
+    desc: "Container bị cháy 1 phần khi quá cảnh Singapore. Bảo hiểm Huayuesc bồi thường $14,400 (110% giá FOB) trong 9 ngày — buyer kịp đặt lại lô mới cho khai trương.",
     saved: "$14,400",
   },
   {

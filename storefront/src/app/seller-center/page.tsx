@@ -124,4 +124,4 @@ export default function SellerCenterPage() {
   );
 }
 
-export const metadata = { title: "Trung tâm người bán — Cybersilkroads" };
+export const metadata = { title: "Trung tâm người bán — Huayuesc" };

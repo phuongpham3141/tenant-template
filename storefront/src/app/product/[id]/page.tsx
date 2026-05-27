@@ -126,7 +126,7 @@ const REVIEWS = [
   { name: "Trần Minh Huy", company: "Showroom Nội thất Sài Gòn", rating: 5, date: "2026-04-12", text: "Hàng nhận đúng mẫu, thời gian giao nhanh. Đợt 2 sẽ đặt thêm 2 container.", helpful: 18 },
   { name: "Phạm Quốc Anh", company: "Vật liệu xây dựng Phương Nam", rating: 5, date: "2026-03-28", text: "Báo giá nhanh trong 6 tiếng. NCC hỗ trợ video call kiểm hàng trước xuất.", helpful: 14 },
   { name: "Nguyễn Thu Hằng", company: "Hotel Group HCM", rating: 4, date: "2026-03-15", text: "Chất lượng tốt, đóng gói chuẩn xuất khẩu. Giá cạnh tranh hơn nội địa 30%.", helpful: 9 },
-  { name: "Lê Văn Đức", company: "Đại lý Đà Nẵng", rating: 5, date: "2026-02-22", text: "Audit nhà máy do Cybersilkroads tổ chức rất chuyên nghiệp. Yên tâm đặt hàng.", helpful: 12 },
+  { name: "Lê Văn Đức", company: "Đại lý Đà Nẵng", rating: 5, date: "2026-02-22", text: "Audit nhà máy do Huayuesc tổ chức rất chuyên nghiệp. Yên tâm đặt hàng.", helpful: 12 },
 ];
 
 const RATING_BREAKDOWN = [
@@ -151,7 +151,7 @@ const CERTIFICATES = [
 
 const FAQS = [
   {
-    q: "MOQ trên Cybersilkroads là bao nhiêu?",
+    q: "MOQ trên Huayuesc là bao nhiêu?",
     a: "MOQ chuẩn hiển thị trong bảng giá. Một số sản phẩm có thể đặt mẫu trước (MOQ = 1) trước khi đặt số lượng lớn — vui lòng gửi RFQ để xác nhận.",
   },
   {
@@ -163,8 +163,8 @@ const FAQS = [
     a: "Có. NCC hỗ trợ in logo, đổi màu, custom kích thước theo bản vẽ kỹ thuật. Phí mẫu thường $50-200, được khấu trừ vào đơn chính khi đặt MOQ.",
   },
   {
-    q: "Cybersilkroads bảo vệ giao dịch thế nào?",
-    a: "Bảo đảm Giao dịch: tiền nằm tại tài khoản trung gian của Cybersilkroads, chỉ giải ngân cho NCC khi buyer xác nhận hàng đúng mô tả. Hoàn 100% nếu sai cam kết.",
+    q: "Huayuesc bảo vệ giao dịch thế nào?",
+    a: "Bảo đảm Giao dịch: tiền nằm tại tài khoản trung gian của Huayuesc, chỉ giải ngân cho NCC khi buyer xác nhận hàng đúng mô tả. Hoàn 100% nếu sai cam kết.",
   },
   {
     q: "Phí vận chuyển DDP đã bao gồm những gì?",
@@ -539,7 +539,7 @@ export default async function ProductPage({
 
           {/* Trust pillars */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 Bảo vệ Cybersilkroads</b>
+            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 Bảo vệ Huayuesc</b>
             <ul className="text-[12px] text-mute space-y-1.5">
               <li className="flex gap-2"><span className="text-success">✓</span> Hoàn tiền nếu không nhận hàng</li>
               <li className="flex gap-2"><span className="text-success">✓</span> Audit nhà máy miễn phí trước khi đặt</li>
@@ -582,7 +582,7 @@ export default async function ProductPage({
           </p>
           <img src={`/img/${p.id}-desc1.jpg?v=5`} alt="" className="w-full rounded mb-4" loading="lazy" />
           <p className="text-[13px] text-ink leading-relaxed mb-4">
-            Quy trình kiểm soát chất lượng nghiêm ngặt theo <b>ISO 9001:2015</b>. Mỗi lô hàng đều được audit bởi đội ngũ Cybersilkroads tại Quảng Châu trước khi xuất xưởng. Hỗ trợ <b>OEM/ODM</b> theo bản vẽ khách hàng, MOQ linh hoạt, thời gian giao 20-30 ngày.
+            Quy trình kiểm soát chất lượng nghiêm ngặt theo <b>ISO 9001:2015</b>. Mỗi lô hàng đều được audit bởi đội ngũ Huayuesc tại Quảng Châu trước khi xuất xưởng. Hỗ trợ <b>OEM/ODM</b> theo bản vẽ khách hàng, MOQ linh hoạt, thời gian giao 20-30 ngày.
           </p>
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
             <img src={`/img/${p.id}-desc2.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
@@ -616,11 +616,11 @@ export default async function ProductPage({
             🛡 Bảo đảm Giao dịch & Chứng chỉ
           </h2>
           <p className="text-[13px] text-mute mb-4 leading-relaxed">
-            Đơn hàng được bảo vệ bởi Cybersilkroads Bảo đảm Giao dịch: tiền giữ tại tài khoản trung gian, NCC chỉ nhận tiền sau khi buyer xác nhận hàng đúng cam kết. Hoàn 100% nếu sai.
+            Đơn hàng được bảo vệ bởi Huayuesc Bảo đảm Giao dịch: tiền giữ tại tài khoản trung gian, NCC chỉ nhận tiền sau khi buyer xác nhận hàng đúng cam kết. Hoàn 100% nếu sai.
           </p>
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-1">
             {[
-              { icon: "🔒", t: "Tiền cọc giữ trung gian", d: "Tiền giữ tại Cybersilkroads, chỉ giải ngân khi người mua xác nhận" },
+              { icon: "🔒", t: "Tiền cọc giữ trung gian", d: "Tiền giữ tại Huayuesc, chỉ giải ngân khi người mua xác nhận" },
               { icon: "🏭", t: "Kiểm định tại chỗ miễn phí", d: "Đội kiểm định kiểm hàng trước khi xuất, gọi video trực tiếp" },
               { icon: "⚖", t: "Hỗ trợ tranh chấp", d: "Hoà giải 24/7, hoàn tiền 100% nếu sai mô tả/số lượng" },
             ].map((x) => (
@@ -879,7 +879,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = findProduct(id);
   return {
-    title: found ? `${found.product.title} — Cybersilkroads` : `Sản phẩm ${id} — Cybersilkroads`,
+    title: found ? `${found.product.title} — Huayuesc` : `Sản phẩm ${id} — Huayuesc`,
     description: found ? `${found.product.title}. ${found.product.seller}. Giá từ ${found.product.price}${found.product.unit}. ${found.product.moq}. Thời gian giao 20-30 ngày, vận chuyển DDP về Việt Nam.` : undefined,
   };
 }

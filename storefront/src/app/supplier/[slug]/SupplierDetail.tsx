@@ -160,7 +160,7 @@ function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: nu
         <div className="text-[13px] text-ink leading-relaxed space-y-3">
           <p>{f.name} thành lập từ {foundedYear} với hơn {f.badges.years} kinh nghiệm trong lĩnh vực {f.tags.join(", ")}. Nhà máy tọa lạc tại {f.location}, một trong những trung tâm công nghiệp lớn nhất Trung Quốc.</p>
           <p>Hiện tại, {f.name} sở hữu 3 cơ sở sản xuất với tổng diện tích trên 200.000 m², hơn 1.500 công nhân và đội ngũ R&D 80 kỹ sư. Năng suất {f.meta}, đáp ứng đơn hàng từ 50 quốc gia.</p>
-          <p>Khách hàng chính bao gồm các thương hiệu lớn tại Bắc Mỹ, châu Âu, Đông Nam Á. Tại Việt Nam, đã hợp tác với hơn 80 đại lý thông qua Cybersilkroads từ 2018, được kiểm định bởi đội ngũ của chúng tôi 2 lần/năm.</p>
+          <p>Khách hàng chính bao gồm các thương hiệu lớn tại Bắc Mỹ, châu Âu, Đông Nam Á. Tại Việt Nam, đã hợp tác với hơn 80 đại lý thông qua Huayuesc từ 2018, được kiểm định bởi đội ngũ của chúng tôi 2 lần/năm.</p>
           <p>Nhà máy hỗ trợ OEM/ODM theo bản vẽ, MOQ linh hoạt từ 50 đơn vị, thời gian giao tiêu chuẩn 25 ngày, vận chuyển DDP về Việt Nam qua kho Bằng Tường.</p>
         </div>
       </div>
@@ -333,7 +333,7 @@ function CompanyTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
     { y: foundedYear, t: "Thành lập", d: `Khởi nghiệp từ xưởng nhỏ tại ${f.location.split(",")[0]} với 12 công nhân.` },
     { y: foundedYear + 3, t: "Cơ sở 2", d: "Mở rộng cơ sở sản xuất thứ 2 — tổng diện tích vượt 50.000 m²." },
     { y: foundedYear + 6, t: "Xuất khẩu đầu tiên", d: "Đơn xuất khẩu đầu tiên sang EU — đạt chứng nhận CE/RoHS." },
-    { y: foundedYear + 9, t: "Đối tác Cybersilkroads", d: "Trở thành đối tác chiến lược, đạt phù hiệu Đã kiểm định + Vàng." },
+    { y: foundedYear + 9, t: "Đối tác Huayuesc", d: "Trở thành đối tác chiến lược, đạt phù hiệu Đã kiểm định + Vàng." },
     { y: 2025, t: "Mở rộng ASEAN", d: "Doanh thu Việt Nam vượt $8M/năm — top 3 thị trường ASEAN của công ty." },
   ];
 
@@ -423,7 +423,7 @@ function CompanyTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
             <li>• CCPIT (Hội đồng Xúc tiến Thương mại Trung Quốc)</li>
             <li>• Hiệp hội {f.tags[0]} Trung Quốc</li>
             <li>• Foshan Chamber of International Commerce</li>
-            <li>• Đối tác chính thức Cybersilkroads từ 2018</li>
+            <li>• Đối tác chính thức Huayuesc từ 2018</li>
           </ul>
         </div>
       </div>
@@ -511,7 +511,7 @@ function CapacityTab({ f }: { f: Factory }) {
             { stage: "1. Kiểm nguyên liệu đầu vào (IQC)", desc: "Kiểm 100% lô nguyên liệu. Phòng QC riêng với máy quang phổ XRF, máy đo độ ẩm, lab test cơ tính. Lưu mẫu 18 tháng." },
             { stage: "2. Kiểm trong sản xuất (IPQC)", desc: "Kiểm tại 5 trạm dọc dây chuyền. Sample size theo AQL 2.5. Phát hiện lỗi sớm — giảm phế phẩm xuống <0,8%." },
             { stage: "3. Kiểm thành phẩm (FQC)", desc: "Kiểm 100% trước đóng gói. Đo kích thước bằng caliper điện tử, kiểm finish bằng máy đo bóng, test functional." },
-            { stage: "4. Kiểm trước xuất xưởng (Pre-shipment)", desc: "Inspector Cybersilkroads kiểm độc lập theo AQL 2.5 cho mọi đơn ≥$5K. Báo cáo PDF + 100+ ảnh + video gửi buyer trong 4 giờ." },
+            { stage: "4. Kiểm trước xuất xưởng (Pre-shipment)", desc: "Inspector Huayuesc kiểm độc lập theo AQL 2.5 cho mọi đơn ≥$5K. Báo cáo PDF + 100+ ảnh + video gửi buyer trong 4 giờ." },
           ].map((q, i) => (
             <div key={i} className="border-l-4 border-brand bg-bg pl-4 py-2.5">
               <b className="block text-[13px] text-ink">{q.stage}</b>
@@ -556,7 +556,7 @@ function ContactTab({ f }: { f: Factory }) {
       <div className="bg-paper border border-line rounded p-5">
         <h2 className="text-[18px] font-bold text-ink mb-2">Liên hệ {f.name}</h2>
         <p className="text-[13px] text-mute leading-relaxed">
-          Mọi giao tiếp đi qua Cybersilkroads để được bảo vệ bằng Bảo đảm Giao dịch + dịch tự động Trung-Việt. Quản lý tài khoản chuyên trách phản hồi trong giờ làm việc <b className="text-ink">dưới 30 phút</b>.
+          Mọi giao tiếp đi qua Huayuesc để được bảo vệ bằng Bảo đảm Giao dịch + dịch tự động Trung-Việt. Quản lý tài khoản chuyên trách phản hồi trong giờ làm việc <b className="text-ink">dưới 30 phút</b>.
         </p>
       </div>
 
@@ -582,14 +582,14 @@ function ContactTab({ f }: { f: Factory }) {
           <span className="inline-block text-[10.5px] uppercase tracking-wider font-bold bg-gold/15 text-[#9C6A1F] px-2 py-0.5 rounded-sm mb-2">
             🇻🇳 Đại diện Việt Nam
           </span>
-          <h3 className="text-[15px] font-bold text-ink mb-1">Văn phòng Cybersilkroads Hà Nội</h3>
+          <h3 className="text-[15px] font-bold text-ink mb-1">Văn phòng Huayuesc Hà Nội</h3>
           <p className="text-[12.5px] text-mute leading-relaxed mb-3">
             Tầng 21, Tòa Diamond Flower, 48 Lê Văn Lương, Cầu Giấy, Hà Nội
           </p>
           <ul className="space-y-1 text-[12px] text-ink">
             <li>📞 Hotline: <b>1900 6688</b> (miễn phí trong nước)</li>
             <li>💬 Zalo: <b>+84 24 3556 7788</b></li>
-            <li>✉ Email: <b>vn-{f.slug}@cybersilkroads.com</b></li>
+            <li>✉ Email: <b>vn-{f.slug}@huayuesc.vn</b></li>
             <li>🕒 Giờ làm việc: <b>T2-T6, 8:30-18:00 (GMT+7)</b></li>
             <li>🌐 Ngôn ngữ: <b>Tiếng Việt, hỗ trợ dịch sang tiếng Trung</b></li>
           </ul>
@@ -612,8 +612,8 @@ function ContactTab({ f }: { f: Factory }) {
             </p>
             <div className="mt-3 flex gap-2 flex-wrap">
               <a href="tel:19006688" className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12px] font-semibold hover:bg-brand-light">📞 Gọi ngay</a>
-              <a href="https://zalo.me/cybersilkroads" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#0068FF] text-white rounded-sm text-[12px] font-semibold hover:opacity-90">💬 Chat Zalo</a>
-              <a href="mailto:hr@cybersilkroads.com" className="px-3 py-1.5 border border-line text-ink rounded-sm text-[12px] font-semibold hover:border-brand">✉ Email</a>
+              <a href="https://zalo.me/huayuesc" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#0068FF] text-white rounded-sm text-[12px] font-semibold hover:opacity-90">💬 Chat Zalo</a>
+              <a href="mailto:hr@huayuesc.vn" className="px-3 py-1.5 border border-line text-ink rounded-sm text-[12px] font-semibold hover:border-brand">✉ Email</a>
             </div>
           </div>
         </div>
@@ -635,7 +635,7 @@ function ContactTab({ f }: { f: Factory }) {
         <div className="bg-paper border border-line rounded p-4 hover:border-brand transition cursor-pointer">
           <div className="text-[28px] mb-2">🏭</div>
           <b className="block text-[13px] text-ink mb-1">Tham quan nhà máy</b>
-          <p className="text-[11.5px] text-mute leading-snug mb-2">Đoàn buyer Việt Nam đi cùng đội Cybersilkroads — chi phí ~$580/4 ngày.</p>
+          <p className="text-[11.5px] text-mute leading-snug mb-2">Đoàn buyer Việt Nam đi cùng đội Huayuesc — chi phí ~$580/4 ngày.</p>
           <Link href="/factory-tour" className="text-[12px] text-brand font-semibold hover:underline">Đăng ký →</Link>
         </div>
       </div>
@@ -704,12 +704,12 @@ function Vr360Tab({ f }: { f: Factory }) {
           <div className="bg-gold/10 border border-gold/30 text-[#7C5A1F] rounded p-3 mb-3 text-[12.5px] flex items-start gap-2">
             <span className="text-[18px] flex-shrink-0">ℹ️</span>
             <span>
-              <b>Đây là demo</b> — Tour 360° riêng của <b>{f.name}</b> đang được Cybersilkroads ghi hình. Liên hệ quản lý tài khoản để được thông báo khi sẵn sàng. Hiện tại bạn đang xem tour mẫu.
+              <b>Đây là demo</b> — Tour 360° riêng của <b>{f.name}</b> đang được Huayuesc ghi hình. Liên hệ quản lý tài khoản để được thông báo khi sẵn sàng. Hiện tại bạn đang xem tour mẫu.
             </span>
           </div>
         )}
 
-        {/* VR iframe + 2 overlay + nút fullscreen native (giữ trong Cybersilkroads) */}
+        {/* VR iframe + 2 overlay + nút fullscreen native (giữ trong Huayuesc) */}
         <Vr360Frame vrUrl={vrUrl} overlayName={overlayName} factoryName={f.name} />
 
         <p className="text-[11px] text-mute2 italic mt-2 text-center">
@@ -764,7 +764,7 @@ function Vr360Tab({ f }: { f: Factory }) {
           <div>
             <h3 className="text-[16px] font-bold mb-1">Muốn xem nhà máy thực, không phải VR?</h3>
             <p className="text-[12.5px] opacity-90 leading-relaxed">
-              Cybersilkroads tổ chức đoàn tham quan nhà máy 4 ngày 3 đêm tại Quảng Châu / Thâm Quyến / Foshan. Chi phí ~$580/người, đi cùng đội Cybersilkroads + phiên dịch.
+              Huayuesc tổ chức đoàn tham quan nhà máy 4 ngày 3 đêm tại Quảng Châu / Thâm Quyến / Foshan. Chi phí ~$580/người, đi cùng đội Huayuesc + phiên dịch.
             </p>
           </div>
           <Link
@@ -806,7 +806,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
     {
       role: "ai",
       time: "09:19",
-      text: `Cả hai đều có ✅\n\n**Phương thức thanh toán:**\n🛡️ **Cybersilkroads Escrow** (khuyến nghị) — nền tảng giữ tiền cọc, chỉ giải ngân khi hàng đến đúng chất lượng\n💳 **L/C** qua VietinBank / Vietcombank\n🏦 **T/T** — 30% cọc + 70% sau khi xem ảnh hàng đóng kiện\n🔄 **OA 30/60 ngày** — với khách đối tác cũ (cần xét duyệt)\n\n**Chứng chỉ xuất khẩu:**\n🏅 CE Marking (EU) · ISO 9001:2015 · BSCI · Sedex SMETA 4-pillar · FSC-COC · CARB Phase 2 / TSCA Title VI (Mỹ)\n\nDownload bộ chứng chỉ đầy đủ tại tab **Hồ sơ công ty** → mục Chứng chỉ chất lượng.`,
+      text: `Cả hai đều có ✅\n\n**Phương thức thanh toán:**\n🛡️ **Huayuesc Escrow** (khuyến nghị) — nền tảng giữ tiền cọc, chỉ giải ngân khi hàng đến đúng chất lượng\n💳 **L/C** qua VietinBank / Vietcombank\n🏦 **T/T** — 30% cọc + 70% sau khi xem ảnh hàng đóng kiện\n🔄 **OA 30/60 ngày** — với khách đối tác cũ (cần xét duyệt)\n\n**Chứng chỉ xuất khẩu:**\n🏅 CE Marking (EU) · ISO 9001:2015 · BSCI · Sedex SMETA 4-pillar · FSC-COC · CARB Phase 2 / TSCA Title VI (Mỹ)\n\nDownload bộ chứng chỉ đầy đủ tại tab **Hồ sơ công ty** → mục Chứng chỉ chất lượng.`,
     },
     { role: "user", time: "09:21", text: "Tôi đặt 30 bộ hàng custom thì giá khoảng bao nhiêu USD?" },
     {

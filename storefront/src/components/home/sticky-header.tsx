@@ -26,18 +26,18 @@ export function StickyHeader() {
         <Link
           href="/"
           className="flex items-center flex-shrink-0"
-          aria-label="Cybersilkroads — Trang chủ"
+          aria-label="Huayuesc — Trang chủ"
         >
           <img
             src="/logo/cybersilkroads-horizontal.png?v=5"
-            alt="Cybersilkroads"
+            alt="Huayuesc"
             width={400}
             height={200}
             className="h-9 w-auto max-md:hidden"
           />
           <img
             src="/logo/cybersilkroads-icon.png?v=5"
-            alt="Cybersilkroads"
+            alt="Huayuesc"
             width={300}
             height={300}
             className="hidden h-8 w-auto max-md:block"

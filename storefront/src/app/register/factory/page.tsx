@@ -37,7 +37,7 @@ const STEPS = [
 const FAQ = [
   {
     q: "Tôi có phải trả phí gì không?",
-    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Cybersilkroads chỉ tính 5% commission khi có đơn hàng thành công.",
+    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Huayuesc chỉ tính 5% commission khi có đơn hàng thành công.",
   },
   {
     q: "Audit mất bao lâu?",
@@ -74,7 +74,7 @@ export default function RegisterFactoryPage() {
               🏭 ĐĂNG KÝ NHÀ CUNG CẤP
             </span>
             <h1 className="text-[26px] font-extrabold leading-tight mb-1.5 max-md:text-[22px]">
-              Đăng ký nhà máy trên <span className="text-gold">Cybersilkroads</span>
+              Đăng ký nhà máy trên <span className="text-gold">Huayuesc</span>
             </h1>
             <p className="text-[13px] opacity-90 leading-relaxed max-w-[680px]">
               Tiếp cận 600+ đại lý Việt Nam đang chủ động tìm nhà cung cấp Trung Quốc.
@@ -440,7 +440,7 @@ export default function RegisterFactoryPage() {
               <label className="flex items-start gap-2 text-[12px] text-mute mt-4">
                 <input type="checkbox" required className="accent-brand mt-0.5" />
                 <span>
-                  Đồng ý cho Cybersilkroads thực hiện audit on-site và đồng ý{" "}
+                  Đồng ý cho Huayuesc thực hiện audit on-site và đồng ý{" "}
                   <Link
                     href="/info/terms-of-service"
                     className="text-brand cursor-pointer hover:underline"
@@ -536,4 +536,4 @@ export default function RegisterFactoryPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký nhà máy — Cybersilkroads" };
+export const metadata = { title: "Đăng ký nhà máy — Huayuesc" };

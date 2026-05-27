@@ -299,7 +299,7 @@ const FAQ = [
   },
   {
     q: "Nếu sample bị hỏng trong vận chuyển — sao xử lý?",
-    a: "CSR ship sample qua DHL/FedEx/UPS với insurance đầy đủ. Nếu sample bị hỏng do shipping (carton ướt, đổ, móp): buyer chụp ảnh + biên bản tại lúc nhận, gửi qua dispute@cybersilkroads.com. Bảo đảm Giao dịch refund 100% phí sample (gồm ship) trong 5-7 ngày làm việc. NCC ship sample mới miễn phí với thời gian giao 5-7 ngày. Sự cố này hiếm — tỷ lệ <1% trong 2025.",
+    a: "CSR ship sample qua DHL/FedEx/UPS với insurance đầy đủ. Nếu sample bị hỏng do shipping (carton ướt, đổ, móp): buyer chụp ảnh + biên bản tại lúc nhận, gửi qua dispute@huayuesc.vn. Bảo đảm Giao dịch refund 100% phí sample (gồm ship) trong 5-7 ngày làm việc. NCC ship sample mới miễn phí với thời gian giao 5-7 ngày. Sự cố này hiếm — tỷ lệ <1% trong 2025.",
   },
 ];
 
@@ -633,7 +633,7 @@ export default function DatMauPage() {
             </div>
             <div className="mt-4 flex justify-center">
               <a
-                href="mailto:sales@cybersilkroads.com?subject=Gói đăng ký mẫu"
+                href="mailto:sales@huayuesc.vn?subject=Gói đăng ký mẫu"
                 className="inline-block px-6 py-3 bg-brand text-white rounded-sm font-bold text-[14px] hover:bg-brand-light"
               >
                 🚀 Đăng ký Gói đăng ký mẫu
@@ -712,7 +712,7 @@ export default function DatMauPage() {
               📝 Multi-supplier RFQ
             </Link>
             <a
-              href="mailto:sales@cybersilkroads.com"
+              href="mailto:sales@huayuesc.vn"
               className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
               💬 Tư vấn 1-1 với AM
@@ -728,6 +728,6 @@ export default function DatMauPage() {
 }
 
 export const metadata = {
-  title: "Đặt mẫu (Sample Order) — Cybersilkroads",
+  title: "Đặt mẫu (Sample Order) — Huayuesc",
   description: "Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. Trung tâm Mẫu Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample.",
 };

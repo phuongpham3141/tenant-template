@@ -7,7 +7,7 @@ const CAPS = [
   { icon: "🌐", title: "Dịch chat realtime VN ↔ CN", desc: "Buyer Việt Nam gõ tiếng Việt, bạn đọc tiếng Trung. Bạn trả tiếng Trung, buyer thấy tiếng Việt. Không cần phiên dịch." },
   { icon: "💲", title: "Đề xuất pricing thông minh", desc: "Phân tích giá đối thủ + lịch sử conversion của bạn → gợi ý FOB tối ưu để vừa thắng deal vừa giữ margin." },
   { icon: "🔍", title: "Phân tích đối thủ ngành", desc: "Theo dõi 200+ NCC cùng ngành — pricing, promotions, ratings, top SKU. Bảng so sánh hàng tuần." },
-  { icon: "📝", title: "Tạo product description", desc: "Tự viết tiêu đề SEO + bullet points + spec sheet song ngữ VN-CN. Tối ưu cho thuật toán tìm kiếm Cybersilkroads." },
+  { icon: "📝", title: "Tạo product description", desc: "Tự viết tiêu đề SEO + bullet points + spec sheet song ngữ VN-CN. Tối ưu cho thuật toán tìm kiếm Huayuesc." },
 ];
 
 const CHAT = [
@@ -22,7 +22,7 @@ const FAQ = [
   { q: "Maike dịch có chính xác không? Có dịch sai gây hiểu lầm?", a: "Maike dùng model tinh chỉnh chuyên ngữ pháp B2B XNK (dùng dữ liệu 12 triệu chat MIC + 4 triệu PI). Độ chính xác đạt 96.8% với cặp Trung-Việt. Câu phức tạp / số liệu quan trọng đều có cảnh báo 'Cần review thủ công'." },
   { q: "Dữ liệu báo giá của tôi có bị Maike chia sẻ với NCC khác?", a: "Tuyệt đối không. Pricing & catalog của bạn được isolate — Maike chỉ học pattern chung của ngành (anonymized). NCC khác không thể truy vấn giá hay SKU của bạn qua Maike." },
   { q: "Tôi có thể dạy Maike phong cách viết riêng của công ty?", a: "Có — gói Kim cương cho phép Đào tạo Tùy chỉnh. Upload 50-100 báo giá mẫu của bạn, Maike sẽ học tone (formal/casual), template cố định, format ưu thích. Setup trong 2-3 ngày." },
-  { q: "Maike có hỗ trợ ngôn ngữ khác ngoài VN-CN?", a: "Có. Roadmap 2026: Anh, Indo, Thái, Mã Lai. Hiện tại VN-CN ổn định nhất, dùng cho 92% RFQ trên Cybersilkroads. Tiếng Anh đang beta — bạn có thể bật trong Settings." },
+  { q: "Maike có hỗ trợ ngôn ngữ khác ngoài VN-CN?", a: "Có. Roadmap 2026: Anh, Indo, Thái, Mã Lai. Hiện tại VN-CN ổn định nhất, dùng cho 92% RFQ trên Huayuesc. Tiếng Anh đang beta — bạn có thể bật trong Settings." },
 ];
 
 export default function AiAssistantPage() {

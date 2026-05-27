@@ -50,7 +50,7 @@ const CATEGORIES = [
     name: "Photography sản phẩm",
     providers: ["Studio M.O.", "Shenzhen ProShot", "Liang Visual"],
     from: "$15/SKU",
-    desc: "Chụp white-bg, lifestyle, 360°. Sửa hậu kỳ — chuẩn upload trang sản phẩm Cybersilkroads.",
+    desc: "Chụp white-bg, lifestyle, 360°. Sửa hậu kỳ — chuẩn upload trang sản phẩm Huayuesc.",
   },
   {
     icon: "💳",
@@ -109,7 +109,7 @@ export default function TradeServicesPage() {
             <div className="inline-block bg-brand/15 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛒 FOREIGN TRADE SERVICE MARKETPLACE</div>
             <h1 className="text-[22px] font-bold text-ink">Sàn dịch vụ xuất nhập khẩu</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              12 nhóm dịch vụ supplier cần để xuất khẩu sang Việt Nam — từ audit nhà máy, photography sản phẩm, vận chuyển DDP, đến chứng nhận CE/RoHS. Tất cả providers đã được Cybersilkroads audit và thanh toán qua tài khoản trung gian.
+              12 nhóm dịch vụ supplier cần để xuất khẩu sang Việt Nam — từ audit nhà máy, photography sản phẩm, vận chuyển DDP, đến chứng nhận CE/RoHS. Tất cả providers đã được Huayuesc audit và thanh toán qua tài khoản trung gian.
             </p>
           </div>
 
@@ -161,7 +161,7 @@ export default function TradeServicesPage() {
 
           <div className="bg-brand-dark text-white rounded p-5 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <div>
-              <b className="block text-[16px] mb-1">💼 Trở thành Service Provider trên Cybersilkroads</b>
+              <b className="block text-[16px] mb-1">💼 Trở thành Service Provider trên Huayuesc</b>
               <p className="text-[12px] opacity-85">Bạn cung cấp dịch vụ XNK? Đăng ký để tiếp cận 4,200+ supplier đang xuất sang Việt Nam.</p>
             </div>
             <button className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[12.5px] whitespace-nowrap">

@@ -19,7 +19,7 @@ export default function TradeShowsPage() {
           <img src="/img/tradeshow-hero.jpg?v=5" alt="" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">⚡ HỘI CHỢ THƯƠNG MẠI</span>
-            <h1 className="text-[34px] font-extrabold leading-tight max-md:text-[24px]">Tham gia hội chợ cùng Cybersilkroads</h1>
+            <h1 className="text-[34px] font-extrabold leading-tight max-md:text-[24px]">Tham gia hội chợ cùng Huayuesc</h1>
             <p className="text-[13.5px] opacity-90 max-w-[600px] mt-2">Đặt vé, hỗ trợ visa, đặt khách sạn, tour thăm nhà máy. Tham gia 8+ hội chợ lớn tại Trung Quốc mỗi năm.</p>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function TradeShowsPage() {
           <div>
             <span className="inline-block bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2">NỔI BẬT · HỘI CHỢ B2B LỚN NHẤT</span>
             <h2 className="text-[22px] font-bold text-ink mb-1">🇨🇳 Canton Fair 2026 — Hội chợ Quảng Châu</h2>
-            <p className="text-[13px] text-mute leading-relaxed mb-3">Hội chợ B2B lớn nhất thế giới — diễn ra 2 lần/năm tại Quảng Châu Pazhou với 60.000+ NCC, 200.000+ buyer quốc tế. Cybersilkroads tổ chức đoàn 50 dealer VN tham dự mỗi kỳ.</p>
+            <p className="text-[13px] text-mute leading-relaxed mb-3">Hội chợ B2B lớn nhất thế giới — diễn ra 2 lần/năm tại Quảng Châu Pazhou với 60.000+ NCC, 200.000+ buyer quốc tế. Huayuesc tổ chức đoàn 50 dealer VN tham dự mỗi kỳ.</p>
             <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
               <div className="border border-line rounded p-3 bg-[#FAFBFC]">
                 <b className="block text-[13px] text-ink">📅 Phase 1 — Spring 2026</b>
@@ -86,7 +86,7 @@ export default function TradeShowsPage() {
         <div className="bg-brand-dark text-white rounded p-6 flex justify-between items-center max-md:flex-col max-md:gap-4 max-md:text-center">
           <div>
             <h3 className="text-[20px] font-bold mb-1">🎫 Đặt vé tham quan có hỗ trợ</h3>
-            <p className="text-[13px] opacity-85">Cybersilkroads lo trọn gói: vé, visa, khách sạn, dịch giả, tour nhà máy. Giá từ $890/3 ngày.</p>
+            <p className="text-[13px] opacity-85">Huayuesc lo trọn gói: vé, visa, khách sạn, dịch giả, tour nhà máy. Giá từ $890/3 ngày.</p>
           </div>
           <Link href="/buying-request" className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px]">Đăng ký tour →</Link>
         </div>
@@ -95,4 +95,4 @@ export default function TradeShowsPage() {
   );
 }
 
-export const metadata = { title: "Trade Shows — Cybersilkroads" };
+export const metadata = { title: "Trade Shows — Huayuesc" };

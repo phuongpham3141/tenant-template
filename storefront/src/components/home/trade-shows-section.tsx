@@ -63,7 +63,7 @@ export function TradeShowsSection() {
               Hội chợ thương mại
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              Danh sách các hội chợ Cybersilkroads sẽ tham dự cùng đối tác Made-in-China.
+              Danh sách các hội chợ Huayuesc sẽ tham dự cùng đối tác Made-in-China.
             </p>
           </div>
           <Link
@@ -122,7 +122,7 @@ export function TradeShowsSection() {
                   📩 Đăng ký tham gia →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  Đoàn Cybersilkroads dẫn dắt · Hỗ trợ visa & lịch B2B
+                  Đoàn Huayuesc dẫn dắt · Hỗ trợ visa & lịch B2B
                 </span>
               </div>
             </div>

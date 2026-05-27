@@ -40,12 +40,12 @@ export function Header() {
         <Link
           href="/"
           className="col-start-1 row-start-1 row-span-3 self-center flex items-center max-md:row-span-1 max-md:w-full max-md:justify-center"
-          aria-label="Cybersilkroads — Trang chủ"
+          aria-label="Huayuesc — Trang chủ"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
           <img
             src="/logo/cybersilkroads-horizontal.png?v=5"
-            alt="Cybersilkroads"
+            alt="Huayuesc"
             width={400}
             height={200}
             className="w-[240px] h-auto max-md:hidden md:max-xl:w-[200px]"

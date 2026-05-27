@@ -4,7 +4,7 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 
 const BENEFITS = [
   { icon: "💰", title: "Đảm bảo thanh toán", desc: "Buyer đặt cọc 30% vào tài khoản trung gian ngay khi ký PI — bạn yên tâm sản xuất, không lo bị huỷ giữa chừng." },
-  { icon: "🛡", title: "Bảo hiểm rủi ro vận chuyển", desc: "Cybersilkroads mua bảo hiểm All-Risk cho mọi đơn STS — bồi thường 110% giá FOB nếu container hỏng/cháy/mất." },
+  { icon: "🛡", title: "Bảo hiểm rủi ro vận chuyển", desc: "Huayuesc mua bảo hiểm All-Risk cho mọi đơn STS — bồi thường 110% giá FOB nếu container hỏng/cháy/mất." },
   { icon: "⚖", title: "Hỗ trợ pháp lý song ngữ", desc: "Đội Baker McKenzie + YKVN hỗ trợ tranh chấp hợp đồng. Phiên dịch họp với buyer miễn phí 60 phút/đơn." },
   { icon: "📈", title: "Mở rộng buyer pool", desc: "Đơn STS hiển thị badge 'Verified Trade' → ưu tiên xếp hạng tìm kiếm. Buyer Việt Nam thích đơn STS hơn 4× đơn thường." },
 ];
@@ -38,7 +38,7 @@ const CASES = [
   },
   {
     title: "KUKA Home — bồi thường $12K container hỏng",
-    desc: "Container 30 sofa va đập tại cảng Singapore. Bảo hiểm Cybersilkroads đền $12,400 trong 11 ngày — KUKA kịp gửi lô thay thế giữ uy tín với buyer.",
+    desc: "Container 30 sofa va đập tại cảng Singapore. Bảo hiểm Huayuesc đền $12,400 trong 11 ngày — KUKA kịp gửi lô thay thế giữ uy tín với buyer.",
     metric: "Đền $12K trong 11 ngày",
   },
 ];

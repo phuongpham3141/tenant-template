@@ -26,7 +26,7 @@ export default function SupplierDiscoverPage() {
             <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 KHÁM PHÁ NHÀ CUNG CẤP</div>
             <h1 className="text-[22px] font-bold text-ink">Khám phá nhà cung cấp</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Hơn 4.500 nhà máy đã được Cybersilkroads thẩm định, lọc theo ngành, vùng sản xuất, quy mô và năm thành lập. Mọi NCC ở đây đều có ít nhất 1 đơn thành công với buyer Việt và sẵn sàng làm việc bằng email tiếng Việt.
+              Hơn 4.500 nhà máy đã được Huayuesc thẩm định, lọc theo ngành, vùng sản xuất, quy mô và năm thành lập. Mọi NCC ở đây đều có ít nhất 1 đơn thành công với buyer Việt và sẵn sàng làm việc bằng email tiếng Việt.
             </p>
           </div>
 

@@ -248,6 +248,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = findProduct(id);
   return {
-    title: found ? `Đánh giá: ${found.product.title} — Cybersilkroads` : `Đánh giá sản phẩm — Cybersilkroads`,
+    title: found ? `Đánh giá: ${found.product.title} — Huayuesc` : `Đánh giá sản phẩm — Huayuesc`,
   };
 }

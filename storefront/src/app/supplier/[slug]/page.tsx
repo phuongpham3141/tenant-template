@@ -52,5 +52,5 @@ export default async function SupplierPage({
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const f = getFactory(slug);
-  return { title: `${f.name} — Cybersilkroads` };
+  return { title: `${f.name} — Huayuesc` };
 }

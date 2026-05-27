@@ -146,7 +146,7 @@ export default async function CalcPage({
                 {vat > 0 && <Row label="VAT 10%" v={vat} />}
                 {customsClearance > 0 && <Row label="Phí thông quan + chứng từ" v={customsClearance} />}
                 {domesticDelivery > 0 && <Row label="Vận chuyển nội địa Việt Nam" v={domesticDelivery} />}
-                {platformFee > 0 && <Row label="Phí dịch vụ Cybersilkroads (2%)" v={platformFee} />}
+                {platformFee > 0 && <Row label="Phí dịch vụ Huayuesc (2%)" v={platformFee} />}
                 <tr className="border-t-2 border-brand">
                   <td className="py-3 text-ink font-bold text-[14px]">Tổng cộng</td>
                   <td className="py-3 text-right text-accent font-extrabold text-[20px]">${fmt(total)}</td>
@@ -186,7 +186,7 @@ export default async function CalcPage({
               tới khi hàng đặt tại kho buyer ở Việt Nam, đã thanh toán mọi loại thuế.
             </p>
             <p>
-              Cybersilkroads quản lý DDP qua 3 cảng chính: <b className="text-ink">Hải Phòng</b> (đối với khách miền Bắc),{" "}
+              Huayuesc quản lý DDP qua 3 cảng chính: <b className="text-ink">Hải Phòng</b> (đối với khách miền Bắc),{" "}
               <b className="text-ink">Cát Lái HCM</b> (miền Nam) và <b className="text-ink">Đà Nẵng</b> (miền Trung).
               Đường bộ qua Lạng Sơn nhanh hơn (5-8 ngày) cho hàng nhỏ &lt; 3 CBM.
             </p>
@@ -206,7 +206,7 @@ export default async function CalcPage({
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">VAT</span><b>10% (giá trị + NK)</b></div>
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Phí thông quan</span><b>$80-150 / lô</b></div>
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Vận chuyển nội địa</span><b>$60-120/CBM</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Phí Cybersilkroads</span><b>2% (trung gian + tranh chấp)</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Phí Huayuesc</span><b>2% (trung gian + tranh chấp)</b></div>
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Tổng overhead DDP</span><b className="text-accent">+25-35% giá FOB</b></div>
           </div>
         </div>
@@ -225,6 +225,6 @@ function Row({ label, v }: { label: string; v: number }) {
 }
 
 export const metadata = {
-  title: "Tính cước DDP / CIF / FOB — Cybersilkroads",
+  title: "Tính cước DDP / CIF / FOB — Huayuesc",
   description: "Ước tính trọn gói chi phí nhập khẩu từ Trung Quốc về Việt Nam: FOB, CIF, DDP. Tính nhanh theo CBM + giá trị đơn.",
 };

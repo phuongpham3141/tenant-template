@@ -48,7 +48,7 @@ const PRICING_PILLARS = [
     priceSub: "Hoàn toàn miễn phí",
     color: "#16A34A",
     headline: "Niêm yết, kiểm định và mọi công cụ marketing — miễn phí 100%",
-    desc: "Cybersilkroads tin rằng giá trị phải được chứng minh trước khi yêu cầu thu phí. Toàn bộ hạ tầng — từ kiểm định tại nhà máy, niêm yết không giới hạn sản phẩm, ghép nối RFQ bằng AI, đến banner trang chủ — đều miễn phí cho mọi nhà cung cấp đã pass kiểm định.",
+    desc: "Huayuesc tin rằng giá trị phải được chứng minh trước khi yêu cầu thu phí. Toàn bộ hạ tầng — từ kiểm định tại nhà máy, niêm yết không giới hạn sản phẩm, ghép nối RFQ bằng AI, đến banner trang chủ — đều miễn phí cho mọi nhà cung cấp đã pass kiểm định.",
     items: [
       "Đăng ký nhà máy & sàng lọc pháp lý",
       "Kiểm định tại nhà máy (chuẩn ISO 19011)",
@@ -83,14 +83,14 @@ const PRICING_PILLARS = [
     price: "Không lãi",
     priceSub: "Không thu phí",
     color: "#9C6A1F",
-    headline: "Nếu nhà cung cấp chưa có lợi nhuận, Cybersilkroads miễn phí toàn bộ",
-    desc: "Chúng tôi tin vào mô hình các bên cùng có lợi. Nếu sau 12 tháng đầu nhà cung cấp chưa thu được lợi nhuận thực từ Cybersilkroads, chúng tôi hoàn 100% phí Bảo đảm Giao dịch đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Đây không phải khuyến mại — đây là triết lý vận hành.",
+    headline: "Nếu nhà cung cấp chưa có lợi nhuận, Huayuesc miễn phí toàn bộ",
+    desc: "Chúng tôi tin vào mô hình các bên cùng có lợi. Nếu sau 12 tháng đầu nhà cung cấp chưa thu được lợi nhuận thực từ Huayuesc, chúng tôi hoàn 100% phí Bảo đảm Giao dịch đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Đây không phải khuyến mại — đây là triết lý vận hành.",
     items: [
       "Cam kết ràng buộc trong hợp đồng dịch vụ",
       "Hoàn 100% phí Bảo đảm Giao dịch sau 12 tháng nếu chưa lãi",
       "Hoặc tiếp tục miễn phí thêm 6 tháng — nhà cung cấp chọn",
       "Quản lý tài khoản chủ động đề xuất tối ưu giá, sản phẩm",
-      "Cybersilkroads chia sẻ rủi ro thị trường cùng nhà cung cấp",
+      "Huayuesc chia sẻ rủi ro thị trường cùng nhà cung cấp",
       "Triết lý: chúng ta thắng cùng — không thắng riêng",
     ],
     accent: false,
@@ -104,7 +104,7 @@ const STEPS = [
     color: "#0E7490",
     title: "Đăng ký & Sàng lọc trước",
     duration: "1–2 ngày",
-    desc: "Điền biểu mẫu trực tuyến (10 phút) — tải lên giấy phép kinh doanh, ISO 9001/14001, năng lực sản xuất. Cybersilkroads sàng lọc trong 24–48 giờ: kiểm tra Tianyancha, giấy phép xuất khẩu GACC, lịch sử khiếu nại. Khoảng 32% hồ sơ vượt qua bước sàng lọc trước.",
+    desc: "Điền biểu mẫu trực tuyến (10 phút) — tải lên giấy phép kinh doanh, ISO 9001/14001, năng lực sản xuất. Huayuesc sàng lọc trong 24–48 giờ: kiểm tra Tianyancha, giấy phép xuất khẩu GACC, lịch sử khiếu nại. Khoảng 32% hồ sơ vượt qua bước sàng lọc trước.",
     actions: [
       "Điền 32 câu hỏi về quy mô, sản phẩm, doanh thu",
       "Kiểm tra chéo từ 5 nguồn dữ liệu công khai",
@@ -117,7 +117,7 @@ const STEPS = [
     color: "#7C2D12",
     title: "Kiểm định nhà máy tại chỗ",
     duration: "7–15 ngày",
-    desc: "Đội kiểm định Cybersilkroads (4 nhân sự QC tại Quảng Châu) đến trực tiếp nhà máy: kiểm tra dây chuyền sản xuất thực tế, năng lực, hệ thống QC, chứng chỉ gốc, điều kiện lao động (chuẩn ILO). Kiểm định 1–2 ngày tại nhà máy. Báo cáo PDF 28–45 trang ký số trên blockchain.",
+    desc: "Đội kiểm định Huayuesc (4 nhân sự QC tại Quảng Châu) đến trực tiếp nhà máy: kiểm tra dây chuyền sản xuất thực tế, năng lực, hệ thống QC, chứng chỉ gốc, điều kiện lao động (chuẩn ILO). Kiểm định 1–2 ngày tại nhà máy. Báo cáo PDF 28–45 trang ký số trên blockchain.",
     actions: [
       "Tham quan 12 hạng mục theo chuẩn ISO 19011",
       "Phỏng vấn ngẫu nhiên 5–8 công nhân (riêng tư)",
@@ -177,7 +177,7 @@ const MARKETING_TOOLS = [
   {
     icon: "🏠",
     title: "Banner trang chủ nổi bật",
-    desc: "Nhà cung cấp gói Cao cấp có banner luân phiên trên trang chủ Cybersilkroads — hiển thị 100.000+ lượt xem mỗi tuần, tỷ lệ nhấp chuột trung bình 4,2%. Lịch luân phiên 8 giờ một lần giữa các nhà cung cấp Cao cấp.",
+    desc: "Nhà cung cấp gói Cao cấp có banner luân phiên trên trang chủ Huayuesc — hiển thị 100.000+ lượt xem mỗi tuần, tỷ lệ nhấp chuột trung bình 4,2%. Lịch luân phiên 8 giờ một lần giữa các nhà cung cấp Cao cấp.",
   },
   {
     icon: "📧",
@@ -187,12 +187,12 @@ const MARKETING_TOOLS = [
   {
     icon: "🎯",
     title: "Đại diện tại hội chợ thương mại",
-    desc: "Cybersilkroads đại diện nhà cung cấp Cao cấp tại Canton Fair (Quảng Châu, 2 lần/năm), VIETBUILD HCM, VIIF Hà Nội — thu thập danh thiếp đại lý, chuyển khách tiềm năng về nhà cung cấp trong 48 giờ. Miễn phí 2 hội chợ/năm cho gói Cao cấp.",
+    desc: "Huayuesc đại diện nhà cung cấp Cao cấp tại Canton Fair (Quảng Châu, 2 lần/năm), VIETBUILD HCM, VIIF Hà Nội — thu thập danh thiếp đại lý, chuyển khách tiềm năng về nhà cung cấp trong 48 giờ. Miễn phí 2 hội chợ/năm cho gói Cao cấp.",
   },
   {
     icon: "🎬",
     title: "Video tham quan nhà máy",
-    desc: "Cybersilkroads sản xuất video tham quan nhà máy 90–180 giây cho nhà cung cấp Cao cấp (1 lần/năm miễn phí, sau đó 800 USD/video). Đặt trong gian hàng và chia sẻ qua Cảnh báo Thương mại — tăng độ tin cậy với đại lý mới.",
+    desc: "Huayuesc sản xuất video tham quan nhà máy 90–180 giây cho nhà cung cấp Cao cấp (1 lần/năm miễn phí, sau đó 800 USD/video). Đặt trong gian hàng và chia sẻ qua Cảnh báo Thương mại — tăng độ tin cậy với đại lý mới.",
   },
   {
     icon: "📈",
@@ -210,7 +210,7 @@ const STORIES = [
     after: "85 đơn / tháng",
     lift: "+325%",
     years: "6 năm trên CSR",
-    quote: "Trước Cybersilkroads, chúng tôi vào Việt Nam qua đại lý trung gian, biên lợi nhuận 8–12%. Giờ trực tiếp, biên 22% và quan hệ dài hạn.",
+    quote: "Trước Huayuesc, chúng tôi vào Việt Nam qua đại lý trung gian, biên lợi nhuận 8–12%. Giờ trực tiếp, biên 22% và quan hệ dài hạn.",
   },
   {
     name: "OPPEIN Home Group",
@@ -230,7 +230,7 @@ const STORIES = [
     after: "32 đại lý Việt Nam",
     lift: "+32 đại lý",
     years: "4 năm trên CSR",
-    quote: "Quản lý tài khoản Cybersilkroads giúp chúng tôi xử lý quy định VAT Việt Nam — điều chúng tôi không thể tự làm từ Trung Quốc.",
+    quote: "Quản lý tài khoản Huayuesc giúp chúng tôi xử lý quy định VAT Việt Nam — điều chúng tôi không thể tự làm từ Trung Quốc.",
   },
   {
     name: "Landbond Furniture",
@@ -250,7 +250,7 @@ const STORIES = [
     after: "32% xuất khẩu sang Việt Nam",
     lift: "+540%",
     years: "3 năm trên CSR",
-    quote: "Trong 3 năm, Việt Nam từ thị trường thứ 8 lên thứ 2 (sau Mỹ). Cybersilkroads là kênh chủ lực.",
+    quote: "Trong 3 năm, Việt Nam từ thị trường thứ 8 lên thứ 2 (sau Mỹ). Huayuesc là kênh chủ lực.",
   },
   {
     name: "Monalisa Ceramic",
@@ -260,46 +260,46 @@ const STORIES = [
     after: "680.000 USD / tháng",
     lift: "+466%",
     years: "8 năm trên CSR",
-    quote: "Chuỗi 24 đại lý gạch men ở Việt Nam đều biết Monalisa qua Cybersilkroads. Xây dựng thương hiệu hiệu quả hơn quảng cáo truyền thống.",
+    quote: "Chuỗi 24 đại lý gạch men ở Việt Nam đều biết Monalisa qua Huayuesc. Xây dựng thương hiệu hiệu quả hơn quảng cáo truyền thống.",
   },
 ];
 
 const FAQ = [
   {
     q: "Tôi không nói tiếng Việt — có vấn đề gì không?",
-    a: "Không. Quản lý tài khoản Cybersilkroads thông thạo tiếng Trung + tiếng Việt + tiếng Anh, đóng vai cầu nối toàn bộ giao tiếp. Gian hàng được tự động dịch sang tiếng Việt (đội biên dịch người soát lại chứ không thuần AI). Tin nhắn từ đại lý qua quản lý tài khoản — nhà cung cấp nhận tin đã được dịch và tóm tắt.",
+    a: "Không. Quản lý tài khoản Huayuesc thông thạo tiếng Trung + tiếng Việt + tiếng Anh, đóng vai cầu nối toàn bộ giao tiếp. Gian hàng được tự động dịch sang tiếng Việt (đội biên dịch người soát lại chứ không thuần AI). Tin nhắn từ đại lý qua quản lý tài khoản — nhà cung cấp nhận tin đã được dịch và tóm tắt.",
   },
   {
     q: "Kiểm định nhà máy mất bao lâu và tốn chi phí gì?",
-    a: "Kiểm định 1–2 ngày tại nhà máy, tổng chu trình 7–15 ngày từ khi đặt lịch. Miễn phí cho mọi gói — Cybersilkroads chịu chi phí đội kiểm định và di chuyển. Nhà cung cấp chỉ cần sắp xếp nhân sự hỗ trợ (1 quản lý QC + 1 quản lý sản xuất trong ngày kiểm định). Gói Cao cấp được thêm 1 lần kiểm định miễn phí mỗi năm để duy trì chứng nhận.",
+    a: "Kiểm định 1–2 ngày tại nhà máy, tổng chu trình 7–15 ngày từ khi đặt lịch. Miễn phí cho mọi gói — Huayuesc chịu chi phí đội kiểm định và di chuyển. Nhà cung cấp chỉ cần sắp xếp nhân sự hỗ trợ (1 quản lý QC + 1 quản lý sản xuất trong ngày kiểm định). Gói Cao cấp được thêm 1 lần kiểm định miễn phí mỗi năm để duy trì chứng nhận.",
   },
   {
-    q: "Tôi đã có gian hàng trên Alibaba.com — có cần thêm Cybersilkroads không?",
-    a: "Có nếu thị trường Việt Nam quan trọng với chiến lược của bạn. Alibaba.com là sàn toàn cầu chung; Cybersilkroads là kênh chuyên biệt cho Việt Nam — hồ sơ đại lý khác (doanh nghiệp B2B vừa – lớn của Việt Nam, không phải dropshipper), giá và Incoterms khác (mạnh DDP, ít FOB), cơ chế tin tưởng khác (Bảo đảm Giao dịch qua Vietcombank/BIDV thay vì Alipay). Nhiều nhà cung cấp dùng cả hai song song.",
+    q: "Tôi đã có gian hàng trên Alibaba.com — có cần thêm Huayuesc không?",
+    a: "Có nếu thị trường Việt Nam quan trọng với chiến lược của bạn. Alibaba.com là sàn toàn cầu chung; Huayuesc là kênh chuyên biệt cho Việt Nam — hồ sơ đại lý khác (doanh nghiệp B2B vừa – lớn của Việt Nam, không phải dropshipper), giá và Incoterms khác (mạnh DDP, ít FOB), cơ chế tin tưởng khác (Bảo đảm Giao dịch qua Vietcombank/BIDV thay vì Alipay). Nhiều nhà cung cấp dùng cả hai song song.",
   },
   {
-    q: "Cybersilkroads kiếm tiền bằng cách nào nếu mọi thứ đều miễn phí?",
+    q: "Huayuesc kiếm tiền bằng cách nào nếu mọi thứ đều miễn phí?",
     a: "Chúng tôi chỉ thu phí 1,5% trên giá trị đơn hàng đã thành công, qua dịch vụ Bảo đảm Giao dịch — phí này nhà cung cấp đã bao gồm trong giá niêm yết, không phải phí ẩn. Người mua trả 0 đ. Mô hình của chúng tôi gắn liền với thành công của nhà cung cấp: chúng tôi chỉ kiếm tiền khi nhà cung cấp đã bán được hàng. Nếu nhà cung cấp chưa có lợi nhuận, chúng tôi không thu gì cả.",
   },
   {
     q: "Cam kết &ldquo;Không Lãi Không Thu&rdquo; hoạt động cụ thể như thế nào?",
-    a: "Sau 12 tháng kể từ khi nhà cung cấp lên gian hàng chính thức, nếu tổng lợi nhuận từ các đơn hàng trên Cybersilkroads (sau khi trừ chi phí sản xuất, vận chuyển, phí 1,5%) chưa dương, nhà cung cấp có quyền yêu cầu một trong hai phương án: (1) Hoàn 100% phí Bảo đảm Giao dịch đã đóng trong 12 tháng đó. (2) Tiếp tục miễn phí Bảo đảm Giao dịch thêm 6 tháng — Cybersilkroads chia sẻ rủi ro thị trường cùng nhà cung cấp. Cam kết này được ghi rõ trong hợp đồng dịch vụ — không phải lời hứa marketing.",
+    a: "Sau 12 tháng kể từ khi nhà cung cấp lên gian hàng chính thức, nếu tổng lợi nhuận từ các đơn hàng trên Huayuesc (sau khi trừ chi phí sản xuất, vận chuyển, phí 1,5%) chưa dương, nhà cung cấp có quyền yêu cầu một trong hai phương án: (1) Hoàn 100% phí Bảo đảm Giao dịch đã đóng trong 12 tháng đó. (2) Tiếp tục miễn phí Bảo đảm Giao dịch thêm 6 tháng — Huayuesc chia sẻ rủi ro thị trường cùng nhà cung cấp. Cam kết này được ghi rõ trong hợp đồng dịch vụ — không phải lời hứa marketing.",
   },
   {
-    q: "Tôi có thể rút khỏi Cybersilkroads bất kỳ lúc nào không?",
+    q: "Tôi có thể rút khỏi Huayuesc bất kỳ lúc nào không?",
     a: "Có. Nhà cung cấp tự khoá gian hàng trong bảng điều khiển, có hiệu lực ngay — không hợp đồng ràng buộc dài hạn, không phí huỷ. Vì niêm yết miễn phí 100%, không có khoản nào để hoàn lại. Đơn đang trong Bảo đảm Giao dịch phải hoàn tất chu trình trung gian (giải ngân hoặc xử lý tranh chấp) trước khi tài khoản đóng hoàn toàn.",
   },
   {
-    q: "Yêu cầu pháp lý đặc biệt khi xuất khẩu sang Việt Nam qua Cybersilkroads?",
-    a: "Nhà cung cấp cần: (1) Giấy phép xuất khẩu GACC (cấp Form E cho ưu đãi ACFTA). (2) Hoá đơn thương mại và Phiếu đóng gói đúng chuẩn hải quan Việt Nam. (3) Giấy chứng nhận xuất xứ (Form E hoặc RCEP nếu áp dụng). (4) Với hàng đặc thù: chứng chỉ chất lượng, bản đặc tính an toàn (cho hoá chất), báo cáo kiểm định (cho điện/điện tử). Quản lý tài khoản Cybersilkroads xét duyệt hồ sơ trước mỗi lô hàng — miễn phí.",
+    q: "Yêu cầu pháp lý đặc biệt khi xuất khẩu sang Việt Nam qua Huayuesc?",
+    a: "Nhà cung cấp cần: (1) Giấy phép xuất khẩu GACC (cấp Form E cho ưu đãi ACFTA). (2) Hoá đơn thương mại và Phiếu đóng gói đúng chuẩn hải quan Việt Nam. (3) Giấy chứng nhận xuất xứ (Form E hoặc RCEP nếu áp dụng). (4) Với hàng đặc thù: chứng chỉ chất lượng, bản đặc tính an toàn (cho hoá chất), báo cáo kiểm định (cho điện/điện tử). Quản lý tài khoản Huayuesc xét duyệt hồ sơ trước mỗi lô hàng — miễn phí.",
   },
   {
     q: "Tôi muốn bán cho đại lý Việt Nam nhưng không xuất khẩu trực tiếp — có mô hình thay thế không?",
-    a: "Có mô hình 'CSR Fulfilled' đang triển khai từ quý 3/2026: nhà cung cấp giao hàng FOB cho Cybersilkroads Logistics tại Hong Kong hoặc Quảng Châu, Cybersilkroads lo toàn bộ vận chuyển + thông quan + giao đến đại lý Việt Nam. Nhà cung cấp chỉ cần ship đến cửa ngõ. Phí logistics 8–15% (tuỳ ngành), không phí thiết lập. Hiện đang chạy thử với 8 nhà cung cấp Cao cấp.",
+    a: "Có mô hình 'CSR Fulfilled' đang triển khai từ quý 3/2026: nhà cung cấp giao hàng FOB cho Huayuesc Logistics tại Hong Kong hoặc Quảng Châu, Huayuesc lo toàn bộ vận chuyển + thông quan + giao đến đại lý Việt Nam. Nhà cung cấp chỉ cần ship đến cửa ngõ. Phí logistics 8–15% (tuỳ ngành), không phí thiết lập. Hiện đang chạy thử với 8 nhà cung cấp Cao cấp.",
   },
   {
     q: "Bảo đảm Giao dịch có bắt buộc không?",
-    a: "Khuyến nghị mạnh nhưng không bắt buộc. Khoảng 78% đơn trên Cybersilkroads đang dùng Bảo đảm Giao dịch. Nhà cung cấp tham gia giúp tăng tỷ lệ chốt đơn (đại lý tin tưởng cao hơn 3,4 lần theo dữ liệu nội bộ), đặc biệt với đơn đầu tiên với đại lý mới. Phí 1,5% mỗi đơn đã bao gồm trong giá niêm yết, không phí ẩn.",
+    a: "Khuyến nghị mạnh nhưng không bắt buộc. Khoảng 78% đơn trên Huayuesc đang dùng Bảo đảm Giao dịch. Nhà cung cấp tham gia giúp tăng tỷ lệ chốt đơn (đại lý tin tưởng cao hơn 3,4 lần theo dữ liệu nội bộ), đặc biệt với đơn đầu tiên với đại lý mới. Phí 1,5% mỗi đơn đã bao gồm trong giá niêm yết, không phí ẩn.",
   },
 ];
 
@@ -336,7 +336,7 @@ export default function SellOnCsrPage() {
             <span className="text-gold">qua nền tảng chuyên biệt số 1</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc cho ngành nội thất, vật liệu, thiết bị vệ sinh, điện gia dụng. <b className="text-gold">Niêm yết miễn phí 100%</b> — chúng tôi chỉ thu phí khi nhà cung cấp đã có đơn thành công. Cam kết &ldquo;Không Lãi Không Thu&rdquo;: nếu chưa có lợi nhuận, Cybersilkroads miễn phí toàn bộ. 40+ nhà máy đối tác đạt tăng trưởng 300%+ sau 24 tháng cùng mô hình các bên cùng có lợi.
+            Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc cho ngành nội thất, vật liệu, thiết bị vệ sinh, điện gia dụng. <b className="text-gold">Niêm yết miễn phí 100%</b> — chúng tôi chỉ thu phí khi nhà cung cấp đã có đơn thành công. Cam kết &ldquo;Không Lãi Không Thu&rdquo;: nếu chưa có lợi nhuận, Huayuesc miễn phí toàn bộ. 40+ nhà máy đối tác đạt tăng trưởng 300%+ sau 24 tháng cùng mô hình các bên cùng có lợi.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -357,13 +357,13 @@ export default function SellOnCsrPage() {
         </div>
       </section>
 
-      {/* === Why Cybersilkroads ============================================== */}
+      {/* === Why Huayuesc ============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-9">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">VÌ SAO CHỌN CYBERSILKROADS</span>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">VÌ SAO CHỌN HUAYUESC</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 lý do 1.840+ nhà máy chọn nền tảng của chúng tôi</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Không phải sàn toàn cầu — Cybersilkroads là kênh chuyên sâu cho thị trường Việt Nam với hạ tầng và đội ngũ riêng cho mỗi giao dịch.
+            Không phải sàn toàn cầu — Huayuesc là kênh chuyên sâu cho thị trường Việt Nam với hạ tầng và đội ngũ riêng cho mỗi giao dịch.
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -385,7 +385,7 @@ export default function SellOnCsrPage() {
             Niêm yết miễn phí 100% — chỉ thu phí khi giao dịch thành công
           </h2>
           <p className="text-[13.5px] text-mute mt-2 max-w-[760px] mx-auto leading-relaxed">
-            Cybersilkroads hỗ trợ kết nối các bên giao thương theo nguyên tắc <b className="text-ink">tất cả cùng có lợi</b>. Chúng tôi không thu phí đăng ký, không thu phí kiểm định, không thu phí thành viên hằng năm. Phí duy nhất là 1,5% Bảo đảm Giao dịch — chỉ phát sinh khi nhà cung cấp đã có đơn thành công và đại lý xác nhận hàng. <b className="text-ink">Nếu nhà cung cấp chưa có lợi nhuận, Cybersilkroads cam kết miễn phí toàn bộ.</b>
+            Huayuesc hỗ trợ kết nối các bên giao thương theo nguyên tắc <b className="text-ink">tất cả cùng có lợi</b>. Chúng tôi không thu phí đăng ký, không thu phí kiểm định, không thu phí thành viên hằng năm. Phí duy nhất là 1,5% Bảo đảm Giao dịch — chỉ phát sinh khi nhà cung cấp đã có đơn thành công và đại lý xác nhận hàng. <b className="text-ink">Nếu nhà cung cấp chưa có lợi nhuận, Huayuesc cam kết miễn phí toàn bộ.</b>
           </p>
         </div>
 
@@ -465,7 +465,7 @@ export default function SellOnCsrPage() {
             <div className="flex-1">
               <b className="block text-[16px] mb-1">Cam kết &ldquo;Không Lãi Không Thu&rdquo; — bằng văn bản trong hợp đồng dịch vụ</b>
               <p className="text-[13px] opacity-90 leading-relaxed">
-                Nếu sau 12 tháng đầu nhà cung cấp chưa có lợi nhuận thực từ Cybersilkroads, chúng tôi <b>hoàn 100% phí Bảo đảm Giao dịch</b> đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Chúng tôi tin nền tảng B2B chỉ có giá trị khi mọi bên cùng thắng.
+                Nếu sau 12 tháng đầu nhà cung cấp chưa có lợi nhuận thực từ Huayuesc, chúng tôi <b>hoàn 100% phí Bảo đảm Giao dịch</b> đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Chúng tôi tin nền tảng B2B chỉ có giá trị khi mọi bên cùng thắng.
               </p>
             </div>
             <Link
@@ -572,7 +572,7 @@ export default function SellOnCsrPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÔNG CỤ MARKETING</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">Cybersilkroads chủ động đẩy nhà cung cấp đến đại lý</h2>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">Huayuesc chủ động đẩy nhà cung cấp đến đại lý</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
             Không chỉ là gian hàng thụ động — chúng tôi vận hành 6 kênh marketing chủ động đưa nhà cung cấp tiếp cận đúng đại lý có nhu cầu.
           </p>
@@ -594,7 +594,7 @@ export default function SellOnCsrPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU CHUYỆN THÀNH CÔNG</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 nhà máy đối tác lâu năm — số liệu thực</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Chia sẻ trực tiếp từ giám đốc các nhà máy đã đồng hành cùng Cybersilkroads từ 3 đến 8 năm.
+            Chia sẻ trực tiếp từ giám đốc các nhà máy đã đồng hành cùng Huayuesc từ 3 đến 8 năm.
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -663,7 +663,7 @@ export default function SellOnCsrPage() {
             Sẵn sàng tăng doanh thu xuất khẩu Việt Nam?
           </h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[680px] mx-auto leading-relaxed">
-            Đăng ký miễn phí, kiểm định miễn phí. Trung bình 30 ngày để lên gian hàng và nhận đơn đầu tiên. 1.840+ nhà cung cấp đã chọn Cybersilkroads — không phí giao dịch ẩn, quản lý tài khoản 1-1 song ngữ Trung – Việt.
+            Đăng ký miễn phí, kiểm định miễn phí. Trung bình 30 ngày để lên gian hàng và nhận đơn đầu tiên. 1.840+ nhà cung cấp đã chọn Huayuesc — không phí giao dịch ẩn, quản lý tài khoản 1-1 song ngữ Trung – Việt.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -682,7 +682,7 @@ export default function SellOnCsrPage() {
           <div className="mt-6 pt-5 border-t border-white/15 text-[12px] opacity-80 flex justify-center gap-5 flex-wrap">
             <span>📞 +86 20 8888 1234 (Quảng Châu)</span>
             <span>📞 +84 24 3556 7788 (Hà Nội)</span>
-            <span>✉ supplier@cybersilkroads.com</span>
+            <span>✉ supplier@huayuesc.vn</span>
           </div>
         </div>
       </section>
@@ -691,7 +691,7 @@ export default function SellOnCsrPage() {
 }
 
 export const metadata = {
-  title: "Bán Trên CSR — Bán hàng B2B sang Việt Nam qua Cybersilkroads",
+  title: "Bán Trên CSR — Bán hàng B2B sang Việt Nam qua Huayuesc",
   description:
     "Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc. 600+ đại lý Việt Nam đã xác minh, Bảo đảm Giao dịch qua Vietcombank · BIDV · Bank of China, quản lý tài khoản song ngữ Trung – Việt. 1.840+ nhà cung cấp đã đăng ký, kiểm định miễn phí, 30 ngày từ đăng ký đến đơn đầu.",
 };

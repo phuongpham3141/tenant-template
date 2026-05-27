@@ -116,7 +116,7 @@ export const LEAF_CATEGORIES: Record<string, LeafCategoryPage> = {
       },
       {
         q: "Có thể mua ghế văn phòng giá sỉ không?",
-        a: "Hầu hết các nhà máy trên Cybersilkroads đều hỗ trợ giá sỉ với MOQ từ 10–50 chiếc tùy mẫu. Bạn có thể gửi RFQ với số lượng cụ thể, các NCC sẽ phản hồi báo giá CIF/DDP về kho Việt Nam trong vòng 24 giờ. Đơn từ 100 chiếc thường được giảm 8–15% so với giá niêm yết. OEM đổi logo, đổi màu da, đổi đệm khả dụng cho đơn từ 200 chiếc.",
+        a: "Hầu hết các nhà máy trên Huayuesc đều hỗ trợ giá sỉ với MOQ từ 10–50 chiếc tùy mẫu. Bạn có thể gửi RFQ với số lượng cụ thể, các NCC sẽ phản hồi báo giá CIF/DDP về kho Việt Nam trong vòng 24 giờ. Đơn từ 100 chiếc thường được giảm 8–15% so với giá niêm yết. OEM đổi logo, đổi màu da, đổi đệm khả dụng cho đơn từ 200 chiếc.",
       },
       {
         q: "Làm sao chọn ghế văn phòng phù hợp với nhu cầu?",
@@ -545,11 +545,11 @@ function buildLeafFromSeed(slug: string, seed: LeafSeed): LeafCategoryPage {
           },
           {
             q: `Có thể đặt ${seed.title.toLowerCase()} theo OEM/ODM không?`,
-            a: `Hầu hết các nhà máy trong danh mục này hỗ trợ OEM (in logo, đổi màu, đổi bao bì) từ 200 đơn vị và ODM (thiết kế riêng) từ 500 đơn vị. Thời gian sản xuất trung bình 25–40 ngày kể từ khi duyệt mẫu. Cybersilkroads có hỗ trợ kỹ thuật phối hợp với nhà máy nếu bạn cần tư vấn vật liệu, kết cấu, kích thước.`,
+            a: `Hầu hết các nhà máy trong danh mục này hỗ trợ OEM (in logo, đổi màu, đổi bao bì) từ 200 đơn vị và ODM (thiết kế riêng) từ 500 đơn vị. Thời gian sản xuất trung bình 25–40 ngày kể từ khi duyệt mẫu. Huayuesc có hỗ trợ kỹ thuật phối hợp với nhà máy nếu bạn cần tư vấn vật liệu, kết cấu, kích thước.`,
           },
           {
             q: `Vận chuyển ${seed.title.toLowerCase()} về Việt Nam như thế nào?`,
-            a: `Các đơn ${seed.title.toLowerCase()} thường được vận chuyển bằng đường biển LCL/FCL từ cảng Quảng Châu, Ninh Ba, Hạ Môn về Hải Phòng/TP.HCM. Cybersilkroads cung cấp dịch vụ DDP — bao thuế, bao thông quan, giao tận kho — cho 99% mã sản phẩm trong danh mục. Thời gian door-to-door 14–21 ngày tùy cảng đi và thời điểm.`,
+            a: `Các đơn ${seed.title.toLowerCase()} thường được vận chuyển bằng đường biển LCL/FCL từ cảng Quảng Châu, Ninh Ba, Hạ Môn về Hải Phòng/TP.HCM. Huayuesc cung cấp dịch vụ DDP — bao thuế, bao thông quan, giao tận kho — cho 99% mã sản phẩm trong danh mục. Thời gian door-to-door 14–21 ngày tùy cảng đi và thời điểm.`,
           },
         ];
 
@@ -3927,11 +3927,11 @@ const SHOWCASE_PRODUCTS: Record<string, { title: string; parentName: string }> =
 function buildShowcaseLeaf(parent: string): LeafCategoryPage | null {
   const sc = SHOWCASE_PRODUCTS[parent];
   if (!sc) return null;
-  const supplier: Supplier = { name: "Cybersilkroads Demo Factory", audited: true, loc: "Quảng Đông, Trung Quốc" };
+  const supplier: Supplier = { name: "Huayuesc Demo Factory", audited: true, loc: "Quảng Đông, Trung Quốc" };
   const lp: ListingProduct = {
     id: `demo-${parent}-1`,
     title: sc.title,
-    desc: `${sc.title}. Sản phẩm demo đại diện cho ngành hàng ${sc.parentName}. Liên hệ Cybersilkroads để xem catalog đầy đủ.`,
+    desc: `${sc.title}. Sản phẩm demo đại diện cho ngành hàng ${sc.parentName}. Liên hệ Huayuesc để xem catalog đầy đủ.`,
     priceFrom: "$120",
     priceTo: "$280",
     unit: "/ Bộ",
@@ -3953,7 +3953,7 @@ function buildShowcaseLeaf(parent: string): LeafCategoryPage | null {
     filters: [],
     featured: {
       logo: "/logo/cybersilkroads-icon.png?v=5",
-      name: "Cybersilkroads Demo",
+      name: "Huayuesc Demo",
       audited: true,
       rating: 5,
       videoCaption: "Demo showcase",

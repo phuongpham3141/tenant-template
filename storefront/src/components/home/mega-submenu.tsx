@@ -4,7 +4,7 @@ import type { NavSubItem } from "@/data/home";
 /**
  * CSR-style sub-item panel — renders the 4 sections × 4 sub-sub-items
  * of a NAV_MENU sub-item as a 4-col text grid (like the original
- * cybersilkroads design). Single hero image strip on top for branding.
+ * Huayuesc design). Single hero image strip on top for branding.
  */
 export function SubItemPanel({
   groupSlug,

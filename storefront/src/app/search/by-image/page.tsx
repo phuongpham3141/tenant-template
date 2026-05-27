@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 export const metadata = {
-  title: "Tìm bằng hình ảnh — Cybersilkroads",
+  title: "Tìm bằng hình ảnh — Huayuesc",
   description:
     "Tải ảnh sản phẩm lên để tìm sản phẩm tương tự từ hơn 40 nhà máy đã được kiểm định tại Trung Quốc. AI nhận diện ảnh, gợi ý sản phẩm phù hợp trong 5 giây.",
 };

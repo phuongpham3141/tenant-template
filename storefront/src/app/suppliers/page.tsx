@@ -17,7 +17,7 @@ export default function SuppliersPage() {
         <div className="bg-paper border border-line rounded p-5 flex justify-between items-end max-md:flex-col max-md:items-start max-md:gap-3">
           <div>
             <h1 className="text-[24px] font-extrabold text-ink leading-tight">40+ nhà máy đã thẩm định</h1>
-            <p className="text-[13px] text-mute mt-1">Tất cả nhà máy trên Cybersilkroads đều được audit on-site 2 lần/năm bởi đội ngũ Quảng Châu của chúng tôi.</p>
+            <p className="text-[13px] text-mute mt-1">Tất cả nhà máy trên Huayuesc đều được audit on-site 2 lần/năm bởi đội ngũ Quảng Châu của chúng tôi.</p>
           </div>
           <div className="flex gap-2 flex-wrap">
             {["Tất cả", "NCC Vàng", "Đã kiểm định", "Giao dịch đã xác minh"].map((t, i) => (
@@ -82,4 +82,4 @@ export default function SuppliersPage() {
   );
 }
 
-export const metadata = { title: "Nhà cung cấp — Cybersilkroads" };
+export const metadata = { title: "Nhà cung cấp — Huayuesc" };

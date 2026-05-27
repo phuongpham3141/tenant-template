@@ -64,4 +64,4 @@ export default function IndustryChannelsPage() {
   );
 }
 
-export const metadata = { title: "Industry Channels — Cybersilkroads" };
+export const metadata = { title: "Industry Channels — Huayuesc" };

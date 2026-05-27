@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TOOLS = [
-  { icon: "📦", name: "Quản lý sản phẩm", desc: "Upload bulk CSV, gán thuộc tính theo ngành, version pricing OEM/ODM, kiểm tra chuẩn Cybersilkroads listing.", count: "412 SKU đang hoạt động" },
+  { icon: "📦", name: "Quản lý sản phẩm", desc: "Upload bulk CSV, gán thuộc tính theo ngành, version pricing OEM/ODM, kiểm tra chuẩn Huayuesc listing.", count: "412 SKU đang hoạt động" },
   { icon: "📋", name: "Quản lý đơn hàng", desc: "Pipeline kanban: RFQ → Báo giá → PI → Cọc → Sản xuất → Xuất xưởng → Giao. Tích hợp trung gian.", count: "23 đơn đang xử lý" },
   { icon: "📨", name: "RFQ inbox", desc: "Toàn bộ yêu cầu báo giá từ buyer Việt Nam, lọc theo ngành/giá trị/MOQ. AI gợi ý template trả lời.", count: "23 RFQ chưa trả lời" },
   { icon: "💲", name: "Báo giá nhanh", desc: "Tạo PI / quote chuyên nghiệp song ngữ VN-CN trong 30 giây. Tự sync với pricing matrix.", count: "Trung bình 18 phút/quote" },
@@ -23,7 +23,7 @@ const INTEGRATIONS = [
 ];
 
 const STEPS = [
-  { n: 1, title: "Đăng nhập một lần", desc: "Đăng nhập một lần (SSO) với tài khoản Vàng Cybersilkroads" },
+  { n: 1, title: "Đăng nhập một lần", desc: "Đăng nhập một lần (SSO) với tài khoản Vàng Huayuesc" },
   { n: 2, title: "Kết nối ERP/WMS", desc: "Wizard tự động map fields, đồng bộ sản phẩm + tồn kho 2 chiều" },
   { n: 3, title: "Vận hành thống nhất", desc: "Toàn bộ team thấy cùng pipeline đơn hàng — không còn Excel rời rạc" },
 ];

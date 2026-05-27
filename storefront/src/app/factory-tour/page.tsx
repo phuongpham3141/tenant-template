@@ -101,4 +101,4 @@ export default function FactoryTourPage() {
   );
 }
 
-export const metadata = { title: "Factory Tour — Cybersilkroads" };
+export const metadata = { title: "Factory Tour — Huayuesc" };

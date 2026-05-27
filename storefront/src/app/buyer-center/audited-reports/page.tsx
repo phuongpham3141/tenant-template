@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 
-const TABS = ["Tất cả", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "Cybersilkroads Internal"];
+const TABS = ["Tất cả", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "Huayuesc Internal"];
 
 const REPORTS = [
   {
@@ -60,7 +60,7 @@ const REPORTS = [
     name: "Landbond Furniture Group",
     location: "Foshan & Linyi",
     date: "10/02/2026",
-    auditor: "Cybersilkroads Internal",
+    auditor: "Huayuesc Internal",
     score: 90,
     kpi: { quality: 91, capacity: 89, compliance: 90 },
     slug: "landbond-furniture",
@@ -80,7 +80,7 @@ const REPORTS = [
     name: "ZuoYou Furniture",
     location: "Shenzhen",
     date: "28/01/2026",
-    auditor: "Cybersilkroads Internal",
+    auditor: "Huayuesc Internal",
     score: 85,
     kpi: { quality: 86, capacity: 84, compliance: 85 },
     slug: "zuoyou-furniture",
@@ -111,7 +111,7 @@ export default function AuditedReportsPage() {
             <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛡 BÁO CÁO KIỂM ĐỊNH NHÀ MÁY</div>
             <h1 className="text-[22px] font-bold text-ink">Báo cáo nhà máy đã thẩm định</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Truy cập miễn phí {REPORTS.length}+ báo cáo audit do TÜV Rheinland, SGS, Bureau Veritas, Intertek và đội Cybersilkroads Internal thực hiện trong 12 tháng gần nhất. Mỗi báo cáo đánh giá 3 trục: chất lượng sản xuất, năng lực cung ứng và tuân thủ.
+              Truy cập miễn phí {REPORTS.length}+ báo cáo audit do TÜV Rheinland, SGS, Bureau Veritas, Intertek và đội Huayuesc Internal thực hiện trong 12 tháng gần nhất. Mỗi báo cáo đánh giá 3 trục: chất lượng sản xuất, năng lực cung ứng và tuân thủ.
             </p>
           </div>
 

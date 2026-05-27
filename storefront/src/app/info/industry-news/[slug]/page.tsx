@@ -198,7 +198,7 @@ export default async function ArticlePage({
             </div>
             <div className="flex-1">
               <b className="block text-[14px] text-ink">{article.author}</b>
-              <span className="text-[12px] text-mute">{article.authorRole} · Cybersilkroads</span>
+              <span className="text-[12px] text-mute">{article.authorRole} · Huayuesc</span>
               <p className="text-[12.5px] text-mute mt-1.5 leading-relaxed">
                 Theo dõi {article.author} để cập nhật thêm các bài phân tích về ngành sourcing Việt Nam – Trung Quốc.
               </p>
@@ -309,9 +309,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: "Bài viết không tồn tại — Cybersilkroads" };
+  if (!article) return { title: "Bài viết không tồn tại — Huayuesc" };
   return {
-    title: `${article.title} — Cybersilkroads Blog`,
+    title: `${article.title} — Huayuesc Blog`,
     description: article.excerpt,
   };
 }

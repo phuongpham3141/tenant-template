@@ -47,7 +47,7 @@ const ASSOCIATIONS: Association[] = [
     domain: "vinasme.vn",
     founded: "2005",
     members: "60,000+ SME",
-    focus: "Đối tượng buyer chính của Cybersilkroads · Hỗ trợ chuyển đổi số, tài chính chuỗi cung ứng, đào tạo quản trị.",
+    focus: "Đối tượng buyer chính của Huayuesc · Hỗ trợ chuyển đổi số, tài chính chuỗi cung ứng, đào tạo quản trị.",
     mouStatus: "Đối tác chiến lược · MOU 2024",
   },
   {
@@ -148,7 +148,7 @@ const ASSOCIATIONS: Association[] = [
     domain: "vinasa.org.vn",
     founded: "2002",
     members: "550+ doanh nghiệp công nghệ",
-    focus: "Outsourcing software, CNTT, AI, blockchain · Đầu mối ngành công nghệ — đối tác chiến lược cho hạ tầng Cybersilkroads.",
+    focus: "Outsourcing software, CNTT, AI, blockchain · Đầu mối ngành công nghệ — đối tác chiến lược cho hạ tầng Huayuesc.",
     mouStatus: "MOU 2025 · tech partnership",
   },
   {
@@ -473,7 +473,7 @@ const REGION_META = {
     flag: "🇻🇳",
     color: "#C8102E",
     subtitle: "15 hiệp hội đối tác — quốc gia, ngành, thành phố",
-    desc: "Mạng lưới hiệp hội ngành tại Việt Nam giúp Cybersilkroads kết nối trực tiếp tới buyer doanh nghiệp toàn quốc và đảm bảo tuân thủ quy định pháp lý nội địa. Bao gồm cấp quốc gia (VCCI, VINASME), 11 hiệp hội ngành chủ lực, và đối tác cấp thành phố (HUBA HCM).",
+    desc: "Mạng lưới hiệp hội ngành tại Việt Nam giúp Huayuesc kết nối trực tiếp tới buyer doanh nghiệp toàn quốc và đảm bảo tuân thủ quy định pháp lý nội địa. Bao gồm cấp quốc gia (VCCI, VINASME), 11 hiệp hội ngành chủ lực, và đối tác cấp thành phố (HUBA HCM).",
   },
   CN: {
     label: "Trung Quốc",
@@ -549,7 +549,7 @@ const TRADE_FAIRS_2026 = [
 
 const FAQ = [
   {
-    q: "Tôi có cần là thành viên hiệp hội nào để dùng Cybersilkroads không?",
+    q: "Tôi có cần là thành viên hiệp hội nào để dùng Huayuesc không?",
     a: "Không bắt buộc. Mọi doanh nghiệp Việt Nam đều có thể đăng ký buyer account miễn phí. Tuy nhiên, nếu bạn là thành viên VCCI / HAWA / VITAS / VINASME / HUBA hoặc các hiệp hội đối tác khác, bạn được giảm 20-40% phí tier Verified và mời tham gia trade mission ưu tiên.",
   },
   {
@@ -558,11 +558,11 @@ const FAQ = [
   },
   {
     q: "MOU với các hiệp hội có công khai không?",
-    a: "Có. Toàn bộ MOU được công bố tại partnerships.cybersilkroads.com. Nội dung công khai: tên hai bên, ngày ký, thời hạn, scope chính, cam kết không độc quyền. Các điều khoản tài chính cụ thể được giữ riêng theo yêu cầu của một số hiệp hội.",
+    a: "Có. Toàn bộ MOU được công bố tại partnerships.huayuesc.vn. Nội dung công khai: tên hai bên, ngày ký, thời hạn, scope chính, cam kết không độc quyền. Các điều khoản tài chính cụ thể được giữ riêng theo yêu cầu của một số hiệp hội.",
   },
   {
     q: "CSR có thể giúp tôi export hàng Việt Nam sang ASEAN không?",
-    a: "Có. Liên hệ partnership@cybersilkroads.com để được hỗ trợ list lên hệ thống KADIN/FTI/FMM/SBF/PCCI partner network. Đặc biệt cho ngành gỗ, thủ công, thuỷ sản, da giày, cà phê — các ngành VN đang xuất khẩu mạnh. Hiện đã có 38 doanh nghiệp Việt Nam tham gia chương trình này.",
+    a: "Có. Liên hệ partnership@huayuesc.vn để được hỗ trợ list lên hệ thống KADIN/FTI/FMM/SBF/PCCI partner network. Đặc biệt cho ngành gỗ, thủ công, thuỷ sản, da giày, cà phê — các ngành VN đang xuất khẩu mạnh. Hiện đã có 38 doanh nghiệp Việt Nam tham gia chương trình này.",
   },
   {
     q: "Trade mission có phù hợp cho doanh nghiệp nhỏ (≤20 nhân viên) không?",
@@ -574,7 +574,7 @@ const FAQ = [
   },
   {
     q: "Tôi muốn ký MOU giữa hiệp hội của tôi và CSR — quy trình thế nào?",
-    a: "Liên hệ partnership@cybersilkroads.com. Đội Partnership review trong 7-10 ngày, schedule call 60 phút. Quy trình từ first contact → MOU ký thường 8-14 tuần. CSR cởi mở với mọi hiệp hội B2B chính thức — không có quota.",
+    a: "Liên hệ partnership@huayuesc.vn. Đội Partnership review trong 7-10 ngày, schedule call 60 phút. Quy trình từ first contact → MOU ký thường 8-14 tuần. CSR cởi mở với mọi hiệp hội B2B chính thức — không có quota.",
   },
 ];
 
@@ -760,7 +760,7 @@ export default function KetNoiPage() {
             Một con đường tơ lụa số
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            Cybersilkroads dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Tổng tiếp cận 200,000+ NCC qua đối tác mẹ.
+            Huayuesc dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Tổng tiếp cận 200,000+ NCC qua đối tác mẹ.
           </p>
 
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
@@ -845,7 +845,7 @@ export default function KetNoiPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">TẦM NHÌN</span>
           <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Cây cầu hai chiều giữa 3 thị trường</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Khác với platform B2B truyền thống chỉ là kênh nhập một chiều, Cybersilkroads vận hành hai dòng chảy: hàng Trung Quốc → Việt Nam, và hàng Việt Nam → ASEAN — qua chính mạng lưới hiệp hội chính thức của 3 khối.
+            Khác với platform B2B truyền thống chỉ là kênh nhập một chiều, Huayuesc vận hành hai dòng chảy: hàng Trung Quốc → Việt Nam, và hàng Việt Nam → ASEAN — qua chính mạng lưới hiệp hội chính thức của 3 khối.
           </p>
         </div>
 
@@ -1023,7 +1023,7 @@ export default function KetNoiPage() {
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Tham gia con đường tơ lụa số</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            Tham gia trade mission tiếp theo cùng VCCI · HAWA · CCPIT Quảng Tây · CCPIT Quảng Đông, hoặc liên hệ Partnership team nếu hiệp hội của bạn muốn ký MOU với Cybersilkroads.
+            Tham gia trade mission tiếp theo cùng VCCI · HAWA · CCPIT Quảng Tây · CCPIT Quảng Đông, hoặc liên hệ Partnership team nếu hiệp hội của bạn muốn ký MOU với Huayuesc.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -1033,7 +1033,7 @@ export default function KetNoiPage() {
               ✈️ Đăng ký trade mission 2026
             </Link>
             <a
-              href="mailto:partnership@cybersilkroads.com"
+              href="mailto:partnership@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
               🤝 Liên hệ Partnership team
@@ -1047,5 +1047,5 @@ export default function KetNoiPage() {
 
 export const metadata = {
   title: "Mạng lưới kết nối — 41 hiệp hội B2B Việt Nam · Trung Quốc · ASEAN",
-  description: "41 hiệp hội thương mại đối tác chính thức của Cybersilkroads: VCCI, HAWA, VITAS, CCPIT (cấp quốc gia + 5 tỉnh: Quảng Đông, Quảng Tây, Vân Nam, Chiết Giang, Thượng Hải), CFA, CBDA, ASEAN BAC, FTI, KADIN, FMM. Tiếp cận 200,000+ NCC qua đối tác.",
+  description: "41 hiệp hội thương mại đối tác chính thức của Huayuesc: VCCI, HAWA, VITAS, CCPIT (cấp quốc gia + 5 tỉnh: Quảng Đông, Quảng Tây, Vân Nam, Chiết Giang, Thượng Hải), CFA, CBDA, ASEAN BAC, FTI, KADIN, FMM. Tiếp cận 200,000+ NCC qua đối tác.",
 };

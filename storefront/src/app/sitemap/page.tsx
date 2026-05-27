@@ -67,7 +67,7 @@ const SECTIONS: SitemapSection[] = [
     title: "Bán hàng (Seller / Supplier)",
     subtitle: "Đăng ký và quản lý gian hàng NCC",
     links: [
-      { label: "Sell on Cybersilkroads", href: "/sell-on-csr", desc: "3 tier (Free / Verified / Premium) — quy trình audit 4 bước" },
+      { label: "Sell on Huayuesc", href: "/sell-on-csr", desc: "3 tier (Free / Verified / Premium) — quy trình audit 4 bước" },
       { label: "Đăng ký nhà máy", href: "/register/factory", desc: "Form đăng ký + upload giấy tờ pháp lý" },
       { label: "Đăng ký dealer", href: "/register/dealer", desc: "Đại lý phân phối tại VN/ASEAN" },
     ],
@@ -167,7 +167,7 @@ export default function SitemapPage() {
             🗺 BẢN ĐỒ TRANG
           </span>
           <h1 className="text-[36px] font-extrabold leading-[1.1] mb-3 max-md:text-[24px]">
-            Bản đồ trang Cybersilkroads
+            Bản đồ trang Huayuesc
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[760px] leading-relaxed mb-6 max-md:text-[13px]">
             {totalLinks}+ trang được tổ chức theo {sectionsCount} nhóm chức năng. Dùng sitemap này để khám phá nhanh toàn bộ tính năng và tài liệu của nền tảng. Sitemap XML cho search engine: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
@@ -335,7 +335,7 @@ export default function SitemapPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-8 mb-10">
         <div className="bg-bg border border-line rounded p-5 text-center">
           <p className="text-[13px] text-mute leading-relaxed max-w-[680px] mx-auto">
-            <b className="text-ink">Sitemap XML cho search engine</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">cybersilkroads.com/sitemap.xml</a>
+            <b className="text-ink">Sitemap XML cho search engine</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
             {" · "}
             Cập nhật tự động khi thêm trang hoặc blog post mới. Toàn bộ slug đã chuẩn hoá tiếng Anh để tối ưu SEO quốc tế.
           </p>
@@ -354,6 +354,6 @@ export default function SitemapPage() {
 }
 
 export const metadata = {
-  title: "Sitemap — Cybersilkroads",
-  description: "Bản đồ toàn bộ trang Cybersilkroads — 80+ pages tổ chức theo 9 nhóm chức năng. XML sitemap cho search engine tại /sitemap.xml.",
+  title: "Sitemap — Huayuesc",
+  description: "Bản đồ toàn bộ trang Huayuesc — 80+ pages tổ chức theo 9 nhóm chức năng. XML sitemap cho search engine tại /sitemap.xml.",
 };

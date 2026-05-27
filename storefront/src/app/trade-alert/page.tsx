@@ -4,7 +4,7 @@ import { NAV_CATEGORIES } from "@/data/home";
 
 const SAMPLE_ALERTS = [
   { tag: "PRICE", title: "Giá gạch porcelain giảm 8% trong tháng 11", time: "2 ngày trước", text: "Sản lượng tăng 15% tại Foshan đẩy giá xuống. Cơ hội nhập kho cho Tết." },
-  { tag: "NEW SUPPLIER", title: "30 nhà máy ceramic mới gia nhập Cybersilkroads", time: "3 ngày trước", text: "Toàn bộ đã qua audit, tập trung tại cluster Tân Hưng. MOQ từ 100m²." },
+  { tag: "NEW SUPPLIER", title: "30 nhà máy ceramic mới gia nhập Huayuesc", time: "3 ngày trước", text: "Toàn bộ đã qua audit, tập trung tại cluster Tân Hưng. MOQ từ 100m²." },
   { tag: "TREND", title: "Smart toilet tăng trưởng 240% năm 2025", time: "5 ngày trước", text: "Ortonbaths, TOTO, Kohler dẫn đầu. Mức giá $150-450/pc cho thị trường VN." },
   { tag: "FAIR", title: "Canton Fair Phase 2 mở đăng ký", time: "1 tuần trước", text: "Tour 5 ngày, hỗ trợ visa, khách sạn, tour 3 nhà máy. Giảm 15% cho 50 buyer đăng ký sớm." },
   { tag: "POLICY", title: "Thuế nhập khẩu nội thất giảm về 15% từ 2026", time: "1 tuần trước", text: "Nghị định mới có hiệu lực 1/1/2026 — tiết kiệm 5-10% chi phí cho dealer nội thất." },
@@ -90,4 +90,4 @@ export default function TradeAlertPage() {
   );
 }
 
-export const metadata = { title: "Cảnh báo Thương mại — Cybersilkroads" };
+export const metadata = { title: "Cảnh báo Thương mại — Huayuesc" };

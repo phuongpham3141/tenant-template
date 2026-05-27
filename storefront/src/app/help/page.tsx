@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 /**
- * /help — Cybersilkroads Help Center.
+ * /help — Huayuesc Help Center.
  *
  * Layout structured like enterprise B2B help portals (Alibaba, MIC, AWS):
  *   - Hero with global search
@@ -100,7 +100,7 @@ const FEATURED_GUIDES = [
   {
     icon: "💰",
     title: "Tiết kiệm 22% chi phí — Case study",
-    desc: "Showroom Sài Gòn chuyển từ broker sang Cybersilkroads, tiết kiệm 2.7 tỷ/năm.",
+    desc: "Showroom Sài Gòn chuyển từ broker sang Huayuesc, tiết kiệm 2.7 tỷ/năm.",
     href: "/info/industry-news/case-study-showroom-sai-gon-tiet-kiem-22-percent",
     readTime: "7 phút",
   },
@@ -125,12 +125,12 @@ const FAQ_BY_STAGE = [
     stage: "Trước khi đăng ký",
     faqs: [
       {
-        q: "Cybersilkroads (CSR) khác gì với Alibaba.com hay Made-in-China?",
+        q: "Huayuesc khác gì với Alibaba.com hay Made-in-China?",
         a: "CSR tập trung 100% vào Buyer Việt Nam: tiếng Việt support 24/7, thanh toán VND, tài khoản trung gian tại Vietcombank/BIDV, vận chuyển DDP về tận kho VN, audit on-site free cho đơn ≥$5K, hỗ trợ tranh chấp bằng tiếng Việt qua VIAC Hà Nội. Alibaba và MIC là nền tảng global, tốt cho buyer Mỹ/EU/Trung Đông nhưng không có infra/team chuyên cho thị trường VN.",
       },
       {
-        q: "Phí dịch vụ Cybersilkroads là bao nhiêu?",
-        a: "MIỄN PHÍ HOÀN TOÀN cho Buyer. Không phí thành viên, không phí giao dịch, không phí trung gian, không phí audit on-site (cho đơn ≥$5K). Cybersilkroads chỉ thu 5% commission từ Supplier khi giao dịch thành công. Buyer chỉ trả: giá hàng (theo PO) + cước DDP (transparent).",
+        q: "Phí dịch vụ Huayuesc là bao nhiêu?",
+        a: "MIỄN PHÍ HOÀN TOÀN cho Buyer. Không phí thành viên, không phí giao dịch, không phí trung gian, không phí audit on-site (cho đơn ≥$5K). Huayuesc chỉ thu 5% commission từ Supplier khi giao dịch thành công. Buyer chỉ trả: giá hàng (theo PO) + cước DDP (transparent).",
       },
       {
         q: "Tôi có cần là doanh nghiệp mới đăng ký được không?",
@@ -146,7 +146,7 @@ const FAQ_BY_STAGE = [
         a: "Click 'Gửi RFQ' ở header trang chủ hoặc /buying-request. Mô tả càng chi tiết càng tốt: tên sản phẩm + kích thước + vật liệu + số lượng + target retail + OEM yêu cầu (logo, custom màu) + thời hạn. Trong 24 giờ, hệ thống AI matching gửi RFQ tới 5-10 NCC verified phù hợp. Tip: đính kèm ảnh tham khảo / sản phẩm mẫu để NCC hiểu rõ hơn.",
       },
       {
-        q: "MOQ trên Cybersilkroads là bao nhiêu?",
+        q: "MOQ trên Huayuesc là bao nhiêu?",
         a: "Tùy nhà máy — phổ biến từ $500-2000 hoặc 50-100 đơn vị. Một số NCC chấp nhận MOQ thấp $200 cho Buyer mới qua chương trình audit miễn phí. CSR có 'Combine MOQ' giúp 2-3 buyer cùng ngành gộp đơn để đạt MOQ giá tốt mà mỗi bên chỉ lấy 1/3.",
       },
       {
@@ -181,7 +181,7 @@ const FAQ_BY_STAGE = [
       },
       {
         q: "Có cần giấy phép nhập khẩu không?",
-        a: "Phần lớn vật liệu xây dựng, nội thất, sanitary, đèn LED, điện gia dụng KHÔNG cần giấy phép. Cần giấy phép cho: thực phẩm chức năng, mỹ phẩm, thiết bị y tế, hoá chất, dược phẩm, sách, phương tiện. CSR tư vấn miễn phí theo HS code — email legal@cybersilkroads.com.",
+        a: "Phần lớn vật liệu xây dựng, nội thất, sanitary, đèn LED, điện gia dụng KHÔNG cần giấy phép. Cần giấy phép cho: thực phẩm chức năng, mỹ phẩm, thiết bị y tế, hoá chất, dược phẩm, sách, phương tiện. CSR tư vấn miễn phí theo HS code — email legal@huayuesc.vn.",
       },
       {
         q: "DDP đã bao gồm thuế nhập khẩu + VAT chưa?",
@@ -218,7 +218,7 @@ const SYSTEM_STATUS = [
 const CONTACT_CHANNELS = [
   { icon: "💬", title: "Live Chat", desc: "Phản hồi <5 phút", info: "8h-22h hàng ngày", href: "#chat" },
   { icon: "📞", title: "Hotline", desc: "+84 24 1234 5678", info: "8h-18h thứ 2-7", href: "tel:+842412345678" },
-  { icon: "📧", title: "Email Support", desc: "Phản hồi <6 giờ", info: "support@cybersilkroads.com", href: "mailto:support@cybersilkroads.com" },
+  { icon: "📧", title: "Email Support", desc: "Phản hồi <6 giờ", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
   { icon: "📹", title: "Video Call", desc: "Đặt lịch trước", info: "1-on-1 với Quản lý tài khoản", href: "/info/contact" },
 ];
 
@@ -234,13 +234,13 @@ export default function HelpPage() {
       >
         <div className="max-w-[1100px] mx-auto px-4 py-12 max-md:py-7 text-center">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-            🆘 TRUNG TÂM TRỢ GIÚP · CYBERSILKROADS
+            🆘 TRUNG TÂM TRỢ GIÚP · HUAYUESC
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
             Chào mừng đến trung tâm trợ giúp
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed mb-5 max-md:text-[12.5px] max-w-[680px] mx-auto">
-            300+ bài hướng dẫn, 80+ FAQ, support 24/7 tiếng Việt. Tìm câu trả lời ngay hoặc liên hệ trực tiếp đội Cybersilkroads tại Hà Nội + Quảng Châu.
+            300+ bài hướng dẫn, 80+ FAQ, support 24/7 tiếng Việt. Tìm câu trả lời ngay hoặc liên hệ trực tiếp đội Huayuesc tại Hà Nội + Quảng Châu.
           </p>
           <form action="/search" method="get" className="flex max-w-[640px] mx-auto bg-white rounded-md overflow-hidden shadow-lg">
             <input
@@ -358,7 +358,7 @@ export default function HelpPage() {
               Tình trạng hệ thống — Tất cả dịch vụ hoạt động bình thường
             </h2>
             <Link
-              href="https://cybersilkroads-status.io"
+              href="https://huayuesc-status.io"
               className="text-[12px] text-brand hover:underline cursor-pointer"
             >
               Status page chi tiết →
@@ -384,7 +384,7 @@ export default function HelpPage() {
         >
           <h2 className="text-[18px] font-bold mb-1 max-md:text-[16px]">Vẫn cần hỗ trợ trực tiếp?</h2>
           <p className="text-[12.5px] opacity-85 mb-4 max-md:text-[12px]">
-            Đội Customer Success Cybersilkroads tại Hà Nội + Quảng Châu — phản hồi 24/7, 100% tiếng Việt cho Buyer.
+            Đội Customer Success Huayuesc tại Hà Nội + Quảng Châu — phản hồi 24/7, 100% tiếng Việt cho Buyer.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {CONTACT_CHANNELS.map((c) => (
@@ -418,7 +418,7 @@ export default function HelpPage() {
 }
 
 export const metadata = {
-  title: "Trung tâm trợ giúp — Cybersilkroads (CSR)",
+  title: "Trung tâm trợ giúp — Huayuesc",
   description:
     "300+ bài hướng dẫn, 80+ FAQ về sourcing B2B từ Trung Quốc về Việt Nam. RFQ, Bảo đảm Giao dịch, DDP, hải quan. Hỗ trợ 24/7 tiếng Việt.",
 };

@@ -77,7 +77,7 @@ export default async function ZonePage({
           <div className="text-[13px] text-ink leading-relaxed space-y-3">
             <p>{z.name} là một trong những cụm công nghiệp lớn nhất Trung Quốc, hình thành từ đầu thập niên 1980 và phát triển mạnh sau khi Trung Quốc gia nhập WTO năm 2001. Với hơn {z.count}, cluster này đóng góp khoảng 35% tổng sản lượng ngành tại Trung Quốc.</p>
             <p>Cluster sở hữu chuỗi cung ứng hoàn chỉnh từ nguyên liệu thô (silica, đất sét, kim loại), thiết bị máy móc, đến đóng gói và logistics xuất khẩu. Các nhà máy được phân tầng rõ ràng: tier 1 phục vụ thị trường EU/US với tiêu chuẩn cao, tier 2 phục vụ thị trường Đông Nam Á và Trung Đông, tier 3 OEM cho các thương hiệu nội địa.</p>
-            <p>Cybersilkroads có văn phòng đại diện tại {z.name.split(" ")[0]} từ 2018 với đội ngũ 12 người, tổ chức audit nhà máy trực tiếp 2 lần/tháng cho buyer Việt Nam. Các thương hiệu lớn từ cluster này bao gồm: Dongpeng, Monalisa, Ortonbaths, KUKA — đã có mặt trên Cybersilkroads.</p>
+            <p>Huayuesc có văn phòng đại diện tại {z.name.split(" ")[0]} từ 2018 với đội ngũ 12 người, tổ chức audit nhà máy trực tiếp 2 lần/tháng cho buyer Việt Nam. Các thương hiệu lớn từ cluster này bao gồm: Dongpeng, Monalisa, Ortonbaths, KUKA — đã có mặt trên Huayuesc.</p>
           </div>
         </div>
       </div>
@@ -159,5 +159,5 @@ export default async function ZonePage({
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const z = getZone(slug);
-  return { title: `${z.name} Trading Zone — Cybersilkroads` };
+  return { title: `${z.name} Trading Zone — Huayuesc` };
 }

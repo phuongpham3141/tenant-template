@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cybersilkroads — Con đường tơ lụa trên không gian mạng",
+  title: "Huayuesc — Con đường tơ lụa trên không gian mạng",
   description:
     "Nền tảng B2B kết nối người mua Việt Nam với nhà sản xuất Trung Quốc. 2,400+ SKU từ 40+ nhà máy đã audit. Báo giá trực tiếp, không qua trung gian.",
   icons: {

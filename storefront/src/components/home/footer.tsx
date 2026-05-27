@@ -16,7 +16,7 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    title: "Về Cybersilkroads",
+    title: "Về Huayuesc",
     links: [
       { label: "Giới thiệu", href: "/info/about-us" },
       { label: "Mạng lưới kết nối", href: "/info/network" },
@@ -135,11 +135,11 @@ export function Footer() {
             <Link
               href="/"
               className="block mx-auto mb-4 w-fit"
-              aria-label="Cybersilkroads — Trang chủ"
+              aria-label="Huayuesc — Trang chủ"
             >
               <img
                 src="/logo/cybersilkroads-horizontal.png?v=5"
-                alt="Cybersilkroads"
+                alt="Huayuesc"
                 width={400}
                 height={200}
                 className="h-32 w-auto max-md:h-24"
@@ -203,8 +203,10 @@ export function Footer() {
             Desktop: 3-col strip [copy | lang | certs].
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
-          <span className="opacity-80 max-lg:order-3">
-            © 2026 Cybersilkroads (CSR) · Nền tảng B2B · Vận hành bởi Beeagents.com
+          <span className="opacity-80 max-lg:order-3 leading-relaxed">
+            © 2026 <b className="font-semibold">CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM</b>{" · "}
+            <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
+            MST: 0111453693 · Vận hành bởi Beeagents.com
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Ngôn ngữ:</span>

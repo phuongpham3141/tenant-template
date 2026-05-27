@@ -345,7 +345,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Tải ứng dụng Cybersilkroads" />
+              <PopHeader title="Tải ứng dụng Huayuesc" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
                   QR Code
@@ -382,7 +382,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Cybersilkroads — only when logged in */}
+          {/* My Huayuesc — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link

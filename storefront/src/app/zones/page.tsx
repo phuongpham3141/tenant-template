@@ -72,4 +72,4 @@ export default function ZonesPage() {
   );
 }
 
-export const metadata = { title: "Trading Zones — Cybersilkroads" };
+export const metadata = { title: "Trading Zones — Huayuesc" };

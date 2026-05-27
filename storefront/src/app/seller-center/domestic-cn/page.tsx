@@ -58,7 +58,7 @@ const CASES = [
   },
   {
     company: "KUKA Home (sofa)",
-    desc: "Triển khai song song Tmall (B2C) + 1688 (showroom đại lý) + xuất khẩu Cybersilkroads. 3 kênh share warehouse + share QC team — giảm 18% cost overhead.",
+    desc: "Triển khai song song Tmall (B2C) + 1688 (showroom đại lý) + xuất khẩu Huayuesc. 3 kênh share warehouse + share QC team — giảm 18% cost overhead.",
     metric: "−18% overhead",
     img: 92,
   },
@@ -75,7 +75,7 @@ export default function DomesticCnPage() {
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🇨🇳 MIC DOMESTIC TRADE</div>
             <h1 className="text-[26px] font-bold leading-tight">Bán hàng nội địa Trung Quốc</h1>
             <p className="text-[14px] opacity-95 mt-2 leading-relaxed max-w-[680px]">
-              Nhà máy TQ có thể bán nội địa song song với xuất khẩu — đa dạng hoá doanh thu, ổn định dòng tiền khi thị trường XK biến động. Cybersilkroads hỗ trợ on-board Tmall, JD, 1688 cho NCC đang chỉ làm xuất khẩu.
+              Nhà máy TQ có thể bán nội địa song song với xuất khẩu — đa dạng hoá doanh thu, ổn định dòng tiền khi thị trường XK biến động. Huayuesc hỗ trợ on-board Tmall, JD, 1688 cho NCC đang chỉ làm xuất khẩu.
             </p>
           </div>
 

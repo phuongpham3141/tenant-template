@@ -237,7 +237,7 @@ export default function RegisterBuyerPage() {
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Bạn nghe Cybersilkroads từ đâu?
+                    Bạn nghe Huayuesc từ đâu?
                   </label>
                   <select
                     name="source"
@@ -264,7 +264,7 @@ export default function RegisterBuyerPage() {
                   <Link href="/info/privacy-policy" className="text-brand cursor-pointer hover:underline">
                     Chính sách bảo mật
                   </Link>{" "}
-                  của Cybersilkroads.
+                  của Huayuesc.
                 </span>
               </label>
               <label className="flex items-start gap-2 text-[12px] text-mute">
@@ -342,4 +342,4 @@ export default function RegisterBuyerPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Người mua — Cybersilkroads" };
+export const metadata = { title: "Đăng ký Người mua — Huayuesc" };

@@ -123,7 +123,7 @@ export default async function PostRfqPage({
               </div>
 
               <div className="bg-success/5 border border-success/30 rounded p-4">
-                <b className="block text-[13px] text-success mb-2">🛡 Cam kết Cybersilkroads</b>
+                <b className="block text-[13px] text-success mb-2">🛡 Cam kết Huayuesc</b>
                 <ul className="text-[11.5px] text-ink space-y-1">
                   <li>✓ Báo giá free, không cam kết đặt</li>
                   <li>✓ Audit nhà máy miễn phí trước đặt</li>

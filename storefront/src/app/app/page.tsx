@@ -8,7 +8,7 @@ export default function AppPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
         <div className="bg-paper border border-line rounded grid grid-cols-[1fr_360px] gap-7 p-7 max-md:grid-cols-1 max-md:p-5">
           <div className="flex flex-col justify-center">
-            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 ỨNG DỤNG CYBERSILKROADS</span>
+            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 ỨNG DỤNG HUAYUESC</span>
             <h1 className="text-[34px] font-extrabold text-ink leading-tight mb-3 max-md:text-[24px]">
               Sourcing tận tay — <span className="text-brand">không lỡ deal</span>
             </h1>
@@ -79,4 +79,4 @@ export default function AppPage() {
   );
 }
 
-export const metadata = { title: "Tải app — Cybersilkroads" };
+export const metadata = { title: "Tải app — Huayuesc" };

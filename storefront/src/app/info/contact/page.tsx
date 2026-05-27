@@ -42,7 +42,7 @@ const OFFICES: Office[] = [
     addressEn: "Floor 21, Diamond Flower Tower, 48 Le Van Luong, Cau Giay, Hanoi 100000, Vietnam",
     phone: "+84 24 3556 7788",
     hotline: "1900 6688",
-    email: "hanoi@cybersilkroads.com",
+    email: "hanoi@huayuesc.vn",
     manager: { name: "Phạm Phương", title: "Founder & CEO", initials: "PP" },
     teamSize: 38,
     departments: ["Founder Office", "Engineering & Product", "Bảo đảm Giao dịch", "Pháp chế quốc tế", "HR & Tuyển dụng", "Marketing & Brand"],
@@ -71,7 +71,7 @@ const OFFICES: Office[] = [
     addressEn: "Floor 14, Bitexco Financial Tower, 2 Hai Trieu, District 1, Ho Chi Minh City",
     phone: "+84 28 3823 6688",
     hotline: "1900 6688",
-    email: "hcm@cybersilkroads.com",
+    email: "hcm@huayuesc.vn",
     manager: { name: "Nguyễn Quang Vũ", title: "Southern Regional Director", initials: "NV" },
     teamSize: 24,
     departments: ["Sales B2B miền Nam", "Account Management", "Customer Success", "Logistics Cát Lái – Cái Mép"],
@@ -99,7 +99,7 @@ const OFFICES: Office[] = [
     addressEn: "Floor 8, Indochina Riverside Tower, 74 Bach Dang, Hai Chau, Da Nang",
     phone: "+84 236 3897 2233",
     hotline: "1900 6688",
-    email: "danang@cybersilkroads.com",
+    email: "danang@huayuesc.vn",
     manager: { name: "Lê Hoàng Nam", title: "Central Region Manager", initials: "LN" },
     teamSize: 12,
     departments: ["Sales miền Trung – Tây Nguyên", "Logistics Tiên Sa – Đà Nẵng port", "Customer Support"],
@@ -126,7 +126,7 @@ const OFFICES: Office[] = [
     addressEn: "Floor 5, Pearl Plaza, 1A Tran Hung Dao, Hong Bang, Hai Phong",
     phone: "+84 225 3838 4422",
     hotline: "1900 6688",
-    email: "haiphong@cybersilkroads.com",
+    email: "haiphong@huayuesc.vn",
     manager: { name: "Trần Quốc Việt", title: "Head of Logistics & Customs", initials: "TV" },
     teamSize: 16,
     departments: ["Customs Brokerage", "Container Inspection", "Freight Coordination", "Bonded Warehouse Liaison"],
@@ -154,7 +154,7 @@ const OFFICES: Office[] = [
     addressEn: "Floor 6, 209 Street 30/4, Xuan Khanh Ward, Ninh Kieu District, Can Tho",
     phone: "+84 292 3766 9988",
     hotline: "1900 6688",
-    email: "cantho@cybersilkroads.com",
+    email: "cantho@huayuesc.vn",
     manager: { name: "Phạm Văn Linh", title: "Mekong Delta Representative", initials: "PL" },
     teamSize: 6,
     departments: ["Sales miền Tây", "Customer Support", "Liaison Hiệp hội DNNVV ĐBSCL"],
@@ -180,7 +180,7 @@ const OFFICES: Office[] = [
     address: "18 Cross Street, #14-01 Cross Street Exchange, Singapore 048423",
     addressEn: "18 Cross Street, #14-01 Cross Street Exchange, Singapore 048423",
     phone: "+65 6223 4567",
-    email: "singapore@cybersilkroads.com",
+    email: "singapore@huayuesc.vn",
     manager: { name: "Vincent Lim", title: "Regional Operations Director", initials: "VL" },
     teamSize: 9,
     departments: ["ASEAN Treasury", "Regional Partnership", "Financial Compliance", "Cross-border Tax"],
@@ -207,7 +207,7 @@ const OFFICES: Office[] = [
     address: "23rd Floor, Sathorn Square Tower, 98 North Sathorn Road, Silom, Bangrak, Bangkok 10500",
     addressEn: "23rd Floor, Sathorn Square Tower, 98 North Sathorn Road, Silom, Bangrak, Bangkok 10500",
     phone: "+66 2 1098 1234",
-    email: "bangkok@cybersilkroads.com",
+    email: "bangkok@huayuesc.vn",
     manager: { name: "Phạm Trang", title: "Thailand & Indochina Representative", initials: "PT" },
     teamSize: 5,
     departments: ["Trade liaison", "Customer success Thailand", "Translation TH–VI–EN"],
@@ -234,7 +234,7 @@ const OFFICES: Office[] = [
     address: "27th Floor, Sahid Sudirman Center, Jl. Jenderal Sudirman Kav 86, Jakarta Pusat 10220",
     addressEn: "27th Floor, Sahid Sudirman Center, Jl. Jenderal Sudirman Kav 86, Jakarta Pusat 10220",
     phone: "+62 21 2789 6677",
-    email: "jakarta@cybersilkroads.com",
+    email: "jakarta@huayuesc.vn",
     manager: { name: "Linh Trần", title: "Indonesia & Maritime SE-Asia Representative", initials: "LT" },
     teamSize: 4,
     departments: ["Trade liaison", "Customer success Indonesia", "Translation ID–VI–EN"],
@@ -254,21 +254,21 @@ const OFFICES: Office[] = [
 ];
 
 const DEPARTMENTS = [
-  { icon: "💼", title: "Sales & Tư vấn sourcing", email: "sales@cybersilkroads.com", desc: "Tư vấn RFQ, matching NCC, đàm phán giá, hợp đồng PI." },
-  { icon: "🛡", title: "Bảo đảm Giao dịch & Dispute", email: "dispute@cybersilkroads.com", desc: "Mediation tranh chấp, claim bồi thường, trung gian VCB·BIDV·BoC." },
-  { icon: "🚚", title: "Logistics & Customs", email: "logistics@cybersilkroads.com", desc: "DDP, FOB, CIF — booking tàu, customs broker, tracking." },
-  { icon: "👥", title: "Tuyển dụng & HR", email: "hr@cybersilkroads.com", desc: "Hồ sơ ứng tuyển, internship, đối tác đào tạo." },
-  { icon: "📰", title: "Báo chí & PR", email: "press@cybersilkroads.com", desc: "Phỏng vấn, thông cáo, tài liệu doanh nghiệp." },
-  { icon: "🔒", title: "Bảo mật & DPO", email: "privacy@cybersilkroads.com", desc: "Quyền chủ thể dữ liệu, NĐ 13/2023, breach notification." },
-  { icon: "⚙️", title: "Developer & API", email: "developer@cybersilkroads.com", desc: "API key, ERP integration, technical partnership." },
-  { icon: "🤝", title: "Đối tác & Hiệp hội", email: "partnership@cybersilkroads.com", desc: "Hợp tác hiệp hội, MOU, trade fair, ecosystem." },
+  { icon: "💼", title: "Sales & Tư vấn sourcing", email: "sales@huayuesc.vn", desc: "Tư vấn RFQ, matching NCC, đàm phán giá, hợp đồng PI." },
+  { icon: "🛡", title: "Bảo đảm Giao dịch & Dispute", email: "dispute@huayuesc.vn", desc: "Mediation tranh chấp, claim bồi thường, trung gian VCB·BIDV·BoC." },
+  { icon: "🚚", title: "Logistics & Customs", email: "logistics@huayuesc.vn", desc: "DDP, FOB, CIF — booking tàu, customs broker, tracking." },
+  { icon: "👥", title: "Tuyển dụng & HR", email: "hr@huayuesc.vn", desc: "Hồ sơ ứng tuyển, internship, đối tác đào tạo." },
+  { icon: "📰", title: "Báo chí & PR", email: "press@huayuesc.vn", desc: "Phỏng vấn, thông cáo, tài liệu doanh nghiệp." },
+  { icon: "🔒", title: "Bảo mật & DPO", email: "privacy@huayuesc.vn", desc: "Quyền chủ thể dữ liệu, NĐ 13/2023, breach notification." },
+  { icon: "⚙️", title: "Developer & API", email: "developer@huayuesc.vn", desc: "API key, ERP integration, technical partnership." },
+  { icon: "🤝", title: "Đối tác & Hiệp hội", email: "partnership@huayuesc.vn", desc: "Hợp tác hiệp hội, MOU, trade fair, ecosystem." },
 ];
 
 const CHANNELS = [
   { icon: "💬", title: "Live Chat", desc: "Phản hồi <5 phút trong giờ làm việc, AI 24/7", action: "Mở chat", href: "#chat" },
   { icon: "📞", title: "Hotline", desc: "1900 6688 — miễn phí trong nước, 8h–22h hàng ngày", action: "Gọi ngay", href: "tel:19006688" },
-  { icon: "✉", title: "Email", desc: "support@cybersilkroads.com — phản hồi <6 giờ", action: "Soạn email", href: "mailto:support@cybersilkroads.com" },
-  { icon: "📱", title: "Zalo OA", desc: "Cybersilkroads — chat tiếng Việt 24/7", action: "Mở Zalo", href: "https://zalo.me/cybersilkroads" },
+  { icon: "✉", title: "Email", desc: "support@huayuesc.vn — phản hồi <6 giờ", action: "Soạn email", href: "mailto:support@huayuesc.vn" },
+  { icon: "📱", title: "Zalo OA", desc: "Huayuesc — chat tiếng Việt 24/7", action: "Mở Zalo", href: "https://zalo.me/huayuesc" },
 ];
 
 function MapCard({ office }: { office: Office }) {
@@ -333,7 +333,7 @@ export default function LienHePage() {
             📍 LIÊN HỆ · CONTACT
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
-            Mạng lưới văn phòng Cybersilkroads
+            Mạng lưới văn phòng Huayuesc
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
             5 văn phòng tại Việt Nam (Hà Nội, TP HCM, Đà Nẵng, Hải Phòng, Cần Thơ) và 3 văn phòng đại diện ASEAN (Singapore, Bangkok, Jakarta). Mỗi văn phòng đều có quản lý tài khoản nói tiếng địa phương, sẵn sàng tiếp đón doanh nghiệp đến trao đổi trực tiếp.
@@ -643,7 +643,7 @@ export default function LienHePage() {
               🚀 Gửi RFQ ngay
             </Link>
             <a
-              href="mailto:hello@cybersilkroads.com"
+              href="mailto:hello@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
               📧 Đặt lịch tư vấn

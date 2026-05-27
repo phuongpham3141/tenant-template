@@ -124,7 +124,7 @@ export default async function BuyingRequestPage({
           </div>
 
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[13px] font-bold text-ink mb-2">🛡 Cam kết Cybersilkroads</b>
+            <b className="block text-[13px] font-bold text-ink mb-2">🛡 Cam kết Huayuesc</b>
             <ul className="text-[12px] text-mute space-y-1.5">
               <li>✓ Báo giá free, không cam kết đặt</li>
               <li>✓ Audit nhà máy miễn phí trước đặt</li>
@@ -154,4 +154,4 @@ export default async function BuyingRequestPage({
   );
 }
 
-export const metadata = { title: "Gửi yêu cầu báo giá — Cybersilkroads" };
+export const metadata = { title: "Gửi yêu cầu báo giá — Huayuesc" };

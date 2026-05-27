@@ -59,7 +59,7 @@ export default function ExportNaPage() {
             <div className="inline-block bg-white text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🌎 NORTH AMERICA OMNI-CHANNEL</div>
             <h1 className="text-[26px] font-bold leading-tight">Xuất khẩu đa kênh Bắc Mỹ — Mỹ · Canada · Mexico</h1>
             <p className="text-[14px] opacity-90 mt-2 leading-relaxed max-w-[680px]">
-              480 triệu người tiêu dùng. GDP $30 nghìn tỷ. Cybersilkroads đồng hành NCC TQ "đổ bộ" Bắc Mỹ — từ EIN, FBA, PPC, customer service tiếng Anh, tới sales tax compliance. Một đối tác, 4 kênh bán hàng.
+              480 triệu người tiêu dùng. GDP $30 nghìn tỷ. Huayuesc đồng hành NCC TQ "đổ bộ" Bắc Mỹ — từ EIN, FBA, PPC, customer service tiếng Anh, tới sales tax compliance. Một đối tác, 4 kênh bán hàng.
             </p>
           </div>
 

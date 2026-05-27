@@ -75,9 +75,9 @@ export async function generateMetadata({
   const navEntry = NAV_CATEGORIES.find((c) => c.slug === slug);
   const name = data?.title ?? navEntry?.name ?? slug;
   return {
-    title: `${name} — Cybersilkroads`,
+    title: `${name} — Huayuesc`,
     description:
       data?.intro ??
-      `Khám phá ${name} từ các nhà sản xuất hàng đầu Trung Quốc trên Cybersilkroads.`,
+      `Khám phá ${name} từ các nhà sản xuất hàng đầu Trung Quốc trên Huayuesc.`,
   };
 }

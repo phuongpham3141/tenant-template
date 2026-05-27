@@ -94,4 +94,4 @@ export default function RegisterDealerPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Dealer — Cybersilkroads" };
+export const metadata = { title: "Đăng ký Dealer — Huayuesc" };

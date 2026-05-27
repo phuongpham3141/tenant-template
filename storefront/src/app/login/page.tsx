@@ -161,7 +161,7 @@ export default function LoginPage() {
             style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
           >
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-              ⚡ Cybersilkroads 2026
+              ⚡ Huayuesc 2026
             </span>
             <h2 className="text-[22px] font-extrabold leading-tight mb-2">
               Cánh cửa nhập khẩu trực tiếp <br />từ <span className="text-gold">40+ nhà máy</span> Trung Quốc
@@ -212,4 +212,4 @@ export default function LoginPage() {
   );
 }
 
-export const metadata = { title: "Đăng nhập — Cybersilkroads" };
+export const metadata = { title: "Đăng nhập — Huayuesc" };

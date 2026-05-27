@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "@/lib/blog";
 
-const BASE_URL = "https://cybersilkroads.com";
+const BASE_URL = "https://huayuesc.vn";
 
 type Priority = 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 1.0;
 type ChangeFreq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";

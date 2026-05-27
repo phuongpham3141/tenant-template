@@ -251,7 +251,7 @@ const CASE_STUDIES = [
 const EMERGENCY_CHANNELS = [
   { icon: "🚨", title: "Hotline khẩn cấp 24/7", value: "1900 6688", desc: "Cho gian lận, IP infringement, customs giữ hàng — gọi ngay, response trong 30 phút" },
   { icon: "💬", title: "Live Chat dispute", value: "dashboard /buyer-center", desc: "Click 'Mở khiếu nại' trên đơn — chat trực tiếp Dispute Officer" },
-  { icon: "✉", title: "Email Dispute team", value: "dispute@cybersilkroads.com", desc: "Gửi case complex, đính kèm bằng chứng — phản hồi <2 giờ trong giờ làm việc" },
+  { icon: "✉", title: "Email Dispute team", value: "dispute@huayuesc.vn", desc: "Gửi case complex, đính kèm bằng chứng — phản hồi <2 giờ trong giờ làm việc" },
   { icon: "📱", title: "WhatsApp / Zalo", value: "+84 1900 6688", desc: "Cho buyer ở vùng sâu không stable internet, escalation manager phụ trách" },
 ];
 
@@ -278,7 +278,7 @@ const FAQ = [
   },
   {
     q: "Tôi sợ NCC trả thù sau khi mở dispute (blacklist tôi, nâng giá đơn sau...)",
-    a: "Điều khoản dịch vụ CSR cấm tuyệt đối hành vi retaliation. NCC bị phát hiện nâng giá hoặc từ chối đơn của buyer đã từng mở dispute (mà phán quyết đã có hiệu lực) sẽ bị suspended ngay 90 ngày + đóng băng 25% reserved fund. Buyer có thể report retaliation qua dispute@cybersilkroads.com — CSR điều tra và xử lý độc lập. Trên thực tế, retaliation rất hiếm vì NCC sợ mất tier Verified.",
+    a: "Điều khoản dịch vụ CSR cấm tuyệt đối hành vi retaliation. NCC bị phát hiện nâng giá hoặc từ chối đơn của buyer đã từng mở dispute (mà phán quyết đã có hiệu lực) sẽ bị suspended ngay 90 ngày + đóng băng 25% reserved fund. Buyer có thể report retaliation qua dispute@huayuesc.vn — CSR điều tra và xử lý độc lập. Trên thực tế, retaliation rất hiếm vì NCC sợ mất tier Verified.",
   },
   {
     q: "Khiếu nại có ảnh hưởng đến rating của tôi với tư cách buyer không?",
@@ -286,7 +286,7 @@ const FAQ = [
   },
   {
     q: "Trường hợp đặc biệt: hàng cấm hoặc vi phạm pháp luật Việt Nam — sao xử lý?",
-    a: "Nếu lô hàng vi phạm NĐ 69/2018 (cấm nhập), Luật An toàn thực phẩm, hoặc các quy định chuyên ngành (CQ thuốc, hoá chất nguy hiểm...): customs giữ hàng, CSR escalate ngay tier 3 trọng tài VIAC + báo cáo Cục Hải quan. Buyer được full refund 100% + bồi thường legal expenses. NCC bị suspended khỏi platform vĩnh viễn và đưa vào blacklist công khai trustpage.cybersilkroads.com.",
+    a: "Nếu lô hàng vi phạm NĐ 69/2018 (cấm nhập), Luật An toàn thực phẩm, hoặc các quy định chuyên ngành (CQ thuốc, hoá chất nguy hiểm...): customs giữ hàng, CSR escalate ngay tier 3 trọng tài VIAC + báo cáo Cục Hải quan. Buyer được full refund 100% + bồi thường legal expenses. NCC bị suspended khỏi platform vĩnh viễn và đưa vào blacklist công khai trustpage.huayuesc.vn.",
   },
 ];
 
@@ -326,7 +326,7 @@ export default function KhieuNaiPage() {
           </span>
           <h1 className="text-[40px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
             Khi mọi thứ không đúng kế hoạch<br />
-            <span className="text-gold">Cybersilkroads đứng về phía bạn</span>
+            <span className="text-gold">Huayuesc đứng về phía bạn</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
             Hệ thống giải quyết tranh chấp 3 cấp độ — từ đối thoại trực tiếp, qua CSR Mediation theo NĐ 22/2017, đến trọng tài quốc tế VIAC/CIETAC theo Công ước New York 1958. Buyer Việt Nam được bảo vệ bằng pháp lý, không phải bằng lời hứa. 87% case kết thúc có lợi cho buyer trong trung bình 3.2 ngày.
@@ -674,10 +674,10 @@ export default function KhieuNaiPage() {
               📝 Đi tới Buyer Dashboard
             </Link>
             <a
-              href="mailto:dispute@cybersilkroads.com"
+              href="mailto:dispute@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              ✉ dispute@cybersilkroads.com
+              ✉ dispute@huayuesc.vn
             </a>
             <a
               href="tel:19006688"
@@ -696,6 +696,6 @@ export default function KhieuNaiPage() {
 }
 
 export const metadata = {
-  title: "Khiếu nại & tranh chấp — Cybersilkroads Dispute Resolution",
+  title: "Khiếu nại & tranh chấp — Huayuesc Dispute Resolution",
   description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, CSR Mediation theo NĐ 22/2017, trọng tài VIAC/CIETAC theo Công ước New York 1958. 87% case có lợi cho buyer trong 3.2 ngày trung bình. Hotline 24/7: 1900 6688.",
 };

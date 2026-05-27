@@ -64,7 +64,7 @@ export default async function BlogIndexPage({
       >
         <div className="max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-            📰 BLOG · CYBERSILKROADS
+            📰 BLOG · HUAYUESC
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-2 max-md:text-[24px]">
             Tin tức ngành sourcing Việt Nam – Trung Quốc
@@ -274,7 +274,7 @@ export default async function BlogIndexPage({
             <ul className="space-y-1.5">
               <li>
                 <Link href="/info/about-us" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Giới thiệu Cybersilkroads
+                  → Giới thiệu Huayuesc
                 </Link>
               </li>
               <li>
@@ -301,7 +301,7 @@ export default async function BlogIndexPage({
 }
 
 export const metadata = {
-  title: "Tin tức ngành sourcing — Cybersilkroads Blog",
+  title: "Tin tức ngành sourcing — Huayuesc Blog",
   description:
-    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Cybersilkroads.",
+    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Huayuesc.",
 };
