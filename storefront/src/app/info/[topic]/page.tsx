@@ -1,6 +1,32 @@
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+
+/**
+ * Parse a plain-text string with limited inline markup into React nodes.
+ * Currently supports:
+ *   • <b>…</b> → <b className="font-semibold text-ink">…</b>
+ *
+ * Other HTML in the source is rendered as plain text (React escapes it).
+ */
+function renderInlineMarkup(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  const rx = /<b>([\s\S]*?)<\/b>/g;
+  let cursor = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+  while ((m = rx.exec(text)) !== null) {
+    if (m.index > cursor) parts.push(text.slice(cursor, m.index));
+    parts.push(
+      <b key={`b-${key++}`} className="font-semibold text-ink">
+        {m[1]}
+      </b>,
+    );
+    cursor = m.index + m[0].length;
+  }
+  if (cursor < text.length) parts.push(text.slice(cursor));
+  return parts;
+}
 
 /**
  * Smart paragraph renderer.
@@ -66,12 +92,20 @@ function parseInlineList(text: string): ParsedList | null {
 function RenderParagraph({ text, depth = 0 }: { text: string; depth?: number }) {
   const parsed = parseInlineList(text);
   if (!parsed) {
-    return <p className="text-[14px] text-ink leading-relaxed">{text}</p>;
+    return (
+      <p className="text-[14px] text-ink leading-relaxed">
+        {renderInlineMarkup(text)}
+      </p>
+    );
   }
   const { intro, bullets } = parsed;
   return (
     <>
-      {intro && <p className="text-[14px] text-ink leading-relaxed mb-2">{intro}</p>}
+      {intro && (
+        <p className="text-[14px] text-ink leading-relaxed mb-2">
+          {renderInlineMarkup(intro)}
+        </p>
+      )}
       <ul
         className={
           depth === 0
@@ -94,7 +128,7 @@ function RenderParagraph({ text, depth = 0 }: { text: string; depth?: number }) 
                 {nested ? (
                   <RenderParagraph text={b.body} depth={1} />
                 ) : (
-                  <span>{b.body}</span>
+                  <span>{renderInlineMarkup(b.body)}</span>
                 )}
               </div>
             </li>
