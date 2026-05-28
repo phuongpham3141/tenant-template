@@ -75,7 +75,7 @@ const PROCESS_STEPS = [
     title: "Thanh toán phí mẫu vào tài khoản trung gian",
     duration: "1-3 giờ",
     color: "#16A34A",
-    desc: "Phí $30-200 + ship $20-40 thanh toán qua tài khoản trung gian CSR (Vietcombank/BIDV) — không chuyển trực tiếp NCC. Giữ nguyên Bảo đảm Giao dịch: nếu sample bị NCC giao sai, refund 100% qua tài khoản trung gian.",
+    desc: "Phí $30-200 + ship $20-40 thanh toán qua tài khoản trung gian của Huayue tại ngân hàng đối tác Việt Nam — không chuyển trực tiếp NCC. Giữ nguyên Bảo đảm Giao dịch: nếu sample bị NCC giao sai, refund 100% qua tài khoản trung gian.",
     actions: [
       "Phương thức: TT bank wire / VietQR / thẻ tín dụng",
       "Mã đơn unique generated cho từng sample order",
@@ -92,22 +92,22 @@ const PROCESS_STEPS = [
     actions: [
       "Buyer nhận thông báo khi NCC accept order",
       "Update tiến độ ảnh + video qua Zalo OA / dashboard",
-      "Buyer có thể chat trực tiếp NCC qua CSR (có translator)",
+      "Buyer có thể chat trực tiếp NCC qua Huayue (có translator)",
       "Yêu cầu video call để xem mock-up trước khi finalize",
     ],
   },
   {
     n: "05",
     icon: "📦",
-    title: "Trung tâm Mẫu gom hàng tại Quảng Châu",
+    title: "Văn phòng Quảng Châu của Huayue",
     duration: "1-3 ngày",
     color: "#A21CAF",
-    desc: "NCC ship sample về kho CSR Trung tâm Mẫu tại Quảng Châu (cách Foshan 25 km, Đông Quan 80 km — đa số NCC đã ký giao trong 24-48h). CSR gom 8-15 sample mỗi tuần thành 1 master shipment air về Hà Nội — tiết kiệm 50-60% cước cho buyer.",
+    desc: "NCC ship sample về văn phòng Huayue tại Quảng Châu (tại quận Hải Châu, kết nối các cluster Phật Sơn và Đông Quan — đa số NCC đã ký giao trong 24-48h). CSR gom 8-15 sample mỗi tuần thành 1 master shipment air về Hà Nội — tiết kiệm 50-60% cước cho buyer.",
     actions: [
-      "Trung tâm Mẫu mở thứ 2 - thứ 6, ship batch thứ 6 hàng tuần",
+      "Văn phòng Quảng Châu mở thứ 2 - thứ 6, ship batch thứ 6 hàng tuần",
       "Mỗi sample được tag QR code cho tracking riêng",
-      "Trung tâm Mẫu kiểm sơ bộ: đúng SKU, đúng variant, packaging chuẩn xuất khẩu",
-      "Buyer nhận thông báo khi hàng mẫu về Trung tâm Mẫu",
+      "Đội Huayue Quảng Châu kiểm sơ bộ: đúng SKU, đúng variant, packaging chuẩn xuất khẩu",
+      "Buyer nhận thông báo khi hàng mẫu về văn phòng Huayue Quảng Châu",
     ],
   },
   {
@@ -166,7 +166,7 @@ const COST_TABLE = [
   { item: "Phí sample (Standard)", range: "$30-100", note: "Tuỳ ngành — gốm sứ rẻ nhất, điện tử đắt nhất" },
   { item: "Phí sample (Variant)", range: "$50-150", note: "Cộng 30-50% so với Standard cho custom màu/size" },
   { item: "Phí sample (OEM)", range: "$80-300", note: "Cộng phí mock-up logo $80-300" },
-  { item: "Phí vận chuyển Trung tâm Mẫu → VN (gộp)", range: "$20-40", note: "Per sample khi gom batch. Tiết kiệm 50-60% so với ship riêng" },
+  { item: "Phí vận chuyển Văn phòng Huayue Quảng Châu → VN (gộp)", range: "$20-40", note: "Per sample khi gom batch. Tiết kiệm 50-60% so với ship riêng" },
   { item: "Phí ship riêng (express)", range: "$60-120", note: "Nếu buyer cần gấp, không gom batch" },
   { item: "Last-mile nội địa VN", range: "$2-5", note: "GHN/J&T tới tận kho buyer, đã include trong ship fee" },
   { item: "Gói đăng ký mẫu", range: "$99/tháng", note: "Mẫu không giới hạn, chỉ trả phí sản phẩm — cho buyer >5 sample/tháng" },
@@ -230,7 +230,7 @@ const SAMPLE_SUB_FEATURES = [
   { icon: "♾", title: "Mẫu không giới hạn", desc: "Không giới hạn số sample/tháng — chỉ trả phí sản phẩm" },
   { icon: "🚀", title: "Priority shipping", desc: "Sample của bạn được ưu tiên gom batch 2 lần/tuần thay vì 1 lần" },
   { icon: "🤝", title: "Quản lý chuyên trách", desc: "Quản lý tài khoản riêng phụ trách sample order, response 4 giờ" },
-  { icon: "📞", title: "Video call NCC free", desc: "Lên lịch video call review mock-up với NCC qua dispatcher CSR" },
+  { icon: "📞", title: "Video call NCC free", desc: "Lên lịch video call review mock-up với NCC qua đội Huayue Quảng Châu" },
   { icon: "📊", title: "Dashboard tracking", desc: "Theo dõi tất cả sample đang chạy, ETA, supplier comparison" },
   { icon: "↩", title: "Hoàn 100% khi MOQ", desc: "Toàn bộ phí sample của tháng được hoàn khi đặt MOQ ≥$5K" },
 ];
@@ -239,7 +239,7 @@ const PITFALLS = [
   {
     icon: "🚫",
     title: "Tự liên hệ NCC trực tiếp để giảm phí",
-    why: "Mất Bảo đảm Giao dịch protection, không có translator chuyên ngành, không tận dụng được Trung tâm Mẫu gom hàng. Tiết kiệm $20-40 nhưng rủi ro cao hơn.",
+    why: "Mất Bảo đảm Giao dịch protection, không có translator chuyên ngành, không tận dụng được văn phòng Huayue Quảng Châu gom hàng. Tiết kiệm $20-40 nhưng rủi ro cao hơn.",
   },
   {
     icon: "⚠️",
@@ -270,8 +270,8 @@ const PITFALLS = [
 
 const FAQ = [
   {
-    q: "Tôi có thể đặt sample không qua CSR, trực tiếp với NCC được không?",
-    a: "Có thể về kỹ thuật, nhưng không khuyến nghị. Tự đặt với NCC: phải đàm phán bằng tiếng Trung, trả cước air đầy đủ ($60-120 thay vì $20-40), không có Bảo đảm Giao dịch protection (NCC giao sai sample = mất tiền), không có dispatcher CSR theo dõi tiến độ. Qua CSR rẻ hơn 30-50% và an toàn hơn — đó là giá trị của Trung tâm Mẫu.",
+    q: "Tôi có thể đặt sample không qua Huayue, trực tiếp với NCC được không?",
+    a: "Có thể về kỹ thuật, nhưng không khuyến nghị. Tự đặt với NCC: phải đàm phán bằng tiếng Trung, trả cước air đầy đủ ($60-120 thay vì $20-40), không có Bảo đảm Giao dịch protection (NCC giao sai sample = mất tiền), không có đội Huayue Quảng Châu theo dõi tiến độ. Qua CSR rẻ hơn 30-50% và an toàn hơn — đó là giá trị của văn phòng Huayue Quảng Châu.",
   },
   {
     q: "Sample khác hàng MOQ như thế nào?",
@@ -279,7 +279,7 @@ const FAQ = [
   },
   {
     q: "Tôi có thể yêu cầu sample của nhiều NCC cùng lúc để so sánh không?",
-    a: "Hoàn toàn nên. Best practice của professional buyer: 'Mẫu đa nhà cung cấp' — đặt 3-5 mẫu cùng SKU từ các NCC khác nhau qua RFQ trên CSR. Trung tâm Mẫu gộp tất cả vào 1 master shipment air về VN, buyer nhận được trong cùng 1 ngày để so sánh trực tiếp. Phí ship vẫn chỉ $20-40/sample (gộp), không phải $60-120 nếu ship riêng từng NCC.",
+    a: "Hoàn toàn nên. Best practice của professional buyer: 'Mẫu đa nhà cung cấp' — đặt 3-5 mẫu cùng SKU từ các NCC khác nhau qua RFQ trên Huayue. Huayue gộp tất cả vào 1 master shipment air về VN, buyer nhận được trong cùng 1 ngày để so sánh trực tiếp. Phí ship vẫn chỉ $20-40/sample (gộp), không phải $60-120 nếu ship riêng từng NCC.",
   },
   {
     q: "Phí sample 100% được hoàn khi MOQ — cụ thể như thế nào?",
@@ -342,7 +342,7 @@ export default function DatMauPage() {
             <span className="text-gold">cho 50,000 USD MOQ tiếp theo</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
-            Đặt mẫu là bước không thể bỏ qua khi sourcing lần đầu với NCC. Theo dữ liệu CSR 2025: <b className="text-gold">22% đơn MOQ không đặt sample</b> trước có khiếu nại chất lượng — con số này <b className="text-gold">giảm xuống 4% khi buyer đặt sample</b>. Trung tâm Mẫu tại Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ với cùng NCC.
+            Đặt mẫu là bước không thể bỏ qua khi sourcing lần đầu với NCC. Theo dữ liệu CSR 2025: <b className="text-gold">22% đơn MOQ không đặt sample</b> trước có khiếu nại chất lượng — con số này <b className="text-gold">giảm xuống 4% khi buyer đặt sample</b>. Văn phòng Huayue Quảng Châu tại Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ với cùng NCC.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -406,7 +406,7 @@ export default function DatMauPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">QUY TRÌNH 6 BƯỚC</span>
           <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Từ click 'Yêu cầu mẫu' đến cầm sample trên tay</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Trung bình 8-12 ngày toàn quy trình. Buyer chỉ làm 2 bước (request + thanh toán). 4 bước còn lại do NCC + Trung tâm Mẫu + CSR Logistics tự động thực hiện.
+            Trung bình 8-12 ngày toàn quy trình. Buyer chỉ làm 2 bước (request + thanh toán). 4 bước còn lại do NCC + Văn phòng Huayue Quảng Châu + CSR Logistics tự động thực hiện.
           </p>
         </div>
         <div className="space-y-3">
@@ -450,7 +450,7 @@ export default function DatMauPage() {
         </div>
       </section>
 
-      {/* === Giải thích Trung tâm Mẫu ========================================= */}
+      {/* === Giải thích Văn phòng Huayue Quảng Châu ========================================= */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="rounded p-6 max-md:p-4 border-2 border-[#A21CAF]" style={{ background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
           <div className="flex items-start gap-4 max-md:flex-col">
@@ -461,9 +461,9 @@ export default function DatMauPage() {
               <span className="inline-block bg-[#A21CAF] text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm mb-2">
                 INNOVATION CỦA CSR
               </span>
-              <h2 className="text-[20px] font-bold text-ink mb-2">Trung tâm Mẫu Quảng Châu — Gom shipping tiết kiệm 50-60%</h2>
+              <h2 className="text-[20px] font-bold text-ink mb-2">văn phòng Huayue Quảng Châu — Gom shipping tiết kiệm 50-60%</h2>
               <p className="text-[13px] text-ink leading-relaxed mb-3">
-                Thay vì mỗi sample được ship riêng (cước air $60-120/lô), CSR vận hành Trung tâm Mẫu tại Quảng Châu (cách Foshan 25 km, Đông Quan 80 km). NCC giao sample về Hub trong 24-48h. Mỗi tuần, Hub gom <b>8-15 sample từ nhiều buyer Việt Nam</b> thành <b>1 master shipment air</b> qua DHL/FedEx về Hà Nội — chỉ <b>1 lần cước $80-150 chia đều</b> cho các buyer.
+                Thay vì mỗi sample được ship riêng (cước air $60-120/lô), CSR vận hành Văn phòng Huayue Quảng Châu tại Quảng Châu (tại quận Hải Châu, kết nối các cluster Phật Sơn và Đông Quan). NCC giao sample về Hub trong 24-48h. Mỗi tuần, Hub gom <b>8-15 sample từ nhiều buyer Việt Nam</b> thành <b>1 master shipment air</b> qua DHL/FedEx về Hà Nội — chỉ <b>1 lần cước $80-150 chia đều</b> cho các buyer.
               </p>
               <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
                 <div className="bg-paper border border-line rounded p-3 text-center">
@@ -472,7 +472,7 @@ export default function DatMauPage() {
                 </div>
                 <div className="bg-paper border border-line rounded p-3 text-center">
                   <div className="text-[22px] font-extrabold text-[#A21CAF]">$20-40</div>
-                  <div className="text-[11px] text-mute">Qua Trung tâm Mẫu (gom)</div>
+                  <div className="text-[11px] text-mute">Qua Văn phòng Huayue Quảng Châu (gom)</div>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-3 text-center">
                   <div className="text-[22px] font-extrabold text-success">−60%</div>
@@ -696,7 +696,7 @@ export default function DatMauPage() {
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Đặt sample đầu tiên ngay hôm nay</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            Tìm sản phẩm trong catalog 200K+ SKU, click 'Yêu cầu mẫu' — Trung tâm Mẫu gom vận chuyển, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. Không có lý do nào để skip bước này.
+            Tìm sản phẩm trong catalog 200K+ SKU, click 'Yêu cầu mẫu' — Văn phòng Huayue Quảng Châu gom vận chuyển, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. Không có lý do nào để skip bước này.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -729,5 +729,5 @@ export default function DatMauPage() {
 
 export const metadata = {
   title: "Đặt mẫu (Sample Order) — Huayuesc",
-  description: "Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. Trung tâm Mẫu Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample.",
+  description: "Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. văn phòng Huayue Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample.",
 };

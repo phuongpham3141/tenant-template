@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const HERO_STATS = [
-  { n: "87%", l: "Khiếu nại có lợi cho buyer", icon: "⚖️" },
-  { n: "3.2", l: "Ngày phản hồi trung bình", icon: "⏱" },
-  { n: "$42M+", l: "Giá trị đơn được bảo vệ 2025", icon: "🛡" },
+  { n: "Đa số", l: "Khiếu nại có lợi cho buyer khi evidence đầy đủ", icon: "⚖️" },
+  { n: "<24h", l: "Phản hồi trung bình", icon: "⏱" },
+  { n: "Tích luỹ", l: "Giá trị đơn được Huayue bảo vệ", icon: "🛡" },
   { n: "24/7", l: "Hotline khẩn cấp", icon: "📞" },
 ];
 
@@ -94,17 +94,17 @@ const ESCALATION_TIERS = [
     actions: [
       "Buyer mở dispute kèm bằng chứng",
       "NCC phản hồi trong 24-48h",
-      "Đối thoại có dispatcher CSR theo dõi",
+      "Đối thoại có đội Huayue Quảng Châu theo dõi",
       "Đạt thoả thuận → đóng dispute",
     ],
   },
   {
     tier: "2",
-    label: "CSR Mediation",
+    label: "Huayue Mediation",
     color: "#005F6B",
     duration: "3-14 ngày",
     bgRate: "31%",
-    description: "Nếu tier 1 không đạt thoả thuận trong 5 ngày, dispute được nâng lên tier 2 — Dispute Officer của CSR (có chứng chỉ hoà giải thương mại theo NĐ 22/2017) takes over. Officer review bằng chứng, tổ chức call 3 phương Buyer-NCC-CSR, ra phán quyết ràng buộc theo điều khoản dịch vụ.",
+    description: "Nếu tier 1 không đạt thoả thuận trong 5 ngày, dispute được nâng lên tier 2 — Dispute Officer của Huayue (có chứng chỉ hoà giải thương mại theo NĐ 22/2017) takes over. Officer review bằng chứng, tổ chức call 3 phương Buyer-NCC-CSR, ra phán quyết ràng buộc theo điều khoản dịch vụ.",
     actions: [
       "Dispute Officer review case 2-3 ngày",
       "Call 3 phương 60-90 phút (có dịch song song)",
@@ -154,7 +154,7 @@ const PROCESS_STEPS = [
   },
   {
     n: "03",
-    title: "Mở dispute trên CSR Dashboard",
+    title: "Mở dispute trên Huayue Dashboard",
     deadline: "Trong 7 ngày",
     desc: "Đăng nhập vào /buyer-center/orders, chọn đơn → 'Mở khiếu nại' → upload toàn bộ bằng chứng. Hệ thống tự động khoá tài khoản trung gian ngay lập tức — NCC không thể nhận tiền cho đến khi giải quyết xong.",
     tips: [
@@ -181,15 +181,15 @@ const PROCESS_STEPS = [
     desc: "Hai bên đàm phán qua chat CSR có dispatcher theo dõi. ~62% case đạt thoả thuận tại đây. Phương án phổ biến: refund 15-50% + giữ hàng, refund 100% + return, ship hàng bù miễn phí, credit cho đơn sau.",
     tips: [
       "Đưa ra ít nhất 2 phương án để NCC chọn",
-      "Ghi chép thoả thuận bằng văn bản trên CSR (auto-binding)",
+      "Ghi chép thoả thuận bằng văn bản trên Huayue (auto-binding)",
       "Không thoả thuận private ngoài hệ thống — không có pháp lý protection",
     ],
   },
   {
     n: "06",
-    title: "CSR Mediation (Tier 2)",
+    title: "Huayue Mediation (Tier 2)",
     deadline: "14 ngày",
-    desc: "Nếu tier 1 fail, Dispute Officer của CSR (chứng chỉ hoà giải NĐ 22/2017) takes over. Review bằng chứng 2-3 ngày, tổ chức call 3 phương 60-90 phút, ra phán quyết dựa trên evidence + điều khoản dịch vụ. Phán quyết binding với cả hai bên qua điều khoản đã ký.",
+    desc: "Nếu tier 1 fail, Dispute Officer của Huayue (chứng chỉ hoà giải NĐ 22/2017) takes over. Review bằng chứng 2-3 ngày, tổ chức call 3 phương 60-90 phút, ra phán quyết dựa trên evidence + điều khoản dịch vụ. Phán quyết binding với cả hai bên qua điều khoản đã ký.",
     tips: [
       "Phán quyết dựa trên: spec PO, evidence quality, NCC track record, AQL standard",
       "NCC không thi hành → suspend account + reserved fund forfeit",
@@ -204,7 +204,7 @@ const PROCESS_STEPS = [
     tips: [
       "Refund chuyển về tài khoản gốc trong 5-10 ngày làm việc",
       "Replacement ship miễn phí express với QC trước xuất xưởng",
-      "Credit dùng được trong 12 tháng, áp dụng cho mọi NCC trên CSR",
+      "Credit dùng được trong 12 tháng, áp dụng cho mọi NCC trên Huayue",
     ],
   },
 ];
@@ -237,7 +237,7 @@ const CASE_STUDIES = [
     industry: "Sanitary",
     days: "21 ngày",
     outcome: "Refund 100%",
-    detail: "Buyer Hải Phòng đặt 380 bồn cầu Foshan. Sau khi nhận đặt cọc 30%, NCC dừng phản hồi 14 ngày, Tianyancha cho thấy NCC vào diện cảnh báo phá sản. CSR escalate ngay, niêm phong tài khoản trung gian, tier 2 mediation auto-trigger sau 5 ngày NCC không phản hồi. Refund 100% trong 14 ngày làm việc qua Vietcombank. NCC bị suspended khỏi CSR vĩnh viễn.",
+    detail: "Buyer Hải Phòng đặt 380 bồn cầu Foshan. Sau khi nhận đặt cọc 30%, NCC dừng phản hồi 14 ngày, Tianyancha cho thấy NCC vào diện cảnh báo phá sản. CSR escalate ngay, niêm phong tài khoản trung gian, tier 2 mediation auto-trigger sau 5 ngày NCC không phản hồi. Refund 100% trong 14 ngày làm việc qua ngân hàng đối tác Việt Nam. NCC bị suspended khỏi CSR vĩnh viễn.",
   },
   {
     title: "Đơn $135K dệt may — vi phạm IP",
@@ -249,10 +249,10 @@ const CASE_STUDIES = [
 ];
 
 const EMERGENCY_CHANNELS = [
-  { icon: "🚨", title: "Hotline khẩn cấp 24/7", value: "1900 6688", desc: "Cho gian lận, IP infringement, customs giữ hàng — gọi ngay, response trong 30 phút" },
+  { icon: "🚨", title: "Hotline khẩn cấp 24/7", value: "+86 181-2225-6999", desc: "Cho gian lận, IP infringement, customs giữ hàng — gọi ngay, response trong 30 phút" },
   { icon: "💬", title: "Live Chat dispute", value: "dashboard /buyer-center", desc: "Click 'Mở khiếu nại' trên đơn — chat trực tiếp Dispute Officer" },
   { icon: "✉", title: "Email Dispute team", value: "dispute@huayuesc.vn", desc: "Gửi case complex, đính kèm bằng chứng — phản hồi <2 giờ trong giờ làm việc" },
-  { icon: "📱", title: "WhatsApp / Zalo", value: "+84 1900 6688", desc: "Cho buyer ở vùng sâu không stable internet, escalation manager phụ trách" },
+  { icon: "📱", title: "WhatsApp / Zalo", value: "+84 +86 181-2225-6999", desc: "Cho buyer ở vùng sâu không stable internet, escalation manager phụ trách" },
 ];
 
 const FAQ = [
@@ -262,11 +262,11 @@ const FAQ = [
   },
   {
     q: "Phí khiếu nại là bao nhiêu?",
-    a: "Tier 1 (đối thoại trực tiếp) và Tier 2 (CSR mediation) — HOÀN TOÀN MIỄN PHÍ cho buyer. CSR đầu tư hệ thống dispute như là một phần của Bảo đảm Giao dịch. Tier 3 (trọng tài VIAC/CIETAC) — phí trọng tài $2,000-8,000 tuỳ giá trị tranh chấp, thông thường bên thua chịu (loser pays). CSR hỗ trợ chi phí pháp lý cho tier 3 nếu buyer thắng — không tính phí thêm.",
+    a: "Tier 1 (đối thoại trực tiếp) và Tier 2 (CSR mediation) — HOÀN TOÀN MIỄN PHÍ cho buyer. CSR đầu tư hệ thống dispute như là một phần của Bảo đảm Giao dịch. Tier 3 (trọng tài VIAC Hà Nội) — phí trọng tài $2,000-8,000 tuỳ giá trị tranh chấp, thông thường bên thua chịu (loser pays). CSR hỗ trợ chi phí pháp lý cho tier 3 nếu buyer thắng — không tính phí thêm.",
   },
   {
     q: "Tôi có cần thuê luật sư không?",
-    a: "Không bắt buộc. Tier 1 và Tier 2 chỉ cần buyer làm việc trực tiếp với Dispute Officer của CSR — họ có chứng chỉ hoà giải thương mại theo NĐ 22/2017 và xử lý hàng nghìn case. Tier 3 (VIAC) thì khuyến nghị có luật sư cho đơn > $50K — CSR có danh sách law firm partner với rate ưu đãi cho khách hàng (Baker McKenzie, YKVN, VILAF... — rate $200-450/giờ).",
+    a: "Không bắt buộc. Tier 1 và Tier 2 chỉ cần buyer làm việc trực tiếp với Dispute Officer của Huayue — họ có chứng chỉ hoà giải thương mại theo NĐ 22/2017 và xử lý hàng nghìn case. Tier 3 (VIAC) thì khuyến nghị có luật sư cho đơn > $50K — CSR có danh sách law firm partner với rate ưu đãi cho khách hàng (Baker McKenzie, YKVN, VILAF... — rate $200-450/giờ).",
   },
   {
     q: "NCC giao hàng đã 5 ngày nhưng tôi cần thêm thời gian để kiểm tra (kho ở tỉnh xa, chưa đến) — làm sao gia hạn?",
@@ -274,7 +274,7 @@ const FAQ = [
   },
   {
     q: "Nếu phán quyết không có lợi cho tôi, có quyền kháng cáo không?",
-    a: "Có. Phán quyết Tier 2 (CSR Mediation) có 5 ngày kháng cáo trước khi có hiệu lực thi hành. Buyer nộp đơn kháng cáo kèm bằng chứng mới hoặc lập luận pháp lý mới — Senior Dispute Officer (cấp cao hơn) review lại 7-10 ngày. Nếu vẫn không đồng ý, buyer có quyền đưa ra Tier 3 — trọng tài VIAC/CIETAC theo điều khoản trong PI. Phán quyết trọng tài là final, không kháng cáo (theo Luật Trọng tài Thương mại 2010).",
+    a: "Có. Phán quyết Tier 2 (Huayue Mediation) có 5 ngày kháng cáo trước khi có hiệu lực thi hành. Buyer nộp đơn kháng cáo kèm bằng chứng mới hoặc lập luận pháp lý mới — Senior Dispute Officer (cấp cao hơn) review lại 7-10 ngày. Nếu vẫn không đồng ý, buyer có quyền đưa ra Tier 3 — trọng tài VIAC Hà Nội theo điều khoản trong PI. Phán quyết trọng tài là final, không kháng cáo (theo Luật Trọng tài Thương mại 2010).",
   },
   {
     q: "Tôi sợ NCC trả thù sau khi mở dispute (blacklist tôi, nâng giá đơn sau...)",
@@ -329,7 +329,7 @@ export default function KhieuNaiPage() {
             <span className="text-gold">Huayuesc đứng về phía bạn</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
-            Hệ thống giải quyết tranh chấp 3 cấp độ — từ đối thoại trực tiếp, qua CSR Mediation theo NĐ 22/2017, đến trọng tài quốc tế VIAC/CIETAC theo Công ước New York 1958. Buyer Việt Nam được bảo vệ bằng pháp lý, không phải bằng lời hứa. 87% case kết thúc có lợi cho buyer trong trung bình 3.2 ngày.
+            Hệ thống giải quyết tranh chấp 3 cấp độ — từ đối thoại trực tiếp, qua Huayue Mediation theo NĐ 22/2017, đến trọng tài quốc tế VIAC Hà Nội theo Công ước New York 1958. Buyer Việt Nam được bảo vệ bằng pháp lý, không phải bằng lời hứa. đa số case kết thúc có lợi cho buyer khi evidence đầy đủ.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -347,7 +347,7 @@ export default function KhieuNaiPage() {
               href="tel:19006688"
               className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              🚨 Hotline khẩn cấp 1900 6688
+              🚨 Hotline khẩn cấp +86 181-2225-6999
             </a>
           </div>
         </div>
@@ -368,7 +368,7 @@ export default function KhieuNaiPage() {
               <div className="grid grid-cols-3 gap-2 text-center text-[12px] max-md:grid-cols-1">
                 <div className="bg-success/10 border border-success/30 rounded-sm p-3">
                   <div className="font-bold text-success">0-7 ngày</div>
-                  <div className="text-mute">Bảo đảm Giao dịch · Free · Win rate 87%</div>
+                  <div className="text-mute">Bảo đảm Giao dịch · Free · Đa số có lợi cho buyer</div>
                 </div>
                 <div className="bg-gold/10 border border-gold/30 rounded-sm p-3">
                   <div className="font-bold text-[#9C6A1F]">8-30 ngày</div>
@@ -517,7 +517,7 @@ export default function KhieuNaiPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">KẾT QUẢ KHẢ THI</span>
           <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Phân bố kết quả dispute 2025</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Dữ liệu từ 1,840+ dispute đã giải quyết trên CSR — 87% có lợi cho buyer dưới các hình thức khác nhau.
+            Dữ liệu từ các dispute đã giải quyết tại Huayue — đa số có lợi cho buyer khi evidence đầy đủ dưới các hình thức khác nhau.
           </p>
         </div>
         <div className="grid grid-cols-5 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -540,7 +540,7 @@ export default function KhieuNaiPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">TÌNH HUỐNG ĐIỂN HÌNH</span>
           <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">4 case có thật (đã anonymize)</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Lựa chọn từ 1,840+ dispute đã đóng — đại diện cho 4 loại tình huống thường gặp nhất với buyer Việt Nam.
+            Lựa chọn từ các dispute đã đóng — đại diện cho 4 loại tình huống thường gặp nhất với buyer Việt Nam.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -683,11 +683,11 @@ export default function KhieuNaiPage() {
               href="tel:19006688"
               className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              🚨 1900 6688 — 24/7
+              🚨 +86 181-2225-6999 — 24/7
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            Tier 1 (đối thoại) và Tier 2 (CSR Mediation) hoàn toàn miễn phí. Tier 3 (trọng tài VIAC/CIETAC) có phí $2,000-8,000 — bên thua chịu theo phán quyết. CSR đầu tư hệ thống dispute như một phần cốt lõi của Bảo đảm Giao dịch, không tính phí thêm.
+            Tier 1 (đối thoại) và Tier 2 (Huayue Mediation) hoàn toàn miễn phí. Tier 3 (trọng tài VIAC Hà Nội) có phí $2,000-8,000 — bên thua chịu theo phán quyết. CSR đầu tư hệ thống dispute như một phần cốt lõi của Bảo đảm Giao dịch, không tính phí thêm.
           </div>
         </div>
       </section>
@@ -697,5 +697,5 @@ export default function KhieuNaiPage() {
 
 export const metadata = {
   title: "Khiếu nại & tranh chấp — Huayuesc Dispute Resolution",
-  description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, CSR Mediation theo NĐ 22/2017, trọng tài VIAC/CIETAC theo Công ước New York 1958. 87% case có lợi cho buyer trong 3.2 ngày trung bình. Hotline 24/7: 1900 6688.",
+  description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình. Hotline 24/7: +86 181-2225-6999.",
 };
