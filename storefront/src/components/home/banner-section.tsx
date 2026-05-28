@@ -121,7 +121,7 @@ export function BannerSection() {
   return (
     <section className="py-4 bg-paper max-md:py-2">
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_240px] gap-3 items-stretch h-[504px] max-[1280px]:grid-cols-1 max-[1280px]:h-auto max-md:gap-2 max-md:px-3">
-        <div className="max-xl:hidden h-full relative" style={{ zIndex: 100 }}>
+        <div className="max-xl:hidden h-full relative" style={{ zIndex: 10 }}>
           <CategoryMenu />
         </div>
         <div className="relative" style={{ zIndex: 1 }}>
