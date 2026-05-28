@@ -1,5 +1,109 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+
+/**
+ * Smart paragraph renderer.
+ *
+ * Scans the paragraph text for inline list markers and, if it finds at
+ * least 2 consecutive markers, splits the paragraph into an intro
+ * sentence + a `<ul>` of items + optional trailing prose.
+ *
+ * Patterns supported (tried in order, first match wins):
+ *   • (Bước 1) (Bước 2) ...           → step list
+ *   • (Cấp 1 — ...) (Cấp 2 — ...) ... → level list
+ *   • (a) (b) (c) ...                 → letter list
+ *   • (1) (2) (3) ...                 → number list
+ *   • (i) (ii) (iii) ...              → roman list
+ *
+ * For each bullet body we re-run the parser once to catch one level of
+ * nested lists (e.g. (Bước 3) contains (a)/(b)/(c) sub-items).
+ *
+ * Output: <p>intro</p><ul><li><b>marker</b> body</li>…</ul><p>trailing</p>
+ */
+type ParsedList = {
+  intro: string;
+  bullets: { label: string; body: string }[];
+  trailing: string;
+};
+
+function parseInlineList(text: string): ParsedList | null {
+  const patterns: { rx: RegExp; minItems: number }[] = [
+    { rx: /\((Bước\s+\d+)\)\s+/g, minItems: 2 },
+    { rx: /\((Cấp\s+\d+(?:\s+—[^)]*)?)\)\s+/g, minItems: 2 },
+    { rx: /(?<=[.\s:;])\(([A-Z])\)\s+/g, minItems: 3 }, // (A) (B) (C) — uppercase letters
+    { rx: /(?<=[.\s:;])\(([a-z])\)\s+/g, minItems: 3 }, // (a) (b) (c)
+    { rx: /(?<=[.\s:;])\((\d{1,2})\)\s+/g, minItems: 3 }, // (1) (2) (3)
+    { rx: /(?<=[.\s:;])\((i{1,3}|iv|v|vi{0,3}|ix|x)\)\s+/g, minItems: 3 }, // (i) (ii) (iii)
+  ];
+
+  for (const { rx, minItems } of patterns) {
+    const matches = [...text.matchAll(rx)];
+    if (matches.length < minItems) continue;
+
+    // Optional: confirm markers are in expected sequence (a,b,c… / 1,2,3…)
+    // — skipped here to keep parser permissive; trust the writer's intent.
+
+    const firstStart = matches[0].index!;
+    const intro = text.slice(0, firstStart).trim();
+
+    const bullets: { label: string; body: string }[] = [];
+    for (let i = 0; i < matches.length; i++) {
+      const m = matches[i];
+      const start = m.index! + m[0].length;
+      const end = i + 1 < matches.length ? matches[i + 1].index! : text.length;
+      bullets.push({ label: m[1], body: text.slice(start, end).trim() });
+    }
+
+    // We choose NOT to detect "trailing" as a separate paragraph — any
+    // sentence after the last marker stays inside the final bullet body.
+    return { intro, bullets, trailing: "" };
+  }
+  return null;
+}
+
+/** Render one paragraph. Recurses once for nested lists in bullet bodies. */
+function RenderParagraph({ text, depth = 0 }: { text: string; depth?: number }) {
+  const parsed = parseInlineList(text);
+  if (!parsed) {
+    return <p className="text-[14px] text-ink leading-relaxed">{text}</p>;
+  }
+  const { intro, bullets } = parsed;
+  return (
+    <>
+      {intro && <p className="text-[14px] text-ink leading-relaxed mb-2">{intro}</p>}
+      <ul
+        className={
+          depth === 0
+            ? "space-y-2 my-3 pl-1"
+            : "space-y-1.5 mt-2 ml-2 pl-4 border-l-2 border-line"
+        }
+      >
+        {bullets.map((b, i) => {
+          // Recurse only one level to avoid runaway nesting.
+          const nested = depth === 0 ? parseInlineList(b.body) : null;
+          return (
+            <li key={i} className="text-[14px] text-ink leading-relaxed flex gap-2.5">
+              <span
+                className="font-bold text-brand flex-shrink-0 mt-0.5 min-w-[26px]"
+                aria-hidden="true"
+              >
+                {b.label}.
+              </span>
+              <div className="flex-1 min-w-0">
+                {nested ? (
+                  <RenderParagraph text={b.body} depth={1} />
+                ) : (
+                  <span>{b.body}</span>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+}
 
 type Topic = {
   title: string;
@@ -1242,14 +1346,12 @@ export default async function InfoPage({
                   {s.title}
                 </h2>
               )}
-              {/* Drop cap on first para of first section */}
-              {i === 0 && !s.title ? (
-                <p className="text-[14px] text-ink leading-relaxed first-letter:text-[44px] first-letter:font-extrabold first-letter:text-brand first-letter:float-left first-letter:mr-2 first-letter:leading-none first-letter:mt-1">
-                  {s.paragraph}
-                </p>
-              ) : (
-                <p className="text-[14px] text-ink leading-relaxed">{s.paragraph}</p>
-              )}
+              {/* Smart paragraph renderer — detects inline lists and breaks
+                  them into <ul>. Falls back to a plain <p> when no list
+                  patterns are found. */}
+              <Fragment>
+                <RenderParagraph text={s.paragraph} />
+              </Fragment>
 
               {/* Pull-quote after first section */}
               {i === 0 && t.pullQuote && (
