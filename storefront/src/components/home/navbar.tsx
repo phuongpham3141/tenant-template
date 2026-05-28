@@ -35,7 +35,7 @@ export function NavBar() {
           <div className="px-6 py-3.5 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[13.5px] cursor-pointer w-[280px]">
             <span>☰</span> TẤT CẢ DANH MỤC <span className="ml-auto">▾</span>
           </div>
-          <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
+          <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-[60]">
             <aside className="mm-l1 w-[260px] border-r border-line py-2">
               {(() => {
                 let n = 0;
