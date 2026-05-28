@@ -17,7 +17,7 @@ const VALUE_PROPS = [
   {
     icon: "🤝",
     title: "Đội ngũ song ngữ Trung – Việt",
-    desc: "Đội Quảng Châu (sourcing, QC, audit) + đội Hải Phòng (kho, thông quan, sales). Hỗ trợ qua WeChat, DingTalk, Zalo — phản hồi trong giờ làm việc dưới 30 phút.",
+    desc: "Đội Quảng Châu (sourcing, QC, audit) + đội Hà Nội (kho, thông quan, sales). Hỗ trợ qua WeChat, DingTalk, Zalo — phản hồi trong giờ làm việc dưới 30 phút.",
   },
   {
     icon: "🛡",

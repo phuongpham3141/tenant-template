@@ -32,42 +32,50 @@ type Office = {
 
 const OFFICES: Office[] = [
   {
-    id: "hp",
+    id: "hn",
     flag: "🇻🇳",
     region: "VN",
-    city: "Hải Phòng",
-    cityEn: "Hai Phong",
-    role: "Trụ sở chính — Vận hành, Kho bãi, Thông quan & Phân phối VN",
+    city: "Hà Nội",
+    cityEn: "Hanoi",
+    role: "Trụ sở chính — Vận hành, Bán hàng & Phân phối VN",
     isHQ: true,
-    address: "Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng, Việt Nam",
-    addressCn: "越南海防港南亭武工业区",
-    addressEn: "Nam Dinh Vu Industrial Park, Hai Phong Port, Vietnam",
+    address: "Tầng 07, Toà Bảo Ngọc Building, số 02 phố Thanh Lâm, Phường Xuân Phương, Thành phố Hà Nội, Việt Nam",
+    addressCn: "越南河内市春芳坊清林街2号宝玉大厦7楼",
+    addressEn:
+      "Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi, Vietnam",
     phone: "+86 181-2225-6999",
     hotline: "+86 181-2225-6999",
     email: "support@huayuesc.vn",
-    manager: { name: "Đội vận hành Hải Phòng", title: "Head of Operations & Customs", initials: "HQ" },
+    manager: {
+      name: "Đội vận hành Hà Nội",
+      title: "Head of Operations & Distribution",
+      initials: "HN",
+    },
     teamSize: 20,
     departments: [
-      "Khai báo hải quan VNACCS/VCIS",
-      "Kho bãi & Container Inspection",
-      "Phối hợp hãng tàu & cảng Hải Phòng",
-      "Phân phối VN (HN, HCM, 63 tỉnh)",
-      "Customer Success tiếng Việt",
+      "Khai báo hải quan VNACCS/VCIS (làm việc với cảng Hải Phòng)",
+      "Phối hợp logistics & hãng tàu",
+      "Phân phối VN (Hà Nội, HCM, 63 tỉnh)",
       "Sales B2B vật liệu xây dựng & nội thất",
+      "Customer Success tiếng Việt",
+      "Đối tác đại lý & nhà thầu xây dựng",
     ],
-    hours: "T2 – T7: 8:00 – 17:30 · CN: ca trực 8:00 – 12:00",
+    hours: "T2 – T7: 8:00 – 17:30",
     timezone: "GMT+7 (Asia/Ho_Chi_Minh)",
-    transit: "Trong khu công nghiệp Nam Đình Vũ, kết nối trực tiếp cảng Hải Phòng (4 km) và cảng Lạch Huyện (đường nội bộ KCN). Cách trung tâm Hải Phòng ~12 km. Cao tốc Hà Nội – Hải Phòng dẫn thẳng vào KCN.",
-    parking: "Bãi xe nội bộ kho — miễn phí cho khách hẹn (báo bảo vệ trước qua hotline)",
-    landmark: "Nằm trong KCN Nam Đình Vũ — khu chuyên nhập khẩu hàng container từ Trung Quốc, gần kho ngoại quan và bãi container lớn nhất miền Bắc",
+    transit:
+      "Toà Bảo Ngọc Building tại số 02 phố Thanh Lâm, Phường Xuân Phương — phía Tây Hà Nội, cách trung tâm Mỹ Đình ~3 km, cách sân bay Nội Bài ~30 km qua Đại lộ Thăng Long. Bus 27, 29, 32 dừng gần toà.",
+    parking: "Bãi xe nội bộ Toà Bảo Ngọc — miễn phí cho khách hẹn (báo lễ tân trước qua hotline)",
+    landmark:
+      "Toà Bảo Ngọc Building, Phường Xuân Phương, thuộc khu vực Nam Từ Liêm phía Tây Hà Nội — gần các đại lý phân phối VLXD và showroom nội thất Hà Nội & các tỉnh phía Bắc",
     services: [
-      "Khai báo hải quan VNACCS/VCIS cho hàng nhập từ Trung Quốc",
-      "Quản lý kho và inspection container tại cảng Hải Phòng",
+      "Quản lý chuỗi cung ứng đầu Việt Nam (logistics + thông quan + phân phối)",
+      "Khai báo VNACCS/VCIS cho container nhập từ Trung Quốc (cảng Hải Phòng / Cát Lái)",
       "Vận chuyển nội địa DDP đến HN, HCM và 63 tỉnh thành",
-      "Tư vấn buyer Việt Nam toàn quốc qua hotline",
+      "Sales & tư vấn buyer Việt Nam qua hotline + email",
+      "Đối tác đại lý, nhà thầu xây dựng, công ty thiết kế nội thất",
       "Hỗ trợ Customer Success tiếng Việt 24/7",
     ],
-    googleMapsQuery: "Nam+Dinh+Vu+Industrial+Park+Hai+Phong",
+    googleMapsQuery: "Bao+Ngoc+Building+02+Thanh+Lam+Xuan+Phuong+Hanoi",
   },
   {
     id: "gz",
@@ -108,11 +116,11 @@ const OFFICES: Office[] = [
 
 const DEPARTMENTS = [
   { icon: "💼", title: "Sales & Tư vấn sourcing", email: "sales@huayuesc.vn", desc: "Tư vấn RFQ, sàng lọc NCC Trung Quốc, đàm phán giá, hợp đồng PI/PO." },
-  { icon: "🚚", title: "Logistics, Thông quan & Kho", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF — đặt tàu, khai báo VNACCS, kho bãi Hải Phòng, tracking đơn." },
+  { icon: "🚚", title: "Logistics, Thông quan & Kho", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF — đặt tàu, khai báo VNACCS (cảng Hải Phòng & Cát Lái), tracking đơn." },
   { icon: "🔍", title: "QC & Audit nhà máy", email: "sales@huayuesc.vn", desc: "Kiểm hàng AQL 2.5 trước xuất xưởng, audit thực địa NCC tại Quảng Đông, báo cáo có ảnh/video." },
   { icon: "🛡", title: "Bảo đảm Giao dịch & Khiếu nại", email: "support@huayuesc.vn", desc: "Tài khoản tín thác, mediation tranh chấp, hoàn tiền hoặc đổi hàng theo Mục 7 Điều khoản." },
   { icon: "🤝", title: "Đối tác phân phối & Đại lý VN", email: "partnership@huayuesc.vn", desc: "Hợp tác đại lý phân phối, nhà thầu xây dựng, công ty thiết kế trang trí nội thất." },
-  { icon: "👥", title: "Tuyển dụng & HR", email: "hr@huayuesc.vn", desc: "Hồ sơ ứng tuyển vị trí tại Hải Phòng và Quảng Châu, đào tạo nội bộ." },
+  { icon: "👥", title: "Tuyển dụng & HR", email: "hr@huayuesc.vn", desc: "Hồ sơ ứng tuyển vị trí tại Hà Nội và Quảng Châu, đào tạo nội bộ." },
   { icon: "🔒", title: "Bảo mật & DPO", email: "privacy@huayuesc.vn", desc: "Quyền chủ thể dữ liệu, NĐ 13/2023, breach notification < 72h." },
 ];
 
@@ -188,7 +196,7 @@ export default function LienHePage() {
             Liên hệ Huayuesc — Hai văn phòng, một chuỗi cung ứng
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
-            Trụ sở chính tại <b>Khu công nghiệp Nam Đình Vũ, cảng Hải Phòng</b> phụ trách kho bãi, thông quan VNACCS và phân phối tại Việt Nam. Văn phòng đại diện thu mua tại <b>Tầng 3, Cảng Shuyu Chuangxing, quận Hải Châu, Quảng Châu</b> phụ trách sourcing, audit nhà máy và QC trước xuất xưởng. Hotline duy nhất: <b>+86 181-2225-6999</b> — hỗ trợ tiếng Việt và tiếng Trung.
+            Trụ sở chính tại <b>Tầng 07, Toà Bảo Ngọc Building, số 02 phố Thanh Lâm, Phường Xuân Phương, Hà Nội</b> phụ trách kho bãi, thông quan VNACCS và phân phối tại Việt Nam. Văn phòng đại diện thu mua tại <b>Tầng 3, Cảng Shuyu Chuangxing, quận Hải Châu, Quảng Châu</b> phụ trách sourcing, audit nhà máy và QC trước xuất xưởng. Hotline duy nhất: <b>+86 181-2225-6999</b> — hỗ trợ tiếng Việt và tiếng Trung.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {[
@@ -212,7 +220,7 @@ export default function LienHePage() {
           <div className="flex justify-between items-end gap-4 mb-4 flex-wrap">
             <div>
               <h2 className="text-[18px] font-bold text-ink">Chọn văn phòng để xem chi tiết</h2>
-              <p className="text-[12.5px] text-mute mt-0.5">2 văn phòng — trụ sở Hải Phòng (Việt Nam) và văn phòng đại diện Quảng Châu (Trung Quốc)</p>
+              <p className="text-[12.5px] text-mute mt-0.5">2 văn phòng — trụ sở Hà Nội (Việt Nam) và văn phòng đại diện Quảng Châu (Trung Quốc)</p>
             </div>
             {/* Region filter chips */}
             <div className="flex gap-1.5 bg-bg border border-line rounded-sm p-1">

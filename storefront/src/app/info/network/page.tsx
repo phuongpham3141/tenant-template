@@ -21,7 +21,7 @@ const DISTRIBUTION_PARTNERS = [
     benefits: [
       "Giá DDP tận kho",
       "Bảo hành theo nhà máy gốc",
-      "Hỗ trợ đổi trả qua đội Hải Phòng",
+      "Hỗ trợ đổi trả qua đội Hà Nội",
       "Catalog & sample tiếng Việt",
     ],
   },
@@ -146,7 +146,7 @@ const BUYER_BENEFITS = [
   { icon: "💰", title: "Giá thật tại gốc", desc: "Không qua tay trung gian, không markup ngầm, có audit trail từ xưởng." },
   { icon: "✅", title: "Chất lượng kiểm tại nguồn", desc: "Đội QC Huayue Quảng Châu kiểm AQL 2.5 trước xuất xưởng." },
   { icon: "🚛", title: "Trọn gói DDP về VN", desc: "Bao gồm logistics + thông quan + thuế + giao tận kho. Không lo đặt tàu, hải quan." },
-  { icon: "🇻🇳", title: "Hỗ trợ tiếng Việt", desc: "Toàn bộ giao tiếp qua đội Hải Phòng — không cần biết tiếng Trung." },
+  { icon: "🇻🇳", title: "Hỗ trợ tiếng Việt", desc: "Toàn bộ giao tiếp qua đội Hà Nội — không cần biết tiếng Trung." },
   { icon: "🎁", title: "Sample & 3D miễn phí", desc: "Cho đơn ≥30 bộ — đầu tư trước để chốt đúng mẫu." },
   { icon: "📊", title: "Cập nhật thị trường", desc: "Báo cáo giá nhà máy hàng tháng, tỷ giá CNY/VND, chính sách thuế mới." },
 ];
@@ -154,7 +154,7 @@ const BUYER_BENEFITS = [
 const FAQS = [
   {
     q: "Tôi muốn trở thành đại lý phân phối của Huayue tại tỉnh tôi — quy trình thế nào?",
-    a: "Gửi email partnership@huayuesc.vn kèm: giấy phép kinh doanh, thông tin showroom/kho hiện có, ngành đang phân phối (VLXD / nội thất / điện máy), khu vực coverage. Đội Huayue Hải Phòng liên hệ qua điện thoại trong 5 ngày làm việc, có thể đến thăm trực tiếp nếu cần. Sau khi xác minh, ký hợp đồng đại lý — không phí thành viên, chỉ chia commission theo doanh số.",
+    a: "Gửi email partnership@huayuesc.vn kèm: giấy phép kinh doanh, thông tin showroom/kho hiện có, ngành đang phân phối (VLXD / nội thất / điện máy), khu vực coverage. Đội Huayue Hà Nội liên hệ qua điện thoại trong 5 ngày làm việc, có thể đến thăm trực tiếp nếu cần. Sau khi xác minh, ký hợp đồng đại lý — không phí thành viên, chỉ chia commission theo doanh số.",
   },
   {
     q: "Tôi là nhà thầu xây dựng — Huayue hỗ trợ gì cho dự án của tôi?",
@@ -279,7 +279,7 @@ export default function NetworkPage() {
               </div>
             </div>
             <p className="text-[13px] text-ink/80 mb-3 leading-relaxed">
-              Trụ sở chính tại KCN Nam Đình Vũ, cảng Hải Phòng — kho bãi, thông quan, phân phối đến 63 tỉnh thành Việt Nam.
+              Trụ sở chính tại Toà Bảo Ngọc Building, Xuân Phương, Hà Nội — kho bãi, thông quan, phân phối đến 63 tỉnh thành Việt Nam.
             </p>
             <ul className="space-y-1.5 text-[12.5px] text-ink/85">
               <li className="flex gap-2"><span className="text-accent">●</span> Đại lý phân phối VLXD &amp; nội thất</li>
@@ -476,7 +476,7 @@ export default function NetworkPage() {
               </span>
               <b className="block text-[20px] mb-1.5 max-md:text-[17px]">Trở thành đối tác phân phối Huayue</b>
               <p className="text-[13px] opacity-90 leading-relaxed max-md:text-[12.5px]">
-                Đại lý VLXD, nhà thầu xây dựng, công ty thiết kế nội thất hoặc đại lý điện máy — gửi giấy phép kinh doanh và thông tin showroom/kho. Đội Huayue Hải Phòng liên hệ trong 5 ngày làm việc.
+                Đại lý VLXD, nhà thầu xây dựng, công ty thiết kế nội thất hoặc đại lý điện máy — gửi giấy phép kinh doanh và thông tin showroom/kho. Đội Huayue Hà Nội liên hệ trong 5 ngày làm việc.
               </p>
               <p className="text-[12px] opacity-80 mt-2">
                 📞 {COMPANY.contact.hotline} · ✉ <a href={`mailto:${COMPANY.contact.emails.partnership}`} className="underline hover:text-gold">{COMPANY.contact.emails.partnership}</a>

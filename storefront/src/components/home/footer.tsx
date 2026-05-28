@@ -206,7 +206,7 @@ export function Footer() {
           <span className="opacity-80 max-lg:order-3 leading-relaxed">
             © 2026 <b className="font-semibold">CÔNG TY TNHH CHUỖI CUNG ỨNG HUAYUE VIỆT NAM</b>{" · "}
             <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
-            MST: 0111453693 · KCN Nam Đình Vũ, cảng Hải Phòng
+            MST: 0111453693 · Toà Bảo Ngọc Building, Xuân Phương, Hà Nội
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Ngôn ngữ:</span>
