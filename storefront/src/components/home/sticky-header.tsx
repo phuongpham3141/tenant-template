@@ -3,11 +3,22 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+const NAV_LINKS: { label: string; href: string }[] = [
+  { label: "Trang chủ", href: "/" },
+  { label: "Sản phẩm", href: "/products" },
+  { label: "Nhà cung cấp", href: "/suppliers" },
+  { label: "Hội chợ", href: "/trade-shows" },
+  { label: "Kênh ngành", href: "/industry-channels" },
+  { label: "Cảnh báo giao dịch", href: "/trade-alert" },
+  { label: "Yêu cầu mua hàng", href: "/buying-request" },
+  { label: "Bán trên CSR", href: "/sell-on-csr" },
+];
+
 export function StickyHeader() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 240);
+    const onScroll = () => setShow(window.scrollY > 120);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -15,9 +26,9 @@ export function StickyHeader() {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 bg-paper border-b border-line shadow-md transition-transform duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-paper border-b-[3px] border-brand shadow-lg transition-transform duration-200 ${
         show ? "translate-y-0" : "-translate-y-full"
-      } max-md:px-2`}
+      } max-md:px-0`}
       aria-hidden={!show}
     >
       <div className="max-w-[1400px] mx-auto px-4 py-2 flex items-center gap-3 max-md:gap-2 max-md:px-2">
@@ -97,6 +108,35 @@ export function StickyHeader() {
           <span>Giỏ hàng</span>
         </Link>
       </div>
+
+      {/* Secondary row: condensed category nav so the sticky bar still
+          surfaces primary navigation when the original NavBar is scrolled
+          off-screen. Hidden on tablet/mobile to keep sticky height slim. */}
+      <nav className="bg-brand text-white max-xl:hidden">
+        <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0 overflow-x-auto">
+          <Link
+            href="/category"
+            className="px-4 py-2 bg-brand-dark text-white flex items-center gap-2 font-bold text-[12.5px] cursor-pointer flex-shrink-0"
+          >
+            <span>☰</span> TẤT CẢ DANH MỤC
+          </Link>
+          {NAV_LINKS.map((l) => (
+            <Link
+              key={l.label}
+              href={l.href}
+              className="px-3.5 py-2 text-white text-[12.5px] font-medium border-b-[2px] border-transparent -mb-[2px] hover:bg-brand-dark hover:border-b-gold whitespace-nowrap"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            href="/factory-tour"
+            className="px-3.5 py-2 text-gold text-[12.5px] font-medium border-b-[2px] border-transparent -mb-[2px] hover:bg-brand-dark hover:border-b-gold whitespace-nowrap"
+          >
+            🔥 Tham quan nhà máy
+          </Link>
+        </div>
+      </nav>
     </div>
   );
 }
