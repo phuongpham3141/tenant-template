@@ -71,6 +71,9 @@ export const NAV_CATEGORIES = [
 export type NavSubItem = {
   name: string;
   slug: string;
+  /** Emoji shown next to the sub-item name in the mega-menu sidebar
+      (mirrors the main category icon styling). */
+  icon: string;
   image: string;
   /** Tagline shown next to hero image in the sub-panel. */
   tagline: string;
@@ -87,7 +90,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
     main: { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
     items: [
       {
-        name: "Thép & Kim loại", slug: "ket-cau-thep-khung",
+        name: "Thép & Kim loại", slug: "ket-cau-thep-khung", icon: "🔩",
         image: "/img/thep-hinh-h-i-u-v.jpg?v=5",
         tagline: "Thép hình H/I/U/V, ống thép, tấm thép — báo giá theo tấn FOB Quảng Châu.",
         highlights: [
@@ -126,7 +129,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Tấm ốp tường & Trần", slug: "tam-op-tuong-tran",
+        name: "Tấm ốp tường & Trần", slug: "tam-op-tuong-tran", icon: "🟦",
         image: "/img/cer6.jpg?v=5",
         tagline: "Tấm porcelain, gốm sứ, MDF — thiết kế nội thất khách sạn & biệt thự.",
         highlights: [
@@ -165,7 +168,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san",
+        name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san", icon: "🪵",
         image: "/img/cer7.jpg?v=5",
         tagline: "Gạch porcelain, gỗ kỹ thuật, vinyl SPC — DDP tận kho Hà Nội/HCM 18 ngày.",
         highlights: [
@@ -204,7 +207,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat",
+        name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat", icon: "🪨",
         image: "/img/da-marble-tu-nhien.jpg?v=5",
         tagline: "Marble Phúc Kiến, granite, quartz — tấm lớn cho mặt bàn bếp & lobby.",
         highlights: [
@@ -243,7 +246,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Sơn & Lớp phủ", slug: "son-lop-phu",
+        name: "Sơn & Lớp phủ", slug: "son-lop-phu", icon: "🎨",
         image: "/img/son-epoxy-san.jpg?v=5",
         tagline: "Sơn epoxy sàn, sơn chống cháy, vữa trang trí — đạt chuẩn QCVN.",
         highlights: [
@@ -282,7 +285,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Cách âm & Cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet",
+        name: "Cách âm & Cách nhiệt", slug: "vat-lieu-cach-am-cach-nhiet", icon: "🧊",
         image: "/img/tam-cach-am.jpg?v=5",
         tagline: "Bông khoáng, EPS/XPS, mút cao su — phòng karaoke, nhà xưởng, kho lạnh.",
         highlights: [
@@ -321,7 +324,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Chống thấm", slug: "vat-lieu-chong-tham",
+        name: "Chống thấm", slug: "vat-lieu-chong-tham", icon: "💧",
         image: "/img/mang-chong-tham-bitum.jpg?v=5",
         tagline: "Màng bitum tự dính, sơn polyurethane, keo PU — bảo hành 10-15 năm.",
         highlights: [
@@ -360,7 +363,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Xi măng & Vữa", slug: "vat-lieu-kho-xi-mang-vua",
+        name: "Xi măng & Vữa", slug: "vat-lieu-kho-xi-mang-vua", icon: "🏗️",
         image: "/img/chau-xi-mang.jpg?v=5",
         tagline: "Xi măng Hà Tiên, vữa khô trộn sẵn, phụ gia bê tông — giao tận công trình.",
         highlights: [
@@ -404,7 +407,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
     main: { icon: "🛋", name: "Nội thất", slug: "noi-that" },
     items: [
       {
-        name: "Phòng khách", slug: "phong-khach",
+        name: "Phòng khách", slug: "phong-khach", icon: "🛋️",
         image: "/img/phong-khach.jpg?v=5",
         tagline: "Sofa, bàn cà phê, kệ TV — set trọn gói cho biệt thự & căn hộ cao cấp.",
         highlights: [
@@ -443,7 +446,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Phòng ngủ", slug: "phong-ngu",
+        name: "Phòng ngủ", slug: "phong-ngu", icon: "🛏️",
         image: "/img/phong-ngu.jpg?v=5",
         tagline: "Giường, tủ áo, bàn trang điểm — phong cách hiện đại & tân cổ điển.",
         highlights: [
@@ -482,7 +485,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Phòng ăn", slug: "phong-an",
+        name: "Phòng ăn", slug: "phong-an", icon: "🍽️",
         image: "/img/phong-an.jpg?v=5",
         tagline: "Bộ bàn ăn, tủ rượu, ghế ăn — gỗ tự nhiên & MDF veneer cao cấp.",
         highlights: [
@@ -521,7 +524,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Tủ bếp", slug: "tu-bep",
+        name: "Tủ bếp", slug: "tu-bep", icon: "🍳",
         image: "/img/fur7.jpg?v=5",
         tagline: "Tủ bếp OPPEIN, gỗ acrylic & laminate — thiết kế 3D miễn phí từ đơn 30 bộ.",
         highlights: [
@@ -560,7 +563,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Tủ quần áo", slug: "tu-quan-ao",
+        name: "Tủ quần áo", slug: "tu-quan-ao", icon: "👔",
         image: "/img/fur8.jpg?v=5",
         tagline: "Tủ áo âm tường, walk-in closet — OEM theo kích thước phòng.",
         highlights: [
@@ -599,7 +602,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Văn phòng tại nhà", slug: "van-phong-tai-nha",
+        name: "Văn phòng tại nhà", slug: "van-phong-tai-nha", icon: "💼",
         image: "/img/van-phong-tai-nha.jpg?v=5",
         tagline: "Bàn làm việc, ghế ergonomic, kệ sách — chuẩn home-office hybrid.",
         highlights: [
@@ -638,7 +641,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Nội thất khách sạn", slug: "noi-that-khach-san",
+        name: "Nội thất khách sạn", slug: "noi-that-khach-san", icon: "🏨",
         image: "/img/noi-that-khach-san.jpg?v=5",
         tagline: "Trọn gói FF&E 3-5 sao — thiết kế phù hợp chuẩn Marriott/Hilton.",
         highlights: [
@@ -677,7 +680,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Trẻ em & Em bé", slug: "tre-em-em-be",
+        name: "Trẻ em & Em bé", slug: "tre-em-em-be", icon: "🧸",
         image: "/img/tre-em-em-be.jpg?v=5",
         tagline: "Giường trẻ em, bàn học, đồ chơi an toàn — chứng nhận E0/E1.",
         highlights: [
