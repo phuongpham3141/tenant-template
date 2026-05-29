@@ -124,12 +124,18 @@ export function StickyHeader() {
       <nav className="bg-brand text-white max-xl:hidden">
         <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0 overflow-x-auto">
           <div className="mm-root relative flex-shrink-0">
-            <Link
-              href="/category"
+            {/* Button, not Link — clicking it focuses the trigger so the
+                globals.css `.mm-root:focus-within .mm-wrap` rule reveals
+                the dropdown. That gives click-to-open on touch devices
+                (and keyboards) without navigating to a 404 page. Hover
+                still works for mouse users via the sibling :hover rule. */}
+            <button
+              type="button"
               className="px-4 py-2 bg-brand-dark text-white flex items-center gap-2 font-bold text-[12.5px] cursor-pointer h-full"
+              aria-haspopup="menu"
             >
               <span>☰</span> TẤT CẢ DANH MỤC <span>▾</span>
-            </Link>
+            </button>
             <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
               <aside className="mm-l1 w-[260px] border-r border-line py-2">
                 {(() => {
