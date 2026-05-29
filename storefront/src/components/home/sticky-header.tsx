@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NAV_MENU } from "@/data/home";
 import { SubItemPanel } from "@/components/home/mega-submenu";
 
@@ -18,6 +18,8 @@ const NAV_LINKS: { label: string; href: string }[] = [
 
 export function StickyHeader() {
   const [show, setShow] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 120);
@@ -25,6 +27,25 @@ export function StickyHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the mega-menu when the user clicks outside of it.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onDocPointer = (e: MouseEvent | TouchEvent) => {
+      if (!menuRef.current?.contains(e.target as Node)) setMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onDocPointer);
+    document.addEventListener("touchstart", onDocPointer);
+    return () => {
+      document.removeEventListener("mousedown", onDocPointer);
+      document.removeEventListener("touchstart", onDocPointer);
+    };
+  }, [menuOpen]);
+
+  // Auto-close when the sticky bar slides back out of view.
+  useEffect(() => {
+    if (!show) setMenuOpen(false);
+  }, [show]);
 
   return (
     <div
@@ -123,20 +144,25 @@ export function StickyHeader() {
           don't interfere with each other. */}
       <nav className="bg-brand text-white max-xl:hidden">
         <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0 overflow-x-auto">
-          <div className="mm-root relative flex-shrink-0">
-            {/* Button, not Link — clicking it focuses the trigger so the
-                globals.css `.mm-root:focus-within .mm-wrap` rule reveals
-                the dropdown. That gives click-to-open on touch devices
-                (and keyboards) without navigating to a 404 page. Hover
-                still works for mouse users via the sibling :hover rule. */}
+          <div className="mm-root relative flex-shrink-0" ref={menuRef}>
+            {/* Click toggles React state. CSS :hover/:focus-within still
+                work for mouse + keyboard users; React state is the source
+                of truth for touch / explicit click users. When menuOpen,
+                inline styles override the globals.css default hidden
+                state so the dropdown stays open until clicked outside. */}
             <button
               type="button"
+              onClick={() => setMenuOpen((o) => !o)}
               className="px-4 py-2 bg-brand-dark text-white flex items-center gap-2 font-bold text-[12.5px] cursor-pointer h-full"
               aria-haspopup="menu"
+              aria-expanded={menuOpen}
             >
               <span>☰</span> TẤT CẢ DANH MỤC <span>▾</span>
             </button>
-            <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
+            <div
+              className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40"
+              style={menuOpen ? { visibility: "visible", opacity: 1, transform: "translateY(0)" } : undefined}
+            >
               <aside className="mm-l1 w-[260px] border-r border-line py-2">
                 {(() => {
                   let n = 0;
