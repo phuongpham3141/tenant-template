@@ -168,7 +168,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san", icon: "🪵",
+        name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san", icon: "🟫",
         image: "/img/cer7.jpg?v=5",
         tagline: "Gạch porcelain, gỗ kỹ thuật, vinyl SPC — DDP tận kho Hà Nội/HCM 18 ngày.",
         highlights: [
@@ -207,7 +207,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat", icon: "🪨",
+        name: "Đá ốp lát & Nhân tạo", slug: "da-op-lat", icon: "⛰️",
         image: "/img/da-marble-tu-nhien.jpg?v=5",
         tagline: "Marble Phúc Kiến, granite, quartz — tấm lớn cho mặt bàn bếp & lobby.",
         highlights: [

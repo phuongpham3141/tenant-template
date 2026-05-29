@@ -195,7 +195,7 @@ export function StickyHeader() {
                             <li key={it.slug}>
                               <Link
                                 href={`/category/${group.main.slug}/${it.slug}`}
-                                className={`mm-sub mm-sub-${n} flex items-center gap-1.5 py-[3px] text-[12.5px] text-accent font-bold hover:text-brand leading-snug truncate`}
+                                className={`mm-sub mm-sub-${n} flex items-center gap-1.5 py-[3px] text-[12.5px] text-ink font-bold hover:text-brand leading-snug truncate`}
                               >
                                 <span className="flex-shrink-0">{it.icon}</span>
                                 <span className="truncate">{it.name}</span>

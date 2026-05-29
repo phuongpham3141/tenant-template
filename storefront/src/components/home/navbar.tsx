@@ -55,7 +55,7 @@ export function NavBar() {
                           <li key={it.slug}>
                             <Link
                               href={`/category/${group.main.slug}/${it.slug}`}
-                              className={`mm-sub mm-sub-${n} flex items-center gap-1.5 py-[3px] text-[12.5px] text-accent font-bold hover:text-brand leading-snug truncate`}
+                              className={`mm-sub mm-sub-${n} flex items-center gap-1.5 py-[3px] text-[12.5px] text-ink font-bold hover:text-brand leading-snug truncate`}
                             >
                               <span className="flex-shrink-0">{it.icon}</span>
                               <span className="truncate">{it.name}</span>
@@ -129,7 +129,7 @@ export function NavBar() {
                     <li key={it.slug}>
                       <Link
                         href={`/category/${group.main.slug}/${it.slug}`}
-                        className="flex items-center gap-2 px-4 py-2.5 text-[12.5px] text-accent font-bold border-t border-[#F5F5F5] active:bg-brand active:text-white hover:bg-bg leading-snug"
+                        className="flex items-center gap-2 px-4 py-2.5 text-[12.5px] text-ink font-bold border-t border-[#F5F5F5] active:bg-brand active:text-white hover:bg-bg leading-snug"
                       >
                         <span className="flex-shrink-0">{it.icon}</span>
                         <span className="flex-1 truncate">{it.name}</span>
