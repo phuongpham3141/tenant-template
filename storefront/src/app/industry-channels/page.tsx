@@ -37,7 +37,6 @@ export default function IndustryChannelsPage() {
               <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
                 <img src={`/img/industry-${c.slug}.jpg?v=5`} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
                 <div className="absolute top-3 left-3 bg-white px-3 py-1.5 rounded-sm text-[24px] leading-none">{c.icon}</div>
-                {c.isNew && <div className="absolute top-3 right-3 bg-accent text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">MỚI</div>}
               </div>
               <div className="p-4">
                 <h3 className="text-[16px] font-bold text-ink mb-2">{c.name}</h3>
