@@ -143,21 +143,34 @@ export function StickyHeader() {
           scoped per .mm-wrap, so this instance and the NavBar instance
           don't interfere with each other. */}
       <nav className="bg-brand text-white max-xl:hidden">
-        <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0 overflow-x-auto">
+        {/* No overflow-x:auto here — that creates a containing block that
+            clips the absolutely-positioned mm-wrap dropdown on its Y axis
+            (overflow-x:auto implicitly sets overflow-y:auto), so hovering
+            the dropdown body would never re-trigger .mm-root:hover. The
+            xl: breakpoint guarantees the nav fits without scrolling. */}
+        <div className="max-w-[1400px] mx-auto px-4 flex items-stretch gap-0">
           <div className="mm-root relative flex-shrink-0" ref={menuRef}>
-            {/* Click toggles React state. CSS :hover/:focus-within still
-                work for mouse + keyboard users; React state is the source
-                of truth for touch / explicit click users. When menuOpen,
-                inline styles override the globals.css default hidden
-                state so the dropdown stays open until clicked outside. */}
+            {/* Hover uses CSS :hover from globals.css (.mm-root:hover
+                .mm-wrap → visibility:visible). CSS :hover correctly
+                tracks descendants regardless of bounding-box overlap,
+                so moving from the trigger down into the absolute
+                dropdown works reliably. JS mouseenter/mouseleave don't,
+                because the dropdown is visibility:hidden when the cursor
+                arrives, so it never fires mouseenter.
+                Click toggles React state for touch users; when menuOpen
+                is true the inline style sticks the dropdown open until
+                the user clicks outside. */}
             <button
               type="button"
               onClick={() => setMenuOpen((o) => !o)}
-              className="px-4 py-2 bg-brand-dark text-white flex items-center gap-2 font-bold text-[12.5px] cursor-pointer h-full"
+              className={`px-4 py-2 text-white flex items-center gap-2 font-bold text-[12.5px] cursor-pointer h-full transition-colors ${
+                menuOpen ? "bg-brand" : "bg-brand-dark hover:bg-brand"
+              }`}
               aria-haspopup="menu"
               aria-expanded={menuOpen}
             >
-              <span>☰</span> TẤT CẢ DANH MỤC <span>▾</span>
+              <span>☰</span> TẤT CẢ DANH MỤC{" "}
+              <span className={`transition-transform ${menuOpen ? "rotate-180" : ""}`}>▾</span>
             </button>
             <div
               className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40"
