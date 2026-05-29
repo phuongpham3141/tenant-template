@@ -102,23 +102,41 @@ export function NavBar() {
           </Link>
         </div>
 
-        {/* TABLET + MOBILE: hamburger drawer for "Tất cả danh mục" */}
+        {/* TABLET + MOBILE: hamburger drawer for "Tất cả danh mục".
+            Renders each main category as a heading + its full sub-items
+            list below (NAV_MENU, not NAV_CATEGORIES) so users can drill
+            straight to a sub-category without an extra tap. */}
         <details className="hidden max-xl:block group md:max-xl:order-1">
           <summary className="px-4 py-3 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[14px] cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <span className="text-[18px]">☰</span>
             <span className="flex-1">TẤT CẢ DANH MỤC</span>
             <span className="group-open:rotate-180 transition-transform">▾</span>
           </summary>
-          <div className="bg-paper text-ink border-t border-brand-dark grid grid-cols-2 md:max-xl:grid-cols-3 gap-0 max-h-[60vh] overflow-y-auto">
-            {NAV_CATEGORIES.map((c) => (
-              <Link
-                key={c.slug}
-                href={`/category/${c.slug}`}
-                className="flex items-center gap-2 px-3.5 py-3 text-[13px] border-b border-[#F5F5F5] active:bg-brand active:text-white hover:bg-bg"
-              >
-                <span className="text-[16px]">{c.icon}</span>
-                <span className="flex-1 leading-tight">{c.name}</span>
-              </Link>
+          <div className="bg-paper text-ink border-t border-brand-dark max-h-[70vh] overflow-y-auto">
+            {NAV_MENU.map((group) => (
+              <div key={group.main.slug} className="border-b border-line">
+                <Link
+                  href={`/category/${group.main.slug}`}
+                  className="flex items-center gap-2 px-4 py-3 text-[14px] font-bold bg-[#F5F7FA] text-ink active:bg-brand active:text-white"
+                >
+                  <span className="text-[18px]">{group.main.icon}</span>
+                  <span className="flex-1 leading-tight">{group.main.name}</span>
+                  <span className="text-mute2 text-[12px]">›</span>
+                </Link>
+                <ul className="grid grid-cols-2 md:max-xl:grid-cols-3 gap-0">
+                  {group.items.map((it) => (
+                    <li key={it.slug}>
+                      <Link
+                        href={`/category/${group.main.slug}/${it.slug}`}
+                        className="flex items-center gap-1.5 px-4 py-2.5 text-[12.5px] text-accent border-t border-[#F5F5F5] active:bg-brand active:text-white hover:bg-bg leading-snug"
+                      >
+                        <span className="text-mute2">-</span>
+                        <span className="flex-1 truncate">{it.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </details>
