@@ -94,6 +94,94 @@ export type NavSubItem = {
  *  Hovering a sub-item shows a dedicated sub-panel (image + highlights). */
 export const NAV_MENU: { main: { icon: string; name: string; slug: string }; items: NavSubItem[] }[] = [
   {
+    main: { icon: "🏠", name: "Nhà & Sân vườn", slug: "home-garden" },
+    items: [
+      {
+        name: "Thang máy chở khách", slug: "thang-may-cho-khach", icon: "🛗",
+        image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
+        tagline: "Thang chở khách 6–21 người, tốc độ 1.0–2.5 m/s — tiêu chuẩn EN 81.",
+        highlights: [
+          { name: "Cabin 6 người",   image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Cabin 13 người",  image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Tốc độ cao",      image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Vận hành êm",      image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-may-cho-khach" },
+        ],
+        sections: [
+          { title: "Tải trọng", items: [
+            { name: "450 kg / 6 người", slug: "thang-may-cho-khach" },
+            { name: "1000 kg / 13 người", slug: "thang-may-cho-khach" },
+            { name: "1600 kg / 21 người", slug: "thang-may-cho-khach" },
+          ]},
+          { title: "Tốc độ", items: [
+            { name: "1.0 m/s", slug: "thang-may-cho-khach" },
+            { name: "1.75 m/s", slug: "thang-may-cho-khach" },
+            { name: "2.5 m/s", slug: "thang-may-cho-khach" },
+          ]},
+          { title: "Tiêu chuẩn", items: [
+            { name: "EN 81-20/50", slug: "thang-may-cho-khach" },
+            { name: "GB 7588", slug: "thang-may-cho-khach" },
+            { name: "ISO 22559", slug: "thang-may-cho-khach" },
+          ]},
+        ],
+      },
+      {
+        name: "Thang cuốn", slug: "thang-cuon", icon: "🪜",
+        image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5",
+        tagline: "Thang cuốn trung tâm thương mại, sân bay — góc 30°/35°.",
+        highlights: [
+          { name: "Trung tâm thương mại", image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-cuon" },
+          { name: "Sân bay",              image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-cuon" },
+          { name: "Metro / ga tàu",       image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-cuon" },
+          { name: "Outdoor có mái",       image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-cuon" },
+        ],
+        sections: [
+          { title: "Bước thang", items: [
+            { name: "600 mm", slug: "thang-cuon" },
+            { name: "800 mm", slug: "thang-cuon" },
+            { name: "1000 mm", slug: "thang-cuon" },
+          ]},
+          { title: "Góc nghiêng", items: [
+            { name: "30°", slug: "thang-cuon" },
+            { name: "35°", slug: "thang-cuon" },
+          ]},
+          { title: "Ứng dụng", items: [
+            { name: "Trong nhà", slug: "thang-cuon" },
+            { name: "Bán ngoài trời", slug: "thang-cuon" },
+            { name: "Heavy-duty", slug: "thang-cuon" },
+          ]},
+        ],
+      },
+      {
+        name: "Thang chống cháy", slug: "thang-chong-chay", icon: "🚒",
+        image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5",
+        tagline: "Thang máy chuyên dụng PCCC EN 81-72 — vận hành an toàn khi hoả hoạn.",
+        highlights: [
+          { name: "Cabin chống lửa",   image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-chong-chay" },
+          { name: "Cửa kháng nhiệt",   image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-chong-chay" },
+          { name: "Nguồn dự phòng",    image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-chong-chay" },
+          { name: "Chống thấm nước",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "thang-chong-chay" },
+        ],
+        sections: [
+          { title: "Tải trọng", items: [
+            { name: "630 kg / 8 người", slug: "thang-chong-chay" },
+            { name: "1000 kg / 13 người", slug: "thang-chong-chay" },
+            { name: "1600 kg cứu hộ", slug: "thang-chong-chay" },
+          ]},
+          { title: "Tiêu chuẩn PCCC", items: [
+            { name: "EN 81-72", slug: "thang-chong-chay" },
+            { name: "EN 81-73", slug: "thang-chong-chay" },
+            { name: "TCVN 6396", slug: "thang-chong-chay" },
+          ]},
+          { title: "Tính năng", items: [
+            { name: "Cabin chống cháy 120 phút", slug: "thang-chong-chay" },
+            { name: "Nguồn UPS", slug: "thang-chong-chay" },
+            { name: "Đèn báo PCCC", slug: "thang-chong-chay" },
+          ]},
+        ],
+      },
+    ],
+  },
+  {
     main: { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
     items: [
       {
@@ -405,6 +493,151 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
             { name: "Keo dán gạch 2K", slug: "vat-lieu-kho-xi-mang-vua" },
             { name: "Mạch epoxy", slug: "vat-lieu-kho-xi-mang-vua" },
             { name: "Mạch xi măng chống mốc", slug: "vat-lieu-kho-xi-mang-vua" },
+          ]},
+        ],
+      },
+    ],
+  },
+  {
+    main: { icon: "🚿", name: "Phòng tắm & Vệ sinh", slug: "bathroom-sanitary" },
+    items: [
+      {
+        name: "Bồn cầu sứ", slug: "bon-cau-su", icon: "🚽",
+        image: "/img/bathroom-1-1.jpg?v=5",
+        tagline: "Bồn cầu 1 khối, 2 khối, treo tường — sứ tráng men siphon êm.",
+        highlights: [
+          { name: "Bồn 1 khối siphon",  image: "/img/bathroom-1-1.jpg?v=5", slug: "bon-cau-su" },
+          { name: "Bồn 2 khối phổ thông", image: "/img/bathroom-1-2.jpg?v=5", slug: "bon-cau-su" },
+          { name: "Bồn treo tường",       image: "/img/bathroom-1-3.jpg?v=5", slug: "bon-cau-su" },
+          { name: "Bồn xổm sứ",            image: "/img/bathroom-1-4.jpg?v=5", slug: "bon-cau-su" },
+        ],
+        sections: [
+          { title: "Kiểu xả", items: [
+            { name: "Siphon êm", slug: "bon-cau-su" },
+            { name: "Xả thẳng", slug: "bon-cau-su" },
+            { name: "Xả áp lực", slug: "bon-cau-su" },
+          ]},
+          { title: "Kiểu lắp", items: [
+            { name: "1 khối liền", slug: "bon-cau-su" },
+            { name: "2 khối có két", slug: "bon-cau-su" },
+            { name: "Treo tường", slug: "bon-cau-su" },
+          ]},
+          { title: "Tiêu chuẩn nước", items: [
+            { name: "3/6L tiết kiệm", slug: "bon-cau-su" },
+            { name: "WaterSense", slug: "bon-cau-su" },
+            { name: "CUPC", slug: "bon-cau-su" },
+          ]},
+        ],
+      },
+      {
+        name: "Bồn cầu thông minh", slug: "bon-cau-thong-minh", icon: "🤖",
+        image: "/img/bathroom-2-1.jpg?v=5",
+        tagline: "Bồn cầu thông minh xịt + sấy + sưởi nắp + tự khử mùi.",
+        highlights: [
+          { name: "1 khối thông minh",   image: "/img/bathroom-2-1.jpg?v=5", slug: "bon-cau-thong-minh" },
+          { name: "Nắp gắn thêm",         image: "/img/bathroom-2-2.jpg?v=5", slug: "bon-cau-thong-minh" },
+          { name: "Treo tường thông minh", image: "/img/bathroom-2-3.jpg?v=5", slug: "bon-cau-thong-minh" },
+          { name: "Cao cấp Nhật chuẩn",   image: "/img/bathroom-2-4.jpg?v=5", slug: "bon-cau-thong-minh" },
+        ],
+        sections: [
+          { title: "Tính năng", items: [
+            { name: "Xịt rửa nóng", slug: "bon-cau-thong-minh" },
+            { name: "Sấy khô", slug: "bon-cau-thong-minh" },
+            { name: "Sưởi nắp + khử mùi", slug: "bon-cau-thong-minh" },
+          ]},
+          { title: "Điều khiển", items: [
+            { name: "Cảm biến gần", slug: "bon-cau-thong-minh" },
+            { name: "Remote IR", slug: "bon-cau-thong-minh" },
+            { name: "Side panel + voice", slug: "bon-cau-thong-minh" },
+          ]},
+          { title: "Tiết kiệm", items: [
+            { name: "Xả siêu nhỏ 3L", slug: "bon-cau-thong-minh" },
+            { name: "Eco-mode", slug: "bon-cau-thong-minh" },
+            { name: "Tự ngắt nguồn", slug: "bon-cau-thong-minh" },
+          ]},
+        ],
+      },
+      {
+        name: "Lavabo sứ", slug: "lavabo-su", icon: "🪣",
+        image: "/img/bathroom-3-1.jpg?v=5",
+        tagline: "Chậu rửa lavabo sứ treo tường, đặt bàn, dương vành — đa kiểu dáng.",
+        highlights: [
+          { name: "Đặt bàn tròn",   image: "/img/bathroom-3-1.jpg?v=5", slug: "lavabo-su" },
+          { name: "Treo tường",     image: "/img/bathroom-3-2.jpg?v=5", slug: "lavabo-su" },
+          { name: "Đặt dương vành", image: "/img/bathroom-3-3.jpg?v=5", slug: "lavabo-su" },
+          { name: "Âm bàn",          image: "/img/bathroom-3-4.jpg?v=5", slug: "lavabo-su" },
+        ],
+        sections: [
+          { title: "Kiểu lắp", items: [
+            { name: "Đặt bàn", slug: "lavabo-su" },
+            { name: "Treo tường", slug: "lavabo-su" },
+            { name: "Âm bàn", slug: "lavabo-su" },
+          ]},
+          { title: "Vật liệu", items: [
+            { name: "Sứ vệ sinh", slug: "lavabo-su" },
+            { name: "Composite", slug: "lavabo-su" },
+            { name: "Đá nhân tạo", slug: "lavabo-su" },
+          ]},
+          { title: "Hoàn thiện", items: [
+            { name: "Men trắng cổ điển", slug: "lavabo-su" },
+            { name: "Men đen matte", slug: "lavabo-su" },
+            { name: "Vân đá art", slug: "lavabo-su" },
+          ]},
+        ],
+      },
+      {
+        name: "Tủ phòng tắm", slug: "tu-phong-tam", icon: "🪞",
+        image: "/img/bathroom-4-1.jpg?v=5",
+        tagline: "Tủ chậu lavabo + gương + đèn — gỗ chống nước + inox.",
+        highlights: [
+          { name: "Tủ 600 mm",       image: "/img/bathroom-4-1.jpg?v=5", slug: "tu-phong-tam" },
+          { name: "Tủ 800 mm có gương", image: "/img/bathroom-4-2.jpg?v=5", slug: "tu-phong-tam" },
+          { name: "Tủ 1200 mm đôi",   image: "/img/bathroom-4-3.jpg?v=5", slug: "tu-phong-tam" },
+          { name: "Tủ inox 304",       image: "/img/bathroom-4-4.jpg?v=5", slug: "tu-phong-tam" },
+        ],
+        sections: [
+          { title: "Vật liệu", items: [
+            { name: "Plywood phủ melamine", slug: "tu-phong-tam" },
+            { name: "PVC chống nước", slug: "tu-phong-tam" },
+            { name: "Inox 304", slug: "tu-phong-tam" },
+          ]},
+          { title: "Kích thước", items: [
+            { name: "600 mm", slug: "tu-phong-tam" },
+            { name: "800 mm", slug: "tu-phong-tam" },
+            { name: "1200 mm đôi chậu", slug: "tu-phong-tam" },
+          ]},
+          { title: "Phụ kiện", items: [
+            { name: "Gương cảm ứng + đèn", slug: "tu-phong-tam" },
+            { name: "Tay nâng thuỷ lực", slug: "tu-phong-tam" },
+            { name: "Tay cầm vàng-rose", slug: "tu-phong-tam" },
+          ]},
+        ],
+      },
+      {
+        name: "Vòi nước kim khí", slug: "voi-nuoc", icon: "🚰",
+        image: "/img/bathroom-5-1.jpg?v=5",
+        tagline: "Vòi sen, vòi lavabo, vòi bếp — đồng mạ chrome / vàng / matte.",
+        highlights: [
+          { name: "Vòi lavabo cao", image: "/img/bathroom-5-1.jpg?v=5", slug: "voi-nuoc" },
+          { name: "Vòi sen âm tường", image: "/img/bathroom-5-2.jpg?v=5", slug: "voi-nuoc" },
+          { name: "Vòi bếp uốn cong", image: "/img/bathroom-5-3.jpg?v=5", slug: "voi-nuoc" },
+          { name: "Bộ vòi sen tắm",   image: "/img/bathroom-5-4.jpg?v=5", slug: "voi-nuoc" },
+        ],
+        sections: [
+          { title: "Vị trí lắp", items: [
+            { name: "Lavabo", slug: "voi-nuoc" },
+            { name: "Bồn tắm / sen", slug: "voi-nuoc" },
+            { name: "Bếp", slug: "voi-nuoc" },
+          ]},
+          { title: "Vật liệu", items: [
+            { name: "Đồng đỏ mạ chrome", slug: "voi-nuoc" },
+            { name: "Inox 304", slug: "voi-nuoc" },
+            { name: "Hợp kim Zn rẻ", slug: "voi-nuoc" },
+          ]},
+          { title: "Màu hoàn thiện", items: [
+            { name: "Chrome bóng", slug: "voi-nuoc" },
+            { name: "Đen matte", slug: "voi-nuoc" },
+            { name: "Vàng rose / brushed gold", slug: "voi-nuoc" },
           ]},
         ],
       },
@@ -727,94 +960,9 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       },
     ],
   },
-  // ─── Đồ điện gia dụng ───────────────────────────────────────────────
   {
-    main: { icon: "📺", name: "Điện gia dụng", slug: "dien-gia-dung" },
+    main: { icon: "🍳", name: "Thiết bị nhà bếp", slug: "kitchen-equipment" },
     items: [
-      {
-        name: "Điều hoà", slug: "dieu-hoa", icon: "❄️",
-        image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
-        tagline: "Điều hoà inverter treo tường, âm trần, tủ đứng — đa dải công suất.",
-        highlights: [
-          { name: "Treo tường inverter", image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "dieu-hoa" },
-          { name: "Âm trần cassette",    image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "dieu-hoa" },
-          { name: "Tủ đứng công nghiệp", image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "dieu-hoa" },
-          { name: "Multi-split",         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "dieu-hoa" },
-        ],
-        sections: [
-          { title: "Theo công suất", items: [
-            { name: "9.000 BTU", slug: "dieu-hoa" },
-            { name: "12.000 BTU", slug: "dieu-hoa" },
-            { name: "18.000–24.000 BTU", slug: "dieu-hoa" },
-          ]},
-          { title: "Theo kiểu lắp", items: [
-            { name: "Treo tường", slug: "dieu-hoa" },
-            { name: "Âm trần", slug: "dieu-hoa" },
-            { name: "Tủ đứng", slug: "dieu-hoa" },
-          ]},
-          { title: "Công nghệ", items: [
-            { name: "Inverter R32", slug: "dieu-hoa" },
-            { name: "Wi-Fi điều khiển", slug: "dieu-hoa" },
-            { name: "Lọc PM2.5", slug: "dieu-hoa" },
-          ]},
-        ],
-      },
-      {
-        name: "Tủ lạnh", slug: "tu-lanh", icon: "🧊",
-        image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
-        tagline: "Tủ lạnh side-by-side, French door, mini bar — báo giá theo lô FCL.",
-        highlights: [
-          { name: "Side-by-side",  image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "tu-lanh" },
-          { name: "French door",   image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "tu-lanh" },
-          { name: "Ngăn đá trên",  image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "tu-lanh" },
-          { name: "Mini bar",      image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "tu-lanh" },
-        ],
-        sections: [
-          { title: "Theo dung tích", items: [
-            { name: "< 200L", slug: "tu-lanh" },
-            { name: "200–400L", slug: "tu-lanh" },
-            { name: "> 500L", slug: "tu-lanh" },
-          ]},
-          { title: "Theo kiểu", items: [
-            { name: "Side-by-side", slug: "tu-lanh" },
-            { name: "French door", slug: "tu-lanh" },
-            { name: "Multi-door", slug: "tu-lanh" },
-          ]},
-          { title: "Tính năng", items: [
-            { name: "Inverter tiết kiệm", slug: "tu-lanh" },
-            { name: "No-frost", slug: "tu-lanh" },
-            { name: "Smart Wi-Fi", slug: "tu-lanh" },
-          ]},
-        ],
-      },
-      {
-        name: "Máy giặt", slug: "may-giat", icon: "🧺",
-        image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5",
-        tagline: "Máy giặt cửa trước, cửa trên, sấy khô — full hộ gia đình & khách sạn.",
-        highlights: [
-          { name: "Cửa trước inverter",  image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "may-giat" },
-          { name: "Cửa trên",            image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "may-giat" },
-          { name: "Giặt sấy combo",      image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "may-giat" },
-          { name: "Công nghiệp khách sạn", image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "may-giat" },
-        ],
-        sections: [
-          { title: "Theo tải", items: [
-            { name: "7–9 kg", slug: "may-giat" },
-            { name: "10–12 kg", slug: "may-giat" },
-            { name: "Công nghiệp >15 kg", slug: "may-giat" },
-          ]},
-          { title: "Loại", items: [
-            { name: "Cửa trước", slug: "may-giat" },
-            { name: "Cửa trên", slug: "may-giat" },
-            { name: "Giặt sấy combo", slug: "may-giat" },
-          ]},
-          { title: "Tính năng", items: [
-            { name: "Inverter", slug: "may-giat" },
-            { name: "Hơi nước diệt khuẩn", slug: "may-giat" },
-            { name: "Wi-Fi điều khiển", slug: "may-giat" },
-          ]},
-        ],
-      },
       {
         name: "Bếp từ", slug: "bep-tu", icon: "♨️",
         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
@@ -956,62 +1104,6 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
       {
-        name: "Máy sưởi", slug: "may-suoi", icon: "🔥",
-        image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
-        tagline: "Máy sưởi dầu, halogen, quạt — công suất 1500–2500 W.",
-        highlights: [
-          { name: "Sưởi dầu 9 thanh",  image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "may-suoi" },
-          { name: "Halogen tháp",      image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "may-suoi" },
-          { name: "Quạt sưởi mini",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "may-suoi" },
-          { name: "Carbon hồng ngoại", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "may-suoi" },
-        ],
-        sections: [
-          { title: "Loại", items: [
-            { name: "Sưởi dầu", slug: "may-suoi" },
-            { name: "Halogen tháp", slug: "may-suoi" },
-            { name: "Quạt sưởi", slug: "may-suoi" },
-          ]},
-          { title: "Công suất", items: [
-            { name: "1500 W", slug: "may-suoi" },
-            { name: "2000 W", slug: "may-suoi" },
-            { name: "2500 W", slug: "may-suoi" },
-          ]},
-          { title: "Tính năng", items: [
-            { name: "Hẹn giờ tự tắt", slug: "may-suoi" },
-            { name: "Điều khiển từ xa", slug: "may-suoi" },
-            { name: "Chống nổ quá nhiệt", slug: "may-suoi" },
-          ]},
-        ],
-      },
-      {
-        name: "Bình nóng lạnh", slug: "binh-nong-lanh", icon: "🚿",
-        image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
-        tagline: "Bình nóng lạnh trực tiếp, gián tiếp, năng lượng mặt trời.",
-        highlights: [
-          { name: "Trực tiếp 3500W",     image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "binh-nong-lanh" },
-          { name: "Gián tiếp 30L",       image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "binh-nong-lanh" },
-          { name: "Năng lượng mặt trời", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "binh-nong-lanh" },
-          { name: "Heat-pump",           image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "binh-nong-lanh" },
-        ],
-        sections: [
-          { title: "Loại", items: [
-            { name: "Trực tiếp", slug: "binh-nong-lanh" },
-            { name: "Gián tiếp", slug: "binh-nong-lanh" },
-            { name: "Năng lượng mặt trời", slug: "binh-nong-lanh" },
-          ]},
-          { title: "Dung tích", items: [
-            { name: "15–20L", slug: "binh-nong-lanh" },
-            { name: "30L", slug: "binh-nong-lanh" },
-            { name: "50L+ khách sạn", slug: "binh-nong-lanh" },
-          ]},
-          { title: "Vật liệu", items: [
-            { name: "Lòng tráng men", slug: "binh-nong-lanh" },
-            { name: "Lòng inox", slug: "binh-nong-lanh" },
-            { name: "Lòng đồng", slug: "binh-nong-lanh" },
-          ]},
-        ],
-      },
-      {
         name: "Máy rửa bát", slug: "may-rua-bat", icon: "🍽️",
         image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5",
         tagline: "Máy rửa bát độc lập, âm tủ, mini — 6–14 bộ tiêu chuẩn.",
@@ -1039,100 +1131,66 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           ]},
         ],
       },
-    ],
-  },
-  // ─── Thang máy ──────────────────────────────────────────────────────
-  {
-    main: { icon: "🛗", name: "Thang máy", slug: "thang-may" },
-    items: [
       {
-        name: "Thang máy chở khách", slug: "thang-may-cho-khach", icon: "🛗",
-        image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
-        tagline: "Thang chở khách 6–21 người, tốc độ 1.0–2.5 m/s — tiêu chuẩn EN 81.",
+        name: "Chậu rửa inox", slug: "chau-rua-inox", icon: "🍽️",
+        image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
+        tagline: "Chậu rửa inox 304 đơn / đôi / 3 ngăn — mịn handmade / chống ồn.",
         highlights: [
-          { name: "Cabin 6 người",   image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Cabin 13 người",  image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Tốc độ cao",      image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Vận hành êm",      image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Chậu đơn 50×40",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "chau-rua-inox" },
+          { name: "Chậu đôi 78×42",   image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "chau-rua-inox" },
+          { name: "Handmade vuông",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "chau-rua-inox" },
+          { name: "3 ngăn công nghiệp", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "chau-rua-inox" },
         ],
         sections: [
-          { title: "Tải trọng", items: [
-            { name: "450 kg / 6 người", slug: "thang-may-cho-khach" },
-            { name: "1000 kg / 13 người", slug: "thang-may-cho-khach" },
-            { name: "1600 kg / 21 người", slug: "thang-may-cho-khach" },
+          { title: "Số ngăn", items: [
+            { name: "1 ngăn", slug: "chau-rua-inox" },
+            { name: "2 ngăn", slug: "chau-rua-inox" },
+            { name: "3 ngăn", slug: "chau-rua-inox" },
           ]},
-          { title: "Tốc độ", items: [
-            { name: "1.0 m/s", slug: "thang-may-cho-khach" },
-            { name: "1.75 m/s", slug: "thang-may-cho-khach" },
-            { name: "2.5 m/s", slug: "thang-may-cho-khach" },
+          { title: "Kiểu", items: [
+            { name: "Đặt bàn", slug: "chau-rua-inox" },
+            { name: "Âm bàn", slug: "chau-rua-inox" },
+            { name: "Bán âm undermount", slug: "chau-rua-inox" },
           ]},
-          { title: "Tiêu chuẩn", items: [
-            { name: "EN 81-20/50", slug: "thang-may-cho-khach" },
-            { name: "GB 7588", slug: "thang-may-cho-khach" },
-            { name: "ISO 22559", slug: "thang-may-cho-khach" },
+          { title: "Hoàn thiện", items: [
+            { name: "Brushed lụa", slug: "chau-rua-inox" },
+            { name: "Nano đen matte", slug: "chau-rua-inox" },
+            { name: "Handmade R10", slug: "chau-rua-inox" },
           ]},
         ],
       },
       {
-        name: "Thang cuốn", slug: "thang-cuon", icon: "🪜",
-        image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5",
-        tagline: "Thang cuốn trung tâm thương mại, sân bay — góc 30°/35°.",
+        name: "Sản phẩm kim khí", slug: "kim-khi-bep", icon: "🔧",
+        image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
+        tagline: "Bản lề tủ bếp, ray trượt, tay cầm, phụ kiện inox — gọi theo container.",
         highlights: [
-          { name: "Trung tâm thương mại", image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-cuon" },
-          { name: "Sân bay",              image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-cuon" },
-          { name: "Metro / ga tàu",       image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-cuon" },
-          { name: "Outdoor có mái",       image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-cuon" },
+          { name: "Bản lề giảm chấn", image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "kim-khi-bep" },
+          { name: "Ray trượt đáy",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "kim-khi-bep" },
+          { name: "Tay cầm hợp kim",  image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "kim-khi-bep" },
+          { name: "Phụ kiện inox",    image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "kim-khi-bep" },
         ],
         sections: [
-          { title: "Bước thang", items: [
-            { name: "600 mm", slug: "thang-cuon" },
-            { name: "800 mm", slug: "thang-cuon" },
-            { name: "1000 mm", slug: "thang-cuon" },
+          { title: "Bản lề & Ray", items: [
+            { name: "Bản lề cốc 35 mm", slug: "kim-khi-bep" },
+            { name: "Ray trượt 3 tầng", slug: "kim-khi-bep" },
+            { name: "Pittông nâng tủ", slug: "kim-khi-bep" },
           ]},
-          { title: "Góc nghiêng", items: [
-            { name: "30°", slug: "thang-cuon" },
-            { name: "35°", slug: "thang-cuon" },
+          { title: "Phụ kiện inox", items: [
+            { name: "Giá bát đĩa", slug: "kim-khi-bep" },
+            { name: "Giá gia vị", slug: "kim-khi-bep" },
+            { name: "Thùng rác âm tủ", slug: "kim-khi-bep" },
           ]},
-          { title: "Ứng dụng", items: [
-            { name: "Trong nhà", slug: "thang-cuon" },
-            { name: "Bán ngoài trời", slug: "thang-cuon" },
-            { name: "Heavy-duty", slug: "thang-cuon" },
-          ]},
-        ],
-      },
-      {
-        name: "Thang chống cháy", slug: "thang-chong-chay", icon: "🚒",
-        image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5",
-        tagline: "Thang máy chuyên dụng PCCC EN 81-72 — vận hành an toàn khi hoả hoạn.",
-        highlights: [
-          { name: "Cabin chống lửa",   image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Cửa kháng nhiệt",   image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Nguồn dự phòng",    image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Chống thấm nước",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "thang-chong-chay" },
-        ],
-        sections: [
-          { title: "Tải trọng", items: [
-            { name: "630 kg / 8 người", slug: "thang-chong-chay" },
-            { name: "1000 kg / 13 người", slug: "thang-chong-chay" },
-            { name: "1600 kg cứu hộ", slug: "thang-chong-chay" },
-          ]},
-          { title: "Tiêu chuẩn PCCC", items: [
-            { name: "EN 81-72", slug: "thang-chong-chay" },
-            { name: "EN 81-73", slug: "thang-chong-chay" },
-            { name: "TCVN 6396", slug: "thang-chong-chay" },
-          ]},
-          { title: "Tính năng", items: [
-            { name: "Cabin chống cháy 120 phút", slug: "thang-chong-chay" },
-            { name: "Nguồn UPS", slug: "thang-chong-chay" },
-            { name: "Đèn báo PCCC", slug: "thang-chong-chay" },
+          { title: "Tay cầm", items: [
+            { name: "Tay vuông inox", slug: "kim-khi-bep" },
+            { name: "Tay tròn đồng", slug: "kim-khi-bep" },
+            { name: "Tay chìm âm", slug: "kim-khi-bep" },
           ]},
         ],
       },
     ],
   },
-  // ─── Đèn chiếu sáng ─────────────────────────────────────────────────
   {
-    main: { icon: "💡", name: "Đèn chiếu sáng", slug: "den-chieu-sang" },
+    main: { icon: "💡", name: "Đèn & Chiếu sáng", slug: "lighting" },
     items: [
       {
         name: "Đèn LED nguồn", slug: "den-led", icon: "💡",
@@ -1248,9 +1306,8 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       },
     ],
   },
-  // ─── Khoá thông minh ────────────────────────────────────────────────
   {
-    main: { icon: "🔐", name: "Khoá thông minh", slug: "khoa-thong-minh" },
+    main: { icon: "🪟", name: "Cửa & Cửa sổ", slug: "doors-windows" },
     items: [
       {
         name: "Khoá nhận diện khuôn mặt 3D", slug: "khoa-3d-face", icon: "📹",
@@ -1366,218 +1423,165 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       },
     ],
   },
-  // ─── Thiết bị nhà tắm ───────────────────────────────────────────────
   {
-    main: { icon: "🚿", name: "Thiết bị nhà tắm", slug: "thiet-bi-nha-tam" },
-    items: [
-      {
-        name: "Bồn cầu sứ", slug: "bon-cau-su", icon: "🚽",
-        image: "/img/bathroom-1-1.jpg?v=5",
-        tagline: "Bồn cầu 1 khối, 2 khối, treo tường — sứ tráng men siphon êm.",
-        highlights: [
-          { name: "Bồn 1 khối siphon",  image: "/img/bathroom-1-1.jpg?v=5", slug: "bon-cau-su" },
-          { name: "Bồn 2 khối phổ thông", image: "/img/bathroom-1-2.jpg?v=5", slug: "bon-cau-su" },
-          { name: "Bồn treo tường",       image: "/img/bathroom-1-3.jpg?v=5", slug: "bon-cau-su" },
-          { name: "Bồn xổm sứ",            image: "/img/bathroom-1-4.jpg?v=5", slug: "bon-cau-su" },
-        ],
-        sections: [
-          { title: "Kiểu xả", items: [
-            { name: "Siphon êm", slug: "bon-cau-su" },
-            { name: "Xả thẳng", slug: "bon-cau-su" },
-            { name: "Xả áp lực", slug: "bon-cau-su" },
-          ]},
-          { title: "Kiểu lắp", items: [
-            { name: "1 khối liền", slug: "bon-cau-su" },
-            { name: "2 khối có két", slug: "bon-cau-su" },
-            { name: "Treo tường", slug: "bon-cau-su" },
-          ]},
-          { title: "Tiêu chuẩn nước", items: [
-            { name: "3/6L tiết kiệm", slug: "bon-cau-su" },
-            { name: "WaterSense", slug: "bon-cau-su" },
-            { name: "CUPC", slug: "bon-cau-su" },
-          ]},
-        ],
-      },
-      {
-        name: "Bồn cầu thông minh", slug: "bon-cau-thong-minh", icon: "🤖",
-        image: "/img/bathroom-2-1.jpg?v=5",
-        tagline: "Bồn cầu thông minh xịt + sấy + sưởi nắp + tự khử mùi.",
-        highlights: [
-          { name: "1 khối thông minh",   image: "/img/bathroom-2-1.jpg?v=5", slug: "bon-cau-thong-minh" },
-          { name: "Nắp gắn thêm",         image: "/img/bathroom-2-2.jpg?v=5", slug: "bon-cau-thong-minh" },
-          { name: "Treo tường thông minh", image: "/img/bathroom-2-3.jpg?v=5", slug: "bon-cau-thong-minh" },
-          { name: "Cao cấp Nhật chuẩn",   image: "/img/bathroom-2-4.jpg?v=5", slug: "bon-cau-thong-minh" },
-        ],
-        sections: [
-          { title: "Tính năng", items: [
-            { name: "Xịt rửa nóng", slug: "bon-cau-thong-minh" },
-            { name: "Sấy khô", slug: "bon-cau-thong-minh" },
-            { name: "Sưởi nắp + khử mùi", slug: "bon-cau-thong-minh" },
-          ]},
-          { title: "Điều khiển", items: [
-            { name: "Cảm biến gần", slug: "bon-cau-thong-minh" },
-            { name: "Remote IR", slug: "bon-cau-thong-minh" },
-            { name: "Side panel + voice", slug: "bon-cau-thong-minh" },
-          ]},
-          { title: "Tiết kiệm", items: [
-            { name: "Xả siêu nhỏ 3L", slug: "bon-cau-thong-minh" },
-            { name: "Eco-mode", slug: "bon-cau-thong-minh" },
-            { name: "Tự ngắt nguồn", slug: "bon-cau-thong-minh" },
-          ]},
-        ],
-      },
-      {
-        name: "Lavabo sứ", slug: "lavabo-su", icon: "🪣",
-        image: "/img/bathroom-3-1.jpg?v=5",
-        tagline: "Chậu rửa lavabo sứ treo tường, đặt bàn, dương vành — đa kiểu dáng.",
-        highlights: [
-          { name: "Đặt bàn tròn",   image: "/img/bathroom-3-1.jpg?v=5", slug: "lavabo-su" },
-          { name: "Treo tường",     image: "/img/bathroom-3-2.jpg?v=5", slug: "lavabo-su" },
-          { name: "Đặt dương vành", image: "/img/bathroom-3-3.jpg?v=5", slug: "lavabo-su" },
-          { name: "Âm bàn",          image: "/img/bathroom-3-4.jpg?v=5", slug: "lavabo-su" },
-        ],
-        sections: [
-          { title: "Kiểu lắp", items: [
-            { name: "Đặt bàn", slug: "lavabo-su" },
-            { name: "Treo tường", slug: "lavabo-su" },
-            { name: "Âm bàn", slug: "lavabo-su" },
-          ]},
-          { title: "Vật liệu", items: [
-            { name: "Sứ vệ sinh", slug: "lavabo-su" },
-            { name: "Composite", slug: "lavabo-su" },
-            { name: "Đá nhân tạo", slug: "lavabo-su" },
-          ]},
-          { title: "Hoàn thiện", items: [
-            { name: "Men trắng cổ điển", slug: "lavabo-su" },
-            { name: "Men đen matte", slug: "lavabo-su" },
-            { name: "Vân đá art", slug: "lavabo-su" },
-          ]},
-        ],
-      },
-      {
-        name: "Tủ phòng tắm", slug: "tu-phong-tam", icon: "🪞",
-        image: "/img/bathroom-4-1.jpg?v=5",
-        tagline: "Tủ chậu lavabo + gương + đèn — gỗ chống nước + inox.",
-        highlights: [
-          { name: "Tủ 600 mm",       image: "/img/bathroom-4-1.jpg?v=5", slug: "tu-phong-tam" },
-          { name: "Tủ 800 mm có gương", image: "/img/bathroom-4-2.jpg?v=5", slug: "tu-phong-tam" },
-          { name: "Tủ 1200 mm đôi",   image: "/img/bathroom-4-3.jpg?v=5", slug: "tu-phong-tam" },
-          { name: "Tủ inox 304",       image: "/img/bathroom-4-4.jpg?v=5", slug: "tu-phong-tam" },
-        ],
-        sections: [
-          { title: "Vật liệu", items: [
-            { name: "Plywood phủ melamine", slug: "tu-phong-tam" },
-            { name: "PVC chống nước", slug: "tu-phong-tam" },
-            { name: "Inox 304", slug: "tu-phong-tam" },
-          ]},
-          { title: "Kích thước", items: [
-            { name: "600 mm", slug: "tu-phong-tam" },
-            { name: "800 mm", slug: "tu-phong-tam" },
-            { name: "1200 mm đôi chậu", slug: "tu-phong-tam" },
-          ]},
-          { title: "Phụ kiện", items: [
-            { name: "Gương cảm ứng + đèn", slug: "tu-phong-tam" },
-            { name: "Tay nâng thuỷ lực", slug: "tu-phong-tam" },
-            { name: "Tay cầm vàng-rose", slug: "tu-phong-tam" },
-          ]},
-        ],
-      },
-      {
-        name: "Vòi nước kim khí", slug: "voi-nuoc", icon: "🚰",
-        image: "/img/bathroom-5-1.jpg?v=5",
-        tagline: "Vòi sen, vòi lavabo, vòi bếp — đồng mạ chrome / vàng / matte.",
-        highlights: [
-          { name: "Vòi lavabo cao", image: "/img/bathroom-5-1.jpg?v=5", slug: "voi-nuoc" },
-          { name: "Vòi sen âm tường", image: "/img/bathroom-5-2.jpg?v=5", slug: "voi-nuoc" },
-          { name: "Vòi bếp uốn cong", image: "/img/bathroom-5-3.jpg?v=5", slug: "voi-nuoc" },
-          { name: "Bộ vòi sen tắm",   image: "/img/bathroom-5-4.jpg?v=5", slug: "voi-nuoc" },
-        ],
-        sections: [
-          { title: "Vị trí lắp", items: [
-            { name: "Lavabo", slug: "voi-nuoc" },
-            { name: "Bồn tắm / sen", slug: "voi-nuoc" },
-            { name: "Bếp", slug: "voi-nuoc" },
-          ]},
-          { title: "Vật liệu", items: [
-            { name: "Đồng đỏ mạ chrome", slug: "voi-nuoc" },
-            { name: "Inox 304", slug: "voi-nuoc" },
-            { name: "Hợp kim Zn rẻ", slug: "voi-nuoc" },
-          ]},
-          { title: "Màu hoàn thiện", items: [
-            { name: "Chrome bóng", slug: "voi-nuoc" },
-            { name: "Đen matte", slug: "voi-nuoc" },
-            { name: "Vàng rose / brushed gold", slug: "voi-nuoc" },
-          ]},
-        ],
-      },
-    ],
+    main: { icon: "🛏", name: "Đồ dùng khách sạn", slug: "hotel-supplies" },
+    items: [],
   },
-  // ─── Thiết bị bếp ───────────────────────────────────────────────────
   {
-    main: { icon: "🥘", name: "Thiết bị bếp", slug: "thiet-bi-bep" },
+    main: { icon: "🔨", name: "Phụ kiện & Dụng cụ", slug: "hardware-tools" },
+    items: [],
+  },
+  {
+    main: { icon: "🎨", name: "Trang trí", slug: "decoration" },
+    items: [],
+  },
+  {
+    main: { icon: "🌿", name: "Ngoài trời & Sân vườn", slug: "outdoor-garden" },
+    items: [],
+  },
+  {
+    main: { icon: "⚡", name: "Điện & Thiết bị điện", slug: "electrical" },
     items: [
       {
-        name: "Chậu rửa inox", slug: "chau-rua-inox", icon: "🍽️",
+        name: "Điều hoà", slug: "dieu-hoa", icon: "❄️",
         image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
-        tagline: "Chậu rửa inox 304 đơn / đôi / 3 ngăn — mịn handmade / chống ồn.",
+        tagline: "Điều hoà inverter treo tường, âm trần, tủ đứng — đa dải công suất.",
         highlights: [
-          { name: "Chậu đơn 50×40",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "chau-rua-inox" },
-          { name: "Chậu đôi 78×42",   image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "chau-rua-inox" },
-          { name: "Handmade vuông",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "chau-rua-inox" },
-          { name: "3 ngăn công nghiệp", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "chau-rua-inox" },
+          { name: "Treo tường inverter", image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "dieu-hoa" },
+          { name: "Âm trần cassette",    image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "dieu-hoa" },
+          { name: "Tủ đứng công nghiệp", image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "dieu-hoa" },
+          { name: "Multi-split",         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "dieu-hoa" },
         ],
         sections: [
-          { title: "Số ngăn", items: [
-            { name: "1 ngăn", slug: "chau-rua-inox" },
-            { name: "2 ngăn", slug: "chau-rua-inox" },
-            { name: "3 ngăn", slug: "chau-rua-inox" },
+          { title: "Theo công suất", items: [
+            { name: "9.000 BTU", slug: "dieu-hoa" },
+            { name: "12.000 BTU", slug: "dieu-hoa" },
+            { name: "18.000–24.000 BTU", slug: "dieu-hoa" },
           ]},
-          { title: "Kiểu", items: [
-            { name: "Đặt bàn", slug: "chau-rua-inox" },
-            { name: "Âm bàn", slug: "chau-rua-inox" },
-            { name: "Bán âm undermount", slug: "chau-rua-inox" },
+          { title: "Theo kiểu lắp", items: [
+            { name: "Treo tường", slug: "dieu-hoa" },
+            { name: "Âm trần", slug: "dieu-hoa" },
+            { name: "Tủ đứng", slug: "dieu-hoa" },
           ]},
-          { title: "Hoàn thiện", items: [
-            { name: "Brushed lụa", slug: "chau-rua-inox" },
-            { name: "Nano đen matte", slug: "chau-rua-inox" },
-            { name: "Handmade R10", slug: "chau-rua-inox" },
+          { title: "Công nghệ", items: [
+            { name: "Inverter R32", slug: "dieu-hoa" },
+            { name: "Wi-Fi điều khiển", slug: "dieu-hoa" },
+            { name: "Lọc PM2.5", slug: "dieu-hoa" },
           ]},
         ],
       },
       {
-        name: "Sản phẩm kim khí", slug: "kim-khi-bep", icon: "🔧",
+        name: "Tủ lạnh", slug: "tu-lanh", icon: "🧊",
         image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
-        tagline: "Bản lề tủ bếp, ray trượt, tay cầm, phụ kiện inox — gọi theo container.",
+        tagline: "Tủ lạnh side-by-side, French door, mini bar — báo giá theo lô FCL.",
         highlights: [
-          { name: "Bản lề giảm chấn", image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "kim-khi-bep" },
-          { name: "Ray trượt đáy",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "kim-khi-bep" },
-          { name: "Tay cầm hợp kim",  image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "kim-khi-bep" },
-          { name: "Phụ kiện inox",    image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "kim-khi-bep" },
+          { name: "Side-by-side",  image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "tu-lanh" },
+          { name: "French door",   image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "tu-lanh" },
+          { name: "Ngăn đá trên",  image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "tu-lanh" },
+          { name: "Mini bar",      image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "tu-lanh" },
         ],
         sections: [
-          { title: "Bản lề & Ray", items: [
-            { name: "Bản lề cốc 35 mm", slug: "kim-khi-bep" },
-            { name: "Ray trượt 3 tầng", slug: "kim-khi-bep" },
-            { name: "Pittông nâng tủ", slug: "kim-khi-bep" },
+          { title: "Theo dung tích", items: [
+            { name: "< 200L", slug: "tu-lanh" },
+            { name: "200–400L", slug: "tu-lanh" },
+            { name: "> 500L", slug: "tu-lanh" },
           ]},
-          { title: "Phụ kiện inox", items: [
-            { name: "Giá bát đĩa", slug: "kim-khi-bep" },
-            { name: "Giá gia vị", slug: "kim-khi-bep" },
-            { name: "Thùng rác âm tủ", slug: "kim-khi-bep" },
+          { title: "Theo kiểu", items: [
+            { name: "Side-by-side", slug: "tu-lanh" },
+            { name: "French door", slug: "tu-lanh" },
+            { name: "Multi-door", slug: "tu-lanh" },
           ]},
-          { title: "Tay cầm", items: [
-            { name: "Tay vuông inox", slug: "kim-khi-bep" },
-            { name: "Tay tròn đồng", slug: "kim-khi-bep" },
-            { name: "Tay chìm âm", slug: "kim-khi-bep" },
+          { title: "Tính năng", items: [
+            { name: "Inverter tiết kiệm", slug: "tu-lanh" },
+            { name: "No-frost", slug: "tu-lanh" },
+            { name: "Smart Wi-Fi", slug: "tu-lanh" },
           ]},
         ],
       },
-    ],
-  },
-  // ─── Đồ điện (Điện công trình) ─────────────────────────────────────
-  {
-    main: { icon: "⚡", name: "Đồ điện", slug: "do-dien" },
-    items: [
+      {
+        name: "Máy giặt", slug: "may-giat", icon: "🧺",
+        image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5",
+        tagline: "Máy giặt cửa trước, cửa trên, sấy khô — full hộ gia đình & khách sạn.",
+        highlights: [
+          { name: "Cửa trước inverter",  image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "may-giat" },
+          { name: "Cửa trên",            image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "may-giat" },
+          { name: "Giặt sấy combo",      image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "may-giat" },
+          { name: "Công nghiệp khách sạn", image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "may-giat" },
+        ],
+        sections: [
+          { title: "Theo tải", items: [
+            { name: "7–9 kg", slug: "may-giat" },
+            { name: "10–12 kg", slug: "may-giat" },
+            { name: "Công nghiệp >15 kg", slug: "may-giat" },
+          ]},
+          { title: "Loại", items: [
+            { name: "Cửa trước", slug: "may-giat" },
+            { name: "Cửa trên", slug: "may-giat" },
+            { name: "Giặt sấy combo", slug: "may-giat" },
+          ]},
+          { title: "Tính năng", items: [
+            { name: "Inverter", slug: "may-giat" },
+            { name: "Hơi nước diệt khuẩn", slug: "may-giat" },
+            { name: "Wi-Fi điều khiển", slug: "may-giat" },
+          ]},
+        ],
+      },
+      {
+        name: "Máy sưởi", slug: "may-suoi", icon: "🔥",
+        image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
+        tagline: "Máy sưởi dầu, halogen, quạt — công suất 1500–2500 W.",
+        highlights: [
+          { name: "Sưởi dầu 9 thanh",  image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "may-suoi" },
+          { name: "Halogen tháp",      image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "may-suoi" },
+          { name: "Quạt sưởi mini",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "may-suoi" },
+          { name: "Carbon hồng ngoại", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "may-suoi" },
+        ],
+        sections: [
+          { title: "Loại", items: [
+            { name: "Sưởi dầu", slug: "may-suoi" },
+            { name: "Halogen tháp", slug: "may-suoi" },
+            { name: "Quạt sưởi", slug: "may-suoi" },
+          ]},
+          { title: "Công suất", items: [
+            { name: "1500 W", slug: "may-suoi" },
+            { name: "2000 W", slug: "may-suoi" },
+            { name: "2500 W", slug: "may-suoi" },
+          ]},
+          { title: "Tính năng", items: [
+            { name: "Hẹn giờ tự tắt", slug: "may-suoi" },
+            { name: "Điều khiển từ xa", slug: "may-suoi" },
+            { name: "Chống nổ quá nhiệt", slug: "may-suoi" },
+          ]},
+        ],
+      },
+      {
+        name: "Bình nóng lạnh", slug: "binh-nong-lanh", icon: "🚿",
+        image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
+        tagline: "Bình nóng lạnh trực tiếp, gián tiếp, năng lượng mặt trời.",
+        highlights: [
+          { name: "Trực tiếp 3500W",     image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "binh-nong-lanh" },
+          { name: "Gián tiếp 30L",       image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "binh-nong-lanh" },
+          { name: "Năng lượng mặt trời", image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "binh-nong-lanh" },
+          { name: "Heat-pump",           image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "binh-nong-lanh" },
+        ],
+        sections: [
+          { title: "Loại", items: [
+            { name: "Trực tiếp", slug: "binh-nong-lanh" },
+            { name: "Gián tiếp", slug: "binh-nong-lanh" },
+            { name: "Năng lượng mặt trời", slug: "binh-nong-lanh" },
+          ]},
+          { title: "Dung tích", items: [
+            { name: "15–20L", slug: "binh-nong-lanh" },
+            { name: "30L", slug: "binh-nong-lanh" },
+            { name: "50L+ khách sạn", slug: "binh-nong-lanh" },
+          ]},
+          { title: "Vật liệu", items: [
+            { name: "Lòng tráng men", slug: "binh-nong-lanh" },
+            { name: "Lòng inox", slug: "binh-nong-lanh" },
+            { name: "Lòng đồng", slug: "binh-nong-lanh" },
+          ]},
+        ],
+      },
       {
         name: "Dây điện & Cáp", slug: "day-dien-cap", icon: "🔌",
         image: "/img/ceramic-4-1.jpg?v=5",
