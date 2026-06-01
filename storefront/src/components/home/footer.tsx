@@ -19,6 +19,7 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
     title: "Về Huayuesc",
     links: [
       { label: "Giới thiệu", href: "/info/about-us" },
+      { label: "Đối tác sản xuất", href: "/info/partners" },
       { label: "Mạng lưới kết nối", href: "/info/network" },
       { label: "Quy trình kiểm định", href: "/info/audit-process" },
       { label: "Tin tức ngành", href: "/info/industry-news" },
