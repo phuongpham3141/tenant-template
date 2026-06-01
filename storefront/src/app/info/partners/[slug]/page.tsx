@@ -244,6 +244,49 @@ export default async function PartnerDetailPage({
 
 /* ─── Helpers ─────────────────────────────────────────────────────── */
 
+/**
+ * Đoán emoji phù hợp cho 1 SKU dựa theo từ khoá trong tên tiếng Việt.
+ * Dùng khi product.image trống — tốt hơn fallback chung chung 📦.
+ */
+function guessIcon(name: string): string {
+  const n = name.toLowerCase();
+  if (/điều hoà|máy lạnh/.test(n)) return "❄️";
+  if (/tủ lạnh|lạnh/.test(n)) return "🧊";
+  if (/máy giặt|giặt/.test(n)) return "🧺";
+  if (/máy sấy|sấy/.test(n)) return "💨";
+  if (/bếp từ|bếp điện|bếp ga|bếp gas/.test(n)) return "♨️";
+  if (/hút mùi|hút khói/.test(n)) return "💨";
+  if (/lò vi sóng|lò hấp|lò nướng/.test(n)) return "🔥";
+  if (/nồi cơm|nồi điện/.test(n)) return "🍚";
+  if (/nồi áp suất/.test(n)) return "🍲";
+  if (/máy sưởi/.test(n)) return "🔥";
+  if (/bình nóng lạnh|nước nóng/.test(n)) return "🚿";
+  if (/máy rửa bát|rửa chén/.test(n)) return "🍽️";
+  if (/lò vi sóng|vi sóng/.test(n)) return "📡";
+  if (/máy lọc|nước|cây nước/.test(n)) return "💧";
+  if (/cà phê|coffee/.test(n)) return "☕";
+  if (/rượu|wine/.test(n)) return "🍷";
+  if (/chậu rửa|sink/.test(n)) return "🧽";
+  if (/vòi/.test(n)) return "🚰";
+  if (/bồn cầu/.test(n)) return "🚽";
+  if (/lavabo|bồn rửa/.test(n)) return "🪣";
+  if (/tủ phòng tắm|tủ tắm/.test(n)) return "🪞";
+  if (/thang máy|thang cuốn/.test(n)) return "🛗";
+  if (/khoá|khóa|lock/.test(n)) return "🔐";
+  if (/gateway|wi-?fi/.test(n)) return "📶";
+  if (/sơn|coating/.test(n)) return "🎨";
+  if (/màng/.test(n)) return "📜";
+  if (/bột trét/.test(n)) return "🧱";
+  if (/bông khoáng|bông thuỷ|cách nhiệt|cách âm/.test(n)) return "🧊";
+  if (/tấm|panel|alc|aac/.test(n)) return "🟦";
+  if (/đá|quartz|stone|cẩm thạch/.test(n)) return "⛰️";
+  if (/ống|cáp|dây điện/.test(n)) return "🔌";
+  if (/máng/.test(n)) return "🛤️";
+  if (/đèn|led/.test(n)) return "💡";
+  if (/phụ kiện|accessor/.test(n)) return "🔧";
+  return "📦";
+}
+
 function FactoryField({ label, value }: { label: string; value: string }) {
   return (
     <div>
@@ -276,8 +319,11 @@ function ProductCard({
             referrerPolicy="no-referrer"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-[44px] text-mute2">
-            📦
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-bg to-[#E0E5EC] text-mute2">
+            <span className="text-[44px] opacity-60">{guessIcon(product.name)}</span>
+            <span className="text-[10.5px] text-mute font-semibold tracking-wider">
+              {product.model}
+            </span>
           </div>
         )}
         <span className="absolute top-2 left-2 bg-brand-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-sm tracking-wider">
