@@ -508,12 +508,12 @@ a[style*="--social-brand"]:hover {
 }
 
 /* Homepage CategoryShowcase: collapse each main category to its first
-   8 sub-items by default. Hovering the whole block reveals the rest
+   4 sub-items by default. Hovering the whole block reveals the rest
    (mirrors the .mm-sec pattern above). */
-.cat-block .cat-grid > *:nth-child(n+9) {
+.cat-block .cat-grid > *:nth-child(n+5) {
   display: none;
 }
-.cat-block:hover .cat-grid > *:nth-child(n+9) {
+.cat-block:hover .cat-grid > *:nth-child(n+5) {
   display: flex;
 }
 .cat-block:hover .cat-more {

@@ -1,8 +1,15 @@
 import Link from "next/link";
 import { NAV_MENU } from "@/data/home";
 
+// Only main categories with at least 4 sub-items (i.e. enough to fill
+// a single 4-col row) are surfaced on the homepage showcase. Categories
+// like 🏠 Nhà & Sân vườn that currently carry just 1 sub-item are
+// skipped to keep the section visually tidy.
+const MIN_ITEMS = 4;
+
 export function CategoryShowcase() {
-  const totalSubs = NAV_MENU.reduce((n, g) => n + g.items.length, 0);
+  const shown = NAV_MENU.filter((g) => g.items.length >= MIN_ITEMS);
+  const totalSubs = shown.reduce((n, g) => n + g.items.length, 0);
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-4 max-md:px-3 max-md:mt-3">
       <div className="bg-paper border border-line rounded p-5 max-md:p-3">
@@ -10,13 +17,13 @@ export function CategoryShowcase() {
           <span className="w-1 h-5 bg-brand rounded-sm" />
           Danh mục sản phẩm chính
           <span className="text-[12px] text-mute font-normal ml-1">
-            · {NAV_MENU.length} ngành chính, {totalSubs} phân loại
+            · {shown.length} ngành chính, {totalSubs} phân loại
           </span>
         </h2>
 
         <div className="flex flex-col gap-5 max-md:gap-4">
-          {NAV_MENU.map((group) => {
-            const extra = Math.max(0, group.items.length - 8);
+          {shown.map((group) => {
+            const extra = Math.max(0, group.items.length - 4);
             return (
               <div key={group.main.slug} className="cat-block flex flex-col">
                 <Link
@@ -32,7 +39,7 @@ export function CategoryShowcase() {
                     </span>
                   )}
                 </Link>
-                <div className="cat-grid grid grid-cols-8 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
+                <div className="cat-grid grid grid-cols-4 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
                   {group.items.map((it) => (
                     <Link
                       key={it.slug}
