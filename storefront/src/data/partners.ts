@@ -524,6 +524,185 @@ export const PARTNERS: PartnerBrand[] = [
       { model: "PXQZ231126-3", name: "PXQZ231126-3 — Tấm có quality cert", desc: "Tấm quartz có đầy đủ chứng nhận chất lượng quốc tế.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407301453103172-768x513.jpg" },
     ],
   },
+
+  // ─── 💡 ĐÈN & CHIẾU SÁNG (mới — đợt Phase 5+) ──────────────────────
+  {
+    slug: "fsl",
+    name: "Phật Sơn Chiếu Sáng (FSL)",
+    nameOriginal: "佛山照明 Foshan Lighting (FSL)",
+    category: "lighting",
+    cvsStt: 16,
+    introduction:
+      "Phật Sơn Chiếu Sáng (FSL) là một trong những doanh nghiệp chiếu sáng lâu đời nhất Trung Quốc, hoạt động từ năm 1958. Công ty hiện sở hữu chuỗi sản xuất LED hoàn chỉnh — từ chip thượng nguồn → đóng gói LED trung nguồn → ứng dụng đèn LED hạ nguồn. FSL liên tục mở rộng các phân khúc mới: chiếu sáng thông minh, sức khoẻ, hàng hải, hàng không, thể thao, nông nghiệp và chăn nuôi.",
+    founded: "1958",
+    factory: {
+      location: "Trụ sở chính: Phật Sơn, tỉnh Quảng Đông, Trung Quốc",
+      facilities: "Chuỗi sản xuất LED đầy đủ: chip + đóng gói + ứng dụng",
+    },
+    highlights: [
+      "Doanh nghiệp chiếu sáng đầu tiên niêm yết tại Trung Quốc (Trung Hoa Lão Hiệu — Thương hiệu lâu đời)",
+      "Chuỗi sản xuất LED đầy đủ trong nội bộ (chip → package → ứng dụng)",
+      "3 mảng kinh doanh cốt lõi: chiếu sáng chung, kỹ thuật điện, đèn ô tô",
+      "Mở rộng sang chiếu sáng thông minh, y tế, hàng hải, hàng không, thể thao",
+    ],
+    website: "https://www.chinafsl.com/",
+    products: [
+      { model: "FSL-IND", name: "Đèn LED công nghiệp", desc: "Đèn LED chiếu sáng nhà xưởng, kho bãi, logistics.", image: "https://www.chinafsl.com/uploads/images/202512/f0ea01d9c8e60f6111e52cc4c4f8e573.jpg" },
+      { model: "FSL-COM", name: "Đèn LED thương mại", desc: "Đèn LED chiếu sáng văn phòng, showroom, TTTM.", image: "https://www.chinafsl.com/uploads/images/202512/9d776f7c64673a3f35632054331dadfa.png" },
+      { model: "FSL-HOME", name: "Đèn LED gia dụng", desc: "Đèn LED ốp trần, downlight, panel cho nhà ở.", image: "https://www.chinafsl.com/uploads/images/202512/6ce05ca500d42f0e2ec8281efdbf669e.png" },
+      { model: "FSL-AUTO", name: "Đèn ô tô", desc: "Hệ thống chiếu sáng ô tô — đèn pha LED, đèn trang trí.", image: "https://www.chinafsl.com/uploads/images/202512/e747ac239a590ee3efb0b60bdbbff921.png" },
+      { model: "FSL-OUT", name: "Đèn LED ngoài trời", desc: "Đèn pha LED 100-300W, đèn đường, đèn cảnh quan, IP65-66.", image: "https://www.chinafsl.com/uploads/images/202512/44699211a4735d7d324fc1b959a5722d.png" },
+      { model: "FSL-SMART", name: "Chiếu sáng thông minh", desc: "Đèn smart Wi-Fi/Zigbee, điều khiển qua app, thay đổi nhiệt màu.", image: "https://www.chinafsl.com/uploads/images/202512/7500a21694b3c532a9c2f7f664c5d6ca.png" },
+      { model: "FSL-HEALTH", name: "Chiếu sáng sức khoẻ", desc: "Đèn chiếu sáng theo nhịp sinh học, bảo vệ thị lực + giấc ngủ.", image: "https://www.chinafsl.com/uploads/images/202512/a8159c4c859f3b0f5aadc1c2b8817565.png" },
+      { model: "FSL-PLANT", name: "Đèn nông nghiệp + chăn nuôi", desc: "Đèn LED chuyên dụng cho nhà kính + trang trại chăn nuôi.", image: "https://www.chinafsl.com/uploads/images/202512/674709e0db6c9675a4f490aa6555ed85.png" },
+    ],
+  },
+  {
+    slug: "care-lighting",
+    name: "Khai Nhĩ Chiếu Sáng (CareLighting)",
+    nameOriginal: "开尔照明 Zhejiang Xuguang Electronic",
+    category: "lighting",
+    cvsStt: 14,
+    introduction:
+      "Khai Nhĩ Chiếu Sáng (CareLighting) thuộc Công ty CP Điện tử Húc Quang Chiết Giang — nhà cung cấp giải pháp ứng dụng đèn LED tích hợp R&D + sản xuất + bán hàng + dịch vụ. Công ty đã niêm yết tại sàn NEEQ (Tân Tam Bản) năm 2016 mã 839762, được công nhận là một trong 10 thương hiệu LED hàng đầu Trung Quốc và là đơn vị soạn thảo tiêu chuẩn quốc gia về đèn LED tự chấn lưu trên 50V.",
+    founded: "1995 (CareLighting brand)",
+    listed: "NEEQ 839762",
+    factory: {
+      location: "Trụ sở: tỉnh Chiết Giang, Trung Quốc",
+      facilities: "Cơ sở sản xuất tại Chiết Giang, mạng lưới phân phối 26 tỉnh/thành",
+    },
+    highlights: [
+      "Niêm yết sàn NEEQ Trung Quốc — mã 839762 (2016)",
+      "Top 10 thương hiệu LED tại Trung Quốc",
+      "Đơn vị soạn thảo tiêu chuẩn quốc gia: Quy phạm An toàn đèn LED tự chấn lưu trên 50V",
+      "Mạng lưới 500 cửa hàng phân phối tại 26 tỉnh, thành phố trực thuộc trung ương, khu tự trị",
+    ],
+    website: "http://www.care-china.cn/",
+    products: [
+      { model: "CL-LED-SRC", name: "LED nguồn — chip + module", desc: "LED chip COB + SMD + module driver cho phân phối đại lý.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/2e7591f9-db71-434f-acb5-038cd031406f.png" },
+      { model: "CL-LED-HOME", name: "LED gia dụng", desc: "Đèn ốp trần, downlight âm trần, panel LED cho nhà ở.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/8a1486f8-5999-4b62-aeee-7ecbc03e9ea4.jpg" },
+      { model: "CL-LED-COM", name: "LED thương mại", desc: "Đèn pha LED, đèn tuýp T8, spotlight ray, UFO highbay cho nhà xưởng + showroom.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/4d0ae77e-e3e5-4c59-9680-96ba494c3f9c.jpg" },
+      { model: "CL-EE", name: "Vật tư điện", desc: "Ổ cắm, công tắc, MCB, RCBO, hộp đấu nối hoàn thiện hệ thống chiếu sáng.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/1c1d038e-7b8a-450c-8eb8-047d111a60af.png" },
+      { model: "CL-PROD-A", name: "Đèn LED chuyên dụng A", desc: "Series đèn chuyên dụng A.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/7c87c30d-c739-440f-a92f-fc0835c289c5.jpg" },
+      { model: "CL-PROD-B", name: "Đèn LED chuyên dụng B", desc: "Series đèn chuyên dụng B.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/c82dfc48-c3ea-4330-b6a8-bb3d3d8c3a07.jpg" },
+    ],
+  },
+
+  // ─── 🍳 THIẾT BỊ NHÀ BẾP (bổ sung 2 brand) ─────────────────────────
+  {
+    slug: "daweier",
+    name: "Đạt Uy Nhĩ (Daweier)",
+    nameOriginal: "开平达威尔厨卫 Kaiping Daweier",
+    category: "kitchen-equipment",
+    cvsStt: 27,
+    introduction:
+      "Đạt Uy Nhĩ Khai Bình (Kaiping Daweier) là doanh nghiệp liên doanh Trung – Mỹ chuyên sản xuất chậu rửa inox cao cấp + vòi nước + phễu thoát sàn inox + phụ kiện nhà bếp/phòng tắm. Tích hợp thiết kế + R&D + sản xuất + tiếp thị + dịch vụ, Daweier là doanh nghiệp dẫn đầu thị trường chậu rửa Trung Quốc, sớm đạt chứng nhận ISO 9001 và UPC.",
+    factory: {
+      location: "Trấn Thuỷ Khẩu, Khai Bình, tỉnh Quảng Đông, Trung Quốc",
+      facilities: "Nhà máy hiện đại 60.000+ m² tại Khai Bình — “Vương quốc Sanitary của Trung Quốc”",
+    },
+    highlights: [
+      "Liên doanh Trung – Mỹ, hoạt động từ 1998 — hơn 25 năm chuyên ngành",
+      "Sớm đạt chứng nhận ISO 9001 (chất lượng) + UPC (chứng nhận Mỹ cho sản phẩm uPVC)",
+      "Doanh nghiệp dẫn đầu thị trường chậu rửa inox Trung Quốc",
+      "Sản phẩm xuất khẩu trên 30 quốc gia + vùng lãnh thổ",
+    ],
+    website: "http://www.daweier.com/",
+    products: [
+      { model: "DW-SS-SINK", name: "Chậu rửa inox 304", desc: "Chậu rửa bếp inox 304, đơn / đôi / 3 ngăn, bề mặt brushed + nano đen matte." },
+      { model: "DW-FA-KIT", name: "Vòi nước nhà bếp", desc: "Vòi bếp đồng mạ chrome / vàng PVD, vòi rút uốn cong." },
+      { model: "DW-FA-BATH", name: "Vòi nước phòng tắm", desc: "Vòi lavabo + vòi sen, mạ chrome / matte đen / vàng rose." },
+      { model: "DW-FD", name: "Phễu thoát sàn inox", desc: "Phễu thoát sàn inox 304 chống mùi, lưới chắn rác có thể tháo rời." },
+      { model: "DW-ACC", name: "Phụ kiện kim khí bếp - tắm", desc: "Phụ kiện inox: giá để bát, móc treo, tay vịn, kệ phụ trợ." },
+    ],
+  },
+  {
+    slug: "dongyuan",
+    name: "Đông Nguyên (Dongyuan)",
+    nameOriginal: "东原厨具 GuangDong DongYuan Kitchenware",
+    category: "kitchen-equipment",
+    cvsStt: 28,
+    introduction:
+      "Đông Nguyên (Dongyuan Kitchenware) là doanh nghiệp hiện đại tại quận Thuận Đức, Phật Sơn — trung tâm cụm sản xuất chế tạo lớn nhất Trung Quốc. Hoạt động từ 1993, công ty tích hợp R&D + sản xuất + bán hàng cho lĩnh vực chậu rửa inox, đồ dùng nhà bếp + sản phẩm kim khí. Sản lượng hơn 1,8 triệu sản phẩm/năm và xuất khẩu hơn 30 quốc gia.",
+    founded: "1993",
+    factory: {
+      location: "Quận Thuận Đức, thành phố Phật Sơn, tỉnh Quảng Đông, Trung Quốc",
+      area: "~60.000 m²",
+      capacity: "1,8 triệu+ sản phẩm/năm",
+    },
+    highlights: [
+      "Trên 30 năm chuyên ngành (từ 1993) — tích luỹ kinh nghiệm sâu trong chậu rửa + kim khí bếp",
+      "Sản lượng hàng năm vượt 1,8 triệu sản phẩm",
+      "Xuất khẩu hơn 30 quốc gia + vùng lãnh thổ trên thế giới",
+      "Cụm sản xuất Thuận Đức — trung tâm gia công kim loại hàng đầu Trung Quốc",
+    ],
+    website: "http://www.sddongyuan.com/",
+    products: [
+      { model: "DY-SINK-1", name: "Chậu rửa inox 304 — series P1", desc: "Chậu rửa inox 304 đơn lớn, dung tích tối đa, bề mặt brushed.", image: "http://www.sddongyuan.com/images/p1.jpg" },
+      { model: "DY-SINK-2", name: "Chậu rửa inox 304 — series P2", desc: "Chậu rửa inox 304 đôi, 2 ngăn cân đối.", image: "http://www.sddongyuan.com/images/p2.jpg" },
+      { model: "DY-SINK-3", name: "Chậu rửa inox 304 — series P3", desc: "Chậu rửa inox handmade R10, vuông góc hiện đại.", image: "http://www.sddongyuan.com/images/p3.jpg" },
+      { model: "DY-SINK-4", name: "Chậu rửa inox 304 — series P4", desc: "Chậu rửa inox bán âm undermount cho mặt bếp đá.", image: "http://www.sddongyuan.com/images/p4.jpg" },
+      { model: "DY-KIT", name: "Đồ dùng nhà bếp inox", desc: "Các sản phẩm bếp phụ trợ: giỏ rổ, kệ, móc treo inox 304." },
+      { model: "DY-HW", name: "Sản phẩm kim khí bếp", desc: "Bản lề tủ bếp, ray trượt giảm chấn, tay nắm hợp kim." },
+    ],
+  },
+
+  // ─── 🧱 VLXD (bổ sung 2 brand đá + tấm cách nhiệt) ──────────────────
+  {
+    slug: "pengxiang",
+    name: "Bằng Tường (Pengxiang)",
+    nameOriginal: "福建鹏翔实业 Fujian Pengxiang Industry",
+    category: "construction-materials",
+    cvsStt: 43,
+    introduction:
+      "Bằng Tường (Fujian Pengxiang Industry) là tập đoàn chế tạo đá cao cấp đặt tại tỉnh Phúc Kiến — Trung Quốc, một trong những nhà sản xuất hàng đầu Châu Á về đá nhân tạo. Sản phẩm chủ lực gồm thạch anh nhân tạo, cẩm thạch tái chế (re-engineered marble), đá mài terrazzo và thạch anh 3D. Tập đoàn cũng là công ty mẹ của Đức Thịnh Stone (pháp nhân Việt Nam) tại Nghệ An.",
+    factory: {
+      location: "Tỉnh Phúc Kiến, Trung Quốc + nhà máy tại KCN Nghĩa Đàn, Nghệ An (qua Đức Thịnh Stone)",
+      facilities: "Công nghệ sản xuất đá nhân tạo tự động toàn phần — đạt chuẩn quốc tế",
+    },
+    highlights: [
+      "Một trong những nhà sản xuất đá nhân tạo lớn nhất Châu Á",
+      "Sở hữu pháp nhân Việt Nam (Đức Thịnh Stone) tại KCN Nghĩa Đàn, Nghệ An",
+      "Vốn đầu tư nhà máy VN: 25 triệu USD, công suất 8,5 triệu m²/năm",
+      "Xuất khẩu hơn 120 quốc gia trên thế giới",
+    ],
+    website: "http://www.pengxiang.cn/",
+    products: [
+      { model: "PX-Q-3D", name: "Thạch anh 3D", desc: "Tấm thạch anh nhân tạo vân 3D thiết kế hiện đại, dùng cho mặt bàn + ốp tường.", image: "http://www.pengxiang.cn/uploads/pros/pros-0006.jpg" },
+      { model: "PX-Q", name: "Thạch anh nhân tạo", desc: "Tấm thạch anh engineered, khổ lớn liền mạch, độ cứng cao.", image: "http://www.pengxiang.cn/uploads/pros/pros-0001.jpg" },
+      { model: "PX-M-RE", name: "Cẩm thạch tái chế", desc: "Re-engineered marble — đá cẩm thạch nhân tạo từ vụn marble tự nhiên.", image: "http://www.pengxiang.cn/uploads/pros/pros-0005.jpg" },
+      { model: "PX-TR", name: "Đá mài terrazzo", desc: "Đá mài terrazzo nhân tạo, kết hợp xi măng + đá vụn tự nhiên.", image: "http://www.pengxiang.cn/uploads/banner/202604132320130.jpg" },
+      { model: "PX-Q-COUNTER", name: "Mặt bàn thạch anh", desc: "Tấm thạch anh chuyên cho mặt bàn bếp + lavabo, độ cứng cao.", image: "http://www.pengxiang.cn/uploads/202408/26/thumbs/202408261536143_s.jpg" },
+      { model: "PX-Q-WALL", name: "Ốp tường thạch anh", desc: "Tấm thạch anh khổ lớn ốp tường nội thất cao cấp.", image: "http://www.pengxiang.cn/uploads/202408/26/thumbs/202408261456163_s.jpg" },
+    ],
+  },
+  {
+    slug: "zhongju-yabai",
+    name: "Trung Cư Á Bách (Zhongju Yabai)",
+    nameOriginal: "中居亚百建材科技 Zhongju Yabai Building Materials",
+    category: "construction-materials",
+    cvsStt: 38,
+    introduction:
+      "Trung Cư Á Bách (Guangdong Zhongju Yabai Building Materials Technology) chuyên sản xuất tấm vô cơ phủ sẵn (无机预涂板) — còn gọi là 'tấm Băng Hoả' (冰火板) — vật liệu hoàn thiện cao cấp cho vách ngăn nội/ngoại thất và trần thả. Sản phẩm có đặc tính chống cháy, chống ẩm, chống nấm mốc, kháng khuẩn và không phát thải formaldehyde.",
+    factory: {
+      location: "Tỉnh Quảng Đông, Trung Quốc",
+      facilities: "Dây chuyền sản xuất toàn tự động — tấm vô cơ pre-coated",
+    },
+    highlights: [
+      "Tấm vô cơ phủ sẵn (无机预涂板) — đặc tính chống cháy + chống ẩm + chống nấm mốc",
+      "Sản phẩm kháng khuẩn, không phát thải formaldehyde — đạt chuẩn bệnh viện + phòng sạch",
+      "Ứng dụng: vách ngăn nội/ngoại thất, trần thả, ốp tường y tế, phòng thí nghiệm",
+      "Sản phẩm 'Băng Hoả' (冰火板) — chịu lửa + chịu nhiệt độ thấp",
+    ],
+    website: "http://www.gdzjyb.com/",
+    products: [
+      { model: "ZJ-PCB", name: "Tấm vô cơ phủ sẵn", desc: "Tấm vô cơ pre-coated cho vách + trần — chống cháy + chống ẩm + chống mốc.", image: "http://www.gdzjyb.com/uploads/image/20220825/194f666d94d89f461eb6c7526109638d.png" },
+      { model: "ZJ-ICE-FIRE", name: "Tấm 'Băng Hoả' (冰火板)", desc: "Tấm cao cấp chịu lửa + chịu nhiệt độ thấp, dùng nội thất hiện đại.", image: "http://www.gdzjyb.com/uploads/image/20220901/cae3d6925d3191468926f9aa3337dfc9.jpg" },
+      { model: "ZJ-MED", name: "Tấm kháng khuẩn y tế", desc: "Tấm vô cơ kháng khuẩn chuyên dụng cho bệnh viện + phòng sạch.", image: "http://www.gdzjyb.com/uploads/image/20220901/fe72f477fd0d9351a09c9e80f31e12e5.jpg" },
+      { model: "ZJ-WALL", name: "Tấm ốp tường (护墙板)", desc: "Tấm ốp tường nội thất bề mặt trang trí + dễ vệ sinh.", image: "http://www.gdzjyb.com/uploads/image/20220901/3afdbf4df145fb7285ab55125b93d2a4.jpg" },
+      { model: "ZJ-CEIL", name: "Tấm trần thả", desc: "Tấm trần thả vô cơ, không cháy + cách âm nhẹ.", image: "http://www.gdzjyb.com/uploads/image/20220901/b8c4c54486b9c1ee678aa737daa966b2.jpg" },
+    ],
+  },
 ];
 
 /** Lookup helper: nhóm partners theo root category. */
