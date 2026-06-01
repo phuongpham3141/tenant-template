@@ -1,5 +1,72 @@
 import Link from "next/link";
-import type { NavSubItem } from "@/data/home";
+import type { NavSubItem, NAV_MENU } from "@/data/home";
+
+type NavMenuGroup = typeof NAV_MENU[number];
+
+/**
+ * Category-overview panel — shown in the BannerSection right-panel when a
+ * main category in the sidebar is hovered. Lists the group's sub-items as
+ * a 3-col grid of cards (image + icon + name + tagline). Click any card
+ * to drill into the sub-category page.
+ */
+export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
+  const mainHref = `/category/${group.main.slug}`;
+  return (
+    <div className="p-4 h-full overflow-y-auto flex flex-col">
+      {/* Heading */}
+      <div className="flex items-center justify-between border-b border-line pb-2.5 mb-3 flex-shrink-0">
+        <h3 className="text-[15px] font-bold text-brand flex items-center gap-2 min-w-0">
+          <span className="text-[20px] flex-shrink-0">{group.main.icon}</span>
+          <span className="truncate">{group.main.name}</span>
+        </h3>
+        <Link
+          href={mainHref}
+          className="text-[12px] text-accent font-semibold hover:underline flex-shrink-0 ml-3"
+        >
+          Xem toàn bộ →
+        </Link>
+      </div>
+
+      {/* Body */}
+      {group.items.length === 0 ? (
+        <div className="flex-1 flex items-center justify-center text-mute italic text-[13px] py-12">
+          Danh mục đang cập nhật…
+        </div>
+      ) : (
+        <ul className="grid grid-cols-3 gap-3 flex-1 content-start">
+          {group.items.map((it) => (
+            <li key={it.slug}>
+              <Link
+                href={`/category/${group.main.slug}/${it.slug}`}
+                className="block rounded border border-line overflow-hidden hover:border-brand hover:shadow-md transition group/it h-full"
+              >
+                <div className="aspect-[16/10] bg-bg overflow-hidden">
+                  <img
+                    src={it.image}
+                    alt={it.name}
+                    className="w-full h-full object-cover group-hover/it:scale-105 transition-transform"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-2.5">
+                  <div className="flex items-start gap-1.5 mb-1">
+                    <span className="text-[16px] flex-shrink-0 leading-none mt-0.5">{it.icon}</span>
+                    <h4 className="text-[12.5px] font-bold text-ink leading-tight group-hover/it:text-brand line-clamp-2">
+                      {it.name}
+                    </h4>
+                  </div>
+                  <p className="text-[10.5px] text-mute line-clamp-2 leading-snug">
+                    {it.tagline}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
 
 /**
  * CSR-style sub-item panel — restored to full layout matching the

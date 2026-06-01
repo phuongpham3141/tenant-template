@@ -471,3 +471,39 @@ a[style*="--social-brand"]:hover {
   display: none;
 }
 
+/* BannerSection sidebar: main-category driven panels.
+   The home sidebar lists only NAV_MENU main categories (.mm-cat-N);
+   hovering a row reveals the matching .mm-cat-panel-N overview. */
+.mm-cat-panel {
+  display: none;
+}
+.mm-wrap:has(.mm-cat-1:hover) .mm-cat-panel-1,
+.mm-wrap:has(.mm-cat-2:hover) .mm-cat-panel-2,
+.mm-wrap:has(.mm-cat-3:hover) .mm-cat-panel-3,
+.mm-wrap:has(.mm-cat-4:hover) .mm-cat-panel-4,
+.mm-wrap:has(.mm-cat-5:hover) .mm-cat-panel-5,
+.mm-wrap:has(.mm-cat-6:hover) .mm-cat-panel-6,
+.mm-wrap:has(.mm-cat-7:hover) .mm-cat-panel-7,
+.mm-wrap:has(.mm-cat-8:hover) .mm-cat-panel-8 {
+  display: block;
+}
+.mm-wrap:has(.mm-cat-panel-1:hover) .mm-cat-panel-1,
+.mm-wrap:has(.mm-cat-panel-2:hover) .mm-cat-panel-2,
+.mm-wrap:has(.mm-cat-panel-3:hover) .mm-cat-panel-3,
+.mm-wrap:has(.mm-cat-panel-4:hover) .mm-cat-panel-4,
+.mm-wrap:has(.mm-cat-panel-5:hover) .mm-cat-panel-5,
+.mm-wrap:has(.mm-cat-panel-6:hover) .mm-cat-panel-6,
+.mm-wrap:has(.mm-cat-panel-7:hover) .mm-cat-panel-7,
+.mm-wrap:has(.mm-cat-panel-8:hover) .mm-cat-panel-8 {
+  display: block;
+}
+.mm-wrap:hover .mm-cat-panel-1 {
+  display: block;
+}
+.mm-wrap:has(
+  .mm-l1 .mm-cat:not(.mm-cat-1):hover,
+  .mm-panel .mm-cat-panel:not(.mm-cat-panel-1):hover
+) .mm-cat-panel-1 {
+  display: none;
+}
+

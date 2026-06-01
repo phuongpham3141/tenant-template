@@ -1,67 +1,41 @@
 import Link from "next/link";
 import { NAV_MENU } from "@/data/home";
 import { HeroSlider } from "@/components/home/hero-slider";
-import { SubItemPanel } from "@/components/home/mega-submenu";
+import { CategoryOverviewPanel } from "@/components/home/mega-submenu";
 
 /**
- * BannerSection sidebar — same mega-menu pattern as NavBar dropdown.
- * Hovering a sub-item in mm-l1 reveals its dedicated mm-sub-panel-N
- * positioned to the right (absolute, overlays the hero).
+ * BannerSection sidebar — only the main categories are visible. Hovering
+ * a main category reveals its overview panel on the right (absolute,
+ * overlays the hero). globals.css `.mm-cat-N` / `.mm-cat-panel-N` rules
+ * drive the toggle via :has() — no JS needed.
  */
 function CategoryMenu() {
-  const flatSubs: { groupSlug: string; idx: number; item: typeof NAV_MENU[number]["items"][number] }[] = [];
-  let g = 0;
-  for (const group of NAV_MENU) {
-    for (const item of group.items) {
-      g += 1;
-      flatSubs.push({ groupSlug: group.main.slug, idx: g, item });
-    }
-  }
-
   return (
     <div className="mm-wrap relative h-full">
       <aside className="mm-l1 bg-paper border border-line rounded h-full overflow-y-auto py-2">
-        {(() => {
-          let n = 0;
-          return NAV_MENU.map((group) => (
-            <div key={group.main.slug} className="mm-cat mb-2">
-              <Link
-                href={`/category/${group.main.slug}`}
-                className="flex justify-between items-center px-3.5 py-2 text-[13px] hover:bg-[#F5F5F5] font-semibold text-ink"
-              >
-                <b className="font-bold">{group.main.icon} {group.main.name}</b>
-                <span className="text-mute2 text-[11px]">▸</span>
-              </Link>
-              <ul className="pl-6 pr-2">
-                {group.items.map((it) => {
-                  n += 1;
-                  return (
-                    <li key={it.slug}>
-                      <Link
-                        href={`/category/${group.main.slug}/${it.slug}`}
-                        className={`mm-sub mm-sub-${n} flex items-center gap-1.5 py-[3px] text-[12px] text-ink font-bold hover:text-brand leading-snug truncate`}
-                      >
-                        <span className="flex-shrink-0">{it.icon}</span>
-                        <span className="truncate">{it.name}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ));
-        })()}
-      </aside>
-      {/* Panel: absolute, pops out to right of sidebar, overlays hero.
-          860px wide × full sidebar height. SubItemPanel handles its own
-          internal scroll on the sections grid. */}
-      <div className="mm-panel absolute left-full top-0 ml-[12px] w-[860px] h-full bg-paper border border-line rounded shadow-xl z-50 grid overflow-hidden">
-        {flatSubs.map(({ groupSlug, idx, item }) => (
-          <div
-            key={`${groupSlug}-${item.slug}`}
-            className={`mm-sub-panel mm-sub-panel-${idx} row-start-1 col-start-1 h-full overflow-hidden`}
+        {NAV_MENU.map((group, idx) => (
+          <Link
+            key={group.main.slug}
+            href={`/category/${group.main.slug}`}
+            className={`mm-cat mm-cat-${idx + 1} flex justify-between items-center px-3.5 py-2.5 text-[13px] hover:bg-[#F5F5F5] font-semibold text-ink border-b border-[#F5F5F5] last:border-0`}
           >
-            <SubItemPanel groupSlug={groupSlug} item={item} />
+            <b className="font-bold flex items-center gap-2 min-w-0">
+              <span className="text-[16px] flex-shrink-0">{group.main.icon}</span>
+              <span className="truncate">{group.main.name}</span>
+            </b>
+            <span className="text-mute2 text-[11px] flex-shrink-0">▸</span>
+          </Link>
+        ))}
+      </aside>
+      {/* Right panel: 860px wide. One CategoryOverviewPanel per main
+          category; CSS reveals only the one whose .mm-cat-N is hovered. */}
+      <div className="mm-panel absolute left-full top-0 ml-[12px] w-[860px] h-full bg-paper border border-line rounded shadow-xl z-50 grid overflow-hidden">
+        {NAV_MENU.map((group, idx) => (
+          <div
+            key={group.main.slug}
+            className={`mm-cat-panel mm-cat-panel-${idx + 1} row-start-1 col-start-1 h-full overflow-hidden`}
+          >
+            <CategoryOverviewPanel group={group} />
           </div>
         ))}
       </div>
