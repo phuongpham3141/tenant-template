@@ -14,9 +14,9 @@ export function CategoryShowcase() {
           </span>
         </h2>
 
-        <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1 max-md:gap-4">
+        <div className="flex flex-col gap-5 max-md:gap-4">
           {NAV_MENU.map((group) => {
-            const extra = Math.max(0, group.items.length - 4);
+            const extra = Math.max(0, group.items.length - 8);
             return (
               <div key={group.main.slug} className="cat-block flex flex-col">
                 <Link
@@ -32,7 +32,7 @@ export function CategoryShowcase() {
                     </span>
                   )}
                 </Link>
-                <div className="cat-grid grid grid-cols-4 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
+                <div className="cat-grid grid grid-cols-8 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
                   {group.items.map((it) => (
                     <Link
                       key={it.slug}
