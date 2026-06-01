@@ -15,39 +15,47 @@ export function CategoryShowcase() {
         </h2>
 
         <div className="grid grid-cols-2 gap-5 max-md:grid-cols-1 max-md:gap-4">
-          {NAV_MENU.map((group) => (
-            <div key={group.main.slug} className="flex flex-col">
-              <Link
-                href={`/category/${group.main.slug}`}
-                className="flex items-center gap-2 text-[15px] font-bold text-ink hover:text-brand mb-3"
-              >
-                <span className="text-[18px]">{group.main.icon}</span>
-                <span>{group.main.name}</span>
-                <span className="text-mute2 text-[12px] font-normal">→</span>
-              </Link>
-              <div className="grid grid-cols-4 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
-                {group.items.map((it) => (
-                  <Link
-                    key={it.slug}
-                    href={`/category/${group.main.slug}/${it.slug}`}
-                    className="group/cat flex flex-col items-center text-center hover:bg-[#FCFBF8] rounded p-1.5 transition-colors"
-                  >
-                    <div className="w-full aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-1.5 border border-line group-hover/cat:border-brand transition-colors">
-                      <img
-                        src={it.image}
-                        alt={it.name}
-                        className="w-full h-full object-cover group-hover/cat:scale-105 transition-transform"
-                        loading="lazy"
-                      />
-                    </div>
-                    <span className="text-[11.5px] font-medium text-ink group-hover/cat:text-brand line-clamp-2 leading-tight max-md:text-[11px]">
-                      {it.name}
+          {NAV_MENU.map((group) => {
+            const extra = Math.max(0, group.items.length - 4);
+            return (
+              <div key={group.main.slug} className="cat-block flex flex-col">
+                <Link
+                  href={`/category/${group.main.slug}`}
+                  className="flex items-center gap-2 text-[15px] font-bold text-ink hover:text-brand mb-3"
+                >
+                  <span className="text-[18px]">{group.main.icon}</span>
+                  <span>{group.main.name}</span>
+                  <span className="text-mute2 text-[12px] font-normal">→</span>
+                  {extra > 0 && (
+                    <span className="cat-more text-[11px] text-mute2 font-normal ml-auto">
+                      +{extra} khác (di chuột để xem)
                     </span>
-                  </Link>
-                ))}
+                  )}
+                </Link>
+                <div className="cat-grid grid grid-cols-4 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
+                  {group.items.map((it) => (
+                    <Link
+                      key={it.slug}
+                      href={`/category/${group.main.slug}/${it.slug}`}
+                      className="group/cat flex flex-col items-center text-center hover:bg-[#FCFBF8] rounded p-1.5 transition-colors"
+                    >
+                      <div className="w-full aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-1.5 border border-line group-hover/cat:border-brand transition-colors">
+                        <img
+                          src={it.image}
+                          alt={it.name}
+                          className="w-full h-full object-cover group-hover/cat:scale-105 transition-transform"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span className="text-[11.5px] font-medium text-ink group-hover/cat:text-brand line-clamp-2 leading-tight max-md:text-[11px]">
+                        {it.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
