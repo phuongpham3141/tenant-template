@@ -64,15 +64,14 @@ export const HOT_SEARCHES = [
 ];
 
 export const NAV_CATEGORIES = [
+  { icon: "🏠", name: "Nhà & Sân vườn", slug: "home-garden" },
   { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
+  { icon: "🚿", name: "Phòng tắm & Vệ sinh", slug: "bathroom-sanitary" },
   { icon: "🛋", name: "Nội thất", slug: "noi-that" },
-  { icon: "📺", name: "Điện gia dụng", slug: "dien-gia-dung" },
-  { icon: "🛗", name: "Thang máy", slug: "thang-may" },
-  { icon: "💡", name: "Đèn chiếu sáng", slug: "den-chieu-sang" },
-  { icon: "🔐", name: "Khoá thông minh", slug: "khoa-thong-minh" },
-  { icon: "🚿", name: "Thiết bị nhà tắm", slug: "thiet-bi-nha-tam" },
-  { icon: "🥘", name: "Thiết bị bếp", slug: "thiet-bi-bep" },
-  { icon: "⚡", name: "Đồ điện", slug: "do-dien" },
+  { icon: "🍳", name: "Thiết bị nhà bếp", slug: "kitchen-equipment" },
+  { icon: "💡", name: "Đèn & Chiếu sáng", slug: "lighting" },
+  { icon: "🪟", name: "Cửa & Cửa sổ", slug: "doors-windows" },
+  { icon: "⚡", name: "Điện & Thiết bị điện", slug: "electrical" },
 ];
 
 export type NavSubItem = {
@@ -97,85 +96,35 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
     main: { icon: "🏠", name: "Nhà & Sân vườn", slug: "home-garden" },
     items: [
       {
-        name: "Thang máy chở khách", slug: "thang-may-cho-khach", icon: "🛗",
+        name: "Thang máy", slug: "thang-may", icon: "🛗",
         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
-        tagline: "Thang chở khách 6–21 người, tốc độ 1.0–2.5 m/s — tiêu chuẩn EN 81.",
+        tagline: "电梯 — Thang máy chở khách / thang cuốn / thang chống cháy — đa dạng tải trọng & ứng dụng.",
         highlights: [
-          { name: "Cabin 6 người",   image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Cabin 13 người",  image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Tốc độ cao",      image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-may-cho-khach" },
-          { name: "Vận hành êm",      image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Thang máy chở khách",       image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Thang cuốn",                image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-cuon" },
+          { name: "Thang chống cháy",          image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-chong-chay" },
+          { name: "Thang máy 6 người",         image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Thang máy 13 người",        image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-may-cho-khach" },
+          { name: "Thang cuốn sân bay",        image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "thang-cuon" },
         ],
         sections: [
-          { title: "Tải trọng", items: [
-            { name: "450 kg / 6 người", slug: "thang-may-cho-khach" },
-            { name: "1000 kg / 13 người", slug: "thang-may-cho-khach" },
-            { name: "1600 kg / 21 người", slug: "thang-may-cho-khach" },
+          { title: "客用电梯 / Thang máy chở khách", items: [
+            { name: "Cabin 6 người (450 kg)", slug: "thang-may-cho-khach" },
+            { name: "Cabin 13 người (1000 kg)", slug: "thang-may-cho-khach" },
+            { name: "Cabin 21 người (1600 kg)", slug: "thang-may-cho-khach" },
+            { name: "Tốc độ 1.0–2.5 m/s", slug: "thang-may-cho-khach" },
           ]},
-          { title: "Tốc độ", items: [
-            { name: "1.0 m/s", slug: "thang-may-cho-khach" },
-            { name: "1.75 m/s", slug: "thang-may-cho-khach" },
-            { name: "2.5 m/s", slug: "thang-may-cho-khach" },
+          { title: "手扶梯 / Thang cuốn", items: [
+            { name: "Bước thang 600–1000 mm", slug: "thang-cuon" },
+            { name: "Góc nghiêng 30° / 35°", slug: "thang-cuon" },
+            { name: "Trung tâm thương mại", slug: "thang-cuon" },
+            { name: "Sân bay / metro", slug: "thang-cuon" },
           ]},
-          { title: "Tiêu chuẩn", items: [
-            { name: "EN 81-20/50", slug: "thang-may-cho-khach" },
-            { name: "GB 7588", slug: "thang-may-cho-khach" },
-            { name: "ISO 22559", slug: "thang-may-cho-khach" },
-          ]},
-        ],
-      },
-      {
-        name: "Thang cuốn", slug: "thang-cuon", icon: "🪜",
-        image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5",
-        tagline: "Thang cuốn trung tâm thương mại, sân bay — góc 30°/35°.",
-        highlights: [
-          { name: "Trung tâm thương mại", image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-cuon" },
-          { name: "Sân bay",              image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-cuon" },
-          { name: "Metro / ga tàu",       image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-cuon" },
-          { name: "Outdoor có mái",       image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-cuon" },
-        ],
-        sections: [
-          { title: "Bước thang", items: [
-            { name: "600 mm", slug: "thang-cuon" },
-            { name: "800 mm", slug: "thang-cuon" },
-            { name: "1000 mm", slug: "thang-cuon" },
-          ]},
-          { title: "Góc nghiêng", items: [
-            { name: "30°", slug: "thang-cuon" },
-            { name: "35°", slug: "thang-cuon" },
-          ]},
-          { title: "Ứng dụng", items: [
-            { name: "Trong nhà", slug: "thang-cuon" },
-            { name: "Bán ngoài trời", slug: "thang-cuon" },
-            { name: "Heavy-duty", slug: "thang-cuon" },
-          ]},
-        ],
-      },
-      {
-        name: "Thang chống cháy", slug: "thang-chong-chay", icon: "🚒",
-        image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5",
-        tagline: "Thang máy chuyên dụng PCCC EN 81-72 — vận hành an toàn khi hoả hoạn.",
-        highlights: [
-          { name: "Cabin chống lửa",   image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Cửa kháng nhiệt",   image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Nguồn dự phòng",    image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "thang-chong-chay" },
-          { name: "Chống thấm nước",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "thang-chong-chay" },
-        ],
-        sections: [
-          { title: "Tải trọng", items: [
-            { name: "630 kg / 8 người", slug: "thang-chong-chay" },
-            { name: "1000 kg / 13 người", slug: "thang-chong-chay" },
-            { name: "1600 kg cứu hộ", slug: "thang-chong-chay" },
-          ]},
-          { title: "Tiêu chuẩn PCCC", items: [
-            { name: "EN 81-72", slug: "thang-chong-chay" },
-            { name: "EN 81-73", slug: "thang-chong-chay" },
-            { name: "TCVN 6396", slug: "thang-chong-chay" },
-          ]},
-          { title: "Tính năng", items: [
+          { title: "消防梯 / Thang chống cháy", items: [
             { name: "Cabin chống cháy 120 phút", slug: "thang-chong-chay" },
-            { name: "Nguồn UPS", slug: "thang-chong-chay" },
-            { name: "Đèn báo PCCC", slug: "thang-chong-chay" },
+            { name: "Cửa kháng nhiệt", slug: "thang-chong-chay" },
+            { name: "Nguồn UPS dự phòng", slug: "thang-chong-chay" },
+            { name: "EN 81-72 / TCVN 6396", slug: "thang-chong-chay" },
           ]},
         ],
       },
@@ -187,16 +136,20 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "Thép & Kim loại", slug: "ket-cau-thep-khung", icon: "🔩",
         image: "/img/thep-hinh-h-i-u-v.jpg?v=5",
-        tagline: "Thép hình H/I/U/V, ống thép, tấm thép — báo giá theo tấn FOB Quảng Châu.",
+        tagline: "钢材 — Thép hình H/I/U/V, ống thép, tấm thép, tôn lạnh — báo giá theo tấn FOB Quảng Châu.",
         highlights: [
           { name: "Thép hình H/I/U/V",  image: "/img/thep-hinh-h-i-u-v.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "Ống thép đen / mạ",  image: "/img/ceramic-1-2.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "Tấm thép cuộn",      image: "/img/ceramic-1-3.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "Thép hộp",           image: "/img/ceramic-1-4.jpg?v=5", slug: "ket-cau-thep-khung" },
-          { name: "Lưới thép hàn",      image: "/img/ceramic-1-5.jpg?v=5", slug: "ket-cau-thep-khung" },
-          { name: "Thép không gỉ",      image: "/img/cer3.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "彩钢瓦 / Tôn lạnh",     image: "/img/ceramic-1-5.jpg?v=5", slug: "ton-lanh" },
+          { name: "工字钢 / Thép chữ I",   image: "/img/cer3.jpg?v=5", slug: "ket-cau-thep-khung" },
         ],
         sections: [
+          { title: "钢材 / Thép (Trung – Việt)", items: [
+            { name: "彩钢瓦 / Tôn lạnh", slug: "ton-lanh" },
+            { name: "工字钢 / Thép chữ I", slug: "ket-cau-thep-khung" },
+          ]},
           { title: "Theo dạng", items: [
             { name: "Thép hình H/I", slug: "ket-cau-thep-khung" },
             { name: "Thép hình U/V", slug: "ket-cau-thep-khung" },
@@ -232,10 +185,14 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { name: "Tấm 3D tường",       image: "/img/cer4.jpg?v=5", slug: "tam-op-tuong-tran" },
           { name: "Trần thạch cao",     image: "/img/cer5.jpg?v=5", slug: "tam-op-tuong-tran" },
           { name: "Ốp gỗ MDF",          image: "/img/cer8.jpg?v=5", slug: "tam-op-tuong-tran" },
-          { name: "Trần kim loại",      image: "/img/cer3.jpg?v=5", slug: "tam-op-tuong-tran" },
-          { name: "Ốp đá tự nhiên",     image: "/img/cer2.jpg?v=5", slug: "tam-op-tuong-tran" },
+          { name: "隔音面板 / Tấm cách âm",  image: "/img/cer3.jpg?v=5", slug: "tam-cach-am" },
+          { name: "ALC/ACC 砖 / Gạch ALC", image: "/img/cer2.jpg?v=5", slug: "gach-alc-acc" },
         ],
         sections: [
+          { title: "墙面材料 / Vật liệu tường (Trung – Việt)", items: [
+            { name: "隔音面板 / Tấm cách âm", slug: "tam-cach-am" },
+            { name: "ALC/ACC 砖 / Gạch ALC / ACC", slug: "gach-alc-acc" },
+          ]},
           { title: "Tấm ốp tường", items: [
             { name: "Porcelain tấm lớn", slug: "tam-op-tuong-tran" },
             { name: "Tấm 3D PVC", slug: "tam-op-tuong-tran" },
@@ -265,16 +222,24 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "Vật liệu lát sàn", slug: "vat-lieu-lat-san", icon: "🟫",
         image: "/img/cer7.jpg?v=5",
-        tagline: "Gạch porcelain, gỗ kỹ thuật, vinyl SPC — DDP tận kho Hà Nội/HCM 18 ngày.",
+        tagline: "木地板 + 地面材料 — Sàn gỗ SPC+LVT, sàn tự nhiên, gạch ốp lát — DDP 18 ngày.",
         highlights: [
-          { name: "Gạch porcelain",     image: "/img/cer1.jpg?v=5", slug: "vat-lieu-lat-san" },
-          { name: "Sàn gỗ kỹ thuật",    image: "/img/cer8.jpg?v=5", slug: "vat-lieu-lat-san" },
-          { name: "Vinyl SPC",          image: "/img/cer7.jpg?v=5", slug: "vat-lieu-lat-san" },
-          { name: "Gạch terrazzo",      image: "/img/cer2.jpg?v=5", slug: "vat-lieu-lat-san" },
-          { name: "Đá granite tấm",     image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "vat-lieu-lat-san" },
-          { name: "Sàn ngoài trời",     image: "/img/cer5.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "SPC + LVT 木地板",          image: "/img/cer7.jpg?v=5", slug: "san-go-spc-lvt" },
+          { name: "多层实木拼花 / Sàn engineered", image: "/img/cer8.jpg?v=5", slug: "san-go-engineered" },
+          { name: "实木地板 / Sàn gỗ tự nhiên",   image: "/img/cer2.jpg?v=5", slug: "san-go-tu-nhien" },
+          { name: "瓷砖 / Gạch ốp lát",          image: "/img/cer1.jpg?v=5", slug: "gach-op-lat" },
+          { name: "Đá granite tấm",            image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "vat-lieu-lat-san" },
+          { name: "Sàn ngoài trời",            image: "/img/cer5.jpg?v=5", slug: "vat-lieu-lat-san" },
         ],
         sections: [
+          { title: "木地板 / Sàn gỗ (Trung – Việt)", items: [
+            { name: "SPC + LVT 木地板 / Sàn gỗ SPC + LVT", slug: "san-go-spc-lvt" },
+            { name: "多层实木拼花 / Sàn gỗ tự nhiên nhiều lớp", slug: "san-go-engineered" },
+            { name: "实木地板 / Sàn gỗ tự nhiên nguyên khối", slug: "san-go-tu-nhien" },
+          ]},
+          { title: "地面材料 / Vật liệu sàn", items: [
+            { name: "瓷砖 / Gạch ốp lát", slug: "gach-op-lat" },
+          ]},
           { title: "Gạch porcelain", items: [
             { name: "Bóng kính", slug: "vat-lieu-lat-san" },
             { name: "Mờ matte", slug: "vat-lieu-lat-san" },
@@ -306,14 +271,19 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         image: "/img/da-marble-tu-nhien.jpg?v=5",
         tagline: "Marble Phúc Kiến, granite, quartz — tấm lớn cho mặt bàn bếp & lobby.",
         highlights: [
-          { name: "Marble tự nhiên",    image: "/img/da-marble-tu-nhien.jpg?v=5", slug: "da-op-lat" },
-          { name: "Granite tấm",        image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "da-op-lat" },
-          { name: "Quartz nhân tạo",    image: "/img/da-quartz-nhan-tao.jpg?v=5", slug: "da-op-lat" },
-          { name: "Đá mosaic",          image: "/img/da-mosaic-trang-tri.jpg?v=5", slug: "da-op-lat" },
-          { name: "Đá op ngoại thất",   image: "/img/da-op-ngoai-that.jpg?v=5", slug: "da-op-lat" },
-          { name: "Đá sintered",        image: "/img/da-sintered-da-thieu-ket.jpg?v=5", slug: "da-op-lat" },
+          { name: "Marble tự nhiên",                  image: "/img/da-marble-tu-nhien.jpg?v=5", slug: "da-op-lat" },
+          { name: "Granite tấm",                      image: "/img/da-granite-tu-nhien.jpg?v=5", slug: "da-op-lat" },
+          { name: "生态石英石 / Đá thạch anh tự nhiên",  image: "/img/da-quartz-nhan-tao.jpg?v=5", slug: "da-thach-anh-tu-nhien" },
+          { name: "人造石英石 / Đá thạch anh nhân tạo", image: "/img/da-mosaic-trang-tri.jpg?v=5", slug: "da-thach-anh-nhan-tao" },
+          { name: "无机石、环氧磨石 / Đá mài vô cơ",     image: "/img/da-op-ngoai-that.jpg?v=5", slug: "da-mai-vo-co" },
+          { name: "Đá sintered",                       image: "/img/da-sintered-da-thieu-ket.jpg?v=5", slug: "da-op-lat" },
         ],
         sections: [
+          { title: "特殊石材 / Đá đặc thù (Trung – Việt)", items: [
+            { name: "生态石英石 / Đá thạch anh tự nhiên", slug: "da-thach-anh-tu-nhien" },
+            { name: "人造石英石 / 大理石 / Đá thạch anh / cẩm thạch nhân tạo", slug: "da-thach-anh-nhan-tao" },
+            { name: "无机石、环氧磨石 / Đá mài vô cơ", slug: "da-mai-vo-co" },
+          ]},
           { title: "Marble tự nhiên", items: [
             { name: "Carrara trắng", slug: "da-op-lat" },
             { name: "Marquina đen", slug: "da-op-lat" },
@@ -345,14 +315,21 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         image: "/img/son-epoxy-san.jpg?v=5",
         tagline: "Sơn epoxy sàn, sơn chống cháy, vữa trang trí — đạt chuẩn QCVN.",
         highlights: [
-          { name: "Sơn epoxy sàn",      image: "/img/son-epoxy-san.jpg?v=5", slug: "son-lop-phu" },
-          { name: "Sơn polyurethane",   image: "/img/ceramic-2-1.jpg?v=5", slug: "son-lop-phu" },
-          { name: "Sơn ngoại thất",     image: "/img/ceramic-2-2.jpg?v=5", slug: "son-lop-phu" },
-          { name: "Sơn nội thất",       image: "/img/ceramic-2-3.jpg?v=5", slug: "son-lop-phu" },
-          { name: "Vữa trang trí",      image: "/img/ceramic-2-4.jpg?v=5", slug: "son-lop-phu" },
-          { name: "Sơn chống thấm",     image: "/img/ceramic-2-5.jpg?v=5", slug: "son-lop-phu" },
+          { name: "内墙艺术漆 / Sơn tường trong, nghệ thuật", image: "/img/son-epoxy-san.jpg?v=5", slug: "son-tuong-trong-nghe-thuat" },
+          { name: "外墙仿石漆 / Sơn mặt tường ngoài giả đá",  image: "/img/ceramic-2-1.jpg?v=5", slug: "son-mat-tuong-ngoai" },
+          { name: "瓷砖胶 / Keo gạch ốp",                     image: "/img/ceramic-2-2.jpg?v=5", slug: "keo-gach-op" },
+          { name: "美缝剂 / Keo chít mạch nghệ thuật",         image: "/img/ceramic-2-3.jpg?v=5", slug: "keo-chit-mach" },
+          { name: "防水涂料 / Sơn chống thấm",                image: "/img/ceramic-2-5.jpg?v=5", slug: "son-chong-tham" },
+          { name: "Sơn epoxy sàn",                            image: "/img/ceramic-2-4.jpg?v=5", slug: "son-lop-phu" },
         ],
         sections: [
+          { title: "涂料 / Sơn (Trung – Việt)", items: [
+            { name: "内墙艺术漆乳胶漆 / Sơn tường trong / nghệ thuật", slug: "son-tuong-trong-nghe-thuat" },
+            { name: "外墙仿石漆 / Sơn mặt tường ngoài (giả đá)", slug: "son-mat-tuong-ngoai" },
+            { name: "瓷砖胶 / Keo gạch ốp", slug: "keo-gach-op" },
+            { name: "美缝剂 / Keo chít mạch nghệ thuật", slug: "keo-chit-mach" },
+            { name: "防水涂料 / Sơn chống thấm", slug: "son-chong-tham" },
+          ]},
           { title: "Sơn nội thất", items: [
             { name: "Sơn lót kiềm", slug: "son-lop-phu" },
             { name: "Sơn phủ bóng", slug: "son-lop-phu" },
@@ -1422,22 +1399,6 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
       },
     ],
-  },
-  {
-    main: { icon: "🛏", name: "Đồ dùng khách sạn", slug: "hotel-supplies" },
-    items: [],
-  },
-  {
-    main: { icon: "🔨", name: "Phụ kiện & Dụng cụ", slug: "hardware-tools" },
-    items: [],
-  },
-  {
-    main: { icon: "🎨", name: "Trang trí", slug: "decoration" },
-    items: [],
-  },
-  {
-    main: { icon: "🌿", name: "Ngoài trời & Sân vườn", slug: "outdoor-garden" },
-    items: [],
   },
   {
     main: { icon: "⚡", name: "Điện & Thiết bị điện", slug: "electrical" },
