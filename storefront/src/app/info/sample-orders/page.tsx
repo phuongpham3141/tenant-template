@@ -620,7 +620,7 @@ export default function DatMauPage() {
           </div>
           <div className="p-6 max-md:p-4 bg-paper">
             <p className="text-[13px] text-ink leading-relaxed mb-4">
-              适合每月 >5 件样品的采购商（贸易商、设计工作室、采购代理、专业采购经销商）。固定支付 $99——每件样品仅付产品费，不付中心运费。ROI 通常从第 2 个月起即十分明显。
+              适合每月 &gt;5 件样品的采购商（贸易商、设计工作室、采购代理、专业采购经销商）。固定支付 $99——每件样品仅付产品费，不付中心运费。ROI 通常从第 2 个月起即十分明显。
             </p>
             <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
               {SAMPLE_SUB_FEATURES.map((f) => (

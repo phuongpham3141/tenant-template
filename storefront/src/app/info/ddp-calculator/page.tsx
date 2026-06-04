@@ -184,7 +184,7 @@ export default async function CalcPage({
               <b className="text-ink">DDP（完税后交货）</b>是最高级别的国际贸易术语——供应商承担一切费用和风险，直至货物送达越南采购商仓库，且已缴清各类税费。
             </p>
             <p>
-              华越通过 3 个主要港口管理 DDP：<b className="text-ink">海防港</b>（面向北部客户）、<b className="text-ink">胡志明市吉莱港</b>（南部）和 <b className="text-ink">岘港</b>（中部）。经谅山陆路更快（5-8 天），适合 < 3 CBM 的小批量货物。
+              华越通过 3 个主要港口管理 DDP：<b className="text-ink">海防港</b>（面向北部客户）、<b className="text-ink">胡志明市吉莱港</b>（南部）和 <b className="text-ink">岘港</b>（中部）。经谅山陆路更快（5-8 天），适合 &lt; 3 CBM 的小批量货物。
             </p>
             <p>
               在上方表单中输入<b>体积</b>（CBM 或等效 kg/167）和 <b>FOB 货值</b>，即可立即查看估算总成本。
