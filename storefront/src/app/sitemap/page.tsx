@@ -16,140 +16,140 @@ const SECTIONS: SitemapSection[] = [
   {
     icon: "🏠",
     color: "#005F6B",
-    title: "Trang chủ & Khám phá",
-    subtitle: "Điểm vào chính của nền tảng",
+    title: "首页与探索",
+    subtitle: "平台主要入口",
     links: [
-      { label: "Trang chủ", href: "/", desc: "Điểm khởi đầu — featured products, RFQ form, promotions" },
-      { label: "Tất cả sản phẩm", href: "/products", desc: "Catalog 200K+ SKU từ 1,840+ NCC verified" },
-      { label: "Tìm kiếm", href: "/search", desc: "Full-text search theo SKU, NCC, ngành" },
-      { label: "Tìm kiếm bằng hình ảnh", href: "/search/by-image", desc: "Upload ảnh để tìm sản phẩm tương tự" },
-      { label: "Suppliers", href: "/suppliers", desc: "Danh sách 1,840+ NCC đã pass audit" },
-      { label: "Zones", href: "/zones", desc: "Sản xuất theo cluster — Foshan, Đông Quan, Yiwu..." },
-      { label: "Industry Channels", href: "/industry-channels", desc: "Kênh chuyên ngành — nội thất, sanitary, điện tử..." },
-      { label: "Factory Tour", href: "/factory-tour", desc: "Video tour 360° nhà máy đối tác" },
+      { label: "首页", href: "/", desc: "起点——精选产品、询价表单、促销活动" },
+      { label: "全部产品", href: "/products", desc: "来自 1,840+ 家已认证供应商的 200K+ SKU 目录" },
+      { label: "搜索", href: "/search", desc: "按 SKU、供应商、行业全文搜索" },
+      { label: "以图搜图", href: "/search/by-image", desc: "上传图片查找相似产品" },
+      { label: "供应商", href: "/suppliers", desc: "1,840+ 家已通过验厂的供应商列表" },
+      { label: "产业带", href: "/zones", desc: "按产业集群生产——佛山、东莞、义乌……" },
+      { label: "行业频道", href: "/industry-channels", desc: "专业频道——家具、卫浴、电子……" },
+      { label: "实地验厂", href: "/factory-tour", desc: "合作工厂 360° 视频参观" },
     ],
   },
   {
     icon: "🛒",
     color: "#16A34A",
-    title: "Mua hàng (Buyer)",
-    subtitle: "Quy trình từ RFQ đến nhận hàng",
+    title: "采购（Buyer）",
+    subtitle: "从询价到收货的全流程",
     links: [
-      { label: "Gửi RFQ — Yêu cầu báo giá", href: "/buying-request", desc: "Form RFQ — AI matching đẩy 5-10 NCC trong 24h" },
-      { label: "Cảnh báo Thương mại (Newsletter)", href: "/trade-alert", desc: "12,000+ buyer đăng ký — tin tức + sale alert tuần" },
-      { label: "Trade Shows 2026", href: "/trade-shows", desc: "12 sự kiện CSR đại diện hoặc đồng tổ chức" },
-      { label: "Trung tâm trợ giúp", href: "/help", desc: "300+ bài hướng dẫn theo 5 stage hành trình mua" },
+      { label: "发送询价", href: "/buying-request", desc: "询价表单——AI 匹配 24 小时内推送 5-10 家供应商" },
+      { label: "交易预警（订阅）", href: "/trade-alert", desc: "12,000+ 采购商订阅——每周资讯 + 促销预警" },
+      { label: "2026 展会", href: "/trade-shows", desc: "CSR 代表或联合主办的 12 场活动" },
+      { label: "帮助中心", href: "/help", desc: "按采购旅程 5 阶段编排的 300+ 篇指南" },
     ],
   },
   {
     icon: "📊",
     color: "#0891B2",
-    title: "Buyer Center — Sau khi đăng nhập",
-    subtitle: "Dashboard người mua với 12 chức năng",
+    title: "采购中心——登录后",
+    subtitle: "含 12 项功能的采购商仪表盘",
     links: [
-      { label: "Trang tổng quan", href: "/buyer-center", desc: "Tổng hợp RFQ, đơn hàng, tin nhắn" },
-      { label: "Đơn hàng của tôi", href: "/buyer-center/orders", desc: "Tracking realtime, ảnh/video từng mốc" },
-      { label: "Sản phẩm yêu thích", href: "/buyer-center/favorites", desc: "Wishlist các SKU đang cân nhắc" },
-      { label: "Báo cáo audit nhà máy", href: "/buyer-center/audited-reports", desc: "Download báo cáo audit ký số blockchain" },
-      { label: "Lịch sử duyệt", href: "/buyer-center/browsing-history", desc: "Sản phẩm đã xem 30 ngày gần nhất" },
-      { label: "Liên hệ — chat", href: "/buyer-center/contact", desc: "Chat với quản lý tài khoản, NCC" },
-      { label: "Gặp NCC trực tuyến", href: "/buyer-center/meet-suppliers", desc: "Đặt video call với NCC qua dispatcher CSR" },
-      { label: "Hướng dẫn buyer mới", href: "/buyer-center/new-user-guide", desc: "30 ngày đầu — onboarding chi tiết" },
-      { label: "Đăng RFQ", href: "/buyer-center/post-rfq", desc: "Multi-supplier RFQ với template ngành" },
-      { label: "Product Directory", href: "/buyer-center/product-directory", desc: "Phân loại theo HS code, MOQ, thời gian giao" },
-      { label: "Secured Trading", href: "/buyer-center/secured-trading", desc: "Bảo đảm Giao dịch (tài khoản trung gian) workflow" },
-      { label: "Khám phá NCC mới", href: "/buyer-center/supplier-discover", desc: "AI gợi ý NCC theo lịch sử mua" },
+      { label: "总览", href: "/buyer-center", desc: "询价、订单、消息汇总" },
+      { label: "我的订单", href: "/buyer-center/orders", desc: "实时追踪，各节点照片/视频" },
+      { label: "收藏产品", href: "/buyer-center/favorites", desc: "在考虑中的 SKU 收藏夹" },
+      { label: "工厂验厂报告", href: "/buyer-center/audited-reports", desc: "下载区块链签名的验厂报告" },
+      { label: "浏览历史", href: "/buyer-center/browsing-history", desc: "最近 30 天浏览过的产品" },
+      { label: "联系——聊天", href: "/buyer-center/contact", desc: "与客户经理、供应商在线沟通" },
+      { label: "在线见供应商", href: "/buyer-center/meet-suppliers", desc: "经 CSR 调度与供应商预约视频通话" },
+      { label: "新采购商指南", href: "/buyer-center/new-user-guide", desc: "前 30 天——详细入门引导" },
+      { label: "发布询价", href: "/buyer-center/post-rfq", desc: "含行业模板的多供应商询价" },
+      { label: "产品目录", href: "/buyer-center/product-directory", desc: "按 HS 编码、起订量、交期分类" },
+      { label: "担保交易", href: "/buyer-center/secured-trading", desc: "交易保障（担保账户）流程" },
+      { label: "发现新供应商", href: "/buyer-center/supplier-discover", desc: "AI 按采购历史推荐供应商" },
     ],
   },
   {
     icon: "🏭",
     color: "#9C6A1F",
-    title: "Bán hàng (Seller / Supplier)",
-    subtitle: "Đăng ký và quản lý gian hàng NCC",
+    title: "销售（Seller / Supplier）",
+    subtitle: "供应商店铺入驻与管理",
     links: [
-      { label: "Sell on Huayuesc", href: "/sell-on-csr", desc: "3 tier (Free / Verified / Premium) — quy trình audit 4 bước" },
-      { label: "Đăng ký nhà máy", href: "/register/factory", desc: "Form đăng ký + upload giấy tờ pháp lý" },
-      { label: "Đăng ký dealer", href: "/register/dealer", desc: "Đại lý phân phối tại VN/ASEAN" },
+      { label: "入驻华越", href: "/sell-on-csr", desc: "3 档（Free / Verified / Premium）——4 步验厂流程" },
+      { label: "工厂注册", href: "/register/factory", desc: "注册表单 + 上传法律证件" },
+      { label: "经销商注册", href: "/register/dealer", desc: "越南/东盟分销经销商" },
     ],
   },
   {
     icon: "💼",
     color: "#7C2D12",
-    title: "Seller Center — Sau khi audit",
-    subtitle: "10 công cụ vận hành cho NCC verified",
+    title: "卖家中心——验厂后",
+    subtitle: "面向已认证供应商的 10 项运营工具",
     links: [
-      { label: "Trang tổng quan", href: "/seller-center", desc: "Doanh số, đơn nhận, RFQ inbox, conversion" },
-      { label: "AI Assistant", href: "/seller-center/ai-assistant", desc: "Trợ lý AI viết quote, dịch tiếng Việt, optimize listing" },
-      { label: "Domestic CN", href: "/seller-center/domestic-cn", desc: "Bán hàng nội địa Trung Quốc qua Taobao/Tmall" },
-      { label: "Export NA", href: "/seller-center/export-na", desc: "Xuất khẩu Bắc Mỹ qua Amazon FBA + 3PL" },
-      { label: "Gold Member", href: "/seller-center/gold-member", desc: "Tier cao nhất — featured banner, priority RFQ" },
-      { label: "Logistics", href: "/seller-center/logistics", desc: "Booking tàu, customs broker, container tracking" },
-      { label: "Smart Expo", href: "/seller-center/smart-expo", desc: "Virtual booth tại trade fair online" },
-      { label: "Trade eHome", href: "/seller-center/trade-ehome", desc: "Showroom số cho ngành nội thất" },
-      { label: "Trade Services", href: "/seller-center/trade-services", desc: "Dịch thuật, pháp lý, tài chính cho NCC" },
-      { label: "Trading Service", href: "/seller-center/trading-service", desc: "CSR đại diện trade — buyer's agent thuê ngoài" },
+      { label: "总览", href: "/seller-center", desc: "销售额、接单、询价收件箱、转化率" },
+      { label: "AI 助手", href: "/seller-center/ai-assistant", desc: "AI 助手撰写报价、翻译越南语、优化商品" },
+      { label: "中国内销", href: "/seller-center/domestic-cn", desc: "通过淘宝/天猫在中国国内销售" },
+      { label: "北美出口", href: "/seller-center/export-na", desc: "通过 Amazon FBA + 3PL 出口北美" },
+      { label: "金牌会员", href: "/seller-center/gold-member", desc: "最高档——精选横幅、询价优先" },
+      { label: "物流", href: "/seller-center/logistics", desc: "订舱、报关行、集装箱追踪" },
+      { label: "智慧展会", href: "/seller-center/smart-expo", desc: "线上展会虚拟展位" },
+      { label: "Trade eHome", href: "/seller-center/trade-ehome", desc: "家具行业数字展厅" },
+      { label: "贸易服务", href: "/seller-center/trade-services", desc: "面向供应商的翻译、法律、金融服务" },
+      { label: "代运营服务", href: "/seller-center/trading-service", desc: "CSR 代理贸易——外包买手代理" },
     ],
   },
   {
     icon: "📚",
     color: "#7C3AED",
-    title: "Thông tin & Tài liệu",
-    subtitle: "Hướng dẫn, chính sách, và tài liệu nghiên cứu",
+    title: "信息与资料",
+    subtitle: "指南、政策与研究资料",
     links: [
-      { label: "Giới thiệu CSR", href: "/info/about-us", desc: "Tầm nhìn 'con đường tơ lụa số' — 4 trụ cột" },
-      { label: "Mạng lưới đối tác hiệp hội", href: "/info/network", desc: "42 hiệp hội VN · TQ · ASEAN, 28+ MOU" },
-      { label: "Quy trình kiểm định nhà máy", href: "/info/audit-process", desc: "7 bước, 32% pass rate, lab SGS/BV/TÜV/Intertek" },
-      { label: "Bảo đảm Giao dịch", href: "/info/trade-assurance", desc: "Trung gian VCB · BIDV · Bank of China — bảo vệ thanh toán" },
-      { label: "Khiếu nại & tranh chấp", href: "/info/disputes", desc: "3 cấp escalation — Direct · Mediation · VIAC trọng tài" },
-      { label: "Đặt mẫu (Sample Order)", href: "/info/sample-orders", desc: "Quy trình 6 bước, Trung tâm Mẫu Quảng Châu" },
-      { label: "Hướng dẫn nhập khẩu", href: "/info/import-guide", desc: "9 sections — VNACCS, Form E, ACFTA, RCEP" },
-      { label: "Chính sách vận chuyển", href: "/info/shipping-policy", desc: "Incoterms 2020, 5 cảng VN, đường bộ Lạng Sơn" },
-      { label: "Tính cước DDP", href: "/info/ddp-calculator", desc: "Calculator interactive — input CBM, weight, route" },
-      { label: "Theo dõi đơn realtime", href: "/info/order-tracking", desc: "5 stages, ảnh/video tại mỗi mốc" },
-      { label: "Bảo vệ thanh toán", href: "/info/payment-protection", desc: "Cơ chế trung gian + bảo hiểm" },
-      { label: "Tìm sản phẩm hiệu quả", href: "/info/find-products", desc: "Tips RFQ, AI matching, multi-supplier comparison" },
-      { label: "Tích hợp API", href: "/info/api-integration", desc: "REST + Webhook + 4 SDK (Node/Py/PHP/Go)" },
-      { label: "Báo cáo thị trường", href: "/info/market-reports", desc: "48 báo cáo/năm, 12 ngành cover" },
-      { label: "Tin tức ngành (Blog)", href: "/info/industry-news", desc: "12+ bài analysis, weekly pulse" },
-      { label: "Tuyển dụng (Careers)", href: "/info/careers", desc: "37+ vị trí mở — Engineering, Product, Sales" },
-      { label: "Liên hệ", href: "/info/contact", desc: "8 văn phòng VN + ASEAN, dropdown chọn theo khu vực" },
+      { label: "关于 CSR", href: "/info/about-us", desc: "「数字丝绸之路」愿景——四大支柱" },
+      { label: "协会合作伙伴网络", href: "/info/network", desc: "42 家越南 · 中国 · 东盟协会，28+ 份 MOU" },
+      { label: "工厂审核流程", href: "/info/audit-process", desc: "7 步，32% 通过率，SGS/BV/TÜV/Intertek 实验室" },
+      { label: "交易保障", href: "/info/trade-assurance", desc: "VCB · BIDV · 中国银行担保——支付保障" },
+      { label: "投诉与争议", href: "/info/disputes", desc: "3 级升级——直接协商 · 调解 · VIAC 仲裁" },
+      { label: "样品下单", href: "/info/sample-orders", desc: "6 步流程，广州样品中心" },
+      { label: "进口指南", href: "/info/import-guide", desc: "9 个章节——VNACCS、Form E、ACFTA、RCEP" },
+      { label: "运输政策", href: "/info/shipping-policy", desc: "Incoterms 2020，越南 5 大港口，谅山陆运" },
+      { label: "DDP 运费测算", href: "/info/ddp-calculator", desc: "交互式计算器——输入 CBM、重量、路线" },
+      { label: "实时订单追踪", href: "/info/order-tracking", desc: "5 个阶段，各节点照片/视频" },
+      { label: "支付保障", href: "/info/payment-protection", desc: "担保机制 + 保险" },
+      { label: "高效寻品", href: "/info/find-products", desc: "询价技巧、AI 匹配、多供应商对比" },
+      { label: "API 集成", href: "/info/api-integration", desc: "REST + Webhook + 4 个 SDK（Node/Py/PHP/Go）" },
+      { label: "市场报告", href: "/info/market-reports", desc: "每年 48 份报告，覆盖 12 个行业" },
+      { label: "行业资讯（博客）", href: "/info/industry-news", desc: "12+ 篇分析，每周动态" },
+      { label: "招聘（Careers）", href: "/info/careers", desc: "37+ 个在招职位——工程、产品、销售" },
+      { label: "联系", href: "/info/contact", desc: "越南 + 东盟 8 个办事处，按地区下拉选择" },
     ],
   },
   {
     icon: "⚖",
     color: "#475569",
-    title: "Pháp lý & Chính sách",
-    subtitle: "Điều khoản sử dụng và bảo mật dữ liệu",
+    title: "法律与政策",
+    subtitle: "使用条款与数据隐私",
     links: [
-      { label: "Điều khoản dịch vụ", href: "/info/terms-of-service", desc: "14 sections, VIAC arbitration, force majeure" },
-      { label: "Chính sách bảo mật", href: "/info/privacy-policy", desc: "ISO 27001, NĐ 13/2023, PIPL, GDPR compliance" },
+      { label: "服务条款", href: "/info/terms-of-service", desc: "14 个章节，VIAC 仲裁，不可抗力" },
+      { label: "隐私政策", href: "/info/privacy-policy", desc: "ISO 27001、越南第 13/2023 号法令、PIPL、GDPR 合规" },
     ],
   },
   {
     icon: "🔐",
     color: "#A21CAF",
-    title: "Tài khoản & Đăng ký",
-    subtitle: "Authentication và onboarding",
+    title: "账户与注册",
+    subtitle: "认证与开通",
     links: [
-      { label: "Đăng nhập", href: "/login", desc: "Email/password + Google + Apple + Facebook OAuth" },
-      { label: "Đăng ký Người mua", href: "/register/buyer", desc: "Cá nhân hoặc doanh nghiệp — KYC nhanh" },
-      { label: "Đăng ký Dealer", href: "/register/dealer", desc: "Đại lý phân phối VN/ASEAN — verified workflow" },
-      { label: "Đăng ký Factory", href: "/register/factory", desc: "Nhà máy NCC — bắt đầu audit 7 bước" },
-      { label: "Tải app mobile", href: "/app", desc: "iOS + Android — RFQ + tracking trên di động" },
+      { label: "登录", href: "/login", desc: "邮箱/密码 + Google + Apple + Facebook OAuth" },
+      { label: "采购商注册", href: "/register/buyer", desc: "个人或企业——快速 KYC" },
+      { label: "经销商注册", href: "/register/dealer", desc: "越南/东盟分销经销商——认证流程" },
+      { label: "工厂注册", href: "/register/factory", desc: "供应商工厂——启动 7 步验厂" },
+      { label: "下载手机 App", href: "/app", desc: "iOS + Android——移动端询价 + 追踪" },
     ],
   },
 ];
 
 export default function SitemapPage() {
   const totalLinks = SECTIONS.reduce((acc, s) => acc + s.links.length, 0) + ARTICLES.length;
-  const sectionsCount = SECTIONS.length + 1; // +1 cho blog
+  const sectionsCount = SECTIONS.length + 1; // +1 for the blog
 
   return (
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Sitemap" },
+          { label: "首页", href: "/" },
+          { label: "网站地图" },
         ]}
       />
 
@@ -164,29 +164,29 @@ export default function SitemapPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            🗺 BẢN ĐỒ TRANG
+            🗺 网站地图
           </span>
           <h1 className="text-[36px] font-extrabold leading-[1.1] mb-3 max-md:text-[24px]">
-            Bản đồ trang Huayuesc
+            Huayuesc 网站地图
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[760px] leading-relaxed mb-6 max-md:text-[13px]">
-            {totalLinks}+ trang được tổ chức theo {sectionsCount} nhóm chức năng. Dùng sitemap này để khám phá nhanh toàn bộ tính năng và tài liệu của nền tảng. Sitemap XML cho search engine: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
+            {totalLinks}+ 个页面，按 {sectionsCount} 个功能分组整理。使用本网站地图可快速探索平台的全部功能与资料。面向搜索引擎的 XML 网站地图：<a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📄</div>
               <div className="text-[22px] font-extrabold">{totalLinks}+</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Tổng số trang</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">总页面数</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🗂</div>
               <div className="text-[22px] font-extrabold">{sectionsCount}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Nhóm chức năng</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">功能分组</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📰</div>
               <div className="text-[22px] font-extrabold">{ARTICLES.length}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Bài viết blog</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">博客文章</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🌐</div>
@@ -200,7 +200,7 @@ export default function SitemapPage() {
       {/* === Section anchors quick nav ====================================== */}
       <div className="max-w-[1200px] mx-auto px-4 mt-6">
         <div className="bg-paper border border-line rounded p-4">
-          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">📍 NHẢY NHANH ĐẾN NHÓM</div>
+          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">📍 快速跳转到分组</div>
           <div className="flex flex-wrap gap-2">
             {SECTIONS.map((s) => (
               <a
@@ -219,7 +219,7 @@ export default function SitemapPage() {
               style={{ borderColor: "#E8943A40", color: "#E8943A", background: "#E8943A08" }}
             >
               <span className="mr-1">📰</span>
-              Blog mới nhất
+              最新博客
             </a>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function SitemapPage() {
                 <div className="text-[22px] font-extrabold leading-none" style={{ color: s.color }}>
                   {s.links.length}
                 </div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">trang</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">页</div>
               </div>
             </div>
 
@@ -294,8 +294,8 @@ export default function SitemapPage() {
                 📰
               </div>
               <div>
-                <h2 className="text-[18px] font-extrabold text-ink leading-tight">Blog — Tin tức ngành</h2>
-                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} bài viết phân tích thị trường, case study, hướng dẫn</p>
+                <h2 className="text-[18px] font-extrabold text-ink leading-tight">博客——行业资讯</h2>
+                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} 篇市场分析、案例研究与指南文章</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -303,11 +303,11 @@ export default function SitemapPage() {
                 href="/info/industry-news"
                 className="text-[12px] text-brand font-semibold hover:underline whitespace-nowrap"
               >
-                Xem tất cả →
+                查看全部 →
               </Link>
               <div className="text-right">
                 <div className="text-[22px] font-extrabold leading-none text-[#E8943A]">{ARTICLES.length}</div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">bài</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">篇</div>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function SitemapPage() {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-[13px] font-semibold text-ink group-hover:text-brand leading-snug flex-1 line-clamp-2">{a.title}</span>
-                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes}p</span>
+                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes} 分钟</span>
                   </div>
                   <span className="block text-[10.5px] text-mute2 font-mono mt-1">/info/industry-news/{a.slug}</span>
                 </Link>
@@ -335,16 +335,16 @@ export default function SitemapPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-8 mb-10">
         <div className="bg-bg border border-line rounded p-5 text-center">
           <p className="text-[13px] text-mute leading-relaxed max-w-[680px] mx-auto">
-            <b className="text-ink">Sitemap XML cho search engine</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
+            <b className="text-ink">面向搜索引擎的 XML 网站地图</b>：<a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
             {" · "}
-            Cập nhật tự động khi thêm trang hoặc blog post mới. Toàn bộ slug đã chuẩn hoá tiếng Anh để tối ưu SEO quốc tế.
+            新增页面或博客文章时自动更新。所有 slug 均已规范为英文，以优化国际化 SEO。
           </p>
           <div className="mt-3 flex justify-center gap-3 flex-wrap">
             <Link href="/help" className="text-[12px] px-4 py-2 border border-line rounded-sm font-semibold text-ink hover:border-brand hover:text-brand">
-              Trung tâm trợ giúp
+              帮助中心
             </Link>
             <Link href="/info/contact" className="text-[12px] px-4 py-2 bg-brand text-white rounded-sm font-bold hover:bg-brand-light">
-              Liên hệ CSR
+              联系 CSR
             </Link>
           </div>
         </div>
@@ -354,6 +354,6 @@ export default function SitemapPage() {
 }
 
 export const metadata = {
-  title: "Sitemap — Huayuesc",
-  description: "Bản đồ toàn bộ trang Huayuesc — 80+ pages tổ chức theo 9 nhóm chức năng. XML sitemap cho search engine tại /sitemap.xml.",
+  title: "网站地图 — Huayuesc",
+  description: "Huayuesc 全站地图——80+ 页面，按 9 个功能分组整理。面向搜索引擎的 XML 网站地图见 /sitemap.xml。",
 };

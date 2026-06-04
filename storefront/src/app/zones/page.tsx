@@ -3,22 +3,22 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ZONES } from "@/data/home";
 
 const ZONE_DESC: Record<string, string> = {
-  "foshan-ceramic": "Trung tâm gốm sứ lớn nhất Trung Quốc — chiếm 60% sản lượng porcelain toàn cầu.",
-  "taizhou-faucet": "Thủ phủ vòi nước & sanitary fittings — 480 nhà máy xuất khẩu khắp thế giới.",
-  "foshan-furniture": "Cluster nội thất lớn nhất châu Á — 3,000+ nhà máy với chuỗi cung ứng đầy đủ.",
-  "zhongshan-light": "Vương quốc đèn LED — 2,200 nhà máy chiếu sáng dân dụng và thương mại.",
-  "jinjiang-wood": "Trung tâm sàn gỗ và đồ gỗ engineered — 340 nhà máy chuyên xuất khẩu.",
-  "chaozhou-sanitary": "Thủ phủ sanitary ceramic — toilet, basin, bathtub cao cấp xuất khẩu.",
+  "foshan-ceramic": "中国最大的陶瓷中心——占全球 porcelain 产量的 60%。",
+  "taizhou-faucet": "水龙头与卫浴配件之都——480 家工厂出口全球。",
+  "foshan-furniture": "亚洲最大家具产业集群——3,000+ 家工厂，配套供应链齐全。",
+  "zhongshan-light": "LED 灯具王国——2,200 家民用及商用照明工厂。",
+  "jinjiang-wood": "木地板与工程木制品中心——340 家专业出口工厂。",
+  "chaozhou-sanitary": "卫浴陶瓷之都——出口高端马桶、面盆、浴缸。",
 };
 
 export default function ZonesPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Trading Zones" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "产业带" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
-          <h1 className="text-[24px] font-extrabold text-ink leading-tight">🗺️ Trading Zones — Cluster công nghiệp Trung Quốc</h1>
-          <p className="text-[13px] text-mute mt-1">6 cluster lớn nhất chuyên ngành vật liệu, nội thất, sanitary, đèn LED. Mua trực tiếp tại nguồn — giá tốt nhất.</p>
+          <h1 className="text-[24px] font-extrabold text-ink leading-tight">🗺️ 产业带——中国产业集群</h1>
+          <p className="text-[13px] text-mute mt-1">6 大产业集群，专注建材、家具、卫浴、LED 灯具。源头直采——价格最优。</p>
         </div>
       </div>
 
@@ -35,8 +35,8 @@ export default function ZonesPage() {
                 </div>
               </div>
               <div className="p-4">
-                <p className="text-[12.5px] text-mute leading-relaxed">{ZONE_DESC[z.slug] ?? "Cụm công nghiệp chuyên ngành với nhiều nhà máy đối tác đã audit."}</p>
-                <span className="text-brand text-[12.5px] font-semibold mt-3 block">Khám phá cluster →</span>
+                <p className="text-[12.5px] text-mute leading-relaxed">{ZONE_DESC[z.slug] ?? "专业产业集群，汇聚众多已验厂的合作工厂。"}</p>
+                <span className="text-brand text-[12.5px] font-semibold mt-3 block">探索产业带 →</span>
               </div>
             </Link>
           ))}
@@ -45,14 +45,14 @@ export default function ZonesPage() {
 
       {/* Map placeholder */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
-        <h2 className="text-[18px] font-bold text-ink mb-3">📍 Bản đồ cluster Trung Quốc</h2>
+        <h2 className="text-[18px] font-bold text-ink mb-3">📍 中国产业集群地图</h2>
         <div className="relative rounded overflow-hidden h-[420px] bg-brand-dark">
           <img src="/img/china-map.jpg?v=5" alt="map" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.5)" }}>
             <div className="text-center">
               <div className="text-[42px] mb-2">🗺️</div>
-              <b className="block text-[20px] font-bold">6 cluster trên bản đồ</b>
-              <p className="text-[12.5px] opacity-90 max-w-[480px] mx-auto mt-2">Bản đồ tương tác với pin location cho từng cluster sẽ ra mắt Q2/2026. Hiện tại click vào card phía trên để xem chi tiết.</p>
+              <b className="block text-[20px] font-bold">地图上的 6 大产业集群</b>
+              <p className="text-[12.5px] opacity-90 max-w-[480px] mx-auto mt-2">标注各集群位置的交互式地图将于 2026 Q2 上线。目前请点击上方卡片查看详情。</p>
             </div>
           </div>
           {/* dot markers */}
@@ -72,4 +72,4 @@ export default function ZonesPage() {
   );
 }
 
-export const metadata = { title: "Trading Zones — Huayuesc" };
+export const metadata = { title: "产业带 — Huayuesc" };

@@ -2,33 +2,33 @@ import Link from "next/link";
 
 const NAV_GROUPS = [
   {
-    title: "Tổng quan",
+    title: "概览",
     items: [
-      { label: "Trung tâm người bán", href: "/seller-center", icon: "🏭" },
+      { label: "供应商中心", href: "/seller-center", icon: "🏭" },
     ],
   },
   {
-    title: "Dịch vụ supplier",
+    title: "供应商服务",
     items: [
-      { label: "Đăng ký Gold Member", href: "/seller-center/gold-member", icon: "🥇" },
-      { label: "Sàn dịch vụ XNK", href: "/seller-center/trade-services", icon: "🛒" },
+      { label: "申请金牌会员", href: "/seller-center/gold-member", icon: "🥇" },
+      { label: "外贸服务市场", href: "/seller-center/trade-services", icon: "🛒" },
       { label: "Foreign Trade e-Home", href: "/seller-center/trade-ehome", icon: "🏡" },
-      { label: "Smart Expo đám mây", href: "/seller-center/smart-expo", icon: "🎪" },
-      { label: "Dịch vụ giao dịch", href: "/seller-center/trading-service", icon: "🔒" },
+      { label: "Smart Expo 云展会", href: "/seller-center/smart-expo", icon: "🎪" },
+      { label: "交易服务", href: "/seller-center/trading-service", icon: "🔒" },
     ],
   },
   {
-    title: "Mở rộng thị trường",
+    title: "拓展市场",
     items: [
-      { label: "Logistics quốc tế", href: "/seller-center/logistics", icon: "🚢" },
-      { label: "Xuất khẩu Bắc Mỹ", href: "/seller-center/export-na", icon: "🌎" },
-      { label: "Nội địa Trung Quốc", href: "/seller-center/domestic-cn", icon: "🇨🇳" },
+      { label: "国际物流", href: "/seller-center/logistics", icon: "🚢" },
+      { label: "出口北美", href: "/seller-center/export-na", icon: "🌎" },
+      { label: "中国内销", href: "/seller-center/domestic-cn", icon: "🇨🇳" },
     ],
   },
   {
-    title: "Công cụ",
+    title: "工具",
     items: [
-      { label: "Trợ lý AI Maike", href: "/seller-center/ai-assistant", icon: "🤖" },
+      { label: "Maike AI 助手", href: "/seller-center/ai-assistant", icon: "🤖" },
     ],
   },
 ];
@@ -37,10 +37,10 @@ export function SellerSidebar({ active }: { active?: string }) {
   return (
     <aside className="bg-paper border border-line rounded p-3 self-start">
       <div className="px-3 py-2.5 border-b border-line mb-2">
-        <b className="block text-[14px] text-ink">Công ty TNHH KUKA Home</b>
+        <b className="block text-[14px] text-ink">KUKA Home 有限公司</b>
         <span className="text-[11.5px] text-mute">
-          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">Vàng</span>
-          Supplier · Quảng Châu
+          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">金牌</span>
+          供应商 · 广州
         </span>
       </div>
       {NAV_GROUPS.map((group, gi) => (

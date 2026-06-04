@@ -28,11 +28,11 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
             <span>{group.main.name}</span>
           </h3>
           <Link href={mainHref} className="text-[12px] text-accent font-semibold hover:underline">
-            Xem toàn bộ →
+            查看全部 →
           </Link>
         </div>
         <div className="flex-1 flex items-center justify-center text-mute italic text-[13px]">
-          Danh mục đang cập nhật…
+          分类持续更新中…
         </div>
       </div>
     );
@@ -78,7 +78,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
       {/* More Categories bridge */}
       <div className="border-t border-line mt-3 pt-2.5 flex-shrink-0">
         <Link href={mainHref} className="text-[12px] text-brand font-semibold hover:underline">
-          More Categories →
+          更多分类 →
         </Link>
       </div>
 
@@ -109,7 +109,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
       {/* Bestsellers inline list */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          Sản phẩm bán chạy:
+          热销产品：
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.slug} className="flex items-baseline">
@@ -133,7 +133,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
           <span>{group.main.name}</span>
         </span>
         <Link href={mainHref} className="text-accent font-semibold hover:underline">
-          Xem toàn bộ {group.main.name} →
+          查看全部{group.main.name} →
         </Link>
       </div>
     </div>
@@ -205,7 +205,7 @@ export function SubItemPanel({
           href={itemHref}
           className="text-[12px] text-brand font-semibold hover:underline"
         >
-          More Categories →
+          更多分类 →
         </Link>
       </div>
 
@@ -236,7 +236,7 @@ export function SubItemPanel({
       {/* Bestsellers footer line */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          Sản phẩm bán chạy:
+          热销产品：
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.name} className="flex items-baseline">

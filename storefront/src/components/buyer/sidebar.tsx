@@ -2,29 +2,29 @@ import Link from "next/link";
 
 const NAV_GROUPS = [
   {
-    title: "Dịch vụ",
+    title: "服务",
     items: [
-      { label: "Hướng dẫn người mua mới", href: "/buyer-center/new-user-guide", icon: "📖" },
-      { label: "Báo cáo nhà máy đã thẩm định", href: "/buyer-center/audited-reports", icon: "🛡" },
-      { label: "Gặp nhà cung cấp", href: "/buyer-center/meet-suppliers", icon: "🤝" },
-      { label: "Dịch vụ giao dịch bảo đảm", href: "/buyer-center/secured-trading", icon: "🔒" },
-      { label: "Trung tâm người mua", href: "/buyer-center", icon: "🏠" },
-      { label: "Liên hệ chúng tôi", href: "/buyer-center/contact", icon: "📞" },
+      { label: "新用户指南", href: "/buyer-center/new-user-guide", icon: "📖" },
+      { label: "已认证工厂报告", href: "/buyer-center/audited-reports", icon: "🛡" },
+      { label: "对接供应商", href: "/buyer-center/meet-suppliers", icon: "🤝" },
+      { label: "交易保障服务", href: "/buyer-center/secured-trading", icon: "🔒" },
+      { label: "采购商中心", href: "/buyer-center", icon: "🏠" },
+      { label: "联系我们", href: "/buyer-center/contact", icon: "📞" },
     ],
   },
   {
-    title: "Tìm kiếm",
+    title: "查找",
     items: [
-      { label: "Danh bạ sản phẩm", href: "/buyer-center/product-directory", icon: "🗂" },
-      { label: "Khám phá nhà cung cấp", href: "/buyer-center/supplier-discover", icon: "🏭" },
-      { label: "Đăng yêu cầu báo giá", href: "/buyer-center/post-rfq", icon: "📨" },
+      { label: "产品目录", href: "/buyer-center/product-directory", icon: "🗂" },
+      { label: "发现供应商", href: "/buyer-center/supplier-discover", icon: "🏭" },
+      { label: "发布询价", href: "/buyer-center/post-rfq", icon: "📨" },
     ],
   },
   {
-    title: "Truy cập nhanh",
+    title: "快速访问",
     items: [
-      { label: "Yêu thích", href: "/buyer-center/favorites", icon: "❤" },
-      { label: "Lịch sử duyệt", href: "/buyer-center/browsing-history", icon: "🕘" },
+      { label: "收藏", href: "/buyer-center/favorites", icon: "❤" },
+      { label: "浏览历史", href: "/buyer-center/browsing-history", icon: "🕘" },
     ],
   },
 ];
@@ -33,8 +33,8 @@ export function BuyerSidebar({ active }: { active?: string }) {
   return (
     <aside className="bg-paper border border-line rounded p-3 self-start">
       <div className="px-3 py-2.5 border-b border-line mb-2">
-        <b className="block text-[14px] text-ink">Trần Văn A</b>
-        <span className="text-[11.5px] text-mute">Buyer · Hà Nội</span>
+        <b className="block text-[14px] text-ink">陈文 A</b>
+        <span className="text-[11.5px] text-mute">采购商 · 河内</span>
       </div>
       {NAV_GROUPS.map((group, gi) => (
         <div key={group.title} className={gi === 0 ? "" : "mt-3 pt-2 border-t border-line"}>

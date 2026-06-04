@@ -32,7 +32,7 @@ export function QtyStepper({
         onClick={() => setQty((q) => clamp(q - 1))}
         className="px-3 text-mute hover:text-brand hover:bg-bg cursor-pointer disabled:opacity-40"
         disabled={qty <= min}
-        aria-label="Giảm số lượng"
+        aria-label="减少数量"
       >
         −
       </button>
@@ -44,13 +44,13 @@ export function QtyStepper({
         min={min}
         max={max}
         className="w-16 text-center text-[13px] font-bold text-ink border-x border-line outline-none focus:bg-bg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-        aria-label="Số lượng"
+        aria-label="数量"
       />
       <button
         type="button"
         onClick={() => setQty((q) => clamp(q + 1))}
         className="px-3 text-mute hover:text-brand hover:bg-bg cursor-pointer"
-        aria-label="Tăng số lượng"
+        aria-label="增加数量"
       >
         +
       </button>

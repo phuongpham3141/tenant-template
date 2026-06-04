@@ -22,8 +22,8 @@ export default async function CategoryPage({
       <div className="max-w-[1400px] mx-auto px-4 py-16">
         <Breadcrumb
           trail={[
-            { label: "Trang chủ", href: "/" },
-            { label: "Danh mục sản phẩm" },
+            { label: "首页", href: "/" },
+            { label: "产品分类" },
             { label: navEntry?.name ?? slug },
           ]}
         />
@@ -33,14 +33,13 @@ export default async function CategoryPage({
             {navEntry?.name ?? slug}
           </h1>
           <p className="text-[13px] text-mute mb-5">
-            Danh mục này đang được hoàn thiện. Mời quý khách quay lại sau hoặc
-            xem các danh mục khác.
+            该分类正在完善中。敬请稍后再来，或浏览其他分类。
           </p>
           <Link
             href="/"
             className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light"
           >
-            ← Quay về trang chủ
+            ← 返回首页
           </Link>
         </div>
       </div>
@@ -51,8 +50,8 @@ export default async function CategoryPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Danh mục sản phẩm" },
+          { label: "首页", href: "/" },
+          { label: "产品分类" },
           { label: data.title },
         ]}
       />
@@ -68,13 +67,12 @@ export default async function CategoryPage({
 }
 
 /**
- * Liệt kê đối tác sản xuất chính thức của Huayue trong ngành này.
- * Chỉ render nếu có ít nhất 1 partner mapped vào category slug.
+ * 列出华越在该行业的官方合作工厂。
+ * 仅当至少有 1 个 partner 映射到 category slug 时才渲染。
  */
 function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
-  // category slug từ categories.ts (vd: "noi-that") cần khớp với
-  // partners.category union — chỉ render nếu match một trong các giá trị
-  // được type-allow.
+  // 来自 categories.ts 的 category slug（如 "noi-that"）需要与
+  // partners.category union 匹配——仅当匹配 type-allow 中的某个值时才渲染。
   const allowed = [
     "home-garden",
     "construction-materials",
@@ -96,9 +94,9 @@ function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
       <div className="bg-paper border border-line rounded p-5 max-md:p-3">
         <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
           <span className="w-1 h-5 bg-brand rounded-sm" />
-          Đối tác sản xuất trong ngành này
+          该行业的合作工厂
           <span className="text-[12px] text-mute font-normal ml-1">
-            · {partners.length} thương hiệu đã thẩm định
+            · {partners.length} 个已认证品牌
           </span>
         </h2>
 
@@ -109,7 +107,7 @@ function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
               href={`/info/partners/${p.slug}`}
               className="flex items-start gap-3 bg-bg border border-line rounded-lg p-3 hover:border-brand hover:shadow-sm transition group"
             >
-              <div className="w-[64px] h-[64px] flex-shrink-0 bg-white rounded border border-line flex items-center justify-center overflow-hidden">
+              <div className={`w-[64px] h-[64px] flex-shrink-0 rounded border flex items-center justify-center overflow-hidden ${p.logoBg === "dark" ? "bg-brand-dark border-brand-dark" : "bg-white border-line"}`}>
                 {p.logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -146,7 +144,7 @@ function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
             href="/info/partners"
             className="inline-flex items-center gap-1 text-[13px] text-brand font-semibold hover:underline"
           >
-            Xem toàn bộ đối tác sản xuất Huayue →
+            查看华越全部合作工厂 →
           </Link>
         </div>
       </div>
@@ -167,6 +165,6 @@ export async function generateMetadata({
     title: `${name} — Huayuesc`,
     description:
       data?.intro ??
-      `Khám phá ${name} từ các nhà sản xuất hàng đầu Trung Quốc trên Huayuesc.`,
+      `在 Huayuesc 探索来自中国一流制造商的${name}。`,
   };
 }

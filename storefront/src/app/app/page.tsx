@@ -4,29 +4,29 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 export default function AppPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Tải app" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "下载 App" }]} />
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
         <div className="bg-paper border border-line rounded grid grid-cols-[1fr_360px] gap-7 p-7 max-md:grid-cols-1 max-md:p-5">
           <div className="flex flex-col justify-center">
-            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 ỨNG DỤNG HUAYUESC</span>
+            <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">📱 HUAYUESC 应用</span>
             <h1 className="text-[34px] font-extrabold text-ink leading-tight mb-3 max-md:text-[24px]">
-              Sourcing tận tay — <span className="text-brand">không lỡ deal</span>
+              采购触手可及——<span className="text-brand">不错过任何交易</span>
             </h1>
             <p className="text-[14px] text-mute leading-relaxed mb-5 max-w-[520px]">
-              Nhận thông báo báo giá tức thì, chat NCC realtime, theo dõi đơn hàng. Tải ngay để được giảm thêm 5% đơn đầu trên app.
+              即时接收报价通知、与供应商实时聊天、追踪订单。立即下载，App 首单再享 5% 折扣。
             </p>
             <div className="grid grid-cols-2 gap-3 max-w-[420px] max-md:grid-cols-1">
               <a className="border border-line rounded p-3 flex items-center gap-3 bg-black text-white cursor-pointer hover:opacity-90">
                 <span className="text-[28px]">🍎</span>
                 <div>
-                  <div className="text-[10px] opacity-80">Tải về trên</div>
+                  <div className="text-[10px] opacity-80">下载于</div>
                   <b className="block text-[15px]">App Store</b>
                 </div>
               </a>
               <a className="border border-line rounded p-3 flex items-center gap-3 bg-black text-white cursor-pointer hover:opacity-90">
                 <span className="text-[28px]">🤖</span>
                 <div>
-                  <div className="text-[10px] opacity-80">Tải về trên</div>
+                  <div className="text-[10px] opacity-80">下载于</div>
                   <b className="block text-[15px]">Google Play</b>
                 </div>
               </a>
@@ -36,19 +36,19 @@ export default function AppPage() {
                 <img src="/img/qrcode.jpg?v=5" alt="QR" className="w-full h-full object-cover rounded-sm" />
               </div>
               <div>
-                <b className="block text-[13px] text-ink mb-1">Quét mã QR để tải nhanh</b>
-                <p className="text-[12px] text-mute leading-relaxed">App hỗ trợ iOS 14+, Android 9+. Notification real-time, dark mode, đa ngôn ngữ.</p>
+                <b className="block text-[13px] text-ink mb-1">扫描二维码快速下载</b>
+                <p className="text-[12px] text-mute leading-relaxed">App 支持 iOS 14+、Android 9+。实时通知、深色模式、多语言。</p>
               </div>
             </div>
             <div className="mt-5 pt-5 border-t border-line">
-              <b className="block text-[13px] text-ink mb-2">Tính năng chính</b>
+              <b className="block text-[13px] text-ink mb-2">主要功能</b>
               <div className="grid grid-cols-2 gap-2 text-[12.5px] text-mute max-md:grid-cols-1">
-                <span>📨 Gửi RFQ qua app, đính kèm ảnh</span>
-                <span>💬 Chat NCC realtime, dịch tự động</span>
-                <span>📦 Theo dõi đơn realtime, ETA chính xác</span>
-                <span>🔔 Thông báo báo giá mới &lt;1 phút</span>
-                <span>🛒 Đặt mẫu 1 chạm</span>
-                <span>📊 Lịch sử đơn, tải hóa đơn</span>
+                <span>📨 通过 App 发送询价并附图</span>
+                <span>💬 与供应商实时聊天，自动翻译</span>
+                <span>📦 实时追踪订单，ETA 精准</span>
+                <span>🔔 新报价通知 &lt;1 分钟</span>
+                <span>🛒 一键索取样品</span>
+                <span>📊 订单历史，下载发票</span>
               </div>
             </div>
           </div>
@@ -64,9 +64,9 @@ export default function AppPage() {
 
         <div className="mt-5 grid grid-cols-3 gap-3 max-md:grid-cols-1">
           {[
-            { v: "60K+", l: "Lượt tải" },
-            { v: "4.7 ★", l: "Đánh giá App Store" },
-            { v: "32K+", l: "RFQ qua app/tháng" },
+            { v: "60K+", l: "下载量" },
+            { v: "4.7 ★", l: "App Store 评分" },
+            { v: "32K+", l: "App 月询价量" },
           ].map((s) => (
             <div key={s.l} className="bg-paper border border-line rounded p-4 text-center">
               <b className="block text-[26px] font-extrabold text-brand">{s.v}</b>
@@ -79,4 +79,4 @@ export default function AppPage() {
   );
 }
 
-export const metadata = { title: "Tải app — Huayuesc" };
+export const metadata = { title: "下载 App — Huayuesc" };

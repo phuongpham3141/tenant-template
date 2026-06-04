@@ -2,42 +2,42 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const HERO_STATS = [
-  { n: "8-12", l: "Ngày từ đặt đến nhận tay", icon: "⏱" },
-  { n: "$30-200", l: "Phí mẫu (hoàn khi MOQ)", icon: "💰" },
-  { n: "100%", l: "Hoàn phí khi đặt MOQ", icon: "↩" },
-  { n: "4%", l: "Tỷ lệ khiếu nại sau khi đặt mẫu (vs 22% nếu không)", icon: "📉" },
+  { n: "8-12", l: "从下单到收货的天数", icon: "⏱" },
+  { n: "$30-200", l: "样品费（下达起订量时返还）", icon: "💰" },
+  { n: "100%", l: "下达起订量时全额返还", icon: "↩" },
+  { n: "4%", l: "下样品单后的投诉率（不下单则为 22%）", icon: "📉" },
 ];
 
 const WHY_REASONS = [
   {
     icon: "🤲",
-    title: "Cảm nhận chất liệu thật",
-    desc: "Ảnh studio dùng đèn 5,500K + retouching không thể thay thế được trải nghiệm cầm trên tay. Trọng lượng, độ mịn, độ đàn hồi, độ dày — chỉ có sample mới cho biết.",
+    title: "亲手感受真实材质",
+    desc: "5,500K 影棚灯光 + 后期修图的图片，无法替代亲手触摸的体验。重量、细腻度、弹性、厚度——只有样品才能告诉您。",
   },
   {
     icon: "📐",
-    title: "Đo kích thước chính xác",
-    desc: "Dimension trên website thường có sai số 2-5 mm so với production thực. Đặt sample để đo bằng thước cặp, kiểm tolerance — tránh lỗi packaging sau này khi đóng container.",
+    title: "精确测量尺寸",
+    desc: "网站上的尺寸与实际量产相比通常有 2-5 mm 的误差。下样品单用游标卡尺测量、核查公差——避免日后装柜时出现包装问题。",
   },
   {
     icon: "🌈",
-    title: "Kiểm tra màu sắc dưới ánh sáng tự nhiên",
-    desc: "Màu trên screen RGB ≠ màu thực CMYK ≠ màu Pantone. Đặc biệt với gỗ, vải, gốm — sai biệt vân/màu dưới ánh sáng phòng và ánh nắng có thể khác 5-15%.",
+    title: "在自然光下检查颜色",
+    desc: "RGB 屏幕颜色 ≠ CMYK 实际颜色 ≠ Pantone 颜色。尤其是木材、织物、陶瓷——室内光与阳光下的纹理/色差可能相差 5-15%。",
   },
   {
     icon: "📦",
-    title: "Đánh giá packaging tiêu chuẩn",
-    desc: "Carton có chống va đập? Có corner protector? Bubble wrap đủ lớp? Label có chuẩn xuất khẩu (FRAGILE, đa ngôn ngữ)? Sample cho thấy chuẩn đóng gói thật của NCC.",
+    title: "评估标准包装",
+    desc: "纸箱抗冲击吗？有护角吗？气泡膜层数够吗？标签符合出口标准吗（FRAGILE、多语种）？样品能体现供应商真实的包装标准。",
   },
   {
     icon: "📜",
-    title: "Verify giấy tờ kèm theo",
-    desc: "Manual có dịch tiếng Việt không? Certificate kèm là bản gốc hay copy mờ? Có hoá đơn? Có warranty card? Mức độ chuyên nghiệp của paperwork phản ánh maturity NCC.",
+    title: "核验随附文件",
+    desc: "说明书有越南语翻译吗？随附证书是原件还是模糊复印件？有发票吗？有质保卡吗？文件的专业程度反映供应商的成熟度。",
   },
   {
     icon: "🛡",
-    title: "Test compliance trước MOQ",
-    desc: "Sample có thể gửi lab độc lập (SGS/BV) test heavy metals, formaldehyde, formaldehyde, durability. Pass test = tự tin khi đặt 50K USD MOQ — không pass = đổi NCC.",
+    title: "在起订量前检测合规性",
+    desc: "样品可送独立实验室（SGS/BV）检测重金属、甲醛、耐用性。通过检测 = 下达 5 万美元起订量时更有信心；未通过 = 更换供应商。",
   },
 ];
 
@@ -45,261 +45,261 @@ const PROCESS_STEPS = [
   {
     n: "01",
     icon: "🔍",
-    title: "Tìm sản phẩm & request sample",
-    duration: "5 phút",
+    title: "查找产品并申请样品",
+    duration: "5 分钟",
     color: "#0E7490",
-    desc: "Trên trang chi tiết sản phẩm, click nút 'Yêu cầu mẫu' — form auto-fill productId, NCC info, MOQ price tham chiếu. Buyer chỉ cần điền địa chỉ giao hàng và lựa chọn variant nếu cần.",
+    desc: "在产品详情页点击“申请样品”按钮——表单自动填入 productId、供应商信息、起订量参考价。采购商只需填写收货地址，必要时选择规格。",
     actions: [
-      "Click 'Yêu cầu mẫu' trên product detail",
-      "Hoặc gửi qua RFQ form (multi-product)",
-      "Hoặc copy SKU sang inquiry chat với quản lý tài khoản",
+      "在产品详情页点击“申请样品”",
+      "或通过询价表单提交（多产品）",
+      "或复制 SKU 至与客户经理的询盘聊天",
     ],
   },
   {
     n: "02",
     icon: "⚙️",
-    title: "Configure mẫu — variant / OEM",
-    duration: "10-15 phút",
+    title: "配置样品——规格 / OEM",
+    duration: "10-15 分钟",
     color: "#7C3AED",
-    desc: "Chọn loại mẫu phù hợp: Standard (như catalog) miễn phí mock-up · Variant (màu/size khác) +$0-50 · OEM (logo/brand custom) +$80-300 mock-up fee. CSR quản lý tài khoản review configure trong 2-4 giờ trước khi forward NCC.",
+    desc: "选择合适的样品类型：标准款（同目录）免打样费 · 规格款（不同颜色/尺寸）+$0-50 · OEM（定制 logo/品牌）+$80-300 打样费。客户经理在转发供应商前 2-4 小时内审核配置。",
     actions: [
-      "Standard: 1 mẫu chuẩn từ NCC, không tuỳ chỉnh",
-      "Variant: chọn màu/size khác trong catalog NCC",
-      "OEM: upload logo file (vector .ai/.svg), spec brand colors Pantone",
-      "Multi-supplier: yêu cầu từ 3-5 NCC để so sánh",
+      "标准款：供应商提供的 1 件标准样，无定制",
+      "规格款：在供应商目录中选择不同颜色/尺寸",
+      "OEM：上传 logo 文件（矢量 .ai/.svg），指定 Pantone 品牌色",
+      "多供应商：向 3-5 家供应商申请以作比较",
     ],
   },
   {
     n: "03",
     icon: "💳",
-    title: "Thanh toán phí mẫu vào tài khoản trung gian",
-    duration: "1-3 giờ",
+    title: "向担保账户支付样品费",
+    duration: "1-3 小时",
     color: "#16A34A",
-    desc: "Phí $30-200 + ship $20-40 thanh toán qua tài khoản trung gian của Huayue tại ngân hàng đối tác Việt Nam — không chuyển trực tiếp NCC. Giữ nguyên Bảo đảm Giao dịch: nếu sample bị NCC giao sai, refund 100% qua tài khoản trung gian.",
+    desc: "$30-200 费用 + $20-40 运费通过华越在越南合作银行的担保账户支付——不直接转给供应商。完整保留交易保障：若供应商交付样品有误，通过担保账户全额退款。",
     actions: [
-      "Phương thức: TT bank wire / VietQR / thẻ tín dụng",
-      "Mã đơn unique generated cho từng sample order",
-      "Ghi chú: Phí mẫu 100% sẽ được hoàn khi đặt MOQ với cùng NCC",
+      "方式：电汇 / VietQR / 信用卡",
+      "为每个样品订单生成唯一订单号",
+      "备注：与同一供应商下达起订量时，100% 返还样品费",
     ],
   },
   {
     n: "04",
     icon: "🏭",
-    title: "NCC sản xuất sample",
-    duration: "3-7 ngày",
+    title: "供应商生产样品",
+    duration: "3-7 天",
     color: "#92400E",
-    desc: "NCC nhận order, bắt đầu chuẩn bị mẫu. Standard sample lấy từ kho thành phẩm (1-2 ngày). Variant cần custom chạy từng cái (3-5 ngày). OEM cần làm khuôn/in logo (5-10 ngày). NCC update tiến độ qua dashboard với ảnh production.",
+    desc: "供应商接单，开始准备样品。标准样从成品仓库提取（1-2 天）。规格款需逐件定制生产（3-5 天）。OEM 需开模/印 logo（5-10 天）。供应商通过控制台并附生产照片更新进度。",
     actions: [
-      "Buyer nhận thông báo khi NCC accept order",
-      "Update tiến độ ảnh + video qua Zalo OA / dashboard",
-      "Buyer có thể chat trực tiếp NCC qua Huayue (có translator)",
-      "Yêu cầu video call để xem mock-up trước khi finalize",
+      "供应商接单后采购商收到通知",
+      "通过 Zalo OA / 控制台更新照片 + 视频进度",
+      "采购商可通过华越直接与供应商沟通（配备翻译）",
+      "可要求视频通话，在定稿前查看打样",
     ],
   },
   {
     n: "05",
     icon: "📦",
-    title: "Văn phòng Quảng Châu của Huayue",
-    duration: "1-3 ngày",
+    title: "华越广州办事处",
+    duration: "1-3 天",
     color: "#A21CAF",
-    desc: "NCC ship sample về văn phòng Huayue tại Quảng Châu (tại quận Hải Châu, kết nối các cluster Phật Sơn và Đông Quan — đa số NCC đã ký giao trong 24-48h). CSR gom 8-15 sample mỗi tuần thành 1 master shipment air về Hà Nội — tiết kiệm 50-60% cước cho buyer.",
+    desc: "供应商将样品寄至华越广州办事处（位于海珠区，连接佛山和东莞产业带——多数签约供应商在 24-48 小时内送达）。CSR 每周将 8-15 件样品合并为 1 个航空主运单寄往河内——为采购商节省 50-60% 运费。",
     actions: [
-      "Văn phòng Quảng Châu mở thứ 2 - thứ 6, ship batch thứ 6 hàng tuần",
-      "Mỗi sample được tag QR code cho tracking riêng",
-      "Đội Huayue Quảng Châu kiểm sơ bộ: đúng SKU, đúng variant, packaging chuẩn xuất khẩu",
-      "Buyer nhận thông báo khi hàng mẫu về văn phòng Huayue Quảng Châu",
+      "广州办事处周一至周五办公，每周五发出批次",
+      "每件样品贴 QR 码以便单独追踪",
+      "华越广州团队初检：SKU 正确、规格正确、包装符合出口标准",
+      "样品送达华越广州办事处时采购商收到通知",
     ],
   },
   {
     n: "06",
     icon: "✈️",
-    title: "Air shipment + last-mile VN",
-    duration: "3-5 ngày",
+    title: "航空运输 + 越南末端配送",
+    duration: "3-5 天",
     color: "#DC2626",
-    desc: "Master shipment qua DHL/FedEx/UPS air (4-5 ngày Quảng Châu → Hà Nội), thông quan tại Nội Bài hoặc Tân Sơn Nhất, sau đó forward last-mile bằng GHN/J&T đến tận tay buyer. Tổng thời gian giao 8-12 ngày từ lúc đặt.",
+    desc: "主运单通过 DHL/FedEx/UPS 航空运输（广州 → 河内 4-5 天），在内排或新山一机场清关，随后通过 GHN/J&T 末端配送直达采购商。从下单起总交货时间 8-12 天。",
     actions: [
-      "Tracking realtime qua Zalo OA + email",
-      "Customs clearance: sample <$200 = commercial sample, miễn VAT",
-      "Last-mile: 24-48h cho HN/HCM, 2-4 ngày cho tỉnh xa",
-      "Buyer ký nhận → đóng order → bắt đầu inspection",
+      "通过 Zalo OA + 邮件实时追踪",
+      "清关：样品 <$200 = 商业样品，免增值税",
+      "末端配送：河内/胡志明市 24-48 小时，偏远省份 2-4 天",
+      "采购商签收 → 关闭订单 → 开始验货",
     ],
   },
 ];
 
 const SAMPLE_TYPES = [
   {
-    type: "Standard",
+    type: "标准款",
     color: "#0E7490",
     icon: "📦",
     fee: "$30-100",
-    leadtime: "8-10 ngày",
-    desc: "Mẫu giống hệt catalog, không tuỳ chỉnh. Phù hợp khi buyer muốn verify chất lượng baseline trước khi đặt MOQ chuẩn.",
-    bestFor: "Lần đầu sourcing với NCC mới · Verify chất lượng baseline · Test packaging tiêu chuẩn",
-    pros: ["Rẻ nhất, nhanh nhất", "NCC lấy từ kho thành phẩm sẵn", "Mock-up fee = $0"],
-    cons: ["Không tuỳ chỉnh được", "Có thể không match exact màu/size buyer cần"],
+    leadtime: "8-10 天",
+    desc: "与目录完全一致的样品，无定制。适合采购商在下达标准起订量前核验基准品质。",
+    bestFor: "首次与新供应商采购 · 核验基准品质 · 测试标准包装",
+    pros: ["最便宜、最快", "供应商从现成成品仓库提取", "打样费 = $0"],
+    cons: ["无法定制", "可能与采购商所需的确切颜色/尺寸不符"],
   },
   {
-    type: "Variant",
+    type: "规格款",
     color: "#7C3AED",
     icon: "🎨",
     fee: "$50-150",
-    leadtime: "10-12 ngày",
-    desc: "Chọn màu / size / vật liệu khác trong catalog NCC nhưng chưa OEM. Phù hợp khi buyer cần verify một variant cụ thể trước MOQ.",
-    bestFor: "Verify variant cụ thể · So sánh 2-3 màu cùng SKU · Test size đặc biệt",
-    pros: ["Sát với MOQ thực tế hơn Standard", "NCC chạy custom 3-5 cái", "Full Bảo đảm Giao dịch protection"],
-    cons: ["Đắt hơn Standard 30-50%", "Thời gian giao +2-3 ngày", "Một số NCC từ chối nếu MOQ variant >1000"],
+    leadtime: "10-12 天",
+    desc: "在供应商目录中选择不同颜色 / 尺寸 / 材质，但尚未 OEM。适合采购商在起订量前核验某一具体规格。",
+    bestFor: "核验具体规格 · 比较同 SKU 的 2-3 种颜色 · 测试特殊尺寸",
+    pros: ["比标准款更贴近实际起订量", "供应商定制生产 3-5 件", "完整的交易保障"],
+    cons: ["比标准款贵 30-50%", "交货时间 +2-3 天", "部分供应商在规格款起订量 >1000 时会拒绝"],
   },
   {
     type: "OEM",
     color: "#A21CAF",
     icon: "🏷",
-    fee: "$80-300 + mock-up",
-    leadtime: "12-21 ngày",
-    desc: "Custom logo brand riêng, custom màu Pantone, có thể custom packaging. Đây là sample bắt buộc trước khi đặt OEM MOQ — không skip được.",
-    bestFor: "OEM brand riêng · Test logo printing chất lượng · Custom packaging · Private label",
-    pros: ["Sản phẩm hoàn chỉnh có brand buyer", "Có thể chụp ảnh marketing trước MOQ", "Verify khả năng OEM thực của NCC"],
-    cons: ["Đắt nhất, lâu nhất", "Mock-up fee 80-300 USD không hoàn ngay (chỉ khi MOQ)", "Cần file logo vector chuẩn"],
+    fee: "$80-300 + 打样费",
+    leadtime: "12-21 天",
+    desc: "定制自有品牌 logo、定制 Pantone 颜色，可定制包装。这是下达 OEM 起订量前必须的样品——不可省略。",
+    bestFor: "自有品牌 OEM · 测试 logo 印刷品质 · 定制包装 · 自有标签",
+    pros: ["带有采购商品牌的完整产品", "可在起订量前拍摄营销照片", "核验供应商真实的 OEM 能力"],
+    cons: ["最贵、最慢", "打样费 80-300 美元不立即返还（仅下起订量时）", "需要规范的矢量 logo 文件"],
   },
 ];
 
 const COST_TABLE = [
-  { item: "Phí sample (Standard)", range: "$30-100", note: "Tuỳ ngành — gốm sứ rẻ nhất, điện tử đắt nhất" },
-  { item: "Phí sample (Variant)", range: "$50-150", note: "Cộng 30-50% so với Standard cho custom màu/size" },
-  { item: "Phí sample (OEM)", range: "$80-300", note: "Cộng phí mock-up logo $80-300" },
-  { item: "Phí vận chuyển Văn phòng Huayue Quảng Châu → VN (gộp)", range: "$20-40", note: "Per sample khi gom batch. Tiết kiệm 50-60% so với ship riêng" },
-  { item: "Phí ship riêng (express)", range: "$60-120", note: "Nếu buyer cần gấp, không gom batch" },
-  { item: "Last-mile nội địa VN", range: "$2-5", note: "GHN/J&T tới tận kho buyer, đã include trong ship fee" },
-  { item: "Gói đăng ký mẫu", range: "$99/tháng", note: "Mẫu không giới hạn, chỉ trả phí sản phẩm — cho buyer >5 sample/tháng" },
-  { item: "Customs duty / VAT", range: "$0", note: "Sample <$200 = commercial sample, miễn theo NĐ 134/2016" },
+  { item: "样品费（标准款）", range: "$30-100", note: "视行业而定——陶瓷最便宜，电子产品最贵" },
+  { item: "样品费（规格款）", range: "$50-150", note: "颜色/尺寸定制比标准款加收 30-50%" },
+  { item: "样品费（OEM）", range: "$80-300", note: "另加 logo 打样费 $80-300" },
+  { item: "华越广州办事处 → 越南运费（合并）", range: "$20-40", note: "批量合并时按每件计算。比单独寄送节省 50-60%" },
+  { item: "单独寄送费（快递）", range: "$60-120", note: "若采购商急需，不合并批次" },
+  { item: "越南国内末端配送", range: "$2-5", note: "GHN/J&T 直达采购商仓库，已含在运费中" },
+  { item: "样品订阅套餐", range: "$99/月", note: "样品不限量，仅付产品费——适合每月 >5 件样品的采购商" },
+  { item: "关税 / 增值税", range: "$0", note: "样品 <$200 = 商业样品，依据 NĐ 134/2016 免税" },
 ];
 
 const PRE_MOQ_CHECKLIST = [
   {
-    category: "Vật liệu",
+    category: "材质",
     icon: "🧪",
     items: [
-      "Trọng lượng thực tế đo bằng cân điện tử (so với spec)",
-      "Độ dày material đo bằng thước cặp (caliper) tại 5 điểm khác nhau",
-      "Test bend/scratch — material có dễ bị xước, gãy không?",
-      "(Optional) Gửi lab SGS test heavy metals + formaldehyde — $200-450",
+      "用电子秤测量实际重量（与规格对比）",
+      "用游标卡尺在 5 个不同点测量材料厚度",
+      "弯折/划痕测试——材料是否易刮花、易断裂？",
+      "（可选）送 SGS 实验室检测重金属 + 甲醛——$200-450",
     ],
   },
   {
-    category: "Kích thước",
+    category: "尺寸",
     icon: "📐",
     items: [
-      "Đo full dimension theo spec PO (length × width × height)",
-      "Kiểm tolerance: ±2 mm cho hàng hardware, ±5 mm cho hàng gỗ, ±1 mm cho electronics",
-      "Đo 3-5 điểm khác nhau trên 1 sample để verify consistency",
-      "So với mẫu OEM gửi lần trước (nếu reorder)",
+      "按 PO 规格测量完整尺寸（长 × 宽 × 高）",
+      "核查公差：五金件 ±2 mm，木制品 ±5 mm，电子产品 ±1 mm",
+      "在 1 件样品上测量 3-5 个不同点以核验一致性",
+      "与上次寄送的 OEM 样品对比（若返单）",
     ],
   },
   {
-    category: "Hoàn thiện & Màu",
+    category: "工艺与颜色",
     icon: "🎨",
     items: [
-      "Kiểm tra finish: smooth/matte/glossy — đúng spec PI?",
-      "Kiểm màu dưới 3 điều kiện: phòng (3000K) + ánh nắng (5500K) + đèn LED trắng (4000K)",
-      "Verify Pantone color value bằng spectrophotometer hoặc color card vật lý",
-      "Kiểm xem có scratch, dent, defect bề mặt không",
+      "检查表面工艺：哑光/亚光/亮光——是否符合 PI 规格？",
+      "在 3 种条件下检查颜色：室内（3000K）+ 阳光（5500K）+ 白光 LED（4000K）",
+      "用分光光度计或实体色卡核验 Pantone 色值",
+      "检查表面是否有划痕、凹陷、缺陷",
     ],
   },
   {
-    category: "Packaging",
+    category: "包装",
     icon: "📦",
     items: [
-      "Carton có đủ độ cứng? Test bằng cách ấn từ trên xuống",
-      "Có corner protector cho hàng fragile?",
-      "Bubble wrap / foam — đủ lớp bảo vệ?",
-      "Label có đa ngôn ngữ (Trung-Anh-Việt)? Có FRAGILE, THIS SIDE UP, MAX STACK?",
+      "纸箱硬度够吗？用从上往下按压的方式测试",
+      "易碎品是否有护角？",
+      "气泡膜 / 泡沫——保护层数够吗？",
+      "标签是否多语种（中-英-越）？是否有 FRAGILE、THIS SIDE UP、MAX STACK？",
     ],
   },
   {
-    category: "Tài liệu & Cert",
+    category: "文件与证书",
     icon: "📜",
     items: [
-      "Manual có tiếng Việt hoặc tiếng Anh? Có chỉ dẫn an toàn?",
-      "Certificate (CE/FCC/RoHS/CB) — bản gốc hay scan? Có verify QR code?",
-      "Hoá đơn / Commercial Invoice có đầy đủ HS code, FOB price, weight?",
-      "Test report SGS/BV nếu có — verify trên portal lab độc lập",
+      "说明书有越南语或英语吗？有安全指引吗？",
+      "证书（CE/FCC/RoHS/CB）——原件还是扫描件？能扫 QR 码核验吗？",
+      "发票 / 商业发票是否完整包含 HS 编码、FOB 价格、重量？",
+      "若有 SGS/BV 检测报告——在独立实验室门户上核验",
     ],
   },
 ];
 
 const SAMPLE_SUB_FEATURES = [
-  { icon: "♾", title: "Mẫu không giới hạn", desc: "Không giới hạn số sample/tháng — chỉ trả phí sản phẩm" },
-  { icon: "🚀", title: "Priority shipping", desc: "Sample của bạn được ưu tiên gom batch 2 lần/tuần thay vì 1 lần" },
-  { icon: "🤝", title: "Quản lý chuyên trách", desc: "Quản lý tài khoản riêng phụ trách sample order, response 4 giờ" },
-  { icon: "📞", title: "Video call NCC free", desc: "Lên lịch video call review mock-up với NCC qua đội Huayue Quảng Châu" },
-  { icon: "📊", title: "Dashboard tracking", desc: "Theo dõi tất cả sample đang chạy, ETA, supplier comparison" },
-  { icon: "↩", title: "Hoàn 100% khi MOQ", desc: "Toàn bộ phí sample của tháng được hoàn khi đặt MOQ ≥$5K" },
+  { icon: "♾", title: "样品不限量", desc: "每月样品数量不限——仅付产品费" },
+  { icon: "🚀", title: "优先运输", desc: "您的样品优先合并发运，每周 2 次而非 1 次" },
+  { icon: "🤝", title: "专属客户经理", desc: "专属客户经理负责样品订单，4 小时响应" },
+  { icon: "📞", title: "免费供应商视频通话", desc: "通过华越广州团队安排与供应商的打样视频通话审核" },
+  { icon: "📊", title: "控制台追踪", desc: "追踪所有进行中的样品、预计到达时间、供应商对比" },
+  { icon: "↩", title: "起订量时全额返还", desc: "下达 ≥$5K 起订量时全月样品费全额返还" },
 ];
 
 const PITFALLS = [
   {
     icon: "🚫",
-    title: "Tự liên hệ NCC trực tiếp để giảm phí",
-    why: "Mất Bảo đảm Giao dịch protection, không có translator chuyên ngành, không tận dụng được văn phòng Huayue Quảng Châu gom hàng. Tiết kiệm $20-40 nhưng rủi ro cao hơn.",
+    title: "为省费用自行直接联系供应商",
+    why: "丧失交易保障，没有专业翻译，无法利用华越广州办事处合并发货。省下 $20-40，但风险更高。",
   },
   {
     icon: "⚠️",
-    title: "Đặt sample của 1 NCC duy nhất rồi đặt MOQ ngay",
-    why: "Không có baseline so sánh. Best practice: đặt sample 3-5 NCC cùng SKU, so sánh chất lượng + giá + thời gian giao, rồi mới đặt MOQ với NCC tốt nhất.",
+    title: "只下一家供应商的样品就立即下起订量",
+    why: "没有比较基准。最佳实践：向 3-5 家供应商申请同 SKU 样品，比较品质 + 价格 + 交货时间，再向最优供应商下起订量。",
   },
   {
     icon: "🔇",
-    title: "Không kiểm sample kỹ trước khi đặt MOQ",
-    why: "Sample đẹp nhưng MOQ chạy line khác có thể khác đáng kể. Đầu tư 1-2 giờ đo + chụp ảnh + lab test sample = tránh thiệt hại $50K+ khi MOQ.",
+    title: "下起订量前未仔细检查样品",
+    why: "样品漂亮，但起订量在不同生产线生产可能差异显著。投入 1-2 小时测量 + 拍照 + 实验室检测样品 = 避免起订量时 $50K+ 的损失。",
   },
   {
     icon: "💸",
-    title: "Tiếc $80-300 mock-up cho mẫu OEM",
-    why: "OEM không sample = đặt mù. Logo có thể in lệch, màu có thể không đúng Pantone, packaging có thể không in được — phát hiện sau khi đã production 5,000 đơn vị thì quá muộn.",
+    title: "舍不得为 OEM 样品花 $80-300 打样费",
+    why: "OEM 不打样 = 盲下单。logo 可能印偏，颜色可能与 Pantone 不符，包装可能印不出来——量产 5,000 件后才发现就太迟了。",
   },
   {
     icon: "📵",
-    title: "Bỏ qua video call review mock-up",
-    why: "Free service nhưng nhiều buyer skip. 15 phút video call với NCC trước khi finalize sample có thể tránh sai sót cơ bản (logo size, colour mode, font).",
+    title: "跳过打样审核视频通话",
+    why: "免费服务，但许多采购商跳过。定稿样品前与供应商进行 15 分钟视频通话，可避免基本失误（logo 尺寸、色彩模式、字体）。",
   },
   {
     icon: "📅",
-    title: "Đặt sample sát ngày Tết / Quốc Khánh TQ",
-    why: "Tết Trung Quốc (Spring Festival) tháng 1-2 → NCC nghỉ 7-15 ngày. Quốc Khánh đầu tháng 10 → 7 ngày. Thời gian giao có thể tăng gấp đôi. Plan trước 4-6 tuần.",
+    title: "临近中国春节 / 国庆才下样品单",
+    why: "中国春节（1-2 月）→ 供应商放假 7-15 天。国庆（10 月初）→ 7 天。交货时间可能翻倍。请提前 4-6 周规划。",
   },
 ];
 
 const FAQ = [
   {
-    q: "Tôi có thể đặt sample không qua Huayue, trực tiếp với NCC được không?",
-    a: "Có thể về kỹ thuật, nhưng không khuyến nghị. Tự đặt với NCC: phải đàm phán bằng tiếng Trung, trả cước air đầy đủ ($60-120 thay vì $20-40), không có Bảo đảm Giao dịch protection (NCC giao sai sample = mất tiền), không có đội Huayue Quảng Châu theo dõi tiến độ. Qua CSR rẻ hơn 30-50% và an toàn hơn — đó là giá trị của văn phòng Huayue Quảng Châu.",
+    q: "我可以不通过华越，直接向供应商下样品单吗？",
+    a: "技术上可以，但不推荐。自行向供应商下单：须用中文谈判，支付全额航空运费（$60-120 而非 $20-40），没有交易保障（供应商交错样品 = 损失钱款），没有华越广州团队跟进进度。通过 CSR 便宜 30-50% 且更安全——这正是华越广州办事处的价值所在。",
   },
   {
-    q: "Sample khác hàng MOQ như thế nào?",
-    a: "Mẫu chuẩn (Standard) là sản phẩm được lấy từ kho thành phẩm hoặc chạy thử trên line nhỏ — về cơ bản giống hàng MOQ. Tuy nhiên, một số NCC làm sample bằng máy thủ công (sample line) thay vì line production tự động → có thể có khác biệt nhỏ về finish và độ đồng nhất. Khi đặt MOQ, CSR luôn QC trước xuất xưởng (pre-shipment inspection AQL 2.5) để đảm bảo MOQ đồng nhất với sample đã ký.",
+    q: "样品与起订量货品有何区别？",
+    a: "标准样是从成品仓库提取或在小线上试产的产品——基本与起订量货品相同。但部分供应商用手工机（样品线）而非自动化生产线制作样品 → 在表面工艺和一致性上可能有细微差异。下达起订量时，CSR 始终进行出厂前 QC（出货前检验 AQL 2.5），确保起订量货品与已确认样品一致。",
   },
   {
-    q: "Tôi có thể yêu cầu sample của nhiều NCC cùng lúc để so sánh không?",
-    a: "Hoàn toàn nên. Best practice của professional buyer: 'Mẫu đa nhà cung cấp' — đặt 3-5 mẫu cùng SKU từ các NCC khác nhau qua RFQ trên Huayue. Huayue gộp tất cả vào 1 master shipment air về VN, buyer nhận được trong cùng 1 ngày để so sánh trực tiếp. Phí ship vẫn chỉ $20-40/sample (gộp), không phải $60-120 nếu ship riêng từng NCC.",
+    q: "我可以同时向多家供应商申请样品以作比较吗？",
+    a: "完全推荐。专业采购商的最佳实践：“多供应商样品”——通过华越上的询价向不同供应商申请 3-5 件同 SKU 样品。华越将全部合并为 1 个航空主运单寄往越南，采购商在同一天收到以便直接比较。运费仍仅为 $20-40/件（合并），而非各供应商单独寄送的 $60-120。",
   },
   {
-    q: "Phí sample 100% được hoàn khi MOQ — cụ thể như thế nào?",
-    a: "Khi buyer đặt MOQ với cùng NCC trong vòng 90 ngày kể từ khi nhận sample, toàn bộ phí sample (sản phẩm + mock-up cho OEM, KHÔNG bao gồm phí ship) được trừ thẳng vào hoá đơn MOQ. Ví dụ: bạn trả $250 sample fee + $30 ship → đặt MOQ $5,000 → chỉ phải trả $4,750 (250 được trừ). Phí ship $30 không hoàn vì đó là chi phí logistics đã phát sinh.",
+    q: "起订量时 100% 返还样品费——具体如何操作？",
+    a: "当采购商在收到样品后 90 天内向同一供应商下达起订量时，全部样品费（产品 + OEM 打样费，不含运费）直接从起订量发票中抵扣。例如：您支付 $250 样品费 + $30 运费 → 下达 $5,000 起订量 → 只需支付 $4,750（抵扣 250）。$30 运费不返还，因为那是已发生的物流成本。",
   },
   {
-    q: "Sample có phải đóng thuế / VAT khi nhập về Việt Nam không?",
-    a: "Không, nếu giá trị sample dưới $200 USD. Theo NĐ 134/2016/NĐ-CP về quản lý thuế xuất nhập khẩu, hàng mẫu thương mại (commercial sample) trị giá dưới $200 được miễn thuế nhập khẩu và VAT. CSR khai báo sample là 'Commercial Sample, No Commercial Value' với giá trị thực để qua customs nhanh. Trên $200, áp dụng thuế nhập khẩu + VAT 10% bình thường.",
+    q: "样品进口到越南需要缴关税 / 增值税吗？",
+    a: "不需要，前提是样品价值低于 200 美元。依据关于进出口税管理的 NĐ 134/2016/NĐ-CP 号法令，价值低于 $200 的商业样品免征进口税和增值税。CSR 将样品申报为“Commercial Sample, No Commercial Value”并标注实际价值以快速清关。超过 $200 则照常征收进口税 + 10% 增值税。",
   },
   {
-    q: "Gói đăng ký mẫu $99/tháng có đáng không?",
-    a: "Có, cho buyer đặt >5 sample/tháng. Ví dụ: trader sourcing nhiều SKU mới mỗi tháng, cửa hàng thiết kế đặt sample để show client, buying agent cho dealer cấp 2. Một sample đơn lẻ tốn $50-150 phí sản phẩm + $20-40 ship → 5 sample = $350-950. Subscription chỉ $99 + phí sản phẩm, save 70%+. Cho buyer thường xuyên, trở thành ROI rõ ràng từ tháng thứ 2.",
+    q: "$99/月的样品订阅套餐值得吗？",
+    a: "值得，适合每月 >5 件样品的采购商。例如：每月采购众多新 SKU 的贸易商、为客户展示而申请样品的设计工作室、二级经销商的采购代理。单件样品需 $50-150 产品费 + $20-40 运费 → 5 件 = $350-950。订阅仅 $99 + 产品费，节省 70% 以上。对常下单的采购商，从第 2 个月起 ROI 即十分明显。",
   },
   {
-    q: "Tôi đã nhận sample, kiểm thấy đẹp — nên đặt MOQ ngay hay chờ test thêm?",
-    a: "Khuyến nghị test thêm 7-14 ngày trước khi đặt MOQ. Cụ thể: (1) Test durability — sample chịu được sử dụng thực tế trong 1 tuần không? (2) Test với khách hàng cuối — show sample cho 3-5 khách potential, nhận feedback. (3) Lab test (optional, $200-450) cho material safety nếu sản phẩm cho trẻ em / food contact / electrical. (4) Verify NCC còn capacity và thời gian giao MOQ. Đầu tư 2 tuần này tránh được 90% rủi ro MOQ.",
+    q: "我已收到样品，检查后觉得不错——应立即下起订量还是再测试一下？",
+    a: "建议在下起订量前再测试 7-14 天。具体：(1) 耐用性测试——样品能承受 1 周实际使用吗？(2) 终端客户测试——向 3-5 位潜在客户展示样品，收集反馈。(3) 实验室检测（可选，$200-450），针对儿童用品 / 食品接触 / 电气产品的材料安全。(4) 核实供应商仍有产能及起订量交货时间。投入这 2 周可避免 90% 的起订量风险。",
   },
   {
-    q: "Nếu sample bị hỏng trong vận chuyển — sao xử lý?",
-    a: "CSR ship sample qua DHL/FedEx/UPS với insurance đầy đủ. Nếu sample bị hỏng do shipping (carton ướt, đổ, móp): buyer chụp ảnh + biên bản tại lúc nhận, gửi qua dispute@huayuesc.vn. Bảo đảm Giao dịch refund 100% phí sample (gồm ship) trong 5-7 ngày làm việc. NCC ship sample mới miễn phí với thời gian giao 5-7 ngày. Sự cố này hiếm — tỷ lệ <1% trong 2025.",
+    q: "若样品在运输中损坏——如何处理？",
+    a: "CSR 通过 DHL/FedEx/UPS 寄送样品并附完整保险。若样品因运输损坏（纸箱受潮、倾倒、压扁）：采购商在收货时拍照 + 记录，发送至 dispute@huayuesc.vn。交易保障在 5-7 个工作日内全额退还样品费（含运费）。供应商免费重寄新样品，交货时间 5-7 天。此类事故罕见——2025 年发生率 <1%。",
   },
 ];
 
@@ -318,9 +318,9 @@ export default function DatMauPage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Đặt mẫu (Sample Order)" },
+          { label: "首页", href: "/" },
+          { label: "信息", href: "/help" },
+          { label: "样品订购" },
         ]}
       />
 
@@ -335,14 +335,14 @@ export default function DatMauPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-12 max-md:py-8">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            📦 ĐẶT MẪU
+            📦 样品订购
           </span>
           <h1 className="text-[40px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
-            $50 phí sample — bảo hiểm rẻ nhất<br />
-            <span className="text-gold">cho 50,000 USD MOQ tiếp theo</span>
+            $50 样品费——最划算的保险<br />
+            <span className="text-gold">为您下一笔 50,000 美元起订量护航</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
-            Đặt mẫu là bước không thể bỏ qua khi sourcing lần đầu với NCC. Theo dữ liệu CSR 2025: <b className="text-gold">22% đơn MOQ không đặt sample</b> trước có khiếu nại chất lượng — con số này <b className="text-gold">giảm xuống 4% khi buyer đặt sample</b>. Văn phòng Huayue Quảng Châu tại Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ với cùng NCC.
+            首次与供应商采购时，下样品单是不可省略的一步。据 CSR 2025 数据：<b className="text-gold">未先下样品单的起订量订单中有 22%</b> 出现品质投诉——而这一数字<b className="text-gold">在采购商下样品单后降至 4%</b>。华越广州办事处合并发运可节省 50-60% 运费，交货时间 8-12 天，与同一供应商下达起订量时 100% 返还费用。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -354,13 +354,13 @@ export default function DatMauPage() {
               href="/products"
               className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              🔍 Tìm sản phẩm để đặt mẫu
+              🔍 查找产品下样品单
             </Link>
             <a
               href="#sample-subscription"
               className="px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              ♾ Gói đăng ký mẫu $99/tháng
+              ♾ 样品订阅套餐 $99/月
             </a>
           </div>
         </div>
@@ -369,10 +369,10 @@ export default function DatMauPage() {
       {/* === Why samples matter ============================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-9">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">VÌ SAO ĐẶT MẪU</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">6 thứ bạn không thể biết qua ảnh / spec</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">为何要下样品单</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">6 件无法通过图片 / 规格知晓的事</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Catalog có đầy đủ thông số, ảnh studio đẹp, video factory tour chi tiết — nhưng vẫn còn 6 yếu tố chỉ có thể verify khi cầm sample trên tay.
+            目录有完整参数、精美的影棚图片、详尽的工厂参观视频——但仍有 6 项要素只有亲手拿到样品才能核验。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -388,14 +388,14 @@ export default function DatMauPage() {
         {/* Big comparison stat */}
         <div className="mt-6 bg-paper border-2 border-gold rounded p-5 grid grid-cols-2 gap-4 items-center max-md:grid-cols-1">
           <div className="text-center border-r border-line pr-4 max-md:border-r-0 max-md:border-b max-md:pr-0 max-md:pb-4">
-            <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">Không đặt sample trước MOQ</div>
+            <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">起订量前不下样品单</div>
             <div className="text-[48px] font-extrabold text-accent leading-none">22%</div>
-            <div className="text-[12px] text-mute mt-1">đơn MOQ có khiếu nại chất lượng</div>
+            <div className="text-[12px] text-mute mt-1">起订量订单出现品质投诉</div>
           </div>
           <div className="text-center">
-            <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">Đặt sample đầy đủ trước MOQ</div>
+            <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">起订量前充分下样品单</div>
             <div className="text-[48px] font-extrabold text-success leading-none">4%</div>
-            <div className="text-[12px] text-mute mt-1">— giảm 5.5× rủi ro chỉ với $50-200</div>
+            <div className="text-[12px] text-mute mt-1">——仅花 $50-200 即降低 5.5 倍风险</div>
           </div>
         </div>
       </section>
@@ -403,10 +403,10 @@ export default function DatMauPage() {
       {/* === Process steps ================================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">QUY TRÌNH 6 BƯỚC</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Từ click 'Yêu cầu mẫu' đến cầm sample trên tay</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">6 步流程</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">从点击“申请样品”到亲手拿到样品</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Trung bình 8-12 ngày toàn quy trình. Buyer chỉ làm 2 bước (request + thanh toán). 4 bước còn lại do NCC + Văn phòng Huayue Quảng Châu + CSR Logistics tự động thực hiện.
+            整个流程平均 8-12 天。采购商只需做 2 步（申请 + 支付）。其余 4 步由供应商 + 华越广州办事处 + CSR 物流自动完成。
           </p>
         </div>
         <div className="space-y-3">
@@ -427,7 +427,7 @@ export default function DatMauPage() {
                       <span className="text-[28px]">{s.icon}</span>
                       <div>
                         <h3 className="text-[17px] font-bold text-ink leading-tight">{s.title}</h3>
-                        <span className="text-[10.5px] uppercase tracking-wider font-bold" style={{ color: s.color }}>BƯỚC {s.n}</span>
+                        <span className="text-[10.5px] uppercase tracking-wider font-bold" style={{ color: s.color }}>第 {s.n} 步</span>
                       </div>
                     </div>
                     <span className="text-[11px] bg-bg border border-line px-2 py-0.5 rounded-sm font-bold uppercase tracking-wider text-mute">
@@ -450,7 +450,7 @@ export default function DatMauPage() {
         </div>
       </section>
 
-      {/* === Giải thích Văn phòng Huayue Quảng Châu ========================================= */}
+      {/* === 华越广州办事处说明 ========================================= */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="rounded p-6 max-md:p-4 border-2 border-[#A21CAF]" style={{ background: "linear-gradient(135deg, #A21CAF08, #A21CAF02)" }}>
           <div className="flex items-start gap-4 max-md:flex-col">
@@ -459,24 +459,24 @@ export default function DatMauPage() {
             </div>
             <div className="flex-1">
               <span className="inline-block bg-[#A21CAF] text-white text-[10px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm mb-2">
-                INNOVATION CỦA CSR
+                CSR 创新
               </span>
-              <h2 className="text-[20px] font-bold text-ink mb-2">văn phòng Huayue Quảng Châu — Gom shipping tiết kiệm 50-60%</h2>
+              <h2 className="text-[20px] font-bold text-ink mb-2">华越广州办事处——合并发运节省 50-60%</h2>
               <p className="text-[13px] text-ink leading-relaxed mb-3">
-                Thay vì mỗi sample được ship riêng (cước air $60-120/lô), CSR vận hành Văn phòng Huayue Quảng Châu tại Quảng Châu (tại quận Hải Châu, kết nối các cluster Phật Sơn và Đông Quan). NCC giao sample về Hub trong 24-48h. Mỗi tuần, Hub gom <b>8-15 sample từ nhiều buyer Việt Nam</b> thành <b>1 master shipment air</b> qua DHL/FedEx về Hà Nội — chỉ <b>1 lần cước $80-150 chia đều</b> cho các buyer.
+                与其每件样品单独寄送（航空运费 $60-120/批），CSR 在广州运营华越广州办事处（位于海珠区，连接佛山和东莞产业带）。供应商在 24-48 小时内将样品送至该中心。每周，中心将<b>来自多位越南采购商的 8-15 件样品</b>合并为<b>1 个航空主运单</b>，通过 DHL/FedEx 寄往河内——各采购商<b>仅分摊 1 次 $80-150 的运费</b>。
               </p>
               <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
                 <div className="bg-paper border border-line rounded p-3 text-center">
                   <div className="text-[22px] font-extrabold text-[#A21CAF]">$60-120</div>
-                  <div className="text-[11px] text-mute">Ship riêng (per sample)</div>
+                  <div className="text-[11px] text-mute">单独寄送（每件）</div>
                 </div>
                 <div className="bg-paper border border-line rounded p-3 text-center">
                   <div className="text-[22px] font-extrabold text-[#A21CAF]">$20-40</div>
-                  <div className="text-[11px] text-mute">Qua Văn phòng Huayue Quảng Châu (gom)</div>
+                  <div className="text-[11px] text-mute">通过华越广州办事处（合并）</div>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-3 text-center">
                   <div className="text-[22px] font-extrabold text-success">−60%</div>
-                  <div className="text-[11px] text-success">Tiết kiệm trung bình</div>
+                  <div className="text-[11px] text-success">平均节省</div>
                 </div>
               </div>
             </div>
@@ -487,10 +487,10 @@ export default function DatMauPage() {
       {/* === 3 sample types ================================================= */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">3 LOẠI MẪU</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Standard · Variant · OEM — Chọn đúng mục đích</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">3 类样品</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">标准款 · 规格款 · OEM——按用途正确选择</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Mỗi loại có chi phí, thời gian giao và mức độ chính xác khác nhau. Chọn sai loại có thể làm bạn tốn $300 cho một sample không phù hợp với mục đích thực.
+            每类的成本、交货时间和精确度各不相同。选错类型可能让您为一件不符合实际用途的样品花费 $300。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
@@ -503,11 +503,11 @@ export default function DatMauPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-2 mt-2 text-[11px]">
                   <div>
-                    <div className="opacity-80">Phí</div>
+                    <div className="opacity-80">费用</div>
                     <b className="text-[14px]">{s.fee}</b>
                   </div>
                   <div>
-                    <div className="opacity-80">Thời gian giao</div>
+                    <div className="opacity-80">交货时间</div>
                     <b className="text-[14px]">{s.leadtime}</b>
                   </div>
                 </div>
@@ -515,18 +515,18 @@ export default function DatMauPage() {
               <div className="p-4 flex-1 flex flex-col">
                 <p className="text-[12.5px] text-mute leading-relaxed mb-3">{s.desc}</p>
                 <div className="bg-bg border border-line rounded p-2.5 mb-3">
-                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1 block">PHÙ HỢP CHO</b>
+                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1 block">适合</b>
                   <p className="text-[11.5px] text-ink leading-snug">{s.bestFor}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-2 text-[11px]">
                   <div>
-                    <b className="block text-success mb-1">✓ Pros</b>
+                    <b className="block text-success mb-1">✓ 优点</b>
                     <ul className="space-y-0.5 text-mute">
                       {s.pros.map((p, i) => <li key={i}>• {p}</li>)}
                     </ul>
                   </div>
                   <div>
-                    <b className="block text-accent mb-1">✕ Cons</b>
+                    <b className="block text-accent mb-1">✕ 缺点</b>
                     <ul className="space-y-0.5 text-mute">
                       {s.cons.map((c, i) => <li key={i}>• {c}</li>)}
                     </ul>
@@ -541,16 +541,16 @@ export default function DatMauPage() {
       {/* === Cost breakdown table =========================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CHI PHÍ MINH BẠCH</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Bảng phí chi tiết — Không phí ẩn</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">透明费用</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">详细费用表——无隐藏费用</h2>
         </div>
         <div className="bg-paper border border-line rounded overflow-hidden">
           <table className="w-full text-[13px]">
             <thead>
               <tr className="bg-bg border-b-2 border-brand">
-                <th className="text-left px-4 py-3 font-bold text-ink">Hạng mục</th>
-                <th className="text-left px-4 py-3 font-bold text-ink">Phí</th>
-                <th className="text-left px-4 py-3 font-bold text-ink max-md:hidden">Ghi chú</th>
+                <th className="text-left px-4 py-3 font-bold text-ink">项目</th>
+                <th className="text-left px-4 py-3 font-bold text-ink">费用</th>
+                <th className="text-left px-4 py-3 font-bold text-ink max-md:hidden">备注</th>
               </tr>
             </thead>
             <tbody>
@@ -565,17 +565,17 @@ export default function DatMauPage() {
           </table>
         </div>
         <p className="text-[11.5px] text-mute mt-3 italic text-center">
-          💡 Toàn bộ phí sản phẩm + mock-up được hoàn 100% khi đặt MOQ ≥$5K với cùng NCC trong 90 ngày. Phí ship không hoàn (đã phát sinh).
+          💡 90 天内与同一供应商下达 ≥$5K 起订量时，全部产品费 + 打样费 100% 返还。运费不返还（已发生）。
         </p>
       </section>
 
       {/* === Pre-MOQ checklist ============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">DANH MỤC KIỂM TRA TRƯỚC MOQ</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">5 nhóm cần kiểm khi nhận sample</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">起订量前检查清单</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">收到样品时需检查的 5 类项目</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Đầu tư 1-2 giờ kiểm sample chi tiết theo checklist này có thể tránh được 90% rủi ro khi đặt MOQ. In ra giấy hoặc save làm template.
+            按此清单投入 1-2 小时仔细检查样品，可避免 90% 的起订量风险。可打印或保存为模板。
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -600,7 +600,7 @@ export default function DatMauPage() {
         </div>
       </section>
 
-      {/* === Gói đăng ký mẫu ============================================ */}
+      {/* === 样品订阅套餐 ============================================ */}
       <section id="sample-subscription" className="max-w-[1200px] mx-auto px-4 mt-12 scroll-mt-20">
         <div className="rounded overflow-hidden border-2 border-gold">
           <div className="px-6 py-5 text-brand-dark bg-gold">
@@ -608,19 +608,19 @@ export default function DatMauPage() {
               <div className="flex items-center gap-3">
                 <span className="text-[36px]">♾</span>
                 <div>
-                  <span className="text-[10.5px] uppercase tracking-wider font-bold">CHƯƠNG TRÌNH NGƯỜI DÙNG NÂNG CAO</span>
-                  <h2 className="text-[24px] font-extrabold leading-tight">Gói đăng ký mẫu</h2>
+                  <span className="text-[10.5px] uppercase tracking-wider font-bold">高级用户计划</span>
+                  <h2 className="text-[24px] font-extrabold leading-tight">样品订阅套餐</h2>
                 </div>
               </div>
               <div className="text-right">
                 <div className="text-[36px] font-extrabold leading-none">$99</div>
-                <div className="text-[12px]">/tháng — không cam kết</div>
+                <div className="text-[12px]">/月——无需承诺</div>
               </div>
             </div>
           </div>
           <div className="p-6 max-md:p-4 bg-paper">
             <p className="text-[13px] text-ink leading-relaxed mb-4">
-              Cho buyer đặt &gt;5 sample/tháng (trader, design studio, buying agent, dealer chuyên sourcing). Trả $99 cố định — chỉ trả phí sản phẩm cho từng sample, không trả phí ship Hub. ROI thường rõ ràng từ tháng 2.
+              适合每月 >5 件样品的采购商（贸易商、设计工作室、采购代理、专业采购经销商）。固定支付 $99——每件样品仅付产品费，不付中心运费。ROI 通常从第 2 个月起即十分明显。
             </p>
             <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
               {SAMPLE_SUB_FEATURES.map((f) => (
@@ -633,10 +633,10 @@ export default function DatMauPage() {
             </div>
             <div className="mt-4 flex justify-center">
               <a
-                href="mailto:sales@huayuesc.vn?subject=Gói đăng ký mẫu"
+                href="mailto:sales@huayuesc.vn?subject=样品订购套餐咨询"
                 className="inline-block px-6 py-3 bg-brand text-white rounded-sm font-bold text-[14px] hover:bg-brand-light"
               >
-                🚀 Đăng ký Gói đăng ký mẫu
+                🚀 订阅样品套餐
               </a>
             </div>
           </div>
@@ -646,10 +646,10 @@ export default function DatMauPage() {
       {/* === Common pitfalls ================================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-accent font-bold">⚠️ TRÁNH NHỮNG ĐIỀU NÀY</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">6 sai lầm thường gặp khi đặt mẫu</h2>
+          <span className="text-[11px] uppercase tracking-wider text-accent font-bold">⚠️ 请避免这些</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">下样品单时 6 个常见错误</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Tổng hợp từ feedback của 600+ buyer CSR. Tránh được 6 điều này = save trung bình $1,200/năm và rất nhiều thời gian.
+            汇总自 600 多位 CSR 采购商的反馈。避免这 6 点 = 平均每年节省 $1,200 及大量时间。
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
@@ -670,8 +670,8 @@ export default function DatMauPage() {
       {/* === FAQ =========================================================== */}
       <section className="max-w-[900px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU HỎI THƯỜNG GẶP</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">8 câu hỏi quan trọng nhất</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">常见问题</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">8 个最重要的问题</h2>
         </div>
         <div className="space-y-2">
           {FAQ.map((f, i) => (
@@ -694,32 +694,32 @@ export default function DatMauPage() {
           className="rounded p-8 text-white text-center max-md:p-5"
           style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
         >
-          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Đặt sample đầu tiên ngay hôm nay</h3>
+          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">今天就下您的第一笔样品单</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            Tìm sản phẩm trong catalog 200K+ SKU, click 'Yêu cầu mẫu' — Văn phòng Huayue Quảng Châu gom vận chuyển, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. Không có lý do nào để skip bước này.
+            在 20 万+ SKU 目录中查找产品，点击“申请样品”——华越广州办事处合并运输，交货时间 8-12 天，下达起订量时 100% 返还费用。没有任何理由跳过这一步。
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/products"
               className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              🔍 Browse 200K+ sản phẩm
+              🔍 浏览 20 万+ 产品
             </Link>
             <Link
               href="/buying-request"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              📝 Multi-supplier RFQ
+              📝 多供应商询价
             </Link>
             <a
               href="mailto:sales@huayuesc.vn"
               className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              💬 Tư vấn 1-1 với AM
+              💬 与客户经理一对一咨询
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            Sample &lt;$200 miễn thuế nhập khẩu + VAT theo NĐ 134/2016. Bảo đảm Giao dịch protection áp dụng cho mọi sample. Hoàn 100% phí sản phẩm + mock-up khi đặt MOQ ≥$5K trong 90 ngày.
+            样品 <$200 依据 NĐ 134/2016 免征进口税 + 增值税。交易保障适用于所有样品。90 天内下达 ≥$5K 起订量时 100% 返还产品费 + 打样费。
           </div>
         </div>
       </section>
@@ -728,6 +728,6 @@ export default function DatMauPage() {
 }
 
 export const metadata = {
-  title: "Đặt mẫu (Sample Order) — Huayuesc",
-  description: "Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. văn phòng Huayue Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample.",
+  title: "样品订购 — 华越",
+  description: "从中国供应商订购样品并寄往越南的 6 步流程。华越广州办事处合并发运节省 50-60% 运费，交货时间 8-12 天，下达起订量时 100% 返还费用。借助样品将投诉风险从 22% 降至 4%。",
 };

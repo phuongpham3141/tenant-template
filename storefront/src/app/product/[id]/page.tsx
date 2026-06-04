@@ -12,10 +12,10 @@ import type { ListingProduct } from "@/data/products";
  * Anatomy (top to bottom):
  *   1. Breadcrumb
  *   2. Hero row     : gallery (left) + sticky info+CTA panel (right)
- *   3. Sticky tabs  : Mô tả / Thông số / Bảo đảm Giao dịch / Đánh giá / Vận chuyển / FAQ
- *   4. Description, Specs, Bảo đảm Giao dịch, Reviews, Shipping, FAQ — sections
+ *   3. Sticky tabs  : Description / Specs / Trade Assurance / Reviews / Shipping / FAQ
+ *   4. Description, Specs, Trade Assurance, Reviews, Shipping, FAQ — sections
  *   5. Same-factory rail
- *   6. "Có thể bạn quan tâm" rail
+ *   6. "You may also like" rail
  *   7. Mobile sticky bottom action bar
  */
 
@@ -32,9 +32,9 @@ function listingToProduct(lp: ListingProduct, leafTitle: string): Product {
     moq: `MOQ: ${lp.moq}`,
     rating: 4.7,
     seller: lp.supplier.name,
-    years: "Đã xác minh",
+    years: "已认证",
     image: lp.img.src,
-    badges: lp.amazing ? ["top"] : lp.monthLabel?.toLowerCase().includes("mới") ? ["new"] : undefined,
+    badges: lp.amazing ? ["top"] : lp.monthLabel?.includes("新") ? ["new"] : undefined,
     tags: [leafTitle],
   };
 }
@@ -108,67 +108,67 @@ function tierTable(price: string) {
 }
 
 const SPECS: [string, string][] = [
-  ["Xuất xứ", "Trung Quốc (China)"],
-  ["Thương hiệu", "OEM/ODM hỗ trợ"],
-  ["Vật liệu", "Cao cấp – Grade A"],
-  ["Tiêu chuẩn", "ISO 9001, CE, RoHS"],
-  ["Đóng gói", "Carton + pallet xuất khẩu"],
-  ["Cảng xuất", "Foshan / Shenzhen / Ningbo"],
-  ["Thời gian sản xuất", "20 – 30 ngày"],
-  ["Hình thức thanh toán", "T/T 30% trả trước, 70% trước khi xuất"],
-  ["Vận chuyển", "FOB / CIF / DDP về Việt Nam"],
-  ["Bảo hành", "12 tháng tại Việt Nam"],
+  ["产地", "中国（China）"],
+  ["品牌", "支持 OEM/ODM"],
+  ["材质", "高端 – Grade A"],
+  ["标准", "ISO 9001, CE, RoHS"],
+  ["包装", "纸箱 + 出口托盘"],
+  ["出货港", "佛山 / 深圳 / 宁波"],
+  ["生产周期", "20 – 30 天"],
+  ["付款方式", "T/T 30% 预付，70% 出货前付清"],
+  ["运输", "FOB / CIF / DDP 至越南"],
+  ["质保", "越南本地 12 个月"],
 ];
 
 /* --- Reviews + breakdown ----------------------------------------------- */
 
 const REVIEWS = [
-  { name: "Trần Minh Huy", company: "Showroom Nội thất Sài Gòn", rating: 5, date: "2026-04-12", text: "Hàng nhận đúng mẫu, thời gian giao nhanh. Đợt 2 sẽ đặt thêm 2 container.", helpful: 18 },
-  { name: "Phạm Quốc Anh", company: "Vật liệu xây dựng Phương Nam", rating: 5, date: "2026-03-28", text: "Báo giá nhanh trong 6 tiếng. NCC hỗ trợ video call kiểm hàng trước xuất.", helpful: 14 },
-  { name: "Nguyễn Thu Hằng", company: "Hotel Group HCM", rating: 4, date: "2026-03-15", text: "Chất lượng tốt, đóng gói chuẩn xuất khẩu. Giá cạnh tranh hơn nội địa 30%.", helpful: 9 },
-  { name: "Lê Văn Đức", company: "Đại lý Đà Nẵng", rating: 5, date: "2026-02-22", text: "Audit nhà máy do Huayuesc tổ chức rất chuyên nghiệp. Yên tâm đặt hàng.", helpful: 12 },
+  { name: "陈明辉", company: "西贡家具展厅", rating: 5, date: "2026-04-12", text: "收到的货与样品一致，交货速度快。第二批将再订 2 个集装箱。", helpful: 18 },
+  { name: "范国英", company: "南方建筑材料", rating: 5, date: "2026-03-28", text: "6 小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
+  { name: "阮秋恒", company: "胡志明市酒店集团", rating: 4, date: "2026-03-15", text: "品质好，出口级包装。价格比国内低 30%，很有竞争力。", helpful: 9 },
+  { name: "黎文德", company: "岘港经销商", rating: 5, date: "2026-02-22", text: "由华越组织的工厂验厂非常专业，下单很放心。", helpful: 12 },
 ];
 
 const RATING_BREAKDOWN = [
-  { label: "Chất lượng sản phẩm", score: 4.9 },
-  { label: "Giao tiếp với NCC", score: 4.8 },
-  { label: "Đóng gói & vận chuyển", score: 4.7 },
-  { label: "Đúng cam kết thời hạn", score: 4.9 },
+  { label: "产品品质", score: 4.9 },
+  { label: "与供应商沟通", score: 4.8 },
+  { label: "包装与运输", score: 4.7 },
+  { label: "如期履约", score: 4.9 },
 ];
 
 /* --- Trade certificates (placeholders) --------------------------------- */
 
 const CERTIFICATES = [
-  { code: "ISO 9001:2015", desc: "Quản lý chất lượng" },
+  { code: "ISO 9001:2015", desc: "质量管理" },
   { code: "CE", desc: "EU Conformity" },
-  { code: "RoHS", desc: "Hạn chế chất độc hại" },
-  { code: "FSC", desc: "Gỗ rừng bền vững" },
-  { code: "BSCI", desc: "Đạo đức kinh doanh" },
-  { code: "ISO 14001", desc: "Môi trường" },
+  { code: "RoHS", desc: "有害物质限制" },
+  { code: "FSC", desc: "可持续森林木材" },
+  { code: "BSCI", desc: "商业道德" },
+  { code: "ISO 14001", desc: "环境管理" },
 ];
 
 /* --- FAQ --------------------------------------------------------------- */
 
 const FAQS = [
   {
-    q: "MOQ trên Huayuesc là bao nhiêu?",
-    a: "MOQ chuẩn hiển thị trong bảng giá. Một số sản phẩm có thể đặt mẫu trước (MOQ = 1) trước khi đặt số lượng lớn — vui lòng gửi RFQ để xác nhận.",
+    q: "华越平台上的起订量是多少？",
+    a: "标准起订量显示在价格表中。部分产品可在大批量下单前先订样品（起订量 = 1）——请发送询价确认。",
   },
   {
-    q: "Thời gian giao bao lâu?",
-    a: "Trung bình 20-30 ngày sản xuất + 12-18 ngày vận chuyển DDP về Hà Nội/HCM. Tổng thời gian giao 32-48 ngày kể từ lúc đặt cọc T/T 30%.",
+    q: "交货周期多久？",
+    a: "平均 20-30 天生产 + 12-18 天 DDP 运输至河内/胡志明市。自支付 T/T 30% 定金起，总交货周期 32-48 天。",
   },
   {
-    q: "Có thể OEM/ODM theo bản vẽ không?",
-    a: "Có. NCC hỗ trợ in logo, đổi màu, custom kích thước theo bản vẽ kỹ thuật. Phí mẫu thường $50-200, được khấu trừ vào đơn chính khi đặt MOQ.",
+    q: "可以按图纸做 OEM/ODM 吗？",
+    a: "可以。供应商支持按技术图纸印 logo、改色、定制尺寸。打样费通常 $50-200，达到起订量下单时可抵扣至正式订单。",
   },
   {
-    q: "Huayuesc bảo vệ giao dịch thế nào?",
-    a: "Bảo đảm Giao dịch: tiền nằm tại tài khoản trung gian của Huayuesc, chỉ giải ngân cho NCC khi buyer xác nhận hàng đúng mô tả. Hoàn 100% nếu sai cam kết.",
+    q: "华越如何保障交易？",
+    a: "交易保障：货款托管于华越的担保账户，仅在采购商确认货物与描述相符后才向供应商放款。如不符约定，100% 退款。",
   },
   {
-    q: "Phí vận chuyển DDP đã bao gồm những gì?",
-    a: "Bao gồm cước biển/đường bộ, thuế nhập khẩu, VAT, phí thông quan, phí kho trung chuyển, vận chuyển nội địa Việt Nam tới kho buyer. Buyer không cần làm thủ tục gì.",
+    q: "DDP 运费包含哪些内容？",
+    a: "包含海运/陆运运费、进口关税、增值税、清关费、中转仓储费、越南境内运输至采购商仓库的费用。采购商无需办理任何手续。",
   },
 ];
 
@@ -185,13 +185,13 @@ export default async function ProductPage({
   if (!found) {
     return (
       <div className="max-w-[1400px] mx-auto px-4 py-16">
-        <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Sản phẩm", href: "/products" }, { label: id }]} />
+        <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "产品", href: "/products" }, { label: id }]} />
         <div className="bg-paper border border-line rounded p-12 mt-6 text-center">
           <div className="text-[48px] mb-3">📦</div>
-          <h1 className="text-[24px] font-bold text-ink mb-2">Sản phẩm đang được cập nhật</h1>
-          <p className="text-[13px] text-mute mb-5">Mã sản phẩm <b>{id}</b> chưa có sẵn. Vui lòng quay lại sau.</p>
+          <h1 className="text-[24px] font-bold text-ink mb-2">产品更新中</h1>
+          <p className="text-[13px] text-mute mb-5">产品编号 <b>{id}</b> 暂不可用，请稍后再来。</p>
           <Link href="/products" className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light cursor-pointer">
-            ← Xem tất cả sản phẩm
+            ← 查看全部产品
           </Link>
         </div>
       </div>
@@ -211,14 +211,14 @@ export default async function ProductPage({
   // Breadcrumb trail — branches by source (home section vs leaf category).
   const trail = section
     ? [
-        { label: "Trang chủ", href: "/" },
-        { label: "Sản phẩm", href: "/products" },
+        { label: "首页", href: "/" },
+        { label: "产品", href: "/products" },
         { label: section.title, href: `/category/${section.categorySlug}` },
         { label: p.title },
       ]
     : [
-        { label: "Trang chủ", href: "/" },
-        { label: "Sản phẩm", href: "/products" },
+        { label: "首页", href: "/" },
+        { label: "产品", href: "/products" },
         ...(parentName && parentSlug ? [{ label: parentName, href: `/category/${parentSlug}` }] : []),
         ...(l2Name ? [{ label: l2Name }] : []),
         ...(leafTitle && leafSlug && parentSlug ? [{ label: leafTitle, href: `/category/${parentSlug}/${leafSlug}` }] : []),
@@ -255,7 +255,7 @@ export default async function ProductPage({
                   key={i}
                   htmlFor={`ig-${p.id}-${i}`}
                   className={`ig-thumb ig-thumb-${i} aspect-square w-full bg-[#F5F5F5] rounded overflow-hidden cursor-pointer hover:border-brand max-md:w-[64px] max-md:flex-shrink-0`}
-                  aria-label={`Ảnh ${i}`}
+                  aria-label={`图片 ${i}`}
                 >
                   <img
                     src={`/img/${p.id}-${i}.jpg?v=5`}
@@ -281,12 +281,12 @@ export default async function ProductPage({
                 />
               ))}
               <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[11px] px-2.5 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition pointer-events-none">
-                🔍 Click thumb để chuyển ảnh
+                🔍 点击缩略图切换图片
               </div>
               {p.badges && p.badges.length > 0 && (
                 <div className="absolute top-3 left-3 flex gap-1 flex-wrap z-10">
                   {p.badges.includes("top") && <span className="bg-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">⭐ HOT</span>}
-                  {p.badges.includes("new") && <span className="bg-success text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">MỚI</span>}
+                  {p.badges.includes("new") && <span className="bg-success text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">新品</span>}
                   {p.badges.includes("deal") && <span className="bg-accent text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">-25%</span>}
                 </div>
               )}
@@ -296,11 +296,11 @@ export default async function ProductPage({
           {/* Title + meta */}
           <h1 className="text-[22px] font-bold text-ink mt-5 leading-tight max-md:text-[18px]">{p.title}</h1>
           <div className="flex items-center gap-3 mt-2 text-[12.5px] text-mute flex-wrap">
-            <span className="flex items-center gap-1"><span className="text-gold">★</span> <b className="text-ink">{p.rating}</b> <span>({REVIEWS.length * 31} đánh giá)</span></span>
+            <span className="flex items-center gap-1"><span className="text-gold">★</span> <b className="text-ink">{p.rating}</b> <span>({REVIEWS.length * 31} 条评价)</span></span>
             <span>·</span>
-            <span>340 đơn đã hoàn thành</span>
+            <span>340 笔已完成订单</span>
             <span>·</span>
-            <span className="text-success font-semibold">✓ Còn hàng</span>
+            <span className="text-success font-semibold">✓ 现货</span>
             <span>·</span>
             <span>SKU: {p.id.toUpperCase()}</span>
           </div>
@@ -308,16 +308,16 @@ export default async function ProductPage({
           {/* Tier price table */}
           <div className="mt-5 border border-line rounded">
             <div className="bg-[#FAFBFC] px-4 py-2.5 border-b border-line text-[13px] font-semibold text-ink flex justify-between items-center">
-              <span>Bảng giá theo MOQ <span className="text-mute font-normal">· FOB Trung Quốc</span></span>
-              <span className="text-[11.5px] text-success font-medium">⏱ Thời gian giao 20-30 ngày</span>
+              <span>起订量阶梯价 <span className="text-mute font-normal">· FOB 中国</span></span>
+              <span className="text-[11.5px] text-success font-medium">⏱ 交货周期 20-30 天</span>
             </div>
             <table className="w-full text-[13px]">
               <thead className="bg-[#F5F7FA]">
                 <tr>
-                  <th className="text-left px-4 py-2 font-medium text-mute">Số lượng</th>
-                  <th className="text-left px-4 py-2 font-medium text-mute">Giá / đơn vị</th>
-                  <th className="text-left px-4 py-2 font-medium text-mute">Tiết kiệm</th>
-                  <th className="text-right px-4 py-2 font-medium text-mute">Hành động</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">数量</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">单价</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">节省</th>
+                  <th className="text-right px-4 py-2 font-medium text-mute">操作</th>
                 </tr>
               </thead>
               <tbody>
@@ -325,13 +325,13 @@ export default async function ProductPage({
                   <tr key={t.range} className="border-t border-line hover:bg-[#FAFBFC]">
                     <td className="px-4 py-2 text-ink">{t.range} {p.unit}</td>
                     <td className="px-4 py-2 text-accent font-bold">${t.price}{p.unit}</td>
-                    <td className="px-4 py-2 text-success">{t.discount === 0 ? "Giá gốc" : `-${t.discount}%`}</td>
+                    <td className="px-4 py-2 text-success">{t.discount === 0 ? "原价" : `-${t.discount}%`}</td>
                     <td className="px-4 py-2 text-right">
                       <Link
                         href={`/buying-request?productId=${p.id}&qty=${encodeURIComponent(t.range)}&tier=${t.discount}`}
                         className="text-brand text-[12px] font-semibold cursor-pointer hover:underline"
                       >
-                        Báo giá →
+                        报价 →
                       </Link>
                     </td>
                   </tr>
@@ -341,7 +341,7 @@ export default async function ProductPage({
           </div>
 
           {/* === Variant + qty + CTAs — wrapped in a form so submitting
-              "Liên hệ ngay" / "Yêu cầu mẫu" carries the chosen color,
+              "Contact now" / "Request sample" carries the chosen color,
               size and quantity to /buying-request as query params. */}
           <form action="/buying-request" method="get" className="mt-5">
             <input type="hidden" name="productId" value={p.id} />
@@ -352,14 +352,14 @@ export default async function ProductPage({
               {/* Color swatches — radio + label, CSS-driven active state */}
               <div className="cv-root">
                 <span className="block text-[12px] font-semibold text-ink mb-1.5">
-                  Màu sắc <span className="text-mute2 font-normal">· 4 lựa chọn</span>
+                  颜色 <span className="text-mute2 font-normal">· 4 种可选</span>
                 </span>
                 <div className="flex gap-1.5 flex-wrap">
                   {[
-                    { code: "#F5F1E8", label: "Trắng cẩm thạch" },
-                    { code: "#3D3D3D", label: "Xám đậm" },
-                    { code: "#E1C699", label: "Be vàng" },
-                    { code: "#5C4033", label: "Nâu walnut" },
+                    { code: "#F5F1E8", label: "大理石白" },
+                    { code: "#3D3D3D", label: "深灰" },
+                    { code: "#E1C699", label: "米黄" },
+                    { code: "#5C4033", label: "胡桃棕" },
                   ].map((c, i) => (
                     <span key={c.label}>
                       <input
@@ -382,16 +382,16 @@ export default async function ProductPage({
                 </div>
               </div>
               <div>
-                <label htmlFor={`size-${p.id}`} className="block text-[12px] font-semibold text-ink mb-1.5">Kích thước</label>
+                <label htmlFor={`size-${p.id}`} className="block text-[12px] font-semibold text-ink mb-1.5">尺寸</label>
                 <select
                   id={`size-${p.id}`}
                   name="size"
                   className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand bg-white cursor-pointer"
-                  defaultValue="Tiêu chuẩn"
+                  defaultValue="标准"
                 >
-                  <option>Tiêu chuẩn</option>
-                  <option>Custom theo bản vẽ</option>
-                  <option>Thay đổi tỉ lệ ±5%</option>
+                  <option>标准</option>
+                  <option>按图纸定制</option>
+                  <option>比例调整 ±5%</option>
                 </select>
               </div>
             </div>
@@ -404,7 +404,7 @@ export default async function ProductPage({
                 value="contact"
                 className="flex-1 px-5 py-2.5 bg-accent text-white rounded-sm font-semibold text-[13px] hover:opacity-90 cursor-pointer text-center inline-flex items-center justify-center gap-1.5 max-md:w-full"
               >
-                💬 Liên hệ ngay
+                💬 立即联系
               </button>
               <button
                 type="submit"
@@ -413,13 +413,13 @@ export default async function ProductPage({
                 formAction="/buying-request"
                 className="px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light cursor-pointer inline-flex items-center gap-1.5"
               >
-                📦 Yêu cầu mẫu
+                📦 索取样品
               </button>
               <Link
                 href={`/buyer-center/favorites?add=${p.id}`}
                 className="px-4 py-2.5 border border-line rounded-sm text-[13px] text-ink hover:border-accent hover:text-accent cursor-pointer inline-flex items-center"
-                aria-label="Thêm vào yêu thích"
-                title="Thêm vào yêu thích"
+                aria-label="加入收藏"
+                title="加入收藏"
               >
                 ❤
               </Link>
@@ -431,38 +431,38 @@ export default async function ProductPage({
         <aside className="space-y-3 max-md:order-2">
           {/* Quick info pills */}
           <div className="bg-paper border border-line rounded p-4">
-            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">Thông tin nhanh</div>
+            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">快速信息</div>
             <ul className="space-y-2 text-[12.5px]">
               <li className="flex justify-between">
-                <span className="text-mute">📦 MOQ</span>
+                <span className="text-mute">📦 起订量</span>
                 <b className="text-ink">{p.moq.replace("MOQ:", "").trim()}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">⏱ Thời gian giao</span>
-                <b className="text-ink">20-30 ngày</b>
+                <span className="text-mute">⏱ 交货周期</span>
+                <b className="text-ink">20-30 天</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">🚚 Cảng xuất</span>
-                <b className="text-ink">Foshan / Ningbo</b>
+                <span className="text-mute">🚚 出货港</span>
+                <b className="text-ink">佛山 / 宁波</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">💳 Thanh toán</span>
+                <span className="text-mute">💳 付款</span>
                 <b className="text-ink">T/T 30% + 70%</b>
               </li>
               <li className="flex justify-between">
                 <span className="text-mute">🎨 OEM / ODM</span>
-                <b className="text-success">Có hỗ trợ</b>
+                <b className="text-success">支持</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">🧪 Hàng mẫu</span>
-                <b className="text-ink">$50-200 (khấu trừ vào đơn)</b>
+                <span className="text-mute">🧪 样品</span>
+                <b className="text-ink">$50-200（可抵扣订单）</b>
               </li>
             </ul>
           </div>
 
           {/* Supplier card */}
           <div className="bg-paper border border-line rounded p-4">
-            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">Nhà cung cấp</div>
+            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">供应商</div>
             <Link href={`/supplier/${supplier.slug}`} className="flex gap-3 items-start mb-3 cursor-pointer">
               <div className="w-12 h-12 bg-paper border border-line rounded-sm flex items-center justify-center font-extrabold text-[16px] text-brand flex-shrink-0">
                 {supplier.initials}
@@ -475,8 +475,8 @@ export default async function ProductPage({
               </div>
             </Link>
             <div className="flex gap-1 mb-3 flex-wrap">
-              {supplier.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">⭐ VÀNG</span>}
-              {supplier.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">✓ ĐÃ KIỂM ĐỊNH</span>}
+              {supplier.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">⭐ 金牌</span>}
+              {supplier.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">✓ 已验厂</span>}
               <span className="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">{supplier.badges.years}</span>
             </div>
             <div className="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
@@ -486,18 +486,18 @@ export default async function ProductPage({
               </div>
               <div className="border border-line rounded-sm p-1.5">
                 <b className="block text-[14px] text-brand">340</b>
-                <small className="text-mute">đơn / năm</small>
+                <small className="text-mute">单 / 年</small>
               </div>
               <div className="border border-line rounded-sm p-1.5">
                 <b className="block text-[14px] text-brand">98%</b>
-                <small className="text-mute">đúng hạn</small>
+                <small className="text-mute">按时交货</small>
               </div>
             </div>
             <Link
               href={`/supplier/${supplier.slug}`}
               className="block w-full text-center py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px] hover:bg-brand-light cursor-pointer"
             >
-              Xem nhà máy →
+              查看工厂 →
             </Link>
           </div>
 
@@ -508,10 +508,10 @@ export default async function ProductPage({
             <input type="hidden" name="intent" value="rfq" />
             <div className="flex items-center gap-2 mb-2.5">
               <span className="text-[18px]">📋</span>
-              <b className="text-[13px] font-bold text-ink">Gửi yêu cầu báo giá</b>
+              <b className="text-[13px] font-bold text-ink">发送询价</b>
             </div>
             <p className="text-[11.5px] text-mute mb-2.5 leading-snug">
-              Báo giá miễn phí trong 24h từ NCC này + 3-5 NCC tương tự.
+              24 小时内获得该供应商 + 3-5 家同类供应商的免费报价。
             </p>
             <input
               name="q"
@@ -520,12 +520,12 @@ export default async function ProductPage({
             />
             <input
               name="qty"
-              placeholder={`Số lượng + đơn vị (vd: 500${p.unit})`}
+              placeholder={`数量 + 单位（例：500${p.unit}）`}
               className="w-full px-2.5 py-1.5 border border-line rounded-sm text-[12px] mb-2 outline-none focus:border-brand"
             />
             <textarea
               name="desc"
-              placeholder="Mô tả chi tiết yêu cầu, custom..."
+              placeholder="详细描述需求、定制要求……"
               rows={3}
               className="w-full px-2.5 py-1.5 border border-line rounded-sm text-[12px] mb-2 outline-none focus:border-brand resize-none"
             />
@@ -533,19 +533,19 @@ export default async function ProductPage({
               type="submit"
               className="w-full py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] cursor-pointer hover:opacity-90"
             >
-              🚀 Gửi RFQ ngay
+              🚀 立即发送询价
             </button>
           </form>
 
           {/* Trust pillars */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 Bảo vệ Huayuesc</b>
+            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 华越保障</b>
             <ul className="text-[12px] text-mute space-y-1.5">
-              <li className="flex gap-2"><span className="text-success">✓</span> Hoàn tiền nếu không nhận hàng</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> Audit nhà máy miễn phí trước khi đặt</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> Hỗ trợ tranh chấp 24/7</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> Vận chuyển DDP — đã gồm thuế</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> Bảo đảm Giao dịch (tài khoản trung gian)</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> 未收到货物全额退款</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> 下单前免费验厂</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> 7×24 小时争议支持</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> DDP 运输——含税到门</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> 交易保障（担保账户）</li>
             </ul>
           </div>
         </aside>
@@ -555,11 +555,11 @@ export default async function ProductPage({
       <nav className="sticky top-[3.4rem] z-30 bg-paper border-y border-line mt-7 max-md:top-0">
         <div className="max-w-[1400px] mx-auto px-4 flex gap-0 overflow-x-auto text-[13.5px] font-semibold">
           {[
-            { href: "#mo-ta", label: "Mô tả" },
-            { href: "#thong-so", label: "Thông số kỹ thuật" },
-            { href: "#trade-assurance", label: "Bảo đảm Giao dịch" },
-            { href: "#danh-gia", label: `Đánh giá (${REVIEWS.length * 31})` },
-            { href: "#van-chuyen", label: "Vận chuyển" },
+            { href: "#mo-ta", label: "描述" },
+            { href: "#thong-so", label: "技术参数" },
+            { href: "#trade-assurance", label: "交易保障" },
+            { href: "#danh-gia", label: `评价 (${REVIEWS.length * 31})` },
+            { href: "#van-chuyen", label: "运输" },
             { href: "#faq", label: "FAQ" },
           ].map((t) => (
             <a
@@ -576,20 +576,20 @@ export default async function ProductPage({
       {/* === DESCRIPTION ================================================== */}
       <section id="mo-ta" className="max-w-[1400px] mx-auto px-4 mt-7 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">Mô tả sản phẩm</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">产品描述</h2>
           <p className="text-[13px] text-ink leading-relaxed mb-4">
-            <b>{p.title}</b> được sản xuất bởi <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link>, một trong những nhà máy hàng đầu tại Trung Quốc với <b>{p.years} kinh nghiệm</b> xuất khẩu. Sản phẩm đạt tiêu chuẩn quốc tế, phù hợp cho dự án thương mại và dân dụng cao cấp.
+            <b>{p.title}</b> 由 <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link> 生产，是中国领先的工厂之一，拥有 <b>{p.years} 出口经验</b>。产品达到国际标准，适用于商业项目及高端民用工程。
           </p>
           <img src={`/img/${p.id}-desc1.jpg?v=5`} alt="" className="w-full rounded mb-4" loading="lazy" />
           <p className="text-[13px] text-ink leading-relaxed mb-4">
-            Quy trình kiểm soát chất lượng nghiêm ngặt theo <b>ISO 9001:2015</b>. Mỗi lô hàng đều được audit bởi đội ngũ Huayuesc tại Quảng Châu trước khi xuất xưởng. Hỗ trợ <b>OEM/ODM</b> theo bản vẽ khách hàng, MOQ linh hoạt, thời gian giao 20-30 ngày.
+            按 <b>ISO 9001:2015</b> 执行严格的质量控制流程。每批货物出厂前均由华越广州团队验厂。支持按客户图纸进行 <b>OEM/ODM</b>，起订量灵活，交货周期 20-30 天。
           </p>
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
             <img src={`/img/${p.id}-desc2.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
             <img src={`/img/${p.id}-desc3.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
           </div>
           <p className="text-[13px] text-ink leading-relaxed">
-            Vận chuyển <b>DDP về Việt Nam</b> — không phải lo thủ tục hải quan, không phát sinh phí. Kho trung chuyển tại Bằng Tường (Lạng Sơn) và Hữu Nghị (cảng Hải Phòng) đảm bảo thời gian giao 5-7 ngày từ Trung Quốc về kho buyer.
+            <b>DDP 运输至越南</b>——无需担心海关手续，不产生额外费用。凭祥（谅山）与友谊关（海防港）的中转仓确保货物从中国运至采购商仓库仅需 5-7 天。
           </p>
         </div>
       </section>
@@ -597,7 +597,7 @@ export default async function ProductPage({
       {/* === SPECS ======================================================== */}
       <section id="thong-so" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">Thông số kỹ thuật</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">技术参数</h2>
           <div className="grid grid-cols-2 gap-x-6 max-md:grid-cols-1">
             {SPECS.map(([k, v], i) => (
               <div key={k} className={`grid grid-cols-[180px_1fr] py-2 text-[13px] border-b border-line max-md:grid-cols-[140px_1fr] ${i === SPECS.length - 1 || i === SPECS.length - 2 ? "max-md:border-b" : ""}`}>
@@ -613,16 +613,16 @@ export default async function ProductPage({
       <section id="trade-assurance" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
           <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2">
-            🛡 Bảo đảm Giao dịch & Chứng chỉ
+            🛡 交易保障与认证
           </h2>
           <p className="text-[13px] text-mute mb-4 leading-relaxed">
-            Đơn hàng được bảo vệ bởi Huayuesc Bảo đảm Giao dịch: tiền giữ tại tài khoản trung gian, NCC chỉ nhận tiền sau khi buyer xác nhận hàng đúng cam kết. Hoàn 100% nếu sai.
+            订单受华越交易保障保护：货款托管于担保账户，供应商仅在采购商确认货物符合约定后才收款。如不符，100% 退款。
           </p>
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-1">
             {[
-              { icon: "🔒", t: "Tiền cọc giữ trung gian", d: "Tiền giữ tại Huayuesc, chỉ giải ngân khi người mua xác nhận" },
-              { icon: "🏭", t: "Kiểm định tại chỗ miễn phí", d: "Đội kiểm định kiểm hàng trước khi xuất, gọi video trực tiếp" },
-              { icon: "⚖", t: "Hỗ trợ tranh chấp", d: "Hoà giải 24/7, hoàn tiền 100% nếu sai mô tả/số lượng" },
+              { icon: "🔒", t: "定金担保托管", d: "货款托管于华越，仅在采购商确认后放款" },
+              { icon: "🏭", t: "免费实地验厂", d: "验厂团队出货前验货，支持实时视频通话" },
+              { icon: "⚖", t: "争议支持", d: "7×24 小时调解，描述/数量不符 100% 退款" },
             ].map((x) => (
               <div key={x.t} className="bg-[#FFF7E6] border border-gold/40 rounded p-3.5">
                 <div className="text-[24px] mb-1">{x.icon}</div>
@@ -632,7 +632,7 @@ export default async function ProductPage({
             ))}
           </div>
           <div className="border-t border-line pt-4">
-            <b className="block text-[13px] font-semibold text-ink mb-3">Chứng chỉ NCC đã đạt</b>
+            <b className="block text-[13px] font-semibold text-ink mb-3">供应商已获认证</b>
             <div className="grid grid-cols-6 gap-2 max-md:grid-cols-3">
               {CERTIFICATES.map((c) => (
                 <Link
@@ -652,13 +652,13 @@ export default async function ProductPage({
       {/* === REVIEWS ====================================================== */}
       <section id="danh-gia" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">Đánh giá từ người mua</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">采购商评价</h2>
           <div className="grid grid-cols-[280px_1fr] gap-6 mb-5 max-md:grid-cols-1 max-md:gap-4">
             {/* Left: overall rating */}
             <div className="text-center border-r border-line pr-6 max-md:border-r-0 max-md:border-b max-md:pr-0 max-md:pb-4">
               <div className="text-[44px] font-extrabold text-accent leading-none">{overallRating}</div>
               <div className="text-gold text-[18px] my-1">★★★★★</div>
-              <small className="text-[11.5px] text-mute">Dựa trên {REVIEWS.length * 31} đánh giá đã kiểm chứng</small>
+              <small className="text-[11.5px] text-mute">基于 {REVIEWS.length * 31} 条已验证评价</small>
             </div>
             {/* Right: breakdown bars */}
             <div className="space-y-2">
@@ -696,13 +696,13 @@ export default async function ProductPage({
                     href={`/login?next=${encodeURIComponent(`/product/${p.id}/reviews`)}`}
                     className="hover:text-brand cursor-pointer"
                   >
-                    👍 Hữu ích ({r.helpful})
+                    👍 有用 ({r.helpful})
                   </Link>
                   <Link
                     href={`/login?next=${encodeURIComponent(`/product/${p.id}/reviews`)}`}
                     className="hover:text-brand cursor-pointer"
                   >
-                    💬 Trả lời
+                    💬 回复
                   </Link>
                 </div>
               </div>
@@ -711,7 +711,7 @@ export default async function ProductPage({
 
           <div className="text-center mt-4">
             <Link href={`/product/${p.id}/reviews`} className="text-brand text-[13px] font-semibold cursor-pointer hover:underline">
-              Xem tất cả {REVIEWS.length * 31} đánh giá →
+              查看全部 {REVIEWS.length * 31} 条评价 →
             </Link>
           </div>
         </div>
@@ -720,12 +720,12 @@ export default async function ProductPage({
       {/* === SHIPPING ===================================================== */}
       <section id="van-chuyen" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">🚚 Vận chuyển & DDP về Việt Nam</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">🚚 运输与 DDP 至越南</h2>
           <div className="grid grid-cols-3 gap-4 mb-5 max-md:grid-cols-1">
             {[
-              { t: "FOB Trung Quốc", d: "Bạn tự lo cước, thuế. Giá rẻ nhất.", price: "Theo bảng giá", time: "Pickup tại Foshan / Ningbo", mode: "fob" },
-              { t: "CIF Hải Phòng / Cát Lái", d: "Đã gồm cước + bảo hiểm tới cảng VN.", price: "+ $200-400/CBM", time: "12-15 ngày", mode: "cif" },
-              { t: "DDP tận kho", d: "Trọn gói: thuế + thông quan + nội địa.", price: "+ $400-700/CBM", time: "18-22 ngày", mode: "ddp" },
+              { t: "FOB 中国", d: "运费、关税自理。价格最低。", price: "按价格表", time: "佛山 / 宁波自提", mode: "fob" },
+              { t: "CIF 海防 / 葛莱", d: "含运费 + 保险至越南港口。", price: "+ $200-400/CBM", time: "12-15 天", mode: "cif" },
+              { t: "DDP 送货到仓", d: "一站到底：关税 + 清关 + 境内运输。", price: "+ $400-700/CBM", time: "18-22 天", mode: "ddp" },
             ].map((s, i) => (
               <Link
                 key={s.t}
@@ -734,12 +734,12 @@ export default async function ProductPage({
               >
                 <div className="flex justify-between items-start mb-1.5">
                   <b className="text-[14px] text-ink">{s.t}</b>
-                  {i === 2 && <span className="bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold">PHỔ BIẾN</span>}
+                  {i === 2 && <span className="bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold">热门</span>}
                 </div>
                 <p className="text-[11.5px] text-mute leading-snug mb-2">{s.d}</p>
                 <div className="text-[12px] text-ink"><b className="text-accent">{s.price}</b></div>
                 <div className="text-[11.5px] text-mute mt-0.5 mb-1">⏱ {s.time}</div>
-                <span className="text-[11.5px] text-brand font-semibold">Tính cước cho phương thức này →</span>
+                <span className="text-[11.5px] text-brand font-semibold">计算该方式运费 →</span>
               </Link>
             ))}
           </div>
@@ -749,20 +749,20 @@ export default async function ProductPage({
           <form action="/info/ddp-calculator" method="get" className="border-t border-line pt-4">
             <input type="hidden" name="productId" value={p.id} />
             <input type="hidden" name="mode" value="ddp" />
-            <b className="block text-[13px] font-semibold text-ink mb-2.5">⚡ Tính cước DDP nhanh</b>
+            <b className="block text-[13px] font-semibold text-ink mb-2.5">⚡ DDP 运费快速测算</b>
             <div className="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 max-md:grid-cols-1">
               <select name="port" className="px-3 py-2 border border-line rounded-sm text-[13px] bg-white outline-none focus:border-brand cursor-pointer" defaultValue="haiphong">
-                <option value="haiphong">Cảng đích: Hải Phòng</option>
-                <option value="catlai">Cảng đích: Cát Lái (HCM)</option>
-                <option value="danang">Cảng đích: Đà Nẵng</option>
-                <option value="langson">Đường bộ qua Lạng Sơn</option>
+                <option value="haiphong">目的港：海防</option>
+                <option value="catlai">目的港：葛莱（胡志明市）</option>
+                <option value="danang">目的港：岘港</option>
+                <option value="langson">经谅山陆运</option>
               </select>
               <input
                 name="qty"
                 type="number"
                 step="0.1"
                 min="0"
-                placeholder="Số lượng (CBM hoặc kg)"
+                placeholder="数量（CBM 或 kg）"
                 className="px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
               <input
@@ -770,11 +770,11 @@ export default async function ProductPage({
                 type="number"
                 step="1"
                 min="0"
-                placeholder="Giá trị đơn ($USD)"
+                placeholder="订单价值（$USD）"
                 className="px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
               <button type="submit" className="px-5 py-2 bg-brand text-white rounded-sm font-semibold text-[13px] cursor-pointer hover:bg-brand-light">
-                Tính cước →
+                计算运费 →
               </button>
             </div>
           </form>
@@ -784,7 +784,7 @@ export default async function ProductPage({
       {/* === FAQ ========================================================== */}
       <section id="faq" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">❓ Câu hỏi thường gặp</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">❓ 常见问题</h2>
           <div className="space-y-2">
             {FAQS.map((f, i) => (
               <details
@@ -806,8 +806,8 @@ export default async function ProductPage({
       {/* === SAME FACTORY RAIL ============================================ */}
       <section className="max-w-[1400px] mx-auto px-4 mt-7">
         <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center justify-between">
-          <span>Sản phẩm cùng nhà máy <span className="text-mute font-normal text-[12.5px]">· {supplier.name}</span></span>
-          <Link href={`/supplier/${supplier.slug}`} className="text-brand text-[12.5px] font-semibold cursor-pointer hover:underline">Xem tất cả →</Link>
+          <span>同厂产品 <span className="text-mute font-normal text-[12.5px]">· {supplier.name}</span></span>
+          <Link href={`/supplier/${supplier.slug}`} className="text-brand text-[12.5px] font-semibold cursor-pointer hover:underline">查看全部 →</Link>
         </h2>
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {sameSection.map((x) => (
@@ -826,7 +826,7 @@ export default async function ProductPage({
 
       {/* === RECOMMENDED RAIL ============================================= */}
       <section className="max-w-[1400px] mx-auto px-4 mt-7 mb-7 max-md:mb-24">
-        <h2 className="text-[16px] font-bold text-ink mb-3">Có thể bạn quan tâm</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">你可能感兴趣</h2>
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {otherSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
@@ -847,14 +847,14 @@ export default async function ProductPage({
         <Link
           href={`/buyer-center/favorites?add=${p.id}`}
           className="w-11 h-11 border border-line rounded-sm flex items-center justify-center text-[18px] cursor-pointer hover:border-accent hover:text-accent"
-          aria-label="Yêu thích"
+          aria-label="收藏"
         >
           ❤
         </Link>
         <Link
           href={`/supplier/${supplier.slug}`}
           className="w-11 h-11 border border-line rounded-sm flex items-center justify-center text-[18px] cursor-pointer"
-          aria-label="Liên hệ NCC"
+          aria-label="联系供应商"
         >
           💬
         </Link>
@@ -862,13 +862,13 @@ export default async function ProductPage({
           href={`/buying-request?productId=${p.id}&intent=sample`}
           className="flex-1 h-11 bg-brand text-white rounded-sm font-bold text-[13px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          📦 Yêu cầu mẫu
+          📦 索取样品
         </Link>
         <Link
           href={`/buying-request?productId=${p.id}&intent=rfq`}
           className="flex-1 h-11 bg-accent text-white rounded-sm font-bold text-[13px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          🚀 Gửi RFQ
+          🚀 发送询价
         </Link>
       </div>
     </>
@@ -879,7 +879,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = findProduct(id);
   return {
-    title: found ? `${found.product.title} — Huayuesc` : `Sản phẩm ${id} — Huayuesc`,
-    description: found ? `${found.product.title}. ${found.product.seller}. Giá từ ${found.product.price}${found.product.unit}. ${found.product.moq}. Thời gian giao 20-30 ngày, vận chuyển DDP về Việt Nam.` : undefined,
+    title: found ? `${found.product.title} — Huayuesc` : `产品 ${id} — Huayuesc`,
+    description: found ? `${found.product.title}。${found.product.seller}。价格自 ${found.product.price}${found.product.unit} 起。${found.product.moq}。交货周期 20-30 天，DDP 运输至越南。` : undefined,
   };
 }

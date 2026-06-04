@@ -6,14 +6,14 @@ import { NAV_MENU } from "@/data/home";
 import { SubItemPanel } from "@/components/home/mega-submenu";
 
 const NAV_LINKS: { label: string; href: string }[] = [
-  { label: "Trang chủ", href: "/" },
-  { label: "Sản phẩm", href: "/products" },
-  { label: "Nhà cung cấp", href: "/suppliers" },
-  { label: "Hội chợ", href: "/trade-shows" },
-  { label: "Kênh ngành", href: "/industry-channels" },
-  { label: "Cảnh báo giao dịch", href: "/trade-alert" },
-  { label: "Yêu cầu mua hàng", href: "/buying-request" },
-  { label: "Bán trên CSR", href: "/sell-on-csr" },
+  { label: "首页", href: "/" },
+  { label: "产品", href: "/products" },
+  { label: "供应商", href: "/suppliers" },
+  { label: "展会", href: "/trade-shows" },
+  { label: "行业频道", href: "/industry-channels" },
+  { label: "交易预警", href: "/trade-alert" },
+  { label: "采购需求", href: "/buying-request" },
+  { label: "入驻 CSR", href: "/sell-on-csr" },
 ];
 
 export function StickyHeader() {
@@ -89,27 +89,27 @@ export function StickyHeader() {
             className="px-3 py-1.5 text-[12.5px] text-mute bg-[#F5F7FA] border-r border-line outline-none cursor-pointer max-md:hidden"
             defaultValue="products"
           >
-            <option value="products">Sản phẩm</option>
-            <option value="suppliers">Nhà cung cấp</option>
-            <option value="rfq">Yêu cầu báo giá</option>
+            <option value="products">产品</option>
+            <option value="suppliers">供应商</option>
+            <option value="rfq">询价</option>
           </select>
           <input
             name="q"
-            placeholder="Nhập từ khoá để tìm sản phẩm..."
+            placeholder="输入关键词搜索产品…"
             className="flex-1 px-3 py-1.5 outline-none text-[13px] min-w-0 max-md:text-[12px]"
           />
           <button
             type="button"
             className="px-2.5 text-mute hover:text-brand cursor-pointer text-[16px] max-md:hidden"
-            aria-label="Tìm bằng ảnh"
-            title="Tìm bằng ảnh"
+            aria-label="以图搜图"
+            title="以图搜图"
           >
             📷
           </button>
           <button
             type="submit"
             className="w-9 h-9 bg-brand text-white font-bold flex items-center justify-center hover:bg-brand-light cursor-pointer flex-shrink-0"
-            aria-label="Tìm kiếm"
+            aria-label="搜索"
           >
             🔍
           </button>
@@ -121,14 +121,14 @@ export function StickyHeader() {
           className="flex items-center gap-1.5 text-[12.5px] text-accent font-semibold hover:text-[#B81827] flex-shrink-0 max-xl:hidden"
         >
           <span className="text-[16px]">📨</span>
-          <span>Gửi RFQ</span>
+          <span>发送询价</span>
         </Link>
         <Link
           href="/buyer-center/favorites"
           className="flex items-center gap-1.5 text-[12.5px] text-ink hover:text-brand flex-shrink-0 max-xl:hidden"
         >
           <span className="text-[16px]">🛒</span>
-          <span>Giỏ hàng</span>
+          <span>购物车</span>
         </Link>
       </div>
 
@@ -169,7 +169,7 @@ export function StickyHeader() {
               aria-haspopup="menu"
               aria-expanded={menuOpen}
             >
-              <span>☰</span> TẤT CẢ DANH MỤC{" "}
+              <span>☰</span> 全部分类{" "}
               <span className={`transition-transform ${menuOpen ? "rotate-180" : ""}`}>▾</span>
             </button>
             <div
@@ -241,7 +241,7 @@ export function StickyHeader() {
             href="/factory-tour"
             className="px-3.5 py-2 text-gold text-[12.5px] font-medium border-b-[2px] border-transparent -mb-[2px] hover:bg-brand-dark hover:border-b-gold whitespace-nowrap"
           >
-            🔥 Tham quan nhà máy
+            🔥 实地验厂
           </Link>
         </div>
       </nav>

@@ -16,43 +16,43 @@ type HeroSlide = {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "🏭 Chuyên ngành Nội thất & VLXD",
-    titleStart: "Nguồn ",
-    titleGold: "gốm sứ & nội thất",
-    titleEnd: "\ntrực tiếp từ Trung Quốc.",
-    desc: "960+ sản phẩm từ 20+ nhà máy gốm sứ (Phật Sơn) và nội thất (Tấn Giang, KUKA, OPPEIN). Báo giá trực tiếp, không qua trung gian.",
-    primary: { label: "📨 Gửi yêu cầu báo giá", href: "/buying-request" },
-    secondary: { label: "🏭 Xem nhà máy →", href: "/suppliers" },
+    badge: "🏭 专注家具与建材",
+    titleStart: "陶瓷与家具 ",
+    titleGold: "源头工厂",
+    titleEnd: "\n中国直采。",
+    desc: "960+ 款产品，来自 20+ 家陶瓷工厂（佛山）与家具工厂（晋江、KUKA、OPPEIN）。源头直接报价，无中间环节。",
+    primary: { label: "📨 发送询价", href: "/buying-request" },
+    secondary: { label: "🏭 查看工厂 →", href: "/suppliers" },
     image: "/img/heroint.jpg?v=5",
   },
   {
-    badge: "🎁 Ưu đãi buyer mới",
-    titleStart: "Audit nhà máy ",
-    titleGold: "miễn phí",
-    titleEnd: "\n+ giảm 10% đơn đầu.",
-    desc: "Đăng ký buyer mới nhận audit nhà máy trị giá $300 miễn phí, miễn phí vận chuyển DDP và giảm 10% đơn hàng đầu tiên.",
-    primary: { label: "🎁 Đăng ký Người mua", href: "/register/buyer" },
-    secondary: { label: "Tìm hiểu thêm →", href: "/info/gold-membership" },
+    badge: "🎁 新采购商专享优惠",
+    titleStart: "免费 ",
+    titleGold: "验厂审核",
+    titleEnd: "\n+ 首单立减 10%。",
+    desc: "注册新采购商即享价值 $300 的免费验厂审核、免费 DDP 物流，首单立减 10%。",
+    primary: { label: "🎁 注册采购商", href: "/register/buyer" },
+    secondary: { label: "了解更多 →", href: "/info/gold-membership" },
     image: "/img/hero-buyer-promo.jpg?v=5",
   },
   {
-    badge: "📹 Smart Expo Online",
-    titleStart: "Tham quan ",
-    titleGold: "nhà máy 360°",
-    titleEnd: "\nkhông cần bay.",
-    desc: "Live video factory tour, gặp QC manager, xem dây chuyền sản xuất real-time. Tiết kiệm 5-7 ngày so với đi thực tế.",
-    primary: { label: "🏭 Tham quan ngay", href: "/factory-tour" },
-    secondary: { label: "Đặt lịch tour →", href: "/buyer-center/meet-suppliers" },
+    badge: "📹 智能云展会",
+    titleStart: "360° ",
+    titleGold: "在线验厂",
+    titleEnd: "\n无需亲赴现场。",
+    desc: "实时视频验厂，对接 QC 经理，在线查看生产线。相比实地考察节省 5-7 天。",
+    primary: { label: "🏭 立即参观", href: "/factory-tour" },
+    secondary: { label: "预约参观 →", href: "/buyer-center/meet-suppliers" },
     image: "/img/hero-factory-tour.jpg?v=5",
   },
   {
-    badge: "🚢 Logistics DDP",
-    titleStart: "DDP tận kho ",
-    titleGold: "Hà Nội/HCM",
-    titleEnd: "\ntrong 18 ngày.",
-    desc: "Trọn gói: vận chuyển + thuế + thông quan. LCL/FCL từ Quảng Châu, Ninh Ba, Hạ Môn. Báo giá cước trong 1h.",
-    primary: { label: "💰 Tính cước DDP", href: "/info/ddp-calculator" },
-    secondary: { label: "Xem cảng đi →", href: "/info/shipping-policy" },
+    badge: "🚢 DDP 物流",
+    titleStart: "DDP 直送 ",
+    titleGold: "河内/胡志明仓",
+    titleEnd: "\n18 天到仓。",
+    desc: "一站式：物流 + 税费 + 清关。广州、宁波、厦门发运 LCL/FCL。1 小时内运费报价。",
+    primary: { label: "💰 测算 DDP 运费", href: "/info/ddp-calculator" },
+    secondary: { label: "查看发运港口 →", href: "/info/shipping-policy" },
     image: "/img/hero-ddp-logistics.jpg?v=5",
   },
 ];
@@ -191,14 +191,14 @@ export function HeroSlider() {
           <Fragment key={`nav-${idx}`}>
             <label
               htmlFor={`hs-${prevTarget}`}
-              aria-label="Slide trước"
+              aria-label="上一张"
               className={`hero-prev hero-prev-${idx} absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ‹
             </label>
             <label
               htmlFor={`hs-${nextTarget}`}
-              aria-label="Slide sau"
+              aria-label="下一张"
               className={`hero-next hero-next-${idx} absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ›
@@ -213,7 +213,7 @@ export function HeroSlider() {
           <label
             key={i}
             htmlFor={`hs-${i + 1}`}
-            aria-label={`Slide ${i + 1}`}
+            aria-label={`第 ${i + 1} 张`}
             className={`hero-dot hero-dot-${i + 1} h-[3px] rounded-sm cursor-pointer transition-all`}
           />
         ))}

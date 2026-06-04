@@ -17,74 +17,74 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 const TOPIC_CATEGORIES = [
   {
     icon: "🛒",
-    title: "Tìm sản phẩm & Đặt hàng",
-    desc: "RFQ, MOQ, sample order, OEM/ODM, AI matching",
+    title: "查找产品与下单",
+    desc: "询价、起订量、样品订购、OEM/ODM、AI 匹配",
     color: "#005F6B",
     articles: [
-      { label: "Cách gửi RFQ hiệu quả", href: "/info/find-products" },
-      { label: "Hướng dẫn nhập khẩu 6 bước", href: "/info/import-guide" },
-      { label: "Đặt mẫu trước khi MOQ", href: "/info/sample-orders" },
-      { label: "OEM / ODM tuỳ chỉnh", href: "/info/import-guide" },
+      { label: "如何高效发送询价", href: "/info/find-products" },
+      { label: "6 步进口指南", href: "/info/import-guide" },
+      { label: "起订量前先下样品单", href: "/info/sample-orders" },
+      { label: "OEM / ODM 定制", href: "/info/import-guide" },
     ],
   },
   {
     icon: "💳",
-    title: "Thanh toán & Bảo đảm Giao dịch",
-    desc: "T/T trung gian, hoàn tiền, dispute resolution, payment methods",
+    title: "支付与交易保障",
+    desc: "T/T 担保、退款、争议解决、支付方式",
     color: "#E85D4E",
     articles: [
-      { label: "Bảo đảm Giao dịch (Trung gian) là gì?", href: "/info/payment-protection" },
-      { label: "Phương thức thanh toán T/T", href: "/info/payment-protection" },
-      { label: "Khiếu nại & hoàn tiền", href: "/info/disputes" },
-      { label: "Tỷ giá + phí ngân hàng", href: "/info/payment-protection" },
+      { label: "什么是交易保障（担保）？", href: "/info/payment-protection" },
+      { label: "T/T 支付方式", href: "/info/payment-protection" },
+      { label: "投诉与退款", href: "/info/disputes" },
+      { label: "汇率 + 银行手续费", href: "/info/payment-protection" },
     ],
   },
   {
     icon: "🚚",
-    title: "Vận chuyển & Logistics",
-    desc: "Incoterms, DDP/CIF/FOB, hải quan, thời gian giao",
+    title: "运输与物流",
+    desc: "贸易术语、DDP/CIF/FOB、海关、交货时间",
     color: "#F4A261",
     articles: [
-      { label: "Chính sách vận chuyển đầy đủ", href: "/info/shipping-policy" },
-      { label: "Tính cước DDP nhanh", href: "/info/ddp-calculator" },
-      { label: "Đường bộ qua Lạng Sơn 5-7 ngày", href: "/info/shipping-policy" },
-      { label: "Theo dõi đơn realtime", href: "/info/order-tracking" },
+      { label: "完整运输政策", href: "/info/shipping-policy" },
+      { label: "DDP 运费快速计算", href: "/info/ddp-calculator" },
+      { label: "经谅山陆路 5-7 天", href: "/info/shipping-policy" },
+      { label: "实时订单追踪", href: "/info/order-tracking" },
     ],
   },
   {
     icon: "🛡",
-    title: "Audit & Chất lượng",
-    desc: "Quy trình kiểm định 5 bước, QC inspection, certifications",
+    title: "验厂与质量",
+    desc: "5 步验厂流程、品控检验、认证",
     color: "#2A9D8F",
     articles: [
-      { label: "Quy trình kiểm định 5 bước", href: "/info/audit-process" },
-      { label: "Mạng lưới hiệp hội đối tác", href: "/info/network" },
-      { label: "Chứng chỉ NCC: ISO, CE, RoHS", href: "/info/audit-process" },
-      { label: "Báo cáo audit blockchain", href: "/info/audit-process" },
+      { label: "5 步验厂流程", href: "/info/audit-process" },
+      { label: "合作行业协会网络", href: "/info/network" },
+      { label: "供应商认证：ISO、CE、RoHS", href: "/info/audit-process" },
+      { label: "区块链验厂报告", href: "/info/audit-process" },
     ],
   },
   {
     icon: "👤",
-    title: "Tài khoản & Bảo mật",
-    desc: "Đăng ký, 2FA, KYC, settings, sub-accounts",
+    title: "账户与安全",
+    desc: "注册、2FA、KYC、设置、子账户",
     color: "#8B5CF6",
     articles: [
-      { label: "Hướng dẫn đăng ký Buyer", href: "/register/buyer" },
-      { label: "Bật 2FA bảo vệ tài khoản", href: "/info/privacy-policy" },
-      { label: "Quản lý sub-account", href: "/buyer-center" },
-      { label: "Quên mật khẩu", href: "/info/quen-mat-khau" },
+      { label: "采购商注册指南", href: "/register/buyer" },
+      { label: "开启 2FA 保护账户", href: "/info/privacy-policy" },
+      { label: "管理子账户", href: "/buyer-center" },
+      { label: "忘记密码", href: "/info/quen-mat-khau" },
     ],
   },
   {
     icon: "⚖",
-    title: "Pháp lý & Compliance",
-    desc: "Điều khoản, bảo mật, NĐ 13/2023, Incoterms 2020",
+    title: "法律与合规",
+    desc: "条款、隐私、NĐ 13/2023、Incoterms 2020",
     color: "#6B7880",
     articles: [
-      { label: "Điều khoản sử dụng", href: "/info/terms-of-service" },
-      { label: "Chính sách bảo mật", href: "/info/privacy-policy" },
-      { label: "11 quyền theo NĐ 13/2023", href: "/info/privacy-policy" },
-      { label: "Trọng tài VIAC Hà Nội", href: "/info/terms-of-service" },
+      { label: "使用条款", href: "/info/terms-of-service" },
+      { label: "隐私政策", href: "/info/privacy-policy" },
+      { label: "NĐ 13/2023 规定的 11 项权利", href: "/info/privacy-policy" },
+      { label: "VIAC 河内仲裁", href: "/info/terms-of-service" },
     ],
   },
 ];
@@ -92,140 +92,140 @@ const TOPIC_CATEGORIES = [
 const FEATURED_GUIDES = [
   {
     icon: "🎯",
-    title: "Guide cho Buyer mới — 30 ngày đầu",
-    desc: "Từ đăng ký tới đơn đầu tiên: bước đi an toàn, tránh sai lầm phổ biến.",
+    title: "新采购商指南——头 30 天",
+    desc: "从注册到首单：稳健起步，避开常见错误。",
     href: "/info/import-guide",
-    readTime: "8 phút",
+    readTime: "8 分钟",
   },
   {
     icon: "💰",
-    title: "Tiết kiệm 22% chi phí — Case study",
-    desc: "Showroom Sài Gòn chuyển từ broker sang Huayuesc, tiết kiệm 2.7 tỷ/năm.",
+    title: "节省 22% 成本——案例研究",
+    desc: "西贡展厅从中间商转向华越，每年节省 27 亿越南盾。",
     href: "/info/industry-news/case-study-showroom-sai-gon-tiet-kiem-22-percent",
-    readTime: "7 phút",
+    readTime: "7 分钟",
   },
   {
     icon: "📦",
-    title: "5 sai lầm khi đặt sample — Buyer mới cần tránh",
-    desc: "Sample là bảo hiểm $200 cho đơn $20,000 — nhưng làm sai vẫn mất tiền.",
+    title: "下样品单的 5 个错误——新采购商需避免",
+    desc: "样品是为 $20,000 订单买的 $200 保险——但做错了照样亏钱。",
     href: "/info/industry-news/5-sai-lam-pho-bien-khi-dat-sample",
-    readTime: "5 phút",
+    readTime: "5 分钟",
   },
   {
     icon: "📊",
-    title: "Cảng Lạch Huyện vs Cát Lái — Buyer Bắc nên chọn?",
-    desc: "Phân tích chi tiết cước, thời gian giao, congestion. Tiết kiệm $1,350/40HQ.",
+    title: "叻坚港 vs 吉莱港——北部采购商该选哪个？",
+    desc: "详细分析运费、交货时间、拥堵情况。每 40HQ 节省 $1,350。",
     href: "/info/industry-news/phan-tich-cang-lach-huyen-vs-cat-lai-2026",
-    readTime: "8 phút",
+    readTime: "8 分钟",
   },
 ];
 
 const FAQ_BY_STAGE = [
   {
-    stage: "Trước khi đăng ký",
+    stage: "注册前",
     faqs: [
       {
-        q: "Huayuesc khác gì với Alibaba.com hay Made-in-China?",
-        a: "CSR tập trung 100% vào Buyer Việt Nam: tiếng Việt support 24/7, thanh toán VND, tài khoản trung gian tại Vietcombank/BIDV, vận chuyển DDP về tận kho VN, audit on-site free cho đơn ≥$5K, hỗ trợ tranh chấp bằng tiếng Việt qua VIAC Hà Nội. Alibaba và MIC là nền tảng global, tốt cho buyer Mỹ/EU/Trung Đông nhưng không có infra/team chuyên cho thị trường VN.",
+        q: "华越与 Alibaba.com 或 Made-in-China 有何不同？",
+        a: "CSR 100% 专注于越南采购商：24/7 越南语支持、越南盾支付、Vietcombank/BIDV 担保账户、DDP 直送越南仓库、≥$5K 订单免费实地验厂、通过 VIAC 河内提供越南语争议支持。Alibaba 和 MIC 是全球平台，适合美国/欧盟/中东买家，但没有专为越南市场服务的基础设施/团队。",
       },
       {
-        q: "Phí dịch vụ Huayuesc là bao nhiêu?",
-        a: "MIỄN PHÍ HOÀN TOÀN cho Buyer. Không phí thành viên, không phí giao dịch, không phí trung gian, không phí audit on-site (cho đơn ≥$5K). Huayuesc chỉ thu 5% commission từ Supplier khi giao dịch thành công. Buyer chỉ trả: giá hàng (theo PO) + cước DDP (transparent).",
+        q: "华越的服务费是多少？",
+        a: "对采购商完全免费。无会员费、无交易费、无担保费、无实地验厂费（≥$5K 订单）。华越仅在交易成功时向供应商收取 5% 佣金。采购商只需支付：货款（按 PO）+ DDP 运费（透明）。",
       },
       {
-        q: "Tôi có cần là doanh nghiệp mới đăng ký được không?",
-        a: "Không bắt buộc. Cá nhân đăng ký được, có thể giao dịch tới $5,000 USD/đơn (theo Luật Phòng chống rửa tiền VN). Tuy nhiên, doanh nghiệp (có MST) có 2 lợi thế: nhập không giới hạn giá trị + khấu trừ VAT đầu vào 10%. Buyer thường xuyên (≥3 đơn/năm) khuyến nghị đăng ký doanh nghiệp.",
+        q: "我必须是企业才能注册吗？",
+        a: "并非必须。个人可注册，每单可交易至 $5,000 美元（依据越南反洗钱法）。但企业（持税号）有 2 项优势：进口金额不限 + 可抵扣 10% 进项增值税。常下单的采购商（每年 ≥3 单）建议注册企业。",
       },
     ],
   },
   {
-    stage: "Tìm sản phẩm & Gửi RFQ",
+    stage: "查找产品与发送询价",
     faqs: [
       {
-        q: "Làm sao để gửi RFQ hiệu quả?",
-        a: "Click 'Gửi RFQ' ở header trang chủ hoặc /buying-request. Mô tả càng chi tiết càng tốt: tên sản phẩm + kích thước + vật liệu + số lượng + target retail + OEM yêu cầu (logo, custom màu) + thời hạn. Trong 24 giờ, hệ thống AI matching gửi RFQ tới 5-10 NCC verified phù hợp. Tip: đính kèm ảnh tham khảo / sản phẩm mẫu để NCC hiểu rõ hơn.",
+        q: "如何高效发送询价？",
+        a: "点击首页顶部的“发送询价”或访问 /buying-request。描述越详细越好：产品名称 + 尺寸 + 材质 + 数量 + 目标零售价 + OEM 要求（logo、定制颜色）+ 期限。24 小时内，AI 匹配系统会将询价发送给 5-10 家合适的已认证供应商。提示：附上参考图/样品图，让供应商更好理解。",
       },
       {
-        q: "MOQ trên Huayuesc là bao nhiêu?",
-        a: "Tùy nhà máy — phổ biến từ $500-2000 hoặc 50-100 đơn vị. Một số NCC chấp nhận MOQ thấp $200 cho Buyer mới qua chương trình audit miễn phí. CSR có 'Combine MOQ' giúp 2-3 buyer cùng ngành gộp đơn để đạt MOQ giá tốt mà mỗi bên chỉ lấy 1/3.",
+        q: "华越的起订量是多少？",
+        a: "视工厂而定——常见为 $500-2000 或 50-100 件。部分供应商通过免费验厂计划，对新采购商接受低至 $200 的起订量。CSR 提供“合并起订量”，帮助 2-3 家同行业采购商拼单达到优惠起订量，而各方仅取 1/3。",
       },
       {
-        q: "Tôi muốn OEM/ODM theo bản vẽ của mình — có hỗ trợ không?",
-        a: "Có. CSR hỗ trợ OEM (in logo, đổi màu, custom kích thước nhỏ) và ODM (thiết kế hoàn toàn theo bản vẽ kỹ thuật của Buyer). Phí mock-up sample $80-300, thời gian giao tăng 5-10 ngày. Đặt sample OEM trước khi đặt MOQ — verify khả năng tuỳ chỉnh thực tế. Toàn bộ chi phí mock-up được hoàn 100% khi đặt MOQ.",
+        q: "我想按自己的图纸做 OEM/ODM——支持吗？",
+        a: "支持。CSR 支持 OEM（印 logo、改颜色、小幅定制尺寸）和 ODM（完全按采购商技术图纸设计）。样品打样费 $80-300，交货时间增加 5-10 天。下达起订量前先订 OEM 样品——核实实际定制能力。全部打样费在下达起订量时 100% 返还。",
       },
     ],
   },
   {
-    stage: "Thanh toán & Bảo đảm Giao dịch",
+    stage: "支付与交易保障",
     faqs: [
       {
-        q: "Bảo đảm Giao dịch (Trung gian) hoạt động thế nào?",
-        a: "Tiền cọc T/T 30% và 70% balance của Buyer được giữ trong tài khoản trung gian của CSR tại Vietcombank/BIDV (cho VND) hoặc Bank of China/HSBC (cho USD) — KHÔNG đi trực tiếp tới NCC. NCC chỉ nhận tiền sau khi: (a) Buyer xác nhận hàng đúng mô tả, hoặc (b) 14 ngày kể từ ngày giao mà Buyer không phản hồi (auto-release). Nếu hàng sai cam kết, Buyer khiếu nại trong 7 ngày → CSR điều tra → refund/đổi/bồi thường.",
+        q: "交易保障（担保）如何运作？",
+        a: "采购商的 30% T/T 定金和 70% 尾款保管在 CSR 位于 Vietcombank/BIDV（越南盾）或中国银行/HSBC（美元）的担保账户中——不直接打给供应商。供应商仅在以下情况后才收款：(a) 采购商确认货品符合描述，或 (b) 交货后 14 天采购商未回应（自动放款）。若货品不符合承诺，采购商在 7 天内投诉 → CSR 调查 → 退款/换货/赔偿。",
       },
       {
-        q: "Phương thức thanh toán nào được hỗ trợ?",
-        a: "T/T (Telegraphic Transfer) — phổ biến nhất, áp dụng cho mọi đơn. L/C (Letter of Credit) — cho đơn ≥$100K, an toàn cao nhất nhưng phí cao. Online Banking quốc tế qua Wise/Payoneer — cho đơn nhỏ <$5K, phí thấp. KHÔNG hỗ trợ: PayPal (phí cao), Western Union (không trung gian), Tiền mặt (vi phạm quy định AML).",
+        q: "支持哪些支付方式？",
+        a: "T/T（电汇）——最常用，适用于所有订单。L/C（信用证）——适用于 ≥$100K 订单，最安全但费用高。通过 Wise/Payoneer 的国际网银——适用于 <$5K 小单，费用低。不支持：PayPal（费用高）、西联汇款（无担保）、现金（违反反洗钱规定）。",
       },
       {
-        q: "Tôi muốn thanh toán bằng VND có được không?",
-        a: "Có. Buyer thanh toán VND vào tài khoản Vietcombank/BIDV của CSR, CSR convert sang USD theo tỷ giá Vietcombank realtime + buffer 0.5% phòng biến động (ghi rõ trong hợp đồng). Phí ngân hàng: ~0.1-0.3% phí chuyển + $20-50 fixed. Một số đơn nhỏ (<$10K) có thể thanh toán 100% VND nội địa, không qua ngoại tệ — tiết kiệm phí ngân hàng.",
+        q: "我可以用越南盾支付吗？",
+        a: "可以。采购商将越南盾支付至 CSR 的 Vietcombank/BIDV 账户，CSR 按 Vietcombank 实时汇率 + 0.5% 浮动缓冲（合同中注明）兑换为美元。银行手续费：约 0.1-0.3% 转账费 + $20-50 固定费。部分小单（<$10K）可 100% 用越南盾境内支付，不经外币——节省银行手续费。",
       },
     ],
   },
   {
-    stage: "Vận chuyển & Hải quan",
+    stage: "运输与海关",
     faqs: [
       {
-        q: "Vận chuyển DDP về VN mất bao lâu?",
-        a: "Thời gian giao DDP đến kho Buyer Hà Nội: (a) Đường bộ qua Lạng Sơn 5-7 ngày — nhanh nhất, phù hợp đơn nhỏ và hot trend. (b) Đường biển Foshan → Lạch Huyện → HN: 13-17 ngày tổng. (c) Đường biển Đông Quan/Thâm Quyến → Cát Lái → HN: 15-19 ngày. (d) Air freight DHL/FedEx: 2-4 ngày, $8-15/kg. Buyer chọn route tối ưu trong calculator /info/ddp-calculator.",
+        q: "DDP 运至越南需要多久？",
+        a: "DDP 送达河内采购商仓库的时间：(a) 经谅山陆路 5-7 天——最快，适合小单和热门趋势品。(b) 海运 佛山 → 叻坚 → 河内：合计 13-17 天。(c) 海运 东莞/深圳 → 吉莱 → 河内：15-19 天。(d) DHL/FedEx 空运：2-4 天，$8-15/kg。采购商可在计算器 /info/ddp-calculator 中选择最优路线。",
       },
       {
-        q: "Có cần giấy phép nhập khẩu không?",
-        a: "Phần lớn vật liệu xây dựng, nội thất, sanitary, đèn LED, điện gia dụng KHÔNG cần giấy phép. Cần giấy phép cho: thực phẩm chức năng, mỹ phẩm, thiết bị y tế, hoá chất, dược phẩm, sách, phương tiện. CSR tư vấn miễn phí theo HS code — email legal@huayuesc.vn.",
+        q: "需要进口许可证吗？",
+        a: "大部分建筑材料、家具、卫浴、LED 灯、家用电器不需要许可证。以下需许可证：保健食品、化妆品、医疗器械、化学品、药品、书籍、车辆。CSR 按 HS 编码免费咨询——邮箱 legal@huayuesc.vn。",
       },
       {
-        q: "DDP đã bao gồm thuế nhập khẩu + VAT chưa?",
-        a: "RỒI. DDP all-in-one bao gồm: cước biển/đường bộ, bảo hiểm Marine 0.5%, thuế nhập khẩu (theo HS code, có ưu đãi ACFTA/RCEP), VAT 10%, phí thông quan, vận chuyển nội địa VN. Buyer chỉ ký nhận hàng tại kho. Trường hợp đặc biệt (hải quan re-classify HS, áp thuế cao hơn): CSR thông báo trước, Buyer có 7 ngày phản hồi.",
+        q: "DDP 是否已含进口税 + 增值税？",
+        a: "是的。DDP 全包含：海运/陆运费、0.5% 海运保险、进口税（按 HS 编码，享 ACFTA/RCEP 优惠）、10% 增值税、清关费、越南国内运输。采购商只需在仓库签收。特殊情况（海关重新归类 HS、征收更高税）：CSR 提前通知，采购商有 7 天回应期。",
       },
     ],
   },
   {
-    stage: "Sau khi nhận hàng",
+    stage: "收货之后",
     faqs: [
       {
-        q: "Tôi phát hiện hàng không đúng mô tả — phải làm gì?",
-        a: "Gửi khiếu nại Bảo đảm Giao dịch TRONG 7 NGÀY kể từ ngày nhận hàng. Đường dẫn: /buyer-center/orders/{order-id}/dispute. Đính kèm chứng cứ: ảnh, video unboxing, biên bản nghiệm thu. Đội Bảo đảm Giao dịch phản hồi trong 24 giờ và quyết định trong 3-5 ngày: hoàn 100%, đổi hàng, hoặc bồi thường thoả thuận. Lịch sử Q1-Q3/2025: 87% case có lợi cho Buyer.",
+        q: "我发现货品与描述不符——该怎么办？",
+        a: "在收货后 7 天内提交交易保障投诉。路径：/buyer-center/orders/{order-id}/dispute。附上证据：照片、开箱视频、验收记录。交易保障团队在 24 小时内响应，并在 3-5 天内决定：全额退款、换货或协商赔偿。2025 年第 1-3 季度历史：87% 案件有利于采购商。",
       },
       {
-        q: "Tôi muốn đặt thêm đơn sau khi đơn đầu OK — quy trình thế nào?",
-        a: "Nhanh hơn 50% so với đơn đầu! Repeat order: chọn 'Reorder' trong dashboard → CSR tự động tạo PO mới với cùng spec → Buyer chỉ cần xác nhận quantity + ngày giao. Không cần audit lại NCC (đã verified). Không cần test sample lại (đã có). Thời gian giao vẫn 5-22 ngày tuỳ route. Nhiều Buyer Việt Nam đặt 6-12 đơn/năm với 2-3 NCC chính — quy trình rất smooth.",
+        q: "首单顺利后我想再下单——流程如何？",
+        a: "比首单快 50%！返单：在控制台选择“Reorder” → CSR 自动以相同规格生成新 PO → 采购商只需确认数量 + 交货日期。无需重新验厂（已认证）。无需重新测样（已有）。交货时间仍为 5-22 天，视路线而定。许多越南采购商每年向 2-3 家主力供应商下 6-12 单——流程非常顺畅。",
       },
       {
-        q: "Hoá đơn VAT có được phát hành không?",
-        a: "Có. CSR phát hành hoá đơn điện tử VAT 10% cho mọi đơn DDP qua hệ thống e-invoice của Bộ Tài chính (theo Nghị định 123/2020/NĐ-CP). Hoá đơn được gửi tới email Buyer trong 3 ngày kể từ ngày giao hàng. Buyer doanh nghiệp dùng hoá đơn này để khấu trừ VAT đầu vào 10% — tiết kiệm thuế đáng kể.",
+        q: "可以开具增值税发票吗？",
+        a: "可以。CSR 通过财政部电子发票系统为所有 DDP 订单开具 10% 增值税电子发票（依据 123/2020/NĐ-CP 号法令）。发票在交货后 3 天内发送至采购商邮箱。企业采购商可用此发票抵扣 10% 进项增值税——节省可观税费。",
       },
     ],
   },
 ];
 
 const SYSTEM_STATUS = [
-  { service: "Website + App", status: "Operational", uptime: "99.97%" },
-  { service: "Bảo đảm Giao dịch (Trung gian)", status: "Operational", uptime: "100%" },
-  { service: "AI Sourcing Matching", status: "Operational", uptime: "99.94%" },
-  { service: "DDP Logistics", status: "Operational", uptime: "99.91%" },
+  { service: "网站 + App", status: "Operational", uptime: "99.97%" },
+  { service: "交易保障（担保）", status: "Operational", uptime: "100%" },
+  { service: "AI 寻源匹配", status: "Operational", uptime: "99.94%" },
+  { service: "DDP 物流", status: "Operational", uptime: "99.91%" },
 ];
 
 const CONTACT_CHANNELS = [
-  { icon: "💬", title: "Live Chat", desc: "Phản hồi <5 phút", info: "8h-22h hàng ngày", href: "#chat" },
-  { icon: "📞", title: "Hotline", desc: "+84 24 1234 5678", info: "8h-18h thứ 2-7", href: "tel:+842412345678" },
-  { icon: "📧", title: "Email Support", desc: "Phản hồi <6 giờ", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
-  { icon: "📹", title: "Video Call", desc: "Đặt lịch trước", info: "1-on-1 với Quản lý tài khoản", href: "/info/contact" },
+  { icon: "💬", title: "在线客服", desc: "5 分钟内响应", info: "每日 8:00-22:00", href: "#chat" },
+  { icon: "📞", title: "热线", desc: "+84 24 1234 5678", info: "周一至周六 8:00-18:00", href: "tel:+842412345678" },
+  { icon: "📧", title: "邮件支持", desc: "6 小时内响应", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
+  { icon: "📹", title: "视频通话", desc: "需提前预约", info: "与客户经理一对一", href: "/info/contact" },
 ];
 
 export default function HelpPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Trung tâm trợ giúp" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "帮助中心" }]} />
 
       {/* === HERO + Search ============================================== */}
       <section
@@ -234,22 +234,22 @@ export default function HelpPage() {
       >
         <div className="max-w-[1100px] mx-auto px-4 py-12 max-md:py-7 text-center">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-            🆘 TRUNG TÂM TRỢ GIÚP · HUAYUESC
+            🆘 帮助中心 · 华越
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
-            Chào mừng đến trung tâm trợ giúp
+            欢迎来到帮助中心
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed mb-5 max-md:text-[12.5px] max-w-[680px] mx-auto">
-            300+ bài hướng dẫn, 80+ FAQ, support 24/7 tiếng Việt. Tìm câu trả lời ngay hoặc liên hệ trực tiếp đội Huayuesc tại Hà Nội + Quảng Châu.
+            300+ 篇指南、80+ FAQ、24/7 越南语支持。立即查找答案，或直接联系华越河内 + 广州团队。
           </p>
           <form action="/search" method="get" className="flex max-w-[640px] mx-auto bg-white rounded-md overflow-hidden shadow-lg">
             <input
               name="q"
-              placeholder="Ví dụ: cách đặt RFQ, MOQ, vận chuyển DDP, Bảo đảm Giao dịch..."
+              placeholder="例如：如何发询价、起订量、DDP 运输、交易保障……"
               className="flex-1 px-4 py-3 outline-none text-[14px] text-ink"
             />
             <button type="submit" className="px-6 bg-accent text-white font-bold text-[13.5px] cursor-pointer hover:opacity-90">
-              🔍 Tìm kiếm
+              🔍 搜索
             </button>
           </form>
 
@@ -257,19 +257,19 @@ export default function HelpPage() {
           <div className="grid grid-cols-4 gap-4 mt-7 text-center max-md:grid-cols-2 max-md:gap-3">
             <div className="border-r border-white/15 last:border-r-0 max-md:border-r-0">
               <b className="block text-[18px] text-gold leading-tight">300+</b>
-              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">Bài hướng dẫn</small>
+              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">指南文章</small>
             </div>
             <div className="border-r border-white/15 last:border-r-0 max-md:border-r-0">
-              <b className="block text-[18px] text-gold leading-tight">&lt;5 phút</b>
-              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">Phản hồi chat</small>
+              <b className="block text-[18px] text-gold leading-tight">&lt;5 分钟</b>
+              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">客服响应</small>
             </div>
             <div className="border-r border-white/15 last:border-r-0 max-md:border-r-0">
               <b className="block text-[18px] text-gold leading-tight">24/7</b>
-              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">Hỗ trợ tiếng Việt</small>
+              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">越南语支持</small>
             </div>
             <div>
               <b className="block text-[18px] text-gold leading-tight">99.97%</b>
-              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">Uptime tháng qua</small>
+              <small className="text-[10.5px] opacity-75 uppercase tracking-wider">上月在线率</small>
             </div>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function HelpPage() {
 
       <div className="max-w-[1100px] mx-auto px-4 mt-7 mb-10 max-md:mt-4">
         {/* === 6 Topic Categories ========================================= */}
-        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">📚 Duyệt theo chủ đề</h2>
+        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">📚 按主题浏览</h2>
         <div className="grid grid-cols-3 gap-3 mb-8 max-md:grid-cols-1">
           {TOPIC_CATEGORIES.map((c) => (
             <div key={c.title} className="bg-paper border border-line rounded p-4 hover:border-brand hover:shadow-sm transition">
@@ -307,7 +307,7 @@ export default function HelpPage() {
         </div>
 
         {/* === Featured Guides ============================================ */}
-        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">⭐ Hướng dẫn nổi bật</h2>
+        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">⭐ 精选指南</h2>
         <div className="grid grid-cols-2 gap-3 mb-8 max-md:grid-cols-1">
           {FEATURED_GUIDES.map((g) => (
             <Link
@@ -328,7 +328,7 @@ export default function HelpPage() {
         </div>
 
         {/* === FAQ by Stage ============================================== */}
-        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">❓ Câu hỏi thường gặp theo giai đoạn</h2>
+        <h2 className="text-[20px] font-bold text-ink mb-4 max-md:text-[17px]">❓ 按阶段划分的常见问题</h2>
         <div className="space-y-5 mb-8">
           {FAQ_BY_STAGE.map((stage) => (
             <div key={stage.stage} className="bg-paper border border-line rounded p-5 max-md:p-3.5">
@@ -355,13 +355,13 @@ export default function HelpPage() {
           <div className="flex justify-between items-center mb-3 max-md:flex-col max-md:items-start max-md:gap-2">
             <h2 className="text-[16px] font-bold text-ink flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-              Tình trạng hệ thống — Tất cả dịch vụ hoạt động bình thường
+              系统状态——所有服务运行正常
             </h2>
             <Link
               href="https://huayuesc-status.io"
               className="text-[12px] text-brand hover:underline cursor-pointer"
             >
-              Status page chi tiết →
+              详细状态页 →
             </Link>
           </div>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">
@@ -382,9 +382,9 @@ export default function HelpPage() {
           className="rounded p-6 text-white max-md:p-4"
           style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
         >
-          <h2 className="text-[18px] font-bold mb-1 max-md:text-[16px]">Vẫn cần hỗ trợ trực tiếp?</h2>
+          <h2 className="text-[18px] font-bold mb-1 max-md:text-[16px]">仍需人工支持？</h2>
           <p className="text-[12.5px] opacity-85 mb-4 max-md:text-[12px]">
-            Đội Customer Success Huayuesc tại Hà Nội + Quảng Châu — phản hồi 24/7, 100% tiếng Việt cho Buyer.
+            华越河内 + 广州客户成功团队——24/7 响应，为采购商提供 100% 越南语支持。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {CONTACT_CHANNELS.map((c) => (
@@ -402,13 +402,13 @@ export default function HelpPage() {
           </div>
           <div className="mt-4 pt-4 border-t border-white/15 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <span className="text-[12.5px] opacity-85">
-              📍 Văn phòng Hà Nội: 26 Phạm Hùng, Cầu Giấy · 26/F Tianhe Plaza, Quảng Châu
+              📍 河内办事处：求纸郡范雄街 26 号 · 广州天河广场 26 楼
             </span>
             <Link
               href="/buying-request"
               className="px-4 py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A] whitespace-nowrap"
             >
-              🚀 Gửi RFQ ngay
+              🚀 立即发送询价
             </Link>
           </div>
         </div>
@@ -418,7 +418,7 @@ export default function HelpPage() {
 }
 
 export const metadata = {
-  title: "Trung tâm trợ giúp — Huayuesc",
+  title: "帮助中心 — 华越",
   description:
-    "300+ bài hướng dẫn, 80+ FAQ về sourcing B2B từ Trung Quốc về Việt Nam. RFQ, Bảo đảm Giao dịch, DDP, hải quan. Hỗ trợ 24/7 tiếng Việt.",
+    "300+ 篇指南、80+ FAQ，涵盖从中国到越南的 B2B 采购。询价、交易保障、DDP、海关。24/7 越南语支持。",
 };

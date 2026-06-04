@@ -1,7 +1,7 @@
 export function Trending({ chips }: { chips: string[] }) {
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-6">
-      <h3 className="text-[14px] font-bold text-ink mb-2.5">Danh mục thịnh hành:</h3>
+      <h3 className="text-[14px] font-bold text-ink mb-2.5">热门分类：</h3>
       <div className="flex gap-2 flex-wrap">
         {chips.map((c) => (
           <a

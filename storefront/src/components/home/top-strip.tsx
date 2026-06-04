@@ -25,29 +25,29 @@ type LinkRow = {
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "Trang tổng quan", href: "/buyer-center", desc: "Xem RFQ, đơn hàng, tin nhắn" },
-  { icon: "📨", label: "Yêu cầu báo giá (RFQ)", href: "/buyer-center/rfqs", desc: "Quản lý báo giá đã gửi", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "Đơn hàng của tôi", href: "/buyer-center/orders", desc: "Tracking & vận chuyển", badge: "5", badgeTone: "info" },
-  { icon: "❤️", label: "Sản phẩm yêu thích", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
-  { icon: "📍", label: "Sổ địa chỉ", href: "/buyer-center/addresses" },
-  { icon: "📄", label: "Hợp đồng & hoá đơn", href: "/buyer-center/invoices" },
+  { icon: "📊", label: "控制台", href: "/buyer-center", desc: "查看询价、订单、消息" },
+  { icon: "📨", label: "询价请求 (RFQ)", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "物流与运输追踪", badge: "5", badgeTone: "info" },
+  { icon: "❤️", label: "收藏的产品", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
+  { icon: "📍", label: "地址簿", href: "/buyer-center/addresses" },
+  { icon: "📄", label: "合同与发票", href: "/buyer-center/invoices" },
 ];
 
 const SELLER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "Trang tổng quan", href: "/seller-center", desc: "Doanh số, đơn nhận, tin nhắn" },
-  { icon: "🏷", label: "Sản phẩm của tôi", href: "/seller-center/products" },
-  { icon: "💬", label: "Báo giá đã gửi", href: "/seller-center/quotes" },
-  { icon: "📥", label: "Đơn hàng nhận được", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "Đăng ký nhà máy", href: "/sell-on-csr", desc: "Trở thành Nhà cung cấp đã xác minh" },
-  { icon: "🛡", label: "Bảo đảm Giao dịch", href: "/info/trade-assurance", desc: "Trung gian bảo vệ thanh toán xuyên biên giới", badge: "TRUNG GIAN", badgeTone: "success" },
+  { icon: "📊", label: "控制台", href: "/seller-center", desc: "销售额、收到的订单、消息" },
+  { icon: "🏷", label: "我的产品", href: "/seller-center/products" },
+  { icon: "💬", label: "已发送报价", href: "/seller-center/quotes" },
+  { icon: "📥", label: "收到的订单", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
+  { icon: "🏭", label: "工厂入驻", href: "/sell-on-csr", desc: "成为认证供应商" },
+  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "跨境支付担保中介", badge: "担保", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
-  { icon: "👤", label: "Hồ sơ cá nhân", href: "/account/profile" },
-  { icon: "🔒", label: "Bảo mật & mật khẩu", href: "/account/security" },
-  { icon: "💳", label: "Phương thức thanh toán", href: "/account/payment" },
-  { icon: "🔔", label: "Thông báo", href: "/account/notifications", badge: "2", badgeTone: "accent" },
-  { icon: "🚪", label: "Đăng xuất", href: "/logout" },
+  { icon: "👤", label: "个人资料", href: "/account/profile" },
+  { icon: "🔒", label: "安全与密码", href: "/account/security" },
+  { icon: "💳", label: "支付方式", href: "/account/payment" },
+  { icon: "🔔", label: "通知", href: "/account/notifications", badge: "2", badgeTone: "accent" },
+  { icon: "🚪", label: "退出登录", href: "/logout" },
 ];
 
 const RECENT_ORDERS: LinkRow[] = [
@@ -55,24 +55,24 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🚚",
     label: "PO-202611-0042",
     href: "/buyer-center/orders/PO-202611-0042",
-    desc: "Vải nylon 600D · Foshan Textile",
-    badge: "Đang vận chuyển",
+    desc: "600D 尼龙布 · 佛山纺织",
+    badge: "运输中",
     badgeTone: "info",
   },
   {
     icon: "✅",
     label: "PO-202611-0038",
     href: "/buyer-center/orders/PO-202611-0038",
-    desc: "Cáp HDMI 2.1 · Shenzhen Cable",
-    badge: "Đã giao",
+    desc: "HDMI 2.1 线缆 · 深圳线缆",
+    badge: "已送达",
     badgeTone: "success",
   },
   {
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "Khoá kéo YKK · Hangzhou Zip Co",
-    badge: "Đang SX",
+    desc: "YKK 拉链 · 杭州拉链",
+    badge: "生产中",
     badgeTone: "warning",
   },
 ];
@@ -80,21 +80,21 @@ const RECENT_ORDERS: LinkRow[] = [
 const RECENT_FAVORITES: LinkRow[] = [
   {
     thumb: "/img/cer1.jpg?v=5",
-    label: "Gạch Porcelain Calacatta 600×1200",
+    label: "卡拉卡塔抛光砖 600×1200",
     href: "/product/ceramic-1",
-    desc: "Dongpeng Ceramics · $8.50/m²",
+    desc: "东鹏陶瓷 · $8.50/㎡",
   },
   {
     thumb: "/img/fur1.jpg?v=5",
-    label: "Sofa góc chữ L 6 chỗ bọc nhung",
+    label: "L 型转角沙发 6 座绒布",
     href: "/product/furniture-1",
-    desc: "KUKA Home · $420/bộ",
+    desc: "顾家家居 · $420/套",
   },
   {
     thumb: "/img/fur7.jpg?v=5",
-    label: "Tủ bếp OPPEIN acrylic bóng",
+    label: "欧派亮光亚克力橱柜",
     href: "/product/furniture-7",
-    desc: "OPPEIN Home · $210/m",
+    desc: "欧派家居 · $210/米",
   },
 ];
 
@@ -247,10 +247,10 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white flex items-center gap-1.5 cursor-pointer py-1"
             >
               <span aria-hidden="true">👋</span>
-              <span>Đăng nhập<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> Đăng ký</span></span>
+              <span>登录<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> 注册</span></span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Đăng nhập tài khoản" />
+              <PopHeader title="登录账户" />
               {/* Social login buttons */}
               <div className="px-4 pt-3 grid grid-cols-3 gap-2">
                 <SocialBtn provider="google" label="Google" icon={I_GOOGLE} />
@@ -260,7 +260,7 @@ export async function TopStrip() {
               {/* Divider */}
               <div className="px-4 py-3 flex items-center gap-3">
                 <div className="flex-1 h-px bg-line" />
-                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">Hoặc</span>
+                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">或</span>
                 <div className="flex-1 h-px bg-line" />
               </div>
               {/* Email/password form */}
@@ -268,34 +268,34 @@ export async function TopStrip() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="Email hoặc số điện thoại"
+                  placeholder="邮箱或手机号"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <input
                   name="password"
                   type="password"
-                  placeholder="Mật khẩu"
+                  placeholder="密码"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <button
                   type="submit"
                   className="w-full py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px] cursor-pointer hover:bg-brand-light"
                 >
-                  Đăng nhập
+                  登录
                 </button>
                 <div className="flex justify-between text-[11.5px] pt-1">
                   <Link href="/forgot-password" className="text-mute hover:text-brand cursor-pointer">
-                    Quên mật khẩu?
+                    忘记密码？
                   </Link>
                   <Link href="/register/buyer" className="text-brand font-semibold cursor-pointer hover:underline">
-                    Đăng ký Người mua →
+                    注册采购商 →
                   </Link>
                 </div>
               </form>
               <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
-                Bạn là nhà cung cấp?{" "}
+                您是供应商？{" "}
                 <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Đăng ký Nhà cung cấp
+                  注册供应商
                 </Link>
               </div>
             </div>
@@ -309,11 +309,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BUYER}
-              <span>Người mua</span>
+              <span>采购商</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Khu vực người mua" more="Xem tất cả" moreHref="/buyer-center" />
+              <PopHeader title="采购商专区" more="查看全部" moreHref="/buyer-center" />
               <LinkList items={BUYER_LINKS} />
             </div>
           </div>
@@ -325,11 +325,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_FACTORY}
-              <span>Nhà cung cấp</span>
+              <span>供应商</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Khu vực nhà cung cấp" more="Xem tất cả" moreHref="/seller-center" />
+              <PopHeader title="供应商专区" more="查看全部" moreHref="/seller-center" />
               <LinkList items={SELLER_LINKS} />
             </div>
           </div>
@@ -341,16 +341,16 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_PHONE}
-              <span>Ứng dụng</span>
+              <span>APP</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Tải ứng dụng Huayuesc" />
+              <PopHeader title="下载华越 APP" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
-                  QR Code
+                  二维码
                   <br />
-                  scan để tải
+                  扫码下载
                 </div>
                 <div className="flex-1 space-y-2">
                   <Link
@@ -390,11 +390,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_USER}
-              <span>Tài khoản</span>
+              <span>账户</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Tài khoản" />
+              <PopHeader title="账户" />
               <LinkList items={ACCOUNT_LINKS} />
             </div>
           </div>
@@ -407,11 +407,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BOX}
-              <span>Đơn hàng</span>
+              <span>订单</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Đơn hàng gần đây" more="Xem tất cả" moreHref="/buyer-center/orders" />
+              <PopHeader title="最近订单" more="查看全部" moreHref="/buyer-center/orders" />
               <LinkList items={RECENT_ORDERS} />
             </div>
           </div>
@@ -423,11 +423,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               <span className="text-accent">{I_HEART}</span>
-              <span>Yêu thích</span>
+              <span>收藏</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Sản phẩm đã lưu" more="Xem tất cả" moreHref="/buyer-center/favorites" />
+              <PopHeader title="已收藏产品" more="查看全部" moreHref="/buyer-center/favorites" />
               <LinkList items={RECENT_FAVORITES} />
             </div>
           </div>
@@ -443,7 +443,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </span>
             <div className="ts-pop absolute right-0 top-full w-[260px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Ngôn ngữ & tiền tệ" />
+              <PopHeader title="语言与货币" />
               <LangSwitcher variant="full" />
             </div>
           </div>

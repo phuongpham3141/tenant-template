@@ -2,96 +2,96 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const HERO_STATS = [
-  { n: "20+", l: "Nhà cung cấp đã xác minh", icon: "🏭" },
-  { n: "Đối tác phân phối VN", l: "Đại lý doanh nghiệp Việt Nam", icon: "🇻🇳" },
-  { n: "Tăng đều mỗi năm", l: "Giá trị đơn được bảo vệ", icon: "🛡" },
-  { n: "32%", l: "Tỷ lệ vượt kiểm định nhà máy", icon: "✅" },
+  { n: "20+", l: "已认证供应商", icon: "🏭" },
+  { n: "越南分销伙伴", l: "越南企业经销商", icon: "🇻🇳" },
+  { n: "逐年稳增", l: "受保障的订单价值", icon: "🛡" },
+  { n: "32%", l: "工厂验厂通过率", icon: "✅" },
 ];
 
 const VALUE_PROPS = [
   {
     icon: "🇻🇳",
-    title: "Đối tác phân phối VN đại lý Việt Nam đã xác minh",
-    desc: "Đại lý đã xác minh doanh nghiệp đầy đủ, có lịch sử nhập khẩu thực. Phân bố theo ngành: nội thất 35%, vật liệu xây dựng 22%, thiết bị vệ sinh 15%, điện gia dụng 12%, các ngành khác 16%.",
+    title: "已认证的越南分销伙伴与经销商",
+    desc: "经销商均已完成完整企业认证，具有真实进口历史。按行业分布：家具 35%、建筑材料 22%、卫浴洁具 15%、家用电器 12%、其他行业 16%。",
   },
   {
     icon: "🤝",
-    title: "Đội ngũ song ngữ Trung – Việt",
-    desc: "Đội Quảng Châu (sourcing, QC, audit) + đội Hà Nội (kho, thông quan, sales). Hỗ trợ qua WeChat, DingTalk, Zalo — phản hồi trong giờ làm việc dưới 30 phút.",
+    title: "中越双语团队",
+    desc: "广州团队（寻源、品控、验厂）+ 河内团队（仓储、清关、销售）。通过微信、钉钉、Zalo 提供支持——工作时间内 30 分钟以内响应。",
   },
   {
     icon: "🛡",
-    title: "Bảo đảm Giao dịch — người mua trả 0% phí",
-    desc: "Tài khoản trung gian qua ngân hàng đối tác Việt Nam và Trung Quốc. Nhà cung cấp đóng 1,5% (đã bao gồm trong giá niêm yết). Loại bỏ rào cản tin tưởng — đại lý Việt Nam tự tin đặt đơn lớn.",
+    title: "交易保障——采购商 0% 手续费",
+    desc: "通过越南和中国合作银行的担保账户。供应商承担 1.5%（已含在挂牌价中）。消除信任壁垒——越南经销商可放心下大单。",
   },
   {
     icon: "🚢",
-    title: "Kết nối cảng Hải Phòng (chính) + cảng phụ + đường bộ biên giới",
-    desc: "Lạch Huyện (Hải Phòng chính) · Cát Lái · Cái Mép, kèm tuyến đường bộ Hữu Nghị (Lạng Sơn) 5–7 ngày cho đơn nhỏ. Đối tác vận chuyển sẵn: COSCO, MSC, OOCL, ONE.",
+    title: "连通海防港（主港）+ 辅港 + 陆路边境",
+    desc: "叻坚（海防主港）· 吉莱 · 盖梅，外加友谊关（谅山）陆路通道，小单 5–7 天即达。现有承运合作伙伴：COSCO、MSC、OOCL、ONE。",
   },
   {
     icon: "📊",
-    title: "Bảng phân tích chi tiết",
-    desc: "Lượt xem theo SKU, tỷ lệ chuyển đổi RFQ → báo giá → đơn hàng, top đại lý theo doanh số, đề xuất SKU bán chạy theo mùa, thử nghiệm A/B hình ảnh. Xuất Excel, CSV, hoặc tự động qua API.",
+    title: "详尽分析面板",
+    desc: "按 SKU 的浏览量、询价 → 报价 → 订单的转化率、按销售额排名的头部经销商、按季节推荐的热销 SKU、图片 A/B 测试。可导出 Excel、CSV，或通过 API 自动获取。",
   },
   {
     icon: "💸",
-    title: "Mô hình Win-Win — chia sẻ rủi ro thị trường",
-    desc: "Niêm yết, kiểm định, ghép nối RFQ, banner — miễn phí 100%. Phí duy nhất 1,5% Bảo đảm Giao dịch chỉ phát sinh khi đơn đã thành công. Cam kết hoàn 100% phí nếu nhà cung cấp chưa có lợi nhuận sau 12 tháng đầu.",
+    title: "双赢模式——共担市场风险",
+    desc: "挂牌、验厂、询价匹配、横幅——100% 免费。唯一的 1.5% 交易保障费仅在订单成交后才产生。承诺：若供应商在头 12 个月内尚未盈利，则全额返还费用。",
   },
 ];
 
 const PRICING_PILLARS = [
   {
-    badge: "Trước khi có đơn",
-    price: "0 đ",
-    priceSub: "Hoàn toàn miễn phí",
+    badge: "成交订单前",
+    price: "0 元",
+    priceSub: "完全免费",
     color: "#16A34A",
-    headline: "Niêm yết, kiểm định và mọi công cụ marketing — miễn phí 100%",
-    desc: "Huayuesc tin rằng giá trị phải được chứng minh trước khi yêu cầu thu phí. Toàn bộ hạ tầng — từ kiểm định tại nhà máy, niêm yết không giới hạn sản phẩm, ghép nối RFQ bằng AI, đến banner trang chủ — đều miễn phí cho mọi nhà cung cấp đã pass kiểm định.",
+    headline: "挂牌、验厂及所有营销工具——100% 免费",
+    desc: "华越相信价值应在收费之前得到证明。全部基础设施——从工厂验厂、不限量产品挂牌、AI 询价匹配，到首页横幅——对所有通过验厂的供应商均免费。",
     items: [
-      "Đăng ký nhà máy & sàng lọc pháp lý",
-      "Kiểm định tại nhà máy (chuẩn ISO 19011)",
-      "Niêm yết sản phẩm không giới hạn",
-      "Hộp thư RFQ + ghép nối AI top 3",
-      "Quản lý tài khoản song ngữ Trung – Việt",
-      "Banner ngành & banner trang chủ",
-      "Báo cáo đại lý Việt Nam hàng quý",
-      "Đại diện tại hội chợ (Canton Fair, VIETBUILD)",
+      "工厂注册与法律审查",
+      "工厂实地验厂（ISO 19011 标准）",
+      "不限量产品挂牌",
+      "询价收件箱 + AI 前三匹配",
+      "中越双语客户经理",
+      "行业横幅与首页横幅",
+      "越南经销商季度报告",
+      "展会代表出席（广交会、VIETBUILD）",
     ],
     accent: false,
   },
   {
-    badge: "Khi có đơn thành công",
-    price: "1,5%",
-    priceSub: "Trên giá trị đơn",
+    badge: "订单成交后",
+    price: "1.5%",
+    priceSub: "按订单价值计",
     color: "#005F6B",
-    headline: "Bảo đảm Giao dịch — phí duy nhất, chỉ thu khi đã giao hàng thành công",
-    desc: "Chúng tôi chỉ kiếm tiền khi nhà cung cấp đã nhận được đơn hàng và đại lý Việt Nam đã xác nhận. Phí 1,5% bao trọn dịch vụ tài khoản trung gian qua ngân hàng đối tác Việt Nam và Trung Quốc — bảo vệ niềm tin cho người mua. Người mua trả 0 đ, nhà cung cấp đã bao gồm 1,5% trong giá niêm yết, không phí ẩn.",
+    headline: "交易保障——唯一费用，仅在成功交货后收取",
+    desc: "我们只在供应商已接到订单且越南经销商已确认后才盈利。1.5% 费用涵盖通过越南和中国合作银行的担保账户服务——为采购商保障信任。采购商支付 0 元，供应商已将 1.5% 含入挂牌价中，无隐藏费用。",
     items: [
-      "Tài khoản trung gian qua 3 ngân hàng quốc tế",
-      "Người mua Việt Nam trả 0% phí — yên tâm đặt đơn lớn",
-      "Chỉ giải ngân sau khi đại lý xác nhận hàng đúng",
-      "Bảo vệ tranh chấp — hoàn tiền nếu sai cam kết",
-      "Mức phí công khai, không có khoản nào ngoài 1,5%",
-      "Tự động khấu trừ — nhà cung cấp không phải làm gì thêm",
+      "通过 3 家国际银行的担保账户",
+      "越南采购商 0% 手续费——放心下大单",
+      "仅在经销商确认货品无误后放款",
+      "争议保护——若违背承诺则退款",
+      "费率公开，除 1.5% 外无任何其他收费",
+      "自动扣除——供应商无需额外操作",
     ],
     accent: true,
   },
   {
-    badge: "Cam kết của chúng tôi",
-    price: "Không lãi",
-    priceSub: "Không thu phí",
+    badge: "我们的承诺",
+    price: "不盈利",
+    priceSub: "不收费",
     color: "#9C6A1F",
-    headline: "Nếu nhà cung cấp chưa có lợi nhuận, Huayuesc miễn phí toàn bộ",
-    desc: "Chúng tôi tin vào mô hình các bên cùng có lợi. Nếu sau 12 tháng đầu nhà cung cấp chưa thu được lợi nhuận thực từ Huayuesc, chúng tôi hoàn 100% phí Bảo đảm Giao dịch đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Đây không phải khuyến mại — đây là triết lý vận hành.",
+    headline: "若供应商尚未盈利，华越全额免费",
+    desc: "我们坚信多方共赢模式。若头 12 个月内供应商未能从华越获得实际利润，我们将全额返还已缴的交易保障费——或继续免费延长 6 个月，共同寻找优化方向。这不是促销——这是我们的运营理念。",
     items: [
-      "Cam kết ràng buộc trong hợp đồng dịch vụ",
-      "Hoàn 100% phí Bảo đảm Giao dịch sau 12 tháng nếu chưa lãi",
-      "Hoặc tiếp tục miễn phí thêm 6 tháng — nhà cung cấp chọn",
-      "Quản lý tài khoản chủ động đề xuất tối ưu giá, sản phẩm",
-      "Huayuesc chia sẻ rủi ro thị trường cùng nhà cung cấp",
-      "Triết lý: chúng ta thắng cùng — không thắng riêng",
+      "在服务合同中具约束力的承诺",
+      "12 个月后若未盈利，100% 返还交易保障费",
+      "或继续免费延长 6 个月——由供应商选择",
+      "客户经理主动建议优化价格、产品",
+      "华越与供应商共担市场风险",
+      "理念：我们共赢——而非独赢",
     ],
     accent: false,
   },
@@ -102,204 +102,204 @@ const STEPS = [
     n: 1,
     icon: "📝",
     color: "#0E7490",
-    title: "Đăng ký & Sàng lọc trước",
-    duration: "1–2 ngày",
-    desc: "Điền biểu mẫu trực tuyến (10 phút) — tải lên giấy phép kinh doanh, ISO 9001/14001, năng lực sản xuất. Huayuesc sàng lọc trong 24–48 giờ: kiểm tra Tianyancha, giấy phép xuất khẩu GACC, lịch sử khiếu nại. Khoảng 32% hồ sơ vượt qua bước sàng lọc trước.",
+    title: "注册与预审",
+    duration: "1–2 天",
+    desc: "在线填写表单（10 分钟）——上传营业执照、ISO 9001/14001、生产能力。华越在 24–48 小时内审核：核查天眼查、GACC 出口资质、投诉历史。约 32% 的申请通过预审。",
     actions: [
-      "Điền 32 câu hỏi về quy mô, sản phẩm, doanh thu",
-      "Kiểm tra chéo từ 5 nguồn dữ liệu công khai",
-      "Phản hồi 100% hồ sơ — không bao giờ bỏ rơi",
+      "回答 32 道关于规模、产品、营收的问题",
+      "从 5 个公开数据源交叉核查",
+      "100% 申请均有回复——绝不弃之不顾",
     ],
   },
   {
     n: 2,
     icon: "🔍",
     color: "#7C2D12",
-    title: "Kiểm định nhà máy tại chỗ",
-    duration: "7–15 ngày",
-    desc: "Đội kiểm định Huayuesc (4 nhân sự QC tại Quảng Châu) đến trực tiếp nhà máy: kiểm tra dây chuyền sản xuất thực tế, năng lực, hệ thống QC, chứng chỉ gốc, điều kiện lao động (chuẩn ILO). Kiểm định 1–2 ngày tại nhà máy. Báo cáo PDF 28–45 trang ký số trên blockchain.",
+    title: "工厂实地验厂",
+    duration: "7–15 天",
+    desc: "华越验厂团队（广州 4 名品控人员）亲赴工厂：检查实际生产线、产能、品控体系、证书原件、劳动条件（ILO 标准）。在工厂验厂 1–2 天。出具 28–45 页 PDF 报告并在区块链上数字签名。",
     actions: [
-      "Tham quan 12 hạng mục theo chuẩn ISO 19011",
-      "Phỏng vấn ngẫu nhiên 5–8 công nhân (riêng tư)",
-      "Quay video 360° + 100–180 ảnh chứng cứ",
-      "Kiểm tra lô sản phẩm đang chạy thực tế",
+      "按 ISO 19011 标准参观 12 个项目",
+      "随机访谈 5–8 名工人（私下进行）",
+      "拍摄 360° 视频 + 100–180 张证据照片",
+      "检查正在生产的实际产品批次",
     ],
   },
   {
     n: 3,
     icon: "🚀",
     color: "#16A34A",
-    title: "Lên gian hàng & đào tạo",
-    duration: "3–5 ngày",
-    desc: "Quản lý tài khoản hướng dẫn 1-1: đăng SKU với tiêu đề tối ưu cho tìm kiếm tiếng Việt, chuẩn hoá hình ảnh (chụp lại nếu cần), thiết lập MOQ và bậc giá, kết nối API/ERP nội bộ nếu có. Đào tạo qua video 8 buổi bằng tiếng Trung + tiếng Việt.",
+    title: "上架与培训",
+    duration: "3–5 天",
+    desc: "客户经理一对一指导：以针对越南语搜索优化的标题上架 SKU、规范图片（如需则重拍）、设置起订量和价格阶梯、如有则对接内部 API/ERP。通过 8 节中文 + 越南语视频进行培训。",
     actions: [
-      "Đăng 10–30 sản phẩm chủ lực với hình + video",
-      "Thiết lập tài khoản ngân hàng nhận giải ngân",
-      "Đào tạo quy trình: thời gian phản hồi, tranh chấp, đóng gói",
-      "Tích hợp API hoặc connector ERP (tuỳ chọn)",
+      "上架 10–30 款主力产品，配图片 + 视频",
+      "设置接收放款的银行账户",
+      "流程培训：响应时间、争议、包装",
+      "集成 API 或 ERP 连接器（可选）",
     ],
   },
   {
     n: 4,
     icon: "💼",
     color: "#9C6A1F",
-    title: "Bán hàng & nhận đơn đầu tiên",
-    duration: "7–30 ngày",
-    desc: "Gian hàng công khai, AI ghép nối tự động đẩy SKU đến đại lý Việt Nam phù hợp. Trung bình nhà cung cấp nhận RFQ đầu tiên trong 7–14 ngày. Đơn hàng đầu trung bình 30 ngày. Quản lý tài khoản theo dõi và tối ưu liên tục.",
+    title: "销售与接到首单",
+    duration: "7–30 天",
+    desc: "店铺公开后，AI 匹配自动将 SKU 推送给合适的越南经销商。供应商平均在 7–14 天内收到首个询价。首单平均 30 天。客户经理持续跟进并优化。",
     actions: [
-      "RFQ tự động chuyển đến nhà cung cấp phù hợp nhất",
-      "Báo giá qua bảng điều khiển hoặc ứng dụng di động",
-      "Theo dõi đơn 5 trạng thái với ảnh/video",
-      "Giải ngân qua tài khoản trung gian sau khi đại lý xác nhận",
+      "询价自动转给最匹配的供应商",
+      "通过控制台或移动应用报价",
+      "以 5 种状态追踪订单，配图片/视频",
+      "经销商确认后通过担保账户放款",
     ],
   },
 ];
 
 const AUDIT_CRITERIA = [
-  { label: "Giấy phép kinh doanh Trung Quốc", required: true },
-  { label: "Giấy phép xuất khẩu GACC", required: true },
-  { label: "ISO 9001:2015 hoặc tương đương", required: true },
-  { label: "Năng lực sản xuất ≥ ngưỡng ngành", required: true },
-  { label: "Hệ thống kiểm soát chất lượng có quy trình văn bản", required: true },
-  { label: "Tuân thủ tiêu chuẩn lao động ILO cơ bản", required: true },
-  { label: "ISO 14001 (môi trường)", required: false },
-  { label: "BSCI hoặc SEDEX (kiểm định xã hội)", required: false },
-  { label: "Chứng chỉ ngành (CE, FCC, RoHS, FDA)", required: false },
-  { label: "Điểm tín dụng Tianyancha ≥ 70", required: false },
+  { label: "中国营业执照", required: true },
+  { label: "GACC 出口资质", required: true },
+  { label: "ISO 9001:2015 或同等认证", required: true },
+  { label: "生产能力 ≥ 行业门槛", required: true },
+  { label: "具备书面流程的质量控制体系", required: true },
+  { label: "符合 ILO 基本劳动标准", required: true },
+  { label: "ISO 14001（环境）", required: false },
+  { label: "BSCI 或 SEDEX（社会责任审核）", required: false },
+  { label: "行业认证（CE、FCC、RoHS、FDA）", required: false },
+  { label: "天眼查信用评分 ≥ 70", required: false },
 ];
 
 const MARKETING_TOOLS = [
   {
     icon: "📢",
-    title: "Ghép nối RFQ bằng AI",
-    desc: "Khi đại lý Việt Nam gửi yêu cầu báo giá, hệ thống xếp hạng AI đẩy nhà cung cấp phù hợp nhất vào top 3 — dựa trên lịch sử bán, đánh giá, năng lực, thời gian phản hồi. Gói Cao cấp được ưu tiên top 3 khi có nhiều ứng viên cùng điểm.",
+    title: "AI 询价匹配",
+    desc: "当越南经销商发出询价时，AI 排名系统将最匹配的供应商推入前三——依据销售历史、评价、产能、响应时间。当多个候选同分时，高级套餐优先进入前三。",
   },
   {
     icon: "🏠",
-    title: "Banner trang chủ nổi bật",
-    desc: "Nhà cung cấp gói Cao cấp có banner luân phiên trên trang chủ Huayuesc — hiển thị 100.000+ lượt xem mỗi tuần, tỷ lệ nhấp chuột trung bình 4,2%. Lịch luân phiên 8 giờ một lần giữa các nhà cung cấp Cao cấp.",
+    title: "首页焦点横幅",
+    desc: "高级套餐供应商在华越首页享轮播横幅——每周展示 10 万+ 次浏览，平均点击率 4.2%。在高级供应商之间每 8 小时轮播一次。",
   },
   {
     icon: "📧",
-    title: "Cảnh báo Thương mại — bản tin tuần",
-    desc: "Bản tin tuần gửi đến 12.000 đại lý đã đăng ký. Nhà cung cấp Cao cấp được giới thiệu trong mục 'Nhà cung cấp mới' (1 lần/tháng) hoặc 'Ưu đãi tốt nhất' (theo ngành). Tỷ lệ mở 38%, tỷ lệ nhấp 8,5%.",
+    title: "交易预警——每周通讯",
+    desc: "每周通讯发送至 12,000 名注册经销商。高级套餐供应商可在“新供应商”栏目（每月 1 次）或“最佳优惠”栏目（按行业）获得推荐。打开率 38%，点击率 8.5%。",
   },
   {
     icon: "🎯",
-    title: "Đại diện tại hội chợ thương mại",
-    desc: "Huayuesc đại diện nhà cung cấp Cao cấp tại Canton Fair (Quảng Châu, 2 lần/năm), VIETBUILD HCM, VIIF Hà Nội — thu thập danh thiếp đại lý, chuyển khách tiềm năng về nhà cung cấp trong 48 giờ. Miễn phí 2 hội chợ/năm cho gói Cao cấp.",
+    title: "展会代表出席",
+    desc: "华越代表高级套餐供应商出席广交会（广州，每年 2 次）、VIETBUILD 胡志明市、VIIF 河内——收集经销商名片，48 小时内将潜在客户转交供应商。高级套餐每年免费 2 场展会。",
   },
   {
     icon: "🎬",
-    title: "Video tham quan nhà máy",
-    desc: "Huayuesc sản xuất video tham quan nhà máy 90–180 giây cho nhà cung cấp Cao cấp (1 lần/năm miễn phí, sau đó 800 USD/video). Đặt trong gian hàng và chia sẻ qua Cảnh báo Thương mại — tăng độ tin cậy với đại lý mới.",
+    title: "工厂参观视频",
+    desc: "华越为高级套餐供应商制作 90–180 秒工厂参观视频（每年免费 1 次，之后 800 美元/条）。置于店铺并通过交易预警分享——提升新经销商的信任度。",
   },
   {
     icon: "📈",
-    title: "Báo cáo đại lý Việt Nam hàng quý",
-    desc: "Nhà cung cấp gói Đã xác minh trở lên nhận báo cáo quý: top 20 đại lý Việt Nam của ngành, biến động doanh số, dự báo rủi ro mất khách, cơ hội thị trường (SKU đang thiếu). 30+ trang, do đội Nghiên cứu biên soạn.",
+    title: "越南经销商季度报告",
+    desc: "已认证套餐及以上供应商可获季度报告：本行业越南前 20 经销商、销售额变动、客户流失风险预测、市场机会（缺货 SKU）。30+ 页，由研究团队编制。",
   },
 ];
 
 const STORIES = [
   {
     name: "Foshan Hanse Industrial",
-    loc: "Foshan",
-    category: "Nội thất văn phòng",
-    before: "20 đơn / tháng",
-    after: "85 đơn / tháng",
+    loc: "佛山",
+    category: "办公家具",
+    before: "20 单 / 月",
+    after: "85 单 / 月",
     lift: "+325%",
-    years: "6 năm trên CSR",
-    quote: "Trước Huayuesc, chúng tôi vào Việt Nam qua đại lý trung gian, biên lợi nhuận 8–12%. Giờ trực tiếp, biên 22% và quan hệ dài hạn.",
+    years: "入驻 CSR 6 年",
+    quote: "在华越之前，我们通过中间经销商进入越南，利润率 8–12%。如今直接对接，利润率 22%，且建立了长期关系。",
   },
   {
     name: "OPPEIN Home Group",
-    loc: "Quảng Châu",
-    category: "Tủ bếp & nội thất",
-    before: "80.000 USD / tháng",
-    after: "420.000 USD / tháng",
+    loc: "广州",
+    category: "橱柜与家具",
+    before: "80,000 美元 / 月",
+    after: "420,000 美元 / 月",
     lift: "+425%",
-    years: "5 năm trên CSR",
-    quote: "Việt Nam là thị trường tăng trưởng nhanh nhất của OPPEIN trong 3 năm — vượt cả Indonesia và Philippines.",
+    years: "入驻 CSR 5 年",
+    quote: "近 3 年来，越南是 OPPEIN 增长最快的市场——超过了印尼和菲律宾。",
   },
   {
     name: "Taizhou Faucet Group",
-    loc: "Đài Châu",
-    category: "Vòi nước & thiết bị vệ sinh",
-    before: "0 đại lý Việt Nam",
-    after: "32 đại lý Việt Nam",
-    lift: "+32 đại lý",
-    years: "4 năm trên CSR",
-    quote: "Quản lý tài khoản Huayuesc giúp chúng tôi xử lý quy định VAT Việt Nam — điều chúng tôi không thể tự làm từ Trung Quốc.",
+    loc: "台州",
+    category: "水龙头与卫浴洁具",
+    before: "0 家越南经销商",
+    after: "32 家越南经销商",
+    lift: "+32 家经销商",
+    years: "入驻 CSR 4 年",
+    quote: "华越客户经理帮我们处理越南增值税法规——这是我们从中国本地无法自行办到的。",
   },
   {
     name: "Landbond Furniture",
-    loc: "Foshan",
-    category: "Nội thất gỗ trung – cao cấp",
-    before: "60.000 USD / tháng",
-    after: "280.000 USD / tháng",
+    loc: "佛山",
+    category: "中高端木制家具",
+    before: "60,000 美元 / 月",
+    after: "280,000 美元 / 月",
     lift: "+367%",
-    years: "7 năm trên CSR",
-    quote: "Gói Cao cấp rất xứng đáng — banner trang chủ tạo ra 40% RFQ chất lượng cao của chúng tôi.",
+    years: "入驻 CSR 7 年",
+    quote: "高级套餐非常值得——首页横幅带来了我们 40% 的高质量询价。",
   },
   {
     name: "Ortonbaths Group",
-    loc: "Thâm Quyến",
-    category: "Bồn cầu & lavabo",
-    before: "5% xuất khẩu sang Việt Nam",
-    after: "32% xuất khẩu sang Việt Nam",
+    loc: "深圳",
+    category: "马桶与洗手盆",
+    before: "对越南出口占 5%",
+    after: "对越南出口占 32%",
     lift: "+540%",
-    years: "3 năm trên CSR",
-    quote: "Trong 3 năm, Việt Nam từ thị trường thứ 8 lên thứ 2 (sau Mỹ). Huayuesc là kênh chủ lực.",
+    years: "入驻 CSR 3 年",
+    quote: "3 年间，越南从第 8 大市场跃升至第 2（仅次于美国）。华越是主力渠道。",
   },
   {
     name: "Monalisa Ceramic",
-    loc: "Foshan",
-    category: "Gạch men & lát nền",
-    before: "120.000 USD / tháng",
-    after: "680.000 USD / tháng",
+    loc: "佛山",
+    category: "瓷砖与地砖",
+    before: "120,000 美元 / 月",
+    after: "680,000 美元 / 月",
     lift: "+466%",
-    years: "8 năm trên CSR",
-    quote: "Chuỗi 24 đại lý gạch men ở Việt Nam đều biết Monalisa qua Huayuesc. Xây dựng thương hiệu hiệu quả hơn quảng cáo truyền thống.",
+    years: "入驻 CSR 8 年",
+    quote: "越南 24 家瓷砖经销商连锁都通过华越认识了 Monalisa。这比传统广告更有效地塑造了品牌。",
   },
 ];
 
 const FAQ = [
   {
-    q: "Tôi không nói tiếng Việt — có vấn đề gì không?",
-    a: "Không. Quản lý tài khoản Huayuesc thông thạo tiếng Trung + tiếng Việt + tiếng Anh, đóng vai cầu nối toàn bộ giao tiếp. Gian hàng được tự động dịch sang tiếng Việt (đội biên dịch người soát lại chứ không thuần AI). Tin nhắn từ đại lý qua quản lý tài khoản — nhà cung cấp nhận tin đã được dịch và tóm tắt.",
+    q: "我不会说越南语——会有问题吗？",
+    a: "不会。华越客户经理精通中文 + 越南语 + 英语，在所有沟通中充当桥梁。店铺会自动翻译为越南语（由人工翻译团队复核，而非纯 AI）。来自经销商的消息经客户经理转达——供应商收到的是已翻译并归纳的信息。",
   },
   {
-    q: "Kiểm định nhà máy mất bao lâu và tốn chi phí gì?",
-    a: "Kiểm định 1–2 ngày tại nhà máy, tổng chu trình 7–15 ngày từ khi đặt lịch. Miễn phí cho mọi gói — Huayuesc chịu chi phí đội kiểm định và di chuyển. Nhà cung cấp chỉ cần sắp xếp nhân sự hỗ trợ (1 quản lý QC + 1 quản lý sản xuất trong ngày kiểm định). Gói Cao cấp được thêm 1 lần kiểm định miễn phí mỗi năm để duy trì chứng nhận.",
+    q: "工厂验厂需要多长时间、有什么费用？",
+    a: "在工厂验厂 1–2 天，从预约起整个周期 7–15 天。所有套餐均免费——华越承担验厂团队和差旅费用。供应商只需安排配合人员（验厂当天 1 名品控主管 + 1 名生产主管）。高级套餐每年额外免费 1 次验厂以维持认证。",
   },
   {
-    q: "Tôi đã có gian hàng trên Alibaba.com — có cần thêm Huayuesc không?",
-    a: "Có nếu thị trường Việt Nam quan trọng với chiến lược của bạn. Alibaba.com là sàn toàn cầu chung; Huayuesc là kênh chuyên biệt cho Việt Nam — hồ sơ đại lý khác (doanh nghiệp B2B vừa – lớn của Việt Nam, không phải dropshipper), giá và Incoterms khác (mạnh DDP, ít FOB), cơ chế tin tưởng khác (Bảo đảm Giao dịch qua ngân hàng đối tác VN+TQ thay vì Alipay). Nhiều nhà cung cấp dùng cả hai song song.",
+    q: "我已在 Alibaba.com 开店——还需要华越吗？",
+    a: "如果越南市场对您的战略重要，则需要。Alibaba.com 是通用的全球平台；华越是面向越南的专属渠道——经销商画像不同（越南中大型 B2B 企业，而非一件代发商）、价格和贸易术语不同（侧重 DDP，少用 FOB）、信任机制不同（通过越中合作银行的交易保障，而非支付宝）。许多供应商两者并用。",
   },
   {
-    q: "Huayuesc kiếm tiền bằng cách nào nếu mọi thứ đều miễn phí?",
-    a: "Chúng tôi chỉ thu phí 1,5% trên giá trị đơn hàng đã thành công, qua dịch vụ Bảo đảm Giao dịch — phí này nhà cung cấp đã bao gồm trong giá niêm yết, không phải phí ẩn. Người mua trả 0 đ. Mô hình của chúng tôi gắn liền với thành công của nhà cung cấp: chúng tôi chỉ kiếm tiền khi nhà cung cấp đã bán được hàng. Nếu nhà cung cấp chưa có lợi nhuận, chúng tôi không thu gì cả.",
+    q: "如果一切都免费，华越如何盈利？",
+    a: "我们仅在成交订单价值上收取 1.5% 费用，通过交易保障服务——该费用已由供应商含入挂牌价中，并非隐藏费用。采购商支付 0 元。我们的模式与供应商的成功紧密绑定：只有供应商卖出货品时我们才盈利。若供应商尚未盈利，我们分文不取。",
   },
   {
-    q: "Cam kết &ldquo;Không Lãi Không Thu&rdquo; hoạt động cụ thể như thế nào?",
-    a: "Sau 12 tháng kể từ khi nhà cung cấp lên gian hàng chính thức, nếu tổng lợi nhuận từ các đơn hàng trên Huayuesc (sau khi trừ chi phí sản xuất, vận chuyển, phí 1,5%) chưa dương, nhà cung cấp có quyền yêu cầu một trong hai phương án: (1) Hoàn 100% phí Bảo đảm Giao dịch đã đóng trong 12 tháng đó. (2) Tiếp tục miễn phí Bảo đảm Giao dịch thêm 6 tháng — Huayuesc chia sẻ rủi ro thị trường cùng nhà cung cấp. Cam kết này được ghi rõ trong hợp đồng dịch vụ — không phải lời hứa marketing.",
+    q: "“不盈利不收费”承诺具体如何运作？",
+    a: "自供应商正式上架起 12 个月后，若来自华越订单的总利润（扣除生产、运输、1.5% 费用后）仍未转正，供应商有权选择两种方案之一：(1) 全额返还该 12 个月内已缴的交易保障费。(2) 继续免费延长交易保障 6 个月——华越与供应商共担市场风险。此承诺明确写入服务合同——并非营销口号。",
   },
   {
-    q: "Tôi có thể rút khỏi Huayuesc bất kỳ lúc nào không?",
-    a: "Có. Nhà cung cấp tự khoá gian hàng trong bảng điều khiển, có hiệu lực ngay — không hợp đồng ràng buộc dài hạn, không phí huỷ. Vì niêm yết miễn phí 100%, không có khoản nào để hoàn lại. Đơn đang trong Bảo đảm Giao dịch phải hoàn tất chu trình trung gian (giải ngân hoặc xử lý tranh chấp) trước khi tài khoản đóng hoàn toàn.",
+    q: "我可以随时退出华越吗？",
+    a: "可以。供应商可在控制台自行关闭店铺，即时生效——无长期约束合同，无取消费用。由于挂牌 100% 免费，无任何款项需返还。处于交易保障中的订单须先完成担保流程（放款或处理争议），账户才能彻底关闭。",
   },
   {
-    q: "Yêu cầu pháp lý đặc biệt khi xuất khẩu sang Việt Nam qua Huayuesc?",
-    a: "Nhà cung cấp cần: (1) Giấy phép xuất khẩu GACC (cấp Form E cho ưu đãi ACFTA). (2) Hoá đơn thương mại và Phiếu đóng gói đúng chuẩn hải quan Việt Nam. (3) Giấy chứng nhận xuất xứ (Form E hoặc RCEP nếu áp dụng). (4) Với hàng đặc thù: chứng chỉ chất lượng, bản đặc tính an toàn (cho hoá chất), báo cáo kiểm định (cho điện/điện tử). Quản lý tài khoản Huayuesc xét duyệt hồ sơ trước mỗi lô hàng — miễn phí.",
+    q: "通过华越向越南出口有哪些特殊法律要求？",
+    a: "供应商需具备：(1) GACC 出口资质（出具 Form E 以享 ACFTA 优惠）。(2) 符合越南海关标准的商业发票和装箱单。(3) 原产地证书（如适用，Form E 或 RCEP）。(4) 对于特殊货物：质量证书、安全数据表（化学品）、检测报告（电气/电子）。华越客户经理在每批货物前审核单证——免费。",
   },
   {
-    q: "Tôi muốn bán cho đại lý Việt Nam nhưng không xuất khẩu trực tiếp — có mô hình thay thế không?",
-    a: "Có mô hình 'CSR Fulfilled' đang triển khai từ quý 3/2026: nhà cung cấp giao hàng FOB cho Huayuesc Logistics tại Hong Kong hoặc Quảng Châu, Huayuesc lo toàn bộ vận chuyển + thông quan + giao đến đại lý Việt Nam. Nhà cung cấp chỉ cần ship đến cửa ngõ. Phí logistics 8–15% (tuỳ ngành), không phí thiết lập. Hiện đang chạy thử với 8 nhà cung cấp Cao cấp.",
+    q: "我想销售给越南经销商但不直接出口——有替代模式吗？",
+    a: "有“CSR Fulfilled”模式，自 2026 年第 3 季度起推行：供应商以 FOB 将货物交给位于香港或广州的华越物流，华越负责全部运输 + 清关 + 配送至越南经销商。供应商只需运至口岸。物流费 8–15%（视行业而定），无设置费。目前正与 8 家高级套餐供应商试运行。",
   },
   {
-    q: "Bảo đảm Giao dịch có bắt buộc không?",
-    a: "Khuyến nghị mạnh nhưng không bắt buộc. Khoảng 78% đơn trên Huayuesc đang dùng Bảo đảm Giao dịch. Nhà cung cấp tham gia giúp tăng tỷ lệ chốt đơn (đại lý tin tưởng cao hơn 3,4 lần theo dữ liệu nội bộ), đặc biệt với đơn đầu tiên với đại lý mới. Phí 1,5% mỗi đơn đã bao gồm trong giá niêm yết, không phí ẩn.",
+    q: "交易保障是强制的吗？",
+    a: "强烈建议但非强制。华越约 78% 的订单正在使用交易保障。供应商采用可提高成交率（据内部数据，经销商信任度高出 3.4 倍），尤其在与新经销商的首单中。每单 1.5% 费用已含在挂牌价中，无隐藏费用。",
   },
 ];
 
@@ -316,7 +316,7 @@ function StatTile({ n, l, icon }: { n: string; l: string; icon: string }) {
 export default function SellOnCsrPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Bán Trên CSR" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "入驻 CSR" }]} />
 
       {/* === HERO ============================================================ */}
       <section
@@ -329,14 +329,14 @@ export default function SellOnCsrPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-12 max-md:py-8">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            🏭 BÁN TRÊN CSR · DÀNH CHO NHÀ CUNG CẤP
+            🏭 入驻 CSR · 供应商专属
           </span>
           <h1 className="text-[42px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
-            Bán hàng B2B sang Việt Nam<br />
-            <span className="text-gold">qua nền tảng chuyên biệt số 1</span>
+            B2B 出口越南<br />
+            <span className="text-gold">借力第一专业平台</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc cho ngành nội thất, vật liệu, thiết bị vệ sinh, điện gia dụng. <b className="text-gold">Niêm yết miễn phí 100%</b> — chúng tôi chỉ thu phí khi nhà cung cấp đã có đơn thành công. Cam kết &ldquo;Không Lãi Không Thu&rdquo;: nếu chưa có lợi nhuận, Huayuesc miễn phí toàn bộ. 40+ nhà máy đối tác đạt tăng trưởng 300%+ sau 24 tháng cùng mô hình các bên cùng có lợi.
+            专注越南 – 中国市场的 B2B 平台，覆盖家具、材料、卫浴洁具、家用电器行业。<b className="text-gold">挂牌 100% 免费</b>——只有供应商成交订单后我们才收费。“不盈利不收费”承诺：若尚未盈利，华越全额免费。40+ 合作工厂在采用多方共赢模式 24 个月后实现 300%+ 增长。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -345,13 +345,13 @@ export default function SellOnCsrPage() {
           </div>
           <div className="mt-6 flex gap-3 flex-wrap">
             <Link href="/register/factory" className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]">
-              🚀 Đăng ký nhà máy ngay
+              🚀 立即注册工厂
             </Link>
             <Link href="/info/audit-process" className="px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10">
-              📋 Xem quy trình kiểm định
+              📋 查看验厂流程
             </Link>
             <Link href="/info/contact" className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90">
-              💬 Đặt lịch tư vấn 30 phút
+              💬 预约 30 分钟咨询
             </Link>
           </div>
         </div>
@@ -360,10 +360,10 @@ export default function SellOnCsrPage() {
       {/* === Why Huayuesc ============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-9">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">VÌ SAO CHỌN HUAYUESC</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 lý do 20+ nhà máy chọn nền tảng của chúng tôi</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">为何选择华越</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">20+ 工厂选择我们平台的 6 大理由</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Không phải sàn toàn cầu — Huayuesc là kênh chuyên sâu cho thị trường Việt Nam với hạ tầng và đội ngũ riêng cho mỗi giao dịch.
+            并非通用全球平台——华越是面向越南市场的深耕渠道，为每笔交易配备专属基础设施和团队。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -380,12 +380,12 @@ export default function SellOnCsrPage() {
       {/* === Pricing philosophy ============================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CHÍNH SÁCH PHÍ · MÔ HÌNH WIN-WIN</span>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">收费政策 · 双赢模式</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">
-            Niêm yết miễn phí 100% — chỉ thu phí khi giao dịch thành công
+            挂牌 100% 免费——只在交易成交时收费
           </h2>
           <p className="text-[13.5px] text-mute mt-2 max-w-[760px] mx-auto leading-relaxed">
-            Huayuesc hỗ trợ kết nối các bên giao thương theo nguyên tắc <b className="text-ink">tất cả cùng có lợi</b>. Chúng tôi không thu phí đăng ký, không thu phí kiểm định, không thu phí thành viên hằng năm. Phí duy nhất là 1,5% Bảo đảm Giao dịch — chỉ phát sinh khi nhà cung cấp đã có đơn thành công và đại lý xác nhận hàng. <b className="text-ink">Nếu nhà cung cấp chưa có lợi nhuận, Huayuesc cam kết miễn phí toàn bộ.</b>
+            华越本着<b className="text-ink">多方共赢</b>的原则，助力各方互通商贸。我们不收注册费、不收验厂费、不收年度会员费。唯一的费用是 1.5% 交易保障——仅在供应商成交订单且经销商确认收货后才产生。<b className="text-ink">若供应商尚未盈利，华越承诺全额免费。</b>
           </p>
         </div>
 
@@ -396,9 +396,9 @@ export default function SellOnCsrPage() {
               🎁
             </div>
             <div>
-              <b className="block text-[18px] text-ink leading-tight">Toàn bộ quy trình đăng ký, kiểm định và niêm yết — MIỄN PHÍ 100%</b>
+              <b className="block text-[18px] text-ink leading-tight">注册、验厂、挂牌全流程——100% 免费</b>
               <p className="text-[12.5px] text-mute mt-1">
-                Không phí ẩn, không hợp đồng ràng buộc dài hạn, không yêu cầu đặt cọc. Nhà cung cấp có thể rút khỏi nền tảng bất kỳ lúc nào.
+                无隐藏费用，无长期约束合同，无需缴纳押金。供应商可随时退出平台。
               </p>
             </div>
           </div>
@@ -406,7 +406,7 @@ export default function SellOnCsrPage() {
             href="/register/factory"
             className="px-5 py-2.5 bg-success text-white rounded-sm font-bold text-[13px] hover:opacity-90 whitespace-nowrap"
           >
-            Đăng ký miễn phí →
+            免费注册 →
           </Link>
         </div>
 
@@ -463,16 +463,16 @@ export default function SellOnCsrPage() {
               🤝
             </div>
             <div className="flex-1">
-              <b className="block text-[16px] mb-1">Cam kết &ldquo;Không Lãi Không Thu&rdquo; — bằng văn bản trong hợp đồng dịch vụ</b>
+              <b className="block text-[16px] mb-1">“不盈利不收费”承诺——以书面形式写入服务合同</b>
               <p className="text-[13px] opacity-90 leading-relaxed">
-                Nếu sau 12 tháng đầu nhà cung cấp chưa có lợi nhuận thực từ Huayuesc, chúng tôi <b>hoàn 100% phí Bảo đảm Giao dịch</b> đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Chúng tôi tin nền tảng B2B chỉ có giá trị khi mọi bên cùng thắng.
+                若头 12 个月内供应商未能从华越获得实际利润，我们将<b>全额返还已缴的交易保障费</b>——或继续免费延长 6 个月，共同寻找优化方向。我们坚信，只有各方共赢，B2B 平台才有价值。
               </p>
             </div>
             <Link
               href="/info/contact"
               className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] whitespace-nowrap"
             >
-              Trao đổi với BD →
+              与 BD 团队沟通 →
             </Link>
           </div>
         </div>
@@ -481,10 +481,10 @@ export default function SellOnCsrPage() {
       {/* === Process steps ================================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">QUY TRÌNH 4 BƯỚC</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">Trung bình 30 ngày từ đăng ký đến đơn đầu tiên</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">4 步流程</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">从注册到首单平均 30 天</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Kiểm định miễn phí, quản lý tài khoản 1-1 hướng dẫn xuyên suốt từ ngày đầu đến khi nhận đơn đầu.
+            验厂免费，客户经理一对一从第一天起全程指导，直至接到首单。
           </p>
         </div>
         <div className="space-y-3">
@@ -506,7 +506,7 @@ export default function SellOnCsrPage() {
                       <div>
                         <h3 className="text-[17px] font-bold text-ink leading-tight">{s.title}</h3>
                         <span className="text-[10.5px] uppercase tracking-wider font-bold" style={{ color: s.color }}>
-                          BƯỚC {s.n}
+                          第 {s.n} 步
                         </span>
                       </div>
                     </div>
@@ -535,15 +535,15 @@ export default function SellOnCsrPage() {
         <div className="bg-paper border border-line rounded p-6 max-md:p-4">
           <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
             <div>
-              <span className="text-[11px] uppercase tracking-wider text-brand font-bold">TIÊU CHÍ KIỂM ĐỊNH</span>
-              <h2 className="text-[22px] font-bold text-ink mt-1 max-md:text-[18px]">Bộ tiêu chí 10 mục — bắt buộc + cộng điểm</h2>
-              <p className="text-[13px] text-mute mt-1">Tỷ lệ vượt trung bình 32% — chuẩn nghiêm để bảo vệ đại lý Việt Nam</p>
+              <span className="text-[11px] uppercase tracking-wider text-brand font-bold">验厂标准</span>
+              <h2 className="text-[22px] font-bold text-ink mt-1 max-md:text-[18px]">10 项标准体系——必备 + 加分</h2>
+              <p className="text-[13px] text-mute mt-1">平均通过率 32%——以严格标准保护越南经销商</p>
             </div>
             <Link
               href="/info/audit-process"
               className="text-[12.5px] text-brand font-semibold hover:underline whitespace-nowrap"
             >
-              Xem chi tiết quy trình →
+              查看流程详情 →
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 max-md:grid-cols-1">
@@ -558,9 +558,9 @@ export default function SellOnCsrPage() {
                 </span>
                 <span className="text-ink flex-1">{c.label}</span>
                 {c.required ? (
-                  <span className="text-[10px] text-accent font-bold">BẮT BUỘC</span>
+                  <span className="text-[10px] text-accent font-bold">必备</span>
                 ) : (
-                  <span className="text-[10px] text-mute2">CỘNG ĐIỂM</span>
+                  <span className="text-[10px] text-mute2">加分</span>
                 )}
               </div>
             ))}
@@ -571,10 +571,10 @@ export default function SellOnCsrPage() {
       {/* === Marketing tools ================================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÔNG CỤ MARKETING</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">Huayuesc chủ động đẩy nhà cung cấp đến đại lý</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">营销工具</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">华越主动将供应商推送给经销商</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Không chỉ là gian hàng thụ động — chúng tôi vận hành 6 kênh marketing chủ động đưa nhà cung cấp tiếp cận đúng đại lý có nhu cầu.
+            不只是被动的店铺——我们运营 6 个主动营销渠道，让供应商精准触达有需求的经销商。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -591,10 +591,10 @@ export default function SellOnCsrPage() {
       {/* === Success stories ================================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU CHUYỆN THÀNH CÔNG</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 nhà máy đối tác lâu năm — số liệu thực</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">成功案例</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 家多年合作工厂——真实数据</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Chia sẻ trực tiếp từ giám đốc các nhà máy đã đồng hành cùng Huayuesc từ 3 đến 8 năm.
+            来自与华越同行 3 至 8 年的工厂负责人的直接分享。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -610,11 +610,11 @@ export default function SellOnCsrPage() {
               </div>
               <div className="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-line text-[12px]">
                 <div>
-                  <div className="text-mute text-[10.5px] uppercase tracking-wider">Trước CSR</div>
+                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻 CSR 前</div>
                   <b className="text-ink text-[12.5px]">{s.before}</b>
                 </div>
                 <div>
-                  <div className="text-mute text-[10.5px] uppercase tracking-wider">Sau CSR</div>
+                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻 CSR 后</div>
                   <b className="text-success text-[12.5px]">{s.after}</b>
                 </div>
               </div>
@@ -632,10 +632,10 @@ export default function SellOnCsrPage() {
       {/* === FAQ =========================================================== */}
       <section className="max-w-[900px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU HỎI THƯỜNG GẶP</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">8 câu hỏi quan trọng nhất từ nhà cung cấp</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">常见问题</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">供应商最关心的 8 个问题</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Tổng hợp từ phỏng vấn Đối tác phân phối VN nhà cung cấp đã đăng ký và 20+ đối tác hiện hữu trong 12 tháng qua.
+            汇总自过去 12 个月对越南分销伙伴、已注册供应商及 20+ 现有合作伙伴的访谈。
           </p>
         </div>
         <div className="space-y-2">
@@ -660,28 +660,28 @@ export default function SellOnCsrPage() {
           style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
         >
           <h3 className="text-[30px] font-extrabold mb-3 max-md:text-[22px]">
-            Sẵn sàng tăng doanh thu xuất khẩu Việt Nam?
+            准备好提升越南出口业绩了吗？
           </h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[680px] mx-auto leading-relaxed">
-            Đăng ký miễn phí, kiểm định miễn phí. Trung bình 30 ngày để lên gian hàng và nhận đơn đầu tiên. 20+ nhà cung cấp đã chọn Huayuesc — không phí giao dịch ẩn, quản lý tài khoản 1-1 song ngữ Trung – Việt.
+            注册免费，验厂免费。平均 30 天即可上架并接到首单。20+ 供应商已选择华越——无隐藏交易费，中越双语客户经理一对一服务。
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/register/factory"
               className="inline-block px-8 py-3.5 bg-gold text-brand-dark rounded-sm font-bold text-[15px] hover:bg-[#E8943A]"
             >
-              🚀 Đăng ký nhà máy ngay
+              🚀 立即注册工厂
             </Link>
             <Link
               href="/info/contact"
               className="inline-block px-8 py-3.5 border-2 border-white/40 text-white rounded-sm font-bold text-[15px] hover:bg-white/10"
             >
-              💬 Đặt lịch tư vấn 30 phút
+              💬 预约 30 分钟咨询
             </Link>
           </div>
           <div className="mt-6 pt-5 border-t border-white/15 text-[12px] opacity-80 flex justify-center gap-5 flex-wrap">
-            <span>📞 +86 20 8888 1234 (Quảng Châu)</span>
-            <span>📞 +84 24 3556 7788 (Hà Nội)</span>
+            <span>📞 +86 20 8888 1234（广州）</span>
+            <span>📞 +84 24 3556 7788（河内）</span>
             <span>✉ supplier@huayuesc.vn</span>
           </div>
         </div>
@@ -691,7 +691,7 @@ export default function SellOnCsrPage() {
 }
 
 export const metadata = {
-  title: "Bán Trên CSR — Bán hàng B2B sang Việt Nam qua Huayuesc",
+  title: "入驻 CSR — 通过华越向越南做 B2B 出口",
   description:
-    "Nền tảng B2B chuyên thị trường Việt Nam – Trung Quốc. Đối tác phân phối VN đại lý Việt Nam đã xác minh, Bảo đảm Giao dịch qua ngân hàng đối tác Việt Nam và Trung Quốc, quản lý tài khoản song ngữ Trung – Việt. 20+ nhà cung cấp đã đăng ký, kiểm định miễn phí, 30 ngày từ đăng ký đến đơn đầu.",
+    "专注越南 – 中国市场的 B2B 平台。已认证的越南分销伙伴与经销商、通过越南和中国合作银行的交易保障、中越双语客户经理。20+ 供应商已注册，验厂免费，从注册到首单 30 天。",
 };

@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 export const metadata = {
-  title: "Tìm bằng hình ảnh — Huayuesc",
+  title: "以图搜索 — Huayuesc",
   description:
-    "Tải ảnh sản phẩm lên để tìm sản phẩm tương tự từ hơn 40 nhà máy đã được kiểm định tại Trung Quốc. AI nhận diện ảnh, gợi ý sản phẩm phù hợp trong 5 giây.",
+    "上传产品图片，即可从中国 40 余家已认证工厂中找到相似产品。AI 图像识别，5 秒内推荐匹配产品。",
 };
 
 export default async function ByImageSearchPage({
@@ -19,8 +19,8 @@ export default async function ByImageSearchPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Tìm bằng hình ảnh" },
+          { label: "首页", href: "/" },
+          { label: "以图搜索" },
         ]}
       />
 
@@ -32,17 +32,14 @@ export default async function ByImageSearchPage({
               📷
             </div>
             <h1 className="text-[26px] font-bold text-ink mb-2 max-md:text-[20px]">
-              Tìm sản phẩm bằng hình ảnh
+              以图搜索产品
             </h1>
             <p className="text-[13.5px] text-mute max-w-[640px] mx-auto leading-relaxed max-md:text-[12.5px]">
-              AI nhận diện ảnh trong 5 giây, gợi ý hơn 40 nhà máy có sản phẩm
-              tương tự. Phù hợp khi bạn có ảnh sản phẩm mẫu nhưng không biết
-              tên/keyword chính xác.
+              AI 5 秒内识别图像，推荐 40 余家拥有相似产品的工厂。适合您有样品图片却不确定准确名称/关键词的情况。
             </p>
             {q && (
               <p className="text-[12px] text-mute2 mt-2">
-                Đã nhận từ khoá: <b className="text-ink">{q}</b> · Bạn có thể
-                tải ảnh lên kèm theo
+                已接收关键词：<b className="text-ink">{q}</b> · 您可同时上传图片
               </p>
             )}
           </div>
@@ -56,12 +53,12 @@ export default async function ByImageSearchPage({
             <label htmlFor="img-upload" className="cursor-pointer block">
               <div className="text-[64px] mb-3">🖼️</div>
               <h3 className="text-[16px] font-bold text-ink mb-1.5">
-                Kéo & thả ảnh vào đây
+                将图片拖放到此处
               </h3>
               <p className="text-[12.5px] text-mute mb-4">
-                hoặc click để chọn file từ máy ·{" "}
+                或点击从本地选择文件 ·{" "}
                 <span className="text-brand font-medium">JPG / PNG / WEBP</span>{" "}
-                · Tối đa 10MB
+                · 最大 10MB
               </p>
               <input
                 id="img-upload"
@@ -71,7 +68,7 @@ export default async function ByImageSearchPage({
                 className="hidden"
               />
               <span className="inline-block px-6 py-2.5 bg-brand text-white font-bold text-[13px] rounded-sm hover:bg-brand-light cursor-pointer">
-                📷 Chọn ảnh từ máy
+                📷 从本地选择图片
               </span>
             </label>
           </form>
@@ -79,16 +76,16 @@ export default async function ByImageSearchPage({
           {/* OR sample images */}
           <div className="mt-6">
             <p className="text-[12.5px] text-center text-mute mb-3">
-              Hoặc thử với ảnh mẫu:
+              或试用样例图片：
             </p>
             <div className="grid grid-cols-6 gap-2 max-w-[600px] mx-auto max-md:grid-cols-3">
               {[
-                { seed: "sample-chair", label: "Ghế" },
-                { seed: "sample-tile", label: "Gạch" },
-                { seed: "sample-lamp", label: "Đèn" },
-                { seed: "sample-faucet", label: "Vòi" },
-                { seed: "sample-sofa", label: "Sofa" },
-                { seed: "sample-cabinet", label: "Tủ bếp" },
+                { seed: "sample-chair", label: "椅子" },
+                { seed: "sample-tile", label: "瓷砖" },
+                { seed: "sample-lamp", label: "灯具" },
+                { seed: "sample-faucet", label: "龙头" },
+                { seed: "sample-sofa", label: "沙发" },
+                { seed: "sample-cabinet", label: "橱柜" },
               ].map((s) => (
                 <Link
                   key={s.seed}
@@ -115,18 +112,18 @@ export default async function ByImageSearchPage({
             {[
               {
                 icon: "📤",
-                title: "Tải ảnh lên",
-                desc: "Chụp hoặc tải ảnh sản phẩm từ máy. Hỗ trợ JPG/PNG/WEBP.",
+                title: "上传图片",
+                desc: "拍摄或从本地上传产品图片。支持 JPG/PNG/WEBP。",
               },
               {
                 icon: "🤖",
-                title: "AI phân tích",
-                desc: "Hệ thống nhận diện đặc điểm sản phẩm: hình dáng, màu sắc, vật liệu.",
+                title: "AI 分析",
+                desc: "系统识别产品特征：外形、颜色、材质。",
               },
               {
                 icon: "🏭",
-                title: "Kết quả tức thì",
-                desc: "Hiển thị sản phẩm tương tự + nhà máy đã audit có thể cung cấp.",
+                title: "即时结果",
+                desc: "展示相似产品 + 可供货的已验厂工厂。",
               },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -139,26 +136,23 @@ export default async function ByImageSearchPage({
 
           {/* Tips */}
           <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded text-[12px] text-ink leading-relaxed">
-            <b className="text-brand">💡 Mẹo cho kết quả tốt nhất:</b> Chụp ảnh
-            sản phẩm trên nền sáng, thấy rõ chi tiết, không bị che. Có thể tải
-            nhiều ảnh cùng lúc (mỗi ảnh tối đa 10MB) để AI phân tích chính xác
-            hơn.
+            <b className="text-brand">💡 获得最佳结果的技巧：</b> 在明亮背景下拍摄产品，细节清晰、无遮挡。可一次上传多张图片（每张最大 10MB），让 AI 分析更精准。
           </div>
 
           {/* CTA fallback */}
           <div className="mt-5 text-center text-[12.5px] text-mute">
-            Không có ảnh? Thử{" "}
+            没有图片？试试{" "}
             <Link href="/search" className="text-brand hover:underline font-medium">
-              tìm bằng từ khoá
+              按关键词搜索
             </Link>{" "}
-            hoặc{" "}
+            或{" "}
             <Link
               href="/buying-request"
               className="text-accent hover:underline font-medium"
             >
-              gửi RFQ mô tả
+              发送询价描述
             </Link>{" "}
-            để NCC liên hệ trực tiếp.
+            让供应商直接联系您。
           </div>
         </div>
       </div>

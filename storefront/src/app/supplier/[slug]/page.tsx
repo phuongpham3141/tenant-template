@@ -12,7 +12,7 @@ function getFactory(slug: string): Factory {
       location: "Foshan, Guangdong · CN",
       rating: 4.7,
       reviews: "350",
-      meta: "Nhà máy đã xác minh",
+      meta: "已认证工厂",
       badges: { audited: true, years: "8Y" },
       tags: ["OEM", "ODM", "Export"],
     }
@@ -34,8 +34,8 @@ export default async function SupplierPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Nhà cung cấp", href: "/suppliers" },
+          { label: "首页", href: "/" },
+          { label: "供应商", href: "/suppliers" },
           { label: f.name },
         ]}
       />

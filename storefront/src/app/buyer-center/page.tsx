@@ -4,23 +4,23 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { SECTIONS } from "@/data/home";
 
 const STATS = [
-  { v: "12", l: "Đơn đang xử lý", c: "text-brand" },
-  { v: "5", l: "RFQ đang chờ báo giá", c: "text-accent" },
-  { v: "$12,420", l: "Tổng giá trị Q4/2026", c: "text-success" },
-  { v: "23", l: "Sản phẩm yêu thích", c: "text-gold" },
+  { v: "12", l: "处理中订单", c: "text-brand" },
+  { v: "5", l: "待报价询价", c: "text-accent" },
+  { v: "$12,420", l: "2026 Q4 总金额", c: "text-success" },
+  { v: "23", l: "收藏产品", c: "text-gold" },
 ];
 
 const RECENT_RFQS = [
-  { id: "RFQ-8421", product: "Porcelain tile 600×1200 calacatta", qty: "2,000 m²", quotes: 7, status: "Đang chờ" },
-  { id: "RFQ-8417", product: "Sofa L-shape velvet xanh navy", qty: "30 set", quotes: 5, status: "Đang chờ" },
-  { id: "RFQ-8412", product: "Smart toilet hotel 4-sao", qty: "80 pc", quotes: 9, status: "Đã đặt" },
+  { id: "RFQ-8421", product: "Porcelain tile 600×1200 calacatta", qty: "2,000 ㎡", quotes: 7, status: "待处理" },
+  { id: "RFQ-8417", product: "L形海军蓝丝绒沙发", qty: "30 套", quotes: 5, status: "待处理" },
+  { id: "RFQ-8412", product: "四星级酒店智能马桶", qty: "80 个", quotes: 9, status: "已下单" },
 ];
 
 const ACTIVITY = [
-  { time: "12 phút trước", text: "Dongpeng Ceramics đã gửi báo giá cho RFQ-8421" },
-  { time: "1 giờ trước", text: "Đơn AVN-7820 đã đến kho Bằng Tường" },
-  { time: "3 giờ trước", text: "KUKA Home phản hồi tin nhắn của bạn" },
-  { time: "Hôm qua", text: "RFQ-8412 đã chuyển sang trạng thái Đã đặt" },
+  { time: "12 分钟前", text: "Dongpeng Ceramics 已为 RFQ-8421 发送报价" },
+  { time: "1 小时前", text: "订单 AVN-7820 已抵达凭祥仓库" },
+  { time: "3 小时前", text: "KUKA Home 已回复您的消息" },
+  { time: "昨天", text: "RFQ-8412 已变更为「已下单」状态" },
 ];
 
 const FEATURED = SECTIONS[0].products.slice(0, 4);
@@ -28,13 +28,13 @@ const FEATURED = SECTIONS[0].products.slice(0, 4);
 export default function BuyerCenterPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Trung tâm Buyer" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <h1 className="text-[20px] font-bold text-ink">Chào, Trần Văn A 👋</h1>
-            <p className="text-[12.5px] text-mute mt-1">Đây là tổng quan hoạt động của bạn trong tháng này.</p>
+            <h1 className="text-[20px] font-bold text-ink">您好，陈文 A 👋</h1>
+            <p className="text-[12.5px] text-mute mt-1">这是您本月的活动概览。</p>
           </div>
 
           <div className="grid grid-cols-4 gap-3 mb-4 max-md:grid-cols-2">
@@ -49,16 +49,16 @@ export default function BuyerCenterPage() {
           <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded p-4">
               <div className="flex justify-between items-center mb-3">
-                <b className="text-[14px] text-ink">RFQ gần đây</b>
-                <Link href="/buying-request" className="text-brand text-[12px]">+ RFQ mới</Link>
+                <b className="text-[14px] text-ink">最近询价</b>
+                <Link href="/buying-request" className="text-brand text-[12px]">+ 新建询价</Link>
               </div>
               <table className="w-full text-[12.5px]">
                 <thead className="text-mute">
                   <tr className="border-b border-line">
-                    <th className="text-left py-1.5 font-medium">Mã</th>
-                    <th className="text-left py-1.5 font-medium">Sản phẩm</th>
-                    <th className="text-left py-1.5 font-medium">Báo giá</th>
-                    <th className="text-left py-1.5 font-medium">Trạng thái</th>
+                    <th className="text-left py-1.5 font-medium">编号</th>
+                    <th className="text-left py-1.5 font-medium">产品</th>
+                    <th className="text-left py-1.5 font-medium">报价</th>
+                    <th className="text-left py-1.5 font-medium">状态</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,7 +75,7 @@ export default function BuyerCenterPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-4">
-              <b className="block text-[14px] text-ink mb-3">Hoạt động gần đây</b>
+              <b className="block text-[14px] text-ink mb-3">最近动态</b>
               <ul className="space-y-2.5">
                 {ACTIVITY.map((a, i) => (
                   <li key={i} className="text-[12.5px] border-b border-dashed border-line pb-2 last:border-0">
@@ -89,8 +89,8 @@ export default function BuyerCenterPage() {
 
           <div className="bg-paper border border-line rounded p-4">
             <div className="flex justify-between items-center mb-3">
-              <b className="text-[14px] text-ink">Sản phẩm gợi ý cho bạn</b>
-              <Link href="/products" className="text-brand text-[12px]">Xem thêm →</Link>
+              <b className="text-[14px] text-ink">为您推荐的产品</b>
+              <Link href="/products" className="text-brand text-[12px]">查看更多 →</Link>
             </div>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {FEATURED.map((p) => (
@@ -112,4 +112,4 @@ export default function BuyerCenterPage() {
   );
 }
 
-export const metadata = { title: "Trung tâm Buyer — Huayuesc" };
+export const metadata = { title: "采购商中心 — Huayuesc" };

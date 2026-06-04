@@ -1,10 +1,10 @@
 /**
- * Vr360Frame — server component, render thuần HTML + inline <script>.
- * KHÔNG dùng "use client" → KHÔNG phụ thuộc React hydration.
+ * Vr360Frame — server component, renders plain HTML + inline <script>.
+ * Does NOT use "use client" → does NOT depend on React hydration.
  *
- * 2 nút:
- *   ⛶ Toàn màn hình — native FS + CSS fallback. Reload iframe mỗi lần để 360 fresh.
- *   🪟 Mở cửa sổ mới — window.open full screen với iframe + 2 overlay branding.
+ * 2 buttons:
+ *   ⛶ Fullscreen — native FS + CSS fallback. Reloads iframe each time for a fresh 360.
+ *   🪟 Open new window — window.open full screen with iframe + 2 branding overlays.
  */
 export function Vr360Frame({
   vrUrl,
@@ -61,19 +61,19 @@ export function Vr360Frame({
 
 <div style="margin-bottom:12px">
   <p style="font-size:12px;color:#6b7280;margin:0 0 8px;line-height:1.55">
-    💡 <b>Mẹo</b>: kéo chuột để xoay 360°, cuộn để zoom, click các điểm sáng để di chuyển. Bấm <b>Toàn màn hình</b> để xem rộng hơn (mỗi lần ấn sẽ tải lại 360°) hoặc <b>Mở cửa sổ mới</b> để xem trong cửa sổ riêng. Nhấn <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> để thoát.
+    💡 <b>提示</b>：拖动鼠标 360° 旋转，滚动缩放，点击光点前往其他区域。点击 <b>全屏</b> 查看更宽视野（每次点击会重新加载 360°），或 <b>打开新窗口</b> 在独立窗口中查看。按 <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> 退出。
   </p>
   <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <button type="button" class="csr-vr-btn" onclick="csrVrCombined()">⛶ Toàn màn hình</button>
-    <button type="button" class="csr-vr-btn" onclick="csrVrPopup()">🪟 Mở cửa sổ mới</button>
+    <button type="button" class="csr-vr-btn" onclick="csrVrCombined()">⛶ 全屏</button>
+    <button type="button" class="csr-vr-btn" onclick="csrVrPopup()">🪟 打开新窗口</button>
   </div>
 </div>
 
 <div id="csr-vr-wrap">
-  <iframe id="csr-vr-iframe" src="${safeUrl}" title="Tour 360° ${safeFactory}" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>
+  <iframe id="csr-vr-iframe" src="${safeUrl}" title="360° 全景 ${safeFactory}" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>
   <div class="csr-vr-ov1">🏭 ${safeOverlay}</div>
   <div class="csr-vr-ov2">${safeLine2 ? `<span>${safeLine1}<br/>${safeLine2}</span>` : `<span>${safeLine1}</span>`}</div>
-  <button type="button" class="csr-vr-exit" onclick="csrVrCombined()">✕ Thoát (Esc)</button>
+  <button type="button" class="csr-vr-exit" onclick="csrVrCombined()">✕ 退出 (Esc)</button>
 </div>
 
 <script>
@@ -114,7 +114,7 @@ export function Vr360Frame({
     f.src = VR_URL + sep + '_t=' + Date.now();
   }
 
-  // Combined: nếu đang FS → exit. Nếu không → reload iframe + enter FS (native trước, CSS fallback)
+  // Combined: if in FS → exit. Otherwise → reload iframe + enter FS (native first, CSS fallback)
   window.csrVrCombined = function(){
     if(inNativeFs()){ exitFs(); return; }
     var w = $('csr-vr-wrap');
@@ -126,18 +126,18 @@ export function Vr360Frame({
     reqFs(w).catch(function(){ setCssFs(true); });
   };
 
-  // Popup: mở cửa sổ riêng full size với iframe + 2 overlay branding
+  // Popup: open a full-size separate window with iframe + 2 branding overlays
   window.csrVrPopup = function(){
     var sw = (window.screen && window.screen.availWidth) || 1920;
     var sh = (window.screen && window.screen.availHeight) || 1080;
     var feat = 'width=' + sw + ',height=' + sh + ',left=0,top=0,fullscreen=yes,menubar=no,toolbar=no,location=no';
     var p = window.open('', 'csr_vr_fullscreen', feat);
-    if(!p){ alert('Cửa sổ bị chặn. Vui lòng cho phép popup cho trang này rồi thử lại.'); return; }
+    if(!p){ alert('窗口被拦截。请允许本页面的弹出窗口后重试。'); return; }
     var sep = VR_URL.indexOf('?') >= 0 ? '&' : '?';
     var url = VR_URL + sep + '_t=' + Date.now();
     var ov2 = LINE2 ? '<span>' + LINE1 + '<br>' + LINE2 + '</span>' : '<span>' + LINE1 + '</span>';
     var doc =
-      '<!doctype html><html><head><meta charset="utf-8"><title>Tour 360° ' + FACTORY + '</title><style>' +
+      '<!doctype html><html><head><meta charset="utf-8"><title>360° 全景 ' + FACTORY + '</title><style>' +
       'html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;font-family:Arial,sans-serif}' +
       'iframe{width:100%;height:100%;border:0;display:block}' +
       '.ov1{position:fixed;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:16px;border-radius:6px;z-index:10}' +
@@ -147,7 +147,7 @@ export function Vr360Frame({
       '<iframe src="' + url + '" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>' +
       '<div class="ov1">🏭 ' + OVERLAY + '</div>' +
       '<div class="ov2">' + ov2 + '</div>' +
-      '<button class="cls" onclick="window.close()">✕ Đóng</button>' +
+      '<button class="cls" onclick="window.close()">✕ 关闭</button>' +
       '</body></html>';
     p.document.open();
     p.document.write(doc);
@@ -155,7 +155,7 @@ export function Vr360Frame({
     p.focus();
   };
 
-  // Esc thoát CSS pseudo-FS (native FS có Esc của browser sẵn)
+  // Esc exits CSS pseudo-FS (native FS already has the browser's own Esc)
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
       var w = $('csr-vr-wrap');

@@ -3,7 +3,7 @@ import { NAV_MENU } from "@/data/home";
 
 // Only main categories with at least 4 sub-items (i.e. enough to fill
 // a single 4-col row) are surfaced on the homepage showcase. Categories
-// like 🏠 Nhà & Sân vườn that currently carry just 1 sub-item are
+// like 🏠 家居与园艺 that currently carry just 1 sub-item are
 // skipped to keep the section visually tidy.
 const MIN_ITEMS = 4;
 
@@ -15,9 +15,9 @@ export function CategoryShowcase() {
       <div className="bg-paper border border-line rounded p-5 max-md:p-3">
         <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px] max-md:mb-3">
           <span className="w-1 h-5 bg-brand rounded-sm" />
-          Danh mục sản phẩm chính
+          主要产品分类
           <span className="text-[12px] text-mute font-normal ml-1">
-            · {shown.length} ngành chính, {totalSubs} phân loại
+            · {shown.length} 大行业，{totalSubs} 个细分类目
           </span>
         </h2>
 
@@ -35,7 +35,7 @@ export function CategoryShowcase() {
                   <span className="text-mute2 text-[12px] font-normal">→</span>
                   {extra > 0 && (
                     <span className="cat-more text-[11px] text-mute2 font-normal ml-auto">
-                      +{extra} khác (di chuột để xem)
+                      +{extra} 个 (悬停查看)
                     </span>
                   )}
                 </Link>

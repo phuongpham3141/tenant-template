@@ -9,13 +9,13 @@ export function Zones() {
           <span className="w-7 h-7 bg-gold text-brand-dark rounded-sm flex items-center justify-center font-bold max-md:w-6 max-md:h-6 max-md:text-[12px]">
             📍
           </span>
-          Cụm công nghiệp
+          产业带集群
         </h2>
         <span className="text-[12.5px] text-mute max-md:hidden">
-          Cụm công nghiệp đã kiểm định, mua trực tiếp tại nguồn
+          经认证的产业带集群，源头直接采购
         </span>
         <Link href="/zones" className="text-brand text-[12.5px] flex items-center gap-1 cursor-pointer max-md:self-end max-md:text-[11.5px]">
-          Xem bản đồ cụm →
+          查看产业带地图 →
         </Link>
       </div>
       <div className="bg-paper rounded-b border-l border-r border-b border-line p-4 grid grid-cols-6 gap-2.5 md:max-xl:grid-cols-3 max-md:grid-cols-3 max-md:p-2.5 max-md:gap-2">

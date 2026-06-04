@@ -6,50 +6,50 @@ import { LOGIN_PROVIDERS } from "@/components/icons/social";
 const VALUE_PROPS = [
   {
     icon: "📈",
-    title: "Tiếp cận 600+ dealer VN",
-    desc: "Buyer đã verified, có doanh thu thực, không phải tài khoản fake.",
+    title: "触达 600+ 越南经销商",
+    desc: "已认证、有真实营业额的采购商，绝非虚假账户。",
   },
   {
     icon: "🆓",
-    title: "Audit & onboarding free",
-    desc: "Đội ngũ tại Quảng Châu đến tận nhà máy audit, làm hồ sơ giùm bạn.",
+    title: "验厂与入驻免费",
+    desc: "广州团队亲赴工厂验厂，并替您整理资料。",
   },
   {
     icon: "💼",
-    title: "0% phí listing",
-    desc: "Chỉ trả 5% commission khi có đơn — không có phí ẩn, không thuê bao.",
+    title: "0% 上架费",
+    desc: "成交才付 5% 佣金——无隐藏费用，无订阅费。",
   },
   {
     icon: "🌐",
-    title: "Marketing tiếng Việt",
-    desc: "Đội content viết landing page, dịch catalogue, chạy ads tới buyer VN.",
+    title: "越南语营销",
+    desc: "内容团队撰写落地页、翻译目录、向越南采购商投放广告。",
   },
 ];
 
 const STEPS = [
-  { n: 1, title: "Gửi hồ sơ", desc: "Form 5 phút + brochure / catalogue (PDF)" },
-  { n: 2, title: "Phỏng vấn online", desc: "Video call 30 phút với QC team — kiểm tra capability" },
-  { n: 3, title: "Audit on-site", desc: "Đội tại Quảng Châu đến nhà máy 1 ngày — chụp ảnh, video, tài liệu" },
-  { n: 4, title: "Onboarding listing", desc: "Tạo profile + 10 sản phẩm chủ lực, training 1-on-1" },
-  { n: 5, title: "Go-live & RFQ đầu tiên", desc: "Trung bình 30 ngày từ ngày gửi hồ sơ" },
+  { n: 1, title: "提交资料", desc: "5 分钟表单 + 宣传册 / 目录（PDF）" },
+  { n: 2, title: "线上面谈", desc: "与 QC 团队 30 分钟视频通话——核实生产能力" },
+  { n: 3, title: "实地验厂", desc: "广州团队赴厂 1 天——拍照、录像、收集资料" },
+  { n: 4, title: "入驻上架", desc: "创建档案 + 10 款主打产品，一对一培训" },
+  { n: 5, title: "上线 & 首张询价", desc: "自提交资料起平均 30 天" },
 ];
 
 const FAQ = [
   {
-    q: "Tôi có phải trả phí gì không?",
-    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Huayuesc chỉ tính 5% commission khi có đơn hàng thành công.",
+    q: "我需要支付任何费用吗？",
+    a: "不需要。注册、验厂、入驻、托管、营销——全部免费。华越仅在订单成交时收取 5% 佣金。",
   },
   {
-    q: "Audit mất bao lâu?",
-    a: "1 ngày on-site + 3-5 ngày làm báo cáo. Tổng từ lúc đặt lịch đến khi có báo cáo audit khoảng 7-10 ngày.",
+    q: "验厂需要多久？",
+    a: "实地 1 天 + 出报告 3-5 天。从预约到拿到验厂报告，总计约 7-10 天。",
   },
   {
-    q: "Tôi có cần biết tiếng Việt?",
-    a: "Không. Đội tại Quảng Châu nói tiếng Trung và xử lý mọi giao dịch với buyer VN. Bạn chỉ cần tập trung vào sản xuất.",
+    q: "我需要懂越南语吗？",
+    a: "不需要。广州团队讲中文，处理与越南采购商的所有交易。您只需专注于生产。",
   },
   {
-    q: "Bao nhiêu nhà máy đã go-live?",
-    a: "40+ nhà máy verified tính tới Q4/2025, trung bình mỗi quý onboard thêm 8-12 nhà máy.",
+    q: "已有多少家工厂上线？",
+    a: "截至 2025 Q4 已有 40+ 家已认证工厂，平均每季度新增 8-12 家。",
   },
 ];
 
@@ -58,9 +58,9 @@ export default function RegisterFactoryPage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Bán trên CSR", href: "/sell-on-csr" },
-          { label: "Đăng ký nhà máy" },
+          { label: "首页", href: "/" },
+          { label: "入驻 CSR", href: "/sell-on-csr" },
+          { label: "工厂注册" },
         ]}
       />
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
@@ -71,32 +71,31 @@ export default function RegisterFactoryPage() {
         >
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2.5">
-              🏭 ĐĂNG KÝ NHÀ CUNG CẤP
+              🏭 供应商注册
             </span>
             <h1 className="text-[26px] font-extrabold leading-tight mb-1.5 max-md:text-[22px]">
-              Đăng ký nhà máy trên <span className="text-gold">Huayuesc</span>
+              在 <span className="text-gold">Huayuesc</span> 注册工厂
             </h1>
             <p className="text-[13px] opacity-90 leading-relaxed max-w-[680px]">
-              Tiếp cận 600+ đại lý Việt Nam đang chủ động tìm nhà cung cấp Trung Quốc.
-              Kiểm định tại chỗ miễn phí, onboarding 1-on-1, không phí listing, chỉ trả 5% commission khi có đơn.
+              触达 600+ 家正在主动寻找中国供应商的越南经销商。免费实地验厂、一对一入驻、无上架费，成交才付 5% 佣金。
             </p>
           </div>
           <div className="flex flex-col gap-2 text-[12px] opacity-90 min-w-[200px]">
             <div className="flex justify-between">
-              <span>🏭 Suppliers verified</span>
+              <span>🏭 已认证供应商</span>
               <b>40+</b>
             </div>
             <div className="flex justify-between">
-              <span>📦 RFQ / tháng</span>
+              <span>📦 月询价量</span>
               <b>1,200+</b>
             </div>
             <div className="flex justify-between">
-              <span>💰 GMV 2025</span>
+              <span>💰 2025 年 GMV</span>
               <b>$8.2M</b>
             </div>
             <div className="flex justify-between">
-              <span>⏱ Time to go-live</span>
-              <b>~30 ngày</b>
+              <span>⏱ 上线周期</span>
+              <b>~30 天</b>
             </div>
           </div>
         </div>
@@ -118,7 +117,7 @@ export default function RegisterFactoryPage() {
             {/* Quick OAuth signup */}
             <div className="mb-5">
               <p className="text-[12.5px] text-mute mb-2.5">
-                ⚡ Bắt đầu nhanh với tài khoản công ty:
+                ⚡ 用公司账户快速开始：
               </p>
               <div className="grid grid-cols-3 gap-2">
                 {LOGIN_PROVIDERS.map((p) => (
@@ -126,7 +125,7 @@ export default function RegisterFactoryPage() {
                     key={p.name}
                     href={`/register/oauth/${p.name.toLowerCase()}?role=supplier`}
                     className="flex items-center justify-center gap-2 py-2.5 border border-line rounded-sm text-[12.5px] font-semibold text-ink cursor-pointer hover:border-brand hover:bg-bg"
-                    aria-label={`Đăng ký với ${p.name}`}
+                    aria-label={`使用 ${p.name} 注册`}
                   >
                     <span className="flex-shrink-0">{p.icon}</span>
                     <span>{p.name}</span>
@@ -138,7 +137,7 @@ export default function RegisterFactoryPage() {
             <div className="flex items-center gap-3 mb-5">
               <div className="flex-1 h-px bg-line" />
               <span className="text-[10.5px] text-mute2 uppercase tracking-wider">
-                Hoặc điền hồ sơ chi tiết
+                或填写详细资料
               </span>
               <div className="flex-1 h-px bg-line" />
             </div>
@@ -147,12 +146,12 @@ export default function RegisterFactoryPage() {
               {/* Section: Company info */}
               <div>
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ① Thông tin công ty
+                  ① 公司信息
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tên công ty <span className="text-accent">*</span>
+                      公司名称 <span className="text-accent">*</span>
                     </label>
                     <input
                       name="company"
@@ -163,7 +162,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Năm thành lập <span className="text-accent">*</span>
+                      成立年份 <span className="text-accent">*</span>
                     </label>
                     <input
                       name="founded"
@@ -175,29 +174,29 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Loại hình kinh doanh <span className="text-accent">*</span>
+                      经营类型 <span className="text-accent">*</span>
                     </label>
                     <select
                       name="businessType"
                       required
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>Manufacturer (Nhà sản xuất)</option>
-                      <option>Manufacturer + Trading</option>
-                      <option>Trading Company</option>
-                      <option>Distributor / Agent</option>
+                      <option>制造商（Manufacturer）</option>
+                      <option>制造商 + 贸易（Manufacturer + Trading）</option>
+                      <option>贸易公司（Trading Company）</option>
+                      <option>分销商 / 代理（Distributor / Agent）</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tỉnh / Thành <span className="text-accent">*</span>
+                      省 / 市 <span className="text-accent">*</span>
                     </label>
                     <select
                       name="province"
                       required
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option value="">-- Chọn tỉnh --</option>
+                      <option value="">-- 选择省份 --</option>
                       <option>Foshan, Guangdong</option>
                       <option>Guangzhou, Guangdong</option>
                       <option>Shenzhen, Guangdong</option>
@@ -208,12 +207,12 @@ export default function RegisterFactoryPage() {
                       <option>Yiwu, Zhejiang</option>
                       <option>Shanghai</option>
                       <option>Tianjin</option>
-                      <option>Khác</option>
+                      <option>其他</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Số nhân viên
+                      员工人数
                     </label>
                     <select
                       name="employees"
@@ -231,12 +230,12 @@ export default function RegisterFactoryPage() {
               {/* Section: Production capability */}
               <div className="pt-3 border-t border-line">
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ② Năng lực sản xuất
+                  ② 生产能力
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Diện tích nhà máy (m²)
+                      工厂面积（㎡）
                     </label>
                     <input
                       name="area"
@@ -247,43 +246,43 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Capacity / tháng
+                      月产能
                     </label>
                     <input
                       name="capacity"
-                      placeholder="Vd: 200,000 pcs / month"
+                      placeholder="例：200,000 pcs / month"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      MOQ điển hình
+                      典型起订量
                     </label>
                     <input
                       name="moq"
-                      placeholder="Vd: 500 pcs / 50 kg / 1 cont 20"
+                      placeholder="例：500 pcs / 50 kg / 1×20 集装箱"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Thời gian giao trung bình
+                      平均交货周期
                     </label>
                     <select
                       name="leadTime"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>7 – 15 ngày</option>
-                      <option>15 – 30 ngày</option>
-                      <option>30 – 45 ngày</option>
-                      <option>45 – 60 ngày</option>
-                      <option>&gt; 60 ngày</option>
+                      <option>7 – 15 天</option>
+                      <option>15 – 30 天</option>
+                      <option>30 – 45 天</option>
+                      <option>45 – 60 天</option>
+                      <option>&gt; 60 天</option>
                     </select>
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Sản phẩm chính <span className="text-accent">*</span>{" "}
-                      <span className="text-mute2 font-normal text-[11px]">(chọn nhiều)</span>
+                      主营产品 <span className="text-accent">*</span>{" "}
+                      <span className="text-mute2 font-normal text-[11px]">（可多选）</span>
                     </label>
                     <div className="grid grid-cols-3 gap-2 max-md:grid-cols-2">
                       {NAV_CATEGORIES.map((c) => (
@@ -305,7 +304,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Năm bắt đầu xuất khẩu
+                      开始出口年份
                     </label>
                     <input
                       name="exportYear"
@@ -316,7 +315,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Kim ngạch / năm (USD)
+                      年出口额（USD）
                     </label>
                     <select
                       name="revenue"
@@ -330,8 +329,8 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Chứng nhận hiện có{" "}
-                      <span className="text-mute2 font-normal text-[11px]">(chọn nhiều)</span>
+                      现有认证{" "}
+                      <span className="text-mute2 font-normal text-[11px]">（可多选）</span>
                     </label>
                     <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
                       {[
@@ -342,7 +341,7 @@ export default function RegisterFactoryPage() {
                         "CE",
                         "RoHS",
                         "FDA",
-                        "Khác",
+                        "其他",
                       ].map((cert) => (
                         <label
                           key={cert}
@@ -365,23 +364,23 @@ export default function RegisterFactoryPage() {
               {/* Section: Contact + documents */}
               <div className="pt-3 border-t border-line">
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ③ Liên hệ & hồ sơ
+                  ③ 联系与资料
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Người liên hệ <span className="text-accent">*</span>
+                      联系人 <span className="text-accent">*</span>
                     </label>
                     <input
                       name="contactName"
                       required
-                      placeholder="Tên người liên hệ tại nhà máy"
+                      placeholder="工厂联系人姓名"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Chức vụ
+                      职务
                     </label>
                     <input
                       name="contactRole"
@@ -391,7 +390,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Email <span className="text-accent">*</span>
+                      邮箱 <span className="text-accent">*</span>
                     </label>
                     <input
                       name="email"
@@ -403,29 +402,29 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      WeChat / WhatsApp
+                      微信 / WhatsApp
                     </label>
                     <input
                       name="im"
-                      placeholder="WeChat ID hoặc số WhatsApp"
+                      placeholder="微信号或 WhatsApp 号码"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tải hồ sơ năng lực (PDF, brochure, catalogue)
+                      上传能力资料（PDF、宣传册、目录）
                     </label>
                     <div className="border-2 border-dashed border-line rounded p-5 text-center text-[12.5px] text-mute hover:border-brand cursor-pointer">
-                      📎 Click hoặc kéo thả file PDF, ZIP — tối đa 20MB
+                      📎 点击或拖放 PDF、ZIP 文件——最大 20MB
                       <br />
                       <small className="text-[11px] text-mute2">
-                        Khuyến nghị: catalogue sản phẩm + giấy phép kinh doanh + ảnh nhà máy
+                        建议：产品目录 + 营业执照 + 工厂照片
                       </small>
                     </div>
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Website hiện có (nếu có)
+                      现有网站（如有）
                     </label>
                     <input
                       name="website"
@@ -440,14 +439,14 @@ export default function RegisterFactoryPage() {
               <label className="flex items-start gap-2 text-[12px] text-mute mt-4">
                 <input type="checkbox" required className="accent-brand mt-0.5" />
                 <span>
-                  Đồng ý cho Huayuesc thực hiện audit on-site và đồng ý{" "}
+                  同意华越进行实地验厂，并同意{" "}
                   <Link
                     href="/info/terms-of-service"
                     className="text-brand cursor-pointer hover:underline"
                   >
-                    Điều khoản NCC
-                  </Link>{" "}
-                  (commission 5% trên đơn hàng thành công).
+                    供应商条款
+                  </Link>
+                  （成交订单收取 5% 佣金）。
                 </span>
               </label>
 
@@ -455,12 +454,12 @@ export default function RegisterFactoryPage() {
                 type="submit"
                 className="w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light mt-3"
               >
-                Gửi đăng ký nhà máy →
+                提交工厂注册 →
               </button>
               <p className="text-[12px] text-mute text-center">
-                Đã có tài khoản?{" "}
+                已有账户？{" "}
                 <Link href="/login" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Đăng nhập
+                  登录
                 </Link>
               </p>
             </form>
@@ -469,7 +468,7 @@ export default function RegisterFactoryPage() {
           {/* === RIGHT: side info ======================================== */}
           <aside className="space-y-4 self-start">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">📋 Quy trình 5 bước</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">📋 5 步流程</b>
               <ol className="space-y-3">
                 {STEPS.map((s) => (
                   <li key={s.n} className="flex gap-2.5">
@@ -486,7 +485,7 @@ export default function RegisterFactoryPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">❓ FAQ ngắn</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">❓ 简明 FAQ</b>
               <div className="space-y-3">
                 {FAQ.map((f) => (
                   <details key={f.q} className="group">
@@ -506,9 +505,9 @@ export default function RegisterFactoryPage() {
               className="rounded p-4 text-white"
               style={{ background: "linear-gradient(135deg,#005F6B,#003A42)" }}
             >
-              <b className="block text-[14px] font-bold mb-1">💬 Cần tư vấn trước?</b>
+              <b className="block text-[14px] font-bold mb-1">💬 想先咨询？</b>
               <p className="text-[11.5px] opacity-90 leading-snug mb-2.5">
-                Đội tại Quảng Châu sẵn sàng video call (tiếng Trung).
+                广州团队随时可视频通话（中文）。
               </p>
               <div className="text-[11.5px] opacity-90 space-y-1">
                 <div>📞 +86 20 1234 5678</div>
@@ -518,15 +517,15 @@ export default function RegisterFactoryPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-4">
-              <b className="block text-[12.5px] text-ink mb-1">🛍 Bạn là người mua?</b>
+              <b className="block text-[12.5px] text-ink mb-1">🛍 您是采购商？</b>
               <p className="text-[11.5px] text-mute leading-snug mb-2">
-                Đăng ký Người mua để gửi RFQ và nhận audit miễn phí.
+                注册采购商，发送询价并获得免费验厂。
               </p>
               <Link
                 href="/register/buyer"
                 className="text-[12px] text-brand font-semibold cursor-pointer hover:underline"
               >
-                Đăng ký Người mua →
+                采购商注册 →
               </Link>
             </div>
           </aside>
@@ -536,4 +535,4 @@ export default function RegisterFactoryPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký nhà máy — Huayuesc" };
+export const metadata = { title: "工厂注册 — Huayuesc" };

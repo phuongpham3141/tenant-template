@@ -71,7 +71,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
     <div className="p-4 space-y-3">
       <div>
         <div className="text-[11px] text-mute uppercase tracking-wider mb-1.5">
-          Ngôn ngữ
+          语言
         </div>
         <div className="grid grid-cols-2 gap-1.5">
           {LOCALE_LIST.map((l) => {
@@ -96,7 +96,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
       </div>
       <div>
         <div className="text-[11px] text-mute uppercase tracking-wider mb-1.5">
-          Tiền tệ
+          货币
         </div>
         <div className="grid grid-cols-3 gap-1.5">
           {LOCALE_LIST.map((l) => {

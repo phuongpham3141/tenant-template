@@ -14,7 +14,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
           <div className="absolute top-1.5 left-1.5 flex flex-col gap-1">
             {p.amazing && (
               <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">
-                Tuyệt vời
+                超值
               </span>
             )}
             {p.monthLabel && (
@@ -24,13 +24,13 @@ export function ProdCard({ p }: { p: ListingProduct }) {
             )}
           </div>
         )}
-        <span className="absolute top-1.5 right-1.5 w-7 h-7 bg-white/90 rounded-full flex items-center justify-center text-[14px] text-mute hover:text-accent cursor-pointer" aria-label="Yêu thích">
+        <span className="absolute top-1.5 right-1.5 w-7 h-7 bg-white/90 rounded-full flex items-center justify-center text-[14px] text-mute hover:text-accent cursor-pointer" aria-label="收藏">
           ♡
         </span>
         <span className="absolute bottom-1.5 left-1.5 bg-black/65 text-white text-[10.5px] px-1.5 py-0.5 rounded-sm font-medium">
           {p.isVideo ? "▶ " : ""}1/{p.img.total}
         </span>
-        <span className="absolute bottom-1.5 right-1.5 w-6 h-6 bg-white/90 rounded-sm flex items-center justify-center text-[12px] text-mute cursor-pointer" aria-label="Xem ảnh lớn">
+        <span className="absolute bottom-1.5 right-1.5 w-6 h-6 bg-white/90 rounded-sm flex items-center justify-center text-[12px] text-mute cursor-pointer" aria-label="查看大图">
           ⌕
         </span>
       </Link>
@@ -39,7 +39,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
       <div className="flex flex-col min-w-0 max-md:order-3">
         {p.guaranteed && (
           <span className="text-success text-[11.5px] font-semibold mb-1.5 flex items-center gap-1">
-            ● Giao dịch bảo đảm
+            ● 交易保障
           </span>
         )}
         <Link href={href} className="cursor-pointer">
@@ -53,7 +53,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
           <small className="text-mute font-normal text-[12px] ml-1">{p.unit}</small>
         </div>
         <div className="text-[12px] text-mute mb-2">
-          <b className="text-ink">{p.moq}</b> (Số lượng tối thiểu)
+          <b className="text-ink">{p.moq}</b>（起订量）
         </div>
         <Link href={href} className="cursor-pointer">
           <p className="text-[12px] text-mute leading-relaxed line-clamp-2 hover:text-brand">{p.desc}</p>
@@ -67,7 +67,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
         </b>
         {p.supplier.audited && (
           <span className="text-gold text-[11.5px] font-semibold mb-1.5">
-            ✓ Đã kiểm định
+            ✓ 已验厂
           </span>
         )}
         <span className="text-[11.5px] text-mute mb-3 flex items-center gap-1">
@@ -75,7 +75,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
         </span>
         <div className="flex flex-col gap-1.5 mt-auto">
           <button className="px-3 py-1.5 bg-accent text-white text-[12px] font-semibold rounded-full cursor-pointer hover:bg-[#B81827]">
-            Liên hệ ngay
+            立即联系
           </button>
           <button className="px-3 py-1.5 bg-paper text-brand border border-brand text-[12px] font-semibold rounded-full cursor-pointer hover:bg-brand hover:text-white">
             💬 Chat

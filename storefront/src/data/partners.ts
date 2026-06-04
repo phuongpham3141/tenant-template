@@ -1,48 +1,97 @@
+import { KITO_PRODUCTS } from "@/data/catalogs/kito";
+import { MIDEA_PRODUCTS } from "@/data/catalogs/midea";
+import { TOSHIBA_PRODUCTS } from "@/data/catalogs/toshiba";
+import { LESSO_PRODUCTS } from "@/data/catalogs/lesso";
+import { TEKA_PRODUCTS } from "@/data/catalogs/teka";
+import { DUC_THINH_STONE_PRODUCTS } from "@/data/catalogs/duc-thinh-stone";
+import { YUHONG_PRODUCTS } from "@/data/catalogs/yuhong";
+import { ANBI_PRODUCTS } from "@/data/catalogs/anbi";
+import { GUANGRI_PRODUCTS } from "@/data/catalogs/guangri";
+import { TOSHIBA_ELEVATOR_PRODUCTS } from "@/data/catalogs/toshiba-elevator";
+import { TEEHO_PRODUCTS } from "@/data/catalogs/teeho";
+import { TREES_PRODUCTS } from "@/data/catalogs/3trees";
+import { DULUX_PRO_PRODUCTS } from "@/data/catalogs/dulux-pro";
+import { DAWEIER_PRODUCTS } from "@/data/catalogs/daweier";
+import { PENGXIANG_PRODUCTS } from "@/data/catalogs/pengxiang";
+import { TTLOCK_PRODUCTS } from "@/data/catalogs/ttlock";
+import { LINVOL_PRODUCTS } from "@/data/catalogs/linvol";
+import { SYLVANIA_PRODUCTS } from "@/data/catalogs/sylvania";
+import { BRAVAT_PRODUCTS } from "@/data/catalogs/bravat";
+import { FSL_PRODUCTS } from "@/data/catalogs/fsl";
+import { DONGYUAN_PRODUCTS } from "@/data/catalogs/dongyuan";
+import { CARE_LIGHTING_PRODUCTS } from "@/data/catalogs/care-lighting";
+import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
+import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
+
 /**
- * Đối tác sản xuất của Huayue 华越供应链 — 12 thương hiệu có hợp tác chính
- * thức, đã được phòng sourcing Quảng Châu thẩm định và cấp catalog
- * phục vụ phân phối tại thị trường Việt Nam.
+ * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
+ * 审核并提供产品目录，服务于越南市场分销。
  *
- * Mỗi đối tác được map vào MỘT root category chính trong NAV_MENU (slug).
- * Nội dung gốc tiếng Trung / Anh đã được lược dịch + viết lại tiếng Việt
- * cho phù hợp với khách hàng B2B Việt Nam — không sao chép nguyên văn
- * marketing copy của brand.
+ * 每个合作伙伴均映射到 NAV_MENU 中的某一个主分类（slug）。
+ * 原始中文 / 英文内容已编译并改写为简体中文，
+ * 以契合 B2B 客户，未原样照搬品牌的市场宣传文案。
  */
 
 export type PartnerProduct = {
-  /** SKU / model code chính thức của nhà máy. */
+  /** 工厂官方 SKU / 型号代码。 */
   model: string;
-  /** Tên sản phẩm tiếng Việt. */
+  /** URL slug —— 路径 /info/partners/{partner}/{productSlug}。
+   *  未设置时默认 = model.toLowerCase()。 */
+  slug?: string;
+  /** 产品名称。 */
   name: string;
-  /** Mô tả ngắn 1-2 câu tiếng Việt (đặc tính / công năng chính). */
+  /** 中文原名（如有）。 */
+  nameOriginal?: string;
+  /** 系列 / 产品线名称。 */
+  series?: string;
+  /** 中文原始系列名。 */
+  seriesOriginal?: string;
+  /** 简短描述 1-2 句（主要特性 / 功能）。 */
   desc?: string;
-  /** Ảnh sản phẩm — URL trực tiếp từ CDN của brand hoặc /img/ local. */
+  /** 详情页长描述。 */
+  longDesc?: string;
+  /** 产品图片 —— 品牌 CDN 直链或本地 /img/。 */
   image?: string;
+  /** 详情页附加图片（图库）。 */
+  gallery?: string[];
+  /** 尺寸（如 "1200×600 mm"）。 */
+  dimensions?: string;
+  /** 表面 / 饰面。 */
+  surface?: string;
+  /** 突出特性。 */
+  features?: string[];
+  /** 应用 / 适用空间。 */
+  applications?: string[];
+  /** 真实技术参数表（从品牌产品页抓取）。
+   *  k = 标签（如 "容量"），v = 数值（如 "8.5 kg"）。 */
+  specs?: { k: string; v: string }[];
+  /** 品牌官网原始产品页链接（用于溯源）。 */
+  sourceUrl?: string;
 };
 
 export type PartnerFactory = {
-  /** Địa chỉ nhà máy (thành phố, tỉnh, quốc gia). */
+  /** 工厂地址（城市、省份、国家）。 */
   location: string;
-  /** Diện tích nhà máy. */
+  /** 工厂面积。 */
   area?: string;
-  /** Số nhân viên / công nhân. */
+  /** 员工 / 工人数量。 */
   employees?: string;
-  /** Công suất sản xuất hàng năm. */
+  /** 年产能。 */
   capacity?: string;
-  /** Số lượng cơ sở (sản xuất / R&D / logistics). */
+  /** 基地数量（生产 / 研发 / 物流）。 */
   facilities?: string;
-  /** Tổng vốn đầu tư nhà máy. */
+  /** 工厂总投资额。 */
   investment?: string;
 };
 
 export type PartnerBrand = {
-  /** URL slug — đường dẫn /info/partners/{slug}. */
+  /** URL slug —— 路径 /info/partners/{slug}。 */
   slug: string;
-  /** Tên thương hiệu tiếng Việt (nếu có) hoặc giữ tên gốc Latinh. */
+  /** 品牌名称（如有中文名）或保留拉丁原名。 */
   name: string;
-  /** Tên gốc Trung + tên Latinh để khách nhận diện. */
+  /** 中文原名 + 拉丁名，便于客户识别。 */
   nameOriginal: string;
-  /** Slug của root category trong NAV_MENU. */
+  /** NAV_MENU 中主分类的 slug。 */
   category:
     | "home-garden"
     | "construction-materials"
@@ -52,35 +101,38 @@ export type PartnerBrand = {
     | "lighting"
     | "doors-windows"
     | "electrical";
-  /** STT trong CSV gốc (để trace nguồn). */
+  /** 原始 CSV 序号（用于溯源）。 */
   cvsStt: number;
-  /** Logo URL (nếu có). */
+  /** Logo URL（如有）。 */
   logo?: string;
+  /** 若 logo 为白色透明底设计（仅在深色背景显示），
+   *  设置 `logoBg: "dark"` 使所有 logo 容器改用深色背景而非白色。 */
+  logoBg?: "dark";
   /** Banner / hero image. */
   banner?: string;
 
-  /** Giới thiệu công ty — đoạn văn 2-3 câu tiếng Việt. */
+  /** 公司简介 —— 2-3 句段落。 */
   introduction: string;
-  /** Năm thành lập. */
+  /** 成立年份。 */
   founded?: string;
-  /** Nếu là công ty niêm yết — mã chứng khoán. */
+  /** 若为上市公司 —— 股票代码。 */
   listed?: string;
 
   factory: PartnerFactory;
 
-  /** Điểm nổi bật (chứng nhận, giải thưởng, công nghệ độc quyền, dự án lớn). */
+  /** 亮点（认证、奖项、专有技术、大型项目）。 */
   highlights: string[];
 
   /** Hotline + website. */
   hotline?: string;
   website: string;
 
-  /** Toàn bộ sản phẩm chính. */
+  /** 全部主要产品。 */
   products: PartnerProduct[];
 };
 
 export const PARTNERS: PartnerBrand[] = [
-  // ─── ⚡ ĐIỆN & THIẾT BỊ ĐIỆN ─────────────────────────────────────────
+  // ─── ⚡ 电气与电器 ─────────────────────────────────────────
   {
     slug: "midea",
     name: "Midea",
@@ -91,34 +143,22 @@ export const PARTNERS: PartnerBrand[] = [
     banner:
       "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%841.png",
     introduction:
-      "Midea là tập đoàn điện gia dụng đa thương hiệu hàng đầu Trung Quốc, sở hữu danh mục thương hiệu chiến lược phục vụ từ phân khúc phổ thông đến cao cấp. Các sản phẩm điều hoà, tủ lạnh, máy giặt cùng đồ điện nhà bếp + đồ điện gia dụng nhỏ của Midea chiếm thị phần dẫn đầu tại Trung Quốc và xuất khẩu hơn 200 quốc gia.",
+      "美的是中国领先的多品牌家电集团，拥有覆盖中端到高端的战略品牌矩阵。美的的空调、冰箱、洗衣机以及厨房电器与小家电产品在中国市场占有领先份额，并出口至 200 多个国家。",
     founded: "1968",
     listed: "SZSE 000333",
     factory: {
-      location: "Trụ sở chính: Phật Sơn, tỉnh Quảng Đông, Trung Quốc",
-      facilities: "30+ nhà máy + 35+ trung tâm R&D toàn cầu",
-      employees: "180.000+ nhân viên (toàn tập đoàn)",
+      location: "总部：中国广东省佛山市",
+      facilities: "全球 30+ 工厂 + 35+ 研发中心",
+      employees: "180,000+ 名员工（集团整体）",
     },
     highlights: [
-      "Fortune Global 500 (vào top từ 2016 đến nay)",
-      "Sở hữu 7 sub-brand chiến lược: Midea, Little Swan, COLMO (cao cấp AI), Toshiba (cao cấp Nhật), Cuckoo, Hualing (trẻ + giá rẻ), Comfee (xuất khẩu)",
-      "Mạng lưới phân phối phủ 200+ quốc gia",
-      "Niêm yết sàn Thâm Quyến mã 000333",
+      "《财富》世界 500 强（自 2016 年起持续上榜）",
+      "拥有 7 大战略子品牌：Midea、Little Swan、COLMO（高端 AI）、Toshiba（日系高端）、Cuckoo、Hualing（年轻 + 高性价比）、Comfee（出口）",
+      "分销网络覆盖 200+ 个国家",
+      "深圳证券交易所上市，代码 000333",
     ],
     website: "https://www.midea.com.cn/zh/our-businesses/Smart-Home-Business-Unit/midea",
-    products: [
-      { model: "AC", name: "Điều hoà gia dụng", desc: "Điều hoà treo tường + cây + multi-split inverter, công suất 9.000-24.000 BTU.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%84%E5%B0%8F%E5%9B%BE1.png" },
-      { model: "C-AC", name: "Điều hoà trung tâm", desc: "Điều hoà trung tâm cho biệt thự, văn phòng, khách sạn — VRF/multi-V.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%84%E5%B0%8F%E5%9B%BE2.png" },
-      { model: "WM", name: "Máy giặt", desc: "Máy giặt cửa trên + cửa trước inverter, tải 7-12 kg. Có dòng combo giặt sấy.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%84%E5%B0%8F%E5%9B%BE3.png" },
-      { model: "RF", name: "Tủ lạnh", desc: "Tủ lạnh side-by-side + French door + ngăn đá trên, dung tích 200-650L.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%84%E5%B0%8F%E5%9B%BE4.png" },
-      { model: "RH-DW", name: "Hút mùi + Máy rửa bát", desc: "Combo bếp: máy hút mùi áp trần/kệ trên 700-1300 m³/h + máy rửa bát 8-14 bộ.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/img-midea-CATEGORIES-Residential%20AC%20@2x%20(2).png" },
-      { model: "WH", name: "Bình nóng lạnh", desc: "Bình nóng lạnh điện gián tiếp 15-100L + trực tiếp 3500W + năng lượng mặt trời + heat-pump.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/img-midea-CATEGORIES-Commerical%20AC%20@2x%20(1)1652768953857.png" },
-      { model: "WP", name: "Máy lọc + cây nước", desc: "Máy lọc nước RO 5/6/7 cấp + cây nước nóng lạnh cho gia đình + văn phòng.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/img-midea-CATEGORIES-Laundry%20Appliances%20@2x%20(1)1652768953863.png" },
-      { model: "SA", name: "Đồ điện gia dụng nhỏ", desc: "Nồi cơm điện cao tần IH, ấm điện, bếp từ đơn, máy ép trái cây, máy xay đa năng.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/img-midea-CATEGORIES-Refrigerator%20@2x%20(1)1652768953869.png" },
-      { model: "MW", name: "Lò vi sóng + lò hấp nướng", desc: "Lò vi sóng cơ học/điện tử + lò hấp nướng đa năng 20-42L.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/%E7%BE%8E%E7%9A%84%E6%B6%88%E8%B4%B9%E7%94%B5%E5%99%A8%E4%BA%A7%E5%93%81%E5%85%A5%E5%8F%A3-%E5%BE%AE%E6%B3%A2%E7%82%89.png" },
-      { model: "CA", name: "Đồ điện vệ sinh", desc: "Máy hút bụi cầm tay + robot lau nhà + máy hơi nước + máy lọc không khí.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/%E7%BE%8E%E7%9A%84-%E4%BA%A7%E5%93%81%E7%B1%BB%E5%88%AB%E5%85%A5%E5%8F%A3.jpg" },
-      { model: "WS", name: "Đồ điện kiểu Tây", desc: "Máy pha cà phê + máy nướng bánh mì + máy đánh trứng + lò nướng compact.", image: "https://cn-res.midea.com/content/dam/mideacn-aem/mideacn-aem-old/our-businesses/smart-home-business-unit-/midea/overview/%E8%A5%BF%E5%BC%8F%E5%B0%8F%E7%94%B5.png" },
-    ],
+    products: MIDEA_PRODUCTS,
   },
   {
     slug: "toshiba-home",
@@ -126,26 +166,22 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "东芝家电 Toshiba",
     category: "electrical",
     cvsStt: 3,
+    logo: "/img/logos/toshiba-elevator.png",
     introduction:
-      "Toshiba Home Appliances là thương hiệu điện gia dụng cao cấp gốc Nhật Bản với hơn 100 năm lịch sử. Mảng điện gia dụng tại Trung Quốc do tập đoàn Midea vận hành, tập trung phân khúc cao cấp với công nghệ Nhật, gia công tinh xảo và bảo quản tươi sống vượt trội.",
+      "东芝家电是源自日本、拥有逾百年历史的高端家电品牌。其中国家电业务由美的集团运营，专注高端市场，融合日本技术、精湛工艺与卓越的保鲜性能。",
     founded: "1875 (Toshiba Corp)",
     factory: {
-      location: "Vận hành bởi Midea Group tại Phật Sơn, Quảng Đông, Trung Quốc",
-      facilities: "Sử dụng cơ sở sản xuất chung của tập đoàn Midea",
+      location: "由美的集团在中国广东佛山运营",
+      facilities: "共用美的集团的生产基地",
     },
     highlights: [
-      "Thương hiệu cao cấp Nhật Bản với di sản hơn 100 năm",
-      "Vận hành tại TQ bởi Midea Group — sức mạnh sản xuất TQ + know-how Nhật",
-      "Tập trung 4 dòng chủ lực: tủ lạnh, máy rửa bát, nồi cơm điện IH, lò hấp nướng",
-      "Phân khúc cao cấp, kênh phân phối qua Midea Lifestyle",
+      "拥有逾 150 年传承的日本品牌（东芝株式会社始于 1875 年）",
+      "家电业务自 2016 年起由美的集团运营 —— 研发保留于东京",
+      "产品线齐全：空调、冰箱、洗衣机、烘干机、灶具、净水器、风扇、吸尘器",
+      "在越南由 Toshiba Lifestyle 正品分销（toshiba-lifestyle.com/vn）",
     ],
-    website: "https://www.midea.com.cn/zh/our-businesses/Smart-Home-Business-Unit/toshiba",
-    products: [
-      { model: "T-RF", name: "Tủ lạnh Toshiba", desc: "Tủ lạnh side-by-side + multi-door công nghệ giữ tươi Nhật, 400-650L." },
-      { model: "T-DW", name: "Máy rửa bát Toshiba", desc: "Máy rửa bát âm tủ + độc lập 8-14 bộ, sấy nóng + diệt khuẩn UV." },
-      { model: "T-RC", name: "Nồi cơm điện Toshiba", desc: "Nồi cơm điện cao tần IH, lòng đồng tinh khiết, dung tích 1.0-1.8L." },
-      { model: "T-SO", name: "Lò hấp nướng Toshiba", desc: "Lò hấp + nướng + vi sóng combo, kết hợp 3-in-1, 28-32L." },
-    ],
+    website: "https://www.toshiba-lifestyle.com/vn/",
+    products: TOSHIBA_PRODUCTS,
   },
   {
     slug: "lesso",
@@ -155,36 +191,23 @@ export const PARTNERS: PartnerBrand[] = [
     cvsStt: 29,
     logo: "https://www.lesso.com/uploads/20260210/1469496bff5ab6eba035b3c4ef12df07.png",
     introduction:
-      "Lesso là tập đoàn vật liệu xây dựng + nội thất + chuỗi cung ứng quy mô lớn của Trung Quốc, kinh doanh đa lĩnh vực gồm ống nhựa, dây điện - cáp, vật liệu xây dựng, môi trường, năng lượng mới. Sản phẩm phục vụ thị trường dân dụng, công nghiệp, nông nghiệp và hạ tầng kỹ thuật.",
+      "联塑是中国大型建材 + 家居 + 供应链集团，业务涵盖塑料管道、电线电缆、建筑材料、环保、新能源等多个领域。产品服务于民用、工业、农业及市政基础设施市场。",
     factory: {
-      location: "Trụ sở chính: Long Giang, Thuận Đức, Phật Sơn, Quảng Đông, Trung Quốc",
-      facilities: "30+ nhà máy lớn tại Trung Quốc và Đông Nam Á",
+      location: "总部：中国广东省佛山市顺德区龙江",
+      facilities: "在中国及东南亚拥有 30+ 大型工厂",
     },
     highlights: [
-      "Hotline 24/7 toàn quốc: 400-168-2128",
-      "Hiện diện qua 7 thị trường quốc tế: Tiếng Anh, UAE, Mỹ, Indonesia, Ấn Độ, Malaysia, Campuchia",
-      "6 hệ sản phẩm: thi công đô thị, dân dụng, nông nghiệp, công nghiệp - thương mại, PCCC, khí gas",
-      "Vận chuyển trực tiếp container từ nhà máy về Việt Nam",
+      "全国 7×24 小时热线：400-168-2128",
+      "布局 7 个国际市场：英语区、阿联酋、美国、印度尼西亚、印度、马来西亚、柬埔寨",
+      "6 大产品体系：市政工程、民用、农业、工商业、消防、燃气",
+      "从工厂直接整柜发运至越南",
     ],
     hotline: "400-168-2128",
     website: "https://www.lessopipe.com/",
-    products: [
-      { model: "PVC-U-WS", name: "Ống PVC-U cấp nước", desc: "Ống PVC-U dẫn nước sạch đô thị, nhẹ, chống ăn mòn, áp suất PN10-PN16.", image: "https://www.lesso.com/uploads/20250416/6b9dba8f64ec375f650e9a71bb7c8221.jpg" },
-      { model: "PE-WS", name: "Ống PE cấp nước", desc: "Ống polyethylene cấp nước, khả năng chịu va đập + chống ăn mòn cao.", image: "https://www.lesso.com/uploads/20250416/56084439e33922987411b43db7f58dcc.jpg" },
-      { model: "SWM-PE", name: "Ống PE lõi lưới thép", desc: "Ống composite PE cốt lưới thép, chịu áp lực cao, ổn định nhiệt giống thép.", image: "https://www.lesso.com/uploads/20250416/56b1a226e95077e319e146d9bc9ad5f2.jpg" },
-      { model: "GFR-PE", name: "Ống PE gia cường sợi thuỷ tinh", desc: "Ống composite PE 3 lớp, gia cường sợi thuỷ tinh, áp suất cao + kháng hoá chất.", image: "https://www.lesso.com/uploads/20250416/dd178fb50f4013deb74f3ac347fb24e7.jpg" },
-      { model: "HDG-SP", name: "Ống thép mạ kẽm nhúng nóng", desc: "Ống thép mạ kẽm nhúng nóng, độ dày đồng đều, đạt tiêu chuẩn quốc gia.", image: "https://www.lesso.com/upfile/2020/09/20200929113337_954.png" },
-      { model: "PPR-STD", name: "Ống PP-R chuẩn", desc: "Ống PP-R cấp nước nóng lạnh cho công trình dân dụng + thương mại.", image: "https://www.lesso.com/upfile/2018/06/20180613150110_403.jpg" },
-      { model: "PPR-DC", name: "Ống PP-R 2 màu (gia dụng)", desc: "Ống PP-R 2 màu phân biệt nước nóng/lạnh, dòng gia dụng cao cấp.", image: "https://www.lesso.com/uploads/20250416/8ccbbd25ecec99c600b6ea504f43943f.jpg" },
-      { model: "PPR-LOTUS", name: "Ống PP-R lá sen tự làm sạch", desc: "Ống PP-R mặt trong vân lá sen, chống bám cặn + tự làm sạch.", image: "https://www.lesso.com/uploads/20250416/07b4ca00cb06764d3193473c1d8285d0.jpg" },
-      { model: "PPR-NANO", name: "Ống PP-R nano kháng khuẩn", desc: "Ống PP-R phủ nano bạc, kháng khuẩn cho hệ nước sinh hoạt.", image: "https://www.lesso.com/uploads/20250416/aff58b484801b8b8e2fd5b4a68902ce0.jpg" },
-      { model: "PPR-CER", name: "Ống PP-R lõi sứ 2 màu", desc: "Ống PP-R series Sứ Tâm, lõi sứ chịu nhiệt + áp lực cao.", image: "https://www.lesso.com/upfile/2021/12/20211201103717_237.jpg" },
-      { model: "WC", name: "Dây điện - cáp", desc: "Dây điện đơn lõi 1.5-10 mm² + cáp đa lõi mềm + cáp lực 25-95 mm² + cáp điều khiển CY." },
-      { model: "CT", name: "Máng cáp", desc: "Máng cáp tôn sơn epoxy + inox 304 + thang cáp mạ kẽm nhúng nóng." },
-    ],
+    products: LESSO_PRODUCTS,
   },
 
-  // ─── 🍳 THIẾT BỊ NHÀ BẾP ─────────────────────────────────────────────
+  // ─── 🍳 厨房设备 ─────────────────────────────────────────────
   {
     slug: "teka",
     name: "Teka",
@@ -193,68 +216,47 @@ export const PARTNERS: PartnerBrand[] = [
     cvsStt: 4,
     logo: "https://www.teka.com/zh-cn/wp-content/themes/teka/img/teka-new-logo.svg",
     introduction:
-      "Teka là tập đoàn thiết bị bếp và phòng tắm Tây Ban Nha với hơn 100 năm lịch sử. Tập đoàn sở hữu 3 thương hiệu: Teka (1924, gốc Đức), Küppersbusch (1875, cao cấp Đức, nhiều giải Red Dot + IF Design), Intra (1871, chậu inox Thụy Điển). Hiện thuộc công ty mẹ German Heritage B.",
+      "Teka 是拥有逾百年历史的西班牙厨卫设备集团，旗下拥有 3 大品牌：Teka（1924 年，源自德国）、Küppersbusch（1875 年，德国高端，屡获 Red Dot 与 IF Design 奖）、Intra（1871 年，瑞典不锈钢水槽）。现隶属母公司 German Heritage B。",
     founded: "1924 (Teka)",
     factory: {
-      location: "Trụ sở chính: Đức (Teka), Tây Ban Nha (vận hành chính)",
-      facilities: "15 nhà máy trên toàn cầu",
-      employees: "5.000 nhân viên",
-      capacity: "Phục vụ 120+ quốc gia, 100 triệu hộ gia đình toàn cầu",
+      location: "总部：德国（Teka）、西班牙（主要运营）",
+      facilities: "全球 15 家工厂",
+      employees: "5,000 名员工",
+      capacity: "服务全球 120+ 个国家、1 亿户家庭",
     },
     highlights: [
-      "Khoảng 50% hộ gia đình Tây Ban Nha sử dụng sản phẩm Teka",
-      "Sở hữu portfolio 3 thương hiệu: Teka (1924), Küppersbusch (1875), Intra (1871)",
-      "Küppersbusch đạt nhiều giải Red Dot, IF Design, ADEX Platinum Excellence",
-      "Küppersbusch là thành viên sáng lập German Design Council (2016)",
+      "约 50% 的西班牙家庭使用 Teka 产品",
+      "拥有 3 大品牌矩阵：Teka（1924）、Küppersbusch（1875）、Intra（1871）",
+      "Küppersbusch 屡获 Red Dot、IF Design、ADEX Platinum Excellence 奖项",
+      "Küppersbusch 是德国设计委员会创始成员（2016）",
     ],
     website: "https://www.teka.com/zh-cn/guanyuwomen/teka-pinpai/",
-    products: [
-      { model: "T-OV", name: "Lò nướng âm tủ", desc: "Lò nướng đa năng âm tủ kiểu Châu Âu, dung tích 60-72L." },
-      { model: "T-MW", name: "Lò vi sóng âm tủ", desc: "Lò vi sóng âm tủ Châu Âu tích hợp nướng + hấp." },
-      { model: "T-CM", name: "Máy pha cà phê", desc: "Máy pha cà phê tự động âm tủ, espresso + cappuccino." },
-      { model: "T-CT", name: "Bếp âm", desc: "Bếp gas/điện/từ âm âm 2/3/4 vùng nấu, kính ceramic Schott." },
-      { model: "T-RH", name: "Hút mùi", desc: "Hút mùi áp trần + đảo bếp + slim cao cấp, 700-1300 m³/h." },
-      { model: "T-RF", name: "Tủ lạnh", desc: "Tủ lạnh âm tủ + độc lập, phong cách Châu Âu." },
-      { model: "T-WC", name: "Tủ rượu vang", desc: "Tủ bảo quản rượu vang âm tủ, 2 vùng nhiệt độ." },
-      { model: "T-SK", name: "Chậu rửa inox (Intra)", desc: "Chậu rửa inox 304 đơn/đôi/3 ngăn handmade R10 (Intra brand)." },
-      { model: "T-FA", name: "Vòi bếp", desc: "Vòi bếp đồng mạ chrome/vàng/đen matte, vòi rút uốn cong." },
-      { model: "T-WM", name: "Máy giặt", desc: "Máy giặt cửa trước Châu Âu, inverter + hơi nước." },
-      { model: "T-DR", name: "Máy sấy", desc: "Máy sấy bơm nhiệt cao cấp, A+++ tiết kiệm năng lượng." },
-      { model: "T-COMBO", name: "Máy giặt sấy combo", desc: "Combo giặt + sấy trong 1 máy, tiết kiệm không gian." },
-      { model: "T-SA", name: "Đồ điện gia dụng nhỏ", desc: "Bộ sản phẩm điện gia dụng nhỏ kiểu Châu Âu." },
-      { model: "T-ACC", name: "Phụ kiện + parts", desc: "Phụ kiện thay thế + thiết bị bổ sung cho tất cả dòng sản phẩm." },
-    ],
+    products: TEKA_PRODUCTS,
   },
 
-  // ─── 🏠 NHÀ & SÂN VƯỜN (thang máy thuộc hạ tầng nhà) ──────────────────
+  // ─── 🏠 家居与园艺（电梯属于住宅基础设施） ──────────────────
   {
     slug: "toshiba-elevator",
     name: "Toshiba Elevator",
     nameOriginal: "东芝电梯 Toshiba Elevator (China)",
     category: "home-garden",
     cvsStt: 12,
-    logo: "https://www.toshiba-elevator.com.cn/assets/images/icon/logo.svg",
+    logo: "/img/logos/toshiba-elevator.png",
     introduction:
-      "Toshiba Elevator (China) là chi nhánh tại Trung Quốc của tập đoàn Toshiba (Nhật Bản), chuyên cung cấp giải pháp thang máy cao cấp tích hợp công nghệ Nhật tiên tiến. Năm 2024, Toshiba Elevator được xếp hạng top 7 hãng thang máy toàn cầu, nổi tiếng với công nghệ dẫn hướng từ tính, thang máy hai khoang và kỷ lục thang máy tốc độ cao.",
+      "东芝电梯（中国）是日本东芝集团在华分支机构，专注提供融合日本先进技术的高端电梯解决方案。2024 年，东芝电梯位列全球电梯厂商前 7 强，以磁悬浮导向技术、双层轿厢电梯及高速电梯纪录而著称。",
     factory: {
-      location: "Trụ sở chính: Thượng Hải, Trung Quốc",
-      facilities: "Nhà máy sản xuất tại Thẩm Dương + Tô Châu",
+      location: "总部：中国上海",
+      facilities: "生产工厂位于沈阳 + 苏州",
     },
     highlights: [
-      "Hotline kỹ thuật toàn quốc: 400-700-5680",
-      "Top 7 thang máy toàn cầu (2024)",
-      "12 công nghệ lõi: ultra-high-speed, FLOORNAVI destination control, AI fleet management, BIM design, magnetic suspension guide shoe…",
-      "Dự án tham chiếu gần đây: Bệnh viện Y Học CT Nội Mông, Sơn Tây Liu An Hoa Đô GĐ5 (67 đơn vị)",
+      "全国技术热线：400-700-5680",
+      "全球电梯前 7 强（2024）",
+      "12 项核心技术：超高速、FLOORNAVI 目的层群控、AI 群梯管理、BIM 设计、磁悬浮导靴等",
+      "近期参考项目：内蒙古 CT 医学医院、山西六安华都五期（67 台）",
     ],
     hotline: "400-700-5680",
     website: "https://www.toshiba-elevator.com.cn/",
-    products: [
-      { model: "T-HS", name: "Thang máy tốc độ cao", desc: "Thang chở khách cho cao ốc văn phòng + khách sạn 30+ tầng, tốc độ ≥2.5 m/s.", image: "https://www.toshiba-elevator.com.cn/upload/2022/12-22/16-02-550855-1155300723.jpg" },
-      { model: "T-PE", name: "Thang chở khách tiêu chuẩn", desc: "Thang máy cho chung cư + văn phòng phổ thông, tải 630-1600 kg.", image: "https://www.toshiba-elevator.com.cn/upload/2022/12-22/16-33-08081472987408.jpg" },
-      { model: "T-ESC", name: "Thang cuốn + băng chuyền", desc: "Thang cuốn TTTM, sân bay, metro + băng chuyền đi bộ.", image: "https://www.toshiba-elevator.com.cn/upload/2022/12-22/16-05-180561427893075.jpg" },
-      { model: "SPACEL-H Pro", name: "Thang máy gia đình SPACEL-H Pro", desc: "Thang máy thiết kế cho biệt thự + nhà phố, cabin compact tích hợp Smart Door.", image: "https://www.toshiba-elevator.com.cn/upload/2023/12-11/14-59-580999930083743.jpg" },
-      { model: "T-RT", name: "Thang lắp thêm công trình cũ", desc: "Giải pháp lắp thang máy cho chung cư cũ không có thang sẵn — chiếm ít diện tích.", image: "https://www.toshiba-elevator.com.cn/upload/2023/01-05/17-52-380489974514277.jpg" },
-    ],
+    products: TOSHIBA_ELEVATOR_PRODUCTS,
   },
   {
     slug: "guangri",
@@ -264,31 +266,25 @@ export const PARTNERS: PartnerBrand[] = [
     cvsStt: 13,
     logo: "https://www.guangri.com.cn/cn/images/logo.png",
     introduction:
-      "Guangri Elevator là doanh nghiệp niêm yết, công ty con quan trọng của tập đoàn Guangzhou Industrial Investment Holding Group (thuộc Fortune Global 500). Thành lập từ 1956, sản xuất thang chở hàng từ 1973, Guangri đã tích luỹ hơn 50 năm kinh nghiệm và phát triển thành doanh nghiệp hiện đại R&D + sản xuất + lắp đặt + bảo trì trọn gói.",
+      "广日电梯是上市企业，为广州工业投资控股集团（《财富》世界 500 强）的重要子公司。创立于 1956 年，自 1973 年起生产载货电梯，广日积累了逾 50 年经验，发展成为集研发 + 生产 + 安装 + 维保于一体的现代化企业。",
     founded: "1956",
     factory: {
-      location: "Số 636 đại lộ Quốc Mậu Nam, Trấn Thạch Lâu, Quận Phiên Ngung, Quảng Châu",
-      facilities: "Sản xuất chính tại Quảng Châu + cơ sở phụ trên toàn quốc",
+      location: "广州市番禺区石楼镇国贸南大道 636 号",
+      facilities: "主要生产在广州 + 全国设有辅助基地",
     },
     highlights: [
-      "Hotline kỹ thuật: 400-8866-130",
-      "Email: grdt@guangri.com.cn",
-      "Tập đoàn mẹ thuộc Fortune Global 500",
-      "Trên 50 năm kinh nghiệm sản xuất thang máy",
-      "Cung cấp giải pháp toàn diện: R&D + thiết kế + sản xuất + lắp đặt + bảo trì + đào tạo",
+      "技术热线：400-8866-130",
+      "邮箱：grdt@guangri.com.cn",
+      "母公司位列《财富》世界 500 强",
+      "逾 50 年电梯制造经验",
+      "提供全方位解决方案：研发 + 设计 + 生产 + 安装 + 维保 + 培训",
     ],
     hotline: "400-8866-130",
     website: "https://guangri.com.cn/",
-    products: [
-      { model: "G-VE", name: "Thang máy dọc", desc: "Thang máy thông minh cho cao ốc + chung cư, tải 450-1600 kg, tốc độ 1.0-2.5 m/s.", image: "https://www.guangri.com.cn/vancheerfile/Images/2023/7/20230728132656249.jpg" },
-      { model: "G-ESC", name: "Thang cuốn + băng chuyền", desc: "Thang cuốn thương mại + giao thông công cộng, bước thang 600-1000mm.", image: "https://www.guangri.com.cn/vancheerfile/Images/2023/7/20230703180154589.jpg" },
-      { model: "G-HE", name: "Thang máy gia đình", desc: "Thang máy compact cho biệt thự + nhà phố cao cấp.", image: "https://www.guangri.com.cn/vancheerfile/Images/2023/8/20230804164029309.jpg" },
-      { model: "G-CESC", name: "Thang cuốn thương mại", desc: "Thang cuốn TTTM + sân bay, thiết kế đẹp + tải khách cao.", image: "https://www.guangri.com.cn/vancheerfile/Images/2023/8/20230814092717766.jpg" },
-      { model: "G-TESC", name: "Thang cuốn metro / giao thông", desc: "Thang cuốn cho metro + ga tàu + sân bay, hoạt động liên tục heavy-duty.", image: "https://www.guangri.com.cn/vancheerfile/Images/2023/8/20230814092729176.jpg" },
-    ],
+    products: GUANGRI_PRODUCTS,
   },
 
-  // ─── 🪟 CỬA & CỬA SỔ (khoá thông minh) ──────────────────────────────
+  // ─── 🪟 门窗（智能锁） ──────────────────────────────
   {
     slug: "teeho",
     name: "TEEHO",
@@ -297,39 +293,22 @@ export const PARTNERS: PartnerBrand[] = [
     cvsStt: 18,
     logo: "https://www.teeho.com/cdn/shop/files/20220414170928_dab500c7-794d-410b-80a0-54b76e9eb97b.png?v=1678261396&width=240",
     introduction:
-      "TEEHO là thương hiệu khoá thông minh top-seller trên Amazon Mỹ, chuyên thiết kế và sản xuất khoá vân tay + khoá bàn phím + khoá Wi-Fi. Sản phẩm tích hợp công nghệ hiện đại với UX thân thiện, phục vụ thị trường gia đình + khách sạn + cho thuê Airbnb tại Bắc Mỹ.",
+      "TEEHO 是美国亚马逊智能锁热销品牌，专注设计与生产指纹锁 + 密码锁 + Wi-Fi 锁。产品融合现代技术与友好的用户体验，服务北美家庭、酒店及 Airbnb 短租市场。",
     factory: {
-      location: "Nhà máy sản xuất tại Quảng Đông, Trung Quốc",
+      location: "生产工厂位于中国广东",
     },
     highlights: [
-      "Top seller mảng smart lock trên Amazon Mỹ",
-      "Toàn bộ sản phẩm có IP54 (chống bụi + tia nước) hoặc IP55",
-      "Pin 4× AA bền 1 năm sử dụng — không cần sạc thường xuyên",
-      "Nhiệt độ vận hành: -30°C đến 70°C (phù hợp khí hậu Việt Nam)",
-      "Chính sách đổi trả 30 ngày + hỗ trợ khách hàng 24h",
+      "美国亚马逊智能锁品类热销冠军",
+      "全部产品达 IP54（防尘 + 防水溅）或 IP55",
+      "4× AA 电池续航 1 年 —— 无需频繁充电",
+      "工作温度：-30°C 至 70°C（适应越南气候）",
+      "30 天退换政策 + 7×24 小时客户支持",
     ],
     website: "https://www.teeho.com/",
-    products: [
-      { model: "TE001", name: "TE001 — Khoá chốt bàn phím", desc: "Khoá chốt nhập mã bàn phím cơ bản, vào không cần chìa, giá $56.99 (Amazon).", image: "https://www.teeho.com/cdn/shop/files/20240902193240.jpg?v=1725276810&width=400" },
-      { model: "TE001K", name: "TE001K — Bộ khoá + tay nắm", desc: "Bộ khoá chốt + tay nắm cửa, không cần chìa, giá $76.99.", image: "https://www.teeho.com/cdn/shop/products/TE001-K.jpg?v=1677822820&width=400" },
-      { model: "TE001L", name: "TE001L — Bộ khoá Keyless 2 tay nắm", desc: "Bộ khoá entry không chìa với 2 tay nắm, lắp được cửa chính + cửa phụ, giá $89.99.", image: "https://www.teeho.com/cdn/shop/files/20241127102519.jpg?v=1732674373&width=400" },
-      { model: "TE002", name: "TE002 — Khoá chốt + vân tay ⭐", desc: "Flagship: kết hợp bàn phím + vân tay (lưu 20 vân tay + 20 mã PIN), IP54, pin bền 1 năm, giá $59.99.", image: "https://www.teeho.com/cdn/shop/products/1_5bdd18c6-b792-4600-b230-b2e9bc0a45f4.jpg?v=1663570360&width=400" },
-      { model: "TE002K", name: "TE002K — Bộ khoá vân tay + 2 tay nắm", desc: "Bộ vân tay + tay nắm cao cấp với 2 knob, giá $189.99.", image: "https://www.teeho.com/cdn/shop/products/TE002-K.jpg?v=1677814047&width=400" },
-      { model: "TE002L", name: "TE002L — Khoá vân tay + 2 tay nắm đòn", desc: "Khoá vân tay với 2 tay nắm đòn, giá $129.99.", image: "https://www.teeho.com/cdn/shop/files/TE002-L_1_5f321ec3-6f7b-4921-9d28-b1e13bb01ac1.jpg?v=1684891191&width=400" },
-      { model: "TE003", name: "TE003 — Khoá bàn phím + tay nắm", desc: "Khoá bàn phím tích hợp tay nắm, giá $69.99.", image: "https://www.teeho.com/cdn/shop/files/TE003.jpg" },
-      { model: "TE004", name: "TE004 — Khoá keyless + chống nhìn trộm", desc: "Bàn phím + tay nắm với chế độ chống nhìn trộm + tự khoá + passage mode, giá $69.99.", image: "https://www.teeho.com/cdn/shop/files/6391ace427ade714b70fb966024ae804_160ebb11-303f-490d-954c-3c2af5e241bd.jpg" },
-      { model: "TE011W", name: "TE011W — Khoá Wi-Fi + Alexa/Google", desc: "Khoá Wi-Fi điều khiển từ xa, tương thích Alexa + Google Assistant, giá $69.99.", image: "https://www.teeho.com/cdn/shop/files/B0GJDFVNX1.MAIN.jpg" },
-      { model: "TE012W", name: "TE012W — Khoá Wi-Fi + vân tay IP55", desc: "Khoá Wi-Fi tích hợp vân tay, chống nước IP55, app điều khiển từ xa, giá $62.99.", image: "https://www.teeho.com/cdn/shop/files/1-1_8754ffbe-3bb9-4711-8c75-03b5637c1685.jpg" },
-      { model: "TE012W-H", name: "TE012W-H — Wi-Fi + tay nắm + vân tay", desc: "Phiên bản cao cấp: Wi-Fi + tay nắm + vân tay, giá $199.99.", image: "https://www.teeho.com/cdn/shop/files/0_4-WiFi.jpg" },
-      { model: "TE012W-K", name: "TE012W-K — Wi-Fi + 2 knob + vân tay", desc: "Wi-Fi + 2 knob + vân tay, giá $97.99.", image: "https://www.teeho.com/cdn/shop/files/1_f3c19df7-12a0-4a7a-95cd-a8e20978b55a.jpg" },
-      { model: "TE018", name: "TE018 — Smart Door Knob", desc: "Knob thông minh + bàn phím + app + chia sẻ mã 1 lần, giá $99.99.", image: "https://www.teeho.com/cdn/shop/files/0_1.jpg" },
-      { model: "TE019", name: "TE019 — Smart Lock + tay nắm", desc: "Smart Lock + tay nắm + app + chia sẻ mã 1 lần + passage mode, giá $99.99.", image: "https://www.teeho.com/cdn/shop/files/3_f882c030-9200-4098-8854-46d724a23093.jpg" },
-      { model: "TK001H", name: "TK001H — Keyless deadbolt + handle set", desc: "Bộ khoá chốt keyless với handle set hoàn chỉnh, giá $99.99.", image: "https://www.teeho.com/cdn/shop/files/20250115090944.jpg" },
-      { model: "G1", name: "G1 Gateway — Wi-Fi Bridge", desc: "Gateway Wi-Fi điều khiển khoá từ xa + smart hub tương thích Alexa, giá $39.99.", image: "https://www.teeho.com/cdn/shop/files/0.jpg" },
-    ],
+    products: TEEHO_PRODUCTS,
   },
 
-  // ─── 🚿 PHÒNG TẮM & VỆ SINH ─────────────────────────────────────────
+  // ─── 🚿 卫浴洁具 ─────────────────────────────────────────
   {
     slug: "anbi",
     name: "ANBI",
@@ -337,31 +316,24 @@ export const PARTNERS: PartnerBrand[] = [
     category: "bathroom-sanitary",
     cvsStt: 24,
     introduction:
-      "ANBI là thương hiệu sứ vệ sinh đặt tại Triều Châu, Quảng Đông — một trong những trung tâm sản xuất sứ vệ sinh lớn nhất Trung Quốc. Thương hiệu tập trung phát triển dòng bồn cầu thông minh và thiết kế nội thất phòng tắm tích hợp, định vị mục tiêu trở thành thương hiệu gia dụng toàn quốc Trung Quốc.",
+      "安彼是位于广东潮州的卫生陶瓷品牌 —— 潮州是中国最大的卫生陶瓷生产基地之一。品牌专注于智能马桶及一体化卫浴空间设计，致力于成为面向全国市场的家居品牌。",
     founded: "2021",
     factory: {
-      location: "Cổ Hạng Trấn, Triều An Khu, Triều Châu, Quảng Đông, Trung Quốc",
+      location: "中国广东省潮州市潮安区古巷镇",
     },
     highlights: [
-      "Hotline: 400-8308-789",
-      "Khẩu hiệu: 安彼智能, 安心享用 (An Bĩ thông minh, an tâm tận hưởng)",
-      "Được công nhận Top 10 thương hiệu sứ vệ sinh Triều Châu 2024",
-      "Top thương hiệu được người tiêu dùng yêu thích 2024",
-      "Có trong danh mục mua sắm tiết kiệm năng lượng của chính phủ TQ",
+      "热线：400-8308-789",
+      "品牌口号：安彼智能，安心享用",
+      "荣获 2024 潮州卫浴十大品牌",
+      "2024 消费者喜爱品牌",
+      "入选中国政府节能采购目录",
     ],
     hotline: "400-8308-789",
     website: "https://www.anbichina.com/",
-    products: [
-      { model: "A-IT", name: "Bồn cầu thông minh 1 khối", desc: "Bồn cầu thông minh tích hợp xịt + sấy + sưởi nắp + tự khử mùi, dạng 1 khối.", image: "https://www.anbichina.com/uploadimg/type_03.jpg" },
-      { model: "A-SC", name: "Nắp bồn cầu thông minh", desc: "Nắp bồn cầu thông minh gắn thêm cho bồn cầu thường, xịt + sấy + sưởi.", image: "https://www.anbichina.com/uploadimg/type_02.jpg" },
-      { model: "A-OT", name: "Bồn cầu liền khối truyền thống", desc: "Bồn cầu sứ liền khối, xả siphon êm + tiết kiệm nước 3/6L.", image: "https://www.anbichina.com/uploadimg/type_01.jpg" },
-      { model: "A-WH", name: "Bồn cầu treo tường", desc: "Bồn cầu treo tường tiết kiệm không gian, lắp với két âm tường.", image: "https://www.anbichina.com/uploadimg/type_04.jpg" },
-      { model: "A-CS", name: "Set phòng tắm trẻ em", desc: "Bộ sản phẩm phòng tắm cho trẻ em: bồn cầu nhỏ + lavabo + bậc.", image: "https://www.anbichina.com/uploadimg/type_05.jpg" },
-      { model: "A-AB", name: "Lavabo nghệ thuật", desc: "Lavabo sứ nghệ thuật đa dạng kiểu dáng + màu men, đặt bàn + treo tường.", image: "https://www.anbichina.com/uploadimg/type_06.jpg" },
-    ],
+    products: ANBI_PRODUCTS,
   },
 
-  // ─── 🧱 VẬT LIỆU XÂY DỰNG ──────────────────────────────────────────
+  // ─── 🧱 建筑材料 ──────────────────────────────────────────
   {
     slug: "dulux-pro",
     name: "Dulux Professional",
@@ -370,347 +342,418 @@ export const PARTNERS: PartnerBrand[] = [
     cvsStt: 34,
     logo: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/logo-1.png",
     introduction:
-      "Dulux Professional là dòng sơn chuyên dụng của tập đoàn AkzoNobel (Hà Lan, thành lập từ 1792 — hơn 230 năm lịch sử). Tập đoàn sở hữu các thương hiệu sơn nổi tiếng toàn cầu: Dulux, International, Sikkens, Interpon, hoạt động tại hơn 150 quốc gia với 34.000 nhân viên.",
+      "Dulux Professional 是 AkzoNobel 集团（荷兰，创立于 1792 年，逾 230 年历史）旗下的专业涂料产品线。集团拥有 Dulux、International、Sikkens、Interpon 等全球知名涂料品牌，业务遍及 150 多个国家，员工 34,000 人。",
     founded: "1792 (AkzoNobel)",
     factory: {
-      location: "Trụ sở AkzoNobel: Amsterdam, Hà Lan",
-      facilities: "Sản xuất tại 150+ quốc gia",
-      employees: "~34.000 toàn cầu",
+      location: "AkzoNobel 总部：荷兰阿姆斯特丹",
+      facilities: "在 150+ 个国家生产",
+      employees: "全球约 34,000 人",
     },
     highlights: [
-      "Tập đoàn sơn lâu đời nhất thế giới — hơn 230 năm",
-      "Sở hữu portfolio đa thương hiệu: Dulux, International, Sikkens, Interpon",
-      "Định vị 'Professional Solution Partner' — cung cấp giải pháp + kỹ thuật + màu sắc trọn gói cho B2B",
-      "Khách hàng tham chiếu VIP tại TQ: Vanke, Longfor, Huarun, Country Garden, Zhaoshang Shekou, Yuexiu Real Estate",
+      "全球历史最悠久的涂料集团 —— 逾 230 年",
+      "拥有多品牌矩阵：Dulux、International、Sikkens、Interpon",
+      "定位「专业解决方案伙伴」—— 为 B2B 提供方案 + 技术 + 配色一站式服务",
+      "中国重点客户：万科、龙湖、华润、碧桂园、招商蛇口、越秀地产",
     ],
     website: "https://www.duluxpro.com.cn/",
-    products: [
-      { model: "JK-1", name: "JK-1 — Sơn ngoại thất giả đá + nghệ thuật", desc: "Sơn ngoại thất hiệu ứng giả đá + texture nghệ thuật cho mặt đứng cao cấp.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-1.jpg" },
-      { model: "JK-2", name: "JK-2 — Sơn ngoại thất 晴雨漆", desc: "Sơn ngoại thất chống mưa nắng (Sunny & Rainy paint), bền màu thời tiết khắc nghiệt.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-2.jpg" },
-      { model: "JK-3", name: "JK-3 — Sơn phản xạ nhiệt", desc: "Sơn ngoại thất phản xạ tia hồng ngoại, giảm nhiệt độ bề mặt 5-10°C.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-3.jpg" },
-      { model: "JK-4", name: "JK-4 — Sơn kim loại gốc nước", desc: "Sơn kim loại water-based, độ bám dính cao cho bề mặt thép.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-4.jpg" },
-      { model: "JK-5", name: "JK-5 — Sơn fluorocarbon gốc nước", desc: "Sơn fluorocarbon (PVDF) gốc nước, độ bền cao + bảo vệ kim loại 20+ năm.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-5.jpg" },
-      { model: "JK-6", name: "JK-6 — Sơn nội thất sinh thái", desc: "Sơn nội thất low-VOC, không mùi, đạt chuẩn xanh.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-6.jpg" },
-      { model: "JK-7", name: "JK-7 — Sơn nội thất bền hiệu năng", desc: "Sơn nội thất bền cao + chống mốc + dễ vệ sinh.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-7.jpg" },
-      { model: "JK-8", name: "JK-8 — Sơn sàn epoxy", desc: "Sơn sàn epoxy cho công nghiệp + thương mại, chống dầu + chịu mài mòn.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-8.jpg" },
-      { model: "JK-9", name: "JK-9 — Sơn sàn polyurethane mortar", desc: "Sơn sàn PU mortar cho nhà máy chế biến thực phẩm + dược phẩm.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-9.jpg" },
-      { model: "JK-10", name: "JK-10 — Phụ trợ: bột trét + keo + chống thấm", desc: "Hệ phụ trợ trọn gói: bột trét, keo gạch, sơn chống thấm hệ Dulux Pro.", image: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/jk-10.jpg" },
-    ],
+    products: DULUX_PRO_PRODUCTS,
   },
   {
     slug: "yuhong",
-    name: "Đông Phương Vũ Hồng (Yuhong)",
+    name: "Yuhong",
     nameOriginal: "东方雨虹 Oriental Yuhong",
     category: "construction-materials",
     cvsStt: 36,
     logo: "https://www.yuhong.com.cn/thems/dfyhjt/images/f_logo_03.png",
     introduction:
-      "Đông Phương Vũ Hồng (Oriental Yuhong) là tập đoàn vật liệu chống thấm + cách nhiệt + sơn xây dựng dân dụng hàng đầu Trung Quốc, niêm yết trên sàn Thâm Quyến mã 002271. Doanh thu năm 2023 đạt khoảng 328 tỷ NDT, sở hữu 1.916 bằng sáng chế và 68 cơ sở sản xuất + R&D + logistics (trong đó 3 cơ sở ngoài Trung Quốc).",
+      "东方雨虹是中国领先的防水 + 保温 + 民用建筑涂料集团，在深圳证券交易所上市，代码 002271。2023 年营收约 328 亿元人民币，拥有 1,916 项专利及 68 个生产 + 研发 + 物流基地（其中 3 个位于中国境外）。",
     founded: "1995",
     listed: "SZSE 002271",
     factory: {
-      location: "Trụ sở chính: Bắc Kinh, Trung Quốc",
-      facilities: "68 cơ sở (sản xuất + R&D + logistics, gồm 3 ở nước ngoài)",
-      capacity: "Màng chống thấm 1.5 tỷ m²/năm · Sơn chống thấm 5 triệu tấn/năm · Vữa 20+ triệu tấn/năm · Cách nhiệt 10+ triệu m³/năm",
+      location: "总部：中国北京",
+      facilities: "68 个基地（生产 + 研发 + 物流，含 3 个海外基地）",
+      capacity: "防水卷材 15 亿㎡/年 · 防水涂料 500 万吨/年 · 砂浆 2000+ 万吨/年 · 保温 1000+ 万立方米/年",
     },
     highlights: [
-      "Niêm yết SZSE — mã 002271",
-      "Doanh thu 2023: ~328 tỷ NDT, lợi nhuận ròng ~22,7 tỷ NDT",
-      "1.916 bằng sáng chế (toàn tập đoàn)",
-      "Phòng thí nghiệm trọng điểm quốc gia về vật liệu chống thấm tiên tiến",
-      "Cung cấp chống thấm cho dự án Bird's Nest, Water Cube (Olympic Bắc Kinh 2008), Nhà hát Opera Trung Ương",
-      "Hotline phân theo dòng SP: Engineering 400-779-1975 / Residential 400-700-5756 / Repair 400-995-8686 / Mortar 400-685-0885",
+      "深交所上市 —— 代码 002271",
+      "2023 年营收：约 328 亿元人民币，净利润约 22.7 亿元人民币",
+      "1,916 项专利（集团整体）",
+      "建有先进防水材料国家重点实验室",
+      "为鸟巢、水立方（2008 北京奥运）、中央歌剧院等项目提供防水",
+      "按产品线分设热线：工程 400-779-1975 / 民建 400-700-5756 / 维修 400-995-8686 / 砂浆 400-685-0885",
     ],
     website: "https://www.yuhong.com.cn/",
-    products: [
-      { model: "PMB-741", name: "PMB-741 — Màng SBS biến tính", desc: "Màng chống thấm bitum SBS biến tính, đàn hồi cao + chịu thời tiết.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626114311T8.png" },
-      { model: "PMB-751", name: "PMB-751 — Màng asphalt nhiệt-ẩm cao", desc: "Màng chống thấm chuyên dụng cho khí hậu nhiệt độ + độ ẩm cao như Việt Nam.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626114522533.png" },
-      { model: "PMB-742", name: "PMB-742 — Màng SBS siêu lạnh", desc: "Màng SBS biến tính chịu nhiệt độ siêu thấp cho khu vực bắc.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626114432W6.png" },
-      { model: "SAM-920", name: "SAM-920 — Màng tự dính polymer", desc: "Màng chống thấm tự dính không cốt + polymer biến tính, lắp nhanh không cần khò.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626115150144.png" },
-      { model: "SAM-921", name: "SAM-921 — Màng tự dính cường độ cao", desc: "Màng tự dính cường độ cao, bám siêu chặt cho công trình ngầm + bể nước.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626115240O8.png" },
-      { model: "TPO-P", name: "TPO-P — Màng nhiệt dẻo polyolefin", desc: "Màng chống thấm TPO nhiệt dẻo, không hoá dẻo + thân thiện môi trường.", image: "https://www.yuhong.com.cn/uploads/250425/1-250425164403504.png" },
-      { model: "SPU-301", name: "SPU-301 — Sơn PU 1-thành phần", desc: "Sơn chống thấm polyurethane 1-thành phần, tạo màng đàn hồi liền mạch.", image: "https://www.yuhong.com.cn/uploads/230626/1-230626115P12J.png" },
-      { model: "SPU-311", name: "SPU-311 — Sơn PU 2-thành phần", desc: "Sơn chống thấm PU 2-thành phần, độ bền + đàn hồi cao hơn.", image: "https://www.yuhong.com.cn/uploads/250425/1-250425162534212.png" },
-      { model: "EPS-G", name: "EPS / Polystyrene graphite (Fuda)", desc: "Tấm cách nhiệt EPS chứa graphite, hệ số dẫn nhiệt thấp.", image: "https://www.yuhong.com.cn/uploads/200313/1-20031313204YW.png" },
-      { model: "XPS-B", name: "Tấm XPS", desc: "Tấm cách nhiệt XPS polystyrene đùn ép, độ nén cao + chống ẩm.", image: "https://www.yuhong.com.cn/uploads/200313/1-200313132104145.png" },
-      { model: "RW", name: "Bông khoáng rockwool", desc: "Bông khoáng đá rockwool, cách nhiệt + cách âm + chống cháy A1.", image: "https://www.yuhong.com.cn/uploads/190911/1-1Z9111022404G.jpg" },
-      { model: "GW", name: "Bông thuỷ tinh glass wool", desc: "Bông thuỷ tinh cách nhiệt + cách âm cho tường + trần + ống gió.", image: "https://www.yuhong.com.cn/uploads/190911/1-1Z91110231J62.png" },
-      { model: "CP-634", name: "CP-634 — Sơn sỏi Caparol", desc: "Sơn ngoại thất sỏi vụn (Caparol Stone), hiệu ứng tự nhiên.", image: "https://www.yuhong.com.cn/uploads/190823/1-1ZR31R535524.png" },
-      { model: "CP-665", name: "CP-665 — Rock Color Caparol", desc: "Sơn texture vân đá tự nhiên, hiệu ứng cao cấp cho mặt đứng.", image: "https://www.yuhong.com.cn/uploads/190826/1-1ZR6094S1543.png" },
-      { model: "CP-383", name: "CP-383 — Màng sơn đàn hồi", desc: "Màng sơn đàn hồi cao, che được vết nứt nhỏ trên tường.", image: "https://www.yuhong.com.cn/uploads/190826/1-1ZR609491a64.png" },
-      { model: "CP-362", name: "CP-362 — Sơn ngoại thất acrylic", desc: "Sơn ngoại thất acrylic pure, bền màu + chống mốc.", image: "https://www.yuhong.com.cn/uploads/190826/1-1ZR609505X23.png" },
-      { model: "BA-N10", name: "Bian'an N10 — Bột trét base", desc: "Bột trét tường base, tạo nền cho lớp trét tiếp theo.", image: "https://www.yuhong.com.cn/uploads/200323/1-200323135922V3.png" },
-      { model: "BA-N20", name: "Bian'an N20 — Bột trét tường", desc: "Bột trét tường standard, độ mịn cao.", image: "https://www.yuhong.com.cn/uploads/200324/1-2003241621405N.png" },
-      { model: "BA-N30", name: "Bian'an N30 — Bột trét cao cấp", desc: "Bột trét tường cao cấp, độ kết dính tốt.", image: "https://www.yuhong.com.cn/uploads/200324/1-200324162222163.png" },
-      { model: "BA-N35", name: "Bian'an N35 — Bột trét premium", desc: "Bột trét tường premium, kháng nấm mốc.", image: "https://www.yuhong.com.cn/uploads/200324/1-200324162455a0.png" },
-      { model: "BA-N40", name: "Bian'an N40 — Bột trét ngoài trời", desc: "Bột trét chuyên dụng ngoại thất, chống thấm + chịu thời tiết.", image: "https://www.yuhong.com.cn/uploads/200324/1-2003241625155T.png" },
-    ],
+    products: YUHONG_PRODUCTS,
   },
   {
     slug: "langhui",
-    name: "Lang Huy (Langhui)",
+    name: "Langhui",
     nameOriginal: "朗辉建材 Langhui",
     category: "construction-materials",
     cvsStt: 42,
     logo: "https://gdlanghui.com/template/default/images/logo.png",
     introduction:
-      "Lang Huy (Guangdong Langhui Building Materials) là nhà sản xuất chuyên về tấm bê tông khí chưng áp ALC/AAC tại Quảng Đông, Trung Quốc. Khu sản xuất rộng 246 mẫu (~166ha) với vốn đầu tư khoảng 4,2 tỷ NDT, sở hữu hơn 120 bộ máy tự động hoá cao, công suất hơn 1 triệu m³/năm.",
+      "朗辉（广东朗辉建材）是位于中国广东的蒸压加气混凝土 ALC/AAC 板材专业制造商。生产园区占地 246 亩（约 166 公顷），投资约 42 亿元人民币，拥有 120 多套高度自动化设备，年产能超 100 万立方米。",
     factory: {
-      location: "Khu công nghiệp Cao Minh, Phật Sơn, Quảng Đông, đường Ming Ba 133-8",
-      area: "246 mẫu (~166 ha)",
-      capacity: "1+ triệu m³/năm",
-      facilities: "120+ bộ máy tự động hoá",
-      investment: "~4,2 tỷ NDT",
+      location: "广东佛山高明工业园，明八路 133-8 号",
+      area: "246 亩（约 166 公顷）",
+      capacity: "100 万+ 立方米/年",
+      facilities: "120+ 套自动化设备",
+      investment: "约 42 亿元人民币",
     },
     highlights: [
-      "Hotline kinh doanh: 133-1632-2103 / Email: salesem@gdlanghui.com",
-      "Sản phẩm fire wall đạt chống cháy &gt; 4 giờ",
-      "Sản phẩm tấm siêu mỏng 50/75mm xuất khẩu Úc, Nhật, Hàn Quốc",
-      "Dự án tham chiếu: Longhu Developments, Agile Xiyuefu Residences",
+      "销售热线：133-1632-2103 / 邮箱：salesem@gdlanghui.com",
+      "防火墙产品耐火 &gt; 4 小时",
+      "50/75mm 超薄板出口澳大利亚、日本、韩国",
+      "参考项目：龙湖地产、雅居乐熙悦府",
     ],
     hotline: "133-1632-2103",
     website: "https://gdlanghui.com/",
-    products: [
-      { model: "HACB", name: "HACB — Khối AAC độ chính xác cao", desc: "Khối bê tông khí chưng áp AAC độ chính xác cao, kích thước đồng đều, xây tường nhẹ.", image: "https://gdlanghui.com/static/upload/image/20241007/1728293058978388.png" },
-      { model: "ALC-WP", name: "Tấm vách ngăn ALC cốt thép", desc: "Tấm vách ngăn ALC gia cường thép, độ bền cao, lắp nhanh.", image: "https://gdlanghui.com/static/upload/image/20241007/1728292941967339.png" },
-      { model: "ALC-UT", name: "Tấm ALC siêu mỏng 50/75mm", desc: "Tấm ALC siêu mỏng dày 50mm/75mm cho khung lightweight, xuất khẩu Úc/Nhật/Hàn.", image: "https://gdlanghui.com/static/upload/image/20241028/1730081325482341.png" },
-      { model: "ALC-FR", name: "Tấm sàn + tấm mái ALC", desc: "Tấm sàn + tấm mái ALC chịu tải trọng cao + chống cháy + cách nhiệt.", image: "https://gdlanghui.com/static/upload/image/20241008/1728355217862065.jpg" },
-      { model: "ALC-FW", name: "Tấm vách chống cháy &gt; 4 giờ", desc: "Tấm vách chống cháy đạt &gt; 4 giờ — vượt nhiều tiêu chuẩn quốc tế.", image: "https://gdlanghui.com/static/upload/image/20241008/1728354539552653.jpg" },
-      { model: "ALC-IW", name: "Tấm vách trong nhà", desc: "Tấm vách trong nhà với cốt thép tuỳ chỉnh theo kết cấu, giảm trọng lượng tổng thể.", image: "https://gdlanghui.com/static/upload/image/20241008/1728353085571947.jpg" },
-    ],
+    products: LANGHUI_PRODUCTS,
   },
   {
     slug: "duc-thinh-stone",
-    name: "Đức Thịnh Stone",
+    name: "德盛石材",
     nameOriginal: "德盛 Duc Thinh Stone Technology Co., Ltd.",
     category: "construction-materials",
     cvsStt: 44,
     logo:
       "https://ducthinhstone.com/wp-content/uploads/2025/06/z7153273983391_4d3bb7ae8fc09b583a866595e847744c.jpg",
     introduction:
-      "Đức Thịnh Stone Technology là pháp nhân Việt Nam thuộc tập đoàn PENG XIANG (Phúc Kiến, Trung Quốc) — một trong những nhà sản xuất đá nhân tạo cao cấp hàng đầu Châu Á. Nhà máy đặt tại KCN Nghĩa Đàn, Nghệ An, vốn 25 triệu USD, gần 800-1000 nhân viên, công suất 8,5 triệu m² tấm/năm. Sản phẩm phục vụ thị trường nội địa Việt Nam và xuất khẩu 120+ quốc gia.",
+      "德盛石材科技是隶属鹏翔集团（中国福建）的越南法人公司 —— 鹏翔是亚洲领先的高端人造石制造商之一。工厂位于越南乂安省义坛工业园，投资 2,500 万美元，员工约 800-1,000 人，年产板材 850 万㎡。产品服务越南本土市场并出口至 120+ 个国家。",
     factory: {
-      location: "KCN Nghĩa Đàn, Xã Nghĩa Thọ, Nghệ An, Việt Nam",
-      area: "400.000 m² (~40 ha)",
-      employees: "~800–1.000 người",
-      capacity: "8,5 triệu m² tấm/năm",
-      investment: "25 triệu USD",
+      location: "越南乂安省义坛工业园义寿乡",
+      area: "400,000 ㎡（约 40 公顷）",
+      employees: "约 800–1,000 人",
+      capacity: "板材 850 万㎡/年",
+      investment: "2,500 万美元",
     },
     highlights: [
-      "Pháp nhân Việt Nam — sản xuất tại Việt Nam, vận chuyển thuận lợi",
-      "Hotline: (+84) 238-863-9666 / Email: office@ducthinhstone.com",
-      "Tập đoàn mẹ PENG XIANG (Phúc Kiến TQ) — top nhà sản xuất đá nhân tạo Châu Á",
-      "Xuất khẩu hơn 120 quốc gia",
-      "Ứng dụng: mặt bàn bếp, tủ phòng tắm, ốp tường, cầu thang, nội thất cao cấp, TTTM, khách sạn",
+      "越南法人公司 —— 在越南本土生产，物流便利",
+      "热线：(+84) 238-863-9666 / 邮箱：office@ducthinhstone.com",
+      "母公司鹏翔集团（中国福建）—— 亚洲顶级人造石制造商",
+      "出口逾 120 个国家",
+      "应用：厨房台面、浴室柜、墙面装饰、楼梯、高端家装、商场、酒店",
     ],
     hotline: "(+84) 238-863-9666",
     website: "https://ducthinhstone.com/",
-    products: [
-      { model: "PXQZ240907-3", name: "PXQZ240907-3 — Quartz chống thấm", desc: "Tấm quartz nhân tạo chống thấm, dùng cho mặt bếp + lavabo.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202505081528458137-1-300x200.jpg" },
-      { model: "PXQZ240901-1", name: "PXQZ240901-1 — Tấm khổ lớn 3200×1600mm", desc: "Tấm quartz nhân tạo khổ lớn 3200×1600mm, hạn chế mối nối.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202505071047199014-1-300x200.jpg" },
-      { model: "PXQZ190425-5", name: "PXQZ190425-5 — Ốp tường bề mặt da", desc: "Tấm quartz ốp tường bề mặt nhám kiểu da, hiệu ứng tự nhiên.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407241107180115-300x200.jpg" },
-      { model: "PXQZ221222-1", name: "PXQZ221222-1 — Mặt bếp cao cấp", desc: "Tấm quartz mặt bếp cao cấp, độ cứng cao + chống xước.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202408011613584918-300x200.jpg" },
-      { model: "PXQZ230521-3", name: "PXQZ230521-3 — Quartz nội thất sinh thái", desc: "Tấm quartz nội thất thân thiện môi trường, không phát thải VOC.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291619590663-768x513.jpg" },
-      { model: "PXQZ231109-2", name: "PXQZ231109-2 — Mặt bàn + ốp tường", desc: "Tấm quartz đa năng, làm mặt bàn lẫn ốp tường nội thất.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407301430196426-768x513.jpg" },
-      { model: "PXQZ160725-3", name: "PXQZ160725-3 — Engineered wholesale", desc: "Tấm engineered quartz cho phân khúc wholesale.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407311133208903-768x513.jpg" },
-      { model: "PXQZ220507-2", name: "PXQZ220507-2 — Tấm tuỳ kích thước", desc: "Sản xuất tấm quartz theo kích thước khách hàng đặt, giá factory direct.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407281521296906-768x513.jpg" },
-      { model: "PXQZ190612-1", name: "PXQZ190612-1 — White Calacatta", desc: "Tấm quartz vân Calacatta trắng kinh điển cao cấp.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407281445225808-768x513.jpg" },
-      { model: "PXQZ230427-1", name: "PXQZ230427-1 — Golden Veins Calacatta", desc: "Calacatta nhân tạo với vân vàng nổi bật cho không gian sang trọng.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291535050738-768x513.jpg" },
-      { model: "PXQZ230629-3", name: "PXQZ230629-3 — Stone furniture slab", desc: "Tấm quartz cho sản xuất nội thất đá (bàn, ghế đá).", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291717085630-768x513.jpg" },
-      { model: "PXQZ230709-2", name: "PXQZ230709-2 — Black quartz sheet", desc: "Tấm quartz màu đen cao cấp, mặt mờ + chống vân tay.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291723014117-1.jpg" },
-      { model: "PXQZ220914-4", name: "PXQZ220914-4 — Kitchen island slab", desc: "Tấm quartz chuyên cho đảo bếp, khổ lớn liền mạch.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291054556491-768x513.jpg" },
-      { model: "PXQZ230626-1", name: "PXQZ230626-1 — Cabinet countertop", desc: "Tấm quartz cho mặt tủ bếp, chống thấm + dễ vệ sinh.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407291702491021-768x513.jpg" },
-      { model: "PXQZ231109-8", name: "PXQZ231109-8 — Wall cladding cao cấp", desc: "Tấm ốp tường cao cấp, vân thiết kế hiện đại.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407301436314184-768x513.jpg" },
-      { model: "PXQZ231126-3", name: "PXQZ231126-3 — Tấm có quality cert", desc: "Tấm quartz có đầy đủ chứng nhận chất lượng quốc tế.", image: "https://ducthinhstone.com/wp-content/uploads/2025/07/3121-202407301453103172-768x513.jpg" },
-    ],
+    products: DUC_THINH_STONE_PRODUCTS,
   },
 
-  // ─── 💡 ĐÈN & CHIẾU SÁNG (mới — đợt Phase 5+) ──────────────────────
+  // ─── 💡 灯具照明（新增 —— Phase 5+ 批次） ──────────────────
   {
     slug: "fsl",
-    name: "Phật Sơn Chiếu Sáng (FSL)",
+    name: "FSL",
     nameOriginal: "佛山照明 Foshan Lighting (FSL)",
     category: "lighting",
     cvsStt: 16,
+    logo: "/img/logos/fsl.png",
     introduction:
-      "Phật Sơn Chiếu Sáng (FSL) là một trong những doanh nghiệp chiếu sáng lâu đời nhất Trung Quốc, hoạt động từ năm 1958. Công ty hiện sở hữu chuỗi sản xuất LED hoàn chỉnh — từ chip thượng nguồn → đóng gói LED trung nguồn → ứng dụng đèn LED hạ nguồn. FSL liên tục mở rộng các phân khúc mới: chiếu sáng thông minh, sức khoẻ, hàng hải, hàng không, thể thao, nông nghiệp và chăn nuôi.",
+      "佛山照明（FSL）是中国历史最悠久的照明企业之一，始创于 1958 年。公司目前拥有完整的 LED 产业链 —— 从上游芯片 → 中游 LED 封装 → 下游 LED 灯具应用。FSL 持续拓展智能照明、健康、船舶、航空、体育、农业及养殖等新领域。",
     founded: "1958",
     factory: {
-      location: "Trụ sở chính: Phật Sơn, tỉnh Quảng Đông, Trung Quốc",
-      facilities: "Chuỗi sản xuất LED đầy đủ: chip + đóng gói + ứng dụng",
+      location: "总部：中国广东省佛山市",
+      facilities: "完整 LED 产业链：芯片 + 封装 + 应用",
     },
     highlights: [
-      "Doanh nghiệp chiếu sáng đầu tiên niêm yết tại Trung Quốc (Trung Hoa Lão Hiệu — Thương hiệu lâu đời)",
-      "Chuỗi sản xuất LED đầy đủ trong nội bộ (chip → package → ứng dụng)",
-      "3 mảng kinh doanh cốt lõi: chiếu sáng chung, kỹ thuật điện, đèn ô tô",
-      "Mở rộng sang chiếu sáng thông minh, y tế, hàng hải, hàng không, thể thao",
+      "中国首家上市照明企业 —— 获评中华老字号",
+      "内部完整 LED 产业链（芯片 → 封装 → 应用）",
+      "3 大核心业务：通用照明、电气工程、车灯",
+      "拓展至智能照明、医疗、船舶、航空、体育领域",
     ],
     website: "https://www.chinafsl.com/",
-    products: [
-      { model: "FSL-IND", name: "Đèn LED công nghiệp", desc: "Đèn LED chiếu sáng nhà xưởng, kho bãi, logistics.", image: "https://www.chinafsl.com/uploads/images/202512/f0ea01d9c8e60f6111e52cc4c4f8e573.jpg" },
-      { model: "FSL-COM", name: "Đèn LED thương mại", desc: "Đèn LED chiếu sáng văn phòng, showroom, TTTM.", image: "https://www.chinafsl.com/uploads/images/202512/9d776f7c64673a3f35632054331dadfa.png" },
-      { model: "FSL-HOME", name: "Đèn LED gia dụng", desc: "Đèn LED ốp trần, downlight, panel cho nhà ở.", image: "https://www.chinafsl.com/uploads/images/202512/6ce05ca500d42f0e2ec8281efdbf669e.png" },
-      { model: "FSL-AUTO", name: "Đèn ô tô", desc: "Hệ thống chiếu sáng ô tô — đèn pha LED, đèn trang trí.", image: "https://www.chinafsl.com/uploads/images/202512/e747ac239a590ee3efb0b60bdbbff921.png" },
-      { model: "FSL-OUT", name: "Đèn LED ngoài trời", desc: "Đèn pha LED 100-300W, đèn đường, đèn cảnh quan, IP65-66.", image: "https://www.chinafsl.com/uploads/images/202512/44699211a4735d7d324fc1b959a5722d.png" },
-      { model: "FSL-SMART", name: "Chiếu sáng thông minh", desc: "Đèn smart Wi-Fi/Zigbee, điều khiển qua app, thay đổi nhiệt màu.", image: "https://www.chinafsl.com/uploads/images/202512/7500a21694b3c532a9c2f7f664c5d6ca.png" },
-      { model: "FSL-HEALTH", name: "Chiếu sáng sức khoẻ", desc: "Đèn chiếu sáng theo nhịp sinh học, bảo vệ thị lực + giấc ngủ.", image: "https://www.chinafsl.com/uploads/images/202512/a8159c4c859f3b0f5aadc1c2b8817565.png" },
-      { model: "FSL-PLANT", name: "Đèn nông nghiệp + chăn nuôi", desc: "Đèn LED chuyên dụng cho nhà kính + trang trại chăn nuôi.", image: "https://www.chinafsl.com/uploads/images/202512/674709e0db6c9675a4f490aa6555ed85.png" },
-    ],
+    products: FSL_PRODUCTS,
   },
   {
     slug: "care-lighting",
-    name: "Khai Nhĩ Chiếu Sáng (CareLighting)",
+    name: "CareLighting",
     nameOriginal: "开尔照明 Zhejiang Xuguang Electronic",
     category: "lighting",
     cvsStt: 14,
+    logo: "/img/logos/care-lighting.png",
     introduction:
-      "Khai Nhĩ Chiếu Sáng (CareLighting) thuộc Công ty CP Điện tử Húc Quang Chiết Giang — nhà cung cấp giải pháp ứng dụng đèn LED tích hợp R&D + sản xuất + bán hàng + dịch vụ. Công ty đã niêm yết tại sàn NEEQ (Tân Tam Bản) năm 2016 mã 839762, được công nhận là một trong 10 thương hiệu LED hàng đầu Trung Quốc và là đơn vị soạn thảo tiêu chuẩn quốc gia về đèn LED tự chấn lưu trên 50V.",
+      "开尔照明隶属浙江旭光电子股份有限公司 —— 集研发 + 生产 + 销售 + 服务于一体的 LED 灯具应用解决方案供应商。公司于 2016 年在新三板（NEEQ）挂牌，代码 839762，获评中国十大 LED 品牌之一，并是 50V 以上自镇流 LED 灯安全规范国家标准的起草单位。",
     founded: "1995 (CareLighting brand)",
     listed: "NEEQ 839762",
     factory: {
-      location: "Trụ sở: tỉnh Chiết Giang, Trung Quốc",
-      facilities: "Cơ sở sản xuất tại Chiết Giang, mạng lưới phân phối 26 tỉnh/thành",
+      location: "总部：中国浙江省",
+      facilities: "生产基地位于浙江，分销网络覆盖 26 个省/市",
     },
     highlights: [
-      "Niêm yết sàn NEEQ Trung Quốc — mã 839762 (2016)",
-      "Top 10 thương hiệu LED tại Trung Quốc",
-      "Đơn vị soạn thảo tiêu chuẩn quốc gia: Quy phạm An toàn đèn LED tự chấn lưu trên 50V",
-      "Mạng lưới 500 cửa hàng phân phối tại 26 tỉnh, thành phố trực thuộc trung ương, khu tự trị",
+      "新三板挂牌 —— 代码 839762（2016）",
+      "中国十大 LED 品牌",
+      "国家标准起草单位：50V 以上自镇流 LED 灯安全规范",
+      "在 26 个省、直辖市、自治区设有 500 家分销门店网络",
     ],
     website: "http://www.care-china.cn/",
-    products: [
-      { model: "CL-LED-SRC", name: "LED nguồn — chip + module", desc: "LED chip COB + SMD + module driver cho phân phối đại lý.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/2e7591f9-db71-434f-acb5-038cd031406f.png" },
-      { model: "CL-LED-HOME", name: "LED gia dụng", desc: "Đèn ốp trần, downlight âm trần, panel LED cho nhà ở.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/8a1486f8-5999-4b62-aeee-7ecbc03e9ea4.jpg" },
-      { model: "CL-LED-COM", name: "LED thương mại", desc: "Đèn pha LED, đèn tuýp T8, spotlight ray, UFO highbay cho nhà xưởng + showroom.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/4d0ae77e-e3e5-4c59-9680-96ba494c3f9c.jpg" },
-      { model: "CL-EE", name: "Vật tư điện", desc: "Ổ cắm, công tắc, MCB, RCBO, hộp đấu nối hoàn thiện hệ thống chiếu sáng.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/1c1d038e-7b8a-450c-8eb8-047d111a60af.png" },
-      { model: "CL-PROD-A", name: "Đèn LED chuyên dụng A", desc: "Series đèn chuyên dụng A.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/7c87c30d-c739-440f-a92f-fc0835c289c5.jpg" },
-      { model: "CL-PROD-B", name: "Đèn LED chuyên dụng B", desc: "Series đèn chuyên dụng B.", image: "https://omo-oss-image.thefastimg.com/portal-saas/new2023010616072175075/cms/image/c82dfc48-c3ea-4330-b6a8-bb3d3d8c3a07.jpg" },
-    ],
+    products: CARE_LIGHTING_PRODUCTS,
   },
 
-  // ─── 🍳 THIẾT BỊ NHÀ BẾP (bổ sung 2 brand) ─────────────────────────
+  // ─── 🍳 厨房设备（新增 2 个品牌） ─────────────────────────
   {
     slug: "daweier",
-    name: "Đạt Uy Nhĩ (Daweier)",
+    name: "Daweier",
     nameOriginal: "开平达威尔厨卫 Kaiping Daweier",
     category: "kitchen-equipment",
     cvsStt: 27,
+    logo: "/img/logos/daweier.png",
     introduction:
-      "Đạt Uy Nhĩ Khai Bình (Kaiping Daweier) là doanh nghiệp liên doanh Trung – Mỹ chuyên sản xuất chậu rửa inox cao cấp + vòi nước + phễu thoát sàn inox + phụ kiện nhà bếp/phòng tắm. Tích hợp thiết kế + R&D + sản xuất + tiếp thị + dịch vụ, Daweier là doanh nghiệp dẫn đầu thị trường chậu rửa Trung Quốc, sớm đạt chứng nhận ISO 9001 và UPC.",
+      "开平达威尔厨卫是一家中美合资企业，专业生产高端不锈钢水槽 + 水龙头 + 不锈钢地漏 + 厨卫配件。集设计 + 研发 + 生产 + 营销 + 服务于一体，达威尔是中国水槽市场的领军企业，早期即通过 ISO 9001 与 UPC 认证。",
     factory: {
-      location: "Trấn Thuỷ Khẩu, Khai Bình, tỉnh Quảng Đông, Trung Quốc",
-      facilities: "Nhà máy hiện đại 60.000+ m² tại Khai Bình — “Vương quốc Sanitary của Trung Quốc”",
+      location: "中国广东省开平市水口镇",
+      facilities: "开平 60,000+ ㎡ 现代化工厂 ——「中国卫浴王国」",
     },
     highlights: [
-      "Liên doanh Trung – Mỹ, hoạt động từ 1998 — hơn 25 năm chuyên ngành",
-      "Sớm đạt chứng nhận ISO 9001 (chất lượng) + UPC (chứng nhận Mỹ cho sản phẩm uPVC)",
-      "Doanh nghiệp dẫn đầu thị trường chậu rửa inox Trung Quốc",
-      "Sản phẩm xuất khẩu trên 30 quốc gia + vùng lãnh thổ",
+      "中美合资，1998 年成立 —— 25 年以上专业积淀",
+      "早期即获 ISO 9001（质量）+ UPC（美国 uPVC 产品认证）",
+      "中国不锈钢水槽市场领军企业",
+      "产品出口 30 多个国家和地区",
     ],
     website: "http://www.daweier.com/",
-    products: [
-      { model: "DW-SS-SINK", name: "Chậu rửa inox 304", desc: "Chậu rửa bếp inox 304, đơn / đôi / 3 ngăn, bề mặt brushed + nano đen matte." },
-      { model: "DW-FA-KIT", name: "Vòi nước nhà bếp", desc: "Vòi bếp đồng mạ chrome / vàng PVD, vòi rút uốn cong." },
-      { model: "DW-FA-BATH", name: "Vòi nước phòng tắm", desc: "Vòi lavabo + vòi sen, mạ chrome / matte đen / vàng rose." },
-      { model: "DW-FD", name: "Phễu thoát sàn inox", desc: "Phễu thoát sàn inox 304 chống mùi, lưới chắn rác có thể tháo rời." },
-      { model: "DW-ACC", name: "Phụ kiện kim khí bếp - tắm", desc: "Phụ kiện inox: giá để bát, móc treo, tay vịn, kệ phụ trợ." },
-    ],
+    products: DAWEIER_PRODUCTS,
   },
   {
     slug: "dongyuan",
-    name: "Đông Nguyên (Dongyuan)",
+    name: "Dongyuan",
     nameOriginal: "东原厨具 GuangDong DongYuan Kitchenware",
     category: "kitchen-equipment",
     cvsStt: 28,
+    logo: "/img/logos/dongyuan.png",
     introduction:
-      "Đông Nguyên (Dongyuan Kitchenware) là doanh nghiệp hiện đại tại quận Thuận Đức, Phật Sơn — trung tâm cụm sản xuất chế tạo lớn nhất Trung Quốc. Hoạt động từ 1993, công ty tích hợp R&D + sản xuất + bán hàng cho lĩnh vực chậu rửa inox, đồ dùng nhà bếp + sản phẩm kim khí. Sản lượng hơn 1,8 triệu sản phẩm/năm và xuất khẩu hơn 30 quốc gia.",
+      "东原厨具是位于佛山顺德区的现代化企业 —— 顺德是中国最大的制造产业集群中心之一。公司创立于 1993 年，集研发 + 生产 + 销售于一体，主营不锈钢水槽、厨房用具 + 五金制品。年产量超 180 万件，出口 30 多个国家。",
     founded: "1993",
     factory: {
-      location: "Quận Thuận Đức, thành phố Phật Sơn, tỉnh Quảng Đông, Trung Quốc",
-      area: "~60.000 m²",
-      capacity: "1,8 triệu+ sản phẩm/năm",
+      location: "中国广东省佛山市顺德区",
+      area: "约 60,000 ㎡",
+      capacity: "180 万+ 件/年",
     },
     highlights: [
-      "Trên 30 năm chuyên ngành (từ 1993) — tích luỹ kinh nghiệm sâu trong chậu rửa + kim khí bếp",
-      "Sản lượng hàng năm vượt 1,8 triệu sản phẩm",
-      "Xuất khẩu hơn 30 quốc gia + vùng lãnh thổ trên thế giới",
-      "Cụm sản xuất Thuận Đức — trung tâm gia công kim loại hàng đầu Trung Quốc",
+      "30 余年专业积淀（始于 1993）—— 在水槽 + 厨房五金领域积累深厚经验",
+      "年产量超 180 万件",
+      "出口全球 30 多个国家和地区",
+      "顺德产业集群 —— 中国领先的金属加工中心",
     ],
     website: "http://www.sddongyuan.com/",
-    products: [
-      { model: "DY-SINK-1", name: "Chậu rửa inox 304 — series P1", desc: "Chậu rửa inox 304 đơn lớn, dung tích tối đa, bề mặt brushed.", image: "http://www.sddongyuan.com/images/p1.jpg" },
-      { model: "DY-SINK-2", name: "Chậu rửa inox 304 — series P2", desc: "Chậu rửa inox 304 đôi, 2 ngăn cân đối.", image: "http://www.sddongyuan.com/images/p2.jpg" },
-      { model: "DY-SINK-3", name: "Chậu rửa inox 304 — series P3", desc: "Chậu rửa inox handmade R10, vuông góc hiện đại.", image: "http://www.sddongyuan.com/images/p3.jpg" },
-      { model: "DY-SINK-4", name: "Chậu rửa inox 304 — series P4", desc: "Chậu rửa inox bán âm undermount cho mặt bếp đá.", image: "http://www.sddongyuan.com/images/p4.jpg" },
-      { model: "DY-KIT", name: "Đồ dùng nhà bếp inox", desc: "Các sản phẩm bếp phụ trợ: giỏ rổ, kệ, móc treo inox 304." },
-      { model: "DY-HW", name: "Sản phẩm kim khí bếp", desc: "Bản lề tủ bếp, ray trượt giảm chấn, tay nắm hợp kim." },
-    ],
+    products: DONGYUAN_PRODUCTS,
   },
 
-  // ─── 🧱 VLXD (bổ sung 2 brand đá + tấm cách nhiệt) ──────────────────
+  // ─── 🧱 建筑材料（新增 2 个石材 + 隔热板品牌） ──────────────────
   {
     slug: "pengxiang",
-    name: "Bằng Tường (Pengxiang)",
+    name: "Pengxiang",
     nameOriginal: "福建鹏翔实业 Fujian Pengxiang Industry",
     category: "construction-materials",
     cvsStt: 43,
+    logo: "/img/logos/pengxiang.png",
     introduction:
-      "Bằng Tường (Fujian Pengxiang Industry) là tập đoàn chế tạo đá cao cấp đặt tại tỉnh Phúc Kiến — Trung Quốc, một trong những nhà sản xuất hàng đầu Châu Á về đá nhân tạo. Sản phẩm chủ lực gồm thạch anh nhân tạo, cẩm thạch tái chế (re-engineered marble), đá mài terrazzo và thạch anh 3D. Tập đoàn cũng là công ty mẹ của Đức Thịnh Stone (pháp nhân Việt Nam) tại Nghệ An.",
+      "福建鹏翔实业是位于中国福建省的高端石材制造集团，是亚洲领先的人造石制造商之一。主营产品包括人造石英石、再造大理石（re-engineered marble）、水磨石（terrazzo）及 3D 石英石。集团同时是越南乂安省德盛石材（越南法人公司）的母公司。",
     factory: {
-      location: "Tỉnh Phúc Kiến, Trung Quốc + nhà máy tại KCN Nghĩa Đàn, Nghệ An (qua Đức Thịnh Stone)",
-      facilities: "Công nghệ sản xuất đá nhân tạo tự động toàn phần — đạt chuẩn quốc tế",
+      location: "中国福建省 + 越南乂安省义坛工业园工厂（通过德盛石材）",
+      facilities: "全自动人造石生产技术 —— 达国际标准",
     },
     highlights: [
-      "Một trong những nhà sản xuất đá nhân tạo lớn nhất Châu Á",
-      "Sở hữu pháp nhân Việt Nam (Đức Thịnh Stone) tại KCN Nghĩa Đàn, Nghệ An",
-      "Vốn đầu tư nhà máy VN: 25 triệu USD, công suất 8,5 triệu m²/năm",
-      "Xuất khẩu hơn 120 quốc gia trên thế giới",
+      "亚洲最大的人造石制造商之一",
+      "在越南乂安省义坛工业园拥有越南法人公司（德盛石材）",
+      "越南工厂投资：2,500 万美元，年产能 850 万㎡",
+      "出口全球 120 多个国家",
     ],
     website: "http://www.pengxiang.cn/",
-    products: [
-      { model: "PX-Q-3D", name: "Thạch anh 3D", desc: "Tấm thạch anh nhân tạo vân 3D thiết kế hiện đại, dùng cho mặt bàn + ốp tường.", image: "http://www.pengxiang.cn/uploads/pros/pros-0006.jpg" },
-      { model: "PX-Q", name: "Thạch anh nhân tạo", desc: "Tấm thạch anh engineered, khổ lớn liền mạch, độ cứng cao.", image: "http://www.pengxiang.cn/uploads/pros/pros-0001.jpg" },
-      { model: "PX-M-RE", name: "Cẩm thạch tái chế", desc: "Re-engineered marble — đá cẩm thạch nhân tạo từ vụn marble tự nhiên.", image: "http://www.pengxiang.cn/uploads/pros/pros-0005.jpg" },
-      { model: "PX-TR", name: "Đá mài terrazzo", desc: "Đá mài terrazzo nhân tạo, kết hợp xi măng + đá vụn tự nhiên.", image: "http://www.pengxiang.cn/uploads/banner/202604132320130.jpg" },
-      { model: "PX-Q-COUNTER", name: "Mặt bàn thạch anh", desc: "Tấm thạch anh chuyên cho mặt bàn bếp + lavabo, độ cứng cao.", image: "http://www.pengxiang.cn/uploads/202408/26/thumbs/202408261536143_s.jpg" },
-      { model: "PX-Q-WALL", name: "Ốp tường thạch anh", desc: "Tấm thạch anh khổ lớn ốp tường nội thất cao cấp.", image: "http://www.pengxiang.cn/uploads/202408/26/thumbs/202408261456163_s.jpg" },
-    ],
+    products: PENGXIANG_PRODUCTS,
   },
   {
     slug: "zhongju-yabai",
-    name: "Trung Cư Á Bách (Zhongju Yabai)",
+    name: "Zhongju Yabai",
     nameOriginal: "中居亚百建材科技 Zhongju Yabai Building Materials",
     category: "construction-materials",
     cvsStt: 38,
+    logo: "/img/logos/zhongju-yabai.png",
     introduction:
-      "Trung Cư Á Bách (Guangdong Zhongju Yabai Building Materials Technology) chuyên sản xuất tấm vô cơ phủ sẵn (无机预涂板) — còn gọi là 'tấm Băng Hoả' (冰火板) — vật liệu hoàn thiện cao cấp cho vách ngăn nội/ngoại thất và trần thả. Sản phẩm có đặc tính chống cháy, chống ẩm, chống nấm mốc, kháng khuẩn và không phát thải formaldehyde.",
+      "广东中居亚百建材科技专业生产无机预涂板 —— 又称「冰火板」—— 用于室内外隔墙及吊顶的高端饰面材料。产品具备防火、防潮、防霉、抗菌且无甲醛释放等特性。",
     factory: {
-      location: "Tỉnh Quảng Đông, Trung Quốc",
-      facilities: "Dây chuyền sản xuất toàn tự động — tấm vô cơ pre-coated",
+      location: "中国广东省",
+      facilities: "全自动生产线 —— 无机预涂板",
     },
     highlights: [
-      "Tấm vô cơ phủ sẵn (无机预涂板) — đặc tính chống cháy + chống ẩm + chống nấm mốc",
-      "Sản phẩm kháng khuẩn, không phát thải formaldehyde — đạt chuẩn bệnh viện + phòng sạch",
-      "Ứng dụng: vách ngăn nội/ngoại thất, trần thả, ốp tường y tế, phòng thí nghiệm",
-      "Sản phẩm 'Băng Hoả' (冰火板) — chịu lửa + chịu nhiệt độ thấp",
+      "无机预涂板 —— 防火 + 防潮 + 防霉特性",
+      "抗菌、无甲醛释放产品 —— 达医院 + 洁净室标准",
+      "应用：室内外隔墙、吊顶、医用墙面、实验室",
+      "「冰火板」产品 —— 耐火 + 耐低温",
     ],
     website: "http://www.gdzjyb.com/",
-    products: [
-      { model: "ZJ-PCB", name: "Tấm vô cơ phủ sẵn", desc: "Tấm vô cơ pre-coated cho vách + trần — chống cháy + chống ẩm + chống mốc.", image: "http://www.gdzjyb.com/uploads/image/20220825/194f666d94d89f461eb6c7526109638d.png" },
-      { model: "ZJ-ICE-FIRE", name: "Tấm 'Băng Hoả' (冰火板)", desc: "Tấm cao cấp chịu lửa + chịu nhiệt độ thấp, dùng nội thất hiện đại.", image: "http://www.gdzjyb.com/uploads/image/20220901/cae3d6925d3191468926f9aa3337dfc9.jpg" },
-      { model: "ZJ-MED", name: "Tấm kháng khuẩn y tế", desc: "Tấm vô cơ kháng khuẩn chuyên dụng cho bệnh viện + phòng sạch.", image: "http://www.gdzjyb.com/uploads/image/20220901/fe72f477fd0d9351a09c9e80f31e12e5.jpg" },
-      { model: "ZJ-WALL", name: "Tấm ốp tường (护墙板)", desc: "Tấm ốp tường nội thất bề mặt trang trí + dễ vệ sinh.", image: "http://www.gdzjyb.com/uploads/image/20220901/3afdbf4df145fb7285ab55125b93d2a4.jpg" },
-      { model: "ZJ-CEIL", name: "Tấm trần thả", desc: "Tấm trần thả vô cơ, không cháy + cách âm nhẹ.", image: "http://www.gdzjyb.com/uploads/image/20220901/b8c4c54486b9c1ee678aa737daa966b2.jpg" },
+    products: ZHONGJU_YABAI_PRODUCTS,
+  },
+
+  // ─── 🏠 家具（新增 1 个家用电梯品牌） ───────────────
+  {
+    slug: "linvol",
+    name: "LINVOL",
+    nameOriginal: "领沃 LINVOL (Midea Group)",
+    category: "noi-that",
+    cvsStt: 45,
+    logo: "/img/logos/linvol.png",
+    introduction:
+      "领沃（LINVOL）是美的集团旗下官方电梯品牌 —— 专注别墅电梯、旧楼加装改造电梯、自动扶梯及乘客电梯。领沃秉持「每一程，都是更好的抵达」理念，将数字技术 + AI 融入电梯全生命周期：设计 → 生产 → 定制 → 研发 → 运行 → 维保。",
+    factory: {
+      location: "研发 + 工厂区：中国广东省（美的园区）",
+      facilities: "美的数字化电梯研发中心 + 佛山园区工厂",
+    },
+    highlights: [
+      "美的集团（《财富》世界 500 强）官方电梯品牌",
+      "「管家 + 专家」全周期 —— 终身质保 + 维保",
+      "数字技术 + AI 贯穿电梯全生命周期",
+      "4 大产品线：别墅、加装改造、自动扶梯、乘客电梯",
     ],
+    website: "https://linvol.midea.com.cn/home",
+    products: LINVOL_PRODUCTS,
+  },
+
+  // ─── 🚪 门窗与智能锁（新增 1 个智能锁品牌） ─────
+  {
+    slug: "ttlock",
+    name: "TTLock",
+    nameOriginal: "TTLock Sciener (赛脑智能 / 鹿客 LOOCK)",
+    category: "doors-windows",
+    cvsStt: 46,
+    logo: "/img/logos/ttlock.png",
+    introduction:
+      "TTLock（由赛脑智能开发）是全球领先的智能锁解决方案供应商 —— 包括适配各类门锁的 PCBA 硬件 + 管理软件平台 + 面向酒店、Airbnb、服务式公寓及企业的集成系统。TTLock 生态连接 30 多家中国软件合作伙伴，服务公寓租赁 + 物业管理市场。",
+    factory: {
+      location: "研发 + 生产总部：中国 —— 全球分销",
+      facilities: "研发中心 + 智能锁专用 PCBA 生产线",
+    },
+    highlights: [
+      "全球领先的智能锁解决方案供应商（自称）",
+      "PCBA 可集成于各类门锁 —— 将普通锁升级为智能锁",
+      "30+ 软件合作伙伴生态，服务租赁 + 物业管理市场",
+      "专用软件：TTLock app、TTRenting、TTHotel Pro、TTology",
+    ],
+    website: "https://www.ttlock.com/",
+    products: TTLOCK_PRODUCTS,
+  },
+
+  // ─── 🧱 建筑材料（新增 2 个瓷砖 + 涂料品牌） ───────────────────
+  {
+    slug: "kito",
+    name: "KITO",
+    nameOriginal: "金意陶 KITO Ceramics",
+    category: "construction-materials",
+    cvsStt: 47,
+    logo: "/img/logos/kito.png",
+    introduction:
+      "金意陶（广东金意陶陶瓷集团）是中国领先的瓷砖 + 岩板制造商 —— 自称「中国质感砖开创者」。运营总部位于广东佛山禅城区季华路 28 号新城智汇 T6 栋。金意陶定位中高端，拥有 6 大艺术砖系列，并为室内设计提供一站式整体配送服务。",
+    factory: {
+      location: "中国广东佛山（禅城季华路 28 号 —— 新城智汇 T6）",
+      facilities: "佛山产业集群 ——「中国瓷砖之都」",
+    },
+    highlights: [
+      "中国「质感系」瓷砖开创者",
+      "6 大专属艺术砖系列 —— 中高端定位",
+      "为室内设计提供「一站式」整体配送服务",
+      "另设出口品牌 KITO Ceramics（kitoceramics.com）",
+    ],
+    hotline: "4008-678-488",
+    website: "https://kito.cn/",
+    products: KITO_PRODUCTS,
+  },
+  {
+    slug: "3trees",
+    name: "3TREES",
+    nameOriginal: "三棵树涂料股份有限公司 SKSHU Paint",
+    category: "construction-materials",
+    cvsStt: 48,
+    logo: "/img/logos/3trees.png",
+    introduction:
+      "三棵树涂料（SKSHU Paint）是中国上市涂料集团，品牌口号为「树立天地，绿满世界」。公司提供完整的家装产品体系（内墙漆 + 艺术漆 + 小森林板材）及工程产品体系（防水涂料 + 工业涂料）。三棵树推出「马上住」服务 —— 短期交付的家装施工套餐。",
+    listed: "SSE 603737（参考）",
+    factory: {
+      location: "总部：中国福建省莆田市",
+      facilities: "上交所上市集团 —— 大型涂料生产集群体系",
+    },
+    highlights: [
+      "中国大型上市涂料集团 —— 股票代码 SSE 603737",
+      "「马上住」一站式服务 —— 涂装快速交付",
+      "完整产品体系：家装 + 工程 + 工业 + 防水",
+      "品牌口号：「树立天地，绿满世界」",
+    ],
+    website: "http://www.skshu.com.cn/",
+    products: TREES_PRODUCTS,
+  },
+
+  // ─── 🚿 卫浴洁具（新增 1 个德国高端品牌） ───────────
+  {
+    slug: "bravat",
+    name: "BRAVAT",
+    nameOriginal: "贝朗 BRAVAT (Dietsche Group, 德国)",
+    category: "bathroom-sanitary",
+    cvsStt: 49,
+    logo: "/img/logos/bravat.png",
+    introduction:
+      "贝朗（BRAVAT）是隶属 Dietsche 集团的高端卫浴品牌 —— Dietsche 是拥有逾百年历史的德国卫浴集团。贝朗定位「生活，从这里真正开始」—— 提供整体卫浴解决方案：智能产品 + 五金 + 马桶 + 浴室家具 + 台盆 + 浴缸 + 淋浴房 + 配件。服务全球市场（德国、美国、中国、巴西、澳大利亚、新加坡、越南、俄罗斯、墨西哥）。",
+    factory: {
+      location: "中国总部：贝朗（中国）卫浴有限公司（BRAVAT China）",
+      facilities: "中国工厂 + 研发 —— Dietsche 全球体系的一部分",
+    },
+    highlights: [
+      "母公司 Dietsche —— 逾百年历史的德国卫浴集团",
+      "完整产品体系：从智能到配件共 8 大系列",
+      "参考项目：万豪、岘港凯悦酒店（越南）、Sber City",
+      "分销 10+ 市场：德国、美国、中国、巴西、澳大利亚、新加坡、越南、俄罗斯、墨西哥",
+    ],
+    website: "https://www.bravat.com.cn/",
+    products: BRAVAT_PRODUCTS,
+  },
+
+  // ─── 💡 灯具照明（新增 1 个国际品牌） ────────────────────────
+  {
+    slug: "sylvania",
+    name: "Sylvania Group",
+    nameOriginal: "Sylvania Group (Feilo Sylvania)",
+    category: "lighting",
+    cvsStt: 50,
+    logo: "/img/logos/sylvania.png",
+    introduction:
+      "Sylvania Group（Feilo Sylvania）是源自 1901 年的国际照明集团 —— 全球历史最悠久、最具声誉的照明品牌之一。业务遍及欧洲、拉丁美洲、亚洲及非洲，产品体系覆盖建筑、工业、零售、办公及城市照明。与上海飞乐音响集团合并后，Sylvania 融入中外生态体系，将西方照明技术与中国供应链相结合。",
+    founded: "1901",
+    factory: {
+      location: "跨国运营 —— 欧洲总部 + 中国工厂（飞乐）",
+      facilities: "多大洲研发 + 工厂网络（欧洲、美洲、亚洲）",
+    },
+    highlights: [
+      "源自 1901 年的国际照明品牌 —— 逾 120 年历史",
+      "跨大洲运营：欧洲 + 美洲 + 亚洲 + 非洲",
+      "产品体系覆盖：建筑、工业、零售、办公、城市",
+      "隶属 Feilo Sylvania 集团 —— 融合西方技术 + 中国供应链",
+    ],
+    website: "https://www.sylvania-group.com/",
+    products: SYLVANIA_PRODUCTS,
   },
 ];
 
-/** Lookup helper: nhóm partners theo root category. */
+/** 查询辅助：按主分类分组合作伙伴。 */
 export function partnersByCategory(slug: PartnerBrand["category"]): PartnerBrand[] {
   return PARTNERS.filter((p) => p.category === slug);
 }
 
-/** Lookup helper: lấy 1 partner theo slug. */
+/** 查询辅助：按 slug 获取单个合作伙伴。 */
 export function getPartner(slug: string): PartnerBrand | undefined {
   return PARTNERS.find((p) => p.slug === slug);
+}
+
+/** 单个产品的 slug —— 优先 `slug` 字段，回退 model.toLowerCase()。 */
+export function productSlug(p: PartnerProduct): string {
+  return (p.slug ?? p.model).toLowerCase();
+}
+
+/** 查询辅助：按 (partnerSlug, productSlug) 获取单个产品。 */
+export function getProduct(
+  partnerSlug: string,
+  prodSlug: string
+): { partner: PartnerBrand; product: PartnerProduct } | undefined {
+  const partner = getPartner(partnerSlug);
+  if (!partner) return undefined;
+  const product = partner.products.find(
+    (p) => productSlug(p) === prodSlug.toLowerCase()
+  );
+  if (!product) return undefined;
+  return { partner, product };
 }

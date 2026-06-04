@@ -15,9 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Huayuesc 华越供应链 — Chuỗi cung ứng VLXD & nội thất Trung – Việt",
+  title: "华越供应链 Huayuesc — 中越建材与家居一站式供应链",
   description:
-    "Chuỗi cung ứng một trạm Trung – Việt cho vật liệu xây dựng, vật liệu trang trí nội thất và đồ điện gia dụng nhà bếp – phòng tắm. Sourcing tại Trung Quốc, kho bãi tập trung, vận chuyển xuyên biên giới và thông quan tại cảng Hải Phòng.",
+    "中越一站式供应链平台，专注建筑材料、室内装饰材料及厨卫家电。中国源头采购、集中仓储、跨境运输，并在海防港完成清关。",
   icons: {
     icon: [
       { url: "/logo/favicon-16.png?v=5", sizes: "16x16", type: "image/png" },
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} antialiased`}>
+    <html lang="zh-CN" className={`${inter.variable} antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-ink">
         <StickyHeader />
         <TopStrip />

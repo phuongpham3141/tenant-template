@@ -2,7 +2,7 @@ export function Faq({ title, faqs }: { title: string; faqs: { q: string; a: stri
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-6">
       <h3 className="text-[16px] font-bold text-ink mb-3">
-        Câu hỏi thường gặp về {title}
+        关于{title}的常见问题
       </h3>
       <div className="bg-paper border border-line rounded divide-y divide-line">
         {faqs.map((f, i) => (

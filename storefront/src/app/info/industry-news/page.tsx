@@ -51,9 +51,9 @@ export default async function BlogIndexPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Tin tức ngành" },
+          { label: "首页", href: "/" },
+          { label: "信息", href: "/help" },
+          { label: "行业资讯" },
         ]}
       />
 
@@ -67,10 +67,10 @@ export default async function BlogIndexPage({
             📰 BLOG · HUAYUESC
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-2 max-md:text-[24px]">
-            Tin tức ngành sourcing Việt Nam – Trung Quốc
+            越南—中国采购行业资讯
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed max-w-[720px] max-md:text-[12.5px] mb-5">
-            Phân tích xu hướng giá, hội chợ, chính sách thuế, case study từ buyer Việt Nam và profile NCC. Cập nhật mỗi tuần bởi đội ngũ Quảng Châu + Hà Nội.
+            分析价格趋势、展会、税收政策、越南采购商案例及供应商概况。由广州 + 河内团队每周更新。
           </p>
 
           {/* Category filter chips */}
@@ -81,7 +81,7 @@ export default async function BlogIndexPage({
                 !activeCat ? "bg-gold text-brand-dark" : "bg-white/15 text-white hover:bg-white/25"
               }`}
             >
-              Tất cả ({allArticles.length})
+              全部 ({allArticles.length})
             </Link>
             {catCounts.map((c) => (
               <Link
@@ -125,7 +125,7 @@ export default async function BlogIndexPage({
                     >
                       {CATEGORIES[featured.category].label}
                     </span>
-                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ NỔI BẬT</span>
+                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ 精选</span>
                   </div>
                   <h2 className="text-[22px] font-bold text-ink leading-tight mb-2 group-hover/feat:text-brand max-md:text-[18px]">
                     {featured.title}
@@ -136,7 +136,7 @@ export default async function BlogIndexPage({
                     <span>·</span>
                     <span>{fmtDate(featured.date)}</span>
                     <span>·</span>
-                    <span>⏱ {featured.readMinutes} phút đọc</span>
+                    <span>⏱ {featured.readMinutes} 分钟阅读</span>
                   </div>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default async function BlogIndexPage({
                     <span>·</span>
                     <span>{fmtDate(a.date)}</span>
                     <span>·</span>
-                    <span>⏱ {a.readMinutes}p</span>
+                    <span>⏱ {a.readMinutes} 分钟</span>
                   </div>
                 </div>
               </Link>
@@ -184,17 +184,17 @@ export default async function BlogIndexPage({
 
           {filtered.length === 0 && (
             <div className="bg-paper border border-line rounded p-12 text-center text-mute">
-              Chưa có bài viết trong danh mục này.
+              该分类下暂无文章。
             </div>
           )}
 
           {/* Pagination placeholder */}
           {filtered.length > 8 && (
             <div className="flex justify-center mt-8 gap-2">
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">← Trang trước</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">← 上一页</button>
               <span className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12.5px] font-bold">1</span>
               <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">2</button>
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">Trang sau →</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">下一页 →</button>
             </div>
           )}
         </div>
@@ -208,10 +208,10 @@ export default async function BlogIndexPage({
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[18px]">📬</span>
-              <b className="text-[13px] font-bold">Cảnh báo Thương mại miễn phí</b>
+              <b className="text-[13px] font-bold">免费交易预警</b>
             </div>
             <p className="text-[11.5px] opacity-90 leading-snug mb-3">
-              12,000+ buyer Việt Nam đã đăng ký. Newsletter mỗi thứ 5 với xu hướng giá, deal limited, hội chợ.
+              12,000+ 越南采购商已订阅。每周四资讯，涵盖价格趋势、限时优惠、展会。
             </p>
             <form action="/trade-alert" method="get" className="space-y-2">
               <input
@@ -224,14 +224,14 @@ export default async function BlogIndexPage({
                 type="submit"
                 className="w-full py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A]"
               >
-                Đăng ký miễn phí
+                免费订阅
               </button>
             </form>
           </div>
 
           {/* Categories list */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 Danh mục</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 分类</b>
             <ul className="space-y-1.5">
               {catCounts.map((c) => (
                 <li key={c.code}>
@@ -254,13 +254,13 @@ export default async function BlogIndexPage({
 
           {/* Popular tags */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 Tag phổ biến</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 热门标签</b>
             <div className="flex flex-wrap gap-1.5">
               {popularTags.map(([tag, n]) => (
                 <span
                   key={tag}
                   className="text-[11px] text-ink bg-bg border border-line px-2 py-0.5 rounded-sm hover:border-brand hover:text-brand cursor-pointer"
-                  title={`${n} bài viết`}
+                  title={`${n} 篇文章`}
                 >
                   {tag}
                 </span>
@@ -270,26 +270,26 @@ export default async function BlogIndexPage({
 
           {/* Related links */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 Liên kết</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 链接</b>
             <ul className="space-y-1.5">
               <li>
                 <Link href="/info/about-us" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Giới thiệu Huayuesc
+                  → 公司介绍
                 </Link>
               </li>
               <li>
                 <Link href="/info/import-guide" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Hướng dẫn nhập khẩu
+                  → 进口指南
                 </Link>
               </li>
               <li>
                 <Link href="/buying-request" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Gửi RFQ
+                  → 发送询价
                 </Link>
               </li>
               <li>
                 <Link href="/help" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Trung tâm trợ giúp
+                  → 帮助中心
                 </Link>
               </li>
             </ul>
@@ -301,7 +301,7 @@ export default async function BlogIndexPage({
 }
 
 export const metadata = {
-  title: "Tin tức ngành sourcing — Huayuesc Blog",
+  title: "采购行业资讯——Huayuesc 博客",
   description:
-    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Huayuesc.",
+    "分析价格趋势、展会、税收政策、越南采购商案例及中国供应商概况。由 Huayuesc 团队每周更新。",
 };

@@ -7,29 +7,29 @@ import type { ListingProduct } from "@/data/products";
 
 /**
  * Full reviews list for a product. Linked from product detail page's
- * "Xem tất cả N đánh giá" CTA. Synthesizes a longer list of reviews
+ * "View all N reviews" CTA. Synthesizes a longer list of reviews
  * from a small seed pool so every product page has a populated reviews
  * page (useful for SEO + buyer trust).
  */
 
 const REVIEW_SEED = [
-  { name: "Trần Minh Huy", company: "Showroom Nội thất Sài Gòn · TP HCM", rating: 5, text: "Hàng nhận đúng mẫu, thời gian giao nhanh. Đợt 2 sẽ đặt thêm 2 container.", helpful: 18 },
-  { name: "Phạm Quốc Anh", company: "Vật liệu xây dựng Phương Nam · Hà Nội", rating: 5, text: "Báo giá nhanh trong 6 tiếng. NCC hỗ trợ video call kiểm hàng trước xuất.", helpful: 14 },
-  { name: "Nguyễn Thu Hằng", company: "Hotel Group HCM · TP HCM", rating: 4, text: "Chất lượng tốt, đóng gói chuẩn xuất khẩu. Giá cạnh tranh hơn nội địa 30%.", helpful: 9 },
-  { name: "Lê Văn Đức", company: "Đại lý Đà Nẵng · Đà Nẵng", rating: 5, text: "Audit nhà máy do đội Quảng Châu tổ chức rất chuyên nghiệp. Yên tâm đặt hàng.", helpful: 12 },
-  { name: "Đặng Thanh Hà", company: "Công ty Xây dựng Bình Minh · Bắc Ninh", rating: 5, text: "DDP về tận kho, không phát sinh phí thuế. Tiết kiệm 4 ngày so với tự lo logistics.", helpful: 22 },
-  { name: "Bùi Quốc Tuấn", company: "Showroom Decor Hà Nội", rating: 4, text: "Một vài sản phẩm có vài lỗi nhỏ về sơn, NCC đã ship bù miễn phí. Service tốt.", helpful: 7 },
-  { name: "Vũ Thuý Linh", company: "Resort Đà Lạt · Lâm Đồng", rating: 5, text: "Chất lượng hơn cả mong đợi, customer service tận tình.", helpful: 11 },
-  { name: "Phan Văn Hùng", company: "Đại lý Hải Phòng", rating: 4, text: "Thời gian giao hàng đúng hẹn, chất lượng đáng tiền.", helpful: 6 },
-  { name: "Lý Thị Mai", company: "Boutique Hotel Hội An", rating: 5, text: "Bảo đảm Giao dịch refund đầy đủ khi 1 box bị hỏng. Đáng tin.", helpful: 13 },
-  { name: "Đỗ Khắc Quân", company: "Nhà thầu Bình Dương", rating: 5, text: "Đã nhận 3 container, không có khiếu nại. Sẽ tiếp tục hợp tác.", helpful: 17 },
+  { name: "陈明辉", company: "西贡家具展厅 · 胡志明市", rating: 5, text: "收到的货与样品一致，交货速度快。第二批将再订 2 个集装箱。", helpful: 18 },
+  { name: "范国英", company: "南方建筑材料 · 河内", rating: 5, text: "6 小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
+  { name: "阮秋恒", company: "胡志明市酒店集团 · 胡志明市", rating: 4, text: "品质好，出口级包装。价格比国内低 30%，很有竞争力。", helpful: 9 },
+  { name: "黎文德", company: "岘港经销商 · 岘港", rating: 5, text: "由广州团队组织的工厂验厂非常专业，下单很放心。", helpful: 12 },
+  { name: "邓清河", company: "平明建筑公司 · 北宁", rating: 5, text: "DDP 送货到仓，不产生额外税费。比自己安排物流节省 4 天。", helpful: 22 },
+  { name: "裴国俊", company: "河内装饰展厅", rating: 4, text: "个别产品有些细微的漆面瑕疵，供应商已免费补发。服务好。", helpful: 7 },
+  { name: "武翠玲", company: "大叻度假村 · 林同", rating: 5, text: "品质超出预期，客户服务很周到。", helpful: 11 },
+  { name: "潘文雄", company: "海防经销商", rating: 4, text: "交货按时，品质物有所值。", helpful: 6 },
+  { name: "李氏梅", company: "会安精品酒店", rating: 5, text: "1 箱受损时交易保障全额退款，值得信赖。", helpful: 13 },
+  { name: "杜克军", company: "平阳承包商", rating: 5, text: "已收 3 个集装箱，无任何投诉。将继续合作。", helpful: 17 },
 ];
 
 const RATING_BREAKDOWN = [
-  { label: "Chất lượng sản phẩm", score: 4.9 },
-  { label: "Giao tiếp với NCC", score: 4.8 },
-  { label: "Đóng gói & vận chuyển", score: 4.7 },
-  { label: "Đúng cam kết thời hạn", score: 4.9 },
+  { label: "产品品质", score: 4.9 },
+  { label: "与供应商沟通", score: 4.8 },
+  { label: "包装与运输", score: 4.7 },
+  { label: "如期履约", score: 4.9 },
 ];
 
 /* Reuse the lookup pattern from product detail page */
@@ -44,7 +44,7 @@ function listingToProduct(lp: ListingProduct, leafTitle: string): Product {
     moq: `MOQ: ${lp.moq}`,
     rating: 4.7,
     seller: lp.supplier.name,
-    years: "Đã xác minh",
+    years: "已认证",
     image: lp.img.src,
     badges: undefined,
     tags: [leafTitle],
@@ -120,10 +120,10 @@ export default async function ReviewsPage({
   if (!found) {
     return (
       <div className="max-w-[1100px] mx-auto px-4 py-12">
-        <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Sản phẩm", href: "/products" }, { label: id }, { label: "Đánh giá" }]} />
+        <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "产品", href: "/products" }, { label: id }, { label: "评价" }]} />
         <div className="bg-paper border border-line rounded p-12 mt-6 text-center">
-          <h1 className="text-[20px] font-bold text-ink mb-2">Không tìm thấy sản phẩm</h1>
-          <Link href="/products" className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px]">← Tất cả sản phẩm</Link>
+          <h1 className="text-[20px] font-bold text-ink mb-2">未找到产品</h1>
+          <Link href="/products" className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px]">← 全部产品</Link>
         </div>
       </div>
     );
@@ -133,19 +133,19 @@ export default async function ReviewsPage({
 
   const trail = sectionSlug
     ? [
-        { label: "Trang chủ", href: "/" },
-        { label: "Sản phẩm", href: "/products" },
+        { label: "首页", href: "/" },
+        { label: "产品", href: "/products" },
         { label: sectionTitle!, href: `/category/${sectionSlug}` },
         { label: p.title, href: `/product/${p.id}` },
-        { label: "Đánh giá" },
+        { label: "评价" },
       ]
     : [
-        { label: "Trang chủ", href: "/" },
-        { label: "Sản phẩm", href: "/products" },
+        { label: "首页", href: "/" },
+        { label: "产品", href: "/products" },
         ...(parentName && parentSlug ? [{ label: parentName, href: `/category/${parentSlug}` }] : []),
         ...(leafTitle && leafSlug && parentSlug ? [{ label: leafTitle, href: `/category/${parentSlug}/${leafSlug}` }] : []),
         { label: p.title, href: `/product/${p.id}` },
-        { label: "Đánh giá" },
+        { label: "评价" },
       ];
 
   return (
@@ -165,7 +165,7 @@ export default async function ReviewsPage({
             <div className="text-[12.5px] text-mute mt-1">{p.seller} · {p.years}</div>
           </div>
           <Link href={`/product/${p.id}`} className="text-brand text-[12.5px] font-semibold cursor-pointer hover:underline flex-shrink-0">
-            ← Quay lại sản phẩm
+            ← 返回产品
           </Link>
         </div>
       </div>
@@ -176,7 +176,7 @@ export default async function ReviewsPage({
           <div className="text-center border-r border-line pr-6 max-md:border-r-0 max-md:border-b max-md:pr-0 max-md:pb-4">
             <div className="text-[44px] font-extrabold text-accent leading-none">{overall}</div>
             <div className="text-gold text-[18px] my-1">★★★★★</div>
-            <small className="text-[11.5px] text-mute">Dựa trên {reviews.length} đánh giá đã kiểm chứng</small>
+            <small className="text-[11.5px] text-mute">基于 {reviews.length} 条已验证评价</small>
           </div>
           <div className="space-y-2">
             {RATING_BREAKDOWN.map((r) => {
@@ -199,12 +199,12 @@ export default async function ReviewsPage({
       <div className="max-w-[1100px] mx-auto px-4 mt-4 mb-7">
         <div className="bg-paper border border-line rounded p-5">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-[16px] font-bold text-ink">Tất cả đánh giá ({reviews.length})</h2>
+            <h2 className="text-[16px] font-bold text-ink">全部评价 ({reviews.length})</h2>
             <select className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] outline-none bg-white cursor-pointer">
-              <option>Mới nhất</option>
-              <option>Đánh giá cao nhất</option>
-              <option>Đánh giá thấp nhất</option>
-              <option>Hữu ích nhất</option>
+              <option>最新</option>
+              <option>评分最高</option>
+              <option>评分最低</option>
+              <option>最有用</option>
             </select>
           </div>
           <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
@@ -223,10 +223,10 @@ export default async function ReviewsPage({
                 <p className="text-[12.5px] text-ink leading-relaxed mb-2">{r.text}</p>
                 <div className="text-[11px] text-mute flex items-center gap-3 pt-2 border-t border-line">
                   <Link href={`/login?next=/product/${p.id}/reviews`} className="hover:text-brand cursor-pointer">
-                    👍 Hữu ích ({r.helpful})
+                    👍 有用 ({r.helpful})
                   </Link>
                   <Link href={`/login?next=/product/${p.id}/reviews`} className="hover:text-brand cursor-pointer">
-                    💬 Trả lời
+                    💬 回复
                   </Link>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default async function ReviewsPage({
 
           <div className="text-center mt-5">
             <Link href={`/buying-request?productId=${p.id}`} className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] cursor-pointer hover:bg-brand-light">
-              💬 Liên hệ NCC để hỏi thêm
+              💬 联系供应商咨询详情
             </Link>
           </div>
         </div>
@@ -248,6 +248,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = findProduct(id);
   return {
-    title: found ? `Đánh giá: ${found.product.title} — Huayuesc` : `Đánh giá sản phẩm — Huayuesc`,
+    title: found ? `评价：${found.product.title} — Huayuesc` : `产品评价 — Huayuesc`,
   };
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 
-const TABS = ["Tất cả", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "Huayuesc Internal"];
+const TABS = ["全部", "TÜV Rheinland", "SGS", "Bureau Veritas", "Intertek", "Huayuesc Internal"];
 
 const REPORTS = [
   {
@@ -103,15 +103,15 @@ function Bar({ v }: { v: number }) {
 export default function AuditedReportsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Báo cáo nhà máy đã thẩm định" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "已认证工厂报告" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/audited-reports" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛡 BÁO CÁO KIỂM ĐỊNH NHÀ MÁY</div>
-            <h1 className="text-[22px] font-bold text-ink">Báo cáo nhà máy đã thẩm định</h1>
+            <div className="inline-block bg-success/15 text-success px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛡 工厂验厂报告</div>
+            <h1 className="text-[22px] font-bold text-ink">已认证工厂报告</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Truy cập miễn phí {REPORTS.length}+ báo cáo audit do TÜV Rheinland, SGS, Bureau Veritas, Intertek và đội Huayuesc Internal thực hiện trong 12 tháng gần nhất. Mỗi báo cáo đánh giá 3 trục: chất lượng sản xuất, năng lực cung ứng và tuân thủ.
+              免费查阅近 12 个月内由 TÜV Rheinland、SGS、Bureau Veritas、Intertek 及 Huayuesc Internal 团队完成的 {REPORTS.length}+ 份验厂报告。每份报告从三大维度评估：生产品质、供货能力与合规性。
             </p>
           </div>
 
@@ -142,33 +142,33 @@ export default function AuditedReportsPage() {
                   </div>
                   <div className="space-y-2 mb-3">
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Chất lượng</span><span className="text-mute">{r.kpi.quality}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">品质</span><span className="text-mute">{r.kpi.quality}</span></div>
                       <Bar v={r.kpi.quality} />
                     </div>
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Năng lực</span><span className="text-mute">{r.kpi.capacity}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">产能</span><span className="text-mute">{r.kpi.capacity}</span></div>
                       <Bar v={r.kpi.capacity} />
                     </div>
                     <div>
-                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">Tuân thủ</span><span className="text-mute">{r.kpi.compliance}</span></div>
+                      <div className="flex justify-between text-[11px] mb-1"><span className="text-ink">合规</span><span className="text-mute">{r.kpi.compliance}</span></div>
                       <Bar v={r.kpi.compliance} />
                     </div>
                   </div>
-                  <button className="w-full px-3 py-2 bg-brand text-white rounded-sm text-[12px] font-semibold hover:opacity-90">📄 Tải báo cáo PDF</button>
+                  <button className="w-full px-3 py-2 bg-brand text-white rounded-sm text-[12px] font-semibold hover:opacity-90">📄 下载 PDF 报告</button>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mt-4">
-            <b className="block text-[15px] text-ink mb-1">📋 Đăng ký báo cáo audit theo nhu cầu</b>
-            <p className="text-[12px] text-mute mb-4">Chưa thấy NCC bạn cần? Yêu cầu audit riêng — chúng tôi sẽ điều phối auditor đến nhà máy trong 30 ngày, chia sẻ kết quả riêng cho bạn.</p>
+            <b className="block text-[15px] text-ink mb-1">📋 按需定制验厂报告</b>
+            <p className="text-[12px] text-mute mb-4">没有找到您需要的供应商？申请专属验厂——我们将在 30 天内安排审核员前往工厂，并将结果专享给您。</p>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
-              <input placeholder="Ngành hàng (vd: gốm sứ)" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
-              <input placeholder="Sản lượng/tháng (vd: 5,000 m²)" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
-              <input placeholder="Email liên hệ" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+              <input placeholder="品类（例：陶瓷）" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+              <input placeholder="月产量（例：5,000 ㎡）" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+              <input placeholder="联系邮箱" className="px-3 py-2.5 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
             </div>
-            <button className="mt-3 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">Gửi yêu cầu audit</button>
+            <button className="mt-3 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">提交验厂申请</button>
           </div>
         </div>
       </div>
@@ -176,4 +176,4 @@ export default function AuditedReportsPage() {
   );
 }
 
-export const metadata = { title: "Báo cáo nhà máy đã thẩm định — Buyer Center" };
+export const metadata = { title: "已认证工厂报告 — 采购商中心" };

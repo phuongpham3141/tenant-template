@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/category/breadcrumb";
-import { PARTNERS, getPartner, type PartnerProduct } from "@/data/partners";
+import { PARTNERS, getPartner, productSlug, type PartnerProduct } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 
 export function generateStaticParams() {
@@ -15,20 +15,20 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const p = getPartner(slug);
-  if (!p) return { title: "Đối tác — Huayuesc" };
+  if (!p) return { title: "合作伙伴 — 华越" };
   return {
-    title: `${p.name} — Đối tác sản xuất Huayuesc 华越供应链`,
+    title: `${p.name} — 华越供应链合作工厂`,
     description: p.introduction.slice(0, 160),
   };
 }
 
 /**
- * Trang chi tiết 1 partner — gồm 5 section:
- *  1. Banner brand (logo + tên + tagline + ngành)
- *  2. Giới thiệu công ty
- *  3. Thẻ nhà máy (location, diện tích, công suất, nhân viên, vốn)
- *  4. Highlights (chứng nhận, giải thưởng, dự án)
- *  5. Catalog sản phẩm (lưới ảnh + SKU + mô tả + nút gửi RFQ)
+ * 单个合作伙伴详情页 — 共 5 个 section：
+ *  1. 品牌横幅（logo + 名称 + 标语 + 行业）
+ *  2. 公司简介
+ *  3. 工厂信息卡（位置、面积、产能、员工、资本）
+ *  4. 亮点（认证、奖项、项目）
+ *  5. 产品目录（图片网格 + SKU + 描述 + 发送询价按钮）
  */
 export default async function PartnerDetailPage({
   params,
@@ -41,8 +41,8 @@ export default async function PartnerDetailPage({
 
   const category = NAV_CATEGORIES.find((c) => c.slug === partner.category);
   const trail = [
-    { label: "Trang chủ", href: "/" },
-    { label: "Đối tác sản xuất", href: "/info/partners" },
+    { label: "首页", href: "/" },
+    { label: "合作工厂", href: "/info/partners" },
     { label: partner.name },
   ];
 
@@ -51,11 +51,11 @@ export default async function PartnerDetailPage({
       <Breadcrumb trail={trail} />
 
       <div className="max-w-[1200px] mx-auto px-4 mt-5 mb-12 max-md:px-3">
-        {/* ── 1. Banner brand ──────────────────────────────────────── */}
+        {/* ── 1. 品牌横幅 ──────────────────────────────────────── */}
         <section className="bg-gradient-to-br from-brand-dark to-brand text-white rounded-lg p-7 mb-6 max-md:p-5 relative overflow-hidden">
           <div className="flex items-center gap-6 max-md:flex-col max-md:items-start max-md:gap-4">
             {/* Logo */}
-            <div className="w-[120px] h-[120px] flex-shrink-0 bg-white rounded-lg flex items-center justify-center overflow-hidden max-md:w-[88px] max-md:h-[88px]">
+            <div className={`w-[120px] h-[120px] flex-shrink-0 rounded-lg flex items-center justify-center overflow-hidden max-md:w-[88px] max-md:h-[88px] ${partner.logoBg === "dark" ? "bg-brand-dark border border-white/20" : "bg-white"}`}>
               {partner.logo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -89,7 +89,7 @@ export default async function PartnerDetailPage({
                 {partner.founded && (
                   <span className="inline-flex items-center gap-1.5 bg-white/15 rounded px-3 py-1">
                     <span>🗓</span>
-                    <span>Thành lập {partner.founded}</span>
+                    <span>成立 {partner.founded}</span>
                   </span>
                 )}
                 {partner.listed && (
@@ -100,7 +100,7 @@ export default async function PartnerDetailPage({
                 )}
                 <span className="inline-flex items-center gap-1.5 bg-white/15 rounded px-3 py-1">
                   <span>📦</span>
-                  <span>{partner.products.length} mã SKU</span>
+                  <span>{partner.products.length} 个 SKU</span>
                 </span>
                 {partner.hotline && (
                   <span className="inline-flex items-center gap-1.5 bg-accent rounded px-3 py-1 font-bold">
@@ -114,11 +114,11 @@ export default async function PartnerDetailPage({
         </section>
 
         <div className="grid grid-cols-[1fr_320px] gap-6 max-md:grid-cols-1 mb-6">
-          {/* ── 2. Giới thiệu công ty ───────────────────────────── */}
+          {/* ── 2. 公司简介 ───────────────────────────── */}
           <section className="bg-paper border border-line rounded-lg p-6 max-md:p-4">
             <h2 className="text-[18px] font-bold text-brand mb-3 max-md:text-[16px] flex items-center gap-2">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              Giới thiệu công ty
+              公司简介
             </h2>
             <p className="text-[14px] text-ink leading-relaxed">
               {partner.introduction}
@@ -127,7 +127,7 @@ export default async function PartnerDetailPage({
             {partner.highlights.length > 0 && (
               <>
                 <h3 className="text-[15px] font-bold text-brand-dark mt-5 mb-2">
-                  Điểm nổi bật
+                  亮点
                 </h3>
                 <ul className="space-y-1.5">
                   {partner.highlights.map((h, i) => (
@@ -144,37 +144,37 @@ export default async function PartnerDetailPage({
             )}
           </section>
 
-          {/* ── 3. Thẻ nhà máy ────────────────────────────────── */}
+          {/* ── 3. 工厂信息卡 ────────────────────────────────── */}
           <aside className="bg-paper border border-line rounded-lg p-5 self-start sticky top-4 max-md:static max-md:p-4">
             <h2 className="text-[15px] font-bold text-brand-dark mb-3 flex items-center gap-2">
-              🏭 Nhà máy
+              🏭 工厂
             </h2>
             <dl className="space-y-3 text-[13px]">
-              <FactoryField label="Vị trí" value={partner.factory.location} />
+              <FactoryField label="位置" value={partner.factory.location} />
               {partner.factory.area && (
-                <FactoryField label="Diện tích" value={partner.factory.area} />
+                <FactoryField label="面积" value={partner.factory.area} />
               )}
               {partner.factory.employees && (
                 <FactoryField
-                  label="Nhân viên"
+                  label="员工"
                   value={partner.factory.employees}
                 />
               )}
               {partner.factory.capacity && (
                 <FactoryField
-                  label="Công suất / năm"
+                  label="年产能"
                   value={partner.factory.capacity}
                 />
               )}
               {partner.factory.facilities && (
                 <FactoryField
-                  label="Cơ sở"
+                  label="设施"
                   value={partner.factory.facilities}
                 />
               )}
               {partner.factory.investment && (
                 <FactoryField
-                  label="Vốn đầu tư"
+                  label="投资额"
                   value={partner.factory.investment}
                 />
               )}
@@ -197,7 +197,7 @@ export default async function PartnerDetailPage({
                 className="flex items-center gap-2 text-[12.5px] text-brand hover:underline break-all"
               >
                 <span>🌐</span>
-                <span>Trang chính thức ↗</span>
+                <span>官方网站 ↗</span>
               </a>
             </div>
 
@@ -205,24 +205,23 @@ export default async function PartnerDetailPage({
               href="/buying-request"
               className="block w-full mt-4 bg-accent text-white text-center font-bold py-2.5 rounded hover:bg-[#B81827] transition-colors text-[13.5px]"
             >
-              📩 Gửi báo giá
+              📩 发送询价
             </Link>
           </aside>
         </div>
 
-        {/* ── 4. Catalog sản phẩm ──────────────────────────────────── */}
+        {/* ── 4. 产品目录 ──────────────────────────────────── */}
         <section className="bg-paper border border-line rounded-lg p-6 max-md:p-4">
           <h2 className="text-[18px] font-bold text-brand mb-1 max-md:text-[16px] flex items-center gap-2">
             <span className="w-1 h-5 bg-brand rounded-sm" />
-            Catalog sản phẩm
+            产品目录
             <span className="ml-2 text-[12px] text-mute font-normal">
-              · {partner.products.length} mã SKU
+              · {partner.products.length} 个 SKU
             </span>
           </h2>
           <p className="text-[12.5px] text-mute mb-5">
-            Toàn bộ SKU phía dưới đã được Huayue thẩm định và có sẵn để báo giá
-            DDP về Việt Nam. Click ảnh để xem chi tiết hoặc bấm "Gửi báo giá" cho
-            mặt hàng cụ thể.
+            下方所有 SKU 均已通过华越验证，可随时按 DDP 报价至越南。
+            点击图片查看详情，或对具体商品点击“发送询价”。
           </p>
 
           <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 max-md:gap-3">
@@ -232,7 +231,7 @@ export default async function PartnerDetailPage({
           </div>
         </section>
 
-        {/* ── 5. CTA + brand khác cùng ngành ──────────────────────── */}
+        {/* ── 5. CTA + 同行业其他品牌 ──────────────────────── */}
         <RelatedPartnersSection
           currentSlug={partner.slug}
           category={partner.category}
@@ -245,45 +244,45 @@ export default async function PartnerDetailPage({
 /* ─── Helpers ─────────────────────────────────────────────────────── */
 
 /**
- * Đoán emoji phù hợp cho 1 SKU dựa theo từ khoá trong tên tiếng Việt.
- * Dùng khi product.image trống — tốt hơn fallback chung chung 📦.
+ * 根据名称中的关键词为 SKU 推测合适的 emoji。
+ * 当 product.image 为空时使用——优于通用的 📦 兜底。
  */
 function guessIcon(name: string): string {
   const n = name.toLowerCase();
-  if (/điều hoà|máy lạnh/.test(n)) return "❄️";
-  if (/tủ lạnh|lạnh/.test(n)) return "🧊";
-  if (/máy giặt|giặt/.test(n)) return "🧺";
-  if (/máy sấy|sấy/.test(n)) return "💨";
-  if (/bếp từ|bếp điện|bếp ga|bếp gas/.test(n)) return "♨️";
-  if (/hút mùi|hút khói/.test(n)) return "💨";
-  if (/lò vi sóng|lò hấp|lò nướng/.test(n)) return "🔥";
-  if (/nồi cơm|nồi điện/.test(n)) return "🍚";
-  if (/nồi áp suất/.test(n)) return "🍲";
-  if (/máy sưởi/.test(n)) return "🔥";
-  if (/bình nóng lạnh|nước nóng/.test(n)) return "🚿";
-  if (/máy rửa bát|rửa chén/.test(n)) return "🍽️";
-  if (/lò vi sóng|vi sóng/.test(n)) return "📡";
-  if (/máy lọc|nước|cây nước/.test(n)) return "💧";
-  if (/cà phê|coffee/.test(n)) return "☕";
-  if (/rượu|wine/.test(n)) return "🍷";
-  if (/chậu rửa|sink/.test(n)) return "🧽";
-  if (/vòi/.test(n)) return "🚰";
-  if (/bồn cầu/.test(n)) return "🚽";
-  if (/lavabo|bồn rửa/.test(n)) return "🪣";
-  if (/tủ phòng tắm|tủ tắm/.test(n)) return "🪞";
-  if (/thang máy|thang cuốn/.test(n)) return "🛗";
-  if (/khoá|khóa|lock/.test(n)) return "🔐";
-  if (/gateway|wi-?fi/.test(n)) return "📶";
-  if (/sơn|coating/.test(n)) return "🎨";
-  if (/màng/.test(n)) return "📜";
-  if (/bột trét/.test(n)) return "🧱";
-  if (/bông khoáng|bông thuỷ|cách nhiệt|cách âm/.test(n)) return "🧊";
-  if (/tấm|panel|alc|aac/.test(n)) return "🟦";
-  if (/đá|quartz|stone|cẩm thạch/.test(n)) return "⛰️";
-  if (/ống|cáp|dây điện/.test(n)) return "🔌";
-  if (/máng/.test(n)) return "🛤️";
-  if (/đèn|led/.test(n)) return "💡";
-  if (/phụ kiện|accessor/.test(n)) return "🔧";
+  if (/空调|冷气/.test(n)) return "❄️";
+  if (/冰箱|冷柜|冷藏/.test(n)) return "🧊";
+  if (/洗衣机|洗衣/.test(n)) return "🧺";
+  if (/干衣|烘干/.test(n)) return "💨";
+  if (/电磁炉|燃气灶|电陶炉|灶具/.test(n)) return "♨️";
+  if (/油烟机|抽油烟|吸油烟/.test(n)) return "💨";
+  if (/烤箱|蒸箱|蒸烤/.test(n)) return "🔥";
+  if (/电饭煲|电饭锅/.test(n)) return "🍚";
+  if (/压力锅|高压锅/.test(n)) return "🍲";
+  if (/取暖|暖风/.test(n)) return "🔥";
+  if (/热水器|热水/.test(n)) return "🚿";
+  if (/洗碗机|洗碗/.test(n)) return "🍽️";
+  if (/微波炉/.test(n)) return "📡";
+  if (/净水|滤水|饮水机|纯水/.test(n)) return "💧";
+  if (/咖啡|coffee/.test(n)) return "☕";
+  if (/酒柜|红酒|wine/.test(n)) return "🍷";
+  if (/水槽|sink/.test(n)) return "🧽";
+  if (/龙头|花洒/.test(n)) return "🚰";
+  if (/马桶|坐便|蹲便/.test(n)) return "🚽";
+  if (/台盆|面盆|洗手盆|lavabo/.test(n)) return "🪣";
+  if (/浴室柜/.test(n)) return "🪞";
+  if (/电梯|扶梯|手扶梯/.test(n)) return "🛗";
+  if (/锁|lock/.test(n)) return "🔐";
+  if (/网关|gateway|wi-?fi/.test(n)) return "📶";
+  if (/漆|涂料|涂层|coating/.test(n)) return "🎨";
+  if (/卷材|防水膜|膜/.test(n)) return "📜";
+  if (/腻子|砂浆/.test(n)) return "🧱";
+  if (/岩棉|玻璃棉|隔热|隔音|保温/.test(n)) return "🧊";
+  if (/板|面板|墙板|panel|alc|aac/.test(n)) return "🟦";
+  if (/石材|石英石|大理石|岩板|石|quartz|stone/.test(n)) return "⛰️";
+  if (/管|线缆|电线|电缆|cáp/.test(n)) return "🔌";
+  if (/桥架|线槽/.test(n)) return "🛤️";
+  if (/灯|led/.test(n)) return "💡";
+  if (/配件|accessor/.test(n)) return "🔧";
   return "📦";
 }
 
@@ -305,10 +304,14 @@ function ProductCard({
   product: PartnerProduct;
   partnerSlug: string;
 }) {
+  const detailHref = `/info/partners/${partnerSlug}/${productSlug(product)}`;
   return (
     <div className="group border border-line rounded overflow-hidden hover:border-brand hover:shadow-md transition flex flex-col bg-white">
-      {/* Image */}
-      <div className="aspect-square bg-bg overflow-hidden relative">
+      {/* Image — 链接至详情页 */}
+      <Link
+        href={detailHref}
+        className="aspect-square bg-bg overflow-hidden relative block"
+      >
         {product.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -329,24 +332,37 @@ function ProductCard({
         <span className="absolute top-2 left-2 bg-brand-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-sm tracking-wider">
           {product.model}
         </span>
-      </div>
+      </Link>
 
       {/* Body */}
       <div className="p-3 flex-1 flex flex-col">
-        <h3 className="text-[13px] font-bold text-ink group-hover:text-brand line-clamp-2 leading-tight mb-1">
-          {product.name}
-        </h3>
+        <Link href={detailHref} className="block">
+          <h3 className="text-[13px] font-bold text-ink group-hover:text-brand line-clamp-2 leading-tight mb-1">
+            {product.name}
+          </h3>
+        </Link>
         {product.desc && (
           <p className="text-[11.5px] text-mute line-clamp-3 leading-snug mb-2 flex-1">
             {product.desc}
           </p>
         )}
-        <Link
-          href={`/buying-request?partner=${partnerSlug}&model=${encodeURIComponent(product.model)}`}
-          className="mt-auto text-[11.5px] text-accent font-semibold hover:underline inline-flex items-center gap-1"
-        >
-          📩 Gửi báo giá →
-        </Link>
+        {product.dimensions && (
+          <div className="text-[11px] text-mute mb-1.5">📐 {product.dimensions}</div>
+        )}
+        <div className="flex items-center justify-between gap-2 mt-auto pt-1">
+          <Link
+            href={detailHref}
+            className="text-[11.5px] text-brand font-semibold hover:underline inline-flex items-center gap-1"
+          >
+            查看详情 →
+          </Link>
+          <Link
+            href={`/buying-request?partner=${partnerSlug}&model=${encodeURIComponent(product.model)}`}
+            className="text-[11.5px] text-accent font-semibold hover:underline inline-flex items-center gap-1"
+          >
+            📩 RFQ
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -369,7 +385,7 @@ function RelatedPartnersSection({
     <section className="mt-8">
       <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center gap-2">
         <span className="w-1 h-4 bg-brand rounded-sm" />
-        Đối tác khác trong ngành {cat?.icon} {cat?.name}
+        {cat?.icon} {cat?.name}行业的其他合作伙伴
       </h2>
       <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-md:gap-3">
         {others.map((p) => (
@@ -378,7 +394,7 @@ function RelatedPartnersSection({
             href={`/info/partners/${p.slug}`}
             className="flex items-center gap-3 bg-paper border border-line rounded-lg p-3 hover:border-brand hover:shadow-sm transition group"
           >
-            <div className="w-[56px] h-[56px] flex-shrink-0 bg-bg rounded border border-line flex items-center justify-center overflow-hidden">
+            <div className={`w-[56px] h-[56px] flex-shrink-0 rounded border flex items-center justify-center overflow-hidden ${p.logoBg === "dark" ? "bg-brand-dark border-brand-dark" : "bg-bg border-line"}`}>
               {p.logo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img

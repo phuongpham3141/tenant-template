@@ -18,7 +18,7 @@ export function Pagination() {
         </button>
       ))}
       <button className="px-3 h-8 border border-line rounded-sm bg-paper text-ink hover:border-brand hover:text-brand cursor-pointer">
-        Tiếp ›
+        下一页 ›
       </button>
     </div>
   );

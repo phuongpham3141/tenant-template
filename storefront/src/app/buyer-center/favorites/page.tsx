@@ -14,7 +14,7 @@ export default async function FavoritesPage({
   const { add } = await searchParams;
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Yêu thích" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "收藏" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/favorites" />
         <div>
@@ -22,17 +22,17 @@ export default async function FavoritesPage({
             <div className="bg-success/10 border border-success/30 text-success rounded p-3 mb-4 flex items-center gap-2 text-[13px]">
               <span className="text-[16px]">✓</span>
               <span>
-                Đã thêm <Link href={`/product/${add}`} className="font-semibold underline cursor-pointer">{add}</Link> vào danh sách yêu thích.
+                已将 <Link href={`/product/${add}`} className="font-semibold underline cursor-pointer">{add}</Link> 添加到收藏夹。
               </span>
             </div>
           )}
           <div className="bg-paper border border-line rounded p-4 mb-4">
-            <h1 className="text-[20px] font-bold text-ink">Yêu thích</h1>
-            <p className="text-[12px] text-mute mt-0.5">{FAV_PRODUCTS.length} sản phẩm · {FAV_SUPPLIERS.length} nhà cung cấp đã lưu</p>
+            <h1 className="text-[20px] font-bold text-ink">收藏</h1>
+            <p className="text-[12px] text-mute mt-0.5">已收藏 {FAV_PRODUCTS.length} 个产品 · {FAV_SUPPLIERS.length} 家供应商</p>
           </div>
 
           <div className="bg-paper border border-line rounded p-4 mb-4">
-            <b className="block text-[14px] text-ink mb-3">❤ Sản phẩm yêu thích</b>
+            <b className="block text-[14px] text-ink mb-3">❤ 收藏产品</b>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {FAV_PRODUCTS.map((p) => (
                 <Link key={p.id} href={`/product/${p.id}`} className="border border-line rounded-sm overflow-hidden hover:border-brand block">
@@ -50,7 +50,7 @@ export default async function FavoritesPage({
           </div>
 
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[14px] text-ink mb-3">🏭 Nhà cung cấp đang theo dõi</b>
+            <b className="block text-[14px] text-ink mb-3">🏭 关注的供应商</b>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {FAV_SUPPLIERS.map((f) => (
                 <Link key={f.slug} href={`/supplier/${f.slug}`} className="border border-line rounded-sm p-3 hover:border-brand flex gap-3 items-start">
@@ -70,4 +70,4 @@ export default async function FavoritesPage({
   );
 }
 
-export const metadata = { title: "Yêu thích — Buyer Center" };
+export const metadata = { title: "收藏 — 采购商中心" };

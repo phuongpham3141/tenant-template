@@ -20,11 +20,11 @@ const badgeStyle: Record<Badge, string> = {
 };
 
 const badgeLabel: Record<Badge, string> = {
-  top: "BÁN CHẠY",
-  new: "MỚI",
+  top: "热销",
+  new: "新品",
   deal: "-25%",
   oem: "OEM",
-  gold: "VÀNG",
+  gold: "金牌",
 };
 
 function ProductCard({ p }: { p: Product }) {
@@ -75,7 +75,7 @@ function ProductCard({ p }: { p: Product }) {
 }
 
 export function ProductSection({ section }: { section: Section }) {
-  // Pre-compute each tab's product list. Tab[0] = "Tất cả" → all products;
+  // Pre-compute each tab's product list. Tab[0] = "全部" → all products;
   // others filter by tag matching the tab name. Cap at 8 = 2 rows × 4 cols
   // so every section has identical 2-row height (image stays compact).
   const PER_TAB = 8;
@@ -129,7 +129,7 @@ export function ProductSection({ section }: { section: Section }) {
           href={`/category/${section.categorySlug}`}
           className="text-brand text-[12.5px] flex items-center gap-1 cursor-pointer max-md:text-[11.5px] max-md:self-end"
         >
-          Xem tất cả {section.totalCount} sp →
+          查看全部 {section.totalCount} 件产品 →
         </Link>
       </div>
 
@@ -193,12 +193,12 @@ export function ProductSection({ section }: { section: Section }) {
                   >
                     {k === 0 && list.length === 0 ? (
                       <span className="text-center px-2">
-                        Chưa có sản phẩm
+                        暂无产品
                         <br />
-                        <small className="text-[11px]">trong tab "{tabName}"</small>
+                        <small className="text-[11px]">"{tabName}" 分类下</small>
                       </span>
                     ) : (
-                      <span className="opacity-60">+ Xem thêm</span>
+                      <span className="opacity-60">+ 查看更多</span>
                     )}
                   </Link>
                 ))}

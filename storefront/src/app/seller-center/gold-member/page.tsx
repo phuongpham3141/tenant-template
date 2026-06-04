@@ -4,94 +4,94 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TIERS = [
   {
-    name: "Miễn phí",
+    name: "免费",
     price: "$0",
-    per: "/năm",
+    per: "/年",
     color: "border-line",
-    badge: "Miễn phí",
-    cta: "Đang sử dụng",
+    badge: "免费",
+    cta: "使用中",
     ctaColor: "bg-mute2/30 text-mute",
-    desc: "Cho NCC mới, thử nghiệm thị trường",
+    desc: "适合新供应商、试水市场",
   },
   {
-    name: "Vàng",
+    name: "金牌",
     price: "$2,980",
-    per: "/năm",
+    per: "/年",
     color: "border-gold ring-2 ring-gold",
-    badge: "PHỔ BIẾN NHẤT",
-    cta: "Nâng cấp Vàng",
+    badge: "最受欢迎",
+    cta: "升级金牌",
     ctaColor: "bg-gold text-brand-dark",
-    desc: "Cho NCC nghiêm túc xuất khẩu sang VN",
+    desc: "适合认真出口越南的供应商",
     highlight: true,
   },
   {
-    name: "Kim cương",
+    name: "钻石",
     price: "$6,800",
-    per: "/năm",
+    per: "/年",
     color: "border-brand",
     badge: "Premium",
-    cta: "Liên hệ tư vấn",
+    cta: "联系咨询",
     ctaColor: "bg-brand text-white",
-    desc: "Cho thương hiệu lớn, cần tối đa exposure",
+    desc: "适合大品牌、追求最大曝光",
   },
 ];
 
 const FEATURES = [
-  { name: "Số sản phẩm đăng tối đa", free: "30 SKU", gold: "5,000 SKU", diamond: "Không giới hạn" },
-  { name: "RFQ nhận / tháng", free: "10", gold: "Không giới hạn", diamond: "Không giới hạn + ưu tiên" },
-  { name: "Vị trí trong kết quả tìm kiếm", free: "Bình thường", gold: "Top 30%", diamond: "Top 5%" },
-  { name: "Banner trang chủ ngành", free: "—", gold: "✓ (luân phiên)", diamond: "✓ (cố định 1 slot)" },
-  { name: "Audit nhà máy + báo cáo TÜV", free: "Tự trả $1,200", gold: "1 lần / năm miễn phí", diamond: "2 lần / năm miễn phí" },
-  { name: "Phù hiệu Vàng + nhà bán đã xác minh", free: "—", gold: "✓", diamond: "✓ + vương miện Kim cương" },
-  { name: "Dashboard analytics chi tiết", free: "Cơ bản", gold: "Đầy đủ", diamond: "Đầy đủ + competitor data" },
-  { name: "AI trợ lý Maike", free: "Demo 7 ngày", gold: "✓ Free", diamond: "✓ Free + custom training" },
-  { name: "Account manager riêng", free: "—", gold: "Chia sẻ", diamond: "Chuyên trách" },
-  { name: "Tham dự Smart Expo", free: "1 expo / năm", gold: "Tất cả expo", diamond: "Tất cả + booth premium" },
+  { name: "可发布产品上限", free: "30 SKU", gold: "5,000 SKU", diamond: "不限" },
+  { name: "每月可接收询价", free: "10", gold: "不限", diamond: "不限 + 优先" },
+  { name: "搜索结果排名位置", free: "普通", gold: "前 30%", diamond: "前 5%" },
+  { name: "行业首页 Banner", free: "—", gold: "✓（轮播）", diamond: "✓（固定 1 个位）" },
+  { name: "工厂验厂 + TÜV 报告", free: "自费 $1,200", gold: "每年 1 次免费", diamond: "每年 2 次免费" },
+  { name: "金牌徽章 + 认证卖家", free: "—", gold: "✓", diamond: "✓ + 钻石皇冠" },
+  { name: "详细数据分析看板", free: "基础", gold: "完整", diamond: "完整 + 竞品数据" },
+  { name: "Maike AI 助手", free: "7 天试用", gold: "✓ 免费", diamond: "✓ 免费 + 定制训练" },
+  { name: "专属客户经理", free: "—", gold: "共享", diamond: "专属" },
+  { name: "参与 Smart Expo", free: "每年 1 场", gold: "全部展会", diamond: "全部 + 高级展位" },
 ];
 
 const TESTIMONIALS = [
   {
     company: "Shenzhen Lighting Co.",
-    role: "CEO Lý Cường",
-    quote: "Sau 3 tháng nâng Vàng, đơn từ buyer Việt Nam tăng 4× — chủ yếu nhờ banner ngành đèn LED và RFQ ưu tiên. ROI bù phí Vàng trong tháng đầu.",
-    metric: "+312% đơn",
+    role: "CEO 李强",
+    quote: "升级金牌 3 个月后，来自越南采购商的订单增长 4×——主要得益于 LED 灯具行业 Banner 和优先询价。首月即收回金牌费用。",
+    metric: "+312% 订单",
     avatar: 41,
   },
   {
     company: "Foshan Tile Master",
-    role: "Sales Director Trương Mỹ",
-    quote: "Buyer HCM tìm gạch porcelain trên Huayuesc — Vàng đẩy chúng tôi lên top 3 kết quả. RFQ inbound từ 8/tháng lên 47/tháng. Audit TÜV miễn phí giúp ký được chuỗi khách sạn lớn.",
-    metric: "47 RFQ/tháng",
+    role: "销售总监 张美",
+    quote: "胡志明市采购商在华越搜索 porcelain 瓷砖——金牌将我们推上结果前三。入站询价从每月 8 条增至 47 条。免费 TÜV 验厂助我们签下大型酒店连锁。",
+    metric: "47 条询价/月",
     avatar: 42,
   },
   {
     company: "Guangzhou KUKA Home",
-    role: "Export Manager Vương Hoa",
-    quote: "Kim cương + Triển lãm thông minh cho phép chúng tôi tiếp cận 12K buyer Đông Nam Á trong 1 tuần — bằng 6 tháng làm trade fair offline. Phí 6.8K USD nhỏ so với chi phí Canton Fair $40K+.",
-    metric: "12K buyer/expo",
+    role: "出口经理 王华",
+    quote: "钻石会员 + Smart Expo 让我们一周内触达 12K 东南亚采购商——相当于 6 个月线下展会的效果。$6,800 的费用相比广交会 $40K+ 的开支微不足道。",
+    metric: "12K 采购商/场",
     avatar: 43,
   },
 ];
 
 const ROI_ROWS = [
-  { label: "Đơn hàng trung bình hiện tại / tháng", v: "$4,200" },
-  { label: "Tăng trưởng dự kiến với Vàng (3.2×)", v: "+$13,440" },
-  { label: "Phí Vàng năm (chia 12 tháng)", v: "−$248" },
-  { label: "Lãi ròng tăng thêm / tháng (margin 22%)", v: "+$2,729" },
+  { label: "当前月均订单额", v: "$4,200" },
+  { label: "升级金牌后预计增长（3.2×）", v: "+$13,440" },
+  { label: "年度金牌费用（按 12 个月分摊）", v: "−$248" },
+  { label: "每月新增净利润（毛利率 22%）", v: "+$2,729" },
 ];
 
 export default function GoldMemberPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Đăng ký Hội viên Vàng" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "供应商中心", href: "/seller-center" }, { label: "申请金牌会员" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/gold-member" />
         <div>
           <div className="bg-gradient-to-br from-gold/40 to-gold/10 border border-gold rounded p-5 mb-4">
             <div className="inline-block bg-brand-dark text-gold px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🥇 GOLD MEMBERSHIP</div>
-            <h1 className="text-[24px] font-bold text-ink">Trở thành NCC Vàng — đột phá xuất khẩu Việt Nam</h1>
+            <h1 className="text-[24px] font-bold text-ink">成为金牌供应商——突破越南出口</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed max-w-[680px]">
-              91% đơn hàng B2B trên Huayuesc đến từ NCC Vàng/Kim cương. Khi buyer tìm kiếm "gạch porcelain MOQ 500m²" hay "OEM tủ bếp", thuật toán ưu tiên hiển thị suppliers có badge — Vàng = lòng tin + traffic + báo cáo audit minh bạch.
+              华越 91% 的 B2B 订单来自金牌/钻石供应商。当采购商搜索「porcelain 瓷砖 起订量 500㎡」或「橱柜 OEM」时，算法会优先展示带徽章的供应商——金牌 = 信任 + 流量 + 透明的验厂报告。
             </p>
           </div>
 
@@ -117,14 +117,14 @@ export default function GoldMemberPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4 overflow-x-auto">
-            <b className="block text-[15px] text-ink mb-4">📋 So sánh tính năng chi tiết</b>
+            <b className="block text-[15px] text-ink mb-4">📋 功能详细对比</b>
             <table className="w-full text-[12.5px] min-w-[640px]">
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
-                  <th className="text-left px-3 py-2.5 font-medium">Tính năng</th>
-                  <th className="text-center px-3 py-2.5 font-medium">Miễn phí</th>
-                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">Vàng</th>
-                  <th className="text-center px-3 py-2.5 font-medium">Kim cương</th>
+                  <th className="text-left px-3 py-2.5 font-medium">功能</th>
+                  <th className="text-center px-3 py-2.5 font-medium">免费</th>
+                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">金牌</th>
+                  <th className="text-center px-3 py-2.5 font-medium">钻石</th>
                 </tr>
               </thead>
               <tbody>
@@ -141,7 +141,7 @@ export default function GoldMemberPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">💬 Nhà cung cấp đã thành công với Vàng</b>
+            <b className="block text-[15px] text-ink mb-4">💬 借助金牌成功的供应商</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {TESTIMONIALS.map((t) => (
                 <div key={t.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
@@ -154,7 +154,7 @@ export default function GoldMemberPage() {
                   </div>
                   <p className="text-[12px] text-ink leading-relaxed mb-3">"{t.quote}"</p>
                   <div className="border-t border-line pt-2 flex justify-between items-baseline">
-                    <span className="text-[10.5px] text-mute">Kết quả</span>
+                    <span className="text-[10.5px] text-mute">成效</span>
                     <b className="text-[14px] text-success">{t.metric}</b>
                   </div>
                 </div>
@@ -164,8 +164,8 @@ export default function GoldMemberPage() {
 
           <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[15px] text-ink mb-3">📊 Tính ROI Vàng</b>
-              <p className="text-[11.5px] text-mute mb-3">Dựa trên trung bình 142 supplier furniture đã nâng Vàng trong 12 tháng qua.</p>
+              <b className="block text-[15px] text-ink mb-3">📊 金牌 ROI 测算</b>
+              <p className="text-[11.5px] text-mute mb-3">基于近 12 个月内 142 家升级金牌的家具供应商平均数据。</p>
               <table className="w-full text-[12.5px]">
                 <tbody>
                   {ROI_ROWS.map((r, i) => (
@@ -176,18 +176,18 @@ export default function GoldMemberPage() {
                   ))}
                 </tbody>
               </table>
-              <p className="text-[11px] text-mute mt-3">* Số liệu mang tính tham khảo. Phụ thuộc ngành hàng, vị trí kho, năng lực sản xuất.</p>
+              <p className="text-[11px] text-mute mt-3">* 数据仅供参考。实际取决于品类、仓库位置和生产能力。</p>
             </div>
 
             <div className="bg-brand-dark text-white rounded p-5 flex flex-col justify-center">
-              <b className="block text-[18px] mb-2">🚀 Sẵn sàng nâng cấp?</b>
+              <b className="block text-[18px] mb-2">🚀 准备好升级了吗？</b>
               <p className="text-[12.5px] opacity-90 leading-relaxed mb-4">
-                Hôm nay đăng ký Vàng — kích hoạt trong 24h, kèm gói audit TÜV trị giá $1,200 và banner ngành 30 ngày miễn phí cho 50 đăng ký đầu tiên tháng 5.
+                今日开通金牌——24 小时内激活，附赠价值 $1,200 的 TÜV 验厂套餐；5 月前 50 名报名者另享 30 天免费行业 Banner。
               </p>
               <button className="bg-gold text-brand-dark rounded-sm py-3 font-bold text-[14px] hover:opacity-95">
-                Nâng cấp Vàng ngay — $2,980/năm
+                立即升级金牌 — $2,980/年
               </button>
-              <span className="text-[11px] opacity-70 mt-2 text-center">Không hài lòng trong 30 ngày → hoàn 100% phí.</span>
+              <span className="text-[11px] opacity-70 mt-2 text-center">30 天内不满意 → 100% 退费。</span>
             </div>
           </div>
         </div>
@@ -196,4 +196,4 @@ export default function GoldMemberPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Hội viên Vàng — Seller Center" };
+export const metadata = { title: "申请金牌会员 — 供应商中心" };

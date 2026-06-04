@@ -4,38 +4,38 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { NAV_CATEGORIES } from "@/data/home";
 
 const EXTRA_CATEGORIES = [
-  { name: "Bao bì & In ấn", slug: "packaging-printing" },
-  { name: "Bể bơi & Spa", slug: "pool-spa" },
-  { name: "Cảnh quan sân vườn", slug: "landscape-garden" },
-  { name: "Cửa cuốn & cổng tự động", slug: "rolling-door" },
-  { name: "Đá granite & marble", slug: "stone-granite" },
-  { name: "Điều hoà & thông gió", slug: "hvac" },
-  { name: "Đồ chơi trẻ em", slug: "toys" },
-  { name: "Đồng phục & vải", slug: "uniform-fabric" },
-  { name: "Gạch men & Mosaic", slug: "tile-mosaic" },
-  { name: "Hệ thống camera & an ninh", slug: "security-camera" },
-  { name: "Inox & kim loại tấm", slug: "metal-sheet" },
-  { name: "Khoá điện tử thông minh", slug: "smart-lock" },
-  { name: "Kính & gương trang trí", slug: "glass-mirror" },
-  { name: "Lò nướng & bếp công nghiệp", slug: "oven-stove" },
-  { name: "Máy phát điện", slug: "generator" },
-  { name: "Máy lọc nước công nghiệp", slug: "water-purifier" },
-  { name: "Năng lượng mặt trời", slug: "solar" },
-  { name: "Nhôm kính cao cấp", slug: "aluminum-glass" },
-  { name: "Ống nhựa & van", slug: "pipe-valve" },
-  { name: "Quạt công nghiệp", slug: "industrial-fan" },
-  { name: "Rèm & vật liệu trang trí", slug: "curtain-decor" },
-  { name: "Sàn gỗ kỹ thuật", slug: "engineered-wood" },
-  { name: "Sơn & vật liệu hoàn thiện", slug: "paint-finish" },
-  { name: "Sắt thép xây dựng", slug: "steel" },
-  { name: "Thang máy & thang cuốn", slug: "elevator" },
-  { name: "Thiết bị nhà thông minh", slug: "smart-home" },
-  { name: "Thiết bị pha chế cafe", slug: "coffee-equipment" },
-  { name: "Tủ đông & tủ lạnh công nghiệp", slug: "freezer" },
-  { name: "Tủ trưng bày kính", slug: "display-cabinet" },
-  { name: "Vải bọc nội thất", slug: "upholstery-fabric" },
-  { name: "Vật liệu chống thấm", slug: "waterproof" },
-  { name: "Xe điện & xe nâng", slug: "electric-vehicle" },
+  { name: "包装与印刷", slug: "packaging-printing" },
+  { name: "泳池与水疗", slug: "pool-spa" },
+  { name: "庭院景观", slug: "landscape-garden" },
+  { name: "卷帘门与自动门", slug: "rolling-door" },
+  { name: "花岗岩与大理石", slug: "stone-granite" },
+  { name: "空调与通风", slug: "hvac" },
+  { name: "儿童玩具", slug: "toys" },
+  { name: "工作服与面料", slug: "uniform-fabric" },
+  { name: "瓷砖与马赛克", slug: "tile-mosaic" },
+  { name: "监控与安防系统", slug: "security-camera" },
+  { name: "不锈钢与金属板材", slug: "metal-sheet" },
+  { name: "智能电子锁", slug: "smart-lock" },
+  { name: "装饰玻璃与镜面", slug: "glass-mirror" },
+  { name: "烤箱与商用灶具", slug: "oven-stove" },
+  { name: "发电机", slug: "generator" },
+  { name: "工业净水设备", slug: "water-purifier" },
+  { name: "太阳能", slug: "solar" },
+  { name: "高端铝合金门窗", slug: "aluminum-glass" },
+  { name: "塑料管材与阀门", slug: "pipe-valve" },
+  { name: "工业风扇", slug: "industrial-fan" },
+  { name: "窗帘与装饰材料", slug: "curtain-decor" },
+  { name: "强化复合木地板", slug: "engineered-wood" },
+  { name: "涂料与饰面材料", slug: "paint-finish" },
+  { name: "建筑钢材", slug: "steel" },
+  { name: "电梯与扶梯", slug: "elevator" },
+  { name: "智能家居设备", slug: "smart-home" },
+  { name: "咖啡调制设备", slug: "coffee-equipment" },
+  { name: "工业冷柜与冰箱", slug: "freezer" },
+  { name: "玻璃展示柜", slug: "display-cabinet" },
+  { name: "家具包覆面料", slug: "upholstery-fabric" },
+  { name: "防水材料", slug: "waterproof" },
+  { name: "电动车与叉车", slug: "electric-vehicle" },
 ];
 
 const ALL_CATEGORIES = [
@@ -63,28 +63,28 @@ for (const l of Object.keys(grouped)) {
 const LETTERS = Array.from(new Set(VN_LETTER_ORDER.split(""))).filter((l) => grouped[l]);
 
 const VERTICALS = [
-  { icon: "🏨", name: "Khách sạn & Resort", count: "240+ NCC" },
-  { icon: "🏢", name: "Văn phòng & Co-working", count: "180+ NCC" },
-  { icon: "🏠", name: "Chung cư & Căn hộ", count: "320+ NCC" },
-  { icon: "🍽️", name: "Nhà hàng & Cafe", count: "150+ NCC" },
-  { icon: "🏥", name: "Y tế & Bệnh viện", count: "90+ NCC" },
-  { icon: "🏫", name: "Trường học & Đào tạo", count: "75+ NCC" },
-  { icon: "🛍️", name: "Bán lẻ & Showroom", count: "210+ NCC" },
-  { icon: "🏗️", name: "Dự án & Xây dựng", count: "400+ NCC" },
+  { icon: "🏨", name: "酒店与度假村", count: "240+ 供应商" },
+  { icon: "🏢", name: "办公与共享办公", count: "180+ 供应商" },
+  { icon: "🏠", name: "公寓与住宅", count: "320+ 供应商" },
+  { icon: "🍽️", name: "餐厅与咖啡馆", count: "150+ 供应商" },
+  { icon: "🏥", name: "医疗与医院", count: "90+ 供应商" },
+  { icon: "🏫", name: "学校与培训", count: "75+ 供应商" },
+  { icon: "🛍️", name: "零售与展厅", count: "210+ 供应商" },
+  { icon: "🏗️", name: "项目与工程", count: "400+ 供应商" },
 ];
 
 export default function ProductDirectoryPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Danh bạ sản phẩm" }]} />
+      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "产品目录" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/product-directory" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 DANH BẠ SẢN PHẨM</div>
-            <h1 className="text-[22px] font-bold text-ink">Danh bạ sản phẩm</h1>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 产品目录</div>
+            <h1 className="text-[22px] font-bold text-ink">产品目录</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Tra cứu nhanh hơn 2.400 SKU theo bảng chữ cái A–Z. Bấm chữ cái để cuộn đến nhóm tương ứng, hoặc xem theo ngành dọc bên phải nếu bạn đang phục vụ một loại dự án cụ thể.
+              按 A–Z 字母顺序快速检索 2,400 余个 SKU。点击字母可滚动至对应分组；若您服务于特定类型项目，也可使用右侧的垂直行业入口查看。
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function ProductDirectoryPage() {
                 <section key={l} id={`letter-${l}`} className="mb-5 last:mb-0 scroll-mt-20">
                   <div className="flex items-center gap-3 mb-2 pb-2 border-b border-line">
                     <div className="w-9 h-9 bg-brand text-white rounded-sm flex items-center justify-center font-extrabold text-[16px]">{l}</div>
-                    <span className="text-[12px] text-mute">{grouped[l].length} danh mục</span>
+                    <span className="text-[12px] text-mute">{grouped[l].length} 个分类</span>
                   </div>
                   <div className="grid grid-cols-3 gap-x-4 gap-y-1.5 max-md:grid-cols-2">
                     {grouped[l].map((c) => (
@@ -116,7 +116,7 @@ export default function ProductDirectoryPage() {
             </div>
 
             <aside className="bg-paper border border-line rounded p-4 self-start">
-              <b className="block text-[13px] text-ink mb-3">🏷 Xem theo ngành dọc</b>
+              <b className="block text-[13px] text-ink mb-3">🏷 按垂直行业查看</b>
               <ul className="space-y-1">
                 {VERTICALS.map((v) => (
                   <li key={v.name}>
@@ -128,7 +128,7 @@ export default function ProductDirectoryPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/buying-request" className="mt-3 block text-center px-3 py-2 bg-accent text-white rounded-sm text-[12px] font-bold hover:opacity-90">+ Gửi RFQ</Link>
+              <Link href="/buying-request" className="mt-3 block text-center px-3 py-2 bg-accent text-white rounded-sm text-[12px] font-bold hover:opacity-90">+ 发送询价</Link>
             </aside>
           </div>
         </div>
@@ -137,4 +137,4 @@ export default function ProductDirectoryPage() {
   );
 }
 
-export const metadata = { title: "Danh bạ sản phẩm — Buyer Center" };
+export const metadata = { title: "产品目录 — 采购商中心" };

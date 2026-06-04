@@ -35,11 +35,11 @@ const OFFICES: Office[] = [
     id: "hn",
     flag: "🇻🇳",
     region: "VN",
-    city: "Hà Nội",
+    city: "河内",
     cityEn: "Hanoi",
-    role: "Trụ sở chính — Vận hành, Bán hàng & Phân phối VN",
+    role: "总部——越南运营、销售与分销",
     isHQ: true,
-    address: "Tầng 07, Toà Bảo Ngọc Building, số 02 phố Thanh Lâm, Phường Xuân Phương, Thành phố Hà Nội, Việt Nam",
+    address: "越南河内市春芳坊清林街 2 号宝玉大厦 7 楼",
     addressCn: "越南河内市春芳坊清林街2号宝玉大厦7楼",
     addressEn:
       "Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi, Vietnam",
@@ -47,33 +47,33 @@ const OFFICES: Office[] = [
     hotline: "+86 181-2225-6999",
     email: "support@huayuesc.vn",
     manager: {
-      name: "Đội vận hành Hà Nội",
-      title: "Head of Operations & Distribution",
+      name: "河内运营团队",
+      title: "运营与分销负责人",
       initials: "HN",
     },
     teamSize: 20,
     departments: [
-      "Khai báo hải quan VNACCS/VCIS (làm việc với cảng Hải Phòng)",
-      "Phối hợp logistics & hãng tàu",
-      "Phân phối VN (Hà Nội, HCM, 63 tỉnh)",
-      "Sales B2B vật liệu xây dựng & nội thất",
-      "Customer Success tiếng Việt",
-      "Đối tác đại lý & nhà thầu xây dựng",
+      "VNACCS/VCIS 海关申报（对接海防港）",
+      "物流与船公司协调",
+      "越南分销（河内、胡志明市、63 省）",
+      "建筑材料与家具 B2B 销售",
+      "越南语客户成功",
+      "经销商与建筑承包商合作",
     ],
-    hours: "T2 – T7: 8:00 – 17:30",
+    hours: "周一 – 周六：8:00 – 17:30",
     timezone: "GMT+7 (Asia/Ho_Chi_Minh)",
     transit:
-      "Toà Bảo Ngọc Building tại số 02 phố Thanh Lâm, Phường Xuân Phương — phía Tây Hà Nội, cách trung tâm Mỹ Đình ~3 km, cách sân bay Nội Bài ~30 km qua Đại lộ Thăng Long. Bus 27, 29, 32 dừng gần toà.",
-    parking: "Bãi xe nội bộ Toà Bảo Ngọc — miễn phí cho khách hẹn (báo lễ tân trước qua hotline)",
+      "宝玉大厦位于春芳坊清林街 2 号——河内西部，距美亭中心约 3 km，经升龙大道距内排机场约 30 km。27、29、32 路公交车在附近停靠。",
+    parking: "宝玉大厦内部停车场——预约访客免费（请提前通过热线告知前台）",
     landmark:
-      "Toà Bảo Ngọc Building, Phường Xuân Phương, thuộc khu vực Nam Từ Liêm phía Tây Hà Nội — gần các đại lý phân phối VLXD và showroom nội thất Hà Nội & các tỉnh phía Bắc",
+      "宝玉大厦，春芳坊，位于河内西部南慈廉区——临近河内及北部各省的建材分销商和家具展厅",
     services: [
-      "Quản lý chuỗi cung ứng đầu Việt Nam (logistics + thông quan + phân phối)",
-      "Khai báo VNACCS/VCIS cho container nhập từ Trung Quốc (cảng Hải Phòng / Cát Lái)",
-      "Vận chuyển nội địa DDP đến HN, HCM và 63 tỉnh thành",
-      "Sales & tư vấn buyer Việt Nam qua hotline + email",
-      "Đối tác đại lý, nhà thầu xây dựng, công ty thiết kế nội thất",
-      "Hỗ trợ Customer Success tiếng Việt 24/7",
+      "越南端供应链管理（物流 + 清关 + 分销）",
+      "为自中国进口的集装箱办理 VNACCS/VCIS 申报（海防港 / 吉莱港）",
+      "DDP 国内运输至河内、胡志明市及 63 省市",
+      "通过热线 + 邮件为越南采购商提供销售与咨询",
+      "经销商、建筑承包商、室内设计公司合作",
+      "24/7 越南语客户成功支持",
     ],
     googleMapsQuery: "Bao+Ngoc+Building+02+Thanh+Lam+Xuan+Phuong+Hanoi",
   },
@@ -81,54 +81,54 @@ const OFFICES: Office[] = [
     id: "gz",
     flag: "🇨🇳",
     region: "CN",
-    city: "Quảng Châu",
+    city: "广州",
     cityEn: "Guangzhou",
-    role: "Văn phòng đại diện — Thu mua, Audit nhà máy & Sourcing",
-    address: "Tầng 3, Tòa 1, Cảng Shuyu Chuangxing (数娱创兴港), bến tàu phía Bắc làng Hoàng Phố, đường Tân Cảng Đông (新港东路), quận Hải Châu, Quảng Châu, Trung Quốc",
+    role: "代表处——采购、验厂与寻源",
+    address: "中国广州市海珠区新港东路黄埔村北码头数娱创兴港 1 号楼 3 楼",
     addressCn: "广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼",
     addressEn: "3F, Building 1, Shuyu Chuangxing Port, North Wharf of Huangpu Village, East Xingang Road, Haizhu District, Guangzhou, China",
     phone: "+86 181-2225-6999",
     email: "sales@huayuesc.vn",
-    manager: { name: "Đội Sourcing Quảng Châu", title: "Sourcing & QC Team Lead", initials: "GZ" },
+    manager: { name: "广州寻源团队", title: "寻源与品控团队负责人", initials: "GZ" },
     teamSize: 15,
     departments: [
-      "Sourcing & tinh chọn nguồn (源头精选)",
-      "QC Inspector tại nhà máy",
-      "Audit thực địa NCC",
-      "Phiên dịch Trung – Việt thương mại",
-      "Quan hệ nhà máy & hiệp hội ngành tại Quảng Đông",
+      "寻源与源头精选",
+      "工厂驻厂品控检验员",
+      "供应商实地验厂",
+      "中越商务翻译",
+      "广东工厂及行业协会关系",
     ],
-    hours: "T2 – T6: 9:00 – 18:00 · T7: 9:00 – 12:00 (giờ Bắc Kinh)",
+    hours: "周一 – 周五：9:00 – 18:00 · 周六：9:00 – 12:00（北京时间）",
     timezone: "GMT+8 (Asia/Shanghai)",
-    transit: "Quận Hải Châu (海珠区) — trung tâm Quảng Châu cũ, cách ga tàu Quảng Châu Đông 6 km, cách sân bay quốc tế Bạch Vân 35 km. Gần các cụm sản xuất gốm sứ Phật Sơn (50 km), nội thất Lecong (40 km), đồ điện Mỹ Đích (30 km).",
-    parking: "Bãi xe Cảng Shuyu Chuangxing — có chỗ đón khách hẹn",
-    landmark: "Cảng số hoá – văn hoá Shuyu Chuangxing (数娱创兴港) tại bến tàu phía Bắc làng Hoàng Phố (黄埔村北码头), khu thương mại trung tâm quận Hải Châu, gần sông Châu Giang",
+    transit: "海珠区——老广州中心，距广州东站 6 km，距白云国际机场 35 km。临近佛山陶瓷（50 km）、乐从家具（40 km）、美的电器（30 km）等产业带。",
+    parking: "数娱创兴港停车场——设有预约访客车位",
+    landmark: "数娱创兴港（数字娱乐 – 文化港）位于黄埔村北码头，海珠区中心商务区，临近珠江",
     services: [
-      "Sàng lọc & audit nhà máy Trung Quốc tại 3 ngành Huayue (建材 / 装饰材料 / 厨卫小家电)",
-      "QC Inspector trước xuất xưởng — chuẩn AQL 2.5",
-      "Phiên dịch Việt – Trung cho RFQ và đàm phán",
-      "Đại diện Buyer Việt Nam đi thăm nhà máy",
-      "Liaison với hiệp hội ngành Quảng Đông, Phật Sơn, Trung Sơn, Triều Châu",
+      "在华越 3 大行业（建材 / 装饰材料 / 厨卫小家电）筛选与验厂中国工厂",
+      "出厂前品控检验员——AQL 2.5 标准",
+      "为询价及谈判提供中越翻译",
+      "代表越南采购商实地验厂",
+      "对接广东、佛山、中山、潮州行业协会",
     ],
     googleMapsQuery: "数娱创兴港+Shuyu+Chuangxing+Xingang+East+Road+Haizhu+Guangzhou",
   },
 ];
 
 const DEPARTMENTS = [
-  { icon: "💼", title: "Sales & Tư vấn sourcing", email: "sales@huayuesc.vn", desc: "Tư vấn RFQ, sàng lọc NCC Trung Quốc, đàm phán giá, hợp đồng PI/PO." },
-  { icon: "🚚", title: "Logistics, Thông quan & Kho", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF — đặt tàu, khai báo VNACCS (cảng Hải Phòng & Cát Lái), tracking đơn." },
-  { icon: "🔍", title: "QC & Audit nhà máy", email: "sales@huayuesc.vn", desc: "Kiểm hàng AQL 2.5 trước xuất xưởng, audit thực địa NCC tại Quảng Đông, báo cáo có ảnh/video." },
-  { icon: "🛡", title: "Bảo đảm Giao dịch & Khiếu nại", email: "support@huayuesc.vn", desc: "Tài khoản tín thác, mediation tranh chấp, hoàn tiền hoặc đổi hàng theo Mục 7 Điều khoản." },
-  { icon: "🤝", title: "Đối tác phân phối & Đại lý VN", email: "partnership@huayuesc.vn", desc: "Hợp tác đại lý phân phối, nhà thầu xây dựng, công ty thiết kế trang trí nội thất." },
-  { icon: "👥", title: "Tuyển dụng & HR", email: "hr@huayuesc.vn", desc: "Hồ sơ ứng tuyển vị trí tại Hà Nội và Quảng Châu, đào tạo nội bộ." },
-  { icon: "🔒", title: "Bảo mật & DPO", email: "privacy@huayuesc.vn", desc: "Quyền chủ thể dữ liệu, NĐ 13/2023, breach notification < 72h." },
+  { icon: "💼", title: "销售与寻源咨询", email: "sales@huayuesc.vn", desc: "询价咨询、筛选中国供应商、价格谈判、PI/PO 合同。" },
+  { icon: "🚚", title: "物流、清关与仓储", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF——订舱、VNACCS 申报（海防港与吉莱港）、订单追踪。" },
+  { icon: "🔍", title: "品控与验厂", email: "sales@huayuesc.vn", desc: "出厂前 AQL 2.5 验货、广东供应商实地验厂、附图片/视频报告。" },
+  { icon: "🛡", title: "交易保障与投诉", email: "support@huayuesc.vn", desc: "担保账户、争议调解、依据条款第 7 节退款或换货。" },
+  { icon: "🤝", title: "越南分销与经销商合作", email: "partnership@huayuesc.vn", desc: "与分销经销商、建筑承包商、室内装饰设计公司合作。" },
+  { icon: "👥", title: "招聘与人力资源", email: "hr@huayuesc.vn", desc: "河内与广州职位的应聘材料、内部培训。" },
+  { icon: "🔒", title: "数据保护与 DPO", email: "privacy@huayuesc.vn", desc: "数据主体权利、NĐ 13/2023 号法令、72 小时内泄露通知。" },
 ];
 
 const CHANNELS = [
-  { icon: "📞", title: "Hotline", desc: "+86 181-2225-6999 — hỗ trợ tiếng Việt + tiếng Trung, 8h–22h", action: "Gọi ngay", href: "tel:+8618122256999" },
-  { icon: "✉", title: "Email", desc: "support@huayuesc.vn — phản hồi <6 giờ giờ hành chính", action: "Soạn email", href: "mailto:support@huayuesc.vn" },
-  { icon: "💬", title: "Live Chat website", desc: "Phản hồi <5 phút trong giờ làm việc; AI 24/7 ngoài giờ", action: "Mở chat", href: "#chat" },
-  { icon: "📱", title: "Zalo OA", desc: "Huayuesc — chat tiếng Việt nhanh nhất", action: "Mở Zalo", href: "https://zalo.me/huayuesc" },
+  { icon: "📞", title: "热线", desc: "+86 181-2225-6999——越南语 + 中文支持，8:00–22:00", action: "立即拨打", href: "tel:+8618122256999" },
+  { icon: "✉", title: "邮箱", desc: "support@huayuesc.vn——工作时间 6 小时内响应", action: "撰写邮件", href: "mailto:support@huayuesc.vn" },
+  { icon: "💬", title: "网站在线客服", desc: "工作时间 5 分钟内响应；非工作时间 AI 24/7", action: "打开客服", href: "#chat" },
+  { icon: "📱", title: "Zalo OA", desc: "华越——最快的越南语沟通", action: "打开 Zalo", href: "https://zalo.me/huayuesc" },
 ];
 
 function MapCard({ office }: { office: Office }) {
@@ -152,7 +152,7 @@ function MapCard({ office }: { office: Office }) {
           rel="noopener noreferrer"
           className="text-center py-2 bg-paper border border-line rounded-sm text-[12px] text-ink font-semibold cursor-pointer hover:border-brand hover:text-brand"
         >
-          🗺 Mở Google Maps
+          🗺 打开 Google 地图
         </a>
         <a
           href={dirUrl}
@@ -160,7 +160,7 @@ function MapCard({ office }: { office: Office }) {
           rel="noopener noreferrer"
           className="text-center py-2 bg-brand text-white rounded-sm text-[12px] font-bold cursor-pointer hover:bg-brand-light"
         >
-          🧭 Lấy chỉ đường
+          🧭 获取路线
         </a>
       </div>
     </div>
@@ -177,9 +177,9 @@ export default function LienHePage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Liên hệ" },
+          { label: "首页", href: "/" },
+          { label: "信息", href: "/help" },
+          { label: "联系" },
         ]}
       />
 
@@ -190,20 +190,20 @@ export default function LienHePage() {
       >
         <div className="max-w-[1100px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            📍 LIÊN HỆ · CONTACT
+            📍 联系 · CONTACT
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
-            Liên hệ Huayuesc — Hai văn phòng, một chuỗi cung ứng
+            联系华越——两地办公，一条供应链
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
-            Trụ sở chính tại <b>Tầng 07, Toà Bảo Ngọc Building, số 02 phố Thanh Lâm, Phường Xuân Phương, Hà Nội</b> phụ trách kho bãi, thông quan VNACCS và phân phối tại Việt Nam. Văn phòng đại diện thu mua tại <b>Tầng 3, Cảng Shuyu Chuangxing, quận Hải Châu, Quảng Châu</b> phụ trách sourcing, audit nhà máy và QC trước xuất xưởng. Hotline duy nhất: <b>+86 181-2225-6999</b> — hỗ trợ tiếng Việt và tiếng Trung.
+            总部位于<b>河内市春芳坊清林街 2 号宝玉大厦 7 楼</b>，负责仓储、VNACCS 清关及越南境内分销。采购代表处位于<b>广州市海珠区数娱创兴港 3 楼</b>，负责寻源、验厂及出厂前品控。唯一热线：<b>+86 181-2225-6999</b>——提供越南语和中文支持。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {[
-              { n: "8", l: "Văn phòng" },
-              { n: "114", l: "Nhân sự" },
-              { n: "5", l: "Quốc gia" },
-              { n: "24/7", l: "Hỗ trợ online" },
+              { n: "8", l: "办事处" },
+              { n: "114", l: "员工" },
+              { n: "5", l: "国家" },
+              { n: "24/7", l: "在线支持" },
             ].map((s) => (
               <div key={s.l} className="bg-white/10 border border-white/20 rounded p-3 text-center backdrop-blur">
                 <div className="text-[22px] font-extrabold">{s.n}</div>
@@ -219,8 +219,8 @@ export default function LienHePage() {
         <div className="bg-paper border border-line rounded p-5 max-md:p-4">
           <div className="flex justify-between items-end gap-4 mb-4 flex-wrap">
             <div>
-              <h2 className="text-[18px] font-bold text-ink">Chọn văn phòng để xem chi tiết</h2>
-              <p className="text-[12.5px] text-mute mt-0.5">2 văn phòng — trụ sở Hà Nội (Việt Nam) và văn phòng đại diện Quảng Châu (Trung Quốc)</p>
+              <h2 className="text-[18px] font-bold text-ink">选择办事处查看详情</h2>
+              <p className="text-[12.5px] text-mute mt-0.5">2 个办事处——河内总部（越南）和广州代表处（中国）</p>
             </div>
             {/* Region filter chips */}
             <div className="flex gap-1.5 bg-bg border border-line rounded-sm p-1">
@@ -237,7 +237,7 @@ export default function LienHePage() {
                     region === r ? "bg-brand text-white" : "text-mute hover:text-brand"
                   }`}
                 >
-                  {r === "all" ? "Tất cả (2)" : r === "VN" ? "🇻🇳 Việt Nam (1)" : "🇨🇳 Trung Quốc (1)"}
+                  {r === "all" ? "全部 (2)" : r === "VN" ? "🇻🇳 越南 (1)" : "🇨🇳 中国 (1)"}
                 </button>
               ))}
             </div>
@@ -311,8 +311,8 @@ export default function LienHePage() {
                 </div>
               </div>
               <div className="text-right max-md:text-left">
-                <div className="text-[11px] opacity-80 uppercase tracking-wider">Đội ngũ</div>
-                <div className="text-[20px] font-extrabold">{active.teamSize} người</div>
+                <div className="text-[11px] opacity-80 uppercase tracking-wider">团队</div>
+                <div className="text-[20px] font-extrabold">{active.teamSize} 人</div>
                 <div className="text-[11px] opacity-80">{active.timezone}</div>
               </div>
             </div>
@@ -324,7 +324,7 @@ export default function LienHePage() {
             <div className="space-y-5">
               {/* Address */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📍 Địa chỉ</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📍 地址</b>
                 <p className="text-[14px] text-ink leading-relaxed">{active.address}</p>
                 <p className="text-[12px] text-mute italic mt-0.5">{active.addressEn}</p>
               </div>
@@ -332,12 +332,12 @@ export default function LienHePage() {
               {/* Contact */}
               <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                 <div>
-                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📞 Điện thoại</b>
+                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📞 电话</b>
                   <a href={`tel:${active.phone.replace(/\s/g, "")}`} className="text-[13.5px] text-brand font-semibold hover:underline">
                     {active.phone}
                   </a>
                   {active.hotline && (
-                    <div className="text-[12px] text-mute mt-0.5">Hotline VN: <b className="text-ink">{active.hotline}</b></div>
+                    <div className="text-[12px] text-mute mt-0.5">越南热线：<b className="text-ink">{active.hotline}</b></div>
                   )}
                 </div>
                 <div>
@@ -355,20 +355,20 @@ export default function LienHePage() {
                     {active.manager.initials}
                   </div>
                   <div>
-                    <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold">Người phụ trách</b>
+                    <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold">负责人</b>
                     <div className="text-[13.5px] text-ink font-semibold">{active.manager.name}</div>
                     <div className="text-[11.5px] text-mute">{active.manager.title}</div>
                   </div>
                 </div>
                 <div className="bg-bg border border-line rounded p-3">
-                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">⏰ Giờ làm việc</b>
+                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">⏰ 营业时间</b>
                   <div className="text-[12.5px] text-ink leading-relaxed">{active.hours}</div>
                 </div>
               </div>
 
               {/* Departments */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🏢 Bộ phận tại văn phòng</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🏢 办事处部门</b>
                 <div className="flex flex-wrap gap-1.5">
                   {active.departments.map((d) => (
                     <span key={d} className="text-[11.5px] bg-brand/8 text-brand border border-brand/20 px-2 py-1 rounded-sm font-semibold">
@@ -380,7 +380,7 @@ export default function LienHePage() {
 
               {/* Services */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">⚡ Dịch vụ chính tại {active.city}</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">⚡ {active.city}主要服务</b>
                 <ul className="space-y-1.5">
                   {active.services.map((s, i) => (
                     <li key={i} className="flex gap-2 text-[13px] text-ink leading-relaxed">
@@ -393,11 +393,11 @@ export default function LienHePage() {
 
               {/* Transit + Parking + Landmark */}
               <div className="border-t border-line pt-4">
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🧭 Cách di chuyển</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🧭 交通方式</b>
                 <div className="space-y-2 text-[12.5px] text-ink leading-relaxed">
-                  <div><b className="text-mute">Phương tiện công cộng:</b> {active.transit}</div>
-                  <div><b className="text-mute">Đỗ xe:</b> {active.parking}</div>
-                  <div><b className="text-mute">Mốc nổi bật:</b> {active.landmark}</div>
+                  <div><b className="text-mute">公共交通：</b> {active.transit}</div>
+                  <div><b className="text-mute">停车：</b> {active.parking}</div>
+                  <div><b className="text-mute">地标：</b> {active.landmark}</div>
                 </div>
               </div>
             </div>
@@ -408,26 +408,26 @@ export default function LienHePage() {
 
               {/* Schedule visit CTA */}
               <div className="bg-bg border border-line rounded p-4">
-                <b className="block text-[13px] text-ink mb-1">📅 Đặt lịch ghé thăm</b>
+                <b className="block text-[13px] text-ink mb-1">📅 预约到访</b>
                 <p className="text-[11.5px] text-mute leading-relaxed mb-3">
-                  Văn phòng tiếp đón buyer doanh nghiệp đến trao đổi trực tiếp. Đặt lịch trước 24h để được chuẩn bị room riêng và tài liệu phù hợp với ngành.
+                  办事处接待企业采购商到访面谈。请提前 24 小时预约，以便准备专属会议室及符合行业的资料。
                 </p>
                 <Link
                   href="/info/contact#dat-lich"
                   className="block text-center py-2 bg-brand text-white rounded-sm text-[12px] font-bold cursor-pointer hover:bg-brand-light"
                 >
-                  Đặt lịch online →
+                  在线预约 →
                 </Link>
               </div>
 
               {/* Quick stats */}
               <div className="bg-paper border border-line rounded p-4">
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">Thông tin nhanh</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">速览信息</b>
                 <ul className="space-y-1.5 text-[12px]">
-                  <li className="flex justify-between"><span className="text-mute">Khu vực</span><b className="text-ink">{active.region === "VN" ? "Việt Nam" : "Trung Quốc"}</b></li>
-                  <li className="flex justify-between"><span className="text-mute">Vai trò</span><b className="text-ink text-right text-[11.5px]">{active.role.split(" · ")[0]}</b></li>
-                  <li className="flex justify-between"><span className="text-mute">Đội ngũ</span><b className="text-ink">{active.teamSize} người</b></li>
-                  <li className="flex justify-between"><span className="text-mute">Múi giờ</span><b className="text-ink">{active.timezone.split(" ")[0]}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">地区</span><b className="text-ink">{active.region === "VN" ? "越南" : "中国"}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">职能</span><b className="text-ink text-right text-[11.5px]">{active.role.split(" · ")[0]}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">团队</span><b className="text-ink">{active.teamSize} 人</b></li>
+                  <li className="flex justify-between"><span className="text-mute">时区</span><b className="text-ink">{active.timezone.split(" ")[0]}</b></li>
                 </ul>
               </div>
             </div>
@@ -438,8 +438,8 @@ export default function LienHePage() {
       {/* === Contact channels =============================================== */}
       <div className="max-w-[1100px] mx-auto px-4 mb-9">
         <div className="text-center mb-5">
-          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">Kênh liên hệ tức thì</h2>
-          <p className="text-[13px] text-mute mt-1">Không tới được văn phòng? Chọn kênh phù hợp dưới đây — đa số phản hồi trong vài phút</p>
+          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">即时联系渠道</h2>
+          <p className="text-[13px] text-mute mt-1">无法到访办事处？选择下方合适的渠道——多数在几分钟内回复</p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {CHANNELS.map((c) => (
@@ -462,8 +462,8 @@ export default function LienHePage() {
       {/* === Departments =================================================== */}
       <div className="max-w-[1100px] mx-auto px-4 mb-9">
         <div className="text-center mb-5">
-          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">Email theo bộ phận</h2>
-          <p className="text-[13px] text-mute mt-1">8 đầu mối chuyên trách — chọn đúng bộ phận để được phản hồi nhanh nhất</p>
+          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">各部门邮箱</h2>
+          <p className="text-[13px] text-mute mt-1">8 个专责联络点——选对部门可获最快回复</p>
         </div>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
           {DEPARTMENTS.map((d) => (
@@ -491,22 +491,22 @@ export default function LienHePage() {
           className="rounded p-7 text-white text-center max-md:p-5"
           style={{ background: "linear-gradient(135deg, #002557 0%, #001A3F 100%)" }}
         >
-          <h3 className="text-[24px] font-bold mb-2 max-md:text-[20px]">Cần tư vấn doanh nghiệp 1-1?</h3>
+          <h3 className="text-[24px] font-bold mb-2 max-md:text-[20px]">需要一对一企业咨询？</h3>
           <p className="text-[13.5px] opacity-85 mb-5 max-w-[640px] mx-auto leading-relaxed">
-            Đặt lịch tư vấn 30 phút với đội kinh doanh — phân tích nhu cầu sourcing, lựa chọn tier phù hợp, giới thiệu Bảo đảm Giao dịch và Báo cáo thị trường. Miễn phí cho doanh nghiệp ≥3 năm hoạt động.
+            预约与销售团队 30 分钟咨询——分析采购需求、选择合适的等级、介绍交易保障和市场报告。经营满 3 年以上的企业免费。
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buying-request"
               className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              🚀 Gửi RFQ ngay
+              🚀 立即发送询价
             </Link>
             <a
               href="mailto:hello@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              📧 Đặt lịch tư vấn
+              📧 预约咨询
             </a>
           </div>
         </div>

@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const NAV_ITEMS = [
-  { icon: "🏠", label: "Trang chủ", href: "/" },
-  { icon: "🗂", label: "Danh mục", href: "#nav-categories" },
-  { icon: "📨", label: "RFQ", href: "/buying-request", primary: true },
-  { icon: "💬", label: "Tin nhắn", href: "/buyer-center" },
-  { icon: "👤", label: "Tài khoản", href: "/login" },
+  { icon: "🏠", label: "首页", href: "/" },
+  { icon: "🗂", label: "分类", href: "#nav-categories" },
+  { icon: "📨", label: "询价", href: "/buying-request", primary: true },
+  { icon: "💬", label: "消息", href: "/buyer-center" },
+  { icon: "👤", label: "账户", href: "/login" },
 ];
 
 export function MobileBottomNav() {
