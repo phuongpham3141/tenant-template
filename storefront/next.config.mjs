@@ -38,6 +38,17 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
+  // Dev-mode demo behind Cloudflare: prevent the CDN from caching stale JS
+  // bundles (Turbopack dev chunk names are stable, so a cached bundle would
+  // mask deploys). no-store makes Cloudflare always revalidate with origin.
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [{ key: 'Cache-Control', value: 'no-store, must-revalidate' }],
+      },
+    ];
+  },
 }
 
 export default nextConfig
