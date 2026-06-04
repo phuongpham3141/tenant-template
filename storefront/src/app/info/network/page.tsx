@@ -19,7 +19,7 @@ const DISTRIBUTION_PARTNERS = [
     summary: "连锁门店、瓷砖展厅、材料仓",
     desc: "各省市的瓷砖、卫浴、铺贴石材、油漆、地板经销商。",
     benefits: [
-      "送货入仓 DDP 价",
+      "送货入仓DDP价",
       "按原厂质保",
       "经河内团队支持退换货",
       "越南语目录与样品",
@@ -30,12 +30,12 @@ const DISTRIBUTION_PARTNERS = [
     color: "#9C6A1F",
     title: "建筑承包商",
     summary: "建筑公司、房地产承包商、保障性住房",
-    desc: "按项目报价，按施工进度交货，≥30 套订单免费提供样品。",
+    desc: "按项目报价，按施工进度交货，≥30套订单免费提供样品。",
     benefits: [
       "整包项目报价",
       "按施工进度分批交货",
-      "≥30 套订单免费样品",
-      "经华越质保 + 退换货",
+      "≥30套订单免费样品",
+      "经华越质保+退换货",
     ],
   },
   {
@@ -43,11 +43,11 @@ const DISTRIBUTION_PARTNERS = [
     color: "#7C2D12",
     title: "室内设计公司",
     summary: "设计工作室、室内设计",
-    desc: "越南语目录 + 为下单 ≥30 套的 VIP 客户免费提供 3D 效果图。",
+    desc: "越南语目录+为下单≥30套的VIP客户免费提供3D效果图。",
     benefits: [
       "中国品牌越南语目录",
       "真实木材/石材/面料样品",
-      "为 VIP 客户免费提供 3D 效果图",
+      "为VIP客户免费提供3D效果图",
       "整包项目优惠折扣",
     ],
   },
@@ -112,7 +112,7 @@ const PARTNERSHIP_MECHANISMS = [
   {
     icon: "🎤",
     title: "新品发布会",
-    desc: "每年在河内和胡志明市举办，邀请中国品牌发布新品，直接对接房地产 / 承包商 / 设计公司。",
+    desc: "每年在河内和胡志明市举办，邀请中国品牌发布新品，直接对接房地产/承包商/设计公司。",
   },
   {
     icon: "💡",
@@ -144,33 +144,33 @@ const TRADE_FAIRS = [
 
 const BUYER_BENEFITS = [
   { icon: "💰", title: "源头真实价", desc: "不经中间商之手，无暗中加价，有来自工厂的审计留痕。" },
-  { icon: "✅", title: "源头品质把控", desc: "华越广州 QC 团队出厂前按 AQL 2.5 验货。" },
-  { icon: "🚛", title: "全程 DDP 运抵越南", desc: "含物流 + 清关 + 税费 + 送货入仓。无需操心订舱、海关。" },
+  { icon: "✅", title: "源头品质把控", desc: "华越广州QC团队出厂前按AQL 2.5验货。" },
+  { icon: "🚛", title: "全程DDP运抵越南", desc: "含物流+清关+税费+送货入仓。无需操心订舱、海关。" },
   { icon: "🇻🇳", title: "越南语支持", desc: "全程经河内团队沟通——无需懂中文。" },
-  { icon: "🎁", title: "免费样品与 3D", desc: "面向 ≥30 套订单——先投入以敲定正确款式。" },
-  { icon: "📊", title: "市场更新", desc: "每月工厂价格报告、CNY/VND 汇率、新税收政策。" },
+  { icon: "🎁", title: "免费样品与3D", desc: "面向≥30套订单——先投入以敲定正确款式。" },
+  { icon: "📊", title: "市场更新", desc: "每月工厂价格报告、CNY/VND汇率、新税收政策。" },
 ];
 
 const FAQS = [
   {
     q: "我想成为华越在本省的分销经销商——流程如何？",
-    a: "发邮件至 partnership@huayuesc.vn 并附：营业执照、现有展厅/仓库信息、正在分销的行业（建材 / 家具 / 家电）、覆盖区域。华越河内团队将在 5 个工作日内电话联系，必要时上门拜访。核实后签订经销合同——无会员费，仅按销售额分成佣金。",
+    a: "发邮件至partnership@huayuesc.vn并附：营业执照、现有展厅/仓库信息、正在分销的行业（建材/家具/家电）、覆盖区域。华越河内团队将在5个工作日内电话联系，必要时上门拜访。核实后签订经销合同——无会员费，仅按销售额分成佣金。",
   },
   {
     q: "我是建筑承包商——华越能为我的项目提供什么支持？",
-    a: "华越为建材与室内装饰（瓷砖、卫浴、铺贴石材、油漆、地板）提供送货到工地的 DDP 报价。支持：≥30 套订单免费提供样品、按施工进度交货、按原厂质保 + 如有瑕疵华越负责退换货。请联系 sales@huayuesc.vn 或 +86 181-2225-6999。",
+    a: "华越为建材与室内装饰（瓷砖、卫浴、铺贴石材、油漆、地板）提供送货到工地的DDP报价。支持：≥30套订单免费提供样品、按施工进度交货、按原厂质保+如有瑕疵华越负责退换货。请联系sales@huayuesc.vn或+86 181-2225-6999。",
   },
   {
-    q: "我是室内设计公司——能为我的 VIP 客户提供优惠吗？",
-    a: "可以。华越为设计公司提供合作套餐：中国品牌的越南语目录、木材/石材/面料样品、为高端客户免费提供 3D 效果图（≥30 套订单）、整包项目的优惠折扣。",
+    q: "我是室内设计公司——能为我的VIP客户提供优惠吗？",
+    a: "可以。华越为设计公司提供合作套餐：中国品牌的越南语目录、木材/石材/面料样品、为高端客户免费提供3D效果图（≥30套订单）、整包项目的优惠折扣。",
   },
   {
     q: "我想赴华参观工厂——华越组团吗？",
-    a: "组团。华越组织越南采购团赴广交会（4 月和 10 月）、CIFF 广州（3 月和 9 月）、佛山陶瓷展（4 月和 10 月）。每团 10-25 名采购商，配专业翻译，由华越广州采购团队接待。行前预约与工厂的商务对接。请联系 partnership@huayuesc.vn。",
+    a: "组团。华越组织越南采购团赴广交会（4月和10月）、CIFF广州（3月和9月）、佛山陶瓷展（4月和10月）。每团10-25名采购商，配专业翻译，由华越广州采购团队接待。行前预约与工厂的商务对接。请联系partnership@huayuesc.vn。",
   },
   {
     q: "为什么我该通过华越采购，而不是自己赴华或通过中间商？",
-    a: "自己赴华：要懂中文、熟悉市场、与工厂有关系、操心物流 + 清关。通过中间商：无法在源头把控品质、易被暗中加价、缺乏清晰法律保障。华越：越南注册法人主体（税号 0111453693），出厂前在工厂验货，DDP 送货入仓，7×24 越南语支持，有交易保障——货物若不符承诺即可退款。",
+    a: "自己赴华：要懂中文、熟悉市场、与工厂有关系、操心物流+清关。通过中间商：无法在源头把控品质、易被暗中加价、缺乏清晰法律保障。华越：越南注册法人主体（税号0111453693），出厂前在工厂验货，DDP送货入仓，7×24越南语支持，有交易保障——货物若不符承诺即可退款。",
   },
 ];
 
@@ -205,11 +205,11 @@ export default function NetworkPage() {
               合作伙伴网络
             </span>
             <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[22px]">
-              合作伙伴网络——越南分销 &amp; 中国工厂
+              合作伙伴网络——越南分销 & 中国工厂
             </h1>
             <p className="text-[14.5px] opacity-90 leading-relaxed max-w-[820px] max-md:text-[13px]">
               华越的供应链建立在两张相辅相成的网络之上：
-              <b className="text-gold">遍布越南 63 省市的分销合作伙伴</b>（出口端）与{" "}
+              <b className="text-gold">遍布越南63省市的分销合作伙伴</b>（出口端）与{" "}
               <b className="text-gold">中国制造集群的顶尖工厂</b>（进口端）。
               这正是华越按宣传册落实
               <i> 本地化分销渠道拓展</i>与<i>源头精选</i>服务的方式。
@@ -250,12 +250,12 @@ export default function NetworkPage() {
               </div>
             </div>
             <p className="text-[13px] text-ink/80 mb-3 leading-relaxed">
-              华越采购团队（广州市海珠区数娱创兴港 3 层）在 3 大主力集群甄选并验厂合作工厂。
+              华越采购团队（广州市海珠区数娱创兴港3层）在3大主力集群甄选并验厂合作工厂。
             </p>
             <ul className="space-y-1.5 text-[12.5px] text-ink/85">
               <li className="flex gap-2"><span className="text-success">●</span> 采购与甄选（源头精选）</li>
-              <li className="flex gap-2"><span className="text-success">●</span> 出厂前 AQL 2.5 QC</li>
-              <li className="flex gap-2"><span className="text-success">●</span> 每 12 个月定期实地验厂</li>
+              <li className="flex gap-2"><span className="text-success">●</span> 出厂前AQL 2.5 QC</li>
+              <li className="flex gap-2"><span className="text-success">●</span> 每12个月定期实地验厂</li>
               <li className="flex gap-2"><span className="text-success">●</span> 翻译与行业协会关系</li>
             </ul>
           </div>
@@ -265,7 +265,7 @@ export default function NetworkPage() {
             <div className="bg-brand text-white px-4 py-6 rounded-lg text-center max-md:py-3 max-md:w-full">
               <div className="text-[40px] mb-1 max-md:text-[28px]">🚢</div>
               <b className="block text-[13px] leading-tight">华越</b>
-              <small className="text-[10.5px] opacity-85">物流 + DDP 清关</small>
+              <small className="text-[10.5px] opacity-85">物流+DDP清关</small>
             </div>
           </div>
 
@@ -279,13 +279,13 @@ export default function NetworkPage() {
               </div>
             </div>
             <p className="text-[13px] text-ink/80 mb-3 leading-relaxed">
-              总部位于河内市春芳坊宝玉大厦——仓储、清关、分销至越南 63 个省市。
+              总部位于河内市春芳坊宝玉大厦——仓储、清关、分销至越南63个省市。
             </p>
             <ul className="space-y-1.5 text-[12.5px] text-ink/85">
               <li className="flex gap-2"><span className="text-accent">●</span> 建材与家具分销经销商</li>
               <li className="flex gap-2"><span className="text-accent">●</span> 建筑承包商与室内设计</li>
               <li className="flex gap-2"><span className="text-accent">●</span> 家电与厨房设备经销商</li>
-              <li className="flex gap-2"><span className="text-accent">●</span> 海防仓储 + VNACCS 清关</li>
+              <li className="flex gap-2"><span className="text-accent">●</span> 海防仓储+VNACCS清关</li>
             </ul>
           </div>
         </div>
@@ -504,7 +504,7 @@ export default function NetworkPage() {
 }
 
 export const metadata = {
-  title: "合作伙伴网络——Huayuesc 华越供应链",
+  title: "合作伙伴网络——Huayuesc华越供应链",
   description:
-    "华越连接广东、福建、山东的顶尖工厂与越南 4 类分销合作伙伴：建材经销商、建筑承包商、室内设计公司、家电经销商。覆盖 63 省市，2 个运营办公室海防 + 广州。",
+    "华越连接广东、福建、山东的顶尖工厂与越南4类分销合作伙伴：建材经销商、建筑承包商、室内设计公司、家电经销商。覆盖63省市，2个运营办公室海防+广州。",
 };

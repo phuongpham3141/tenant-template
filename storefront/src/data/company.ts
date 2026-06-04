@@ -121,7 +121,7 @@ export const COMPANY = {
     {
       nameVi: "智能自动化",
       nameCn: "智能自动化",
-      desc: "依托 AI 算法自动处理订单、调度运输并优化物流路线。",
+      desc: "依托AI算法自动处理订单、调度运输并优化物流路线。",
     },
     {
       nameVi: "协同网络",
@@ -141,7 +141,7 @@ export const COMPANY = {
       addressCn: "广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼",
       addressVi:
         "广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼",
-      role: "采购中心 · 工厂验厂 · 采购与品控",
+      role: "采购中心·工厂验厂·采购与品控",
       timezone: "GMT+8",
     },
     vn: {
@@ -153,7 +153,7 @@ export const COMPANY = {
       addressCn: "越南河内市春芳坊清林街2号宝玉大厦7楼",
       addressVi:
         "越南河内市春芳坊清林街2号宝玉大厦7楼",
-      role: "总部 · 运营 · 越南分销",
+      role: "总部·运营·越南分销",
       timezone: "GMT+7",
     },
   } as const,
@@ -177,9 +177,9 @@ export const COMPANY = {
 
   // ─── Legal / Regulatory ─────────────────────────────────────────────────
   legal: {
-    arbitrationVenue: "越南国际仲裁中心（VIAC 河内）",
+    arbitrationVenue: "越南国际仲裁中心（VIAC河内）",
     governingLaw: "越南法律",
-    dataProtection: ["ISO/IEC 27001:2022", "越南第 13/2023/NĐ-CP 号法令", "PIPL（中国）", "GDPR（适用于欧盟时）"],
+    dataProtection: ["ISO/IEC 27001:2022", "越南第13/2023/NĐ-CP号法令", "PIPL（中国）", "GDPR（适用于欧盟时）"],
   } as const,
 } as const;
 

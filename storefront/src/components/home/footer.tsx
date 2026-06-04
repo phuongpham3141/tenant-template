@@ -51,7 +51,7 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
   },
 ];
 
-const CERTS = ["✓ 越南工贸部", "✓ DMCA 保护", "✓ ISO 27001", "✓ TÜV 认证", "✓ SSL 加密"];
+const CERTS = ["✓ 越南工贸部", "✓ DMCA 保护", "✓ ISO 27001", "✓ TÜV 认证", "✓ SSL加密"];
 
 type Social = {
   name: string;

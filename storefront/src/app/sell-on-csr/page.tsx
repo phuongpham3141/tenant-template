@@ -295,11 +295,11 @@ const FAQ = [
   },
   {
     q: "我想销售给越南经销商但不直接出口——有替代模式吗？",
-    a: "有“CSR Fulfilled”模式，自 2026 年第 3 季度起推行：供应商以 FOB 将货物交给位于香港或广州的华越物流，华越负责全部运输 + 清关 + 配送至越南经销商。供应商只需运至口岸。物流费 8–15%（视行业而定），无设置费。目前正与 8 家高级套餐供应商试运行。",
+    a: "有“CSR Fulfilled”模式，自2026年第3季度起推行：供应商以FOB将货物交给位于香港或广州的华越物流，华越负责全部运输+清关+配送至越南经销商。供应商只需运至口岸。物流费8–15%（视行业而定），无设置费。目前正与8家高级套餐供应商试运行。",
   },
   {
     q: "交易保障是强制的吗？",
-    a: "强烈建议但非强制。华越约 78% 的订单正在使用交易保障。供应商采用可提高成交率（据内部数据，经销商信任度高出 3.4 倍），尤其在与新经销商的首单中。每单 1.5% 费用已含在挂牌价中，无隐藏费用。",
+    a: "强烈建议但非强制。华越约78%的订单正在使用交易保障。供应商采用可提高成交率（据内部数据，经销商信任度高出3.4倍），尤其在与新经销商的首单中。每单1.5%费用已含在挂牌价中，无隐藏费用。",
   },
 ];
 
@@ -329,14 +329,14 @@ export default function SellOnCsrPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-12 max-md:py-8">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            🏭 入驻 CSR · 供应商专属
+            🏭 入驻CSR · 供应商专属
           </span>
           <h1 className="text-[42px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
-            B2B 出口越南<br />
+            B2B出口越南<br />
             <span className="text-gold">借力第一专业平台</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            专注越南 – 中国市场的 B2B 平台，覆盖家具、材料、卫浴洁具、家用电器行业。<b className="text-gold">挂牌 100% 免费</b>——只有供应商成交订单后我们才收费。“不盈利不收费”承诺：若尚未盈利，华越全额免费。40+ 合作工厂在采用多方共赢模式 24 个月后实现 300%+ 增长。
+            专注越南–中国市场的B2B平台，覆盖家具、材料、卫浴洁具、家用电器行业。<b className="text-gold">挂牌100%免费</b>——只有供应商成交订单后我们才收费。“不盈利不收费”承诺：若尚未盈利，华越全额免费。40+合作工厂在采用多方共赢模式24个月后实现300%+增长。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -351,7 +351,7 @@ export default function SellOnCsrPage() {
               📋 查看验厂流程
             </Link>
             <Link href="/info/contact" className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90">
-              💬 预约 30 分钟咨询
+              💬 预约30分钟咨询
             </Link>
           </div>
         </div>
@@ -361,7 +361,7 @@ export default function SellOnCsrPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-9">
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">为何选择华越</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">20+ 工厂选择我们平台的 6 大理由</h2>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">20+工厂选择我们平台的6大理由</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
             并非通用全球平台——华越是面向越南市场的深耕渠道，为每笔交易配备专属基础设施和团队。
           </p>
@@ -382,10 +382,10 @@ export default function SellOnCsrPage() {
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">收费政策 · 双赢模式</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">
-            挂牌 100% 免费——只在交易成交时收费
+            挂牌100%免费——只在交易成交时收费
           </h2>
           <p className="text-[13.5px] text-mute mt-2 max-w-[760px] mx-auto leading-relaxed">
-            华越本着<b className="text-ink">多方共赢</b>的原则，助力各方互通商贸。我们不收注册费、不收验厂费、不收年度会员费。唯一的费用是 1.5% 交易保障——仅在供应商成交订单且经销商确认收货后才产生。<b className="text-ink">若供应商尚未盈利，华越承诺全额免费。</b>
+            华越本着<b className="text-ink">多方共赢</b>的原则，助力各方互通商贸。我们不收注册费、不收验厂费、不收年度会员费。唯一的费用是1.5%交易保障——仅在供应商成交订单且经销商确认收货后才产生。<b className="text-ink">若供应商尚未盈利，华越承诺全额免费。</b>
           </p>
         </div>
 
@@ -396,7 +396,7 @@ export default function SellOnCsrPage() {
               🎁
             </div>
             <div>
-              <b className="block text-[18px] text-ink leading-tight">注册、验厂、挂牌全流程——100% 免费</b>
+              <b className="block text-[18px] text-ink leading-tight">注册、验厂、挂牌全流程——100%免费</b>
               <p className="text-[12.5px] text-mute mt-1">
                 无隐藏费用，无长期约束合同，无需缴纳押金。供应商可随时退出平台。
               </p>
@@ -465,14 +465,14 @@ export default function SellOnCsrPage() {
             <div className="flex-1">
               <b className="block text-[16px] mb-1">“不盈利不收费”承诺——以书面形式写入服务合同</b>
               <p className="text-[13px] opacity-90 leading-relaxed">
-                若头 12 个月内供应商未能从华越获得实际利润，我们将<b>全额返还已缴的交易保障费</b>——或继续免费延长 6 个月，共同寻找优化方向。我们坚信，只有各方共赢，B2B 平台才有价值。
+                若头12个月内供应商未能从华越获得实际利润，我们将<b>全额返还已缴的交易保障费</b>——或继续免费延长6个月，共同寻找优化方向。我们坚信，只有各方共赢，B2B平台才有价值。
               </p>
             </div>
             <Link
               href="/info/contact"
               className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] whitespace-nowrap"
             >
-              与 BD 团队沟通 →
+              与BD团队沟通 →
             </Link>
           </div>
         </div>
@@ -481,8 +481,8 @@ export default function SellOnCsrPage() {
       {/* === Process steps ================================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">4 步流程</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">从注册到首单平均 30 天</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">4步流程</span>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">从注册到首单平均30天</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
             验厂免费，客户经理一对一从第一天起全程指导，直至接到首单。
           </p>
@@ -536,8 +536,8 @@ export default function SellOnCsrPage() {
           <div className="flex items-start justify-between gap-4 mb-4 flex-wrap">
             <div>
               <span className="text-[11px] uppercase tracking-wider text-brand font-bold">验厂标准</span>
-              <h2 className="text-[22px] font-bold text-ink mt-1 max-md:text-[18px]">10 项标准体系——必备 + 加分</h2>
-              <p className="text-[13px] text-mute mt-1">平均通过率 32%——以严格标准保护越南经销商</p>
+              <h2 className="text-[22px] font-bold text-ink mt-1 max-md:text-[18px]">10项标准体系——必备+加分</h2>
+              <p className="text-[13px] text-mute mt-1">平均通过率32%——以严格标准保护越南经销商</p>
             </div>
             <Link
               href="/info/audit-process"
@@ -574,7 +574,7 @@ export default function SellOnCsrPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">营销工具</span>
           <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">华越主动将供应商推送给经销商</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            不只是被动的店铺——我们运营 6 个主动营销渠道，让供应商精准触达有需求的经销商。
+            不只是被动的店铺——我们运营6个主动营销渠道，让供应商精准触达有需求的经销商。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -592,9 +592,9 @@ export default function SellOnCsrPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">成功案例</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6 家多年合作工厂——真实数据</h2>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">6家多年合作工厂——真实数据</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            来自与华越同行 3 至 8 年的工厂负责人的直接分享。
+            来自与华越同行3至8年的工厂负责人的直接分享。
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -610,11 +610,11 @@ export default function SellOnCsrPage() {
               </div>
               <div className="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-line text-[12px]">
                 <div>
-                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻 CSR 前</div>
+                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻CSR前</div>
                   <b className="text-ink text-[12.5px]">{s.before}</b>
                 </div>
                 <div>
-                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻 CSR 后</div>
+                  <div className="text-mute text-[10.5px] uppercase tracking-wider">入驻CSR后</div>
                   <b className="text-success text-[12.5px]">{s.after}</b>
                 </div>
               </div>
@@ -633,9 +633,9 @@ export default function SellOnCsrPage() {
       <section className="max-w-[900px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">常见问题</span>
-          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">供应商最关心的 8 个问题</h2>
+          <h2 className="text-[28px] font-bold text-ink mt-1 max-md:text-[22px]">供应商最关心的8个问题</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            汇总自过去 12 个月对越南分销伙伴、已注册供应商及 20+ 现有合作伙伴的访谈。
+            汇总自过去12个月对越南分销伙伴、已注册供应商及20+现有合作伙伴的访谈。
           </p>
         </div>
         <div className="space-y-2">
@@ -663,7 +663,7 @@ export default function SellOnCsrPage() {
             准备好提升越南出口业绩了吗？
           </h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[680px] mx-auto leading-relaxed">
-            注册免费，验厂免费。平均 30 天即可上架并接到首单。20+ 供应商已选择华越——无隐藏交易费，中越双语客户经理一对一服务。
+            注册免费，验厂免费。平均30天即可上架并接到首单。20+供应商已选择华越——无隐藏交易费，中越双语客户经理一对一服务。
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -676,7 +676,7 @@ export default function SellOnCsrPage() {
               href="/info/contact"
               className="inline-block px-8 py-3.5 border-2 border-white/40 text-white rounded-sm font-bold text-[15px] hover:bg-white/10"
             >
-              💬 预约 30 分钟咨询
+              💬 预约30分钟咨询
             </Link>
           </div>
           <div className="mt-6 pt-5 border-t border-white/15 text-[12px] opacity-80 flex justify-center gap-5 flex-wrap">
@@ -691,7 +691,7 @@ export default function SellOnCsrPage() {
 }
 
 export const metadata = {
-  title: "入驻 CSR — 通过华越向越南做 B2B 出口",
+  title: "入驻CSR — 通过华越向越南做B2B出口",
   description:
-    "专注越南 – 中国市场的 B2B 平台。已认证的越南分销伙伴与经销商、通过越南和中国合作银行的交易保障、中越双语客户经理。20+ 供应商已注册，验厂免费，从注册到首单 30 天。",
+    "专注越南–中国市场的B2B平台。已认证的越南分销伙伴与经销商、通过越南和中国合作银行的交易保障、中越双语客户经理。20+供应商已注册，验厂免费，从注册到首单30天。",
 };

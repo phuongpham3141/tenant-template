@@ -13,16 +13,16 @@ import type { ListingProduct } from "@/data/products";
  */
 
 const REVIEW_SEED = [
-  { name: "陈明辉", company: "西贡家具展厅 · 胡志明市", rating: 5, text: "收到的货与样品一致，交货速度快。第二批将再订 2 个集装箱。", helpful: 18 },
-  { name: "范国英", company: "南方建筑材料 · 河内", rating: 5, text: "6 小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
-  { name: "阮秋恒", company: "胡志明市酒店集团 · 胡志明市", rating: 4, text: "品质好，出口级包装。价格比国内低 30%，很有竞争力。", helpful: 9 },
+  { name: "陈明辉", company: "西贡家具展厅 · 胡志明市", rating: 5, text: "收到的货与样品一致，交货速度快。第二批将再订2个集装箱。", helpful: 18 },
+  { name: "范国英", company: "南方建筑材料 · 河内", rating: 5, text: "6小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
+  { name: "阮秋恒", company: "胡志明市酒店集团 · 胡志明市", rating: 4, text: "品质好，出口级包装。价格比国内低30%，很有竞争力。", helpful: 9 },
   { name: "黎文德", company: "岘港经销商 · 岘港", rating: 5, text: "由广州团队组织的工厂验厂非常专业，下单很放心。", helpful: 12 },
-  { name: "邓清河", company: "平明建筑公司 · 北宁", rating: 5, text: "DDP 送货到仓，不产生额外税费。比自己安排物流节省 4 天。", helpful: 22 },
+  { name: "邓清河", company: "平明建筑公司 · 北宁", rating: 5, text: "DDP送货到仓，不产生额外税费。比自己安排物流节省4天。", helpful: 22 },
   { name: "裴国俊", company: "河内装饰展厅", rating: 4, text: "个别产品有些细微的漆面瑕疵，供应商已免费补发。服务好。", helpful: 7 },
   { name: "武翠玲", company: "大叻度假村 · 林同", rating: 5, text: "品质超出预期，客户服务很周到。", helpful: 11 },
   { name: "潘文雄", company: "海防经销商", rating: 4, text: "交货按时，品质物有所值。", helpful: 6 },
-  { name: "李氏梅", company: "会安精品酒店", rating: 5, text: "1 箱受损时交易保障全额退款，值得信赖。", helpful: 13 },
-  { name: "杜克军", company: "平阳承包商", rating: 5, text: "已收 3 个集装箱，无任何投诉。将继续合作。", helpful: 17 },
+  { name: "李氏梅", company: "会安精品酒店", rating: 5, text: "1箱受损时交易保障全额退款，值得信赖。", helpful: 13 },
+  { name: "杜克军", company: "平阳承包商", rating: 5, text: "已收3个集装箱，无任何投诉。将继续合作。", helpful: 17 },
 ];
 
 const RATING_BREAKDOWN = [

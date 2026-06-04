@@ -13,11 +13,11 @@ export type SeriesMeta = {
 };
 const BRAND: SeriesMeta = {
   story:
-    "CareLighting（开尔照明）隶属于浙江旭光电子科技有限公司（Zhejiang Xuguang Electronic Technology Co., Ltd.）——一家集 LED 灯具及家用电器研发、生产、销售与服务于一体的高新技术企业。公司于 2016 年挂牌新三板（代码 839762）；旗下「Kaier Lighting」是中国知名 LED 灯具品牌，产品覆盖流通/综合照明、家居、商业、集成设备及电器五大领域。",
+    "CareLighting（开尔照明）隶属于浙江旭光电子科技股份有限公司——一家集 LED 灯具及家用电器研发、生产、销售与服务于一体的高新技术企业。公司于 2016 年挂牌新三板（代码 839762）；旗下「Kaier Lighting」是中国知名 LED 灯具品牌，产品覆盖流通/综合照明、家居、商业、集成设备及电器五大领域。",
   heritage:
     "拥有逾 90,000 ㎡ 现代化生产厂房，产能约 1 亿套 LED 灯具/年。连续 4 年荣获中国「光源十大品牌」；建有 26 个省级运营中心、500+ 一级分销网点的网络，覆盖逾 100,000 个零售终端。",
   technicalSpecs: [
-    { label: "品牌", value: "CareLighting 开尔照明 (Kaier / Zhejiang Xuguang)" },
+    { label: "品牌", value: "CareLighting 开尔照明 (Kaier / 浙江旭光)" },
     { label: "上市", value: "新三板 2016（代码 839762）" },
     { label: "产品", value: "LED 球泡灯、GX53/嵌入式灯、应急灯" },
     { label: "产能", value: "约 1 亿套灯具/年，90,000 ㎡ 厂房" },

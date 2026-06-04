@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 export const metadata = {
-  title: "以图搜索 — Huayuesc",
+  title: "以图搜索 — 华越供应链",
   description:
     "上传产品图片，即可从中国 40 余家已认证工厂中找到相似产品。AI 图像识别，5 秒内推荐匹配产品。",
 };

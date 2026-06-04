@@ -80,11 +80,11 @@ export default function RegisterDealerPage() {
           <b className="block text-[14px] font-bold text-ink mb-3">🎯 其他经销商怎么说</b>
           <div className="space-y-3 text-[12px] text-ink">
             <div className="border-l-2 border-gold pl-3">
-              <p className="leading-relaxed">&ldquo;免费验厂帮我避开了 1 家假冒供应商——实际价值远超 $400。&rdquo;</p>
+              <p className="leading-relaxed">“免费验厂帮我避开了 1 家假冒供应商——实际价值远超 $400。”</p>
               <span className="text-[11px] text-mute mt-1 block">— 陈光兴，南方建材</span>
             </div>
             <div className="border-l-2 border-gold pl-3">
-              <p className="leading-relaxed">&ldquo;DDP 免费加首单 9 折，首批货为我省下了 2,200 万越南盾。&rdquo;</p>
+              <p className="leading-relaxed">“DDP 免费加首单 9 折，首批货为我省下了 2,200 万越南盾。”</p>
               <span className="text-[11px] text-mute mt-1 block">— 黎秋恒，西贡展厅</span>
             </div>
           </div>

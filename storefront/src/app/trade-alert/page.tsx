@@ -3,12 +3,12 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
 
 const SAMPLE_ALERTS = [
-  { tag: "PRICE", title: "11 月 porcelain 瓷砖价格下降 8%", time: "2 天前", text: "佛山产量增长 15% 拉低价格。备货迎春节的良机。" },
+  { tag: "PRICE", title: "11 月瓷砖价格下降 8%", time: "2 天前", text: "佛山产量增长 15% 拉低价格。备货迎春节的良机。" },
   { tag: "NEW SUPPLIER", title: "30 家新陶瓷工厂入驻华越", time: "3 天前", text: "全部已通过验厂，集中于新兴产业集群。起订量 100㎡ 起。" },
   { tag: "TREND", title: "2025 年智能马桶增长 240%", time: "5 天前", text: "Ortonbaths、TOTO、Kohler 领跑。面向越南市场价位 $150-450/个。" },
   { tag: "FAIR", title: "广交会第二期开放报名", time: "1 周前", text: "5 天行程，提供签证、酒店、3 家工厂参观。前 50 名早鸟采购商享 85 折。" },
   { tag: "POLICY", title: "2026 年起家具进口关税降至 15%", time: "1 周前", text: "新法令于 2026 年 1 月 1 日生效——为家具经销商节省 5-10% 成本。" },
-  { tag: "DEAL", title: "Dongpeng 对 500㎡+ 订单减 12%", time: "2 周前", text: "适用于 Calacatta porcelain 系列。2026 年 11 月 30 日截止。" },
+  { tag: "DEAL", title: "Dongpeng 对 500㎡+ 订单减 12%", time: "2 周前", text: "适用于 Calacatta 瓷砖系列。2026 年 11 月 30 日截止。" },
 ];
 
 const TAG_COLORS: Record<string, string> = {

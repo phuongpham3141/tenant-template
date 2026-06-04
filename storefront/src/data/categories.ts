@@ -261,7 +261,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
             ],
           },
           {
-            name: "意式（Italian）",
+            name: "意式",
             slug: "y-italian",
             inline: [
               { name: "轻奢", slug: "y-italian-luxury" },
@@ -752,7 +752,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         accent: "green",
         subcats: [
           {
-            name: "钢管（Steel pipe）",
+            name: "钢管",
             slug: "thep-ong-steel-pipe",
             inline: [
               { name: "黑钢管", slug: "thep-ong-steel-pipe-thep-ong-den" },
@@ -762,7 +762,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
             ],
           },
           { name: "钢板与钢卷", slug: "thep-tam-cuon" },
-          { name: "H、I、U、V型钢", slug: "thep-hinh-h-i-u-v" },
+          { name: "H型钢、I型钢、U型钢、V型钢", slug: "thep-hinh-h-i-u-v" },
           { name: "螺杆与结构螺栓", slug: "thanh-ren-bu-long-ket-cau" },
           { name: "焊接钢丝网", slug: "luoi-thep-han" },
           { name: "屋面板与保温彩钢板", slug: "ton-lop-ton-cach-nhiet" },
@@ -863,7 +863,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
           name: [
             "卡拉卡塔石英石3000×1400",
             "卡拉拉白大理石2cm",
-            "G654花岗岩抛光",
+            "G654花岗岩抛光面",
             "白色人造实体面材12mm",
             "岩板3200×1600 6mm",
             "泳池玻璃马赛克",
@@ -875,7 +875,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
       },
       {
         id: "wallpaper-paint",
-        title: "墙纸与涂层",
+        title: "墙纸与涂料",
         accent: "ochre",
         subcats: [
           { name: "PVC墙纸", slug: "wallpaper-pvc" },
@@ -902,12 +902,12 @@ export const CATEGORIES: Record<string, CategoryPage> = {
       },
       {
         id: "insulation-waterproof",
-        title: "保温隔热与防水",
+        title: "保温隔热与防水材料",
         accent: "blue",
         subcats: [
           { name: "玻璃棉保温棉", slug: "bong-thuy-tinh-cach-nhiet" },
           { name: "岩棉", slug: "bong-khoang-rockwool" },
-          { name: "EPS / XPS板", slug: "tam-eps-xps" },
+          { name: "EPS/XPS板", slug: "tam-eps-xps" },
           { name: "聚酯纤维棉", slug: "bong-polyester" },
           { name: "沥青防水卷材", slug: "mang-chong-tham-bitum" },
           { name: "水泥基防水涂料", slug: "son-chong-tham-goc-xi-mang" },
@@ -969,7 +969,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
           name: [
             "20ft标准集装箱房",
             "三合一可扩展集装箱房",
-            "40ft模块化集装箱办公室",
+            "40英尺模块化集装箱办公室",
             "30分钟安装折叠房",
             "EPS夹芯板950×50mm",
             "防火岩棉夹芯板",
@@ -1584,7 +1584,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
             { name: "LED筒灯", slug: "den-led-downlight" },
             { name: "LED面板灯", slug: "den-led-panel" },
             { name: "LED灯管", slug: "den-led-tuyp" },
-            { name: "导轨射灯（track light）", slug: "den-roi-ray-track-light" },
+            { name: "导轨射灯", slug: "den-roi-ray-track-light" },
             { name: "LED投光灯", slug: "den-pha-led" },
             { name: "装饰吊灯", slug: "den-pendant-trang-tri" },
             { name: "枝形吊灯", slug: "den-chum-chandelier" },
@@ -1640,7 +1640,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
           { name: "LED筒灯", slug: "den-led-downlight" },
           { name: "LED面板灯", slug: "den-led-panel" },
           { name: "T5/T8 LED灯管", slug: "den-led-tuyp-t5-t8" },
-          { name: "导轨射灯（track light）", slug: "den-roi-ray-track-light" },
+          { name: "导轨射灯", slug: "den-roi-ray-track-light" },
           { name: "吸顶灯", slug: "den-op-tran" },
           { name: "橱柜与厨房灯", slug: "den-am-tu-bep" },
           { name: "人体感应灯", slug: "den-cam-bien-chuyen-dong" },
@@ -1667,7 +1667,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         subcats: [
           { name: "吊灯", slug: "den-pendant" },
           { name: "枝形吊灯", slug: "den-chum-chandelier" },
-          { name: "壁灯（wall sconce）", slug: "den-tuong-wall-sconce" },
+          { name: "壁灯", slug: "den-tuong-wall-sconce" },
           { name: "台灯", slug: "den-ban-de-ban" },
           { name: "落地灯", slug: "den-san-floor-lamp" },
           { name: "艺术装饰灯", slug: "den-nghe-thuat-trang-tri" },
@@ -1747,9 +1747,9 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         title: "舞台与活动灯光",
         accent: "ochre",
         subcats: [
-          { name: "摇头灯（moving head）", slug: "moving-head-light" },
+          { name: "摇头灯", slug: "moving-head-light" },
           { name: "LED RGB帕灯", slug: "den-par-led-rgb" },
-          { name: "光束灯（beam light）", slug: "den-beam-light" },
+          { name: "光束灯", slug: "den-beam-light" },
           { name: "舞台激光灯", slug: "den-laser-san-khau" },
           { name: "桁架与舞台框架", slug: "truss-khung-san-khau" },
           { name: "烟雾机与泡泡机", slug: "may-phun-khoi-bong-bong" },
@@ -1774,7 +1774,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         title: "工业照明",
         accent: "blue",
         subcats: [
-          { name: "车间高顶灯（highbay）", slug: "den-nha-xuong-highbay" },
+          { name: "车间高顶灯", slug: "den-nha-xuong-highbay" },
           { name: "低顶灯（lowbay）", slug: "den-lowbay" },
           { name: "防爆灯", slug: "den-chong-no" },
           { name: "三脚架应急灯", slug: "den-tripod-khan-cap" },
@@ -1982,7 +1982,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         subcats: [
           { name: "钢化玻璃地弹门", slug: "cua-kinh-cuong-luc-ban-le-san" },
           { name: "自动玻璃推拉门", slug: "cua-kinh-truot-tu-dong" },
-          { name: "吊趟玻璃门（sliding hanging）", slug: "cua-kinh-treo-sliding-hanging" },
+          { name: "吊趟玻璃门", slug: "cua-kinh-treo-sliding-hanging" },
           { name: "不锈钢框玻璃门", slug: "cua-kinh-khung-inox" },
           { name: "卫浴玻璃门", slug: "cua-kinh-phong-tam" },
           { name: "办公玻璃隔断", slug: "vach-ngan-kinh-van-phong" },
@@ -2114,7 +2114,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         subcats: [
           { name: "铰链", slug: "ban-le" },
           { name: "门锁与拉手", slug: "khoa-cua-tay-nam" },
-          { name: "液压闭门器（door closer）", slug: "tay-co-thuy-luc-door-closer" },
+          { name: "液压闭门器", slug: "tay-co-thuy-luc-door-closer" },
           { name: "接缝与橡胶密封条", slug: "joints-gioang-cao-su" },
           { name: "推拉门滑轨", slug: "ray-truot-cua-lua" },
           { name: "玻璃门配件", slug: "phu-kien-cua-kinh" },
@@ -2215,7 +2215,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         ],
         products: Array.from({ length: 8 }, (_, i) => ({
           name: [
-            "60支全棉床品4件套",
+            "60支全棉床品四件套",
             "80支全棉被套250TC",
             "五星级独立袋装弹簧床垫1.6m",
             "泰国乳胶床垫5cm",
@@ -2249,7 +2249,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
             "加厚全棉浴室地巾50×80",
             "刺绣印标华夫格浴袍",
             "五星级全棉毛圈浴袍",
-            "赠客毛巾4件套",
+            "赠客毛巾四件套",
           ][i],
           image: `/img/cat7-s2-${i}.jpg?v=5`,
         })),
@@ -2269,7 +2269,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         ],
         products: Array.from({ length: 8 }, (_, i) => ({
           name: [
-            "牛皮纸盒洗漱用品6件套",
+            "牛皮纸盒洗漱用品六件套",
             "PE瓶装洗发水30ml",
             "PET瓶装沐浴露40ml",
             "牙刷+牙膏5g套装",
@@ -2397,9 +2397,9 @@ export const CATEGORIES: Record<string, CategoryPage> = {
           { name: "行李员制服", slug: "dong-phuc-bellboy" },
           { name: "厨房与服务员制服", slug: "dong-phuc-bep-phuc-vu" },
           { name: "围巾与领带", slug: "khan-quang-co-ca-vat" },
-          { name: "胸牌（name tag）", slug: "bang-ten-name-tag" },
+          { name: "胸牌", slug: "bang-ten-name-tag" },
           { name: "行李推车", slug: "xe-day-hanh-ly" },
-          { name: "客房服务车（housekeeping）", slug: "xe-day-phong-housekeeping" },
+          { name: "客房服务车", slug: "xe-day-phong-housekeeping" },
         ],
         products: Array.from({ length: 8 }, (_, i) => ({
           name: [
@@ -2501,7 +2501,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
           },
           { name: "推拉门滑轨", slug: "ray-truot-cua-lua" },
           { name: "推拉门滑轮", slug: "roller-cua-lua" },
-          { name: "液压闭门器（door closer）", slug: "tay-co-thuy-luc-door-closer" },
+          { name: "液压闭门器", slug: "tay-co-thuy-luc-door-closer" },
         ],
         products: Array.from({ length: 8 }, (_, i) => ({
           name: [
@@ -2896,7 +2896,7 @@ export const CATEGORIES: Record<string, CategoryPage> = {
         ],
         products: Array.from({ length: 8 }, (_, i) => ({
           name: [
-            "抽象帆布画60×90 3联",
+            "抽象帆布画60×90 三联",
             "手绘风景油画",
             "金蝴蝶3D金属画",
             "古铜色椭圆镜框",

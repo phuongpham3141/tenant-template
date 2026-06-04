@@ -119,7 +119,7 @@ export function SupplierDetail({
             <form action="/buying-request" method="get" className="p-4 space-y-2.5">
               <input name="name" placeholder="姓名" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
               <input name="email" type="email" placeholder="邮箱" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
-              <input name="phone" placeholder="电话 / 微信" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
+              <input name="phone" placeholder="电话/微信" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand" />
               <textarea name="q" placeholder="详细需求：产品、数量、交期……" className="w-full px-3 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand min-h-[100px] resize-none" />
               <button type="submit" className="w-full py-2.5 bg-accent text-white rounded-sm font-bold text-[13px] hover:opacity-90">📨 发送询价——24 小时内回复</button>
             </form>
@@ -172,8 +172,8 @@ function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: nu
             ["工厂面积", "200,000 ㎡"],
             ["员工人数", "1,500+"],
             ["成立年份", `${foundedYear}`],
-            ["营业额", "$120M / 年"],
-            ["出口额", "$80M / 年（66%）"],
+            ["营业额", "$120M/年"],
+            ["出口额", "$80M/年（66%）"],
             ["主要市场", "VN, US, EU, JP, KR"],
           ].map(([k, v]) => (
             <div key={k}>
@@ -465,7 +465,7 @@ function CapacityTab({ f }: { f: Factory }) {
             { n: 1, name: "主生产线", capacity: "12,000 件/月", auto: "85% 自动化", staff: "120 名工人" },
             { n: 2, name: "OEM 定制生产线", capacity: "3,000 件/月", auto: "60% 自动化", staff: "85 名工人" },
             { n: 3, name: "高端生产线", capacity: "1,500 件/月", auto: "手工", staff: "45 名工匠" },
-            { n: 4, name: "研发 / 新样生产线", capacity: "200 件/月", auto: "手工", staff: "20 名工程师" },
+            { n: 4, name: "研发/新样生产线", capacity: "200 件/月", auto: "手工", staff: "20 名工程师" },
           ].map((l) => (
             <div key={l.n} className="bg-bg border border-line rounded p-3 flex gap-3">
               <div className="aspect-video w-32 flex-shrink-0 bg-[#F5F5F5] rounded overflow-hidden">
@@ -489,7 +489,7 @@ function CapacityTab({ f }: { f: Factory }) {
         <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
           {[
             { n: "12 台", t: "五轴 CNC", brand: "DMG Mori（德国）" },
-            { n: "8 台", t: "焊接 / 激光切割机器人", brand: "FANUC（日本）" },
+            { n: "8 台", t: "焊接/激光切割机器人", brand: "FANUC（日本）" },
             { n: "6 台", t: "自动喷涂", brand: "Wagner（德国）" },
             { n: "4 条线", t: "自动包装", brand: "Bosch（德国）" },
             { n: "20 台", t: "工业缝纫机", brand: "JUKI（日本）" },
@@ -539,7 +539,7 @@ function CapacityTab({ f }: { f: Factory }) {
             <li>• 厂房屋顶太阳能——满足 30% 用电需求</li>
             <li>• 废水循环处理系统</li>
             <li>• 废料回收率：<b>92%</b></li>
-            <li>• 木材 FSC 产销监管链认证</li>
+            <li>• 木材FSC产销监管链认证</li>
           </ul>
         </div>
       </div>
@@ -556,7 +556,7 @@ function ContactTab({ f }: { f: Factory }) {
       <div className="bg-paper border border-line rounded p-5">
         <h2 className="text-[18px] font-bold text-ink mb-2">联系 {f.name}</h2>
         <p className="text-[13px] text-mute leading-relaxed">
-          所有沟通均通过华越进行，享受交易保障 + 中越自动翻译。专属客户经理在工作时间内 <b className="text-ink">30 分钟内</b> 回复。
+          所有沟通均通过华越进行，享受交易保障+中越自动翻译。专属客户经理在工作时间内 <b className="text-ink">30分钟内</b> 回复。
         </p>
       </div>
 
@@ -571,10 +571,10 @@ function ContactTab({ f }: { f: Factory }) {
           </p>
           <ul className="space-y-1 text-[12px] text-ink">
             <li>📞 热线：<b>+86 757 8888 1234</b></li>
-            <li>💬 微信 / WhatsApp：<b>+86 138 0000 1234</b></li>
+            <li>💬 微信/WhatsApp：<b>+86 138 0000 1234</b></li>
             <li>✉ 邮箱：<b>sales@{f.slug.replace(/-/g, "")}.com.cn</b></li>
             <li>🕒 工作时间：<b>周一至周六，8:30-18:00 (GMT+8)</b></li>
-            <li>🌐 语言：<b>中文、英文，经 CSR 翻译可提供越南语</b></li>
+            <li>🌐 语言：<b>中文、英文，经CSR翻译可提供越南语</b></li>
           </ul>
         </div>
 
@@ -584,7 +584,7 @@ function ContactTab({ f }: { f: Factory }) {
           </span>
           <h3 className="text-[15px] font-bold text-ink mb-1">华越河内办事处</h3>
           <p className="text-[12.5px] text-mute leading-relaxed mb-3">
-            河内市纸桥郡黎文良街 48 号 Diamond Flower 大厦 21 层
+            河内市纸桥郡黎文良街48号Diamond Flower大厦21层
           </p>
           <ul className="space-y-1 text-[12px] text-ink">
             <li>📞 热线：<b>1900 6688</b>（越南境内免费）</li>
@@ -612,7 +612,7 @@ function ContactTab({ f }: { f: Factory }) {
             </p>
             <div className="mt-3 flex gap-2 flex-wrap">
               <a href="tel:19006688" className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12px] font-semibold hover:bg-brand-light">📞 立即致电</a>
-              <a href="https://zalo.me/huayuesc" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#0068FF] text-white rounded-sm text-[12px] font-semibold hover:opacity-90">💬 Zalo 聊天</a>
+              <a href="https://zalo.me/huayuesc" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#0068FF] text-white rounded-sm text-[12px] font-semibold hover:opacity-90">💬 Zalo聊天</a>
               <a href="mailto:hr@huayuesc.vn" className="px-3 py-1.5 border border-line text-ink rounded-sm text-[12px] font-semibold hover:border-brand">✉ 邮箱</a>
             </div>
           </div>
@@ -623,20 +623,20 @@ function ContactTab({ f }: { f: Factory }) {
         <div className="bg-paper border border-line rounded p-4 hover:border-brand transition cursor-pointer">
           <div className="text-[28px] mb-2">📨</div>
           <b className="block text-[13px] text-ink mb-1">发送询价</b>
-          <p className="text-[11.5px] text-mute leading-snug mb-2">60 秒表单——24 小时内回复。附规格、数量、交期。</p>
-          <Link href="/buying-request" className="text-[12px] text-brand font-semibold hover:underline">打开询价表单 →</Link>
+          <p className="text-[11.5px] text-mute leading-snug mb-2">60秒表单——24小时内回复。附规格、数量、交期。</p>
+          <Link href="/buying-request" className="text-[12px] text-brand font-semibold hover:underline">打开询价表单→</Link>
         </div>
         <div className="bg-paper border border-line rounded p-4 hover:border-brand transition cursor-pointer">
           <div className="text-[28px] mb-2">🎥</div>
           <b className="block text-[13px] text-ink mb-1">预约视频通话</b>
-          <p className="text-[11.5px] text-mute leading-snug mb-2">与销售部 + 车间实时视频通话（提供中越同声传译）。</p>
-          <Link href="/buyer-center/meet-suppliers" className="text-[12px] text-brand font-semibold hover:underline">预约 →</Link>
+          <p className="text-[11.5px] text-mute leading-snug mb-2">与销售部+车间实时视频通话（提供中越同声传译）。</p>
+          <Link href="/buyer-center/meet-suppliers" className="text-[12px] text-brand font-semibold hover:underline">预约→</Link>
         </div>
         <div className="bg-paper border border-line rounded p-4 hover:border-brand transition cursor-pointer">
           <div className="text-[28px] mb-2">🏭</div>
           <b className="block text-[13px] text-ink mb-1">实地验厂</b>
-          <p className="text-[11.5px] text-mute leading-snug mb-2">越南采购商团由华越团队陪同——费用约 $580/4 天。</p>
-          <Link href="/factory-tour" className="text-[12px] text-brand font-semibold hover:underline">报名 →</Link>
+          <p className="text-[11.5px] text-mute leading-snug mb-2">越南采购商团由华越团队陪同——费用约$580/4天。</p>
+          <Link href="/factory-tour" className="text-[12px] text-brand font-semibold hover:underline">报名→</Link>
         </div>
       </div>
 
@@ -652,7 +652,7 @@ function ContactTab({ f }: { f: Factory }) {
               rel="noopener noreferrer"
               className="inline-block mt-3 px-4 py-2 bg-brand text-white rounded-sm text-[12px] font-bold hover:bg-brand-light"
             >
-              🧭 打开 Google 地图 →
+              🧭 打开Google地图→
             </a>
           </div>
         </div>
@@ -692,11 +692,11 @@ function Vr360Tab({ f }: { f: Factory }) {
       <div className="bg-paper border border-line rounded p-5">
         <div className="mb-3">
           <span className="inline-block bg-accent/15 text-accent text-[10.5px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-sm mb-1">
-            🎬 360° 虚拟全景
+            🎬 360°虚拟全景
           </span>
           <h2 className="text-[18px] font-bold text-ink">通过 VR 参观 {f.name} 工厂</h2>
           <p className="text-[13px] text-mute mt-1 leading-relaxed">
-            无需飞往中国即可身临其境参观工厂。拖动鼠标 360° 旋转，点击热点查看生产线、成品仓、QC 室、客户洽谈室。
+            无需飞往中国即可身临其境参观工厂。拖动鼠标360°旋转，点击热点查看生产线、成品仓、QC室、客户洽谈室。
           </p>
         </div>
 
@@ -704,7 +704,7 @@ function Vr360Tab({ f }: { f: Factory }) {
           <div className="bg-gold/10 border border-gold/30 text-[#7C5A1F] rounded p-3 mb-3 text-[12.5px] flex items-start gap-2">
             <span className="text-[18px] flex-shrink-0">ℹ️</span>
             <span>
-              <b>这是演示</b>——<b>{f.name}</b> 的专属 360° 全景正由华越拍摄中。请联系客户经理，准备就绪后将通知您。当前您查看的是示例全景。
+              <b>这是演示</b>——<b>{f.name}</b> 的专属360°全景正由华越拍摄中。请联系客户经理，准备就绪后将通知您。当前您查看的是示例全景。
             </span>
           </div>
         )}
@@ -744,14 +744,14 @@ function Vr360Tab({ f }: { f: Factory }) {
         <h3 className="text-[15px] font-bold text-ink mb-3">操作指南</h3>
         <div className="grid grid-cols-2 gap-4 text-[12.5px] max-md:grid-cols-1">
           <ul className="space-y-1.5 text-ink">
-            <li>🖱 <b>拖动鼠标</b> 即可 360° 旋转视角</li>
-            <li>🔍 <b>滚动鼠标</b> 或 +/− 按钮放大/缩小</li>
+            <li>🖱 <b>拖动鼠标</b> 即可360°旋转视角</li>
+            <li>🔍 <b>滚动鼠标</b> 或+/-按钮放大/缩小</li>
             <li>🎯 <b>点击画面中的光点</b> 即可前往其他区域</li>
             <li>🗺 角落的 <b>小地图</b> 帮您定位当前所在位置</li>
           </ul>
           <ul className="space-y-1.5 text-ink">
             <li>📱 <b>在移动设备上</b>：倾斜手机旋转（陀螺仪），或触摸拖动</li>
-            <li>🥽 <b>有 VR 眼镜？</b> 点击底栏的眼镜图标进入 VR 模式</li>
+            <li>🥽 <b>有VR眼镜？</b> 点击底栏的眼镜图标进入VR模式</li>
             <li>⛶ <b>全屏</b>：顶部按钮——体验最佳</li>
             <li>🎧 <b>开启声音</b> 聆听真实的机器声（如有）</li>
           </ul>
@@ -762,9 +762,9 @@ function Vr360Tab({ f }: { f: Factory }) {
       <div className="rounded p-5 text-white mt-4" style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}>
         <div className="flex items-start justify-between gap-4 max-md:flex-col">
           <div>
-            <h3 className="text-[16px] font-bold mb-1">想实地看工厂，而不是 VR？</h3>
+            <h3 className="text-[16px] font-bold mb-1">想实地看工厂，而不是VR？</h3>
             <p className="text-[12.5px] opacity-90 leading-relaxed">
-              华越在广州 / 深圳 / 佛山组织 4 天 3 夜的实地验厂行程。费用约 $580/人，由华越团队 + 翻译陪同。
+              华越在广州/深圳/佛山组织4天3夜的实地验厂行程。费用约$580/人，由华越团队+翻译陪同。
             </p>
           </div>
           <Link
@@ -829,9 +829,9 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
     "💵 起订量价格表",
     "📐 打样 + 3D 渲染",
     "🚚 交期 + 运输",
-    "🏅 欧盟 / 美国认证",
+    "🏅 欧盟/美国认证",
     "🛡️ 付款 + 担保",
-    "🔧 OEM / ODM 定制",
+    "🔧 OEM/ODM 定制",
     "📞 与销售 Zoom 会议安排",
     "🔍 与其他供应商对比",
   ];
@@ -850,13 +850,13 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
               <span className="bg-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-bold">BETA</span>
             </div>
             <p className="text-[12.5px] text-mute leading-relaxed">
-              基于 <b>{f.name}</b> 数据专属训练的虚拟助手。<b>7×24 小时即时</b> 用中文回答产品、起订量、交期、打样、认证、付款及 OEM/ODM 问题。所有回答均源自工厂的目录 + 官方资料。
+              基于 <b>{f.name}</b> 数据专属训练的虚拟助手。<b>7×24小时即时</b> 用中文回答产品、起订量、交期、打样、认证、付款及OEM/ODM问题。所有回答均源自工厂的目录+官方资料。
             </p>
           </div>
         </div>
 
         <div className="mt-4 pt-4 border-t border-line">
-          <div className="text-[11.5px] font-bold text-mute uppercase tracking-wide mb-2">📚 AI 训练所用数据：</div>
+          <div className="text-[11.5px] font-bold text-mute uppercase tracking-wide mb-2">📚 AI训练所用数据：</div>
           <div className="grid grid-cols-2 gap-2 max-md:grid-cols-1">
             {trainingSources.map((s) => (
               <div key={s.label} className="flex items-start gap-2 p-2 bg-bg rounded border border-line">
@@ -872,7 +872,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
       </div>
 
       <div className="bg-paper border border-line rounded p-4 mb-4">
-        <div className="text-[12px] font-bold text-mute mb-2">💡 点击话题查看 AI 示例回答：</div>
+        <div className="text-[12px] font-bold text-mute mb-2">💡 点击话题查看AI示例回答：</div>
         <div className="flex flex-wrap gap-2">
           {quickTopics.map((t) => (
             <button
@@ -892,7 +892,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
             <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center text-[14px]">🤖</div>
             <div>
               <div className="text-[13px] font-bold leading-tight">CSR AI</div>
-              <div className="text-[10.5px] opacity-90 leading-tight">平均响应 1.2s · 中文 + English</div>
+              <div className="text-[10.5px] opacity-90 leading-tight">平均响应1.2s · 中文+English</div>
             </div>
           </div>
           <span className="text-[10.5px] bg-white/15 px-2 py-1 rounded">DEMO</span>
@@ -942,7 +942,7 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
               <span className="w-1.5 h-1.5 rounded-full bg-mute2 inline-block" />
               <span className="w-1.5 h-1.5 rounded-full bg-mute2 inline-block" />
               <span className="w-1.5 h-1.5 rounded-full bg-mute2 inline-block" />
-              <span className="text-[10.5px] text-mute2 ml-2">CSR AI 正在输入……</span>
+              <span className="text-[10.5px] text-mute2 ml-2">CSR AI正在输入……</span>
             </div>
           </div>
         </div>
@@ -965,32 +965,32 @@ function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {
           </div>
           <div className="flex items-start gap-2 mt-2 text-[10.5px] text-mute2 leading-relaxed">
             <span>🚧</span>
-            <span>与 AI 实时聊天功能将于 <b className="text-fg">2026 Q3</b> 上线。当前您查看的是演示对话。需紧急咨询？请点击侧栏的 <b>询价</b>——{shortName} 销售团队将在 2 小时内回复（中国工作时间）。</span>
+            <span>与AI实时聊天功能将于 <b className="text-fg">2026 Q3</b> 上线。当前您查看的是演示对话。需紧急咨询？请点击侧栏的 <b>询价</b>——{shortName} 销售团队将在 2 小时内回复（中国工作时间）。</span>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3 mt-4 max-md:grid-cols-1">
         <div className="bg-paper border border-line rounded p-4">
-          <div className="text-[13px] font-bold text-fg mb-2">✅ AI 可以回答：</div>
+          <div className="text-[13px] font-bold text-fg mb-2">✅ AI可以回答：</div>
           <ul className="text-[12px] text-mute space-y-1.5 leading-relaxed">
             <li>• 具体产品（价格、起订量、交期、材质）</li>
-            <li>• 打样 + 定制下单流程</li>
+            <li>• 打样+定制下单流程</li>
             <li>• 质量认证及附件文件</li>
-            <li>• 付款方式 + 保险</li>
+            <li>• 付款方式+保险</li>
             <li>• 同一目录内产品对比</li>
             <li>• 按预算推荐合适材质</li>
-            <li>• 物流：FOB 港口、海运时间、DDP 河内</li>
+            <li>• 物流：FOB港口、海运时间、DDP河内</li>
           </ul>
         </div>
         <div className="bg-paper border border-line rounded p-4">
-          <div className="text-[13px] font-bold text-fg mb-2">❌ AI 无法替代：</div>
+          <div className="text-[13px] font-bold text-fg mb-2">❌ AI无法替代：</div>
           <ul className="text-[12px] text-mute space-y-1.5 leading-relaxed">
             <li>• 大单的特殊价格谈判</li>
-            <li>• 签署长期 OEM 合同</li>
-            <li>• 法律 / 争议决策</li>
-            <li>• ≥ $50K 复杂项目的报价</li>
-            <li>• 需专属客户经理的 VIP 客户</li>
+            <li>• 签署长期OEM合同</li>
+            <li>• 法律/争议决策</li>
+            <li>• ≥ $50K复杂项目的报价</li>
+            <li>• 需专属客户经理的VIP客户</li>
           </ul>
           <div className="mt-3 pt-3 border-t border-line text-[11.5px] text-mute2">
             👉 所有订单在生产前仍由 {shortName} 销售确认。AI 只是帮您 <b className="text-fg">提前快速答疑</b>，免去等待时差。

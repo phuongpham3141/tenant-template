@@ -135,7 +135,7 @@ export default function SecuredTradingPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="flex justify-between items-center mb-4">
               <b className="text-[15px] text-ink">📋 真实案例</b>
-              <span className="text-[11px] text-mute">近 6 个月 3 个典型案例</span>
+              <span className="text-[11px] text-mute">近6个月3个典型案例</span>
             </div>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
@@ -152,8 +152,8 @@ export default function SecuredTradingPage() {
           </div>
 
           <Link href="/buying-request" className="block bg-accent text-white rounded p-5 hover:opacity-95 text-center">
-            <b className="block text-[18px] mb-1">🚀 开启您的首笔 STS 订单</b>
-            <p className="text-[12.5px] opacity-90">发送询价 → 选择供应商 → 开启 STS——您的资金从第一秒起即安全无忧。</p>
+            <b className="block text-[18px] mb-1">🚀 开启您的首笔STS订单</b>
+            <p className="text-[12.5px] opacity-90">发送询价 → 选择供应商 → 开启STS——您的资金从第一秒起即安全无忧。</p>
           </Link>
         </div>
       </div>

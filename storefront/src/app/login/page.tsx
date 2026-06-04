@@ -12,23 +12,23 @@ import { LOGIN_PROVIDERS } from "@/components/icons/social";
 const VALUE_PROPS = [
   {
     icon: "🏭",
-    title: "40+ 家已验厂工厂",
+    title: "40+家已验厂工厂",
     desc: "已认证供应商，附实地验厂报告、生产线照片与视频。",
   },
   {
     icon: "💰",
-    title: "24 小时内报价",
-    desc: "发送 1 份询价，1 个工作日内收到 5–10 家合适工厂的报价。",
+    title: "24小时内报价",
+    desc: "发送1份询价，1个工作日内收到5–10家合适工厂的报价。",
   },
   {
     icon: "🛡",
     title: "交易保障",
-    desc: "若货物与描述不符、数量有误或逾期交货，100% 退款。",
+    desc: "若货物与描述不符、数量有误或逾期交货，100%退款。",
   },
   {
     icon: "🚚",
-    title: "DDP 送货到仓 18 天",
-    desc: "一站式运输 + 关税 + 清关，从广州/宁波到河内/胡志明市。",
+    title: "DDP送货到仓18天",
+    desc: "一站式运输+关税+清关，从广州/宁波到河内/胡志明市。",
   },
 ];
 
@@ -164,7 +164,7 @@ export default function LoginPage() {
               ⚡ Huayuesc 2026
             </span>
             <h2 className="text-[22px] font-extrabold leading-tight mb-2">
-              直采进口的入口 <br />来自中国 <span className="text-gold">40+ 家工厂</span>
+              直采进口的入口 <br />来自中国 <span className="text-gold">40+家工厂</span>
             </h2>
             <p className="text-[12.5px] opacity-85 leading-relaxed">
               登录即可继续未完成的询价、追踪订单、收藏产品并管理合同——尽在一处。
@@ -194,7 +194,7 @@ export default function LoginPage() {
             </div>
             <div>
               <b className="block text-[18px] text-brand font-extrabold">$8.2M</b>
-              <small className="text-[11px] text-mute">2025 年交易额</small>
+              <small className="text-[11px] text-mute">2025年交易额</small>
             </div>
           </div>
 
@@ -202,8 +202,8 @@ export default function LoginPage() {
           <div className="flex flex-wrap gap-2 text-[11px] text-mute">
             <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ 越南工贸部</span>
             <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ ISO 27001</span>
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ SSL 加密</span>
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ TÜV 审核</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ SSL加密</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ TÜV审核</span>
           </div>
         </aside>
       </div>

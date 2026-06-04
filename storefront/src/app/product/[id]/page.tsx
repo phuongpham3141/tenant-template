@@ -109,23 +109,23 @@ function tierTable(price: string) {
 
 const SPECS: [string, string][] = [
   ["产地", "中国（China）"],
-  ["品牌", "支持 OEM/ODM"],
+  ["品牌", "支持OEM/ODM"],
   ["材质", "高端 – Grade A"],
   ["标准", "ISO 9001, CE, RoHS"],
   ["包装", "纸箱 + 出口托盘"],
   ["出货港", "佛山 / 深圳 / 宁波"],
-  ["生产周期", "20 – 30 天"],
-  ["付款方式", "T/T 30% 预付，70% 出货前付清"],
-  ["运输", "FOB / CIF / DDP 至越南"],
-  ["质保", "越南本地 12 个月"],
+  ["生产周期", "20 – 30天"],
+  ["付款方式", "T/T 30%预付，70%出货前付清"],
+  ["运输", "FOB / CIF / DDP至越南"],
+  ["质保", "越南本地12个月"],
 ];
 
 /* --- Reviews + breakdown ----------------------------------------------- */
 
 const REVIEWS = [
-  { name: "陈明辉", company: "西贡家具展厅", rating: 5, date: "2026-04-12", text: "收到的货与样品一致，交货速度快。第二批将再订 2 个集装箱。", helpful: 18 },
-  { name: "范国英", company: "南方建筑材料", rating: 5, date: "2026-03-28", text: "6 小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
-  { name: "阮秋恒", company: "胡志明市酒店集团", rating: 4, date: "2026-03-15", text: "品质好，出口级包装。价格比国内低 30%，很有竞争力。", helpful: 9 },
+  { name: "陈明辉", company: "西贡家具展厅", rating: 5, date: "2026-04-12", text: "收到的货与样品一致，交货速度快。第二批将再订2个集装箱。", helpful: 18 },
+  { name: "范国英", company: "南方建筑材料", rating: 5, date: "2026-03-28", text: "6小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
+  { name: "阮秋恒", company: "胡志明市酒店集团", rating: 4, date: "2026-03-15", text: "品质好，出口级包装。价格比国内低30%，很有竞争力。", helpful: 9 },
   { name: "黎文德", company: "岘港经销商", rating: 5, date: "2026-02-22", text: "由华越组织的工厂验厂非常专业，下单很放心。", helpful: 12 },
 ];
 
@@ -439,7 +439,7 @@ export default async function ProductPage({
               </li>
               <li className="flex justify-between">
                 <span className="text-mute">⏱ 交货周期</span>
-                <b className="text-ink">20-30 天</b>
+                <b className="text-ink">20-30天</b>
               </li>
               <li className="flex justify-between">
                 <span className="text-mute">🚚 出货港</span>

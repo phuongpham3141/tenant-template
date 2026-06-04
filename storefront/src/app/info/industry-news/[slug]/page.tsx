@@ -214,7 +214,7 @@ export default async function ArticlePage({
               <div>
                 <b className="block text-[15px] mb-1">需要直接从供应商采购？</b>
                 <p className="text-[12.5px] opacity-85 leading-snug">
-                  发送询价——24 小时内获得 5-10 家已认证供应商的免费报价。
+                  发送询价——24小时内获得5-10家已认证供应商的免费报价。
                 </p>
               </div>
               <Link

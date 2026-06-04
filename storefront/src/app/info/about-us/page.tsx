@@ -42,7 +42,7 @@ const CORE_SERVICES = [
     image: "/img/sol-expo.jpg?v=5",
     cn: "本地化分销渠道拓展",
     title: "越南分销渠道拓展",
-    desc: "依托遍布越南的广泛合作伙伴网络——将中国品牌与产品导入 63 省市的主流分销渠道。",
+    desc: "依托遍布越南的广泛合作伙伴网络——将中国品牌与产品导入63省市的主流分销渠道。",
   },
 ];
 
@@ -71,8 +71,8 @@ const INDUSTRIES = [
     color: "#9C6A1F",
     image: "/img/fur1.jpg?v=5",
     examples: [
-      "墙纸 / 墙布",
-      "强化 / 实木地板",
+      "墙纸/墙布",
+      "强化/实木地板",
       "吊顶装饰材料",
       "天然与人造石材",
       "家居装饰品",
@@ -124,8 +124,8 @@ const WAREHOUSE_TYPES = [
 
 const LOGISTICS_FLOW = [
   { icon: "📥", cn: "卸货平台", title: "卸货门", desc: "标准集装箱" },
-  { icon: "📦", cn: "分拣打包台", title: "分拣与打包", desc: "按 SKU 和目的地" },
-  { icon: "🚛", cn: "合作物流驻点", title: "物流合作伙伴", desc: "COSCO、MSC、OOCL 驻仓" },
+  { icon: "📦", cn: "分拣打包台", title: "分拣与打包", desc: "按SKU和目的地" },
+  { icon: "🚛", cn: "合作物流驻点", title: "物流合作伙伴", desc: "COSCO、MSC、OOCL驻仓" },
 ];
 
 const DIGITAL_PILLARS = [
@@ -141,7 +141,7 @@ const DIGITAL_PILLARS = [
     icon: "🤖",
     cn: "智能自动化",
     title: "智能自动化",
-    desc: "AI 算法自动处理订单、调度运输并优化物流路线。",
+    desc: "AI算法自动处理订单、调度运输并优化物流路线。",
     benefit: "降低运营成本",
     color: "#9C6A1F",
   },
@@ -431,7 +431,7 @@ export default function AboutUsPage() {
 
           {/* 3 warehouse types */}
           <div className="mb-7">
-            <b className="block text-[11px] uppercase tracking-wider text-gold mb-3">仓储 — 3 类专用仓</b>
+            <b className="block text-[11px] uppercase tracking-wider text-gold mb-3">仓储 — 3类专用仓</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-md:gap-3">
               {WAREHOUSE_TYPES.map((w) => (
                 <div key={w.title} className="bg-white/5 border border-white/15 rounded-lg overflow-hidden hover:border-gold/50 transition">
@@ -450,7 +450,7 @@ export default function AboutUsPage() {
 
           {/* Logistics flow */}
           <div className="mb-7">
-            <b className="block text-[11px] uppercase tracking-wider text-gold mb-3">物流 — 3 级</b>
+            <b className="block text-[11px] uppercase tracking-wider text-gold mb-3">物流 — 3级</b>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {LOGISTICS_FLOW.map((l, i) => (
                 <div key={l.title} className="bg-white/5 border border-white/15 rounded-lg p-4 flex items-center gap-3">
@@ -575,7 +575,7 @@ export default function AboutUsPage() {
                   {COMPANY.offices.cn.addressCn}
                 </p>
                 <div className="mt-3 pt-3 border-t border-white/15 text-[12px] opacity-90">
-                  <b>职能：</b> 采购 &middot; 验厂 &middot; 出厂前 QC
+                  <b>职能：</b> 采购 · 验厂 · 出厂前 QC
                 </div>
               </div>
             </div>
@@ -585,7 +585,7 @@ export default function AboutUsPage() {
               <div>
                 <small className="text-[10.5px] uppercase tracking-wider opacity-75">联系电话 · 热线</small>
                 <b className="block text-gold text-[22px] mt-0.5 max-md:text-[18px]">{COMPANY.contact.hotline}</b>
-                <span className="text-[11.5px] opacity-80">中越双语支持 &middot; 8:00–22:00</span>
+                <span className="text-[11.5px] opacity-80">中越双语支持 · 8:00–22:00</span>
               </div>
               <div className="flex gap-2 max-md:flex-col">
                 <Link

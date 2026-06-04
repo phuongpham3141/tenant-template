@@ -71,7 +71,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "YKK 拉链 · 杭州拉链",
+    desc: "YKK 拉链·杭州拉链",
     badge: "生产中",
     badgeTone: "warning",
   },
@@ -82,19 +82,19 @@ const RECENT_FAVORITES: LinkRow[] = [
     thumb: "/img/cer1.jpg?v=5",
     label: "卡拉卡塔抛光砖 600×1200",
     href: "/product/ceramic-1",
-    desc: "东鹏陶瓷 · $8.50/㎡",
+    desc: "东鹏陶瓷·$8.50/㎡",
   },
   {
     thumb: "/img/fur1.jpg?v=5",
-    label: "L 型转角沙发 6 座绒布",
+    label: "L型转角沙发 6座绒布",
     href: "/product/furniture-1",
-    desc: "顾家家居 · $420/套",
+    desc: "顾家家居·$420/套",
   },
   {
     thumb: "/img/fur7.jpg?v=5",
     label: "欧派亮光亚克力橱柜",
     href: "/product/furniture-7",
-    desc: "欧派家居 · $210/米",
+    desc: "欧派家居·$210/米",
   },
 ];
 
@@ -345,7 +345,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="下载华越 APP" />
+              <PopHeader title="下载华越APP" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
                   二维码

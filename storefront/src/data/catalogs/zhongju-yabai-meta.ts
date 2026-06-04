@@ -13,17 +13,17 @@ export type SeriesMeta = {
 };
 const BRAND: SeriesMeta = {
   story:
-    "Guangdong Zhongju Yabai Building Materials Technology Co., Ltd. (广东中居亚百建材科技) chuyên sản xuất tấm phủ vô cơ (无机预涂板) — còn gọi «tấm băng hỏa» (冰火板) / tấm sạch (洁净板) — vật liệu ốp bề mặt cao cấp cho tường ngăn và trần nội/ngoại thất. Công ty tích hợp R&D, sản xuất và kinh doanh với đội ngũ kỹ thuật giàu kinh nghiệm cùng dây chuyền tự động hoá; đặt tại khu Tam Thuỷ (Sanshui), thành phố Phật Sơn (Foshan), Quảng Đông.",
+    "Guangdong Zhongju Yabai Building Materials Technology Co., Ltd. (广东中居亚百建材科技) 专业生产无机预涂板（又称冰火板/洁净板），是用于内外墙隔断和吊顶的高端饰面材料。公司集研发、生产和销售于一体，拥有经验丰富的技术团队和自动化生产线，位于广东佛山三水区。",
   heritage:
     "Sản phẩm có đặc tính chống cháy (cấp A), chống ẩm, chống mốc, kháng khuẩn và không phát thải formaldehyde — đạt yêu cầu cho bệnh viện, phòng sạch và môi trường y tế. Đã ứng dụng tại nhiều bệnh viện (ví dụ Bệnh viện trực thuộc ĐH Thanh Đảo, Bệnh viện Hoa Tín).",
   technicalSpecs: [
-    { label: "Thương hiệu", value: "Zhongju Yabai 中居亚百 (Guangdong Zhongju Yabai)" },
-    { label: "Sản phẩm", value: "Tấm phủ vô cơ 无机预涂板 / 冰火板 / 洁净板, tấm ốp tường" },
+    { label: "Thương hiệu", value: "Zhongju Yabai 中居亚百（广东中居亚百）" },
+    { label: "Sản phẩm", value: "无机预涂板/冰火板/洁净板，墙面板" },
     { label: "Đặc tính", value: "Chống cháy cấp A, chống ẩm-mốc, kháng khuẩn, không formaldehyde" },
     { label: "Cơ sở", value: "Tam Thuỷ, Phật Sơn, Quảng Đông — dây chuyền tự động hoá" },
   ],
   manufacturing: [
-    "Guangdong Zhongju Yabai Building Materials Technology (中居亚百) — Tam Thuỷ, Phật Sơn",
+    "广东中居亚百建材科技有限公司（中居亚百）—— 佛山三水",
     "Tấm phủ vô cơ: cả lớp bề mặt và lõi đều là vật liệu vô cơ → vi khuẩn không sống được, đạt hiệu quả «sạch»",
     "Dây chuyền sản xuất tự động hoá; tích hợp R&D - sản xuất - kinh doanh",
     "Đặc tính: chống cháy A, chống ẩm, chống mốc, kháng khuẩn, không formaldehyde",

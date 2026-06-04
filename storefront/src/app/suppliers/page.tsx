@@ -6,7 +6,7 @@ import { NAV_CATEGORIES } from "@/data/home";
 export const metadata = {
   title: "供应商名录 — Huayuesc 华越供应链",
   description:
-    "华越已审核的中越工厂与品牌名录：工厂位置、成立年份、规模、SKU 数量，以及上市公司的股票代码。",
+    "华越已审核的中越工厂与品牌名录：工厂位置、成立年份、规模、SKU数量，以及上市公司的股票代码。",
 };
 
 type View = "cards" | "table";
@@ -54,11 +54,11 @@ export default async function SuppliersPage({
               {PARTNERS.length}+ 家已审核工厂
             </h1>
             <p className="text-[13px] text-mute mt-1">
-              华越上的所有工厂均由广州团队每年实地验厂 2 次。
+              华越上的所有工厂均由广州团队每年实地验厂2次。
             </p>
             <div className="flex gap-4 mt-3 text-[12px] text-mute flex-wrap">
               <span>
-                📦 <b className="text-brand">{totalSku}+</b> 个 SKU
+                📦 <b className="text-brand">{totalSku}+</b> 个SKU
               </span>
               <span>
                 ✓ <b className="text-brand">{listed}</b> 家已上市
@@ -180,7 +180,7 @@ export default async function SuppliersPage({
           />
           <DecorFilter
             title="成立年份"
-            options={["< 10 年", "10 – 30 年", "30 – 60 年", "60+ 年"]}
+            options={["< 10 年", "10–30年", "30–60年", "60+年"]}
           />
           <div className="text-[11px] text-mute2 italic">
             * 省份/规模/年份筛选将在下一阶段随目录扩充后启用。
@@ -222,15 +222,15 @@ export default async function SuppliersPage({
           <section className="bg-[#FFFBEB] border-l-4 border-gold rounded-r p-4 mt-6">
             <h3 className="text-[13.5px] font-bold text-[#92400E] mb-2 flex items-center gap-2">
               <span>⚠️</span>
-              <span>2 家合作伙伴的工厂数据待补充</span>
+              <span>2家合作伙伴的工厂数据待补充</span>
             </h3>
             <p className="text-[12px] text-ink leading-relaxed mb-2">
-              下方 2 家供应商的网站屏蔽了来自中国大陆以外网络的访问——华越正在等待官方 PDF 资料，或通过中国代理补充工厂数据。
+              下方2家供应商的网站屏蔽了来自中国大陆以外网络的访问——华越正在等待官方PDF资料，或通过中国代理补充工厂数据。
             </p>
             <ul className="text-[12px] text-ink/85 space-y-1 ml-1">
               <li>
                 ·{" "}
-                <b>Mijic (米吉克)</b> ·{" "}
+                <b>Mijic（米吉克）</b> ·{" "}
                 <a
                   href="https://www.mijic.cn/"
                   className="text-brand hover:underline break-all"
@@ -247,7 +247,7 @@ export default async function SuppliersPage({
               </li>
               <li>
                 ·{" "}
-                <b>广钢 (Gise-Gnm)</b> ·{" "}
+                <b>广钢（Gise-Gnm）</b> ·{" "}
                 <a
                   href="http://www.gise-gnm.com/"
                   className="text-brand hover:underline break-all"
@@ -643,7 +643,7 @@ function initials(name: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-/** Compute "X 年" from founded (year only). Handles content like "1958" or "1995 (CareLighting brand)". */
+/** Compute "X年" from founded (year only). Handles content like "1958" or "1995 (CareLighting brand)". */
 function yearsBadge(founded?: string): string | null {
   if (!founded) return null;
   const m = founded.match(/(\d{4})/);

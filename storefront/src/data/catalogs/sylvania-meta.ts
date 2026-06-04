@@ -21,10 +21,10 @@ const BRAND: SeriesMeta = {
     { label: "品牌", value: "Sylvania / Feilo Sylvania" },
     { label: "成立", value: "1901 年（120 多年）" },
     { label: "范围", value: "LED 灯、智能照明、应急、能源" },
-    { label: "运营", value: "跨多大洲——西方技术 + 中国供应链" },
+    { label: "运营", value: "跨越多大洲——西方技术 + 中国供应链" },
   ],
   manufacturing: [
-    "国际照明集团 Feilo Sylvania——跨多大洲的研发网络 + 工厂",
+    "国际照明集团 Feilo Sylvania——跨越多大洲的研发网络 + 工厂",
     "部分系列在欧洲生产（如 OptiClip TERRA——法国圣艾蒂安工厂）",
     "将西方照明技术与中国供应链相结合（飞乐）",
     "SylSmart 数字平台按「设计即安全」（security by design）原则设计",

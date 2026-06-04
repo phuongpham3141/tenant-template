@@ -162,15 +162,15 @@ export const LESSO_SERIES_META: Record<string, SeriesMeta> = {
     heritage:
       "联塑为地下电网与通信提供配套的穿线管解决方案，契合中国城市基础设施入地化浪潮。",
     technicalSpecs: [
-      { label: "材质", value: "PE / PVC / PVC-C / MPP（改性 PP）" },
+      { label: "材质", value: "PE / PVC / PVC-C / MPP（改性PP）" },
       { label: "构造", value: "实壁 / 多孔 / 蜂窝 / 格栅" },
-      { label: "施工", value: "明埋与非开挖（MPP 抗拉强度高）" },
+      { label: "施工", value: "明埋与非开挖（MPP抗拉强度高）" },
       { label: "特性", value: "绝缘、阻燃（专用产品）" },
-      { label: "标准", value: "电缆保护管的中国国家 GB/T 标准" },
+      { label: "标准", value: "电缆保护管中国国家标准GB/T" },
     ],
     whyChoose: [
       { icon: "⚡", title: "电缆长效保护", desc: "绝缘、耐腐蚀，在地下环境中保护电缆。" },
-      { icon: "🛠️", title: "非开挖（MPP）", desc: "高抗拉 MPP 管用于地下定向钻，减少路面破坏。" },
+      { icon: "🛠️", title: "非开挖（MPP）", desc: "高抗拉MPP管用于地下定向钻，减少路面破坏。" },
       { icon: "🧩", title: "多种构造", desc: "蜂窝/多孔/格栅在单一截面内优化电缆路数。" },
     ],
     projectShowcase: [
@@ -183,19 +183,19 @@ export const LESSO_SERIES_META: Record<string, SeriesMeta> = {
   // 采暖
   采暖: mk({
     story:
-      "联塑供热与采暖系列包括 PE-RT 地暖管、阻氧管、集中供热二次管网管及配件（分集水器、过滤套阀）—— 用于民用地暖与区域供热。",
+      "联塑供热与采暖系列包括PE-RT地暖管、阻氧管、集中供热二次管网管及配件（分集水器、过滤套阀）——用于民用地暖与区域供热。",
     heritage:
-      "PE-RT 凭借柔韧、耐热与良好的弯曲性能成为地暖核心材料 —— 联塑为采暖市场研发了多个高端家装系列。",
+      "PE-RT凭借柔韧、耐热与良好的弯曲性能成为地暖核心材料——联塑为采暖市场研发了多个高端家装系列。",
     technicalSpecs: [
-      { label: "材质", value: "PE-RT（I/II 型），含阻氧层（EVOH）" },
-      { label: "工作温度", value: "长期至 70°C" },
+      { label: "材质", value: "PE-RT（I/II型），含阻氧层（EVOH）" },
+      { label: "工作温度", value: "长期至70°C" },
       { label: "应用", value: "地暖、墙暖、集中供热二次管网" },
-      { label: "连接", value: "热熔 / 经配件卡压" },
-      { label: "标准", value: "GB/T 28799（PE-RT 供热）" },
+      { label: "连接", value: "热熔/经配件卡压" },
+      { label: "标准", value: "GB/T 28799（PE-RT供热）" },
     ],
     whyChoose: [
-      { icon: "🔥", title: "地暖柔顺", desc: "PE-RT 弯曲性好、弯曲半径小，便于铺设地暖盘管。" },
-      { icon: "🛡️", title: "阻氧", desc: "EVOH 阻氧层隔绝氧气，保护供热系统中的金属设备。" },
+      { icon: "🔥", title: "地暖柔顺", desc: "PE-RT弯曲性好、弯曲半径小，便于铺设地暖盘管。" },
+      { icon: "🛡️", title: "阻氧", desc: "EVOH阻氧层隔绝氧气，保护供热系统中的金属设备。" },
       { icon: "🧰", title: "配件配套", desc: "分集水器、过滤套阀同系，便于整体安装。" },
     ],
     projectShowcase: [
@@ -208,7 +208,7 @@ export const LESSO_SERIES_META: Record<string, SeriesMeta> = {
   // 通风
   通风: mk({
     story:
-      "联塑通风产品群包括 PE 新风管、PVC-U 风管、铝箔复合管及各类管卡/支撑配件 —— 用于民用建筑与养殖的通风及新风系统。",
+      "联塑通风产品群包括PE新风管、PVC-U风管、铝箔复合管及各类管卡/支撑配件——用于民用建筑与养殖的通风及新风系统。",
     heritage:
       "顺应现代住宅新风趋势，联塑补充了风管系列及通风系统固定配件。",
     technicalSpecs: [
@@ -233,19 +233,19 @@ export const LESSO_SERIES_META: Record<string, SeriesMeta> = {
   // 农业
   农业: mk({
     story:
-      "联塑农业与水产产品群包括 PE 输水管、低压灌溉管、滴灌带、增强软管、栽培槽/栽培管及网箱 – 网箱框架 – 海上集成房屋等水产养殖方案。",
+      "联塑农业与水产产品群包括PE输水管、低压灌溉管、滴灌带、增强软管、栽培槽/栽培管及网箱–网箱框架–海上集成房屋等水产养殖方案。",
     heritage:
-      "联塑从灌溉管拓展至高科技农业方案（基质栽培）与海水养殖（抗浪 HDPE 网箱）。",
+      "联塑从灌溉管拓展至高科技农业方案（基质栽培）与海水养殖（抗浪HDPE网箱）。",
     technicalSpecs: [
       { label: "材质", value: "PE / HDPE / PVC-U / 增强纤维" },
       { label: "应用", value: "灌溉、输水、基质栽培、水产养殖网箱" },
       { label: "产品系列", value: "灌溉管、滴灌、软管、网箱框架与网箱" },
       { label: "特性", value: "耐候、抗紫外线（户外产品）" },
-      { label: "标准", value: "PE/PVC 灌溉管的 GB/T 标准" },
+      { label: "标准", value: "PE/PVC灌溉管的GB/T标准" },
     ],
     whyChoose: [
       { icon: "🌾", title: "节水灌溉", desc: "滴灌与喷灌降低用水量，提升耕作效率。" },
-      { icon: "🐟", title: "抗浪网箱", desc: "HDPE 框架与网箱耐海洋环境、抗紫外线。" },
+      { icon: "🐟", title: "抗浪网箱", desc: "HDPE框架与网箱耐海洋环境、抗紫外线。" },
       { icon: "🌱", title: "高科技种植", desc: "基质栽培槽与栽培管用于都市农业、温室大棚。" },
     ],
     projectShowcase: [

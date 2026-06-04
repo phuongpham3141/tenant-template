@@ -17,7 +17,7 @@ const RECENT_RFQS = [
 ];
 
 const ACTIVITY = [
-  { time: "12 分钟前", text: "Dongpeng Ceramics 已为 RFQ-8421 发送报价" },
+  { time: "12 分钟前", text: "东鹏陶瓷已为 RFQ-8421 发送报价" },
   { time: "1 小时前", text: "订单 AVN-7820 已抵达凭祥仓库" },
   { time: "3 小时前", text: "KUKA Home 已回复您的消息" },
   { time: "昨天", text: "RFQ-8412 已变更为「已下单」状态" },
@@ -112,4 +112,4 @@ export default function BuyerCenterPage() {
   );
 }
 
-export const metadata = { title: "采购商中心 — Huayuesc" };
+export const metadata = { title: "采购商中心 — 华越供应链" };

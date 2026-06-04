@@ -5,7 +5,7 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 const KPIS = [
   { v: "187", l: "2026 年 5 月订单", c: "text-brand", trend: "+12%" },
   { v: "23", l: "未回复询价", c: "text-accent", trend: "待处理" },
-  { v: "412", l: "在售 SKU", c: "text-success", trend: "本周 +5" },
+  { v: "412", l: "在售SKU", c: "text-success", trend: "本周 +5" },
   { v: "4.8 ★", l: "平均评分", c: "text-gold", trend: "金牌前 8%" },
 ];
 

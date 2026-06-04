@@ -24,7 +24,7 @@ const TOPIC_CATEGORIES = [
       { label: "如何高效发送询价", href: "/info/find-products" },
       { label: "6 步进口指南", href: "/info/import-guide" },
       { label: "起订量前先下样品单", href: "/info/sample-orders" },
-      { label: "OEM / ODM 定制", href: "/info/import-guide" },
+      { label: "OEM/ODM 定制", href: "/info/import-guide" },
     ],
   },
   {
@@ -160,7 +160,7 @@ const FAQ_BY_STAGE = [
     faqs: [
       {
         q: "交易保障（担保）如何运作？",
-        a: "采购商的 30% T/T 定金和 70% 尾款保管在 CSR 位于 Vietcombank/BIDV（越南盾）或中国银行/HSBC（美元）的担保账户中——不直接打给供应商。供应商仅在以下情况后才收款：(a) 采购商确认货品符合描述，或 (b) 交货后 14 天采购商未回应（自动放款）。若货品不符合承诺，采购商在 7 天内投诉 → CSR 调查 → 退款/换货/赔偿。",
+        a: "采购商的30% T/T定金和70%尾款保管在CSR位于Vietcombank/BIDV（越南盾）或中国银行/HSBC（美元）的担保账户中——不直接打给供应商。供应商仅在以下情况后才收款：(a) 采购商确认货品符合描述，或(b) 交货后14天采购商未回应（自动放款）。若货品不符合承诺，采购商在7天内投诉→CSR调查→退款/换货/赔偿。",
       },
       {
         q: "支持哪些支付方式？",
@@ -176,16 +176,16 @@ const FAQ_BY_STAGE = [
     stage: "运输与海关",
     faqs: [
       {
-        q: "DDP 运至越南需要多久？",
-        a: "DDP 送达河内采购商仓库的时间：(a) 经谅山陆路 5-7 天——最快，适合小单和热门趋势品。(b) 海运 佛山 → 叻坚 → 河内：合计 13-17 天。(c) 海运 东莞/深圳 → 吉莱 → 河内：15-19 天。(d) DHL/FedEx 空运：2-4 天，$8-15/kg。采购商可在计算器 /info/ddp-calculator 中选择最优路线。",
+        q: "DDP运至越南需要多久？",
+        a: "DDP送达河内采购商仓库的时间：(a) 经谅山陆路5-7天——最快，适合小单和热门趋势品。(b) 海运佛山→叻坚→河内：合计13-17天。(c) 海运东莞/深圳→吉莱→河内：15-19天。(d) DHL/FedEx空运：2-4天，$8-15/kg。采购商可在计算器/info/ddp-calculator中选择最优路线。",
       },
       {
         q: "需要进口许可证吗？",
-        a: "大部分建筑材料、家具、卫浴、LED 灯、家用电器不需要许可证。以下需许可证：保健食品、化妆品、医疗器械、化学品、药品、书籍、车辆。CSR 按 HS 编码免费咨询——邮箱 legal@huayuesc.vn。",
+        a: "大部分建筑材料、家具、卫浴、LED灯、家用电器不需要许可证。以下需许可证：保健食品、化妆品、医疗器械、化学品、药品、书籍、车辆。CSR按HS编码免费咨询——邮箱legal@huayuesc.vn。",
       },
       {
-        q: "DDP 是否已含进口税 + 增值税？",
-        a: "是的。DDP 全包含：海运/陆运费、0.5% 海运保险、进口税（按 HS 编码，享 ACFTA/RCEP 优惠）、10% 增值税、清关费、越南国内运输。采购商只需在仓库签收。特殊情况（海关重新归类 HS、征收更高税）：CSR 提前通知，采购商有 7 天回应期。",
+        q: "DDP是否已含进口税+增值税？",
+        a: "是的。DDP全包含：海运/陆运费、0.5%海运保险、进口税（按HS编码，享ACFTA/RCEP优惠）、10%增值税、清关费、越南国内运输。采购商只需在仓库签收。特殊情况（海关重新归类HS、征收更高税）：CSR提前通知，采购商有7天回应期。",
       },
     ],
   },
@@ -198,27 +198,27 @@ const FAQ_BY_STAGE = [
       },
       {
         q: "首单顺利后我想再下单——流程如何？",
-        a: "比首单快 50%！返单：在控制台选择“Reorder” → CSR 自动以相同规格生成新 PO → 采购商只需确认数量 + 交货日期。无需重新验厂（已认证）。无需重新测样（已有）。交货时间仍为 5-22 天，视路线而定。许多越南采购商每年向 2-3 家主力供应商下 6-12 单——流程非常顺畅。",
+        a: "比首单快50%！返单：在控制台选择“Reorder”→CSR自动以相同规格生成新PO→采购商只需确认数量+交货日期。无需重新验厂（已认证）。无需重新测样（已有）。交货时间仍为5-22天，视路线而定。许多越南采购商每年向2-3家主力供应商下6-12单——流程非常顺畅。",
       },
       {
         q: "可以开具增值税发票吗？",
-        a: "可以。CSR 通过财政部电子发票系统为所有 DDP 订单开具 10% 增值税电子发票（依据 123/2020/NĐ-CP 号法令）。发票在交货后 3 天内发送至采购商邮箱。企业采购商可用此发票抵扣 10% 进项增值税——节省可观税费。",
+        a: "可以。CSR通过财政部电子发票系统为所有DDP订单开具10%增值税电子发票（依据123/2020/NĐ-CP号法令）。发票在交货后3天内发送至采购商邮箱。企业采购商可用此发票抵扣10%进项增值税——节省可观税费。",
       },
     ],
   },
 ];
 
 const SYSTEM_STATUS = [
-  { service: "网站 + App", status: "Operational", uptime: "99.97%" },
+  { service: "网站+App", status: "Operational", uptime: "99.97%" },
   { service: "交易保障（担保）", status: "Operational", uptime: "100%" },
-  { service: "AI 寻源匹配", status: "Operational", uptime: "99.94%" },
-  { service: "DDP 物流", status: "Operational", uptime: "99.91%" },
+  { service: "AI寻源匹配", status: "Operational", uptime: "99.94%" },
+  { service: "DDP物流", status: "Operational", uptime: "99.91%" },
 ];
 
 const CONTACT_CHANNELS = [
-  { icon: "💬", title: "在线客服", desc: "5 分钟内响应", info: "每日 8:00-22:00", href: "#chat" },
-  { icon: "📞", title: "热线", desc: "+84 24 1234 5678", info: "周一至周六 8:00-18:00", href: "tel:+842412345678" },
-  { icon: "📧", title: "邮件支持", desc: "6 小时内响应", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
+  { icon: "💬", title: "在线客服", desc: "5分钟内响应", info: "每日8:00-22:00", href: "#chat" },
+  { icon: "📞", title: "热线", desc: "+84 24 1234 5678", info: "周一至周六8:00-18:00", href: "tel:+842412345678" },
+  { icon: "📧", title: "邮件支持", desc: "6小时内响应", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
   { icon: "📹", title: "视频通话", desc: "需提前预约", info: "与客户经理一对一", href: "/info/contact" },
 ];
 
@@ -240,12 +240,12 @@ export default function HelpPage() {
             欢迎来到帮助中心
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed mb-5 max-md:text-[12.5px] max-w-[680px] mx-auto">
-            300+ 篇指南、80+ FAQ、24/7 越南语支持。立即查找答案，或直接联系华越河内 + 广州团队。
+            300+篇指南、80+FAQ、24/7越南语支持。立即查找答案，或直接联系华越河内+广州团队。
           </p>
           <form action="/search" method="get" className="flex max-w-[640px] mx-auto bg-white rounded-md overflow-hidden shadow-lg">
             <input
               name="q"
-              placeholder="例如：如何发询价、起订量、DDP 运输、交易保障……"
+              placeholder="例如：如何发询价、起订量、DDP运输、交易保障……"
               className="flex-1 px-4 py-3 outline-none text-[14px] text-ink"
             />
             <button type="submit" className="px-6 bg-accent text-white font-bold text-[13.5px] cursor-pointer hover:opacity-90">
@@ -361,7 +361,7 @@ export default function HelpPage() {
               href="https://huayuesc-status.io"
               className="text-[12px] text-brand hover:underline cursor-pointer"
             >
-              详细状态页 →
+              详细状态页→
             </Link>
           </div>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">
@@ -384,7 +384,7 @@ export default function HelpPage() {
         >
           <h2 className="text-[18px] font-bold mb-1 max-md:text-[16px]">仍需人工支持？</h2>
           <p className="text-[12.5px] opacity-85 mb-4 max-md:text-[12px]">
-            华越河内 + 广州客户成功团队——24/7 响应，为采购商提供 100% 越南语支持。
+            华越河内+广州客户成功团队——24/7响应，为采购商提供100%越南语支持。
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {CONTACT_CHANNELS.map((c) => (
@@ -402,7 +402,7 @@ export default function HelpPage() {
           </div>
           <div className="mt-4 pt-4 border-t border-white/15 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <span className="text-[12.5px] opacity-85">
-              📍 河内办事处：求纸郡范雄街 26 号 · 广州天河广场 26 楼
+              📍 河内办事处：求纸郡范雄街26号 · 广州天河广场26楼
             </span>
             <Link
               href="/buying-request"
@@ -420,5 +420,5 @@ export default function HelpPage() {
 export const metadata = {
   title: "帮助中心 — 华越",
   description:
-    "300+ 篇指南、80+ FAQ，涵盖从中国到越南的 B2B 采购。询价、交易保障、DDP、海关。24/7 越南语支持。",
+    "300+篇指南、80+FAQ，涵盖从中国到越南的B2B采购。询价、交易保障、DDP、海关。24/7越南语支持。",
 };

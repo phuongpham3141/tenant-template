@@ -117,7 +117,7 @@ export const ANBI_SERIES_META: Record<string, SeriesMeta> = {
     story: "安彼浴缸——亚克力材质保温，造型现代，适配高端浴室。",
     heritage: "浴缸完善浴室的放松空间。",
     technicalSpecs: [{ label: "材质", value: "亚克力保温" }, { label: "款式", value: "落地式 / 嵌入式" }, { label: "尺寸", value: "按型号" }],
-    whyChoose: [WHY, { icon: "🛀", title: "保温", desc: "亚克力长效保温，表面光滑。" }, { icon: "🧽", title: "易清洁", desc: "表面平滑，防污，擦拭迅速。" }],
+    whyChoose: [WHY, { icon: "🛀", title: "保温", desc: "亚克力长效保温，表面光滑。" }, { icon: "🧽", title: "易清洁", desc: "表面平滑，防污，易清洁。" }],
     projectShowcase: SHOW,
   }),
   "mop-basin": BASIN, other: TOILET,

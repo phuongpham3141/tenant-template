@@ -109,7 +109,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
       {/* Bestsellers inline list */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          热销产品：
+          热销产品
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.slug} className="flex items-baseline">
@@ -236,7 +236,7 @@ export function SubItemPanel({
       {/* Bestsellers footer line */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          热销产品：
+          热销产品
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.name} className="flex items-baseline">

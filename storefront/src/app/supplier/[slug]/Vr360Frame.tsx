@@ -61,7 +61,7 @@ export function Vr360Frame({
 
 <div style="margin-bottom:12px">
   <p style="font-size:12px;color:#6b7280;margin:0 0 8px;line-height:1.55">
-    💡 <b>提示</b>：拖动鼠标 360° 旋转，滚动缩放，点击光点前往其他区域。点击 <b>全屏</b> 查看更宽视野（每次点击会重新加载 360°），或 <b>打开新窗口</b> 在独立窗口中查看。按 <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> 退出。
+    💡 <b>提示</b>：拖动鼠标360°旋转，滚动缩放，点击光点前往其他区域。点击 <b>全屏</b> 查看更宽视野（每次点击会重新加载360°），或 <b>打开新窗口</b> 在独立窗口中查看。按 <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> 退出。
   </p>
   <div style="display:flex;flex-wrap:wrap;gap:8px">
     <button type="button" class="csr-vr-btn" onclick="csrVrCombined()">⛶ 全屏</button>

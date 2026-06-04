@@ -101,4 +101,4 @@ export default function FactoryTourPage() {
   );
 }
 
-export const metadata = { title: "实地验厂 — Huayuesc" };
+export const metadata = { title: "实地验厂 — 华越供应链" };

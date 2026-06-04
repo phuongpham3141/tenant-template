@@ -27,11 +27,11 @@ export type SeriesMeta = {
 const COMMON_CERTS = [
   "CE —— 欧洲认证",
   "CB Scheme —— 国际电气安全认证（IEC）",
-  "欧盟能效标签 —— 按 EEI 分级 A 至 G",
+  "欧盟能效标签 —— 按EEI分级A至G",
   "ISO 9001 —— 质量管理",
   "ISO 14001 —— 环境管理",
   "RoHS —— 不含有害重金属",
-  "Red Dot 与 iF Design（高端 Küppersbusch 系列）",
+  "Red Dot与iF Design（高端Küppersbusch系列）",
 ];
 
 const COMMON_MFG = [
@@ -53,15 +53,15 @@ const COMMON_PACKAGING = [
 const COMMON_INSTALL = [
   "由专业技术人员按 Teka 说明书安装",
   "核对橱柜开孔（cut-out）尺寸与产品嵌装尺寸是否匹配",
-  "接驳前确保电源 / 燃气管路 / 给排水符合标准",
+  "接驳前确保电源/燃气管路/给排水符合标准",
   "抽油烟机：安装符合管径的排烟管，减少弯折以保持排风量",
   "交付前对全部功能进行试机验收",
 ];
 
 const COMMON_CARE = [
-  { title: "日常清洁", desc: "用湿软布 + 中性溶液擦拭表面。请勿使用研磨性清洁剂或硬物刮擦玻璃 / 不锈钢。" },
-  { title: "定期清洁", desc: "定期清洁滤油网（抽油烟机）、烤盘 / 内腔（烤箱）、滤网（洗衣机）。烤箱配有蒸汽自清洁（AquaClean）或热解清洁模式。" },
-  { title: "技术维护", desc: "定期检查门封、燃烧器、燃气 / 水路；出现异常时联系技术人员，以保持性能与安全。" },
+  { title: "日常清洁", desc: "用湿软布 + 中性溶液擦拭表面。请勿使用研磨性清洁剂或硬物刮擦玻璃/不锈钢。" },
+  { title: "定期清洁", desc: "定期清洁滤油网（抽油烟机）、烤盘/内腔（烤箱）、滤网（洗衣机）。烤箱配有蒸汽自清洁（AquaClean）或热解清洁模式。" },
+  { title: "技术维护", desc: "定期检查门封、燃烧器、燃气/水路；出现异常时联系技术人员，以保持性能与安全。" },
 ];
 
 const COMMON_FAQ = [
@@ -98,7 +98,7 @@ export const TEKA_SERIES_META: Record<string, SeriesMeta> = {
     story: "Teka 蒸箱及蒸烤一体机系列（HLC/HSC 847、HSB……）—— 蒸制锁住营养，结合烧烤功能可烹饪多样菜式。",
     heritage: "Teka 顺应健康烹饪潮流开发蒸制系列，集成于标准嵌装尺寸之中。",
     technicalSpecs: [
-      { label: "类型", value: "蒸箱 / 蒸烤一体机" },
+      { label: "类型", value: "蒸箱/蒸烤一体机" },
       { label: "尺寸", value: "45cm 或 60cm 嵌入式" },
       { label: "电源", value: "220-240V / 50-60Hz" },
       { label: "操控", value: "TFT / LED 触控" },
@@ -113,17 +113,17 @@ export const TEKA_SERIES_META: Record<string, SeriesMeta> = {
     heritage: "Teka 提供与同系烤箱设计协调的嵌入式微波炉系列。",
     technicalSpecs: [
       { label: "类型", value: "嵌入式微波炉 / 微波烤箱一体机" },
-      { label: "安装", value: "嵌入式（built-in）" },
+      { label: "安装", value: "嵌入式" },
       { label: "电源", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "⚡", title: "快速加热", desc: "日常加热 / 快煮便捷。" },
-      { icon: "🧩", title: "橱柜协调", desc: "嵌装贴合，玻璃面板与烤箱协调一致。" }],
+      { icon: "⚡", title: "快速加热", desc: "日常加热 / 快煮便捷" },
+      { icon: "🧩", title: "橱柜协调", desc: "嵌装贴合，玻璃面板与烤箱协调一致" }],
     projectShowcase: ["公寓厨房", "办公室 / 茶水间厨房", "家居项目"],
   }),
   "range-hood": mk({
-    story: "Teka 抽油烟机 —— 侧吸式（CXW-220 DLV/iHood）与壁挂 T 型（DH/GFH）系列 —— 吸力强劲、运行静音、不锈钢滤油网可拆卸。",
-    heritage: "抽油烟机是 Teka 的长期强项，款式多样适配各种厨房布局。",
+    story: "Teka 抽油烟机 —— 侧吸式（CXW-220 DLV/iHood）与壁挂 T 型（DH/GFH）系列 —— 吸力强劲、运行静音、不锈钢滤油网可拆卸",
+    heritage: "抽油烟机是 Teka 的长期强项，款式多样适配各种厨房布局",
     technicalSpecs: [
       { label: "类型", value: "侧吸式 / 壁挂 T 型" },
       { label: "中国标准型号", value: "CXW-220（厨房抽油烟类）" },
@@ -131,64 +131,64 @@ export const TEKA_SERIES_META: Record<string, SeriesMeta> = {
       { label: "过滤", value: "不锈钢滤油网，可拆卸清洗" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🌪️", title: "吸力强劲", desc: "高效排除油烟，适合重油烟的中式厨房。" },
-      { icon: "🔇", title: "运行静音", desc: "电机优化噪声，多档风速可调。" }],
+      { icon: "🌪️", title: "吸力强劲", desc: "高效排除油烟，适合重油烟的中式厨房" },
+      { icon: "🔇", title: "运行静音", desc: "电机优化噪声，多档风速可调" }],
     projectShowcase: ["公寓与联排别墅厨房", "小型餐厅", "厨房展厅"],
   }),
   hob: mk({
-    story: "Teka 灶具 —— 燃气灶（IG/GFH/JZT）与电磁 / 电嵌入灶 —— 钢化玻璃、高效燃烧器、安全熄火保护。",
-    heritage: "Teka 为燃气与电 / 电磁市场提供多样化嵌入式灶具。",
+    story: "Teka 灶具 —— 燃气灶（IG/GFH/JZT）与电磁 / 电嵌入灶 —— 钢化玻璃、高效燃烧器、安全熄火保护",
+    heritage: "Teka 为燃气与电 / 电磁市场提供多样化嵌入式灶具",
     technicalSpecs: [
       { label: "类型", value: "燃气灶 / 电磁灶 / 嵌入式电灶" },
       { label: "灶面", value: "微晶玻璃 / 不锈钢" },
       { label: "安全", value: "熄火自动断气传感器（燃气系列）" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🔥", title: "高效燃烧器", desc: "火力强劲、分布均匀、节省燃气。" },
-      { icon: "🛡️", title: "安全", desc: "自动熄火断气，耐热玻璃面板。" }],
+      { icon: "🔥", title: "高效燃烧器", desc: "火力强劲、分布均匀、节省燃气" },
+      { icon: "🛡️", title: "安全", desc: "自动熄火断气，耐热玻璃面板" }],
     projectShowcase: ["家庭厨房", "公寓", "整体厨房交付项目"],
   }),
   "coffee-machine": mk({
-    story: "Teka 嵌入式咖啡机（CLC 855 GM）—— 集成磨豆，自动制作 espresso/cappuccino，与橱柜同步嵌装。",
-    heritage: "Teka 拓展至现代厨房的高端集成饮品设备。",
+    story: "Teka 嵌入式咖啡机（CLC 855 GM）—— 集成磨豆，自动制作 espresso/cappuccino，与橱柜同步嵌装",
+    heritage: "Teka 拓展至现代厨房的高端集成饮品设备",
     technicalSpecs: [
       { label: "类型", value: "集成磨豆嵌入式咖啡机" },
-      { label: "安装", value: "嵌入式（built-in）" },
+      { label: "安装", value: "嵌入式" },
       { label: "电源", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "☕", title: "自动磨豆冲泡", desc: "从豆到 espresso/cappuccino 一键完成。" },
-      { icon: "🧩", title: "嵌入式高雅", desc: "与同系烤箱、微波炉设计协调。" }],
+      { icon: "☕", title: "自动磨豆冲泡", desc: "从豆到 espresso/cappuccino 一键完成" },
+      { icon: "🧩", title: "嵌入式高雅", desc: "与同系烤箱、微波炉设计协调" }],
     projectShowcase: ["顶层公寓厨房", "酒店 / 服务式公寓", "高端展厅"],
   }),
   refrigerator: mk({
-    story: "Teka 冰箱 —— 包括多门手工不锈钢系列（RMF）及嵌入 / 独立式（RFD/RFC）欧式风格冰箱。",
-    heritage: "Teka 为高端厨房提供协调一致的冷藏保鲜解决方案。",
+    story: "Teka 冰箱 —— 包括多门手工不锈钢系列（RMF）及嵌入 / 独立式（RFD/RFC）欧式风格冰箱",
+    heritage: "Teka 为高端厨房提供协调一致的冷藏保鲜解决方案",
     technicalSpecs: [
       { label: "类型", value: "独立式 / 嵌入式 / 多门不锈钢冰箱" },
       { label: "电源", value: "220-240V / 50Hz" },
       { label: "能效", value: "依欧盟能效标签" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "❄️", title: "优化保鲜", desc: "分区温控，使食材持久保鲜。" },
-      { icon: "✨", title: "高端不锈钢", desc: "RMF 手工不锈钢系列高雅耐用、历久弥新。" }],
+      { icon: "❄️", title: "优化保鲜", desc: "分区温控，使食材持久保鲜" },
+      { icon: "✨", title: "高端不锈钢", desc: "RMF 手工不锈钢系列高雅耐用、历久弥新" }],
     projectShowcase: ["别墅厨房", "高端公寓", "家具展厅"],
   }),
   washer: mk({
-    story: "Teka 洗衣机（WML/WDL）—— 前开门、变频节能、多种洗涤程序，适合家庭使用。",
-    heritage: "Teka 为现代生活空间提供洗涤设备系列。",
+    story: "Teka 洗衣机（WML/WDL）—— 前开门、变频节能、多种洗涤程序，适合家庭使用",
+    heritage: "Teka 为现代生活空间提供洗涤设备系列",
     technicalSpecs: [
       { label: "类型", value: "前开门洗衣机 / 洗干一体机" },
       { label: "电源", value: "220-240V / 50Hz" },
       { label: "能效", value: "依欧盟能效标签" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "💧", title: "洁净节能", desc: "变频静音，节水省电。" },
-      { icon: "🌀", title: "多程序", desc: "针对不同面料的多种模式。" }],
+      { icon: "💧", title: "洁净节能", desc: "变频静音，节水省电" },
+      { icon: "🌀", title: "多程序", desc: "针对不同面料的多种模式" }],
     projectShowcase: ["公寓", "联排别墅", "服务式公寓"],
   }),
   dryer: mk({
-    story: "Teka 热泵干衣机（SHL）—— 柔和烘干、节能省电、呵护衣物纤维。",
+    story: "Teka 热泵干衣机（SHL）—— 柔和烘干、节能省电、呵护衣物纤维",
     heritage: "Teka 为洗烘系列增添高效热泵干衣机。",
     technicalSpecs: [
       { label: "类型", value: "热泵干衣机（heat pump）" },

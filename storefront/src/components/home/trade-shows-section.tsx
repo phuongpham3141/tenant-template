@@ -21,7 +21,7 @@ const FEATURED: TradeShow = {
   duration: "2026/04/15 – 05/05",
   location: "中国 广州",
   badge: "精选",
-  category: "综合 · 25K+ 供应商",
+  category: "综合·25K+ 供应商",
   href: "/trade-shows",
 };
 
@@ -63,7 +63,7 @@ export function TradeShowsSection() {
               贸易展会
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              华越将携 Made-in-China 合作伙伴共同参展的展会清单。
+              华越将携Made-in-China合作伙伴共同参展的展会清单。
             </p>
           </div>
           <Link
@@ -122,7 +122,7 @@ export function TradeShowsSection() {
                   📩 报名参展 →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  华越带队 · 提供签证协助与 B2B 日程对接
+                  华越带队·提供签证协助与B2B日程对接
                 </span>
               </div>
             </div>
@@ -188,7 +188,7 @@ export function TradeShowsSection() {
                   贸易提醒 — 不错过任何展会
                 </b>
                 <p className="text-[11.5px] opacity-85 leading-snug">
-                  每月通过邮件获取展会日程与 B2B 配对安排。
+                  每月通过邮件获取展会日程与B2B配对安排。
                 </p>
               </div>
               <Link

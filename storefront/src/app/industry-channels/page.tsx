@@ -4,16 +4,16 @@ import { NAV_CATEGORIES } from "@/data/home";
 
 const STATS_BY_INDUSTRY: Record<string, { factories: string; sku: string; lead: string; cluster: string }> = {
   "construction-materials": {
-    factories: "20+", sku: "480+", lead: "18-25 天",
+    factories: "20+", sku: "480+", lead: "18-25天",
     cluster: "佛山（陶瓷、卫浴） · 潮州（瓷砖） · 福建（天然石材）",
   },
   "noi-that": {
-    factories: "20+", sku: "480+", lead: "20-30 天",
+    factories: "20+", sku: "480+", lead: "20-30天",
     cluster: "佛山乐从（沙发） · 东莞（橱柜/衣柜） · 晋江（工程木）",
   },
   // Kitchen-bathroom appliances — 来自 PDF 的第三大行业（NAV_CATEGORIES 中暂无，回退）
   "kitchen-bathroom-appliances": {
-    factories: "15+", sku: "320+", lead: "20-25 天",
+    factories: "15+", sku: "320+", lead: "20-25天",
     cluster: "中山（灯具、燃气灶） · 美的（家用电器） · 巨贺（智能马桶盖）",
   },
 };
@@ -31,7 +31,7 @@ export default function IndustryChannelsPage() {
 
       <div className="max-w-[1400px] mx-auto px-4 mt-5 grid grid-cols-3 gap-4 max-md:grid-cols-1 mb-7">
         {NAV_CATEGORIES.map((c) => {
-          const stats = STATS_BY_INDUSTRY[c.slug] ?? { factories: "100+", sku: "2,000", lead: "20-30 天" };
+          const stats = STATS_BY_INDUSTRY[c.slug] ?? { factories: "100+", sku: "2,000", lead: "20-30天" };
           return (
             <Link key={c.slug} href={`/category/${c.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
               <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
@@ -46,11 +46,11 @@ export default function IndustryChannelsPage() {
                     <b className="text-brand">{stats.factories}</b>
                   </div>
                   <div>
-                    <div className="text-mute">在售 SKU</div>
+                    <div className="text-mute">在售SKU</div>
                     <b className="text-brand">{stats.sku}</b>
                   </div>
                   <div>
-                    <div className="text-mute">DDP 到越南</div>
+                    <div className="text-mute">DDP到越南</div>
                     <b className="text-brand">{stats.lead}</b>
                   </div>
                 </div>
@@ -67,4 +67,4 @@ export default function IndustryChannelsPage() {
   );
 }
 
-export const metadata = { title: "行业频道 — Huayuesc" };
+export const metadata = { title: "行业频道 — 华越SC" };

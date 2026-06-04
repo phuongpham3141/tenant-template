@@ -97,10 +97,10 @@ const SECTIONS: SitemapSection[] = [
     subtitle: "指南、政策与研究资料",
     links: [
       { label: "关于 CSR", href: "/info/about-us", desc: "「数字丝绸之路」愿景——四大支柱" },
-      { label: "协会合作伙伴网络", href: "/info/network", desc: "42 家越南 · 中国 · 东盟协会，28+ 份 MOU" },
+      { label: "协会合作伙伴网络", href: "/info/network", desc: "42 家越南·中国·东盟协会，28+ 份 MOU" },
       { label: "工厂审核流程", href: "/info/audit-process", desc: "7 步，32% 通过率，SGS/BV/TÜV/Intertek 实验室" },
-      { label: "交易保障", href: "/info/trade-assurance", desc: "VCB · BIDV · 中国银行担保——支付保障" },
-      { label: "投诉与争议", href: "/info/disputes", desc: "3 级升级——直接协商 · 调解 · VIAC 仲裁" },
+      { label: "交易保障", href: "/info/trade-assurance", desc: "VCB·BIDV·中国银行担保——支付保障" },
+      { label: "投诉与争议", href: "/info/disputes", desc: "3 级升级——直接协商·调解·VIAC 仲裁" },
       { label: "样品下单", href: "/info/sample-orders", desc: "6 步流程，广州样品中心" },
       { label: "进口指南", href: "/info/import-guide", desc: "9 个章节——VNACCS、Form E、ACFTA、RCEP" },
       { label: "运输政策", href: "/info/shipping-policy", desc: "Incoterms 2020，越南 5 大港口，谅山陆运" },

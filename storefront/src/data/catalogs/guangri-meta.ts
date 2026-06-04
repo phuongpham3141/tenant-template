@@ -30,9 +30,9 @@ const INSTALL = [
   "投入使用前进行试运行与安全检验",
 ];
 const CARE = [
-  { title: "定期维保", desc: "按计划维保（通常每月）：检查钢丝绳 / 导轨、制动器、门、控制系统并润滑。" },
+  { title: "定期维保", desc: "按计划维保（通常每月）：检查钢丝绳/导轨、制动器、门、控制系统并润滑。" },
   { title: "安全", desc: "按规定定期进行安全检验；运行出现异常时立即处理。" },
-  { title: "轿厢清洁", desc: "使用适配材质（不锈钢 / 玻璃 / 木材）的清洁剂清洁轿厢表面。" },
+  { title: "轿厢清洁", desc: "使用适配材质（不锈钢/玻璃/木材）的清洁剂清洁轿厢表面。" },
 ];
 const FAQ = [
   { q: "广日是否在越南提供安装与维保支持？", a: "请联系华越供应链，获取适配项目的供货、安装及技术服务方案咨询。" },
@@ -42,26 +42,26 @@ const FAQ = [
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const WHY = { icon: "🛗", title: "知名电梯品牌", desc: "广日 —— 信誉良好的中国电梯制造商，产品系列齐全。" };
+const WHY = { icon: "🛗", title: "知名电梯品牌", desc: "广日——信誉良好的中国电梯制造商，产品系列齐全。" };
 export const GUANGRI_SERIES_META: Record<string, SeriesMeta> = {
   "home-cabin": mk({
-    story: "广日家用电梯轿厢款式 —— 高端轿厢内饰设计系列（罗曼、哥特、水木清华等），适用于别墅与联排住宅电梯，提升空间美学。",
-    heritage: "轿厢设计是家用电梯的点睛之笔 —— 广日提供多种装饰风格。",
-    technicalSpecs: [{ label: "类型", value: "家用电梯轿厢（轿厢）" }, { label: "风格", value: "多款：古典、现代、艺术" }, { label: "材质", value: "高端不锈钢 / 玻璃 / 木质装饰" }],
+    story: "广日家用电梯轿厢款式——高端轿厢内饰设计系列（罗曼、哥特、水木清华等），适用于别墅与联排住宅电梯，提升空间美学。",
+    heritage: "轿厢设计是家用电梯的点睛之笔——广日提供多种装饰风格。",
+    technicalSpecs: [{ label: "类型", value: "家用电梯轿厢（轿厢）" }, { label: "风格", value: "多款：古典、现代、艺术" }, { label: "材质", value: "高端不锈钢/玻璃/木质装饰" }],
     whyChoose: [WHY, { icon: "🎨", title: "风格多样", desc: "多款轿厢设计，搭配各类室内风格。" }, { icon: "💎", title: "高端品质", desc: "高档材质与工艺，适配别墅。" }],
     projectShowcase: ["高端别墅与联排住宅", "顶层复式（Penthouse）", "多层住宅工程"],
   }),
   "home-elevator": mk({
-    story: "广日家用电梯 —— 面向别墅、联排住宅的电梯解决方案：运行平稳、节能省电、占地小，并提供多种轿厢可选。",
+    story: "广日家用电梯——面向别墅、联排住宅的电梯解决方案：运行平稳、节能省电、占地小，并提供多种轿厢可选。",
     heritage: "家用电梯是顺应多层住宅需求而蓬勃发展的产品线。",
     technicalSpecs: [{ label: "类型", value: "家用电梯（家用电梯）" }, { label: "适用场景", value: "别墅、联排住宅" }, { label: "优势", value: "平稳、节能、占地小" }],
     whyChoose: [WHY, { icon: "🏡", title: "适合住宅", desc: "设计紧凑，适配室内小井道。" }, { icon: "🔇", title: "运行平稳", desc: "平稳驱动技术，节能省电。" }],
     projectShowcase: ["别墅", "多层联排住宅", "家庭住宅"],
   }),
   escalator: mk({
-    story: "广日自动扶梯与自动人行道 —— 适用于购物中心、地铁站、机场及大客流公共建筑。",
+    story: "广日自动扶梯与自动人行道——适用于购物中心、地铁站、机场及大客流公共建筑。",
     heritage: "自动扶梯与自动人行道是广日公共交通领域的主力产品线。",
-    technicalSpecs: [{ label: "类型", value: "自动扶梯 / 自动人行道" }, { label: "适用场景", value: "购物中心、火车站、机场、公共场所" }, { label: "特性", value: "大运量、连续安全运行" }],
+    technicalSpecs: [{ label: "类型", value: "自动扶梯/自动人行道" }, { label: "适用场景", value: "购物中心、火车站、机场、公共场所" }, { label: "特性", value: "大运量、连续安全运行" }],
     whyChoose: [WHY, { icon: "🏬", title: "适配大型工程", desc: "满足购物中心、车站、机场的高客流。" }, { icon: "🛡️", title: "安全可靠", desc: "符合标准的安全系统与紧急制停。" }],
     projectShowcase: ["购物中心", "地铁站与机场", "公共建筑"],
   }),

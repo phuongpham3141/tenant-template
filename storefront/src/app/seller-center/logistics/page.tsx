@@ -44,7 +44,7 @@ const ROUTES = [
   { from: "广州", to: "海防", mode: "FCL 40'", time: "8 天", price: "$1,950" },
   { from: "宁波", to: "胡志明市（吉莱港）", mode: "FCL 40'", time: "11 天", price: "$2,420" },
   { from: "厦门", to: "岘港", mode: "FCL 20'", time: "9 天", price: "$1,180" },
-  { from: "深圳", to: "河内（内排）", mode: "空运快递", time: "3 天", price: "$6.4/kg" },
+  { from: "深圳", to: "河内（内排）", mode: "空运快递", time: "3天", price: "$6.4/kg" },
   { from: "上海", to: "海防", mode: "LCL", time: "12 天", price: "$58/CBM" },
   { from: "凭祥", to: "谅山（友谊关）", mode: "陆运", time: "1 天", price: "$680/车" },
 ];

@@ -98,7 +98,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "电梯", slug: "thang-may", icon: "🛗",
         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
-        tagline: "电梯 — 乘客电梯 / 自动扶梯 / 消防电梯 — 多种载重与应用场景。",
+        tagline: "电梯—乘客电梯/自动扶梯/消防电梯—多种载重与应用场景。",
         highlights: [
           { name: "乘客电梯",                   image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "thang-may-cho-khach" },
           { name: "自动扶梯",                   image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "thang-cuon" },
@@ -109,16 +109,16 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
         sections: [
           { title: "客用电梯", items: [
-            { name: "6人轿厢（450 kg）", slug: "thang-may-cho-khach" },
-            { name: "13人轿厢（1000 kg）", slug: "thang-may-cho-khach" },
-            { name: "21人轿厢（1600 kg）", slug: "thang-may-cho-khach" },
-            { name: "速度 1.0–2.5 米/秒", slug: "thang-may-cho-khach" },
+            { name: "6人轿厢（450kg）", slug: "thang-may-cho-khach" },
+            { name: "13人轿厢（1000kg）", slug: "thang-may-cho-khach" },
+            { name: "21人轿厢（1600kg）", slug: "thang-may-cho-khach" },
+            { name: "速度1.0–2.5米/秒", slug: "thang-may-cho-khach" },
           ]},
           { title: "自动扶梯", items: [
-            { name: "梯级宽度 600–1000 mm", slug: "thang-cuon" },
-            { name: "倾斜角 30° / 35°", slug: "thang-cuon" },
+            { name: "梯级宽度600–1000mm", slug: "thang-cuon" },
+            { name: "倾斜角30°/35°", slug: "thang-cuon" },
             { name: "商业中心", slug: "thang-cuon" },
-            { name: "机场 / 地铁", slug: "thang-cuon" },
+            { name: "机场/地铁", slug: "thang-cuon" },
           ]},
           { title: "消防电梯", items: [
             { name: "120分钟耐火轿厢", slug: "thang-chong-chay" },
@@ -136,10 +136,10 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "钢材与金属", slug: "ket-cau-thep-khung", icon: "🔩",
         image: "/img/thep-hinh-h-i-u-v.jpg?v=5",
-        tagline: "钢材 — H/I/U/V型钢、钢管、钢板、彩钢瓦 — 广州FOB按吨报价。",
+        tagline: "钢材 — H/I/U/V型钢、钢管、钢板、彩钢瓦 — 广州FOB按吨报价",
         highlights: [
           { name: "H/I/U/V型钢",       image: "/img/thep-hinh-h-i-u-v.jpg?v=5", slug: "ket-cau-thep-khung" },
-          { name: "黑管 / 镀锌钢管",     image: "/img/ceramic-1-2.jpg?v=5", slug: "ket-cau-thep-khung" },
+          { name: "黑管/镀锌钢管",     image: "/img/ceramic-1-2.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "钢卷板",            image: "/img/ceramic-1-3.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "方钢管",            image: "/img/ceramic-1-4.jpg?v=5", slug: "ket-cau-thep-khung" },
           { name: "彩钢瓦",            image: "/img/ceramic-1-5.jpg?v=5", slug: "ton-lanh" },
@@ -160,7 +160,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
             { name: "黑钢", slug: "ket-cau-thep-khung" },
             { name: "热镀锌", slug: "ket-cau-thep-khung" },
             { name: "静电喷涂", slug: "ket-cau-thep-khung" },
-            { name: "不锈钢 304/316", slug: "ket-cau-thep-khung" },
+            { name: "不锈钢304/316", slug: "ket-cau-thep-khung" },
           ]},
           { title: "按标准", items: [
             { name: "JIS SS400", slug: "ket-cau-thep-khung" },
@@ -169,7 +169,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
             { name: "ASTM A36", slug: "ket-cau-thep-khung" },
           ]},
           { title: "配件", items: [
-            { name: "M16+锚栓", slug: "ket-cau-thep-khung" },
+            { name: "M16锚栓", slug: "ket-cau-thep-khung" },
             { name: "高强度螺栓", slug: "ket-cau-thep-khung" },
             { name: "焊接钢丝网", slug: "ket-cau-thep-khung" },
             { name: "钢铆钉", slug: "ket-cau-thep-khung" },
@@ -179,7 +179,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "墙板与吊顶", slug: "tam-op-tuong-tran", icon: "🟦",
         image: "/img/cer6.jpg?v=5",
-        tagline: "瓷砖板、陶瓷、MDF — 酒店与别墅室内设计专用。",
+        tagline: "瓷砖板、陶瓷、MDF — 酒店与别墅室内设计专用",
         highlights: [
           { name: "大规格瓷砖板",  image: "/img/cer6.jpg?v=5", slug: "tam-op-tuong-tran" },
           { name: "3D墙板",       image: "/img/cer4.jpg?v=5", slug: "tam-op-tuong-tran" },
@@ -222,9 +222,9 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "地板材料", slug: "vat-lieu-lat-san", icon: "🟫",
         image: "/img/cer7.jpg?v=5",
-        tagline: "木地板 + 地面材料 — SPC+LVT木地板、实木地板、瓷砖 — DDP 18天到货。",
+        tagline: "木地板+地面材料 — SPC+LVT木地板、实木地板、瓷砖 — DDP 18天到货",
         highlights: [
-          { name: "SPC + LVT木地板",            image: "/img/cer7.jpg?v=5", slug: "san-go-spc-lvt" },
+          { name: "SPC+LVT木地板",            image: "/img/cer7.jpg?v=5", slug: "san-go-spc-lvt" },
           { name: "多层实木拼花",                image: "/img/cer8.jpg?v=5", slug: "san-go-engineered" },
           { name: "实木地板",                   image: "/img/cer2.jpg?v=5", slug: "san-go-tu-nhien" },
           { name: "瓷砖",                       image: "/img/cer1.jpg?v=5", slug: "gach-op-lat" },
@@ -233,7 +233,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
         sections: [
           { title: "木地板", items: [
-            { name: "SPC + LVT木地板", slug: "san-go-spc-lvt" },
+            { name: "SPC+LVT木地板", slug: "san-go-spc-lvt" },
             { name: "多层实木拼花", slug: "san-go-engineered" },
             { name: "实木地板", slug: "san-go-tu-nhien" },
           ]},
@@ -390,7 +390,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { title: "隔热配件", items: [
             { name: "防晒铝箔", slug: "vat-lieu-cach-am-cach-nhiet" },
             { name: "隔热棉专用胶", slug: "vat-lieu-cach-am-cach-nhiet" },
-            { name: "拉杆 / 镀锌龙骨", slug: "vat-lieu-cach-am-cach-nhiet" },
+            { name: "拉杆/镀锌龙骨", slug: "vat-lieu-cach-am-cach-nhiet" },
             { name: "专用锚钉", slug: "vat-lieu-cach-am-cach-nhiet" },
           ]},
         ],
@@ -465,7 +465,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
             { name: "PCE高效减水剂", slug: "vat-lieu-kho-xi-mang-vua" },
             { name: "混凝土防水剂", slug: "vat-lieu-kho-xi-mang-vua" },
           ]},
-          { title: "胶粘剂与填缝", items: [
+          { title: "胶粘剂与填缝剂", items: [
             { name: "单组分瓷砖胶", slug: "vat-lieu-kho-xi-mang-vua" },
             { name: "双组分瓷砖胶", slug: "vat-lieu-kho-xi-mang-vua" },
             { name: "环氧填缝剂", slug: "vat-lieu-kho-xi-mang-vua" },
@@ -509,7 +509,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "智能马桶", slug: "bon-cau-thong-minh", icon: "🤖",
         image: "/img/bathroom-2-1.jpg?v=5",
-        tagline: "智能马桶冲洗+烘干+座圈加热+自动除臭。",
+        tagline: "智能马桶（冲洗+烘干+座圈加热+自动除臭）",
         highlights: [
           { name: "连体智能马桶",   image: "/img/bathroom-2-1.jpg?v=5", slug: "bon-cau-thong-minh" },
           { name: "智能盖板",         image: "/img/bathroom-2-2.jpg?v=5", slug: "bon-cau-thong-minh" },
@@ -593,7 +593,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "五金水龙头", slug: "voi-nuoc", icon: "🚰",
         image: "/img/bathroom-5-1.jpg?v=5",
-        tagline: "花洒、面盆龙头、厨房龙头 — 铜镀铬 / 金色 / 哑光。",
+        tagline: "花洒、面盆龙头、厨房龙头 — 铜镀铬/金色/哑光。",
         highlights: [
           { name: "高面盆龙头", image: "/img/bathroom-5-1.jpg?v=5", slug: "voi-nuoc" },
           { name: "入墙式花洒", image: "/img/bathroom-5-2.jpg?v=5", slug: "voi-nuoc" },
@@ -860,7 +860,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "酒店家具", slug: "noi-that-khach-san", icon: "🏨",
         image: "/img/noi-that-khach-san.jpg?v=5",
-        tagline: "3-5星FF&E整体配套 — 符合万豪/希尔顿标准设计。",
+        tagline: "3-5星FF&E整体配套 — 符合万豪/希尔顿标准设计",
         highlights: [
           { name: "酒店床具",    image: "/img/fur6.jpg?v=5", slug: "noi-that-khach-san" },
           { name: "大堂桌",           image: "/img/furniture-6-1.jpg?v=5", slug: "noi-that-khach-san" },
@@ -888,7 +888,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
             { name: "水晶吊灯", slug: "noi-that-khach-san" },
             { name: "玻璃展示柜", slug: "noi-that-khach-san" },
           ]},
-          { title: "餐厅 / 酒吧", items: [
+          { title: "餐厅/酒吧", items: [
             { name: "不锈钢自助餐台", slug: "noi-that-khach-san" },
             { name: "高端餐厅椅", slug: "noi-that-khach-san" },
             { name: "吧台吊灯", slug: "noi-that-khach-san" },
@@ -899,7 +899,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "儿童与母婴", slug: "tre-em-em-be", icon: "🧸",
         image: "/img/tre-em-em-be.jpg?v=5",
-        tagline: "儿童床、学习桌、安全玩具 — E0/E1环保认证。",
+        tagline: "儿童床、学习桌、安全玩具 — E0/E1环保认证",
         highlights: [
           { name: "儿童床",       image: "/img/furniture-3-1.jpg?v=5", slug: "tre-em-em-be" },
           { name: "学习桌",             image: "/img/furniture-3-2.jpg?v=5", slug: "tre-em-em-be" },
@@ -943,7 +943,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "电磁炉", slug: "bep-tu", icon: "♨️",
         image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5",
-        tagline: "单灶 / 双灶 / 3-4灶电磁炉 — 肖特微晶面板，功率3500W+。",
+        tagline: "单灶/双灶/3-4灶电磁炉 — 肖特微晶面板，功率3500W+",
         highlights: [
           { name: "双灶",   image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "bep-tu" },
           { name: "3灶",     image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "bep-tu" },
@@ -971,7 +971,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "抽油烟机", slug: "may-hut-mui", icon: "💨",
         image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5",
-        tagline: "顶吸式、欧式、中岛式油烟机 — 风量700–1300 m³/h。",
+        tagline: "顶吸式、欧式、中岛式油烟机 — 风量700–1300 m³/h",
         highlights: [
           { name: "钻石顶吸式", image: "/img/kitchen-equipment-sc-prod-4.jpg?v=5", slug: "may-hut-mui" },
           { name: "经典欧式",   image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "may-hut-mui" },
@@ -980,7 +980,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
         sections: [
           { title: "按安装方式", items: [
-            { name: "顶吸 / 侧吸", slug: "may-hut-mui" },
+            { name: "顶吸/侧吸", slug: "may-hut-mui" },
             { name: "经典欧式", slug: "may-hut-mui" },
             { name: "中岛吊顶式", slug: "may-hut-mui" },
           ]},
@@ -999,7 +999,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "微波炉", slug: "lo-vi-song", icon: "📡",
         image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5",
-        tagline: "机械式、电子式、带烧烤微波炉 — 容量20–42L。",
+        tagline: "机械式、电子式、带烧烤微波炉 — 容量20–42L",
         highlights: [
           { name: "机械式20L",     image: "/img/kitchen-equipment-sc-prod-5.jpg?v=5", slug: "lo-vi-song" },
           { name: "电子式25L",    image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "lo-vi-song" },
@@ -1027,7 +1027,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "压力锅", slug: "noi-ap-suat", icon: "🍲",
         image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5",
-        tagline: "电子压力锅、多功能料理锅 — 容量4–10L。",
+        tagline: "电子压力锅、多功能料理锅 — 容量4–10L",
         highlights: [
           { name: "电子式5L",       image: "/img/kitchen-equipment-sc-prod-6.jpg?v=5", slug: "noi-ap-suat" },
           { name: "多功能料理锅6L",    image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "noi-ap-suat" },
@@ -1055,7 +1055,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "电饭煲", slug: "noi-com-dien", icon: "🍚",
         image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5",
-        tagline: "机械式、电子式、IH电磁加热电饭煲 — 1.8–5L家用与餐厅。",
+        tagline: "机械式、电子式、IH电磁加热电饭煲 — 1.8–5L家用与餐厅",
         highlights: [
           { name: "机械式1.8L",   image: "/img/kitchen-equipment-sc-prod-7.jpg?v=5", slug: "noi-com-dien" },
           { name: "电子式2L",    image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "noi-com-dien" },
@@ -1076,14 +1076,14 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { title: "模式", items: [
             { name: "煮饭", slug: "noi-com-dien" },
             { name: "蒸煮", slug: "noi-com-dien" },
-            { name: "煮粥 / 慢炖", slug: "noi-com-dien" },
+            { name: "煮粥/慢炖", slug: "noi-com-dien" },
           ]},
         ],
       },
       {
         name: "洗碗机", slug: "may-rua-bat", icon: "🍽️",
         image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5",
-        tagline: "独立式、嵌入式、迷你洗碗机 — 6–14套标准。",
+        tagline: "独立式、嵌入式、迷你洗碗机 — 6–14套标准",
         highlights: [
           { name: "独立式14套",  image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "may-rua-bat" },
           { name: "嵌入式12套",    image: "/img/kitchen-equipment-sc-prod-3.jpg?v=5", slug: "may-rua-bat" },
@@ -1111,7 +1111,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "不锈钢水槽", slug: "chau-rua-inox", icon: "🍽️",
         image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
-        tagline: "304不锈钢单槽 / 双槽 / 三槽 — 手工细磨 / 静音。",
+        tagline: "304不锈钢单槽/双槽/三槽 — 手工细磨/静音",
         highlights: [
           { name: "单槽50×40",   image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "chau-rua-inox" },
           { name: "双槽78×42",   image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "chau-rua-inox" },
@@ -1139,7 +1139,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "五金产品", slug: "kim-khi-bep", icon: "🔧",
         image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5",
-        tagline: "橱柜铰链、滑轨、拉手、不锈钢配件 — 整柜采购。",
+        tagline: "橱柜铰链、滑轨、拉手、不锈钢配件——整柜采购",
         highlights: [
           { name: "阻尼铰链", image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "kim-khi-bep" },
           { name: "底装滑轨",    image: "/img/kitchen-equipment-sc-prod-2.jpg?v=5", slug: "kim-khi-bep" },
@@ -1148,7 +1148,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
         ],
         sections: [
           { title: "铰链与滑轨", items: [
-            { name: "35 mm杯型铰链", slug: "kim-khi-bep" },
+            { name: "35mm杯型铰链", slug: "kim-khi-bep" },
             { name: "三节滑轨", slug: "kim-khi-bep" },
             { name: "上翻气撑", slug: "kim-khi-bep" },
           ]},
@@ -1172,7 +1172,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "LED光源", slug: "den-led", icon: "💡",
         image: "/img/ceramic-2-1.jpg?v=5",
-        tagline: "各类LED芯片光源 — 驱动器、模组、COB、SMD专用。",
+        tagline: "各类LED芯片光源——驱动器、模组、COB、SMD专用",
         highlights: [
           { name: "COB芯片",      image: "/img/ceramic-2-1.jpg?v=5", slug: "den-led" },
           { name: "SMD 2835/5050", image: "/img/ceramic-2-2.jpg?v=5", slug: "den-led" },
@@ -1200,7 +1200,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "家用LED灯", slug: "den-led-gia-dung", icon: "🏠",
         image: "/img/ceramic-2-2.jpg?v=5",
-        tagline: "吸顶灯、筒灯、面板灯、LED灯带 — 适用客厅与生活空间。",
+        tagline: "吸顶灯、筒灯、面板灯、LED灯带——适用客厅与生活空间",
         highlights: [
           { name: "吸顶灯",  image: "/img/ceramic-2-2.jpg?v=5", slug: "den-led-gia-dung" },
           { name: "嵌入式筒灯", image: "/img/ceramic-2-3.jpg?v=5", slug: "den-led-gia-dung" },
@@ -1211,7 +1211,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
           { title: "按位置", items: [
             { name: "客厅", slug: "den-led-gia-dung" },
             { name: "卧室", slug: "den-led-gia-dung" },
-            { name: "走廊 / 楼梯", slug: "den-led-gia-dung" },
+            { name: "走廊/楼梯", slug: "den-led-gia-dung" },
           ]},
           { title: "按款式", items: [
             { name: "吸顶灯", slug: "den-led-gia-dung" },
@@ -1228,7 +1228,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "商用LED灯", slug: "den-led-thuong-mai", icon: "🏢",
         image: "/img/ceramic-2-3.jpg?v=5",
-        tagline: "投光灯、工业灯管、射灯 — IP65/66。",
+        tagline: "投光灯、工业灯管、射灯——IP65/66",
         highlights: [
           { name: "100W LED投光灯",  image: "/img/ceramic-2-3.jpg?v=5", slug: "den-led-thuong-mai" },
           { name: "T8灯管",       image: "/img/ceramic-2-4.jpg?v=5", slug: "den-led-thuong-mai" },
@@ -1256,7 +1256,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "电气物料", slug: "vat-tu-dien", icon: "⚙️",
         image: "/img/ceramic-2-4.jpg?v=5",
-        tagline: "插座、开关、MCB、ATS — 照明系统配套配件。",
+        tagline: "插座、开关、MCB、ATS——照明系统配套配件",
         highlights: [
           { name: "暗装插座",  image: "/img/ceramic-2-4.jpg?v=5", slug: "vat-tu-dien" },
           { name: "感应开关", image: "/img/ceramic-2-5.jpg?v=5", slug: "vat-tu-dien" },
@@ -1289,7 +1289,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "3D人脸识别锁", slug: "khoa-3d-face", icon: "📹",
         image: "/img/ceramic-3-1.jpg?v=5",
-        tagline: "3D人脸识别+可视通话锁 — IP68防水。",
+        tagline: "3D人脸识别+可视通话锁 — IP68防水",
         highlights: [
           { name: "3D人脸+可视",  image: "/img/ceramic-3-1.jpg?v=5", slug: "khoa-3d-face" },
           { name: "1080p摄像头",     image: "/img/ceramic-3-2.jpg?v=5", slug: "khoa-3d-face" },
@@ -1317,7 +1317,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "Wi-Fi智能锁", slug: "khoa-wifi", icon: "📶",
         image: "/img/ceramic-3-2.jpg?v=5",
-        tagline: "指纹锁+Wi-Fi，App远程控制。",
+        tagline: "指纹锁+Wi-Fi，App远程控制",
         highlights: [
           { name: "涂鸦智能App",  image: "/img/ceramic-3-2.jpg?v=5", slug: "khoa-wifi" },
           { name: "AA电池续航1年", image: "/img/ceramic-3-3.jpg?v=5", slug: "khoa-wifi" },
@@ -1345,7 +1345,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "Wi-Fi智能门栓锁", slug: "khoa-don-cong-wifi", icon: "🚪",
         image: "/img/ceramic-3-3.jpg?v=5",
-        tagline: "户外大门门栓锁，指纹+Wi-Fi — 别墅专用。",
+        tagline: "户外大门门栓锁，指纹+Wi-Fi — 别墅专用",
         highlights: [
           { name: "别墅铁艺大门",  image: "/img/ceramic-3-3.jpg?v=5", slug: "khoa-don-cong-wifi" },
           { name: "不锈钢折叠门",      image: "/img/ceramic-3-4.jpg?v=5", slug: "khoa-don-cong-wifi" },
@@ -1373,7 +1373,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "指纹锁", slug: "khoa-van-tay", icon: "👆",
         image: "/img/ceramic-3-4.jpg?v=5",
-        tagline: "适用木门、铝门、钢门的电子指纹锁 — 普及型。",
+        tagline: "适用木门、铝门、钢门的电子指纹锁 — 普及型",
         highlights: [
           { name: "普通木门",  image: "/img/ceramic-3-4.jpg?v=5", slug: "khoa-van-tay" },
           { name: "兴发铝门",   image: "/img/ceramic-3-5.jpg?v=5", slug: "khoa-van-tay" },
@@ -1406,7 +1406,7 @@ export const NAV_MENU: { main: { icon: string; name: string; slug: string }; ite
       {
         name: "空调", slug: "dieu-hoa", icon: "❄️",
         image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5",
-        tagline: "壁挂、嵌入式、柜式变频空调 — 多档功率。",
+        tagline: "壁挂、嵌入式、柜式变频空调 — 多档功率",
         highlights: [
           { name: "壁挂变频", image: "/img/kitchen-equipment-sc-prod-0.jpg?v=5", slug: "dieu-hoa" },
           { name: "嵌入式天花机",    image: "/img/kitchen-equipment-sc-prod-1.jpg?v=5", slug: "dieu-hoa" },

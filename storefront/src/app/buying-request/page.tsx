@@ -154,4 +154,4 @@ export default async function BuyingRequestPage({
   );
 }
 
-export const metadata = { title: "发送询价 — Huayuesc" };
+export const metadata = { title: "发送询价 — 华越供应链" };

@@ -70,7 +70,7 @@ export default async function BlogIndexPage({
             越南—中国采购行业资讯
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed max-w-[720px] max-md:text-[12.5px] mb-5">
-            分析价格趋势、展会、税收政策、越南采购商案例及供应商概况。由广州 + 河内团队每周更新。
+            分析价格趋势、展会、税收政策、越南采购商案例及供应商概况。由广州+河内团队每周更新。
           </p>
 
           {/* Category filter chips */}
@@ -211,7 +211,7 @@ export default async function BlogIndexPage({
               <b className="text-[13px] font-bold">免费交易预警</b>
             </div>
             <p className="text-[11.5px] opacity-90 leading-snug mb-3">
-              12,000+ 越南采购商已订阅。每周四资讯，涵盖价格趋势、限时优惠、展会。
+              12,000+越南采购商已订阅。每周四资讯，涵盖价格趋势、限时优惠、展会。
             </p>
             <form action="/trade-alert" method="get" className="space-y-2">
               <input
@@ -301,7 +301,7 @@ export default async function BlogIndexPage({
 }
 
 export const metadata = {
-  title: "采购行业资讯——Huayuesc 博客",
+  title: "采购行业资讯——Huayuesc博客",
   description:
-    "分析价格趋势、展会、税收政策、越南采购商案例及中国供应商概况。由 Huayuesc 团队每周更新。",
+    "分析价格趋势、展会、税收政策、越南采购商案例及中国供应商概况。由Huayuesc团队每周更新。",
 };

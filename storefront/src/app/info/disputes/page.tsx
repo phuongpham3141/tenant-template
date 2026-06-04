@@ -664,7 +664,7 @@ export default function KhieuNaiPage() {
         >
           <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">现在就要发起投诉？</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            登录采购商控制台，选择需投诉的订单，点击“发起投诉”。系统自动冻结担保账户并启动 7 步流程。情形严重时也可拨打 24/7 紧急热线。
+            登录采购商控制台，选择需投诉的订单，点击“发起投诉”。系统自动冻结担保账户并启动7步流程。情形严重时也可拨打24/7紧急热线。
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
@@ -687,7 +687,7 @@ export default function KhieuNaiPage() {
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            第 1 层级（对话）和第 2 层级（华越调解）完全免费。第 3 层级（VIAC 河内仲裁）费用 $2,000-8,000——按裁决由败诉方承担。CSR 将争议处理系统作为交易保障的核心组成部分进行投入，不额外收费。
+            第1层级（对话）和第2层级（华越调解）完全免费。第3层级（VIAC河内仲裁）费用$2,000-8,000——按裁决由败诉方承担。CSR将争议处理系统作为交易保障的核心组成部分进行投入，不额外收费。
           </div>
         </div>
       </section>
@@ -697,5 +697,5 @@ export default function KhieuNaiPage() {
 
 export const metadata = {
   title: "投诉与争议 — 华越争议解决",
-  description: "三级争议解决体系：直接对话、依据 NĐ 22/2017 号的华越调解、依据 1958 年纽约公约的 VIAC 河内仲裁。证据充分时多数案件以有利于采购商的结果收场，平均 3.2 天解决。24/7 热线：+86 181-2225-6999。",
+  description: "三级争议解决体系：直接对话、依据 NĐ 22/2017 号的华越调解、依据 1958 年纽约公约的 VIAC 河内仲裁。证据充分时，多数案件以有利于采购商的结果收场，平均 3.2 天解决。24/7 热线：+86 181-2225-6999。",
 };

@@ -5,8 +5,8 @@ import { FACTORIES } from "@/data/home";
 
 const INDUSTRIES = ["全部行业", "陶瓷与材料", "家具与家居用品", "卫浴洁具", "灯具照明", "橱柜与整体家居", "门窗"];
 const PROVINCES = ["全部省份", "广东", "浙江", "福建", "山东", "江苏", "四川"];
-const RATINGS = ["全部评级", "5 星", "4.5 星以上", "4 星以上"];
-const YEARS = ["全部成立年限", "15 年以上", "10–15 年", "5–10 年", "5 年以下"];
+const RATINGS = ["全部评级", "5星", "4.5星以上", "4星以上"];
+const YEARS = ["全部成立年限", "15年以上", "10–15年", "5–10年", "5年以下"];
 const SIZES = ["全部规模", "大型企业（>500 名员工）", "中型（100–500）", "小型（<100）"];
 const SORTS = [
   { v: "newest", l: "最新" },
@@ -26,7 +26,7 @@ export default function SupplierDiscoverPage() {
             <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 发现供应商</div>
             <h1 className="text-[22px] font-bold text-ink">发现供应商</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              4,500 余家工厂已通过华越认证，可按行业、生产区域、规模及成立年份筛选。此处每家供应商均至少有 1 笔与越南采购商的成功订单，并可使用中文沟通。
+              4,500余家工厂已通过华越认证，可按行业、生产区域、规模及成立年份筛选。此处每家供应商均至少有1笔与越南采购商的成功订单，并可使用中文沟通。
             </p>
           </div>
 

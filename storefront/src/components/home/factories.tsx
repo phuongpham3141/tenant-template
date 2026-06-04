@@ -63,7 +63,7 @@ function initials(name: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-/** 由成立年份计算 "X 年"（快照 NOW = 2026，保证 SSR 稳定）。 */
+/** 由成立年份计算 "X年"（快照 NOW = 2026，保证 SSR 稳定）。 */
 function yearsBadge(founded?: string): string | null {
   if (!founded) return null;
   const m = founded.match(/(\d{4})/);

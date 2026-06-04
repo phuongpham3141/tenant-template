@@ -95,7 +95,7 @@ export default function RegisterFactoryPage() {
             </div>
             <div className="flex justify-between">
               <span>⏱ 上线周期</span>
-              <b>~30 天</b>
+              <b>约 30 天</b>
             </div>
           </div>
         </div>
@@ -181,10 +181,10 @@ export default function RegisterFactoryPage() {
                       required
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>制造商（Manufacturer）</option>
-                      <option>制造商 + 贸易（Manufacturer + Trading）</option>
-                      <option>贸易公司（Trading Company）</option>
-                      <option>分销商 / 代理（Distributor / Agent）</option>
+                      <option>制造商</option>
+                      <option>制造商 + 贸易</option>
+                      <option>贸易公司</option>
+                      <option>分销商/代理</option>
                     </select>
                   </div>
                   <div>
@@ -250,7 +250,7 @@ export default function RegisterFactoryPage() {
                     </label>
                     <input
                       name="capacity"
-                      placeholder="例：200,000 pcs / month"
+                      placeholder="例：200,000 件/月"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
@@ -260,7 +260,7 @@ export default function RegisterFactoryPage() {
                     </label>
                     <input
                       name="moq"
-                      placeholder="例：500 pcs / 50 kg / 1×20 集装箱"
+                      placeholder="例：500 件 / 50 千克 / 1×20 集装箱"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
@@ -272,10 +272,10 @@ export default function RegisterFactoryPage() {
                       name="leadTime"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>7 – 15 天</option>
-                      <option>15 – 30 天</option>
-                      <option>30 – 45 天</option>
-                      <option>45 – 60 天</option>
+                      <option>7–15 天</option>
+                      <option>15–30 天</option>
+                      <option>30–45 天</option>
+                      <option>45–60 天</option>
                       <option>&gt; 60 天</option>
                     </select>
                   </div>
@@ -315,7 +315,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      年出口额（USD）
+                      年出口额（美元）
                     </label>
                     <select
                       name="revenue"
@@ -402,7 +402,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      微信 / WhatsApp
+                      微信/WhatsApp
                     </label>
                     <input
                       name="im"
@@ -535,4 +535,4 @@ export default function RegisterFactoryPage() {
   );
 }
 
-export const metadata = { title: "工厂注册 — Huayuesc" };
+export const metadata = { title: "工厂注册 — 华越供应链" };
