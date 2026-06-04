@@ -719,7 +719,7 @@ export default function DatMauPage() {
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            样品 <$200 依据 NĐ 134/2016 免征进口税 + 增值税。交易保障适用于所有样品。90 天内下达 ≥$5K 起订量时 100% 返还产品费 + 打样费。
+            样品 &lt;$200 依据 NĐ 134/2016 免征进口税 + 增值税。交易保障适用于所有样品。90 天内下达 ≥$5K 起订量时 100% 返还产品费 + 打样费。
           </div>
         </div>
       </section>
