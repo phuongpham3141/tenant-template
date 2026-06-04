@@ -1,22 +1,22 @@
 /**
- * 金意陶 6 大系列的丰富元数据 —— 用于为 SKU 详情页渲染长篇
- * 营销内容，而无需为每个 SKU 单独撰写。
+ * Rich metadata for the 6 KITO 金意陶 series — used to render long-form
+ * marketing content for SKU detail pages WITHOUT writing each SKU separately.
  *
- * 以 PartnerProduct 的 `seriesOriginal`（汉字）为系列键 —— 须与
- * catalogs/kito.ts 中设定的字符串完全一致。
+ * Keyed by the PartnerProduct `seriesOriginal` (Chinese characters) — must
+ * match exactly the string set in catalogs/kito.ts.
  *
- * 每个条目包含：
- *   - story:        系列品牌故事（3-4 段）
- *   - heritage:     系列的技术传承 + 技术特征
- *   - technicalSpecs: 完整参数表（EN/ISO 标准技术参数）
- *   - manufacturing: 突出的生产工艺
- *   - careGuide:    清洁 + 保养指南
- *   - installation: 安装注意事项
- *   - certifications: 质量认证
- *   - packaging:    包装 + 运输
- *   - whyChoose:    选择该系列的理由
- *   - projectShowcase: 参考项目示例
- *   - faq:          常见问题
+ * Each entry includes:
+ *   - story:        The series brand story (3-4 paragraphs)
+ *   - heritage:     The series' technical heritage + engineering characteristics
+ *   - technicalSpecs: Full spec table (EN/ISO standard technical parameters)
+ *   - manufacturing: Notable manufacturing processes
+ *   - careGuide:    Cleaning + maintenance guide
+ *   - installation: Installation notes
+ *   - certifications: Quality certifications
+ *   - packaging:    Packaging + shipping
+ *   - whyChoose:    Reasons to choose this series
+ *   - projectShowcase: Reference project examples
+ *   - faq:          Frequently asked questions
  */
 
 export type SeriesMeta = {
@@ -34,80 +34,80 @@ export type SeriesMeta = {
 };
 
 const COMMON_CERTS = [
-  "ISO 9001:2015 —— 质量管理",
-  "ISO 14001:2015 —— 环境管理",
-  "CCC —— 中国强制性认证（China Compulsory Certification）",
-  "EN 14411 Bla —— 欧洲瓷砖标准（吸水率 < 0.5%）",
-  "中国驰名商标 —— 中国知名商标",
-  "GB/T 19001 —— 国家质量管理体系",
+  "ISO 9001:2015 — Quality management",
+  "ISO 14001:2015 — Environmental management",
+  "CCC — China Compulsory Certification",
+  "EN 14411 Bla — European ceramic tile standard (water absorption < 0.5%)",
+  "中国驰名商标 — Well-Known Trademark of China",
+  "GB/T 19001 — National quality management system",
 ];
 
 const COMMON_MFG = [
-  "佛山三水 + 景德镇生产集群",
-  "萨克米（Sacmi）16,800 吨液压压机 —— 意大利标准",
-  "250 米长窑炉，1,230°C 烧制，60 小时烧结",
-  "高分辨率 600 dpi 3D 数码印刷系统 —— 来自意大利 Tecnoferrari",
-  "每片 100% 经 AI 相机检测微米级缺陷",
-  "100% 水 + 泥回收系统 —— 获 ISO 14001 环境认证",
+  "Foshan Sanshui + Jingdezhen production cluster",
+  "Sacmi 16,800-ton hydraulic press — Italian standard",
+  "250-meter kiln, fired at 1,230 °C, 60-hour sintering",
+  "3D digital printing system at 600 dpi resolution — from Tecnoferrari (Italy)",
+  "100% per-tile inspection by AI cameras that detect micron-level defects",
+  "100% water + sludge recycling system — ISO 14001 environmental certified",
 ];
 
 const COMMON_PACKAGING = [
-  { label: "每箱规格", value: "按瓷砖尺寸 —— 详见 SKU" },
-  { label: "每箱重量", value: "20 – 30 kg（视 SKU 而定）" },
-  { label: "每托盘箱数", value: "30 – 48 箱" },
-  { label: "每 20ft 集装箱托盘数", value: "20 – 22 托盘" },
-  { label: "每 40ft HQ 集装箱托盘数", value: "44 – 46 托盘" },
-  { label: "保管", value: "干燥处，避免阳光直射，最多堆叠 3 托盘" },
+  { label: "Specification per carton", value: "By tile size — see SKU details" },
+  { label: "Weight / carton", value: "20 – 30 kg (depending on SKU)" },
+  { label: "Cartons / pallet", value: "30 – 48 cartons" },
+  { label: "Pallets / 20ft container", value: "20 – 22 pallets" },
+  { label: "Pallets / 40ft HQ container", value: "44 – 46 pallets" },
+  { label: "Storage", value: "Dry place, out of direct sunlight, stack a maximum of 3 pallets" },
 ];
 
 const COMMON_INSTALL = [
-  "施工前让瓷砖在室内环境中静置 ≥ 24 小时（适应环境）",
-  "使用 C2TE 瓷砖胶（可变形，符合 EN 12004）—— 规格 ≥ 600×600 时切勿使用传统水泥砂浆",
-  "伸缩缝最小 1.5 mm —— 使用金意陶原厂十字定位器",
-  "≤ 600×600 瓷砖用 10 mm 齿形抹刀，大规格用 12 mm 抹刀",
-  "铺贴 24 小时后方可轻踏，72 小时后方可填缝",
-  "潮湿区域（卫浴、厨房）使用双组分环氧填缝剂填缝",
+  "Let tiles rest in the interior environment for ≥ 24h before installation (acclimation)",
+  "Use C2TE tile adhesive (deformable, per EN 12004) — DO NOT use traditional cement mortar for formats ≥ 600×600",
+  "Minimum 1.5 mm expansion joint — use genuine KITO cross spacers",
+  "10 mm notched trowel for tiles ≤ 600×600, 12 mm trowel for large formats",
+  "Light foot traffic only after 24 hours; grout only after 72 hours",
+  "Grout with two-part epoxy in wet areas (bathrooms, kitchens)",
 ];
 
 const COMMON_CARE = [
   {
-    title: "日常清洁",
-    desc: "用软布或超细纤维拖把蘸温水 + pH 中性（5-9）温和清洁剂擦拭。切勿使用强酸、强碱或金属工具。",
+    title: "Daily cleaning",
+    desc: "Wipe with a soft cloth or microfiber mop using warm water + a mild pH-neutral cleaner (5-9). DO NOT use strong acids, strong alkalis, or metal tools.",
   },
   {
-    title: "顽固污渍",
-    desc: "油渍：用稀释的洗洁精。咖啡/红酒：立即用温水 + 肥皂擦拭。锈迹：用 5% 草酸。笔迹：用 70% 酒精。",
+    title: "Stubborn stains",
+    desc: "Grease: use diluted dish soap. Coffee / red wine: wipe immediately with warm water + soap. Rust: use 5% oxalic acid. Ink: use 70% alcohol.",
   },
   {
-    title: "定期保养",
-    desc: "每 3-6 个月：用瓷砖专用清洁剂（Fila Cleaner 或同类）擦拭，恢复光泽与釉面。",
+    title: "Periodic maintenance",
+    desc: "Every 3-6 months: wipe with a dedicated ceramic tile cleaner (Fila Cleaner or equivalent) to restore gloss and the glaze layer.",
   },
   {
-    title: "预防",
-    desc: "在入口处放置擦鞋垫，减少砂砾刮伤。在桌椅脚下粘贴橡胶垫。避免拖拽重物。",
+    title: "Prevention",
+    desc: "Place a doormat at the entrance to reduce sand + grit that causes scratches. Stick rubber pads under furniture legs. Avoid dragging heavy objects.",
   },
 ];
 
 const COMMON_FAQ_BASE = [
   {
-    q: "产品是否有质保？期限多久？",
-    a: "金意陶承诺对生产缺陷（翘曲 > 0.5%、釉面针孔、平整度不达标）提供 25 年质保（须按指引施工）。若客户选用套餐服务，华越越南额外提供 2 年运输 + 施工质保。",
+    q: "Is the product under warranty? For how long?",
+    a: "KITO offers a 25-year warranty on manufacturing defects (warping > 0.5%, glaze pitting, out-of-flatness) when installed per the guidelines. Huayue Vietnam adds a 2-year warranty on shipping + installation if you take the service bundle.",
   },
   {
-    q: "可否定制颜色 / 纹理？",
-    a: "项目订单 ≥ 5,000 ㎡ 或 ≥ 5 万美元时，金意陶接受定制纹理 + 颜色。打样 R&D 周期 30-45 天，起订量 3,000 ㎡。请联系华越广州采购报价。",
+    q: "Can I order custom colors / veining?",
+    a: "For project orders ≥ 5,000 m² or ≥ 50,000 USD, KITO accepts custom veining + color. Sample R&D takes 30-45 days, MOQ 3,000 m². Contact Huayue Guangzhou sourcing for a quote.",
   },
   {
-    q: "是否支持 DDP 运至越南？",
-    a: "支持。华越一站式 EXW 佛山 → DDP 河内/胡志明市/岘港仓库。含进口税、增值税、境内运输。DDP 价比单独进口低 15-20%。24 小时内报价。",
+    q: "Do you support DDP shipping to Vietnam?",
+    a: "Yes. Huayue handles the full package from EXW Foshan to DDP delivery to a Hanoi / Ho Chi Minh City / Da Nang warehouse. This includes import duty, VAT, and domestic transport. DDP pricing is 15-20% cheaper than importing on your own. Quote within 24h.",
   },
   {
-    q: "最小起订量是多少㎡？",
-    a: "现货起订量：50 ㎡/SKU。排产起订量：3,000 ㎡/SKU。可在同一 20ft / 40ft HQ 集装箱内混装多个 SKU。",
+    q: "What is the minimum order in m²?",
+    a: "In-stock MOQ: 50 m² / SKU. Made-to-order MOQ: 3,000 m² / SKU. You can mix several SKUs in one 20ft / 40ft HQ container.",
   },
   {
-    q: "交货周期？",
-    a: "佛山现货：7-10 个工作日运至越南。新排产：35-45 个工作日 + 7-10 天运输 = 共 45-55 天。",
+    q: "What is the delivery time?",
+    a: "In-stock at the Foshan warehouse: 7-10 business days to Vietnam. New made-to-order: 35-45 business days + 7-10 days shipping = 45-55 days total.",
   },
 ];
 
@@ -115,75 +115,75 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 经典·糖果釉 Classic Candy Glaze ──────────────────────────────
   "经典·糖果釉": {
     story:
-      "标语：「看得见的甜蜜蜜」。\n\n2014 年，金意陶成为中国首家将西班牙糖果釉（sugar glaze）引入工业化量产的制造商。至今历经 7 代研发，金意陶糖果釉已成为中国高端陶瓷的设计标志 —— 表面如糖果般细腻、珠光纯净、奶油色调雅致。\n\n金意陶每片糖果釉瓷砖经过 23 道检测工序 —— 从西班牙陶丽西（Torrecid）进口釉料的配料到 1,230°C 下 60 小时烧结。成果：表面绝对平整、无气泡、无波纹 —— LED 灯照射无瑕疵。",
+      "Tagline: 「看得见的甜蜜蜜」 — Sweetness you can see.\n\nIn 2014, KITO became the first Chinese manufacturer to bring Spanish sugar glaze (candy glaze) into industrial-scale production. Today, after 7 generations of R&D, KITO's candy glaze has become a design icon of China's premium ceramics industry — a candy-smooth surface, a pure pearly sheen, and a refined cream palette.\n\nEvery KITO candy-glaze tile passes through 23 inspection stages — from blending imported Torrecid (陶丽西, Spain) glaze to 60 hours of sintering at 1,230 °C. The result: an absolutely flat surface with no air bubbles and no ripples — no defects visible under LED inspection.",
     heritage:
-      "拥有 4 项糖果釉技术专利。第 4 代糖果釉曾获中国科协颁发的「2018 建筑行业科技突破奖」。",
+      "Holds 4 proprietary patents on candy-glaze technology. Its 4th-generation candy glaze received the 'Construction Industry Science & Technology Breakthrough 2018' award from the China Association for Science and Technology.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Vitrified porcelain —— 全瓷化瓷质" },
-      { label: "吸水率", value: "≤ 0.5%（符合 EN 14411 Bla）" },
-      { label: "抗折强度（Modulus of Rupture）", value: "≥ 45 MPa" },
-      { label: "表面硬度", value: "莫氏 7（相当于石英）" },
-      { label: "干态防滑", value: "R10（DIN 51130）" },
-      { label: "耐磨", value: "PEI 4 —— 适合高人流区域" },
-      { label: "翘曲度", value: "± 0.3%（国际标准允许 ± 0.5%）" },
-      { label: "表面平整度", value: "± 0.2 mm/m（标准 0.5 mm/m）" },
-      { label: "耐化学性", value: "A 级（耐酸碱，依 ISO 10545-13）" },
-      { label: "耐污性", value: "5 级（最高 —— ISO 10545-14）" },
-      { label: "耐热震", value: "-5°C → 50°C 循环 10 次不裂" },
-      { label: "VOC 排放", value: "零排放 —— 达中国绿色建筑三星" },
+      { label: "Body material", value: "Vitrified porcelain — fully vitrified" },
+      { label: "Water absorption", value: "≤ 0.5% (meets EN 14411 Bla)" },
+      { label: "Modulus of Rupture", value: "≥ 45 MPa" },
+      { label: "Surface hardness", value: "Mohs 7 (equivalent to quartz)" },
+      { label: "Dry slip resistance", value: "R10 (DIN 51130)" },
+      { label: "Scratch resistance", value: "PEI 4 — suited to high-traffic areas" },
+      { label: "Warping", value: "± 0.3% (international standard allows ± 0.5%)" },
+      { label: "Surface flatness", value: "± 0.2 mm/m (standard is 0.5 mm/m)" },
+      { label: "Chemical resistance", value: "Class A (acid + alkali resistant per ISO 10545-13)" },
+      { label: "Stain resistance", value: "Class 5 (highest — ISO 10545-14)" },
+      { label: "Thermal shock resistance", value: "10 cycles -5 °C → 50 °C without cracking" },
+      { label: "VOC emissions", value: "Zero emission — meets China 3-star Green Building" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "糖果釉由西班牙陶丽西（Torrecid）进口 —— 2014 年起的研发伙伴",
-      "金意陶专属珠脉（pearl line）印刷技术 —— 第 7 代",
-      "23 道质量检测工序 —— LED 灯照射剔除带气泡的砖",
+      "Candy glaze imported from Torrecid (陶丽西), Spain — R&D partner since 2014",
+      "KITO proprietary pearl-line printing technology — gen 7",
+      "23 quality inspection stages — LED inspection removes tiles with air bubbles",
     ],
     careGuide: COMMON_CARE,
     installation: COMMON_INSTALL,
     certifications: [
       ...COMMON_CERTS,
-      "专利 ZL2014203456789.X —— 7 层糖果釉技术",
-      "专利 ZL2018201234567.Y —— 珠脉印刷系统",
-      "2018 中国科技突破奖 —— 建筑行业",
+      "Patent ZL2014203456789.X — 7-layer candy-glaze technology",
+      "Patent ZL2018201234567.Y — pearl-line printing system",
+      "China Science & Technology Breakthrough Award 2018 — construction industry",
     ],
     packaging: COMMON_PACKAGING,
     whyChoose: [
       {
         icon: "✨",
-        title: "表面细腻如镜",
-        desc: "平整度 ± 0.2 mm/m —— 是国际标准的 2.5 倍。将玻璃尺置于砖面，不见光线透过。",
+        title: "Glass-smooth surface",
+        desc: "Flatness of ± 0.2 mm/m — 2.5 times the international standard. Place a glass ruler on the tile and no light passes through.",
       },
       {
         icon: "🎨",
-        title: "欧洲高端色调",
-        desc: "釉料从西班牙陶丽西进口 —— 为 80% 意大利高端瓷砖品牌供釉。",
+        title: "Premium European palette",
+        desc: "Glaze imported from Torrecid, Spain — the glaze supplier for 80% of premium Italian tile brands.",
       },
       {
         icon: "💎",
-        title: "专属珠光效果",
-        desc: "第 7 代珠脉印刷技术 —— 反射自然光，日出时呈现熠熠光泽。",
+        title: "Exclusive pearlescent effect",
+        desc: "7th-generation pearl-line printing technology — reflecting natural light for a shimmering effect when the sun rises.",
       },
       {
         icon: "🏆",
-        title: "25 年质保",
-        desc: "金意陶原厂承诺 + 华越越南 2 年施工质保。",
+        title: "25-year warranty",
+        desc: "A genuine KITO commitment + a 2-year installation warranty from Huayue Vietnam.",
       },
     ],
     projectShowcase: [
-      "上海万达瑞华五星级酒店 —— 主大堂 + VIP 房铺贴",
-      "北京恒隆广场 —— 爱马仕、香奈儿门店门面墙铺贴",
-      "海南悦榕庄度假村 —— 总统套房铺贴",
-      "昆明玉龙山别墅群 —— 200 栋别墅全系列采用",
+      "Wanda Reign 5-star Hotel, Shanghai — main lobby + VIP rooms cladding",
+      "Plaza 66 mall, Beijing — storefront facade cladding for Hermès, Chanel",
+      "Banyan Tree Resort, Hainan — presidential suite cladding and flooring",
+      "Yulong Mountain (玉龙山) villa cluster, Kunming — 200 villas use this full series",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "糖果釉比哑面釉更容易刮花吗？",
-        a: "不会。表面硬度莫氏 7（相当于天然石英）。要刮花糖果釉需用比石英砂更硬的物体 —— 家居环境中几乎没有。实测：普通钢刀刮不花。",
+        q: "Does candy glaze scratch more easily than matte glaze?",
+        a: "No. Surface hardness is Mohs 7 (equivalent to natural quartz). To scratch candy glaze you would need something harder than quartz sand — almost nothing in the home is that hard. Test: a regular steel knife will NOT scratch it.",
       },
       {
-        q: "亮面会让房间湿滑吗？",
-        a: "干态防滑 R10 —— 对客厅 + 卧室 + 大堂安全。但不建议用于卫浴、泳池、户外门面（需 R11/R12 —— 参见极致系列或匠心系列）。",
+        q: "Does the glossy surface make a room slippery?",
+        a: "R10 dry slip resistance — safe for living rooms, bedrooms, and lobbies. However, it is NOT recommended for bathrooms, pools, or outdoor facades (which need R11/R12 — see the Ultimate or Craftsman's Heart series).",
       },
     ],
   },
@@ -191,92 +191,92 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 极致·真石釉 True Stone Glaze ──────────────────────────────────
   "极致·真石釉": {
     story:
-      "标语：「源于石 胜于石」。\n\n当天然石材日益稀缺昂贵，金意陶提出疑问：能否打造一种媲美真石、却在耐用性与多样性上超越它的材料？历经 8 年研发，极致·真石釉系列诞生 —— 石釉技术达国际水平，石纹从陶瓷釉层中「自然生长」。\n\n不同于普通石纹印刷砖（仅印于表面 —— 磨掉即失纹），金意陶真石釉的纹理贯穿 3 层釉（深 3 mm）。每片都是孤品 —— 无两片相同，如同天然石材。耐水、耐热、耐污性是天然大理石的 10 倍。",
+      "Tagline: 「源于石 胜于石」 — Born of stone, surpassing stone.\n\nAs natural stone grows ever scarcer and more expensive, KITO asked: can we create a material that replicates real stone yet surpasses it in durability and variety? After 8 years of R&D, the True Stone Glaze series was born — a world-class true-stone-glaze technology whose stone veining 'grows naturally' from within the ceramic glaze.\n\nUnlike ordinary stone-print tiles (printed only on the surface — grind it away and the veining is gone), KITO true stone glaze has veining running through all 3 glaze layers (3 mm deep). Each slab is an original — no two alike, just like natural stone. Its resistance to water, heat, and stains is 10 times greater than natural marble.",
     heritage:
-      "拥有 WIPO 国际专利。真石釉（True Stone Glaze）技术被中国陶瓷协会认定为「2020 中国仿石砖行业标准」。",
+      "International WIPO patent. True Stone Glaze technology was recognized as the 'China imitation-stone tile industry standard 2020' by the China Ceramic Industry Association.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Vitrified porcelain，3 层石釉" },
-      { label: "吸水率", value: "≤ 0.3%（超 EN 14411 Bla 标准）" },
-      { label: "抗折强度", value: "≥ 50 MPa" },
-      { label: "破坏强度", value: "≥ 1,700 N（ISO 10545-4）" },
-      { label: "釉纹深度", value: "3 mm（3 层独立釉）" },
-      { label: "干/湿态防滑", value: "R10 / R11（DIN 51130）" },
-      { label: "耐磨", value: "PEI 4 —— 1,500 转不磨损" },
-      { label: "耐酸性", value: "ULA —— 耐强酸（ISO 10545-13）" },
-      { label: "耐热震", value: "-5°C → 145°C 循环 10 次不裂" },
-      { label: "抗冻", value: "达 -15°C → 20°C 循环 100 次（EN 202）" },
-      { label: "湿态摩擦系数", value: "≥ 0.4（达美国 ADA 标准）" },
-      { label: "放射性", value: "A 类（居家安全 —— GB 6566）" },
+      { label: "Body material", value: "Vitrified porcelain with a 3-layer stone glaze" },
+      { label: "Water absorption", value: "≤ 0.3% (exceeds EN 14411 Bla)" },
+      { label: "Modulus of Rupture", value: "≥ 50 MPa" },
+      { label: "Breaking strength", value: "≥ 1,700 N (ISO 10545-4)" },
+      { label: "Glaze veining depth", value: "3 mm (3 independent glaze layers)" },
+      { label: "Dry / wet slip resistance", value: "R10 / R11 (DIN 51130)" },
+      { label: "Scratch resistance", value: "PEI 4 — 1,500 rotations without scratching" },
+      { label: "Acid resistance", value: "ULA — resists strong acids (ISO 10545-13)" },
+      { label: "Thermal shock resistance", value: "10 cycles -5 °C → 145 °C without cracking" },
+      { label: "Frost resistance", value: "Passes 100 cycles -15 °C → 20 °C (EN 202)" },
+      { label: "Wet coefficient of friction", value: "≥ 0.4 (meets US ADA standard)" },
+      { label: "Radioactive emission", value: "Class A (safe for residences — GB 6566)" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "3 层石釉真石釉技术 —— 金意陶专利",
-      "8K 扫描天然石纹 + AI 生成不重复纹理 —— 每片都是孤品",
-      "16 级抛光 —— 高端半抛（semi-polished）表面",
+      "3-layer True Stone Glaze technology — KITO proprietary patent",
+      "8K scanning of natural stone veining + AI-generated non-repeating veining — each slab an original",
+      "16-stage polishing — premium semi-polished surface",
     ],
     careGuide: COMMON_CARE,
     installation: [
       ...COMMON_INSTALL,
-      "大规格 900×1800：必须 2 人施工 + 12 mm 齿形抹刀 + 背涂（背面也满涂胶）",
-      "切割大规格瓷砖用桥式锯金刚石锯片 —— 切勿使用手持切割机",
-      "大规格每 5 米设最小 5 mm 结构伸缩缝（承受热胀冷缩）",
+      "LARGE FORMAT 900×1800: requires 2 installers + a 12 mm notched trowel + back-buttering (adhesive applied to the full back face)",
+      "Cut large-format tiles with a diamond-blade bridge saw — DO NOT use a handheld cutter",
+      "Minimum 5 mm structural expansion joint every 5 meters for large formats (to accommodate thermal expansion)",
     ],
     certifications: [
       ...COMMON_CERTS,
-      "WIPO 专利 PCT/CN2019/078901 —— 3 层真石釉",
-      "中国行业标准 JC/T 2369-2020 —— 仿石砖",
-      "EN 14411 Bla —— 欧洲认证（Test Tile S.r.l. —— 意大利）",
-      "适合绿色建筑三星工程 GB/T 50378",
+      "WIPO patent PCT/CN2019/078901 — 3-layer True Stone Glaze",
+      "China industry standard JC/T 2369-2020 — imitation-stone tile",
+      "EN 14411 Bla — European certification (Test Tile S.r.l. — Italy)",
+      "Suitable for GB/T 50378 3-star Green Building projects",
     ],
     packaging: [
-      { label: "900×1800 规格", value: "1 片/箱 —— 单独托盘" },
-      { label: "600×1200 规格", value: "2 片/箱（1.44 ㎡）" },
-      { label: "800×800 规格", value: "3 片/箱（1.92 ㎡）" },
-      { label: "每 20ft 集装箱托盘", value: "20 托盘 / 660 ㎡ 大规格" },
-      { label: "每 40ft HQ 托盘", value: "44 托盘 / 1,450 ㎡ 大规格" },
-      { label: "包装", value: "松木箱 + 5 cm 泡沫 + 收缩膜 —— 国际防撞标准" },
+      { label: "900×1800 specification", value: "1 tile / carton — separate pallet" },
+      { label: "600×1200 specification", value: "2 tiles / carton (1.44 m²)" },
+      { label: "800×800 specification", value: "3 tiles / carton (1.92 m²)" },
+      { label: "Pallets / 20ft container", value: "20 pallets / 660 m² large format" },
+      { label: "Pallets / 40ft HQ", value: "44 pallets / 1,450 m² large format" },
+      { label: "Packaging", value: "Pine crate + 5 cm foam + shrink film — international impact protection" },
     ],
     whyChoose: [
       {
         icon: "🪨",
-        title: "真石纹贯穿 3 层釉",
-        desc: "石纹深 3 mm —— 磨掉仍有纹。与仅表面印纹的瓷砖（磨即失）截然不同。",
+        title: "Real stone through 3 glaze layers",
+        desc: "Stone veining 3 mm deep — grind it down and the veining remains. Completely different from surface-only print tiles (grind them and it is gone).",
       },
       {
         icon: "💪",
-        title: "比大理石耐用10倍",
-        desc: "破坏强度≥1,700N——是天然大理石的5倍。大理石被玻璃杯砸落会碎，金意陶石釉不碎。",
+        title: "10 times more durable than marble",
+        desc: "Breaking strength ≥ 1,700 N — 5 times that of natural marble. Marble cracks when a glass is dropped on it; KITO stone glaze does not.",
       },
       {
         icon: "🛁",
-        title: "完全耐酸耐水",
-        desc: "不同于大理石（被酸性清洁剂腐蚀），金意陶石釉耐强酸。用于卫浴泳池不担心发黄。",
+        title: "Fully acid- and water-resistant",
+        desc: "Unlike marble (corroded by acidic cleaners), KITO stone glaze resists strong acids. Use it in bathrooms and pools without worrying about yellowing.",
       },
       {
         icon: "📐",
-        title: "行业最大规格——900×1800",
-        desc: "2.7米长的厨房台面仅需1片+1道接缝——几乎如真石般无缝。",
+        title: "Largest format in the industry — 900×1800",
+        desc: "A 2.7 m kitchen countertop needs just 1 slab + 1 joint — nearly seamless, like real stone.",
       },
     ],
     projectShowcase: [
-      "上海丽思卡尔顿总统套房——墙面+地面铺贴",
-      "广州周大福金融中心（530m）大堂——12,000㎡大规格石釉",
-      "香港The One顶层公寓（售价4.6亿美元）——厨房台面+墙面铺贴",
-      "东山安缦度假村——全部水疗房+泳池",
+      "Presidential Suite, The Ritz-Carlton Shanghai — wall cladding + flooring",
+      "CTF Finance Centre lobby, Guangzhou (530m) — 12,000 m² of large-format stone glaze",
+      "Penthouse, The One Hong Kong (priced at 460 million USD) — kitchen countertop + wall cladding",
+      "Aman Dongshan Resort — entire spa + pool",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "900×1800大规格能安全运至越南吗？",
-        a: "能。松木箱 + 5cm 泡沫 + 3 层收缩膜包装 —— 国际运输标准。华越 3 年内已运输逾 50,000 ㎡ 大规格至越南，破损率 < 0.3%（低于行业 1% 水平）。",
+        q: "Can the 900×1800 large format be shipped safely to Vietnam?",
+        a: "Yes. Pine crate + 5cm foam + 3-layer shrink film — international shipping standard. Over 3 years, Huayue has shipped more than 50,000 m² of large format to Vietnam with a breakage rate < 0.3% (below the industry's 1%).",
       },
       {
-        q: "能定制圆角厨房台面吗？",
-        a: "能。金意陶提供按图纸预加工服务——开挖水槽孔、R5/R10/R15倒圆角、45°倒角。在佛山工厂加工，成品运至越南。加工附加费80元/㎡。",
+        q: "Can you make a kitchen countertop with rounded edges?",
+        a: "Yes. KITO offers pre-fabrication to drawing — sink cutouts, R5/R10/R15 edge rounding, 45° edge mitering. Done at the Foshan factory and shipped to Vietnam finished. Fabrication surcharge is 80 CNY/m².",
       },
       {
-        q: "我想要与卡拉拉原版完全一致的Calacatta纹理——可以吗？",
-        a: "可以。极致系列有卡拉拉白（KGQM900181）—— 纹理扫描自意大利卡拉拉矿区的原始 Calacatta 石块。即便请意大利设计师现场鉴别，在 > 1m 距离也无法与真石区分。",
+        q: "I want real Calacatta veining that looks just like original Carrara — is that possible?",
+        a: "Yes. The Ultimate series includes Calacatta White (KGQM900181) — veining scanned from an original Calacatta block at the Carrara quarry in Italy. Even an Italian designer watching cannot tell it apart from real marble at a distance > 1m.",
       },
     ],
   },
@@ -284,76 +284,76 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 臻品·艺术系 Art Series ──────────────────────────────────────
   "臻品·艺术系": {
     story:
-      "标语：「雅奢高级 臻品之作」。\n\n当瓷砖不再只是建材，而成为艺术作品 —— 这正是臻品系列的理念。每片瓷砖由金意陶 28 位建筑师 + 视觉艺术家组成的设计团队打造，并与中国及欧洲艺术博物馆合作。\n\n技术特征：「外柔内刚」—— 真石釉表面如水墨画般柔和，结合精细刻纹 + 凹陷边缘的白色结晶，再现天然石材。尤其适合 art-deco 项目、艺术画廊、高端精品酒店。",
+      "Tagline: 「雅奢高级 臻品之作」 — Elegant luxury, a masterpiece.\n\nWhen a ceramic tile is no longer just a building material but becomes a work of art — that is the philosophy of the Masterpiece series. Each tile is designed by KITO's in-house team of 28 architects + visual artists, in collaboration with art museums in China and Europe.\n\nEngineering signature: 'soft outside, strong inside' (外柔内刚) — a true-stone-glaze surface as gentle as an ink-wash painting, combined with intricate engraved veining + white crystallization along recessed edges to recreate natural stone. Especially suited to art-deco projects, art galleries, and premium boutique hotels.",
     heritage:
-      "与徐冰、蔡国强等5位知名当代艺术家合作发行限量版。荣获2022红点设计奖金奖与2023 iF设计金奖。",
+      "Collaborated with 5 renowned contemporary artists (徐冰 Xu Bing, 蔡国强 Cai Guo-Qiang, and others) to release limited editions. Won Gold at the Red Dot Design Award 2022 and iF Design Gold 2023.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Premium vitrified porcelain——高端瓷质" },
-      { label: "吸水率", value: "≤0.3%（超国际标准）" },
-      { label: "抗折强度", value: "≥ 48 MPa" },
-      { label: "破坏强度", value: "≥ 1,500 N" },
-      { label: "印刷工艺", value: "4K数码+匠人手工施釉" },
-      { label: "施釉次数", value: "5-7层釉，每层单独烧制" },
-      { label: "孤品率", value: "100%——无两片相同" },
-      { label: "防滑", value: "R10（DIN 51130）" },
-      { label: "耐磨", value: "PEI 4" },
-      { label: "耐热震", value: "循环10次不裂" },
-      { label: "平整度", value: "± 0.3 mm/m" },
-      { label: "耐污", value: "5级——最高" },
+      { label: "Body material", value: "Premium vitrified porcelain" },
+      { label: "Water absorption", value: "≤ 0.3% (exceeds international standard)" },
+      { label: "Modulus of Rupture", value: "≥ 48 MPa" },
+      { label: "Breaking strength", value: "≥ 1,500 N" },
+      { label: "Printing technique", value: "4K digital + hand-applied artisan glaze" },
+      { label: "Glaze printing passes", value: "5-7 glaze layers, each fired separately" },
+      { label: "One-of-a-kind ratio", value: "100% — no two tiles alike" },
+      { label: "Slip resistance", value: "R10 (DIN 51130)" },
+      { label: "Scratch resistance", value: "PEI 4" },
+      { label: "Thermal shock resistance", value: "10 cycles without cracking" },
+      { label: "Flatness", value: "± 0.3 mm/m" },
+      { label: "Stain resistance", value: "Class 5 — highest" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "内部28位建筑师+视觉艺术家设计团队",
-      "5-7层釉逐层单独烧制——单片总生产时间96小时",
-      "匠人手工处理凹陷边缘+最终白色结晶",
-      "每批仅500-2000㎡——限量以保持孤品性",
+      "In-house design team of 28 architects + visual artists",
+      "5-7 glaze layers fired separately — total production time of 96 hours/tile",
+      "Artisans hand-finish the recessed edges + final white crystallization",
+      "Each batch is only 500-2,000 m² — limited to preserve one-of-a-kind character",
     ],
     careGuide: COMMON_CARE,
     installation: COMMON_INSTALL,
     certifications: [
       ...COMMON_CERTS,
-      "2022红点设计奖——金奖（山雾系列）",
-      "2023 iF设计金奖——星座系列",
-      "2022中国陶瓷设计奖——系列内5个SKU",
+      "Red Dot Design Award 2022 — Gold (Mountain Mist series)",
+      "iF Design Gold Award 2023 — Constellation series",
+      "China Ceramic Design Award 2022 — 5 SKUs in the series",
     ],
     packaging: COMMON_PACKAGING,
     whyChoose: [
       {
         icon: "🎨",
-        title: "每片皆为孤品",
-        desc: "无两片相同。孤品率100%——如油画般，没有复制版本。",
+        title: "Every tile is a one-of-a-kind work",
+        desc: "No two tiles alike. 100% one-of-a-kind ratio — like an oil painting, with no copies.",
       },
       {
         icon: "🏛️",
-        title: "联袂当代艺术家",
-        desc: "徐冰、蔡国强+另3位艺术家发行限量版——具收藏价值。",
+        title: "Contemporary artist collaborations",
+        desc: "Xu Bing, Cai Guo-Qiang + 3 other artists released limited editions — collectible.",
       },
       {
         icon: "🌟",
-        title: "荣获红点与iF设计奖",
-        desc: "最高国际设计标准——获德国及全球认可。",
+        title: "Red Dot & iF Design winner",
+        desc: "The highest international design standards — recognized in Germany and worldwide.",
       },
       {
         icon: "✋",
-        title: "匠人手工收尾",
-        desc: "凹陷边缘+白色结晶由匠人手工完成——无法100%机器量产。",
+        title: "Artisan hand-finishing",
+        desc: "Recessed edges + white crystallization are hand-finished by artisans — they cannot be 100% machine-produced.",
       },
     ],
     projectShowcase: [
-      "上海龙美术馆当代艺术馆——主大堂",
-      "东京安缦——VIP套房（整面画廊墙）",
-      "香港K11 MUSEA——高端艺术商场空间",
-      "佩斯画廊北京——全球艺术分支机构",
+      "Long Museum of Contemporary Art, Shanghai — main lobby",
+      "Aman Tokyo — VIP suites (the entire gallery wall)",
+      "K11 MUSEA Hong Kong — premium art-mall space",
+      "Pace Gallery Beijing — global art branch",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "每片真的不同吗？如何核验？",
-        a: "100%不同。金意陶出厂前为每片单独拍照+编QR码。扫码可见设计艺术家姓名+序列号+生产日期。可为收藏项目申请孤品证书。",
+        q: "Is every tile really different? How can I verify it?",
+        a: "100% different. KITO photographs and assigns a unique QR code to each tile before it leaves the factory. Scan the QR to see the designer artist's name + serial number + production date. A one-of-a-kind certificate is available for collector projects.",
       },
       {
-        q: "限量版还有货吗？",
-        a: "视SKU而定。山雾（KGYS800801）——首发5,000㎡已售罄，2026年补产剩1,200㎡。星座（KGYS900181）——按单生产，交期60天。请联系华越采购查库存。",
+        q: "Are limited editions still in stock?",
+        a: "It depends on the SKU. Mountain Mist (KGYS800801) — the first release of 5,000 m² is sold out; the 2026 re-production run has 1,200 m² left. Constellation (KGYS900181) — made to order, 60-day lead time. Contact Huayue sourcing to check stock.",
       },
     ],
   },
@@ -361,76 +361,76 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 大美·国风系 Chinese Style ──────────────────────────────────
   "大美·国风系": {
     story:
-      "标语：「大美国风 质感臻选」。\n\n5000 年中华瓷文化浓缩于一个系列。大美·国风系再现 6 段辉煌时期：明代青花、南京云锦、龙泉宋瓷、玉龙、如意纹及苏州古园。\n\n不同于常见的古纹印刷砖，本系列每个 SKU 均通过直接考究博物馆文物（北京故宫博物院、苏州博物馆、景德镇博物馆）来设计。设计团队由 4 位考古学博士 + 12 位高级设计师组成，确保每处线条都忠于历史原版。",
+      "Tagline: 「大美国风 质感臻选」 — Grand Chinese beauty, curated texture.\n\n5,000 years of Chinese ceramic culture distilled into one series. Grand Beauty · Chinese Style recreates 6 golden eras: Ming-dynasty blue-and-white (青花), Nanjing Yunjin cloud brocade (云锦), Longquan Song porcelain (宋瓷), Longxi jade (玉龙), the Ruyi motif (如意), and the classical gardens of Suzhou (苏园).\n\nUnlike the usual antique-motif print tiles, each SKU in this series is designed through direct study of museum artifacts (the Palace Museum in Beijing, the Suzhou Museum, the Jingdezhen Museum). The design team of 4 archaeology PhDs + 12 senior designers ensures every line is faithful to the historical original.",
     heritage:
-      "与北京故宫博物院合作——授权金意陶将200件古文物数字化转化为瓷砖。荣获「2021中国文化遗产保护奖」。",
+      "A partner of the Palace Museum in Beijing (故宫博物院) — which allowed KITO to digitize 200 antique artifacts for adaptation into tile. Won the 'China Cultural Heritage Preservation Award 2021'.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Premium porcelain——景德镇高岭土配料" },
-      { label: "吸水率", value: "≤ 0.5%" },
-      { label: "抗折强度", value: "≥ 45 MPa" },
-      { label: "印刷工艺", value: "4K数码+东方古釉+描金（云锦款）" },
-      { label: "高端款描金", value: "24K 真金 —— SGS 认证" },
-      { label: "防滑", value: "R10" },
-      { label: "耐磨", value: "PEI 4" },
-      { label: "纹样重复率", value: "1/16（每16片有16种不同纹理）" },
-      { label: "古迹修复适用性", value: "达中国「国家级古迹修缮」标准" },
-      { label: "放射性", value: "A类 —— 居家安全" },
-      { label: "环境认证", value: "达绿色建筑三星标准" },
-      { label: "表面寿命", value: "25年UV测试后不褪色" },
+      { label: "Body material", value: "Premium porcelain — Jingdezhen kaolin blend" },
+      { label: "Water absorption", value: "≤ 0.5%" },
+      { label: "Modulus of Rupture", value: "≥ 45 MPa" },
+      { label: "Printing technique", value: "4K digital + classic Eastern glaze + gold leaf (for the Yunjin line)" },
+      { label: "Gold leaf on the premium line", value: "24K gold — SGS certified" },
+      { label: "Slip resistance", value: "R10" },
+      { label: "Scratch resistance", value: "PEI 4" },
+      { label: "Motif repeat ratio", value: "1/16 (16 different patterns per 16 tiles)" },
+      { label: "Heritage restoration capability", value: "Meets China's 'National-level Heritage Restoration' standard" },
+      { label: "Radioactive emission", value: "Class A — safe for residences" },
+      { label: "Environmental certification", value: "Meets 3-star Green Building standard" },
+      { label: "Surface lifespan", value: "No color fading after a 25-year UV test" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "与北京故宫博物院合作 —— 数字化200件古文物",
-      "采用景德镇高岭土配料 —— 千年前的「中华瓷都」",
-      "东方古釉 + 4K印刷技术 —— 精确再现宫廷纹样",
-      "描金款：由景德镇匠人手工24K描金",
+      "Partnership with the Palace Museum in Beijing — digitizing 200 antique artifacts",
+      "Kaolin blend from Jingdezhen — 'the capital of Chinese ceramics' for 1,000 years",
+      "Classic Eastern glaze + 4K printing technology — faithfully recreating imperial court motifs",
+      "24K gold-leaf line: hand-crafted by Jingdezhen artisans",
     ],
     careGuide: COMMON_CARE,
     installation: COMMON_INSTALL,
     certifications: [
       ...COMMON_CERTS,
-      "2021中国文化遗产保护奖",
-      "「国家级古迹修缮」认证 —— 中国文物局",
-      "东方古釉专利第3代",
+      "China Cultural Heritage Preservation Award 2021",
+      "'National-level Heritage Restoration' certification — China Heritage Administration",
+      "Gen-3 classic Eastern glaze patent",
     ],
     packaging: COMMON_PACKAGING,
     whyChoose: [
       {
         icon: "🏛️",
-        title: "考究故宫博物院",
-        desc: "200件古文物正式数字化。历史线条精确 —— 非模糊的「灵感」。",
+        title: "Researched at the Palace Museum",
+        desc: "200 antique artifacts officially digitized. Historically accurate lines — not vague 'inspiration'.",
       },
       {
         icon: "🇨🇳",
-        title: "适合东方项目",
-        desc: "中餐厅、东方主题酒店、寺庙、古迹修缮 —— 唯一达国家级修缮标准的系列。",
+        title: "Ideal for Asian-themed projects",
+        desc: "Chinese restaurants, Asian-themed hotels, temples, heritage restoration — the only series that meets the national-level restoration standard.",
       },
       {
         icon: "✨",
-        title: "24K真金描金款",
-        desc: "云锦系列（KGGF600121）有24K真金描金款，SGS认证 —— 瓷砖市场罕见。",
+        title: "Real 24K gold-leaf line",
+        desc: "The Yunjin series (KGGF600121) includes a real 24K gold-leaf line, SGS certified — rare in the tile market.",
       },
       {
         icon: "🎓",
-        title: "学术型设计团队",
-        desc: "4位考古学博士 + 12位高级设计师 —— 学术品质，非模糊的纹样照搬。",
+        title: "Academic design team",
+        desc: "4 archaeology PhDs + 12 senior designers — academic-grade quality, not vague motif copying.",
       },
     ],
     projectShowcase: [
-      "北京安缦酒店 —— 全部大堂 + VIP套房",
-      "苏州博物馆新分馆 —— 画廊 + 主大堂",
-      "北京大董餐厅 —— 米其林三星",
-      "香港迪士尼乐园度假区 —— 中华古街区",
+      "Aman Beijing Hotel — entire lobby + VIP suites",
+      "Suzhou Museum new branch — gallery + main lobby",
+      "Da Dong (大董) restaurant, Beijing — Michelin 3-star",
+      "Hong Kong Disney Resort — Chinese Old Town quarter",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "能用于越南的历史古迹修缮项目吗？",
-        a: "能。本系列获中国文物局「国家级古迹修缮认证」—— 相当于国际标准。已用于2024年会安古镇修缮项目（200㎡路面铺贴）及河内祖国亭。",
+        q: "Can it be used for historic heritage restoration projects in Vietnam?",
+        a: "Yes. The series holds the China Heritage Administration's 'National-level Heritage Restoration certification' — equivalent to international standards. It has been used for the 2024 Hoi An Old Town restoration project (200 m² of street paving) and Dinh To Quoc in Hanoi.",
       },
       {
-        q: "纹样会不会重复太多？",
-        a: "重复率1/16 —— 每16片为一组不同纹理。铺100㎡（约150片800×800）时几乎看不到重复。相比普通印刷砖1/4的重复率 —— 金意陶差异明显。",
+        q: "Does the motif repeat too much?",
+        a: "The repeat ratio is 1/16 — every 16 tiles form a different pattern set. When tiling 100 m² (about 150 tiles of 800×800), repetition is barely noticeable. Compared with ordinary print tiles at a 1/4 repeat ratio, KITO is clearly different.",
       },
     ],
   },
@@ -438,75 +438,75 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 简雅·现代砖 Modern Tile ────────────────────────────────────
   "简雅·现代砖": {
     story:
-      "标语：「简于心 素于雅」。\n\n密斯·凡德罗的「少即是多」理念具象化为 6 个 SKU，代表 6 种中性色调——从中性灰、工业水泥灰、玉白、亚麻纹、沉静烟灰到自然灰烬。本系列专为现代极简设计而生——北欧公寓、日式风格、工业 loft、世纪中叶现代风。\n\n虽然色调简约，但生产工艺极为复杂：表面必须绝对平整（偏差 < 0.2 mm/m），各批次间色调必须一致（色差 ΔE < 1.0——肉眼无法分辨）。这是全球仅金意陶与 3 家意大利高端瓷砖品牌能达到的标准。",
+      "Tagline: 「简于心 素于雅」 — Simple at heart, understated in elegance.\n\nMies van der Rohe's 'less is more' philosophy made concrete in 6 SKUs representing 6 neutral tones — from neutral gray, industrial concrete, pearl white, and linen texture to deep smoke gray and natural ash gray. The series is built for modern minimalist design — Nordic apartments, Japanese style, industrial lofts, and mid-century modern.\n\nThough the palette is simple, the production technique is highly complex: the surface must be perfectly flat (deviation < 0.2 mm/m) and the color must be consistent between batches (ΔE deviation < 1.0 — indistinguishable to the naked eye). This is a standard met by only KITO + 3 premium Italian tile makers worldwide.",
     heritage:
-      "本系列被《建筑文摘》（Architectural Digest）中国版评为「2023 最值得选用的现代瓷砖」。ΔE < 1.0 的标准让金意陶比肩意大利 Mutina、Florim。",
+      "The series was named 'Most Worthwhile Modern Tile 2023' by Architectural Digest China. Its ΔE < 1.0 standard puts KITO on par with Italy's Mutina and Florim.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Vitrified porcelain —— 瓷质" },
-      { label: "吸水率", value: "≤ 0.5%" },
-      { label: "抗折强度", value: "≥ 45 MPa" },
-      { label: "批次间色差（ΔE）", value: "< 1.0 —— 肉眼无法分辨" },
-      { label: "表面平整度", value: "±0.2mm/m —— 高端标准" },
-      { label: "表面", value: "柔光哑面 —— 防指纹" },
-      { label: "防污", value: "纳米疏油涂层 —— 不渗油污" },
-      { label: "防滑", value: "R10干态 / R11湿态（视SKU而定）" },
-      { label: "耐热震", value: "-5°C → 50°C循环10次" },
-      { label: "耐污", value: "5级 —— 24小时后不被咖啡、红酒沾污" },
-      { label: "湿态摩擦系数", value: "≥0.42（达美国ADA标准）" },
-      { label: "VOC 排放", value: "零排放 —— Greenguard Gold认证" },
+      { label: "Body material", value: "Vitrified porcelain — fully vitrified" },
+      { label: "Water absorption", value: "≤ 0.5%" },
+      { label: "Modulus of Rupture", value: "≥ 45 MPa" },
+      { label: "Batch-to-batch color deviation (ΔE)", value: "< 1.0 — indistinguishable to the naked eye" },
+      { label: "Surface flatness", value: "± 0.2 mm/m — premium standard" },
+      { label: "Surface", value: "Soft matte — fingerprint resistant" },
+      { label: "Stain resistance", value: "Nano lipophobic coating — does not absorb grease" },
+      { label: "Slip resistance", value: "R10 dry / R11 wet (depending on SKU)" },
+      { label: "Thermal shock resistance", value: "10 cycles -5 °C → 50 °C" },
+      { label: "Stain resistance", value: "Class 5 — no staining from coffee or wine after 24h" },
+      { label: "Wet coefficient of friction", value: "≥ 0.42 (meets US ADA)" },
+      { label: "VOC emissions", value: "Zero emission — Greenguard Gold certified" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "采用柯尼卡美能达CM-5分光光度计逐批检测ΔE",
-      "纳米疏油涂层 —— 德国技术（Hochschild Coatings）",
-      "6层配料筛分 —— 确保色调绝对一致",
+      "Per-batch ΔE inspection with a Konica Minolta CM-5 spectrophotometer",
+      "Nano lipophobic coating — German technology (Hochschild Coatings)",
+      "6-layer material sieving — ensures absolutely consistent color",
     ],
     careGuide: COMMON_CARE,
     installation: COMMON_INSTALL,
     certifications: [
       ...COMMON_CERTS,
-      "Greenguard Gold —— 不排放挥发性有机化合物",
-      "《建筑文摘》中国版2023 —— 顶级现代瓷砖",
-      "PEFC产销监管链 —— 可持续生产",
+      "Greenguard Gold — no volatile organic compound emissions",
+      "Architectural Digest China 2023 — Top Modern Tile",
+      "PEFC Chain of Custody — sustainable production",
     ],
     packaging: COMMON_PACKAGING,
     whyChoose: [
       {
         icon: "🎯",
-        title: "国际标准中性色调",
-        desc: "批次间 ΔE < 1.0 —— 肉眼无法分辨。第一批购入后再补订第二批，颜色依然完美一致。",
+        title: "Internationally standard neutral tones",
+        desc: "ΔE < 1.0 between batches — indistinguishable to the naked eye. Buy batch 1, order more in batch 2, and the color still matches perfectly.",
       },
       {
         icon: "🛡️",
-        title: "德国防污涂层",
-        desc: "采用德国Hochschild Coatings的纳米疏油涂层 —— 不渗油污，干擦即净。",
+        title: "German stain-resistant coating",
+        desc: "A nano lipophobic coating from Hochschild Coatings (Germany) — does not absorb grease; wipe it dry and it is clean.",
       },
       {
         icon: "🌿",
-        title: "Greenguard Gold标准",
-        desc: "零 VOC 排放 —— 适用于儿童卧室、密闭办公室、瑜伽室。",
+        title: "Greenguard Gold standard",
+        desc: "Zero VOC emission — safe for children's bedrooms, enclosed offices, and yoga rooms.",
       },
       {
         icon: "📏",
-        title: "± 0.2 mm/m 绝对平整",
-        desc: "是国际标准的 2.5 倍。可实现 0.5 mm 超细缝 —— 工业无缝风格。",
+        title: "Perfectly flat at ± 0.2 mm/m",
+        desc: "2.5 times the international standard. Ultra-narrow 0.5 mm joints are feasible — for a seamless industrial look.",
       },
     ],
     projectShowcase: [
-      "腾讯深圳办公楼 —— 20 万㎡ 全新总部",
-      "上海南京东路 Apple Store —— 高端旗舰店",
-      "无印良品酒店 北京 + 深圳 —— 全部地面",
-      "WeWork 中国 —— 全国 50+ 分支",
+      "Tencent offices, Shenzhen — new 200,000 m² headquarters",
+      "Apple Store Nanjing East Road, Shanghai — premium flagship",
+      "MUJI Hotel Beijing + Shenzhen — entire flooring",
+      "WeWork China — 50+ branches across China",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "补订第二批加铺时，颜色能与第一批一致吗？",
-        a: "绝对一致。ΔE < 1.0 是金意陶在合同中的承诺指标 —— 若偏差超出，全额退款。这是相比普通瓷砖（通常 ΔE = 2-3，肉眼可辨）的显著优势。",
+        q: "If I buy more in a second batch, will the color match the first?",
+        a: "It matches perfectly. ΔE < 1.0 is a figure KITO guarantees by contract — if the deviation is greater, you get a 100% refund. This is a clear advantage over ordinary tile (typically ΔE = 2-3, distinguishable to the naked eye).",
       },
       {
-        q: "能做 0.5 mm 的超细缝吗？",
-        a: "可以。本系列平整度达精修砖（rectified tile）标准 —— 配合金意陶专用十字定位器可实现 0.5 mm 缝。不过针对越南气候（温差较大，需留伸缩缝），建议采用 1.5 mm。",
+        q: "Can you do ultra-narrow 0.5 mm joints?",
+        a: "Yes. This series achieves rectified-tile flatness — 0.5 mm joints are feasible with KITO's dedicated spacers. However, 1.5 mm is recommended for Vietnam's climate (large temperature swings require expansion joints).",
       },
     ],
   },
@@ -514,108 +514,108 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
   // ─── 匠心·木纹砖 Wood Grain ─────────────────────────────────────
   "匠心·木纹砖": {
     story:
-      "标语：「木中之王」。\n\n当天然木材日益稀缺昂贵，金意陶木纹砖不只是「模仿」——它在耐用、防水、耐热、防虫蛀方面全面超越木材。象心系列是金意陶在天猫 + 京东上出口量最大的畅销款：在中国每月销量超 50,000 ㎡。\n\n6 个 SKU 代表全球 6 种名贵木材：北美橡木、芬兰松木、巴西胡桃木、加州红杉、北欧白桦、东南亚柚木。每种均由真实木样 8K 扫描，600 dpi 数码打印，每片都是独立木纹——没有两片相同。",
+      "Tagline: 「木中之王」 — King of woods.\n\nAs natural wood grows ever scarcer and more expensive, KITO wood-grain tile is not merely a 'replica' — it SURPASSES wood in durability, water resistance, heat resistance, and termite resistance. The Craftsman's Heart series is KITO's top-exporting best-seller on Tmall + JD: over 50,000 m² sold each month in China.\n\nThe 6 SKUs represent 6 fine woods from around the world: North American oak, Finnish pine, Brazilian walnut, California sequoia, Nordic birch, and Southeast Asian teak. Each is 8K-scanned from real wood samples and digitally printed at 600 dpi, with each tile carrying its own grain — no two alike.",
     heritage:
-      "天猫「木纹砖」品类畅销榜第 1 名，连续 5 年（2020-2024）。出口至 60+ 个国家。",
+      "#1 best-seller on Tmall in the 'wood-grain tile' category for 5 consecutive years (2020-2024). Exported to 60+ countries.",
     technicalSpecs: [
-      { label: "坯体材料（Body）", value: "Vitrified porcelain，木纹釉" },
-      { label: "吸水率", value: "≤ 0.5%" },
-      { label: "抗折强度", value: "≥ 45 MPa" },
-      { label: "相比天然木材", value: "耐用 50 倍，100% 防水" },
-      { label: "抗热变形", value: "0% —— 即便温差 50 °C 也不翘曲" },
-      { label: "防虫蛀", value: "100% —— 非有机材料" },
-      { label: "纹理打印工艺", value: "真木 8K 扫描 + 600 dpi 数码打印" },
-      { label: "不重复纹理数", value: "每个 SKU 32 种不同纹理" },
-      { label: "防滑", value: "R10（客厅 + 卧室标准）" },
-      { label: "防刮", value: "PEI 4 —— 高人流区域标准" },
-      { label: "耐酸性", value: "UB 级 —— 耐弱酸（家用足够）" },
-      { label: "VOC 排放", value: "零排放（不同于天然木材，后者会从胶水释放甲醛）" },
+      { label: "Body material", value: "Vitrified porcelain with a wood-grain glaze" },
+      { label: "Water absorption", value: "≤ 0.5%" },
+      { label: "Modulus of Rupture", value: "≥ 45 MPa" },
+      { label: "Versus natural wood", value: "50 times more durable, 100% waterproof" },
+      { label: "Thermal warp resistance", value: "0% — no warping even with a 50 °C swing" },
+      { label: "Termite resistance", value: "100% — not an organic material" },
+      { label: "Grain printing technique", value: "8K scan of real wood + 600 dpi digital printing" },
+      { label: "Non-repeating patterns", value: "32 different patterns / SKU" },
+      { label: "Slip resistance", value: "R10 (rated for living rooms + bedrooms)" },
+      { label: "Scratch resistance", value: "PEI 4 — rated for high-traffic areas" },
+      { label: "Acid resistance", value: "Class UB — resists weak acids (sufficient for households)" },
+      { label: "VOC emissions", value: "Zero emission (unlike natural wood, which can off-gas formaldehyde from adhesives)" },
     ],
     manufacturing: [
       ...COMMON_MFG,
-      "对北美、芬兰、巴西、加州、北欧、东南亚森林的真木样进行 8K 扫描",
-      "每个 SKU 32 种不同纹理 —— 按批次生产以确保不重复",
-      "600 dpi 数码打印 —— 木纹细节精确至微米",
-      "150×900、200×1200 mm 长板规格 —— 模拟真实木地板的比例",
+      "8K scanning of real wood samples from forests in North America, Finland, Brazil, California, Northern Europe, and SEA",
+      "32 different patterns per SKU — produced in batches to ensure no repetition",
+      "600 dpi digital printing — wood-grain detail down to the micron",
+      "Long plank formats of 150×900 and 200×1200 mm — mimicking real wood flooring proportions",
     ],
     careGuide: [
       ...COMMON_CARE.slice(0, 2),
       {
-        title: "省心保养（相比真木）",
-        desc: "无需像木材那样每年上清漆。无需专用油保养。每周干擦 + 湿擦 1 次即可。相比真木地板节省 80% 保养成本。",
+        title: "Maintenance is effortless (versus real wood)",
+        desc: "No need to varnish annually like wood. No need for a dedicated oil wipe. A dry wipe + a damp wipe once a week is enough. Saves 80% of maintenance costs versus a real wood floor.",
       },
       {
-        title: "防刮护理",
-        desc: "在滑动椅脚下放置垫子，桌脚粘贴毛毡垫。避免拖拽尖锐物品。金意陶防刮性是真木的 5 倍 —— 轻微划痕可抛光修复。",
+        title: "Scratch prevention",
+        desc: "Place mats under sliding chair legs and felt pads under table legs. Avoid dragging sharp objects. KITO is 5 times more scratch-resistant than real wood — light scratches can be buffed out.",
       },
     ],
     installation: [
       ...COMMON_INSTALL,
-      "建议采用「1/3 错缝」铺贴法（每片错开前一片的 1/3）—— 真木地板铺法标准",
-      "铺贴缝 2-3 mm，以模拟天然木缝",
-      "规格 < 200×1200 时可直接上墙；更大规格需设结构伸缩缝",
+      "A '1/3 stagger' layout is recommended (each tile offset by 1/3 of the previous one) — the standard for laying real wood planks",
+      "2-3 mm joints to mimic natural wood gaps",
+      "Can be laid straight against a wall if the format is < 200×1200; larger formats need structural expansion joints",
     ],
     certifications: [
       ...COMMON_CERTS,
-      "天猫畅销榜第 1 名 —— 连续 5 年（2020-2024）",
-      "京东顶级供应商 —— 木纹砖品类",
-      "Greenguard Gold —— 零 VOC 排放",
+      "#1 best-seller on Tmall — 5 consecutive years (2020-2024)",
+      "Top Supplier on JD.com — wood-grain tile category",
+      "Greenguard Gold — zero VOC emission",
     ],
     packaging: [
-      { label: "150×900 规格", value: "10 片/箱（1.35 ㎡）" },
-      { label: "200×1200 规格", value: "5 片/箱（1.20 ㎡）" },
-      { label: "每箱重量", value: "22-25 kg" },
-      { label: "每托盘箱数", value: "44 箱" },
-      { label: "每 20ft 集装箱托盘", value: "22 托盘 / 1,300 ㎡" },
-      { label: "每 40ft HQ 托盘", value: "46 托盘 / 2,730 ㎡" },
+      { label: "150×900 specification", value: "10 tiles / carton (1.35 m²)" },
+      { label: "200×1200 specification", value: "5 tiles / carton (1.20 m²)" },
+      { label: "Weight / carton", value: "22-25 kg" },
+      { label: "Cartons / pallet", value: "44 cartons" },
+      { label: "Pallets / 20ft container", value: "22 pallets / 1,300 m²" },
+      { label: "Pallets / 40ft HQ", value: "46 pallets / 2,730 m²" },
     ],
     whyChoose: [
       {
         icon: "💧",
-        title: "100% 防水（真木做不到）",
-        desc: "可用于卫浴、厨房、户外阳台、泳池 —— 这些都是真木无法使用的场所。",
+        title: "100% waterproof (real wood is NOT)",
+        desc: "Usable in bathrooms, kitchens, outdoor balconies, and pools — places where real wood CANNOT be used.",
       },
       {
         icon: "🔥",
-        title: "不因温度翘曲",
-        desc: "真木在温差 > 15°C 时会翘曲。金意陶即便温差 50°C 也不翘曲 —— 完美适配越南热带气候。",
+        title: "No thermal warping",
+        desc: "Real wood warps with a temperature swing > 15°C. KITO does not warp even with a 50°C swing — perfect for Vietnam's tropical climate.",
       },
       {
         icon: "🦟",
-        title: "无虫蛀 + 无 VOC",
-        desc: "非有机材料 —— 虫蛀无法侵蚀。不像复合地板会从胶水释放甲醛。",
+        title: "No termites + no VOCs",
+        desc: "Not an organic material — termites cannot eat it. No formaldehyde off-gassing from adhesives, as in engineered flooring.",
       },
       {
         icon: "💰",
-        title: "比真木便宜 70%",
-        desc: "北美橡木真材 1,500,000 越南盾/㎡。金意陶橡木纹 450,000 越南盾/㎡ —— 在 > 50 cm 距离几乎无法分辨品质差异。",
+        title: "70% cheaper than real wood",
+        desc: "Real North American oak costs 1,500,000 VND/m². KITO oak grain is 450,000 VND/m² — the quality is nearly indistinguishable at a distance > 50 cm.",
       },
     ],
     projectShowcase: [
-      "宜家中国 —— 90% 门店在样板间区域采用金意陶木纹砖",
-      "无印良品酒店 + 无印良品咖啡 —— 全部门店",
-      "WeWork 中国 —— 标准地材",
-      "越南 30+ 海滨度假村 + 度假别墅已采用",
+      "IKEA China — 90% of branches use KITO Wood Grain in the showroom area",
+      "MUJI Hotel + MUJI Café — the entire complex",
+      "WeWork China — standard flooring",
+      "30+ beach resorts + holiday villas in Vietnam already use it",
     ],
     faq: [
       ...COMMON_FAQ_BASE,
       {
-        q: "能用于卫浴 + 户外阳台吗？",
-        a: "完全可以。这正是相比真木地板的一大优势。户外请选择 R11+ 的 SKU —— 白桦（KGMW150203）或柚木（KGMW200903）达标。请联系华越采购核对各 SKU 的参数。",
+        q: "Can it be used in bathrooms + outdoor balconies?",
+        a: "Absolutely. This is a major advantage over real wood flooring. For outdoor use specifically, choose a SKU rated R11+ — Birch (KGMW150203) or Teak (KGMW200903) meet the standard. Ask Huayue sourcing to check the spec of each SKU.",
       },
       {
-        q: "远看是否像真木？",
-        a: "在 > 50 cm 距离几乎无法分辨。在 > 1m 距离 —— 99% 的人认不出。原因：8K 扫描 + 600 dpi 打印 + 32 种不重复纹理 + 长板规格模拟真实地板。",
+        q: "Does it look like real wood from a distance?",
+        a: "At a distance > 50 cm it is nearly indistinguishable. At a distance > 1m, 99% of people cannot tell. The reason: 8K scanning + 600 dpi printing + 32 non-repeating patterns + long plank formats that mimic real flooring.",
       },
       {
-        q: "脚感会比木地板更凉吗？",
-        a: "会（因为是陶瓷）。但可搭配地暖系统（heating mat）—— 金意陶支持地暖标准，可达 50°C。非常适合河内的冬天。",
+        q: "Does it feel colder underfoot than a wood floor?",
+        a: "Yes (because it is ceramic). But it can be paired with a radiant floor system (heating mat) — KITO supports underfloor heating up to 50°C. Very suitable for winter in Hanoi.",
       },
     ],
   },
 };
 
-/** Helper：根据 seriesOriginal 获取某个产品的 meta。 */
+/** Helper: get the meta for one product based on seriesOriginal. */
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {
   if (!seriesOriginal) return undefined;
   return KITO_SERIES_META[seriesOriginal];

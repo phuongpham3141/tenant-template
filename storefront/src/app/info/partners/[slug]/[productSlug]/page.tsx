@@ -34,6 +34,7 @@ import { getSeriesMeta as getDongyuanMeta } from "@/data/catalogs/dongyuan-meta"
 import { getSeriesMeta as getCareLightingMeta } from "@/data/catalogs/care-lighting-meta";
 import { getSeriesMeta as getLanghuiMeta } from "@/data/catalogs/langhui-meta";
 import { getSeriesMeta as getZhongjuYabaiMeta } from "@/data/catalogs/zhongju-yabai-meta";
+import { getSeriesMeta as getMijicMeta } from "@/data/catalogs/mijic-meta";
 
 /** Map brand slug → series-meta lookup function. Add new entries when
  *  enriching more brands via /partner-catalog skill. */
@@ -62,6 +63,7 @@ const META_LOOKUP: Record<string, (s?: string) => ReturnType<typeof getKitoMeta>
   "care-lighting": getCareLightingMeta,
   langhui: getLanghuiMeta,
   "zhongju-yabai": getZhongjuYabaiMeta,
+  mijic: getMijicMeta,
 };
 
 export function generateStaticParams() {
@@ -81,7 +83,7 @@ export async function generateMetadata({
 }) {
   const { slug, productSlug: ps } = await params;
   const hit = getProduct(slug, ps);
-  if (!hit) return { title: "产品 — 华越" };
+  if (!hit) return { title: "Product — Huayue" };
   const { partner, product } = hit;
   return {
     title: `${product.name} (${product.model}) — ${partner.name} · Huayuesc`,
@@ -106,8 +108,8 @@ export default async function ProductDetailPage({
   const meta = lookup ? lookup(product.seriesOriginal) : undefined;
 
   const trail = [
-    { label: "首页", href: "/" },
-    { label: "合作工厂", href: "/info/partners" },
+    { label: "Home", href: "/" },
+    { label: "Partner Factories", href: "/info/partners" },
     { label: partner.name, href: `/info/partners/${partner.slug}` },
     { label: product.name },
   ];
@@ -162,16 +164,16 @@ export default async function ProductDetailPage({
 
             <div className="flex items-center gap-3 mb-4 flex-wrap">
               <div className="bg-bg border border-line rounded px-3 py-1.5 inline-flex items-center gap-2">
-                <span className="text-[11px] text-mute">SKU 编号：</span>
+                <span className="text-[11px] text-mute">SKU code:</span>
                 <code className="text-[13px] font-bold text-brand">
                   {product.model}
                 </code>
               </div>
               <span className="inline-flex items-center gap-1 bg-[#ECFDF5] text-[#065F46] rounded-full px-2.5 py-1 text-[11.5px] font-semibold">
-                ✓ 佛山仓有货
+                ✓ In stock at Foshan warehouse
               </span>
               <span className="inline-flex items-center gap-1 bg-[#FFF7ED] text-[#9A3412] rounded-full px-2.5 py-1 text-[11.5px] font-semibold">
-                📦 DDP 至越南 7-10 天
+                📦 DDP to Vietnam in 7–10 days
               </span>
             </div>
 
@@ -184,14 +186,14 @@ export default async function ProductDetailPage({
             {/* Quick specs grid */}
             <div className="grid grid-cols-2 gap-2 mb-5">
               {product.dimensions && (
-                <SpecCard icon="📐" label="尺寸" value={product.dimensions} />
+                <SpecCard icon="📐" label="Dimensions" value={product.dimensions} />
               )}
               {product.surface && (
-                <SpecCard icon="✨" label="表面" value={product.surface} />
+                <SpecCard icon="✨" label="Surface" value={product.surface} />
               )}
-              <SpecCard icon="🏭" label="制造商" value={partner.name} />
+              <SpecCard icon="🏭" label="Manufacturer" value={partner.name} />
               {category && (
-                <SpecCard icon={category.icon} label="行业" value={category.name} />
+                <SpecCard icon={category.icon} label="Industry" value={category.name} />
               )}
             </div>
 
@@ -201,13 +203,13 @@ export default async function ProductDetailPage({
                 href={rfqHref}
                 className="inline-flex items-center justify-center gap-2 bg-brand text-white font-semibold rounded px-5 py-2.5 hover:bg-brand-light transition-colors text-[13.5px]"
               >
-                📩 发送询价请求
+                📩 Send RFQ
               </Link>
               <a
                 href="tel:+842839991234"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-semibold rounded px-5 py-2.5 hover:bg-yellow-400 transition-colors text-[13.5px]"
               >
-                ☎ 拨打咨询热线
+                ☎ Call the Advisory Hotline
               </a>
               <Link
                 href={`/info/partners/${partner.slug}`}
@@ -220,9 +222,9 @@ export default async function ProductDetailPage({
             {/* Trust signals strip */}
             <div className="mt-5 pt-4 border-t border-line">
               <div className="grid grid-cols-3 gap-2 text-center text-[11.5px] text-mute">
-                <TrustSignal icon="🛡️" label="质保" value="25 年" />
-                <TrustSignal icon="✅" label="验厂" value="每年现场 2 次" />
-                <TrustSignal icon="🌍" label="出口" value="60+ 国家" />
+                <TrustSignal icon="🛡️" label="Warranty" value="25 yr" />
+                <TrustSignal icon="✅" label="Factory Audit" value="2 on-site/yr" />
+                <TrustSignal icon="🌍" label="Export" value="60+ countries" />
               </div>
             </div>
           </div>
@@ -233,7 +235,7 @@ export default async function ProductDetailPage({
           <section className="bg-gradient-to-br from-brand-dark to-brand text-white rounded-lg p-7 mb-7 max-md:p-5 relative overflow-hidden">
             <div className="relative z-10">
               <div className="text-[12px] uppercase tracking-wider opacity-80 mb-1.5">
-                系列故事
+                Series Story
               </div>
               <h2 className="text-[22px] font-bold mb-4 max-md:text-[18px]">
                 {product.series} · {product.seriesOriginal}
@@ -243,7 +245,7 @@ export default async function ProductDetailPage({
               </div>
               <div className="mt-5 pt-4 border-t border-white/20">
                 <div className="text-[12px] uppercase tracking-wider opacity-80 mb-1">
-                  技术传承
+                  Technical Heritage
                 </div>
                 <p className="text-[13.5px] leading-relaxed opacity-95">
                   {meta.heritage}
@@ -261,7 +263,7 @@ export default async function ProductDetailPage({
             <div className="bg-paper border border-line rounded-lg p-6 max-md:p-5">
               <h2 className="text-[17px] font-bold text-ink mb-3 flex items-center gap-2">
                 <span className="w-1 h-5 bg-brand rounded-sm" />
-                详细描述
+                Detailed Description
               </h2>
               {product.longDesc ? (
                 <p className="text-[14px] text-ink leading-relaxed whitespace-pre-line">
@@ -269,7 +271,7 @@ export default async function ProductDetailPage({
                 </p>
               ) : (
                 <p className="text-[14px] text-mute italic">
-                  详细描述更新中。
+                  Detailed description coming soon.
                 </p>
               )}
             </div>
@@ -278,7 +280,7 @@ export default async function ProductDetailPage({
               {product.features && product.features.length > 0 && (
                 <div className="bg-paper border border-line rounded-lg p-5">
                   <h3 className="text-[14.5px] font-bold text-ink mb-3 flex items-center gap-2">
-                    <span>✨</span>突出特性
+                    <span>✨</span>Key Features
                   </h3>
                   <ul className="space-y-2 text-[13px] text-ink">
                     {product.features.map((f) => (
@@ -293,7 +295,7 @@ export default async function ProductDetailPage({
               {product.applications && product.applications.length > 0 && (
                 <div className="bg-paper border border-line rounded-lg p-5">
                   <h3 className="text-[14.5px] font-bold text-ink mb-3 flex items-center gap-2">
-                    <span>🏠</span>适用场景
+                    <span>🏠</span>Applications
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
                     {product.applications.map((a) => (
@@ -316,7 +318,7 @@ export default async function ProductDetailPage({
           <section className="mb-7">
             <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              为什么选择本系列？
+              Why Choose This Series?
             </h2>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">
               {meta.whyChoose.map((w) => (
@@ -342,7 +344,7 @@ export default async function ProductDetailPage({
           <section className="mb-7">
             <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              技术参数
+              Technical Specifications
               {product.sourceUrl && (
                 <a
                   href={product.sourceUrl}
@@ -350,7 +352,7 @@ export default async function ProductDetailPage({
                   rel="noopener nofollow"
                   className="text-[12px] text-brand font-normal ml-1 hover:underline"
                 >
-                  · 来源：{partner.name} ↗
+                  · Source: {partner.name} ↗
                 </a>
               )}
             </h2>
@@ -382,9 +384,9 @@ export default async function ProductDetailPage({
           <section className="mb-7">
             <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              完整技术参数
+              Full Technical Specifications
               <span className="text-[12px] text-mute font-normal ml-1">
-                · 符合 ISO / EN / DIN 标准
+                · Compliant with ISO / EN / DIN standards
               </span>
             </h2>
             <div className="bg-paper border border-line rounded-lg overflow-hidden">
@@ -415,7 +417,7 @@ export default async function ProductDetailPage({
           <section className="grid grid-cols-2 gap-5 mb-7 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded-lg p-5">
               <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center gap-2">
-                <span>🏭</span>生产工艺
+                <span>🏭</span>Manufacturing Process
               </h2>
               <ul className="space-y-2 text-[13px] text-ink">
                 {meta.manufacturing.map((m) => (
@@ -428,7 +430,7 @@ export default async function ProductDetailPage({
             </div>
             <div className="bg-paper border border-line rounded-lg p-5">
               <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center gap-2">
-                <span>🏆</span>质量认证
+                <span>🏆</span>Quality Certifications
               </h2>
               <ul className="space-y-2 text-[13px] text-ink">
                 {meta.certifications.map((c) => (
@@ -447,7 +449,7 @@ export default async function ProductDetailPage({
           <section className="grid grid-cols-3 gap-4 mb-7 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded-lg p-5">
               <h2 className="text-[15px] font-bold text-ink mb-3 flex items-center gap-2">
-                <span>🔧</span>安装指南
+                <span>🔧</span>Installation Guide
               </h2>
               <ul className="space-y-1.5 text-[12.5px] text-ink">
                 {meta.installation.map((i, idx) => (
@@ -462,7 +464,7 @@ export default async function ProductDetailPage({
             </div>
             <div className="bg-paper border border-line rounded-lg p-5">
               <h2 className="text-[15px] font-bold text-ink mb-3 flex items-center gap-2">
-                <span>🧽</span>保养与清洁
+                <span>🧽</span>Care & Cleaning
               </h2>
               <div className="space-y-3 text-[12.5px]">
                 {meta.careGuide.map((c) => (
@@ -475,7 +477,7 @@ export default async function ProductDetailPage({
             </div>
             <div className="bg-paper border border-line rounded-lg p-5">
               <h2 className="text-[15px] font-bold text-ink mb-3 flex items-center gap-2">
-                <span>📦</span>包装与运输
+                <span>📦</span>Packaging & Shipping
               </h2>
               <table className="w-full text-[12.5px]">
                 <tbody>
@@ -503,7 +505,7 @@ export default async function ProductDetailPage({
           <section className="bg-paper border border-line rounded-lg p-6 mb-7 max-md:p-5">
             <h2 className="text-[17px] font-bold text-ink mb-4 flex items-center gap-2">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              采用本系列的参考项目
+              Reference Projects Using This Series
             </h2>
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
               {meta.projectShowcase.map((proj) => (
@@ -526,7 +528,7 @@ export default async function ProductDetailPage({
           <section className="mb-7">
             <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
               <span className="w-1 h-5 bg-brand rounded-sm" />
-              常见问题
+              Frequently Asked Questions
             </h2>
             <div className="space-y-2">
               {meta.faq.map((f) => (
@@ -561,21 +563,21 @@ export default async function ProductDetailPage({
         {/* ════ 11. CTA Footer ═════════════════════════════════════════ */}
         <section className="mt-7 bg-gradient-to-br from-brand to-brand-dark text-white rounded-lg p-7 text-center max-md:p-5">
           <div className="text-[12px] uppercase tracking-wider opacity-80 mb-1">
-            24 小时内快速报价
+            Fast quote within 24 hours
           </div>
           <h2 className="text-[22px] font-bold mb-2 max-md:text-[18px]">
-            需要 {product.name} 至越南的 DDP 报价？
+            Need a DDP quote for {product.name} to Vietnam?
           </h2>
           <p className="text-[13.5px] opacity-90 mb-5 max-w-[600px] mx-auto">
-            华越广州寻源团队将联系您核查库存，核算 20ft / 40ft HQ 整柜或散件价格，
-            并在 24 小时内发送完整报价（含税 + 运输 + 如需施工）。
+            The Huayue Guangzhou sourcing team will contact you to verify stock and price a full 20ft / 40ft HQ container or LCL,
+            and send a complete quote within 24 hours (incl. duties + shipping + installation if needed).
           </p>
           <div className="flex gap-2 justify-center flex-wrap">
             <Link
               href={rfqHref}
               className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-bold rounded px-6 py-3 hover:bg-white hover:text-brand transition-colors text-[14px]"
             >
-              📩 为 {product.model} 发送询价
+              📩 Send an RFQ for {product.model}
             </Link>
             <a
               href="https://zalo.me/0912345678"
@@ -583,13 +585,13 @@ export default async function ProductDetailPage({
               rel="noopener"
               className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-semibold rounded px-6 py-3 hover:bg-white/10 transition-colors text-[14px]"
             >
-              💬 立即 Zalo 沟通
+              💬 Chat on Zalo Now
             </a>
           </div>
           <div className="mt-5 pt-4 border-t border-white/20 text-[12.5px] opacity-80 grid grid-cols-3 gap-2 max-md:grid-cols-1">
-            <span>📞 热线：028-3999-1234</span>
+            <span>📞 Hotline: 028-3999-1234</span>
             <span>📧 sourcing@huayuesc.vn</span>
-            <span>📍 广州 + 胡志明市 + 河内办事处</span>
+            <span>📍 Guangzhou + Ho Chi Minh City + Hanoi offices</span>
           </div>
         </section>
       </div>
@@ -655,7 +657,7 @@ function RelatedProducts({
       <div className="flex items-center justify-between mb-4 max-md:flex-col max-md:items-start max-md:gap-2">
         <h2 className="text-[18px] font-bold text-ink flex items-center gap-2 max-md:text-[16px]">
           <span className="w-1 h-5 bg-brand rounded-sm" />
-          同系列其他 SKU
+          Other SKUs in This Series
           {seriesName && (
             <span className="text-[13px] text-mute font-normal ml-1">
               · {seriesName}
@@ -666,7 +668,7 @@ function RelatedProducts({
           href={`/info/partners/${partner.slug}`}
           className="text-brand text-[12.5px] font-semibold hover:underline"
         >
-          查看完整目录 →
+          View Full Catalog →
         </Link>
       </div>
       <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">

@@ -4,8 +4,8 @@ export function FiltersSidebar({ filters }: { filters: FilterGroup[] }) {
   return (
     <aside className="bg-paper border border-line rounded p-3.5 sticky top-3 self-start max-md:static">
       <div className="flex justify-between items-center pb-2.5 mb-2.5 border-b border-line">
-        <b className="text-[14px] text-ink font-bold">⚙ 筛选</b>
-        <a className="text-[11.5px] text-brand cursor-pointer">清除全部</a>
+        <b className="text-[14px] text-ink font-bold">⚙ Filters</b>
+        <a className="text-[11.5px] text-brand cursor-pointer">Clear All</a>
       </div>
       {filters.map((g) => (
         <div key={g.title} className="mb-3.5 pb-3 last:mb-0 last:pb-0 border-b border-dashed border-line last:border-b-0">
@@ -50,7 +50,7 @@ export function FiltersSidebar({ filters }: { filters: FilterGroup[] }) {
           )}
           {g.showMore && (
             <a className="block mt-1.5 text-[11.5px] text-brand cursor-pointer">
-              查看更多 ▼
+              View More ▼
             </a>
           )}
         </div>

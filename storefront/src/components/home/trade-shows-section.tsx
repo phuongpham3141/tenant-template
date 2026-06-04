@@ -18,10 +18,10 @@ const UNSPLASH = (id: string, w: number, h: number) =>
 const FEATURED: TradeShow = {
   name: "Canton Fair 2026 — Phase 1",
   banner: UNSPLASH("1505373877841-8d25f7d46678", 720, 420), // expo crowd
-  duration: "2026/04/15 – 05/05",
-  location: "中国 广州",
-  badge: "精选",
-  category: "综合·25K+ 供应商",
+  duration: "15/04 – 05/05/2026",
+  location: "Guangzhou, China",
+  badge: "FEATURED",
+  category: "General · 25K+ suppliers",
   href: "/trade-shows",
 };
 
@@ -29,25 +29,25 @@ const SHOWS: TradeShow[] = [
   {
     name: "Vietnam Expo 2026",
     banner: UNSPLASH("1540575467063-178a50c2df87", 200, 150), // conference hall
-    duration: "2026/04/09 – 04/12",
-    location: "越南 河内",
-    category: "综合行业",
+    duration: "09/04 – 12/04/2026",
+    location: "Hanoi, Vietnam",
+    category: "Multi-Industry",
     href: "/trade-shows",
   },
   {
     name: "ProPak China 2026",
     banner: UNSPLASH("1559223607-a43c990c692c", 200, 150), // expo booth
-    duration: "2026/06/15 – 06/17",
-    location: "中国 上海",
-    category: "包装与物流",
+    duration: "15/06 – 17/06/2026",
+    location: "Shanghai, China",
+    category: "Packaging & Logistics",
     href: "/trade-shows",
   },
   {
     name: "Furniture China 2026",
     banner: UNSPLASH("1492684223066-81342ee5ff30", 200, 150), // exhibition
-    duration: "2026/09/08 – 09/11",
-    location: "中国 上海",
-    category: "家具与家居",
+    duration: "08/09 – 11/09/2026",
+    location: "Shanghai, China",
+    category: "Furniture & Home Goods",
     href: "/trade-shows",
   },
 ];
@@ -60,17 +60,17 @@ export function TradeShowsSection() {
         <div className="flex justify-between items-start mb-4 max-md:flex-col max-md:gap-2 max-md:mb-3">
           <div className="text-center flex-1 max-md:text-left">
             <h2 className="text-[20px] font-bold text-ink max-md:text-[17px]">
-              贸易展会
+              Trade Shows
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              华越将携Made-in-China合作伙伴共同参展的展会清单。
+              The trade shows Huayuesc will attend alongside its Made-in-China partners.
             </p>
           </div>
           <Link
             href="/trade-shows"
             className="px-5 py-2 bg-accent text-white font-semibold text-[13px] rounded-sm hover:bg-[#B81827] cursor-pointer flex-shrink-0 max-md:self-end max-md:py-1.5 max-md:px-4"
           >
-            查看更多 →
+            View More →
           </Link>
         </div>
 
@@ -119,10 +119,10 @@ export function TradeShowsSection() {
               </div>
               <div className="flex items-center gap-3 mt-3">
                 <span className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-[#E8943A] transition">
-                  📩 报名参展 →
+                  📩 Register to Attend →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  华越带队·提供签证协助与B2B日程对接
+                  Led by the Huayuesc delegation · Visa support & B2B scheduling
                 </span>
               </div>
             </div>
@@ -185,17 +185,17 @@ export function TradeShowsSection() {
               </div>
               <div className="flex-1 min-w-0">
                 <b className="block text-[13px] font-bold mb-0.5">
-                  贸易提醒 — 不错过任何展会
+                  Trade Alert — Never Miss a Trade Show
                 </b>
                 <p className="text-[11.5px] opacity-85 leading-snug">
-                  每月通过邮件获取展会日程与B2B配对安排。
+                  Get the trade-show calendar + B2B matchmaking schedule by email every month.
                 </p>
               </div>
               <Link
                 href="/trade-alert"
                 className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm cursor-pointer hover:bg-[#E8943A] flex-shrink-0 whitespace-nowrap"
               >
-                订阅 →
+                Register →
               </Link>
             </div>
           </div>

@@ -1,7 +1,7 @@
 /**
- * 鹏翔 (Pengxiang) 人造石元数据 — 详情页。按 seriesOriginal (quartz/marble/onyx/terrazzo) 索引。
- * 货源：px-stone.com —— 福建鹏翔实业（Fujian Pengxiang Industrial），福建南安。
- * 鹏翔是德盛石材（越南法人主体）的母集团。
+ * Pengxiang 鹏翔 engineered stone metadata — detail page. Keyed by seriesOriginal (quartz/marble/onyx/terrazzo).
+ * Sourcing: px-stone.com — Fujian Pengxiang Industrial (福建鹏翔实业), Nan'an, Fujian.
+ * Pengxiang is the parent group of Đức Thịnh Stone (Vietnamese entity).
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -12,67 +12,67 @@ export type SeriesMeta = {
   whyChoose: { icon: string; title: string; desc: string }[];
   projectShowcase: string[]; faq: { q: string; a: string }[];
 };
-const CERTS = ["ISO 9001 —— 质量管理体系", "无放射性材料认证", "吸水率、抗弯强度、耐磨性检测", "环保材料（低VOC树脂）"];
+const CERTS = ["ISO 9001 — Quality management", "Non-radioactive material certification", "Tested for water absorption, flexural strength, abrasion resistance", "Eco-friendly materials (low-VOC resin)"];
 const MFG = [
-  "福建鹏翔实业（Fujian Pengxiang Industrial）—— 成立于 2006 年，位于福建南安（中国石材之都）",
-  "领先的人造石制造商：人造大理石、石英石（quartz）、玉石（onyx）、水磨石（terrazzo）",
-  "德盛石材（越南法人主体，乂安工厂）的母集团",
-  "人造石由约90%石粉/石英粉+树脂压制而成；大规格板材，可按需切割",
+  "Fujian Pengxiang Industrial 福建鹏翔实业 — founded 2006, Nan'an, Fujian (China's stone capital)",
+  "A leading engineered stone manufacturer: artificial marble, quartz, onyx, terrazzo",
+  "Parent group of Đức Thịnh Stone (Vietnamese entity, Nghe An factory)",
+  "Engineered stone pressed from ~90% stone/quartz powder + resin; large-format slabs, cut to size",
 ];
 const PACK = [
-  { label: "包装", value: "A字铁架+护角+缠绕膜；出口采用木箱" },
-  { label: "板材规格", value: "3200×1600mm / 2400×1600mm + 可按需切割" },
-  { label: "厚度", value: "12–30mm（视系列而定）" },
-  { label: "起订量", value: "按集装箱计；支持多色/多规格混装" },
+  { label: "Packaging", value: "Steel A-frame + corner protectors + wrap film; export wooden crates" },
+  { label: "Slab size", value: "3200×1600mm / 2400×1600mm + cut to size" },
+  { label: "Thickness", value: "12 – 30mm depending on line" },
+  { label: "MOQ", value: "By container; mixed colors/sizes OK" },
 ];
 const INSTALL = [
-  "加工前进行测量并制定排版图（nesting），优化石纹衔接",
-  "CNC切割+边缘打磨；接缝处使用人造石专用胶",
-  "确保支撑面平整、受力均匀；大跨度处加固",
-  "安装后清洁并抛光接缝",
+  "Measure & prepare a cutting (nesting) plan to optimize stone veining before fabrication",
+  "CNC cutting + edge polishing; use engineered-stone adhesive for joints",
+  "Ensure a flat, evenly load-bearing substrate; reinforce wide spans",
+  "Clean & polish the joints after installation",
 ];
 const CARE = [
-  { title: "日常清洁", desc: "用软布加温水/中性清洁剂擦拭。避免强力清洁剂及高浓度酸/碱。" },
-  { title: "预防保养", desc: "切割及放置热锅时使用砧板/隔热垫；避免骤冷骤热" },
-  { title: "污渍处理", desc: "顽固污渍使用温和清洁液加不伤表面的清洁垫处理；随后立即擦净。" },
+  { title: "Daily cleaning", desc: "Wipe with a soft cloth + warm water/neutral cleaner. Avoid harsh cleaners and concentrated acids/alkalis." },
+  { title: "Prevention", desc: "Use a cutting board/trivet when cutting & placing hot pots; avoid sudden thermal shock." },
+  { title: "Stain removal", desc: "For stubborn stains use a mild cleaning solution + a non-scratch pad; wipe clean immediately." },
 ];
 const FAQ = [
-  { q: "鹏翔石材可否按需切割尺寸？", a: "可以。支持按尺寸切割（cut-to-size）并按图纸进行边缘加工。" },
-  { q: "与德盛石材是什么关系？", a: "鹏翔是母集团；德盛石材是越南法人主体（乂安工厂），共享同一产品体系" },
-  { q: "起订量与交期？", a: "按集装箱计；交期随订单确认" },
+  { q: "Can Pengxiang stone be cut to size on request?", a: "Yes. We support cut-to-size service and edge fabrication per drawings." },
+  { q: "Relationship with Đức Thịnh Stone?", a: "Pengxiang is the parent group; Đức Thịnh Stone is the Vietnamese entity (Nghe An factory) with the same product range." },
+  { q: "MOQ & lead time?", a: "Priced by container; delivery schedule quoted per order." },
 ];
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const SHOW = ["公寓与别墅厨房台面", "高端室内墙面与地面铺贴", "酒店大堂、商用外立面"];
+const SHOW = ["Apartment & villa countertops", "Premium interior wall cladding & flooring", "Hotel lobbies, commercial facades"];
 const QUARTZ = mk({
-  story: "鹏翔人造石英石（engineered quartz）——由约90%石英粉+树脂压制而成：硬度高、耐刮擦、防渗透、耐酸。适用于厨房台面、台盆面、地面、墙面铺贴",
-  heritage: "石英石凭借耐用且无孔的表面，是最受欢迎的厨房台面人造石系列",
-  technicalSpecs: [{ label: "材质", value: "石英粉约90%+树脂" }, { label: "板材规格", value: "3200×1600 / 3000×1600 mm" }, { label: "厚度", value: "12 – 30 mm" }, { label: "表面", value: "抛光 / 哑光" }, { label: "特性", value: "耐酸、耐污、耐热、耐刮擦" }],
-  whyChoose: [{ icon: "💎", title: "坚硬耐用", desc: "硬度高于天然石材，耐刮擦，少维护" }, { icon: "🛡️", title: "不渗透", desc: "表面无孔，不渗水/渗油" }, { icon: "🎨", title: "纹色丰富", desc: "多种色调及Calacatta金纹系列" }],
+  story: "Pengxiang engineered quartz — pressed from ~90% quartz powder + resin: high hardness, scratch resistant, non-porous, acid resistant. Ideal for countertops, vanities, flooring and wall cladding.",
+  heritage: "Quartz is the most popular engineered stone for countertops thanks to its durability & non-porous surface.",
+  technicalSpecs: [{ label: "Material", value: "Quartz powder ~90% + resin" }, { label: "Slab size", value: "3200×1600 / 3000×1600 mm" }, { label: "Thickness", value: "12 – 30 mm" }, { label: "Surface", value: "Polished / honed" }, { label: "Features", value: "Acid, stain, heat & scratch resistant" }],
+  whyChoose: [{ icon: "💎", title: "Hard & durable", desc: "Harder than natural stone, scratch resistant, low maintenance." }, { icon: "🛡️", title: "Non-porous", desc: "Non-porous surface that won't absorb water or oil." }, { icon: "🎨", title: "Varied veining & colors", desc: "Many tones plus the Calacatta gold-veined line." }],
   projectShowcase: SHOW,
 });
 const MARBLE = mk({
-  story: "鹏翔人造大理石（engineered/artificial marble）——高度还原天然大理石纹理，且均匀度高、易于加工、价格合理，适用于墙面、地面、室内装饰",
-  heritage: "人造大理石纹理美观均匀、瑕疵少，适用于大面积铺贴",
-  technicalSpecs: [{ label: "材质", value: "天然石材+大理石粉+树脂" }, { label: "板材规格", value: "3200×1600 / 2400×1600 mm + 可按需切割" }, { label: "厚度", value: "12 – 30 mm" }, { label: "表面", value: "抛光 / 哑光" }, { label: "适用场景", value: "墙面、地面、卫浴、大堂" }],
-  whyChoose: [{ icon: "🏛️", title: "大理石之美", desc: "大理石纹理高雅，大面积铺贴均匀一致。" }, { icon: "✂️", title: "易于加工", desc: "切割/拼接灵活，损耗低于天然石块。" }, { icon: "💰", title: "性价比高", desc: "在同等美学效果下价格优于天然大理石" }],
+  story: "Pengxiang engineered/artificial marble — recreates natural marble veining with high consistency, easy to fabricate, and affordable for wall cladding, flooring and interiors.",
+  heritage: "Artificial marble offers beautiful, consistent veining with few defects, ideal for large areas.",
+  technicalSpecs: [{ label: "Material", value: "Natural stone + marble powder + resin" }, { label: "Slab size", value: "3200×1600 / 2400×1600 mm + cut to size" }, { label: "Thickness", value: "12 – 30 mm" }, { label: "Surface", value: "Polished / honed" }, { label: "Applications", value: "Wall cladding, flooring, bathrooms, lobbies" }],
+  whyChoose: [{ icon: "🏛️", title: "Marble beauty", desc: "Elegant marble veining, consistent across large areas." }, { icon: "✂️", title: "Easy to fabricate", desc: "Flexible cutting/joining with less waste than stone blocks." }, { icon: "💰", title: "Affordable", desc: "Better value than natural marble with the same aesthetic." }],
   projectShowcase: SHOW,
 });
 export const PENGXIANG_SERIES_META: Record<string, SeriesMeta> = {
   quartz: QUARTZ, marble: MARBLE, other: MARBLE,
   onyx: mk({
-    story: "鹏翔人造玉石（onyx）——具备透光（translucent）效果与独特玉石纹理，适用于点缀项目、背光隔断、吧台",
-    heritage: "人造玉石再现天然玉石的梦幻之美，且耐用性更高",
-    technicalSpecs: [{ label: "材质", value: "矿物粉+树脂（玉石效果）" }, { label: "特性", value: "玉石纹理，部分系列具备透光（backlit）效果" }, { label: "适用场景", value: "点缀隔断、吧台、装饰台面" }],
-    whyChoose: [{ icon: "✨", title: "透光效果", desc: "背光（backlit）照射时尤为出彩、高雅" }, { icon: "🎨", title: "纹理独特", desc: "玉石纹理梦幻，每块板材各具特色" }],
+    story: "Pengxiang artificial onyx — translucent effect & unique onyx veining for accent features, backlit panels and bar counters.",
+    heritage: "Artificial onyx recreates the ethereal look of natural onyx with greater durability.",
+    technicalSpecs: [{ label: "Material", value: "Mineral powder + resin (onyx effect)" }, { label: "Features", value: "Onyx veining, some lines translucent (backlit)" }, { label: "Applications", value: "Accent panels, bar counters, decorative tabletops" }],
+    whyChoose: [{ icon: "✨", title: "Translucent", desc: "Beautiful when backlit — luxurious." }, { icon: "🎨", title: "Unique veining", desc: "Ethereal onyx veining, every slab one of a kind." }],
     projectShowcase: SHOW,
   }),
   terrazzo: mk({
-    story: "鹏翔人造水磨石（terrazzo）——石粒/玻璃粒均匀分布于基底，呈现现代水磨石风格，适用于地面、墙面、台面",
-    heritage: "水磨石凭借耐用与美观重回现代设计潮流",
-    technicalSpecs: [{ label: "材质", value: "石粒/玻璃粒+树脂/水泥基底" }, { label: "效果", value: "水磨石撒粒效果，多彩" }, { label: "适用场景", value: "地面、墙面、台面" }],
-    whyChoose: [{ icon: "🎯", title: "水磨石风格", desc: "现代撒粒效果，契合设计潮流" }, { icon: "💪", title: "坚固耐用", desc: "耐磨性佳，适用于高客流地面" }],
+    story: "Pengxiang artificial terrazzo — stone/glass chips evenly scattered through the base, a modern terrazzo style for flooring, wall cladding and tabletops.",
+    heritage: "Terrazzo is back in modern design trends with durability & aesthetics.",
+    technicalSpecs: [{ label: "Material", value: "Stone/glass chips + resin/cement base" }, { label: "Effect", value: "Scattered-chip terrazzo, multicolor" }, { label: "Applications", value: "Flooring, wall cladding, tabletops" }],
+    whyChoose: [{ icon: "🎯", title: "Terrazzo style", desc: "A modern scattered-chip look that fits current design trends." }, { icon: "💪", title: "Durable", desc: "Strong abrasion resistance for high-traffic floors." }],
     projectShowcase: SHOW,
   }),
 };

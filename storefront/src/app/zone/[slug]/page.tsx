@@ -15,10 +15,10 @@ function getZone(slug: string): Zone {
 }
 
 const TRADE_SHOWS = [
-  { name: "Canton Fair Phase 1", date: "15 - 20 Apr 2026", venue: "广州琶洲", industry: "综合" },
-  { name: "Foshan Ceramics Expo", date: "5 - 8 Jun 2026", venue: "佛山潭洲", industry: "瓷砖" },
-  { name: "China Furniture Fair", date: "18 - 22 Sep 2026", venue: "广州 PWTC", industry: "家具" },
-  { name: "Bauma China", date: "12 - 16 Oct 2026", venue: "上海 SNIEC", industry: "建筑材料" },
+  { name: "Canton Fair Phase 1", date: "15 - 20 Apr 2026", venue: "Guangzhou Pazhou", industry: "General" },
+  { name: "Foshan Ceramics Expo", date: "5 - 8 Jun 2026", venue: "Foshan Tanzhou", industry: "Tiles" },
+  { name: "China Furniture Fair", date: "18 - 22 Sep 2026", venue: "Guangzhou PWTC", industry: "Furniture" },
+  { name: "Bauma China", date: "12 - 16 Oct 2026", venue: "Shanghai SNIEC", industry: "Building Materials" },
 ];
 
 export default async function ZonePage({
@@ -35,8 +35,8 @@ export default async function ZonePage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "产业带", href: "/zones" },
+          { label: "Home", href: "/" },
+          { label: "Trading Zones", href: "/zones" },
           { label: z.name },
         ]}
       />
@@ -47,8 +47,8 @@ export default async function ZonePage({
           {z.image ? <img src={z.image} alt={z.name} className="w-full h-full object-cover opacity-65" /> : null}
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-end text-white" style={{ background: "linear-gradient(transparent 30%, rgba(0,37,87,0.95))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📍 TRADING ZONE</span>
-            <h1 className="text-[32px] font-extrabold leading-tight max-md:text-[24px]">{z.name} 产业集群</h1>
-            <p className="text-[13px] opacity-90 max-w-[600px] mt-2">{z.count} 专业生产 {z.name}，拥有从原材料到出口成品的完整供应链。</p>
+            <h1 className="text-[32px] font-extrabold leading-tight max-md:text-[24px]">{z.name} Industrial Cluster</h1>
+            <p className="text-[13px] opacity-90 max-w-[600px] mt-2">{z.count} specializing in {z.name.toLowerCase()}, with a complete supply chain from raw materials to finished export goods.</p>
           </div>
         </div>
       </div>
@@ -57,10 +57,10 @@ export default async function ZonePage({
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-4 grid grid-cols-4 gap-5 max-md:grid-cols-2">
           {[
-            { v: z.count.split(" ")[0], l: "工厂数量" },
-            { v: "$15B", l: "年产值" },
-            { v: "$8.2B", l: "出口额" },
-            { v: "1985", l: "形成年份" },
+            { v: z.count.split(" ")[0], l: "Factories" },
+            { v: "$15B", l: "Annual output" },
+            { v: "$8.2B", l: "Export revenue" },
+            { v: "1985", l: "Year established" },
           ].map((s) => (
             <div key={s.l} className="text-center px-2.5 border-r border-line last:border-r-0">
               <b className="block text-[26px] font-extrabold text-brand leading-none">{s.v}</b>
@@ -73,18 +73,18 @@ export default async function ZonePage({
       {/* About */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
         <div className="bg-paper border border-line rounded p-5">
-          <h2 className="text-[16px] font-bold text-ink mb-3">{z.name} 产业集群简介</h2>
+          <h2 className="text-[16px] font-bold text-ink mb-3">About the {z.name} cluster</h2>
           <div className="text-[13px] text-ink leading-relaxed space-y-3">
-            <p>{z.name} 是中国最大的产业集群之一，形成于 1980 年代初，并在 2001 年中国加入 WTO 后蓬勃发展。凭借 {z.count} 的规模，该集群贡献了中国该行业约 35% 的总产值。</p>
-            <p>该集群拥有从原材料（硅砂、黏土、金属）、机械设备到包装和出口物流的完整供应链。工厂分层清晰：一线服务高标准的欧盟/美国市场，二线服务东南亚和中东市场，三线为本土品牌做 OEM。</p>
-            <p>华越自 2018 年起在 {z.name.split(" ")[0]} 设立代表处，团队 12 人，每月 2 次为越南采购商组织实地验厂。该集群的知名品牌包括：Dongpeng、Monalisa、Ortonbaths、KUKA——均已入驻华越。</p>
+            <p>{z.name} is one of China's largest industrial clusters, formed in the early 1980s and growing rapidly after China joined the WTO in 2001. With more than {z.count}, this cluster accounts for roughly 35% of China's total industry output.</p>
+            <p>The cluster has a complete supply chain from raw materials (silica, clay, metals) and machinery to packaging and export logistics. Factories are clearly tiered: tier 1 serves the EU/US markets at high standards, tier 2 serves Southeast Asia and the Middle East, and tier 3 does OEM for domestic brands.</p>
+            <p>Huayuesc has had a representative office in {z.name.split(" ")[0]} since 2018 with a team of 12, running on-site factory audits twice a month for Vietnamese buyers. Major brands from this cluster — including Dongpeng, Monalisa, Ortonbaths, and KUKA — are already on Huayuesc.</p>
           </div>
         </div>
       </div>
 
       {/* Cluster factories */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <h2 className="text-[16px] font-bold text-ink mb-3">集群核心工厂</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">Key factories in the cluster</h2>
         <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
           {clusterFactories.map((f) => (
             <Link key={f.slug} href={`/supplier/${f.slug}`} className="bg-paper border border-line rounded-sm p-3.5 hover:border-brand block">
@@ -107,7 +107,7 @@ export default async function ZonePage({
 
       {/* Products */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <h2 className="text-[16px] font-bold text-ink mb-3">集群代表产品</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">Featured products from the cluster</h2>
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {products.map((p) => (
             <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
@@ -125,7 +125,7 @@ export default async function ZonePage({
 
       {/* Trade shows */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <h2 className="text-[16px] font-bold text-ink mb-3">区域活动与展会</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">Events &amp; Trade Shows in the region</h2>
         <div className="bg-paper border border-line rounded overflow-hidden">
           {TRADE_SHOWS.map((t, i) => (
             <Link key={t.name} href="/trade-shows" className={`grid grid-cols-[1fr_180px_180px_140px] gap-4 px-4 py-3 text-[13px] hover:bg-[#FAFBFC] max-md:grid-cols-1 max-md:gap-1 ${i > 0 ? "border-t border-line" : ""}`}>
@@ -140,14 +140,14 @@ export default async function ZonePage({
 
       {/* Map placeholder */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
-        <h2 className="text-[16px] font-bold text-ink mb-3">集群地图</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">Cluster map</h2>
         <div className="relative rounded overflow-hidden h-[280px] bg-brand-dark">
           <img src={`/img/${slug}-map.jpg?v=5`} alt="map" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.55)" }}>
             <div className="text-center">
               <div className="text-[36px] mb-2">🗺️</div>
               <b className="block text-[18px] font-bold">{z.name} — {z.count}</b>
-              <span className="text-[12.5px] opacity-90">交互式地图将于 2026 Q2 发布</span>
+              <span className="text-[12.5px] opacity-90">An interactive map will be released in Q2/2026</span>
             </div>
           </div>
         </div>
@@ -159,5 +159,5 @@ export default async function ZonePage({
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const z = getZone(slug);
-  return { title: `${z.name} 产业带 — Huayuesc` };
+  return { title: `${z.name} Trading Zone — Huayuesc` };
 }

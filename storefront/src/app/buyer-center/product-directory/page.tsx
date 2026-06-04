@@ -4,38 +4,38 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { NAV_CATEGORIES } from "@/data/home";
 
 const EXTRA_CATEGORIES = [
-  { name: "包装与印刷", slug: "packaging-printing" },
-  { name: "泳池与水疗", slug: "pool-spa" },
-  { name: "庭院景观", slug: "landscape-garden" },
-  { name: "卷帘门与自动门", slug: "rolling-door" },
-  { name: "花岗岩与大理石", slug: "stone-granite" },
-  { name: "空调与通风", slug: "hvac" },
-  { name: "儿童玩具", slug: "toys" },
-  { name: "工作服与面料", slug: "uniform-fabric" },
-  { name: "瓷砖与马赛克", slug: "tile-mosaic" },
-  { name: "监控与安防系统", slug: "security-camera" },
-  { name: "不锈钢与金属板材", slug: "metal-sheet" },
-  { name: "智能电子锁", slug: "smart-lock" },
-  { name: "装饰玻璃与镜面", slug: "glass-mirror" },
-  { name: "烤箱与商用灶具", slug: "oven-stove" },
-  { name: "发电机", slug: "generator" },
-  { name: "工业净水设备", slug: "water-purifier" },
-  { name: "太阳能", slug: "solar" },
-  { name: "高端铝合金门窗", slug: "aluminum-glass" },
-  { name: "塑料管材与阀门", slug: "pipe-valve" },
-  { name: "工业风扇", slug: "industrial-fan" },
-  { name: "窗帘与装饰材料", slug: "curtain-decor" },
-  { name: "强化复合木地板", slug: "engineered-wood" },
-  { name: "涂料与饰面材料", slug: "paint-finish" },
-  { name: "建筑钢材", slug: "steel" },
-  { name: "电梯与扶梯", slug: "elevator" },
-  { name: "智能家居设备", slug: "smart-home" },
-  { name: "咖啡调制设备", slug: "coffee-equipment" },
-  { name: "工业冷柜与冰箱", slug: "freezer" },
-  { name: "玻璃展示柜", slug: "display-cabinet" },
-  { name: "家具包覆面料", slug: "upholstery-fabric" },
-  { name: "防水材料", slug: "waterproof" },
-  { name: "电动车与叉车", slug: "electric-vehicle" },
+  { name: "Packaging & Printing", slug: "packaging-printing" },
+  { name: "Pools & Spas", slug: "pool-spa" },
+  { name: "Landscaping & Gardens", slug: "landscape-garden" },
+  { name: "Rolling Doors & Automatic Gates", slug: "rolling-door" },
+  { name: "Granite & Marble", slug: "stone-granite" },
+  { name: "HVAC & Ventilation", slug: "hvac" },
+  { name: "Children's Toys", slug: "toys" },
+  { name: "Uniforms & Fabric", slug: "uniform-fabric" },
+  { name: "Wall Tiles & Mosaic", slug: "tile-mosaic" },
+  { name: "Camera & Security Systems", slug: "security-camera" },
+  { name: "Stainless Steel & Sheet Metal", slug: "metal-sheet" },
+  { name: "Smart Electronic Locks", slug: "smart-lock" },
+  { name: "Decorative Glass & Mirrors", slug: "glass-mirror" },
+  { name: "Ovens & Industrial Stoves", slug: "oven-stove" },
+  { name: "Generators", slug: "generator" },
+  { name: "Industrial Water Purifiers", slug: "water-purifier" },
+  { name: "Solar Energy", slug: "solar" },
+  { name: "Premium Aluminum & Glass", slug: "aluminum-glass" },
+  { name: "Plastic Pipes & Valves", slug: "pipe-valve" },
+  { name: "Industrial Fans", slug: "industrial-fan" },
+  { name: "Curtains & Decor Materials", slug: "curtain-decor" },
+  { name: "Engineered Wood Flooring", slug: "engineered-wood" },
+  { name: "Paint & Finishing Materials", slug: "paint-finish" },
+  { name: "Construction Steel", slug: "steel" },
+  { name: "Elevators & Escalators", slug: "elevator" },
+  { name: "Smart Home Devices", slug: "smart-home" },
+  { name: "Coffee Brewing Equipment", slug: "coffee-equipment" },
+  { name: "Industrial Freezers & Refrigerators", slug: "freezer" },
+  { name: "Glass Display Cabinets", slug: "display-cabinet" },
+  { name: "Upholstery Fabric", slug: "upholstery-fabric" },
+  { name: "Waterproofing Materials", slug: "waterproof" },
+  { name: "Electric Vehicles & Forklifts", slug: "electric-vehicle" },
 ];
 
 const ALL_CATEGORIES = [
@@ -43,7 +43,7 @@ const ALL_CATEGORIES = [
   ...EXTRA_CATEGORIES,
 ];
 
-const VN_LETTER_ORDER = "ABCDEĐEGHIKLMNOPQRSTUVXY";
+const LETTER_ORDER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 function firstLetter(name: string): string {
   const first = name.trim()[0]?.toUpperCase() ?? "Z";
@@ -58,33 +58,33 @@ for (const c of ALL_CATEGORIES) {
   grouped[l].push(c);
 }
 for (const l of Object.keys(grouped)) {
-  grouped[l].sort((a, b) => a.name.localeCompare(b.name, "vi"));
+  grouped[l].sort((a, b) => a.name.localeCompare(b.name, "en"));
 }
-const LETTERS = Array.from(new Set(VN_LETTER_ORDER.split(""))).filter((l) => grouped[l]);
+const LETTERS = Array.from(new Set(LETTER_ORDER.split(""))).filter((l) => grouped[l]);
 
 const VERTICALS = [
-  { icon: "🏨", name: "酒店与度假村", count: "240+ 供应商" },
-  { icon: "🏢", name: "办公与共享办公", count: "180+ 供应商" },
-  { icon: "🏠", name: "公寓与住宅", count: "320+ 供应商" },
-  { icon: "🍽️", name: "餐厅与咖啡馆", count: "150+ 供应商" },
-  { icon: "🏥", name: "医疗与医院", count: "90+ 供应商" },
-  { icon: "🏫", name: "学校与培训", count: "75+ 供应商" },
-  { icon: "🛍️", name: "零售与展厅", count: "210+ 供应商" },
-  { icon: "🏗️", name: "项目与工程", count: "400+ 供应商" },
+  { icon: "🏨", name: "Hotels & Resorts", count: "240+ suppliers" },
+  { icon: "🏢", name: "Offices & Co-working", count: "180+ suppliers" },
+  { icon: "🏠", name: "Condos & Apartments", count: "320+ suppliers" },
+  { icon: "🍽️", name: "Restaurants & Cafes", count: "150+ suppliers" },
+  { icon: "🏥", name: "Healthcare & Hospitals", count: "90+ suppliers" },
+  { icon: "🏫", name: "Schools & Training", count: "75+ suppliers" },
+  { icon: "🛍️", name: "Retail & Showrooms", count: "210+ suppliers" },
+  { icon: "🏗️", name: "Projects & Construction", count: "400+ suppliers" },
 ];
 
 export default function ProductDirectoryPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "产品目录" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Product Directory" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/product-directory" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 产品目录</div>
-            <h1 className="text-[22px] font-bold text-ink">产品目录</h1>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🗂 PRODUCT DIRECTORY</div>
+            <h1 className="text-[22px] font-bold text-ink">Product Directory</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              按 A–Z 字母顺序快速检索 2,400 余个 SKU。点击字母可滚动至对应分组；若您服务于特定类型项目，也可使用右侧的垂直行业入口查看。
+              Look up more than 2,400 SKUs alphabetically from A–Z. Click a letter to jump to its group, or browse by vertical on the right if you're serving a specific type of project.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function ProductDirectoryPage() {
                 <section key={l} id={`letter-${l}`} className="mb-5 last:mb-0 scroll-mt-20">
                   <div className="flex items-center gap-3 mb-2 pb-2 border-b border-line">
                     <div className="w-9 h-9 bg-brand text-white rounded-sm flex items-center justify-center font-extrabold text-[16px]">{l}</div>
-                    <span className="text-[12px] text-mute">{grouped[l].length} 个分类</span>
+                    <span className="text-[12px] text-mute">{grouped[l].length} categories</span>
                   </div>
                   <div className="grid grid-cols-3 gap-x-4 gap-y-1.5 max-md:grid-cols-2">
                     {grouped[l].map((c) => (
@@ -116,7 +116,7 @@ export default function ProductDirectoryPage() {
             </div>
 
             <aside className="bg-paper border border-line rounded p-4 self-start">
-              <b className="block text-[13px] text-ink mb-3">🏷 按垂直行业查看</b>
+              <b className="block text-[13px] text-ink mb-3">🏷 Browse by vertical</b>
               <ul className="space-y-1">
                 {VERTICALS.map((v) => (
                   <li key={v.name}>
@@ -128,7 +128,7 @@ export default function ProductDirectoryPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/buying-request" className="mt-3 block text-center px-3 py-2 bg-accent text-white rounded-sm text-[12px] font-bold hover:opacity-90">+ 发送询价</Link>
+              <Link href="/buying-request" className="mt-3 block text-center px-3 py-2 bg-accent text-white rounded-sm text-[12px] font-bold hover:opacity-90">+ Send RFQ</Link>
             </aside>
           </div>
         </div>
@@ -137,4 +137,4 @@ export default function ProductDirectoryPage() {
   );
 }
 
-export const metadata = { title: "产品目录 — 采购商中心" };
+export const metadata = { title: "Product Directory — Buyer Center" };

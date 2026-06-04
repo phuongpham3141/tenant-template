@@ -10,7 +10,7 @@ import { LangSwitcher } from "@/components/lang-switcher";
  * gap shrinks so 7 items still fit in 768px.
  *
  * Auth-aware: reads the `auth_token` cookie server-side. When logged in,
- * the "Đăng nhập / Đăng ký" item is replaced by "Tài khoản" — keeping
+ * the "Sign In / Sign Up" item is replaced by "Account" — keeping
  * the same item count (7), so the row stays balanced either way.
  */
 
@@ -19,35 +19,35 @@ type LinkRow = {
   href: string;
   desc?: string;
   icon?: string;          // emoji glyph shown left of label
-  badge?: string;         // optional pill text (e.g. "12", "MỚI", "VIP")
+  badge?: string;         // optional pill text (e.g. "12", "NEW", "VIP")
   badgeTone?: "info" | "success" | "warning" | "accent" | "muted";
   thumb?: string;         // 32×32 image thumbnail (favorites)
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "控制台", href: "/buyer-center", desc: "查看询价、订单、消息" },
-  { icon: "📨", label: "询价请求 (RFQ)", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "物流与运输追踪", badge: "5", badgeTone: "info" },
-  { icon: "❤️", label: "收藏的产品", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
-  { icon: "📍", label: "地址簿", href: "/buyer-center/addresses" },
-  { icon: "📄", label: "合同与发票", href: "/buyer-center/invoices" },
+  { icon: "📊", label: "Dashboard", href: "/buyer-center", desc: "View RFQs, orders, and messages" },
+  { icon: "📨", label: "RFQs", href: "/buyer-center/rfqs", desc: "Manage your sent RFQs", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "My Orders", href: "/buyer-center/orders", desc: "Logistics and shipment tracking", badge: "5", badgeTone: "info" },
+  { icon: "❤️", label: "Saved Products", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
+  { icon: "📍", label: "Address Book", href: "/buyer-center/addresses" },
+  { icon: "📄", label: "Contracts & Invoices", href: "/buyer-center/invoices" },
 ];
 
 const SELLER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "控制台", href: "/seller-center", desc: "销售额、收到的订单、消息" },
-  { icon: "🏷", label: "我的产品", href: "/seller-center/products" },
-  { icon: "💬", label: "已发送报价", href: "/seller-center/quotes" },
-  { icon: "📥", label: "收到的订单", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "工厂入驻", href: "/sell-on-csr", desc: "成为认证供应商" },
-  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "跨境支付担保中介", badge: "担保", badgeTone: "success" },
+  { icon: "📊", label: "Dashboard", href: "/seller-center", desc: "Sales, incoming orders, and messages" },
+  { icon: "🏷", label: "My Products", href: "/seller-center/products" },
+  { icon: "💬", label: "Sent Quotes", href: "/seller-center/quotes" },
+  { icon: "📥", label: "Incoming Orders", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
+  { icon: "🏭", label: "Sell on CSR", href: "/sell-on-csr", desc: "Become a certified supplier" },
+  { icon: "🛡", label: "Trade Assurance", href: "/info/trade-assurance", desc: "Cross-border payment escrow", badge: "Escrow", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
-  { icon: "👤", label: "个人资料", href: "/account/profile" },
-  { icon: "🔒", label: "安全与密码", href: "/account/security" },
-  { icon: "💳", label: "支付方式", href: "/account/payment" },
-  { icon: "🔔", label: "通知", href: "/account/notifications", badge: "2", badgeTone: "accent" },
-  { icon: "🚪", label: "退出登录", href: "/logout" },
+  { icon: "👤", label: "Profile", href: "/account/profile" },
+  { icon: "🔒", label: "Security & Password", href: "/account/security" },
+  { icon: "💳", label: "Payment Methods", href: "/account/payment" },
+  { icon: "🔔", label: "Notifications", href: "/account/notifications", badge: "2", badgeTone: "accent" },
+  { icon: "🚪", label: "Sign Out", href: "/logout" },
 ];
 
 const RECENT_ORDERS: LinkRow[] = [
@@ -55,46 +55,46 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🚚",
     label: "PO-202611-0042",
     href: "/buyer-center/orders/PO-202611-0042",
-    desc: "600D 尼龙布 · 佛山纺织",
-    badge: "运输中",
+    desc: "600D nylon fabric · Foshan Textile",
+    badge: "In Transit",
     badgeTone: "info",
   },
   {
     icon: "✅",
     label: "PO-202611-0038",
     href: "/buyer-center/orders/PO-202611-0038",
-    desc: "HDMI 2.1 线缆 · 深圳线缆",
-    badge: "已送达",
+    desc: "HDMI 2.1 cable · Shenzhen Cable",
+    badge: "Delivered",
     badgeTone: "success",
   },
   {
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "YKK 拉链·杭州拉链",
-    badge: "生产中",
+    desc: "YKK zippers · Hangzhou Zipper",
+    badge: "In Production",
     badgeTone: "warning",
   },
 ];
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/cer1.jpg?v=5",
-    label: "卡拉卡塔抛光砖 600×1200",
-    href: "/product/ceramic-1",
-    desc: "东鹏陶瓷·$8.50/㎡",
+    thumb: "/img/products/mijic/mijic-20240627104150-88430.png",
+    label: "Bồn cầu thông minh nguyên khối Mijic",
+    href: "/info/partners/mijic/mijic-20240627104150-88430",
+    desc: "民洁 Mijic · 卫浴洁具",
   },
   {
-    thumb: "/img/fur1.jpg?v=5",
-    label: "L型转角沙发 6座绒布",
-    href: "/product/furniture-1",
-    desc: "顾家家居·$420/套",
+    thumb: "/img/products/bravat/f518102c.png",
+    label: "Vòi bồn tắm 5 lỗ Bravat F518102C",
+    href: "/info/partners/bravat/f518102c",
+    desc: "贝朗 Bravat · 德国卫浴",
   },
   {
-    thumb: "/img/fur7.jpg?v=5",
-    label: "欧派亮光亚克力橱柜",
-    href: "/product/furniture-7",
-    desc: "欧派家居·$210/米",
+    thumb: "/img/products/sylvania/equinox.png",
+    label: "Đèn LED downlight Concord Equinox",
+    href: "/info/partners/sylvania/equinox",
+    desc: "Sylvania · 专业照明",
   },
 ];
 
@@ -248,10 +248,10 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white flex items-center gap-1.5 cursor-pointer py-1"
             >
               <span aria-hidden="true">👋</span>
-              <span>登录<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> 注册</span></span>
+              <span>Sign In<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> Sign Up</span></span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="登录账户" />
+              <PopHeader title="Sign In to Your Account" />
               {/* Social login buttons */}
               <div className="px-4 pt-3 grid grid-cols-3 gap-2">
                 <SocialBtn provider="google" label="Google" icon={I_GOOGLE} />
@@ -261,7 +261,7 @@ export async function TopStrip() {
               {/* Divider */}
               <div className="px-4 py-3 flex items-center gap-3">
                 <div className="flex-1 h-px bg-line" />
-                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">或</span>
+                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">or</span>
                 <div className="flex-1 h-px bg-line" />
               </div>
               {/* Email/password form */}
@@ -269,34 +269,34 @@ export async function TopStrip() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="邮箱或手机号"
+                  placeholder="Email or phone number"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <input
                   name="password"
                   type="password"
-                  placeholder="密码"
+                  placeholder="Password"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <button
                   type="submit"
                   className="w-full py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px] cursor-pointer hover:bg-brand-light"
                 >
-                  登录
+                  Sign In
                 </button>
                 <div className="flex justify-between text-[11.5px] pt-1">
                   <Link href="/forgot-password" className="text-mute hover:text-brand cursor-pointer">
-                    忘记密码？
+                    Forgot Password?
                   </Link>
                   <Link href="/register/buyer" className="text-brand font-semibold cursor-pointer hover:underline">
-                    注册采购商 →
+                    Register as Buyer →
                   </Link>
                 </div>
               </form>
               <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
-                您是供应商？{" "}
+                Are you a supplier?{" "}
                 <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
-                  注册供应商
+                  Register as Supplier
                 </Link>
               </div>
             </div>
@@ -310,11 +310,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BUYER}
-              <span>采购商</span>
+              <span>Buyers</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="采购商专区" more="查看全部" moreHref="/buyer-center" />
+              <PopHeader title="Buyer Center" more="View All" moreHref="/buyer-center" />
               <LinkList items={BUYER_LINKS} />
             </div>
           </div>
@@ -326,11 +326,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_FACTORY}
-              <span>供应商</span>
+              <span>Suppliers</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="供应商专区" more="查看全部" moreHref="/seller-center" />
+              <PopHeader title="Supplier Center" more="View All" moreHref="/seller-center" />
               <LinkList items={SELLER_LINKS} />
             </div>
           </div>
@@ -346,12 +346,12 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="下载华越APP" />
+              <PopHeader title="Download the Huayue App" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
-                  二维码
+                  QR Code
                   <br />
-                  扫码下载
+                  Scan to Download
                 </div>
                 <div className="flex-1 space-y-2">
                   <Link
@@ -391,11 +391,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_USER}
-              <span>账户</span>
+              <span>Account</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="账户" />
+              <PopHeader title="Account" />
               <LinkList items={ACCOUNT_LINKS} />
             </div>
           </div>
@@ -408,11 +408,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BOX}
-              <span>订单</span>
+              <span>Orders</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="最近订单" more="查看全部" moreHref="/buyer-center/orders" />
+              <PopHeader title="Recent Orders" more="View All" moreHref="/buyer-center/orders" />
               <LinkList items={RECENT_ORDERS} />
             </div>
           </div>
@@ -424,11 +424,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               <span className="text-accent">{I_HEART}</span>
-              <span>收藏</span>
+              <span>Favorites</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="已收藏产品" more="查看全部" moreHref="/buyer-center/favorites" />
+              <PopHeader title="Saved Products" more="View All" moreHref="/buyer-center/favorites" />
               <LinkList items={RECENT_FAVORITES} />
             </div>
           </div>
@@ -444,7 +444,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </span>
             <div className="ts-pop absolute right-0 top-full w-[260px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="语言与货币" />
+              <PopHeader title="Language & Currency" />
               <LangSwitcher variant="full" initialHost={host} />
             </div>
           </div>

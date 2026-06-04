@@ -1,86 +1,86 @@
 import type { PartnerProduct } from "@/data/partners";
 
 /**
- * LINVOL 领沃 产品目录 — 来自 linvol.midea.com.cn 的 4 个真实电梯系列。
- * 美的集团旗下官方电梯品牌（美的楼宇科技 Midea Building Technologies）。
- * 制造商：菱王电梯有限公司。官方图片（已核验）。
+ * LINVOL 领沃 catalog — 4 real elevator lines from linvol.midea.com.cn.
+ * The official elevator brand of the Midea Group (Midea Building Technologies).
+ * Manufacturer: 菱王电梯有限公司 (Lingwang Elevator). Official images (verified). English names.
  */
 
 export const LINVOL_PRODUCTS: PartnerProduct[] = [
-  // ─── 家用电梯 ───────────────────────────────
+  // ─── Home elevators ───────────────────────────────
   {
     model: "LV-VILLA",
     slug: "lv-villa",
-    name: "LINVOL 别墅电梯",
+    name: "LINVOL Villa Elevator",
     nameOriginal: "别墅电梯",
-    series: "家用电梯",
+    series: "Home Elevators",
     seriesOriginal: "villa",
-    desc: "LINVOL 别墅电梯——轿厢与部件全面升级设计，最大化利用井道空间，外观时尚，可定制性丰富。隶属美的集团旗下官方电梯品牌。",
+    desc: "The LINVOL Villa Elevator features a comprehensively redesigned cabin and components that make the most of the shaft space, with a fashionable look and rich customization options. Part of the official elevator brand of the Midea Group.",
     image: "/img/products/linvol/lv-villa.png",
     specs: [
-      { k: "类型", v: "家用电梯/别墅电梯" },
-      { k: "品牌", v: "LINVOL 领沃—美的楼宇科技 Midea Building Technologies" },
-      { k: "制造商", v: "菱王电梯有限公司（Lingwang Elevator）" },
-      { k: "服务", v: "「管家+专家」全生命周期——终身质保+维保" },
+      { k: "Type", v: "Home / villa elevator" },
+      { k: "Brand", v: "LINVOL 领沃 — Midea Building Technologies" },
+      { k: "Manufacturer", v: "菱王电梯有限公司 (Lingwang Elevator)" },
+      { k: "Service", v: "Full-lifecycle concierge + expert support — lifetime warranty + maintenance" },
     ],
-    applications: ["别墅、联排别墅、高端多层住宅"],
+    applications: ["Villas, townhouses, and premium multi-story homes"],
     sourceUrl: "https://linvol.midea.com.cn/home",
   },
-  // ─── 加装改造电梯 ───────────────────────────────
+  // ─── Retrofit elevators ───────────────────────────────
   {
     model: "LV-RETRO",
     slug: "lv-retro",
-    name: "LINVOL 加装改造电梯",
+    name: "LINVOL Retrofit Elevator",
     nameOriginal: "加装改造电梯",
-    series: "加装改造电梯",
+    series: "Retrofit Elevators",
     seriesOriginal: "retrofit",
-    desc: "LINVOL 加装改造电梯——专为老旧楼房加装电梯而设计，将全新数字技术与人性化设计相结合，服务社区居民与老年群体。",
+    desc: "The LINVOL Retrofit Elevator is purpose-built for adding elevators to older buildings, combining the latest digital technology with people-centered design to serve residential communities and elderly residents.",
     image: "/img/products/linvol/lv-retro.png",
     specs: [
-      { k: "类型", v: "老旧楼房加装电梯（加装改造）" },
-      { k: "品牌", v: "LINVOL 领沃—美的楼宇科技 Midea Building Technologies" },
-      { k: "制造商", v: "菱王电梯有限公司（Lingwang Elevator）" },
-      { k: "特点", v: "全新数字技术 + 面向社区的人性化设计" },
+      { k: "Type", v: "Retrofit elevator for older buildings" },
+      { k: "Brand", v: "LINVOL 领沃 — Midea Building Technologies" },
+      { k: "Manufacturer", v: "菱王电梯有限公司 (Lingwang Elevator)" },
+      { k: "Highlights", v: "Latest digital technology + people-centered community design" },
     ],
-    applications: ["老旧公寓/楼房加装电梯", "老年人聚居社区"],
+    applications: ["Apartments/older buildings adding an elevator", "Residential areas with many elderly residents"],
     sourceUrl: "https://linvol.midea.com.cn/home",
   },
-  // ─── 自动扶梯 ───────────────────────────────
+  // ─── Escalators ───────────────────────────────
   {
     model: "LV-ESC",
     slug: "lv-esc",
-    name: "LINVOL 自动扶梯",
+    name: "LINVOL Escalator",
     nameOriginal: "自动扶梯",
-    series: "自动扶梯",
+    series: "Escalators",
     seriesOriginal: "escalator",
-    desc: "LINVOL 自动扶梯——适用于购物中心、车站、机场：结构精密，运行平稳，节能省电。",
+    desc: "The LINVOL Escalator is built for shopping malls, train stations, and airports: precision construction, smooth operation, and energy efficiency.",
     image: "/img/products/linvol/lv-esc.png",
     specs: [
-      { k: "类型", v: "自动扶梯" },
-      { k: "品牌", v: "LINVOL 领沃—美的楼宇科技 Midea Building Technologies" },
-      { k: "制造商", v: "菱王电梯有限公司（Lingwang Elevator）" },
-      { k: "特性", v: "结构精密，运行平稳，节能省电" },
+      { k: "Type", v: "Escalator" },
+      { k: "Brand", v: "LINVOL 领沃 — Midea Building Technologies" },
+      { k: "Manufacturer", v: "菱王电梯有限公司 (Lingwang Elevator)" },
+      { k: "Features", v: "Precision construction, smooth operation, energy efficiency" },
     ],
-    applications: ["购物中心", "车站、机场", "大人流量公共工程"],
+    applications: ["Shopping malls", "Train stations and airports", "High-traffic public facilities"],
     sourceUrl: "https://linvol.midea.com.cn/home",
   },
-  // ─── 乘客电梯 ───────────────────────────────
+  // ─── Passenger elevators ───────────────────────────────
   {
     model: "LV-PAX",
     slug: "lv-pax",
-    name: "LINVOL 乘客电梯",
+    name: "LINVOL Passenger Elevator",
     nameOriginal: "乘客电梯",
-    series: "乘客电梯",
+    series: "Passenger Elevators",
     seriesOriginal: "passenger",
-    desc: "LINVOL 数字化乘客电梯 —— 适用于酒店、写字楼、住宅小区：性能卓越、安全性高、节能省电，在电梯全生命周期中应用数字技术 + AI。",
+    desc: "The digital LINVOL Passenger Elevator is built for hotels, offices, and apartments: outstanding performance, high safety, and energy efficiency, applying digital + AI technology across the elevator's entire lifecycle.",
     image: "/img/products/linvol/lv-pax.png",
     specs: [
-      { k: "类型", v: "乘客电梯" },
-      { k: "品牌", v: "LINVOL 领沃—美的楼宇科技 Midea Building Technologies" },
-      { k: "制造商", v: "菱王电梯有限公司（Lingwang Elevator）" },
-      { k: "技术", v: "数字化 + AI 贯穿电梯全生命周期" },
+      { k: "Type", v: "Passenger elevator" },
+      { k: "Brand", v: "LINVOL 领沃 — Midea Building Technologies" },
+      { k: "Manufacturer", v: "菱王电梯有限公司 (Lingwang Elevator)" },
+      { k: "Technology", v: "Digital + AI across the full elevator lifecycle" },
     ],
-    applications: ["酒店", "写字楼", "住宅小区、住宅"],
+    applications: ["Hotels", "Office buildings", "Apartments and residences"],
     sourceUrl: "https://linvol.midea.com.cn/home",
   },
 ];

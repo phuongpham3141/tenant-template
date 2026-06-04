@@ -5,12 +5,12 @@ export function AllCatNav({ sections }: { sections: CatSection[] }) {
     <div className="max-w-[1400px] mx-auto px-4 mt-5">
       <div className="bg-paper border border-line rounded overflow-hidden">
         <div className="px-5 py-3.5 flex justify-between items-center border-b border-line max-md:flex-col max-md:items-start max-md:gap-2">
-          <h2 className="text-[16px] font-bold text-ink">全部分类</h2>
+          <h2 className="text-[16px] font-bold text-ink">All Categories</h2>
           <div className="flex items-center gap-2.5 text-[12px] text-mute">
-            <span>查看方式</span>
+            <span>View by</span>
             <div className="flex border border-line rounded-sm overflow-hidden">
               <button className="px-2.5 py-1 bg-brand text-white text-[12px] font-medium">
-                按分类
+                Category
               </button>
               <button className="px-2.5 py-1 bg-paper text-mute text-[12px] font-medium border-l border-line">
                 A-Z

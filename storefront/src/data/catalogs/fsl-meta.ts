@@ -1,6 +1,6 @@
 /**
- * 元数据 FSL 佛山照明 (Foshan Lighting) — 品牌通用元数据。
- * 来源：chinafsl.com（国际站）。中国大型照明厂商，已上市，创立于 1958 年。
+ * FSL 佛山照明 (Foshan Lighting) metadata — shared brand meta.
+ * Source: chinafsl.com (international site). Major listed Chinese lighting maker, since 1958.
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -13,52 +13,52 @@ export type SeriesMeta = {
 };
 const BRAND: SeriesMeta = {
   story:
-    "FSL（佛山照明）于 1958 年创立于广东佛山，是中国规模最大、历史最悠久的照明制造商之一，已在证券交易所上市。FSL 拥有 5 个生产基地、200 多条生产线及逾 10,000 名员工，提供完整的产品线：民用、商业、户外、工业照明，车灯、专用灯具及智能照明",
+    "FSL (佛山照明 — Foshan Electrical and Lighting Co., Ltd.) was founded in 1958 in Foshan, Guangdong — one of the largest and longest-established lighting manufacturers in China, publicly listed. FSL operates 5 production bases, over 200 production lines and more than 10,000 employees, offering a full portfolio: residential, commercial, outdoor, industrial, automotive, specialty and smart lighting.",
   heritage:
-    "国内外知名品牌，服务约 80 个国家的 200 多家客户。产品涵盖 LED 灯泡、灯管/支架灯、筒灯、面板灯，以及投光灯、路灯和智能照明解决方案",
+    "A brand well known at home and abroad, serving more than 200 customers in around 80 countries. Products span LED bulbs, tubes/battens, downlights and panels through to floodlights, street lights and smart lighting solutions.",
   technicalSpecs: [
-    { label: "品牌", value: "FSL 佛山照明" },
-    { label: "创立", value: "1958 年（广东佛山）" },
-    { label: "规模", value: "5 个生产基地，200+ 条生产线，10,000+ 名员工" },
-    { label: "覆盖范围", value: "民用、商业、户外、工业、车灯、智能" },
+    { label: "Brand", value: "FSL 佛山照明 (Foshan Lighting)" },
+    { label: "Founded", value: "1958 (Foshan, Guangdong)" },
+    { label: "Scale", value: "5 production bases, 200+ lines, 10,000+ employees" },
+    { label: "Scope", value: "Residential, commercial, outdoor, industrial, automotive, smart" },
   ],
   manufacturing: [
-    "佛山电器照明股份有限公司（FSL）—— 已上市，创立于 1958 年",
-    "中国境内 5 个生产基地 + 200 多条生产线",
-    "自主研发与生产 LED 芯片/模组、驱动电源、光学件",
-    "出口 80 多个国家 —— 大规模品质管控",
+    "Foshan Electrical and Lighting Co., Ltd. (FSL) — listed, since 1958",
+    "5 production bases + over 200 production lines in China",
+    "In-house R&D and production of LED chips/modules, drivers and optics",
+    "Exports to over 80 countries — large-scale quality control",
   ],
   careGuide: [
-    { title: "LED 灯具", desc: "寿命长、维护少；定期擦拭表面灰尘，室内款应避免受潮" },
-    { title: "户外灯具", desc: "IP65-66 等级耐受风吹日晒；仍应定期检查密封圈与接头" },
-    { title: "安装", desc: "按功率选用正确的驱动电源；投光灯/路灯须保证散热" },
+    { title: "LED lamps", desc: "Long lifespan, low maintenance; dust the surface periodically and keep indoor types away from moisture." },
+    { title: "Outdoor lamps", desc: "IP65-66 types withstand the weather; still inspect gaskets & connectors periodically." },
+    { title: "Installation", desc: "Use the correct driver/power supply for the wattage; ensure heat dissipation for floodlights/street lights." },
   ],
   installation: [
-    "按用途选择灯具类型（嵌入式、吸顶、支架、投光、路灯等）",
-    "由电工接线；电压正确（通常 AC220-240V）并配驱动电源",
-    "嵌入式筒灯用弹簧卡扣；投光灯/路灯需配合适的支架与散热",
-    "户外安装须检查 IP 与防水等级",
+    "Choose the lamp type by application (recessed, surface-mounted, batten, floodlight, street light, etc.)",
+    "Wired by an electrician; at the correct voltage (usually AC220-240V) and driver",
+    "Recessed lamps use spring clips; floodlights/street lights need suitable brackets & heat dissipation",
+    "Check the IP rating & water resistance for outdoor installation",
   ],
   certifications: [
-    "中国/国际照明与电气安全标准（CE 等）",
-    "上市企业 —— 大规模品质管理体系",
-    "户外系列达 IP65-66 防护等级",
+    "Chinese/international lighting & electrical-safety standards (CE, etc.)",
+    "Publicly listed company — large-scale quality management system",
+    "IP65-66 protection rating for the outdoor range",
   ],
   packaging: [
-    { label: "供货形式", value: "按 SKU / 按产品系列" },
-    { label: "产品范围", value: "灯泡、灯管、筒灯、面板灯、投光灯、路灯、智能灯具、车灯" },
-    { label: "出口", value: "80 多个国家" },
+    { label: "Supply format", value: "By SKU / by product line" },
+    { label: "Product range", value: "Bulbs, tubes, downlights, panels, floodlights, street lights, smart, automotive" },
+    { label: "Export", value: "Over 80 countries" },
   ],
   whyChoose: [
-    { icon: "💡", title: "1958 年创立的大厂", desc: "中国规模最大、历史最悠久的照明制造商之一，已上市。" },
-    { icon: "🏭", title: "庞大规模", desc: "5 个生产基地，200+ 条生产线，10,000+ 名员工。" },
-    { icon: "🌍", title: "全面覆盖", desc: "从民用 LED 灯泡到路灯、车灯及智能照明。" },
+    { icon: "💡", title: "Major brand since 1958", desc: "One of China's largest and longest-established lighting makers, publicly listed." },
+    { icon: "🏭", title: "Massive scale", desc: "5 production bases, 200+ lines, 10,000+ employees." },
+    { icon: "🌍", title: "Comprehensive", desc: "From residential LED bulbs to street lights, automotive lamps and smart lighting." },
   ],
-  projectShowcase: ["住宅与公寓", "办公、零售、商业", "街道与城市照明", "厂房、物流、农业"],
+  projectShowcase: ["Homes & apartments", "Offices, retail, commercial", "Streets & urban lighting", "Factories, logistics, agriculture"],
   faq: [
-    { q: "FSL 是哪家厂商？", a: "FSL（佛山照明 Foshan Lighting）是中国大型照明制造商，创立于 1958 年，已上市，出口 80 多个国家。" },
-    { q: "FSL 在越南有售吗？", a: "请联系华越供应链（Huayuesc），获取为越南项目/经销商供应 FSL 灯具的咨询。" },
-    { q: "FSL 有哪些类型的灯具？", a: "种类齐全：LED 灯泡、灯管/支架灯、筒灯、面板灯、投光灯、路灯、庭院灯、开关/插座、LED 灯带、智能灯具及专用灯具。" },
+    { q: "Who is FSL?", a: "FSL (佛山照明 Foshan Lighting) is a major Chinese lighting manufacturer, founded in 1958, publicly listed, exporting to over 80 countries." },
+    { q: "Does FSL supply to Vietnam?", a: "Contact Huayuesc for advice on supplying FSL lighting for projects/dealers in Vietnam." },
+    { q: "What lamp types does FSL offer?", a: "A full range: LED bulbs, tubes/battens, downlights, panels, floodlights, street lights, garden lights, switches/sockets, LED strips, smart lamps and specialty lamps." },
   ],
 };
 export function getSeriesMeta(_seriesOriginal?: string): SeriesMeta | undefined {

@@ -10,21 +10,21 @@ const TOURS = FACTORIES.slice(0, 8).map((f, i) => ({
 export default function FactoryTourPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "实地验厂" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Factory Tour" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[240px] bg-brand-dark">
           <img src="/img/factory-tour.jpg?v=5" alt="" className="w-full h-full object-cover opacity-55" />
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 FACTORY TOUR</span>
-            <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">在线工厂参观</h1>
-            <p className="text-[13.5px] opacity-90 max-w-[640px] mt-2">在 40+ 家合作工厂拍摄的 360° 视频参观。放心下单——清楚知道货在何处、由谁生产。</p>
+            <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">Explore factories online</h1>
+            <p className="text-[13.5px] opacity-90 max-w-[640px] mt-2">360° video tours filmed at 40+ partner factories. Order with confidence — know exactly where your goods are made and by whom.</p>
           </div>
         </div>
       </div>
 
       {/* Featured tour */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <h2 className="text-[18px] font-bold text-ink mb-3">🎬 本周精选参观</h2>
+        <h2 className="text-[18px] font-bold text-ink mb-3">🎬 Featured tour this week</h2>
         <div className="bg-paper border border-line rounded overflow-hidden grid grid-cols-[1fr_320px] max-md:grid-cols-1">
           <div className="relative aspect-video bg-brand-dark">
             <img src="/img/factory-tour-featured.jpg?v=5" alt="Featured tour" className="w-full h-full object-cover opacity-80" />
@@ -36,24 +36,24 @@ export default function FactoryTourPage() {
             <span className="absolute bottom-3 right-3 bg-black/70 text-white text-[12px] px-2 py-1 rounded-sm">15:42</span>
           </div>
           <div className="p-5 flex flex-col justify-center">
-            <span className="inline-block self-start bg-accent text-white px-2 py-0.5 text-[10.5px] font-bold rounded-sm tracking-wider mb-2">精选</span>
+            <span className="inline-block self-start bg-accent text-white px-2 py-0.5 text-[10.5px] font-bold rounded-sm tracking-wider mb-2">FEATURED</span>
             <h3 className="text-[20px] font-bold text-ink mb-1">Dongpeng Ceramics — Foshan Plant 3</h3>
-            <p className="text-[12.5px] text-mute leading-relaxed mb-4">参观 2025 年新投资的 porcelain 生产线：Sacmi 30,000 吨压机、8 色 HD 数码喷印、250 米烧成窑。年产能 50M ㎡。</p>
+            <p className="text-[12.5px] text-mute leading-relaxed mb-4">Tour the porcelain line newly invested in 2025: a Sacmi 30,000-ton press, 8-color HD digital printing, and a 250m kiln. Output of 50M m²/year.</p>
             <div className="flex gap-3 text-[11.5px] text-mute mb-4 flex-wrap">
-              <span>📍 佛山</span>
+              <span>📍 Foshan</span>
               <span>•</span>
               <span>⏱ 15:42</span>
               <span>•</span>
-              <span>👁 24,300 次浏览</span>
+              <span>👁 24,300 views</span>
             </div>
-            <Link href="/supplier/dongpeng-ceramics" className="px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] text-center">查看供应商详情 →</Link>
+            <Link href="/supplier/dongpeng-ceramics" className="px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] text-center">View supplier details →</Link>
           </div>
         </div>
       </div>
 
       {/* Tour grid */}
       <div className="max-w-[1400px] mx-auto px-4 mt-7">
-        <h2 className="text-[18px] font-bold text-ink mb-3">全部工厂参观</h2>
+        <h2 className="text-[18px] font-bold text-ink mb-3">All Factory Tours</h2>
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {TOURS.map(({ factory, duration }) => (
             <Link key={factory.slug} href={`/supplier/${factory.slug}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
@@ -81,10 +81,10 @@ export default function FactoryTourPage() {
         <div className="bg-paper border border-line rounded p-6">
           <div className="flex justify-between items-end mb-4 max-md:flex-col max-md:items-start max-md:gap-3">
             <div>
-              <h2 className="text-[20px] font-bold text-ink">📅 预约实地参观</h2>
-              <p className="text-[12.5px] text-mute mt-1">我们在真实工厂组织一对一参观。配翻译、广州机场接送。</p>
+              <h2 className="text-[20px] font-bold text-ink">📅 Book an in-person tour</h2>
+              <p className="text-[12.5px] text-mute mt-1">We arrange 1-on-1 tours at the actual factories, with an interpreter and airport pickup in Guangzhou.</p>
             </div>
-            <Link href="/buying-request" className="px-5 py-2.5 bg-accent text-white rounded-sm font-semibold text-[13px]">预约参观 →</Link>
+            <Link href="/buying-request" className="px-5 py-2.5 bg-accent text-white rounded-sm font-semibold text-[13px]">Request a booking →</Link>
           </div>
           <div className="grid grid-cols-5 gap-3 max-md:grid-cols-2">
             {FACTORIES.slice(0, 5).map((f) => (
@@ -101,4 +101,4 @@ export default function FactoryTourPage() {
   );
 }
 
-export const metadata = { title: "实地验厂 — 华越供应链" };
+export const metadata = { title: "Factory Tour — Huayuesc" };

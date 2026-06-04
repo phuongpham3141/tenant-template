@@ -4,94 +4,94 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TIERS = [
   {
-    name: "免费",
+    name: "Free",
     price: "$0",
-    per: "/年",
+    per: "/yr",
     color: "border-line",
-    badge: "免费",
-    cta: "使用中",
+    badge: "Free",
+    cta: "Currently active",
     ctaColor: "bg-mute2/30 text-mute",
-    desc: "适合新供应商、试水市场",
+    desc: "For new suppliers testing the market",
   },
   {
-    name: "金牌",
+    name: "Gold",
     price: "$2,980",
-    per: "/年",
+    per: "/yr",
     color: "border-gold ring-2 ring-gold",
-    badge: "最受欢迎",
-    cta: "升级金牌",
+    badge: "MOST POPULAR",
+    cta: "Upgrade to Gold",
     ctaColor: "bg-gold text-brand-dark",
-    desc: "适合认真出口越南的供应商",
+    desc: "For suppliers serious about exporting to Vietnam",
     highlight: true,
   },
   {
-    name: "钻石",
+    name: "Diamond",
     price: "$6,800",
-    per: "/年",
+    per: "/yr",
     color: "border-brand",
     badge: "Premium",
-    cta: "联系咨询",
+    cta: "Contact Sales",
     ctaColor: "bg-brand text-white",
-    desc: "适合大品牌、追求最大曝光",
+    desc: "For major brands that need maximum exposure",
   },
 ];
 
 const FEATURES = [
-  { name: "可发布产品上限", free: "30 SKU", gold: "5,000 SKU", diamond: "不限" },
-  { name: "每月可接收询价", free: "10", gold: "不限", diamond: "不限 + 优先" },
-  { name: "搜索结果排名位置", free: "普通", gold: "前 30%", diamond: "前 5%" },
-  { name: "行业首页 Banner", free: "—", gold: "✓（轮播）", diamond: "✓（固定 1 个位）" },
-  { name: "工厂验厂 + TÜV 报告", free: "自费 $1,200", gold: "每年 1 次免费", diamond: "每年 2 次免费" },
-  { name: "金牌徽章 + 认证卖家", free: "—", gold: "✓", diamond: "✓ + 钻石皇冠" },
-  { name: "详细数据分析看板", free: "基础", gold: "完整", diamond: "完整 + 竞品数据" },
-  { name: "Maike AI 助手", free: "7 天试用", gold: "✓ 免费", diamond: "✓ 免费 + 定制训练" },
-  { name: "专属客户经理", free: "—", gold: "共享", diamond: "专属" },
-  { name: "参与 Smart Expo", free: "每年 1 场", gold: "全部展会", diamond: "全部 + 高级展位" },
+  { name: "Maximum products listed", free: "30 SKUs", gold: "5,000 SKUs", diamond: "Unlimited" },
+  { name: "RFQs received / month", free: "10", gold: "Unlimited", diamond: "Unlimited + priority" },
+  { name: "Search result ranking", free: "Standard", gold: "Top 30%", diamond: "Top 5%" },
+  { name: "Industry homepage banner", free: "—", gold: "✓ (rotating)", diamond: "✓ (1 fixed slot)" },
+  { name: "Factory audit + TÜV report", free: "Self-paid $1,200", gold: "1x / yr free", diamond: "2x / yr free" },
+  { name: "Gold badge + verified seller", free: "—", gold: "✓", diamond: "✓ + Diamond crown" },
+  { name: "Detailed analytics dashboard", free: "Basic", gold: "Full", diamond: "Full + competitor data" },
+  { name: "Maike AI assistant", free: "7-day demo", gold: "✓ Free", diamond: "✓ Free + custom training" },
+  { name: "Dedicated account manager", free: "—", gold: "Shared", diamond: "Dedicated" },
+  { name: "Smart Expo access", free: "1 expo / yr", gold: "All expos", diamond: "All + premium booth" },
 ];
 
 const TESTIMONIALS = [
   {
     company: "Shenzhen Lighting Co.",
-    role: "CEO 李强",
-    quote: "升级金牌 3 个月后，来自越南采购商的订单增长 4×——主要得益于 LED 灯具行业 Banner 和优先询价。首月即收回金牌费用。",
-    metric: "+312% 订单",
+    role: "CEO, Li Qiang",
+    quote: "Three months after upgrading to Gold, orders from Vietnamese buyers grew 4× — mostly thanks to the LED lighting industry banner and priority RFQs. The ROI covered the Gold fee in the first month.",
+    metric: "+312% orders",
     avatar: 41,
   },
   {
     company: "Foshan Tile Master",
-    role: "销售总监 张美",
-    quote: "胡志明市采购商在华越搜索 porcelain 瓷砖——金牌将我们推上结果前三。入站询价从每月 8 条增至 47 条。免费 TÜV 验厂助我们签下大型酒店连锁。",
-    metric: "47 条询价/月",
+    role: "Sales Director, Zhang Mei",
+    quote: "Ho Chi Minh City buyers search for porcelain tile on Huayuesc — Gold pushed us into the top 3 results. Inbound RFQs went from 8/month to 47/month. The free TÜV audit helped us close a major hotel chain.",
+    metric: "47 RFQs/month",
     avatar: 42,
   },
   {
     company: "Guangzhou KUKA Home",
-    role: "出口经理 王华",
-    quote: "钻石会员 + Smart Expo 让我们一周内触达 12K 东南亚采购商——相当于 6 个月线下展会的效果。$6,800 的费用相比广交会 $40K+ 的开支微不足道。",
-    metric: "12K 采购商/场",
+    role: "Export Manager, Wang Hua",
+    quote: "Diamond plus Smart Expo let us reach 12K Southeast Asian buyers in a single week — the equivalent of six months of offline trade fairs. The $6.8K fee is small next to a Canton Fair budget of $40K+.",
+    metric: "12K buyers/expo",
     avatar: 43,
   },
 ];
 
 const ROI_ROWS = [
-  { label: "当前月均订单额", v: "$4,200" },
-  { label: "升级金牌后预计增长（3.2×）", v: "+$13,440" },
-  { label: "年度金牌费用（按 12 个月分摊）", v: "−$248" },
-  { label: "每月新增净利润（毛利率 22%）", v: "+$2,729" },
+  { label: "Current average orders / month", v: "$4,200" },
+  { label: "Projected growth with Gold (3.2×)", v: "+$13,440" },
+  { label: "Annual Gold fee (divided over 12 months)", v: "−$248" },
+  { label: "Extra net profit / month (22% margin)", v: "+$2,729" },
 ];
 
 export default function GoldMemberPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "供应商中心", href: "/seller-center" }, { label: "申请金牌会员" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Gold Member Sign-Up" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/gold-member" />
         <div>
           <div className="bg-gradient-to-br from-gold/40 to-gold/10 border border-gold rounded p-5 mb-4">
             <div className="inline-block bg-brand-dark text-gold px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🥇 GOLD MEMBERSHIP</div>
-            <h1 className="text-[24px] font-bold text-ink">成为金牌供应商——突破越南出口</h1>
+            <h1 className="text-[24px] font-bold text-ink">Become a Gold supplier — break through into Vietnam exports</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed max-w-[680px]">
-              华越 91% 的 B2B 订单来自金牌/钻石供应商。当采购商搜索「porcelain 瓷砖 起订量 500㎡」或「橱柜 OEM」时，算法会优先展示带徽章的供应商——金牌 = 信任 + 流量 + 透明的验厂报告。
+              91% of B2B orders on Huayuesc come from Gold/Diamond suppliers. When a buyer searches "porcelain tile MOQ 500m²" or "OEM kitchen cabinets," the algorithm gives priority to suppliers with a badge — Gold = trust + traffic + transparent audit reports.
             </p>
           </div>
 
@@ -117,14 +117,14 @@ export default function GoldMemberPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4 overflow-x-auto">
-            <b className="block text-[15px] text-ink mb-4">📋 功能详细对比</b>
+            <b className="block text-[15px] text-ink mb-4">📋 Detailed feature comparison</b>
             <table className="w-full text-[12.5px] min-w-[640px]">
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
-                  <th className="text-left px-3 py-2.5 font-medium">功能</th>
-                  <th className="text-center px-3 py-2.5 font-medium">免费</th>
-                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">金牌</th>
-                  <th className="text-center px-3 py-2.5 font-medium">钻石</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Feature</th>
+                  <th className="text-center px-3 py-2.5 font-medium">Free</th>
+                  <th className="text-center px-3 py-2.5 font-medium bg-gold/15 text-brand-dark">Gold</th>
+                  <th className="text-center px-3 py-2.5 font-medium">Diamond</th>
                 </tr>
               </thead>
               <tbody>
@@ -141,7 +141,7 @@ export default function GoldMemberPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">💬 借助金牌成功的供应商</b>
+            <b className="block text-[15px] text-ink mb-4">💬 Suppliers who succeeded with Gold</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {TESTIMONIALS.map((t) => (
                 <div key={t.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
@@ -154,7 +154,7 @@ export default function GoldMemberPage() {
                   </div>
                   <p className="text-[12px] text-ink leading-relaxed mb-3">"{t.quote}"</p>
                   <div className="border-t border-line pt-2 flex justify-between items-baseline">
-                    <span className="text-[10.5px] text-mute">成效</span>
+                    <span className="text-[10.5px] text-mute">Result</span>
                     <b className="text-[14px] text-success">{t.metric}</b>
                   </div>
                 </div>
@@ -164,8 +164,8 @@ export default function GoldMemberPage() {
 
           <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[15px] text-ink mb-3">📊 金牌 ROI 测算</b>
-              <p className="text-[11.5px] text-mute mb-3">基于近 12 个月内 142 家升级金牌的家具供应商平均数据。</p>
+              <b className="block text-[15px] text-ink mb-3">📊 Gold ROI calculator</b>
+              <p className="text-[11.5px] text-mute mb-3">Based on the average of 142 furniture suppliers who upgraded to Gold over the past 12 months.</p>
               <table className="w-full text-[12.5px]">
                 <tbody>
                   {ROI_ROWS.map((r, i) => (
@@ -176,18 +176,18 @@ export default function GoldMemberPage() {
                   ))}
                 </tbody>
               </table>
-              <p className="text-[11px] text-mute mt-3">* 数据仅供参考。实际取决于品类、仓库位置和生产能力。</p>
+              <p className="text-[11px] text-mute mt-3">* Figures are for reference only. They depend on product category, warehouse location, and production capacity.</p>
             </div>
 
             <div className="bg-brand-dark text-white rounded p-5 flex flex-col justify-center">
-              <b className="block text-[18px] mb-2">🚀 准备好升级了吗？</b>
+              <b className="block text-[18px] mb-2">🚀 Ready to upgrade?</b>
               <p className="text-[12.5px] opacity-90 leading-relaxed mb-4">
-                今日开通金牌——24 小时内激活，附赠价值 $1,200 的 TÜV 验厂套餐；5 月前 50 名报名者另享 30 天免费行业 Banner。
+                Sign up for Gold today — activated within 24 hours, with a $1,200 TÜV audit package and a free 30-day industry banner for the first 50 sign-ups in May.
               </p>
               <button className="bg-gold text-brand-dark rounded-sm py-3 font-bold text-[14px] hover:opacity-95">
-                立即升级金牌 — $2,980/年
+                Upgrade to Gold now — $2,980/yr
               </button>
-              <span className="text-[11px] opacity-70 mt-2 text-center">30 天内不满意 → 100% 退费。</span>
+              <span className="text-[11px] opacity-70 mt-2 text-center">Not satisfied within 30 days? Get a 100% refund.</span>
             </div>
           </div>
         </div>
@@ -196,4 +196,4 @@ export default function GoldMemberPage() {
   );
 }
 
-export const metadata = { title: "申请金牌会员 — 供应商中心" };
+export const metadata = { title: "Gold Member Sign-Up — Seller Center" };

@@ -16,140 +16,140 @@ const SECTIONS: SitemapSection[] = [
   {
     icon: "🏠",
     color: "#005F6B",
-    title: "首页与探索",
-    subtitle: "平台主要入口",
+    title: "Home & Discover",
+    subtitle: "The platform's main entry points",
     links: [
-      { label: "首页", href: "/", desc: "起点——精选产品、询价表单、促销活动" },
-      { label: "全部产品", href: "/products", desc: "来自 1,840+ 家已认证供应商的 200K+ SKU 目录" },
-      { label: "搜索", href: "/search", desc: "按 SKU、供应商、行业全文搜索" },
-      { label: "以图搜图", href: "/search/by-image", desc: "上传图片查找相似产品" },
-      { label: "供应商", href: "/suppliers", desc: "1,840+ 家已通过验厂的供应商列表" },
-      { label: "产业带", href: "/zones", desc: "按产业集群生产——佛山、东莞、义乌……" },
-      { label: "行业频道", href: "/industry-channels", desc: "专业频道——家具、卫浴、电子……" },
-      { label: "实地验厂", href: "/factory-tour", desc: "合作工厂 360° 视频参观" },
+      { label: "Home", href: "/", desc: "Starting point — featured products, RFQ form, promotions" },
+      { label: "All Products", href: "/products", desc: "Catalog of 200K+ SKUs from 1,840+ verified suppliers" },
+      { label: "Search", href: "/search", desc: "Full-text search by SKU, supplier, industry" },
+      { label: "Image Search", href: "/search/by-image", desc: "Upload a photo to find similar products" },
+      { label: "Suppliers", href: "/suppliers", desc: "A list of 1,840+ suppliers that passed audit" },
+      { label: "Zones", href: "/zones", desc: "Manufacturing by cluster — Foshan, Dongguan, Yiwu..." },
+      { label: "Industry Channels", href: "/industry-channels", desc: "Industry channels — furniture, sanitary, electronics..." },
+      { label: "Factory Tour", href: "/factory-tour", desc: "360° video tours of partner factories" },
     ],
   },
   {
     icon: "🛒",
     color: "#16A34A",
-    title: "采购（Buyer）",
-    subtitle: "从询价到收货的全流程",
+    title: "Buying",
+    subtitle: "From RFQ to receiving the goods",
     links: [
-      { label: "发送询价", href: "/buying-request", desc: "询价表单——AI 匹配 24 小时内推送 5-10 家供应商" },
-      { label: "交易预警（订阅）", href: "/trade-alert", desc: "12,000+ 采购商订阅——每周资讯 + 促销预警" },
-      { label: "2026 展会", href: "/trade-shows", desc: "CSR 代表或联合主办的 12 场活动" },
-      { label: "帮助中心", href: "/help", desc: "按采购旅程 5 阶段编排的 300+ 篇指南" },
+      { label: "Send RFQ", href: "/buying-request", desc: "RFQ form — AI matching pushes 5-10 suppliers within 24h" },
+      { label: "Trade Alert (Newsletter)", href: "/trade-alert", desc: "12,000+ subscribed buyers — weekly news + sale alerts" },
+      { label: "Trade Shows 2026", href: "/trade-shows", desc: "12 events CSR represents or co-hosts" },
+      { label: "Help Center", href: "/help", desc: "300+ guides across the 5 stages of the buying journey" },
     ],
   },
   {
     icon: "📊",
     color: "#0891B2",
-    title: "采购中心——登录后",
-    subtitle: "含 12 项功能的采购商仪表盘",
+    title: "Buyer Center — After Sign-In",
+    subtitle: "The buyer dashboard with 12 features",
     links: [
-      { label: "总览", href: "/buyer-center", desc: "询价、订单、消息汇总" },
-      { label: "我的订单", href: "/buyer-center/orders", desc: "实时追踪，各节点照片/视频" },
-      { label: "收藏产品", href: "/buyer-center/favorites", desc: "在考虑中的 SKU 收藏夹" },
-      { label: "工厂验厂报告", href: "/buyer-center/audited-reports", desc: "下载区块链签名的验厂报告" },
-      { label: "浏览历史", href: "/buyer-center/browsing-history", desc: "最近 30 天浏览过的产品" },
-      { label: "联系——聊天", href: "/buyer-center/contact", desc: "与客户经理、供应商在线沟通" },
-      { label: "在线见供应商", href: "/buyer-center/meet-suppliers", desc: "经 CSR 调度与供应商预约视频通话" },
-      { label: "新采购商指南", href: "/buyer-center/new-user-guide", desc: "前 30 天——详细入门引导" },
-      { label: "发布询价", href: "/buyer-center/post-rfq", desc: "含行业模板的多供应商询价" },
-      { label: "产品目录", href: "/buyer-center/product-directory", desc: "按 HS 编码、起订量、交期分类" },
-      { label: "担保交易", href: "/buyer-center/secured-trading", desc: "交易保障（担保账户）流程" },
-      { label: "发现新供应商", href: "/buyer-center/supplier-discover", desc: "AI 按采购历史推荐供应商" },
+      { label: "Overview", href: "/buyer-center", desc: "A summary of RFQs, orders, and messages" },
+      { label: "My Orders", href: "/buyer-center/orders", desc: "Real-time tracking, photos/video at each milestone" },
+      { label: "Favorite Products", href: "/buyer-center/favorites", desc: "Wishlist of SKUs you are considering" },
+      { label: "Factory Audit Reports", href: "/buyer-center/audited-reports", desc: "Download blockchain-signed audit reports" },
+      { label: "Browsing History", href: "/buyer-center/browsing-history", desc: "Products viewed in the last 30 days" },
+      { label: "Contact — Chat", href: "/buyer-center/contact", desc: "Chat with your account manager and suppliers" },
+      { label: "Meet Suppliers Online", href: "/buyer-center/meet-suppliers", desc: "Book video calls with suppliers via the CSR dispatcher" },
+      { label: "New Buyer Guide", href: "/buyer-center/new-user-guide", desc: "Your first 30 days — detailed onboarding" },
+      { label: "Post RFQ", href: "/buyer-center/post-rfq", desc: "Multi-supplier RFQ with industry templates" },
+      { label: "Product Directory", href: "/buyer-center/product-directory", desc: "Sorted by HS code, MOQ, delivery time" },
+      { label: "Secured Trading", href: "/buyer-center/secured-trading", desc: "Trade Assurance (escrow) workflow" },
+      { label: "Discover New Suppliers", href: "/buyer-center/supplier-discover", desc: "AI suggests suppliers based on purchase history" },
     ],
   },
   {
     icon: "🏭",
     color: "#9C6A1F",
-    title: "销售（Seller / Supplier）",
-    subtitle: "供应商店铺入驻与管理",
+    title: "Selling (Seller / Supplier)",
+    subtitle: "Register and manage your supplier storefront",
     links: [
-      { label: "入驻华越", href: "/sell-on-csr", desc: "3 档（Free / Verified / Premium）——4 步验厂流程" },
-      { label: "工厂注册", href: "/register/factory", desc: "注册表单 + 上传法律证件" },
-      { label: "经销商注册", href: "/register/dealer", desc: "越南/东盟分销经销商" },
+      { label: "Sell on Huayuesc", href: "/sell-on-csr", desc: "3 tiers (Free / Verified / Premium) — 4-step audit process" },
+      { label: "Register a Factory", href: "/register/factory", desc: "Registration form + upload legal documents" },
+      { label: "Register a Dealer", href: "/register/dealer", desc: "Distribution dealers in Vietnam/ASEAN" },
     ],
   },
   {
     icon: "💼",
     color: "#7C2D12",
-    title: "卖家中心——验厂后",
-    subtitle: "面向已认证供应商的 10 项运营工具",
+    title: "Seller Center — After Audit",
+    subtitle: "10 operational tools for verified suppliers",
     links: [
-      { label: "总览", href: "/seller-center", desc: "销售额、接单、询价收件箱、转化率" },
-      { label: "AI 助手", href: "/seller-center/ai-assistant", desc: "AI 助手撰写报价、翻译越南语、优化商品" },
-      { label: "中国内销", href: "/seller-center/domestic-cn", desc: "通过淘宝/天猫在中国国内销售" },
-      { label: "北美出口", href: "/seller-center/export-na", desc: "通过 Amazon FBA + 3PL 出口北美" },
-      { label: "金牌会员", href: "/seller-center/gold-member", desc: "最高档——精选横幅、询价优先" },
-      { label: "物流", href: "/seller-center/logistics", desc: "订舱、报关行、集装箱追踪" },
-      { label: "智慧展会", href: "/seller-center/smart-expo", desc: "线上展会虚拟展位" },
-      { label: "Trade eHome", href: "/seller-center/trade-ehome", desc: "家具行业数字展厅" },
-      { label: "贸易服务", href: "/seller-center/trade-services", desc: "面向供应商的翻译、法律、金融服务" },
-      { label: "代运营服务", href: "/seller-center/trading-service", desc: "CSR 代理贸易——外包买手代理" },
+      { label: "Overview", href: "/seller-center", desc: "Sales, orders received, RFQ inbox, conversion" },
+      { label: "AI Assistant", href: "/seller-center/ai-assistant", desc: "AI assistant writes quotes, translates to Vietnamese, optimizes listings" },
+      { label: "Domestic CN", href: "/seller-center/domestic-cn", desc: "Domestic China sales via Taobao/Tmall" },
+      { label: "Export NA", href: "/seller-center/export-na", desc: "North America export via Amazon FBA + 3PL" },
+      { label: "Gold Member", href: "/seller-center/gold-member", desc: "Top tier — featured banner, priority RFQs" },
+      { label: "Logistics", href: "/seller-center/logistics", desc: "Vessel booking, customs broker, container tracking" },
+      { label: "Smart Expo", href: "/seller-center/smart-expo", desc: "Virtual booth at online trade fairs" },
+      { label: "Trade eHome", href: "/seller-center/trade-ehome", desc: "Digital showroom for the furniture industry" },
+      { label: "Trade Services", href: "/seller-center/trade-services", desc: "Translation, legal, and finance for suppliers" },
+      { label: "Trading Service", href: "/seller-center/trading-service", desc: "CSR trade representation — outsourced buyer's agent" },
     ],
   },
   {
     icon: "📚",
     color: "#7C3AED",
-    title: "信息与资料",
-    subtitle: "指南、政策与研究资料",
+    title: "Information & Documents",
+    subtitle: "Guides, policies, and research materials",
     links: [
-      { label: "关于 CSR", href: "/info/about-us", desc: "「数字丝绸之路」愿景——四大支柱" },
-      { label: "协会合作伙伴网络", href: "/info/network", desc: "42 家越南·中国·东盟协会，28+ 份 MOU" },
-      { label: "工厂审核流程", href: "/info/audit-process", desc: "7 步，32% 通过率，SGS/BV/TÜV/Intertek 实验室" },
-      { label: "交易保障", href: "/info/trade-assurance", desc: "VCB·BIDV·中国银行担保——支付保障" },
-      { label: "投诉与争议", href: "/info/disputes", desc: "3 级升级——直接协商·调解·VIAC 仲裁" },
-      { label: "样品下单", href: "/info/sample-orders", desc: "6 步流程，广州样品中心" },
-      { label: "进口指南", href: "/info/import-guide", desc: "9 个章节——VNACCS、Form E、ACFTA、RCEP" },
-      { label: "运输政策", href: "/info/shipping-policy", desc: "Incoterms 2020，越南 5 大港口，谅山陆运" },
-      { label: "DDP 运费测算", href: "/info/ddp-calculator", desc: "交互式计算器——输入 CBM、重量、路线" },
-      { label: "实时订单追踪", href: "/info/order-tracking", desc: "5 个阶段，各节点照片/视频" },
-      { label: "支付保障", href: "/info/payment-protection", desc: "担保机制 + 保险" },
-      { label: "高效寻品", href: "/info/find-products", desc: "询价技巧、AI 匹配、多供应商对比" },
-      { label: "API 集成", href: "/info/api-integration", desc: "REST + Webhook + 4 个 SDK（Node/Py/PHP/Go）" },
-      { label: "市场报告", href: "/info/market-reports", desc: "每年 48 份报告，覆盖 12 个行业" },
-      { label: "行业资讯（博客）", href: "/info/industry-news", desc: "12+ 篇分析，每周动态" },
-      { label: "招聘（Careers）", href: "/info/careers", desc: "37+ 个在招职位——工程、产品、销售" },
-      { label: "联系", href: "/info/contact", desc: "越南 + 东盟 8 个办事处，按地区下拉选择" },
+      { label: "About CSR", href: "/info/about-us", desc: "The 'digital silk road' vision — 4 pillars" },
+      { label: "Association Partner Network", href: "/info/network", desc: "42 associations across VN · CN · ASEAN, 28+ MOUs" },
+      { label: "Factory Audit Process", href: "/info/audit-process", desc: "7 steps, 32% pass rate, SGS/BV/TÜV/Intertek labs" },
+      { label: "Trade Assurance", href: "/info/trade-assurance", desc: "Escrow via VCB · BIDV · Bank of China — payment protection" },
+      { label: "Complaints & Disputes", href: "/info/disputes", desc: "3 escalation levels — Direct · Mediation · VIAC arbitration" },
+      { label: "Sample Order", href: "/info/sample-orders", desc: "6-step process, Guangzhou Sample Center" },
+      { label: "Import Guide", href: "/info/import-guide", desc: "9 sections — VNACCS, Form E, ACFTA, RCEP" },
+      { label: "Shipping Policy", href: "/info/shipping-policy", desc: "Incoterms 2020, 5 VN ports, overland via Lang Son" },
+      { label: "DDP Calculator", href: "/info/ddp-calculator", desc: "Interactive calculator — input CBM, weight, route" },
+      { label: "Real-Time Order Tracking", href: "/info/order-tracking", desc: "5 stages, photos/video at each milestone" },
+      { label: "Payment Protection", href: "/info/payment-protection", desc: "Escrow mechanism + insurance" },
+      { label: "Find Products Efficiently", href: "/info/find-products", desc: "RFQ tips, AI matching, multi-supplier comparison" },
+      { label: "API Integration", href: "/info/api-integration", desc: "REST + Webhook + 4 SDKs (Node/Py/PHP/Go)" },
+      { label: "Market Reports", href: "/info/market-reports", desc: "48 reports/year, covering 12 industries" },
+      { label: "Industry News (Blog)", href: "/info/industry-news", desc: "12+ analysis articles, weekly pulse" },
+      { label: "Careers", href: "/info/careers", desc: "37+ open roles — Engineering, Product, Sales" },
+      { label: "Contact", href: "/info/contact", desc: "8 offices across VN + ASEAN, region dropdown selector" },
     ],
   },
   {
     icon: "⚖",
     color: "#475569",
-    title: "法律与政策",
-    subtitle: "使用条款与数据隐私",
+    title: "Legal & Policies",
+    subtitle: "Terms of use and data privacy",
     links: [
-      { label: "服务条款", href: "/info/terms-of-service", desc: "14 个章节，VIAC 仲裁，不可抗力" },
-      { label: "隐私政策", href: "/info/privacy-policy", desc: "ISO 27001、越南第 13/2023 号法令、PIPL、GDPR 合规" },
+      { label: "Terms of Service", href: "/info/terms-of-service", desc: "14 sections, VIAC arbitration, force majeure" },
+      { label: "Privacy Policy", href: "/info/privacy-policy", desc: "ISO 27001, NĐ 13/2023, PIPL, GDPR compliance" },
     ],
   },
   {
     icon: "🔐",
     color: "#A21CAF",
-    title: "账户与注册",
-    subtitle: "认证与开通",
+    title: "Account & Registration",
+    subtitle: "Authentication and onboarding",
     links: [
-      { label: "登录", href: "/login", desc: "邮箱/密码 + Google + Apple + Facebook OAuth" },
-      { label: "采购商注册", href: "/register/buyer", desc: "个人或企业——快速 KYC" },
-      { label: "经销商注册", href: "/register/dealer", desc: "越南/东盟分销经销商——认证流程" },
-      { label: "工厂注册", href: "/register/factory", desc: "供应商工厂——启动 7 步验厂" },
-      { label: "下载手机 App", href: "/app", desc: "iOS + Android——移动端询价 + 追踪" },
+      { label: "Sign In", href: "/login", desc: "Email/password + Google + Apple + Facebook OAuth" },
+      { label: "Register as Buyer", href: "/register/buyer", desc: "Individual or business — fast KYC" },
+      { label: "Register as Dealer", href: "/register/dealer", desc: "VN/ASEAN distribution dealers — verified workflow" },
+      { label: "Register as Factory", href: "/register/factory", desc: "Supplier factory — start the 7-step audit" },
+      { label: "Download Mobile App", href: "/app", desc: "iOS + Android — RFQ + tracking on the go" },
     ],
   },
 ];
 
 export default function SitemapPage() {
   const totalLinks = SECTIONS.reduce((acc, s) => acc + s.links.length, 0) + ARTICLES.length;
-  const sectionsCount = SECTIONS.length + 1; // +1 for the blog
+  const sectionsCount = SECTIONS.length + 1; // +1 for blog
 
   return (
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "网站地图" },
+          { label: "Home", href: "/" },
+          { label: "Sitemap" },
         ]}
       />
 
@@ -164,29 +164,29 @@ export default function SitemapPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            🗺 网站地图
+            🗺 SITEMAP
           </span>
           <h1 className="text-[36px] font-extrabold leading-[1.1] mb-3 max-md:text-[24px]">
-            Huayuesc 网站地图
+            Huayuesc Sitemap
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[760px] leading-relaxed mb-6 max-md:text-[13px]">
-            {totalLinks}+ 个页面，按 {sectionsCount} 个功能分组整理。使用本网站地图可快速探索平台的全部功能与资料。面向搜索引擎的 XML 网站地图：<a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
+            {totalLinks}+ pages organized into {sectionsCount} functional groups. Use this sitemap to quickly explore all of the platform's features and documentation. XML sitemap for search engines: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📄</div>
               <div className="text-[22px] font-extrabold">{totalLinks}+</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">总页面数</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">Total pages</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🗂</div>
               <div className="text-[22px] font-extrabold">{sectionsCount}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">功能分组</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">Functional groups</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📰</div>
               <div className="text-[22px] font-extrabold">{ARTICLES.length}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">博客文章</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">Blog articles</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🌐</div>
@@ -200,7 +200,7 @@ export default function SitemapPage() {
       {/* === Section anchors quick nav ====================================== */}
       <div className="max-w-[1200px] mx-auto px-4 mt-6">
         <div className="bg-paper border border-line rounded p-4">
-          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">📍 快速跳转到分组</div>
+          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">📍 JUMP TO A GROUP</div>
           <div className="flex flex-wrap gap-2">
             {SECTIONS.map((s) => (
               <a
@@ -219,7 +219,7 @@ export default function SitemapPage() {
               style={{ borderColor: "#E8943A40", color: "#E8943A", background: "#E8943A08" }}
             >
               <span className="mr-1">📰</span>
-              最新博客
+              Latest Blog
             </a>
           </div>
         </div>
@@ -254,7 +254,7 @@ export default function SitemapPage() {
                 <div className="text-[22px] font-extrabold leading-none" style={{ color: s.color }}>
                   {s.links.length}
                 </div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">页</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">pages</div>
               </div>
             </div>
 
@@ -294,8 +294,8 @@ export default function SitemapPage() {
                 📰
               </div>
               <div>
-                <h2 className="text-[18px] font-extrabold text-ink leading-tight">博客——行业资讯</h2>
-                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} 篇市场分析、案例研究与指南文章</p>
+                <h2 className="text-[18px] font-extrabold text-ink leading-tight">Blog — Industry News</h2>
+                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} articles on market analysis, case studies, and guides</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -303,11 +303,11 @@ export default function SitemapPage() {
                 href="/info/industry-news"
                 className="text-[12px] text-brand font-semibold hover:underline whitespace-nowrap"
               >
-                查看全部 →
+                View All →
               </Link>
               <div className="text-right">
                 <div className="text-[22px] font-extrabold leading-none text-[#E8943A]">{ARTICLES.length}</div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">篇</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">articles</div>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@ export default function SitemapPage() {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-[13px] font-semibold text-ink group-hover:text-brand leading-snug flex-1 line-clamp-2">{a.title}</span>
-                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes} 分钟</span>
+                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes} min</span>
                   </div>
                   <span className="block text-[10.5px] text-mute2 font-mono mt-1">/info/industry-news/{a.slug}</span>
                 </Link>
@@ -335,16 +335,16 @@ export default function SitemapPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-8 mb-10">
         <div className="bg-bg border border-line rounded p-5 text-center">
           <p className="text-[13px] text-mute leading-relaxed max-w-[680px] mx-auto">
-            <b className="text-ink">面向搜索引擎的 XML 网站地图</b>：<a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
+            <b className="text-ink">XML sitemap for search engines</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
             {" · "}
-            新增页面或博客文章时自动更新。所有 slug 均已规范为英文，以优化国际化 SEO。
+            Updated automatically when a new page or blog post is added. All slugs are standardized in English to optimize international SEO.
           </p>
           <div className="mt-3 flex justify-center gap-3 flex-wrap">
             <Link href="/help" className="text-[12px] px-4 py-2 border border-line rounded-sm font-semibold text-ink hover:border-brand hover:text-brand">
-              帮助中心
+              Help Center
             </Link>
             <Link href="/info/contact" className="text-[12px] px-4 py-2 bg-brand text-white rounded-sm font-bold hover:bg-brand-light">
-              联系 CSR
+              Contact CSR
             </Link>
           </div>
         </div>
@@ -354,6 +354,6 @@ export default function SitemapPage() {
 }
 
 export const metadata = {
-  title: "网站地图 — Huayuesc",
-  description: "Huayuesc 全站地图——80+ 页面，按 9 个功能分组整理。面向搜索引擎的 XML 网站地图见 /sitemap.xml。",
+  title: "Sitemap — Huayuesc",
+  description: "A map of the entire Huayuesc site — 80+ pages organized into 9 functional groups. XML sitemap for search engines at /sitemap.xml.",
 };

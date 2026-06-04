@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 export const metadata = {
-  title: "以图搜索 — 华越供应链",
+  title: "Search by Image — Huayuesc",
   description:
-    "上传产品图片，即可从中国 40 余家已认证工厂中找到相似产品。AI 图像识别，5 秒内推荐匹配产品。",
+    "Upload a product photo to find similar products from 40+ certified factories in China. AI image recognition suggests matching products in 5 seconds.",
 };
 
 export default async function ByImageSearchPage({
@@ -19,8 +19,8 @@ export default async function ByImageSearchPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "以图搜索" },
+          { label: "Home", href: "/" },
+          { label: "Search by Image" },
         ]}
       />
 
@@ -32,14 +32,17 @@ export default async function ByImageSearchPage({
               📷
             </div>
             <h1 className="text-[26px] font-bold text-ink mb-2 max-md:text-[20px]">
-              以图搜索产品
+              Find products by image
             </h1>
             <p className="text-[13.5px] text-mute max-w-[640px] mx-auto leading-relaxed max-md:text-[12.5px]">
-              AI 5 秒内识别图像，推荐 40 余家拥有相似产品的工厂。适合您有样品图片却不确定准确名称/关键词的情况。
+              AI image recognition in 5 seconds suggests 40+ factories with
+              similar products. Ideal when you have a sample photo but don&apos;t
+              know the exact name or keyword.
             </p>
             {q && (
               <p className="text-[12px] text-mute2 mt-2">
-                已接收关键词：<b className="text-ink">{q}</b> · 您可同时上传图片
+                Keyword received: <b className="text-ink">{q}</b> · You can also
+                upload a photo
               </p>
             )}
           </div>
@@ -53,12 +56,12 @@ export default async function ByImageSearchPage({
             <label htmlFor="img-upload" className="cursor-pointer block">
               <div className="text-[64px] mb-3">🖼️</div>
               <h3 className="text-[16px] font-bold text-ink mb-1.5">
-                将图片拖放到此处
+                Drag &amp; drop an image here
               </h3>
               <p className="text-[12.5px] text-mute mb-4">
-                或点击从本地选择文件 ·{" "}
+                or click to choose a file from your device ·{" "}
                 <span className="text-brand font-medium">JPG / PNG / WEBP</span>{" "}
-                · 最大 10MB
+                · Up to 10MB
               </p>
               <input
                 id="img-upload"
@@ -68,7 +71,7 @@ export default async function ByImageSearchPage({
                 className="hidden"
               />
               <span className="inline-block px-6 py-2.5 bg-brand text-white font-bold text-[13px] rounded-sm hover:bg-brand-light cursor-pointer">
-                📷 从本地选择图片
+                📷 Choose an image
               </span>
             </label>
           </form>
@@ -76,16 +79,16 @@ export default async function ByImageSearchPage({
           {/* OR sample images */}
           <div className="mt-6">
             <p className="text-[12.5px] text-center text-mute mb-3">
-              或试用样例图片：
+              Or try a sample image:
             </p>
             <div className="grid grid-cols-6 gap-2 max-w-[600px] mx-auto max-md:grid-cols-3">
               {[
-                { seed: "sample-chair", label: "椅子" },
-                { seed: "sample-tile", label: "瓷砖" },
-                { seed: "sample-lamp", label: "灯具" },
-                { seed: "sample-faucet", label: "龙头" },
-                { seed: "sample-sofa", label: "沙发" },
-                { seed: "sample-cabinet", label: "橱柜" },
+                { seed: "sample-chair", label: "Chair" },
+                { seed: "sample-tile", label: "Tile" },
+                { seed: "sample-lamp", label: "Lamp" },
+                { seed: "sample-faucet", label: "Faucet" },
+                { seed: "sample-sofa", label: "Sofa" },
+                { seed: "sample-cabinet", label: "Kitchen Cabinet" },
               ].map((s) => (
                 <Link
                   key={s.seed}
@@ -112,18 +115,18 @@ export default async function ByImageSearchPage({
             {[
               {
                 icon: "📤",
-                title: "上传图片",
-                desc: "拍摄或从本地上传产品图片。支持 JPG/PNG/WEBP。",
+                title: "Upload an image",
+                desc: "Snap or upload a product photo. JPG/PNG/WEBP supported.",
               },
               {
                 icon: "🤖",
-                title: "AI 分析",
-                desc: "系统识别产品特征：外形、颜色、材质。",
+                title: "AI analysis",
+                desc: "The system recognizes product features: shape, color, and material.",
               },
               {
                 icon: "🏭",
-                title: "即时结果",
-                desc: "展示相似产品 + 可供货的已验厂工厂。",
+                title: "Instant results",
+                desc: "See similar products plus audited factories that can supply them.",
               },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -136,23 +139,26 @@ export default async function ByImageSearchPage({
 
           {/* Tips */}
           <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded text-[12px] text-ink leading-relaxed">
-            <b className="text-brand">💡 获得最佳结果的技巧：</b> 在明亮背景下拍摄产品，细节清晰、无遮挡。可一次上传多张图片（每张最大 10MB），让 AI 分析更精准。
+            <b className="text-brand">💡 Tips for the best results:</b> Photograph
+            the product against a bright background with clear, unobstructed
+            detail. You can upload multiple images at once (up to 10MB each) for
+            more accurate AI analysis.
           </div>
 
           {/* CTA fallback */}
           <div className="mt-5 text-center text-[12.5px] text-mute">
-            没有图片？试试{" "}
+            No image? Try{" "}
             <Link href="/search" className="text-brand hover:underline font-medium">
-              按关键词搜索
+              searching by keyword
             </Link>{" "}
-            或{" "}
+            or{" "}
             <Link
               href="/buying-request"
               className="text-accent hover:underline font-medium"
             >
-              发送询价描述
+              sending a written RFQ
             </Link>{" "}
-            让供应商直接联系您。
+            so suppliers can reach out directly.
           </div>
         </div>
       </div>

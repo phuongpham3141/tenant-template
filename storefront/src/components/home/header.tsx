@@ -34,13 +34,13 @@ export function Header() {
       />
 
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_auto] grid-rows-[auto_auto_auto] gap-x-6 gap-y-1.5 md:max-xl:grid-cols-[200px_1fr] md:max-xl:gap-x-4 max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-2">
-        {/* LOGO — desktop: horizontal logo, width = 240px (matches TẤT CẢ
-            DANH MỤC sidebar width); tablet: 200px (matches col-1 width).
+        {/* LOGO — desktop: horizontal logo, width = 240px (matches ALL
+            CATEGORIES sidebar width); tablet: 200px (matches col-1 width).
             Mobile: horizontal logo at 80% of the row width. */}
         <Link
           href="/"
           className="col-start-1 row-start-1 row-span-3 self-center flex items-center max-md:row-span-1 max-md:w-full max-md:justify-center"
-          aria-label="华越 — 首页"
+          aria-label="Huayuesc — Home"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
           <img
@@ -68,19 +68,19 @@ export function Header() {
             htmlFor="st-products"
             className="search-tab tab-products flex-1 py-1.5 font-medium rounded-t cursor-pointer transition text-center max-md:text-[12px]"
           >
-            产品
+            Products
           </label>
           <label
             htmlFor="st-suppliers"
             className="search-tab tab-suppliers flex-1 py-1.5 font-medium rounded-t cursor-pointer transition text-center max-md:text-[12px]"
           >
-            供应商
+            Suppliers
           </label>
           <label
             htmlFor="st-rfq"
             className="search-tab tab-rfq flex-1 py-1.5 font-medium rounded-t cursor-pointer transition text-center max-md:text-[12px]"
           >
-            询价
+            Quote
           </label>
         </div>
 
@@ -91,26 +91,26 @@ export function Header() {
           className="search-form form-products col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
           <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
-            全部 ▾
+            All ▾
           </div>
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="输入要查找的产品关键词…"
+            placeholder="Enter a product keyword to search..."
           />
           <button
             type="submit"
             formAction="/search/by-image"
             className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
-            aria-label="以图搜图"
-            title="上传图片查找相似产品"
+            aria-label="Search by image"
+            title="Upload an image to find similar products"
           >
             📷
           </button>
           <button
             type="submit"
-            aria-label="搜索产品"
-            title="搜索产品"
+            aria-label="Search products"
+            title="Search products"
             className="px-7 bg-brand text-white text-[22px] hover:bg-brand-light cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             🔍
@@ -122,26 +122,26 @@ export function Header() {
           className="search-form form-suppliers col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
           <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
-            全部 ▾
+            All ▾
           </div>
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="输入供应商名称或所在地区…"
+            placeholder="Enter a supplier name or region..."
           />
           <button
             type="submit"
             formAction="/search/by-image"
             className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
-            aria-label="按产品图片查找供应商"
-            title="上传产品图片以查找供应商"
+            aria-label="Find suppliers by product image"
+            title="Upload a product image to find suppliers"
           >
             📷
           </button>
           <button
             type="submit"
-            aria-label="查找供应商"
-            title="查找供应商"
+            aria-label="Search suppliers"
+            title="Search suppliers"
             className="px-7 bg-brand text-white text-[22px] hover:bg-brand-light cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             🏭
@@ -153,26 +153,26 @@ export function Header() {
           className="search-form form-rfq col-start-2 row-start-2 h-12 border-2 border-brand rounded-[0_4px_4px_4px] overflow-hidden bg-white max-md:col-start-1 max-md:row-start-3"
         >
           <div className="px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden">
-            全部 ▾
+            All ▾
           </div>
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="简要描述采购需求以发送询价…"
+            placeholder="Briefly describe your needs to send an RFQ..."
           />
           <button
             type="submit"
             formAction="/search/by-image"
             className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
-            aria-label="发送询价时附加图片"
-            title="附加产品图片以更清晰地描述需求"
+            aria-label="Attach an image to your RFQ"
+            title="Attach a product image for a clearer description"
           >
             📷
           </button>
           <button
             type="submit"
-            aria-label="发送询价请求"
-            title="发送询价请求"
+            aria-label="Send RFQ"
+            title="Send RFQ"
             className="px-7 bg-accent text-white text-[22px] hover:bg-[#B81827] cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             📨
@@ -185,19 +185,19 @@ export function Header() {
             href="/buying-request"
             className="h-12 w-[170px] inline-flex items-center justify-center gap-1.5 border-2 border-brand text-brand rounded font-semibold text-[13px] hover:bg-brand hover:text-white cursor-pointer"
           >
-            📥 发送询价
+            📥 Send RFQ
           </Link>
           <Link
             href="/register/buyer"
             className="h-12 w-[170px] inline-flex items-center justify-center gap-1.5 bg-brand text-white border-2 border-brand rounded font-semibold text-[13px] hover:bg-brand-light hover:border-brand-light cursor-pointer"
           >
-            注册采购商 →
+            Register as Buyer →
           </Link>
         </div>
 
         {/* HOT SEARCH — row 3 col 2 */}
         <div className="col-start-2 row-start-3 text-[11.5px] text-mute flex gap-3 flex-wrap max-md:hidden">
-          <b className="text-ink">热门搜索：</b>
+          <b className="text-ink">Popular Searches:</b>
           {HOT_SEARCHES.map((s) => (
             <Link
               key={s}

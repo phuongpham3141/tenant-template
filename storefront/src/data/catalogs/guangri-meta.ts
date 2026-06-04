@@ -1,6 +1,6 @@
-/**
- * 广日电梯 (Guangri) 元数据 — 详情页。按 seriesOriginal (home-cabin/home-elevator/escalator) 索引。
- * 货源：guangri.com.cn —— 广州广日电梯（Guangzhou Guangri Elevator）。
+﻿/**
+ * Guangri 广日电梯 metadata — detail pages. Keyed by seriesOriginal (home-cabin/home-elevator/escalator).
+ * Sourcing: guangri.com.cn — Guangzhou Guangri Elevator (广州广日电梯).
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -11,59 +11,59 @@ export type SeriesMeta = {
   whyChoose: { icon: string; title: string; desc: string }[];
   projectShowcase: string[]; faq: { q: string; a: string }[];
 };
-const CERTS = ["中国国家电梯安全标准（GB 7588）", "ISO 9001 质量管理体系", "电梯安全检验与竣工验收", "安装与维保认证"];
+const CERTS = ["Chinese national elevator safety standard (GB 7588)", "ISO 9001 quality management", "Elevator safety inspection & acceptance testing", "Installation & maintenance certification"];
 const MFG = [
-  "广日电梯（广州）—— 中国大型电梯制造商之一",
-  "产品系列：乘客电梯、家用电梯、自动扶梯与自动人行道、载货电梯、医用电梯、消防电梯",
-  "覆盖全国的安装、维保与技术服务体系",
-  "为家用电梯提供多种高端轿厢设计方案",
+  "Guangri 广日电梯 (Guangzhou) — one of China's major elevator manufacturers",
+  "Product range: passenger elevators, home elevators, escalators & moving walkways, freight, medical, and firefighting elevators",
+  "Nationwide installation, maintenance & technical service network",
+  "Many premium cabin design options for home elevators",
 ];
 const PACK = [
-  { label: "供应方式", value: "整机电梯 + 按项目安装" },
-  { label: "轿厢可选", value: "多种轿厢内饰设计款式" },
-  { label: "服务", value: "勘测、安装、维保、升级改造" },
+  { label: "Supply format", value: "Complete elevator + installation per project" },
+  { label: "Cabin options", value: "Many cabin interior design styles" },
+  { label: "Services", value: "Survey, installation, maintenance, modernization" },
 ];
 const INSTALL = [
-  "选型前先勘测底坑（pit）、提升行程及载重",
-  "由受训技术团队安装；按标准进行安全验收",
-  "规范完成电气接线、救援系统及门联动",
-  "投入使用前进行试运行与安全检验",
+  "Survey the pit, travel height, and load capacity before selecting a configuration",
+  "Installed by trained technicians; safety acceptance per standards",
+  "Connect electrical wiring, the rescue system, and door interlocks correctly",
+  "Run a test and safety inspection before putting into service",
 ];
 const CARE = [
-  { title: "定期维保", desc: "按计划维保（通常每月）：检查钢丝绳/导轨、制动器、门、控制系统并润滑。" },
-  { title: "安全", desc: "按规定定期进行安全检验；运行出现异常时立即处理。" },
-  { title: "轿厢清洁", desc: "使用适配材质（不锈钢/玻璃/木材）的清洁剂清洁轿厢表面。" },
+  { title: "Scheduled maintenance", desc: "Maintenance on schedule (typically monthly): check cables/rails, brakes, doors, the control system, and lubrication." },
+  { title: "Safety", desc: "Periodic safety inspection per regulations; address any operating anomaly immediately." },
+  { title: "Cabin cleaning", desc: "Clean cabin surfaces with a solution suited to the material (stainless steel/glass/wood)." },
 ];
 const FAQ = [
-  { q: "广日是否在越南提供安装与维保支持？", a: "请联系华越供应链，获取适配项目的供货、安装及技术服务方案咨询。" },
-  { q: "是否可按需定制轿厢设计？", a: "提供多款高端轿厢；可根据工程的室内风格提供选型建议。" },
-  { q: "交货与安装周期？", a: "视配置与项目而定；具体周期按实际勘测确认。" },
+  { q: "Does Guangri provide installation & maintenance in Vietnam?", a: "Contact Huayuesc for advice on the supply, installation, and technical service plan that fits your project." },
+  { q: "Are custom cabin designs available?", a: "Yes — many premium cabin styles are available; we can advise on the selection to match the project's interior style." },
+  { q: "Lead time & installation?", a: "Depends on configuration & scope; a specific schedule is quoted based on the on-site survey." },
 ];
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const WHY = { icon: "🛗", title: "知名电梯品牌", desc: "广日——信誉良好的中国电梯制造商，产品系列齐全。" };
+const WHY = { icon: "🛗", title: "Major elevator brand", desc: "Guangri — a reputable Chinese elevator manufacturer with a complete product range." };
 export const GUANGRI_SERIES_META: Record<string, SeriesMeta> = {
   "home-cabin": mk({
-    story: "广日家用电梯轿厢款式——高端轿厢内饰设计系列（罗曼、哥特、水木清华等），适用于别墅与联排住宅电梯，提升空间美学。",
-    heritage: "轿厢设计是家用电梯的点睛之笔——广日提供多种装饰风格。",
-    technicalSpecs: [{ label: "类型", value: "家用电梯轿厢（轿厢）" }, { label: "风格", value: "多款：古典、现代、艺术" }, { label: "材质", value: "高端不锈钢/玻璃/木质装饰" }],
-    whyChoose: [WHY, { icon: "🎨", title: "风格多样", desc: "多款轿厢设计，搭配各类室内风格。" }, { icon: "💎", title: "高端品质", desc: "高档材质与工艺，适配别墅。" }],
-    projectShowcase: ["高端别墅与联排住宅", "顶层复式（Penthouse）", "多层住宅工程"],
+    story: "Guangri home elevator cabin designs — a collection of premium cabin interiors (Roman, Gothic, Verdant Waters, and more) for villa & townhouse elevators, elevating the aesthetics of the space.",
+    heritage: "The cabin design is the centerpiece of a home elevator — Guangri offers many decorative styles.",
+    technicalSpecs: [{ label: "Type", value: "Home elevator cabin" }, { label: "Style", value: "Many designs: classic, modern, artistic" }, { label: "Material", value: "Premium decorative stainless steel/glass/wood" }],
+    whyChoose: [WHY, { icon: "🎨", title: "Diverse styles", desc: "Many cabin designs to match any interior." }, { icon: "💎", title: "Premium", desc: "Luxurious materials & finishes for villas." }],
+    projectShowcase: ["Upscale villas & townhouses", "Penthouses", "Multi-story residential projects"],
   }),
   "home-elevator": mk({
-    story: "广日家用电梯——面向别墅、联排住宅的电梯解决方案：运行平稳、节能省电、占地小，并提供多种轿厢可选。",
-    heritage: "家用电梯是顺应多层住宅需求而蓬勃发展的产品线。",
-    technicalSpecs: [{ label: "类型", value: "家用电梯（家用电梯）" }, { label: "适用场景", value: "别墅、联排住宅" }, { label: "优势", value: "平稳、节能、占地小" }],
-    whyChoose: [WHY, { icon: "🏡", title: "适合住宅", desc: "设计紧凑，适配室内小井道。" }, { icon: "🔇", title: "运行平稳", desc: "平稳驱动技术，节能省电。" }],
-    projectShowcase: ["别墅", "多层联排住宅", "家庭住宅"],
+    story: "Guangri home elevators — an elevator solution for villas and townhouses: smooth operation, energy efficient, small footprint, with many cabin options.",
+    heritage: "Home elevators are a fast-growing line meeting the needs of multi-story homes.",
+    technicalSpecs: [{ label: "Type", value: "Home elevator" }, { label: "Application", value: "Villas, townhouses" }, { label: "Advantages", value: "Smooth, efficient, small footprint" }],
+    whyChoose: [WHY, { icon: "🏡", title: "For homes", desc: "Compact design that fits small in-home hoistways." }, { icon: "🔇", title: "Smooth operation", desc: "Smooth drive technology, energy efficient." }],
+    projectShowcase: ["Villas", "Multi-story townhouses", "Family homes"],
   }),
   escalator: mk({
-    story: "广日自动扶梯与自动人行道——适用于购物中心、地铁站、机场及大客流公共建筑。",
-    heritage: "自动扶梯与自动人行道是广日公共交通领域的主力产品线。",
-    technicalSpecs: [{ label: "类型", value: "自动扶梯/自动人行道" }, { label: "适用场景", value: "购物中心、火车站、机场、公共场所" }, { label: "特性", value: "大运量、连续安全运行" }],
-    whyChoose: [WHY, { icon: "🏬", title: "适配大型工程", desc: "满足购物中心、车站、机场的高客流。" }, { icon: "🛡️", title: "安全可靠", desc: "符合标准的安全系统与紧急制停。" }],
-    projectShowcase: ["购物中心", "地铁站与机场", "公共建筑"],
+    story: "Guangri automatic escalators & moving walkways — for shopping malls, metro stations, airports, and high-traffic public buildings.",
+    heritage: "Escalators & moving walkways are Guangri's core public-transit line.",
+    technicalSpecs: [{ label: "Type", value: "Escalator / automatic moving walkway" }, { label: "Application", value: "Malls, train stations, airports, public spaces" }, { label: "Features", value: "High capacity, safe continuous operation" }],
+    whyChoose: [WHY, { icon: "🏬", title: "For large projects", desc: "Handles high traffic at malls, stations, and airports." }, { icon: "🛡️", title: "Safety", desc: "Safety and emergency-stop systems per standards." }],
+    projectShowcase: ["Shopping malls", "Metro stations & airports", "Public buildings"],
   }),
 };
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {

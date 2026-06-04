@@ -1,6 +1,6 @@
 /**
- * 东芝电梯元数据 —— 详情页。以 seriesOriginal（catKey）为键。
- * 来源：toshiba-elevator.com.cn —— 东芝电梯（中国）有限公司。
+ * Metadata for Toshiba Elevator (东芝电梯) — detail page. Keyed by seriesOriginal (catKey).
+ * Sourcing: toshiba-elevator.com.cn — Toshiba Elevator (China) Co., Ltd.
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -11,78 +11,78 @@ export type SeriesMeta = {
   whyChoose: { icon: string; title: string; desc: string }[];
   projectShowcase: string[]; faq: { q: string; a: string }[];
 };
-const CERTS = ["国际电梯安全标准 & GB 7588", "ISO 9001 / ISO 14001", "日本东芝技术", "安全检验与验收"];
+const CERTS = ["International elevator safety standards & GB 7588", "ISO 9001 / ISO 14001", "Japanese Toshiba technology", "Safety inspection & commissioning"];
 const MFG = [
-  "Toshiba Elevator 东芝电梯 —— 东芝集团（日本）的电梯品牌，在中国运营",
-  "东芝曳引与控制技术：静音、节能、高安全",
-  "产品线：高速电梯、乘客电梯、自动扶梯、自动人行道、家用电梯、加装电梯",
-  "专业的安装系统与技术服务",
+  "Toshiba Elevator 东芝电梯 — the elevator brand of the Toshiba group (Japan), operated in China",
+  "Toshiba drive & control technology: quiet, energy-efficient and highly safe",
+  "Product range: high-speed elevators, passenger elevators, escalators, moving walks, home elevators and retrofit solutions",
+  "Professional installation and technical service network",
 ];
 const PACK = [
-  { label: "供应方式", value: "整梯 + 按项目安装" },
-  { label: "服务", value: "勘测、安装、维保、现代化改造" },
+  { label: "Supply format", value: "Complete elevator package + project-based installation" },
+  { label: "Services", value: "Site survey, installation, maintenance and modernization" },
 ];
 const INSTALL = [
-  "勘测井道、行程、载重以选定配置",
-  "由受训技术团队安装；按标准进行安全验收",
-  "投入使用前进行试运行与安全检验",
+  "Survey the hoistway, travel height and load capacity to select the right configuration",
+  "Installed by trained technicians; safety acceptance to standard",
+  "Test run & safety inspection before commissioning",
 ];
 const CARE = [
-  { title: "定期维保", desc: "按计划维保：检查钢丝绳/导轨、制动器、门、控制系统，并润滑。" },
-  { title: "安全", desc: "定期安全检验；出现异常立即处理。" },
+  { title: "Scheduled maintenance", desc: "Maintain on schedule: inspect ropes/guide rails, brakes, doors and the control system, and lubricate." },
+  { title: "Safety", desc: "Periodic safety inspections; address any abnormality immediately." },
 ];
 const FAQ = [
-  { q: "东芝电梯在越南有支持吗？", a: "请联系华越供应链，获取契合项目的供货、安装与技术服务咨询。" },
-  { q: "交货与安装周期？", a: "视配置与项目而定；根据实地勘测提供时间表。" },
+  { q: "Does Toshiba Elevator offer support in Vietnam?", a: "Contact Huayuesc for advice on supply, installation and technical services tailored to your project." },
+  { q: "Delivery & installation lead time?", a: "Depends on configuration and scope; schedule is confirmed after an on-site survey." },
 ];
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const WHY = { icon: "🇯🇵", title: "日本东芝技术", desc: "日系电梯品牌，静音 – 安全 – 节能。" };
-const SHOW = ["写字楼与商场", "高层住宅", "火车站、机场、公共建筑"];
+const WHY = { icon: "🇯🇵", title: "Japanese Toshiba technology", desc: "Japanese elevator brand — quiet, safe and energy-efficient." };
+const SHOW = ["Office buildings & shopping malls", "High-rise apartment buildings", "Train stations, airports and public facilities"];
 const PASS = mk({
-  story: "东芝乘客电梯（ELCOSMO 小机房，SPACEL 无机房）—— 运行静音、节能、优化井道空间，适用于楼宇与住宅。",
-  heritage: "ELCOSMO 与 SPACEL 是东芝电梯的主力乘客电梯产品线。",
-  technicalSpecs: [{ label: "类型", value: "乘客电梯（有/无机房）" }, { label: "技术", value: "无齿轮曳引，VVVF 控制" }, { label: "应用", value: "办公、住宅、商业" }],
-  whyChoose: [WHY, { icon: "🔇", title: "运行静音", desc: "静音曳引技术，平稳安静。" }, { icon: "⚡", title: "节能", desc: "能效优化控制，具备电能回馈。" }],
+  story: "Toshiba passenger elevators (ELCOSMO with a compact machine room, SPACEL machine-room-less) — quiet, energy-saving operation that optimizes hoistway space, ideal for office and apartment buildings.",
+  heritage: "ELCOSMO and SPACEL are Toshiba Elevator's flagship passenger elevator lines.",
+  technicalSpecs: [{ label: "Type", value: "Passenger elevator (with or without machine room)" }, { label: "Technology", value: "Gearless drive, VVVF control" }, { label: "Applications", value: "Offices, apartments and commercial buildings" }],
+  whyChoose: [WHY, { icon: "🔇", title: "Quiet operation", desc: "Smooth drive technology for quiet, stable operation." }, { icon: "⚡", title: "Energy saving", desc: "Energy-optimized control with power regeneration." }],
   projectShowcase: SHOW,
 });
 export const TOSHIBA_ELEVATOR_SERIES_META: Record<string, SeriesMeta> = {
   "high-speed": mk({
-    story: "东芝高速电梯（New ELBRIGHT）—— 适用于超高层建筑，速度快，高速运行仍平稳安静，配减振与气压平衡技术。",
-    heritage: "ELBRIGHT 是面向摩天大楼的最高端产品线。",
-    technicalSpecs: [{ label: "类型", value: "高速电梯" }, { label: "应用", value: "超高层建筑、地标" }, { label: "技术", value: "减振，高速稳定" }],
-    whyChoose: [WHY, { icon: "🚀", title: "高速平稳", desc: "高速运行仍平稳舒适。" }, { icon: "🏙️", title: "面向摩天大楼", desc: "超高层建筑解决方案。" }],
+    story: "Toshiba high-speed elevators (New ELBRIGHT) — for super-tall buildings, with high travel speed that stays quiet and stable even at top speed, using vibration-damping and pressure-balancing technology.",
+    heritage: "ELBRIGHT is the top-tier line for skyscrapers.",
+    technicalSpecs: [{ label: "Type", value: "High-speed elevator" }, { label: "Applications", value: "Super-tall buildings and landmarks" }, { label: "Technology", value: "Vibration damping, high-speed stability" }],
+    whyChoose: [WHY, { icon: "🚀", title: "Quiet at high speed", desc: "Quiet, stable and comfortable even at high travel speed." }, { icon: "🏙️", title: "For skyscrapers", desc: "A solution for super-tall buildings." }],
     projectShowcase: SHOW,
   }),
   passenger: PASS, "passenger-elevator": PASS,
   escalator: mk({
-    story: "东芝自动扶梯（KINDMOVER）—— 适用于商场、火车站、机场；连续运行、安全、配智能待机节能。",
-    heritage: "KINDMOVER 是东芝的主力自动扶梯产品线。",
-    technicalSpecs: [{ label: "类型", value: "自动扶梯" }, { label: "应用", value: "商场、火车站、机场" }, { label: "特性", value: "节能、待机模式" }],
-    whyChoose: [WHY, { icon: "🏬", title: "面向大型建筑", desc: "满足高客流，连续运行。" }, { icon: "🌱", title: "节能", desc: "智能待机模式降低耗电。" }],
+    story: "Toshiba escalators (KINDMOVER) — for shopping malls, train stations and airports; continuous, safe operation with energy-saving thanks to an intelligent standby mode.",
+    heritage: "KINDMOVER is Toshiba's flagship escalator line.",
+    technicalSpecs: [{ label: "Type", value: "Escalator" }, { label: "Applications", value: "Shopping malls, train stations and airports" }, { label: "Features", value: "Energy saving, standby mode" }],
+    whyChoose: [WHY, { icon: "🏬", title: "For large facilities", desc: "Handles high passenger traffic with continuous operation." }, { icon: "🌱", title: "Energy saving", desc: "Intelligent standby mode reduces power consumption." }],
     projectShowcase: SHOW,
   }),
   "moving-walk": mk({
-    story: "东芝自动人行道 —— 在平面/缓坡上运送乘客与行李，适用于机场、火车站、大型商场。",
-    heritage: "自动人行道为大型建筑提供水平交通辅助。",
-    technicalSpecs: [{ label: "类型", value: "自动人行道（moving walk）" }, { label: "应用", value: "机场、火车站、商场" }, { label: "特性", value: "水平运送、安全、连续" }],
-    whyChoose: [WHY, { icon: "🧳", title: "面向机场/车站", desc: "便捷运送乘客与行李长距离。" }, { icon: "🛡️", title: "安全", desc: "符合标准的安全系统与紧急停止。" }],
+    story: "Toshiba moving walks — transport passengers and luggage across flat or gently inclined surfaces in airports, train stations and large shopping malls.",
+    heritage: "Moving walks support horizontal circulation in large-scale facilities.",
+    technicalSpecs: [{ label: "Type", value: "Moving walk" }, { label: "Applications", value: "Airports, train stations and shopping malls" }, { label: "Features", value: "Horizontal travel, safe and continuous" }],
+    whyChoose: [WHY, { icon: "🧳", title: "For airports/stations", desc: "Conveniently moves passengers and luggage over long distances." }, { icon: "🛡️", title: "Safety", desc: "Safety and emergency-stop systems to standard." }],
     projectShowcase: SHOW,
   }),
   home: mk({
-    story: "东芝家用电梯（SPACEL-H）—— 适用于别墅与联排住宅：小巧、静音、安全，搭载东芝技术，内饰选择丰富。",
-    heritage: "SPACEL-H 将东芝技术带入居家空间。",
-    technicalSpecs: [{ label: "类型", value: "家用电梯（SPACEL-H）" }, { label: "应用", value: "别墅、联排住宅" }, { label: "优点", value: "小巧、静音、安全" }],
-    whyChoose: [WHY, { icon: "🏡", title: "面向住宅", desc: "设计紧凑、静音，适配小井道。" }, { icon: "🛡️", title: "东芝安全", desc: "符合东芝标准的安全功能。" }],
-    projectShowcase: ["别墅", "多层联排住宅"],
+    story: "Toshiba home elevators (SPACEL-H) — for villas and townhouses: compact, quiet and safe, built on Toshiba technology with a wide choice of interior finishes.",
+    heritage: "SPACEL-H brings Toshiba technology into the home.",
+    technicalSpecs: [{ label: "Type", value: "Home elevator (SPACEL-H)" }, { label: "Applications", value: "Villas and townhouses" }, { label: "Advantages", value: "Compact, quiet and safe" }],
+    whyChoose: [WHY, { icon: "🏡", title: "For homes", desc: "Compact, quiet design that fits a small hoistway." }, { icon: "🛡️", title: "Toshiba safety", desc: "Safety features to Toshiba standards." }],
+    projectShowcase: ["Villas", "Multi-story townhouses"],
   }),
   retrofit: mk({
-    story: "东芝加装电梯解决方案 —— 为既有建筑（旧住宅楼、联排住宅）加装电梯，优化既有结构，施工简洁。",
-    heritage: "加装方案满足旧建筑升级需求。",
-    technicalSpecs: [{ label: "类型", value: "加装电梯（retrofit）" }, { label: "应用", value: "旧住宅楼、既有建筑" }, { label: "优点", value: "优化既有结构，施工简洁" }],
-    whyChoose: [WHY, { icon: "🏗️", title: "面向旧楼", desc: "为尚无电梯的建筑加装电梯。" }, { icon: "🧩", title: "优化结构", desc: "契合既有空间与结构的方案。" }],
-    projectShowcase: ["旧住宅楼改造", "联排住宅升级"],
+    story: "Toshiba elevator retrofit solutions — add an elevator to existing buildings (older apartment blocks, townhouses), making the most of the existing structure with compact installation.",
+    heritage: "Retrofit solutions that meet the need to upgrade older buildings.",
+    technicalSpecs: [{ label: "Type", value: "Elevator retrofit" }, { label: "Applications", value: "Older apartment blocks and existing buildings" }, { label: "Advantages", value: "Makes the most of the existing structure with compact installation" }],
+    whyChoose: [WHY, { icon: "🏗️", title: "For older buildings", desc: "Add an elevator to buildings that do not yet have one." }, { icon: "🧩", title: "Structure optimized", desc: "A solution that suits the existing space and structure." }],
+    projectShowcase: ["Renovated older apartment blocks", "Upgraded townhouses"],
   }),
   freight: PASS, observation: PASS,
 };

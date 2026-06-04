@@ -113,9 +113,9 @@ export default async function ArticlePage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "信息", href: "/help" },
-          { label: "行业资讯", href: "/info/industry-news" },
+          { label: "Home", href: "/" },
+          { label: "Information", href: "/help" },
+          { label: "Industry News", href: "/info/industry-news" },
           { label: cat.label, href: `/info/industry-news?cat=${article.category}` },
           { label: article.title },
         ]}
@@ -153,7 +153,7 @@ export default async function ArticlePage({
             <span>·</span>
             <span>📅 {fmtDate(article.date)}</span>
             <span>·</span>
-            <span>⏱ {article.readMinutes} 分钟阅读</span>
+            <span>⏱ {article.readMinutes} min read</span>
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default async function ArticlePage({
           {/* Tags */}
           {article.tags.length > 0 && (
             <div className="mt-8 pt-5 border-t border-line">
-              <span className="text-[11.5px] uppercase tracking-wider text-mute font-bold mr-3">标签：</span>
+              <span className="text-[11.5px] uppercase tracking-wider text-mute font-bold mr-3">Tags:</span>
               <div className="inline-flex flex-wrap gap-1.5">
                 {article.tags.map((t) => (
                   <Link
@@ -200,7 +200,7 @@ export default async function ArticlePage({
               <b className="block text-[14px] text-ink">{article.author}</b>
               <span className="text-[12px] text-mute">{article.authorRole} · Huayuesc</span>
               <p className="text-[12.5px] text-mute mt-1.5 leading-relaxed">
-                关注 {article.author}，获取更多关于越南—中国采购行业的分析文章。
+                Follow {article.author} for more analysis on the Vietnam – China sourcing industry.
               </p>
             </div>
           </div>
@@ -212,16 +212,16 @@ export default async function ArticlePage({
           >
             <div className="grid grid-cols-[1fr_auto] gap-4 items-center max-md:grid-cols-1">
               <div>
-                <b className="block text-[15px] mb-1">需要直接从供应商采购？</b>
+                <b className="block text-[15px] mb-1">Need to source directly from suppliers?</b>
                 <p className="text-[12.5px] opacity-85 leading-snug">
-                  发送询价——24小时内获得5-10家已认证供应商的免费报价。
+                  Send an RFQ — free quotes within 24h from 5–10 verified suppliers.
                 </p>
               </div>
               <Link
                 href="/buying-request"
                 className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] cursor-pointer text-center inline-block whitespace-nowrap"
               >
-                🚀 发送询价
+                🚀 Send RFQ
               </Link>
             </div>
           </div>
@@ -231,22 +231,22 @@ export default async function ArticlePage({
         <aside className="space-y-4 max-lg:hidden">
           {/* Article meta */}
           <div className="bg-paper border border-line rounded p-4 sticky top-[5rem]">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📑 本篇文章</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📑 This Article</b>
             <ul className="space-y-1.5 text-[12px] mb-4 pb-4 border-b border-line">
               <li className="flex justify-between">
-                <span className="text-mute">作者</span>
+                <span className="text-mute">Author</span>
                 <b className="text-ink text-right">{article.author}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">发布日期</span>
+                <span className="text-mute">Published</span>
                 <b className="text-ink">{fmtDate(article.date)}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">阅读时长</span>
-                <b className="text-ink">{article.readMinutes} 分钟</b>
+                <span className="text-mute">Read time</span>
+                <b className="text-ink">{article.readMinutes} min</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">分类</span>
+                <span className="text-mute">Category</span>
                 <b className="text-ink text-right">{cat.label}</b>
               </li>
             </ul>
@@ -255,13 +255,13 @@ export default async function ArticlePage({
               href="/info/industry-news"
               className="block text-center py-2 border border-line rounded-sm text-[12px] text-ink font-semibold cursor-pointer hover:border-brand hover:text-brand mb-2"
             >
-              ← 全部文章
+              ← All Articles
             </Link>
             <Link
               href="/trade-alert"
               className="block text-center py-2 bg-accent text-white rounded-sm text-[12px] font-bold cursor-pointer hover:opacity-90"
             >
-              📬 订阅交易预警
+              📬 Subscribe to Trade Alert
             </Link>
           </div>
         </aside>
@@ -270,7 +270,7 @@ export default async function ArticlePage({
       {/* === Related articles ============================================= */}
       {related.length > 0 && (
         <div className="max-w-[1100px] mx-auto px-4 mb-10">
-          <h2 className="text-[18px] font-bold text-ink mb-4">相关文章</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">Related Articles</h2>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
             {related.map((a) => (
               <Link
@@ -290,7 +290,7 @@ export default async function ArticlePage({
                   </span>
                   <h3 className="text-[14px] font-bold text-ink leading-snug group-hover/related:text-brand line-clamp-2">{a.title}</h3>
                   <div className="text-[11px] text-mute2 mt-2">
-                    {fmtDate(a.date)} · ⏱ {a.readMinutes} 分钟
+                    {fmtDate(a.date)} · ⏱ {a.readMinutes} min
                   </div>
                 </div>
               </Link>
@@ -309,9 +309,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: "文章不存在 — Huayuesc" };
+  if (!article) return { title: "Article not found — Huayuesc" };
   return {
-    title: `${article.title} — Huayuesc 博客`,
+    title: `${article.title} — Huayuesc Blog`,
     description: article.excerpt,
   };
 }

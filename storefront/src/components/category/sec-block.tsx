@@ -25,7 +25,7 @@ export function SecBlock({ section, parentSlug }: { section: CatSection; parentS
         <h2 className={`text-[18px] font-bold ${accentText[section.accent]}`}>
           {section.title}
         </h2>
-        <a className="text-brand text-[12.5px] cursor-pointer">查看全部 →</a>
+        <a className="text-brand text-[12.5px] cursor-pointer">View All →</a>
       </div>
       <div className="bg-paper rounded-b border-l border-r border-b border-line grid grid-cols-[280px_1fr] max-md:grid-cols-1">
         <aside className="bg-[#FCFBF8] p-4 border-r border-line max-md:border-r-0 max-md:border-b">

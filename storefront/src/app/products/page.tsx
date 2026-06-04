@@ -5,25 +5,25 @@ import { SECTIONS, NAV_CATEGORIES } from "@/data/home";
 const ALL_PRODUCTS = SECTIONS.flatMap((s) => s.products);
 
 const FILTERS = [
-  { title: "分类", options: NAV_CATEGORIES.slice(0, 6).map((c) => c.name) },
-  { title: "材质", options: ["陶瓷", "天然石材", "木材", "金属", "皮革", "高端塑料"] },
-  { title: "风格", options: ["现代", "古典", "极简", "工业", "北欧", "轻奢"] },
-  { title: "价格", options: ["< $10", "$10 – $50", "$50 – $200", "$200 – $1000", "> $1000"] },
-  { title: "产地", options: ["佛山", "广州", "东莞", "杭州", "上海"] },
+  { title: "Category", options: NAV_CATEGORIES.slice(0, 6).map((c) => c.name) },
+  { title: "Material", options: ["Ceramic", "Natural Stone", "Wood", "Metal", "Leather", "Premium Plastic"] },
+  { title: "Style", options: ["Modern", "Classic", "Minimalist", "Industrial", "Nordic", "Luxury"] },
+  { title: "Price", options: ["< $10", "$10 – $50", "$50 – $200", "$200 – $1000", "> $1000"] },
+  { title: "Origin", options: ["Foshan", "Guangzhou", "Dongguan", "Hangzhou", "Shanghai"] },
 ];
 
 export default function ProductsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "全部产品" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "All Products" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5 flex justify-between items-end max-md:flex-col max-md:items-start max-md:gap-3">
           <div>
-            <h1 className="text-[24px] font-extrabold text-ink leading-tight">全部产品</h1>
-            <p className="text-[13px] text-mute mt-1">来自 40+ 家已验厂工厂的 2,400+ 款产品 · 24 小时内报价 · DDP 运输至越南</p>
+            <h1 className="text-[24px] font-extrabold text-ink leading-tight">All Products</h1>
+            <p className="text-[13px] text-mute mt-1">2,400+ products from 40+ audited factories · Quote within 24h · DDP shipping to Vietnam</p>
           </div>
           <div className="flex gap-2">
-            {["全部", "热销", "新品", "精选", "OEM"].map((t, i) => (
+            {["All", "Hot", "New", "Featured", "OEM"].map((t, i) => (
               <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t}</a>
             ))}
           </div>
@@ -48,7 +48,7 @@ export default function ProductsPage() {
 
         {/* Grid */}
         <div>
-          <div className="text-[12px] text-mute mb-2">显示 24 / 2,400 款产品</div>
+          <div className="text-[12px] text-mute mb-2">Showing 24 / 2,400 products</div>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {ALL_PRODUCTS.map((p) => (
               <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
@@ -72,7 +72,7 @@ export default function ProductsPage() {
             {[1, 2, 3, 4, 5, "...", 100].map((p, i) => (
               <a key={i} className={`min-w-[34px] px-2.5 py-1.5 text-[12.5px] rounded-sm cursor-pointer ${p === 1 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{p}</a>
             ))}
-            <a className="px-3 py-1.5 text-[12.5px] rounded-sm border border-line text-mute hover:border-brand cursor-pointer">下一页 →</a>
+            <a className="px-3 py-1.5 text-[12.5px] rounded-sm border border-line text-mute hover:border-brand cursor-pointer">Next →</a>
           </div>
         </div>
       </div>
@@ -80,4 +80,4 @@ export default function ProductsPage() {
   );
 }
 
-export const metadata = { title: "全部产品 — Huayuesc" };
+export const metadata = { title: "All Products — Huayuesc" };

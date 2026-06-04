@@ -3,35 +3,35 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 
 const TOOLS = [
-  { icon: "📦", name: "产品管理", desc: "批量 CSV 上传、按行业设置属性、OEM/ODM 价格版本管理、校验华越商品列表标准。", count: "412 个 SKU 在售" },
-  { icon: "📋", name: "订单管理", desc: "看板式流水线：询价 → 报价 → PI → 定金 → 生产 → 出厂 → 交货。集成担保。", count: "23 个订单处理中" },
-  { icon: "📨", name: "询价收件箱", desc: "汇集越南采购商的全部询价，按行业/金额/起订量筛选。AI 推荐回复模板。", count: "23 条询价未回复" },
-  { icon: "💲", name: "快速报价", desc: "30 秒生成专业中越双语 PI / 报价单。自动同步价格矩阵。", count: "平均 18 分钟/报价" },
-  { icon: "🚚", name: "运输跟踪", desc: "实时追踪集装箱，从盐田/上海 → 海防/胡志明市。自动同步给采购商。", count: "8 个在途集装箱" },
-  { icon: "📊", name: "销售报告", desc: "营收、毛利、Top 采购商、Top SKU、询价→订单转化率。导出 Excel/PDF 呈报。", count: "5 月 $187K" },
+  { icon: "📦", name: "Product management", desc: "Bulk CSV upload, assign industry attributes, version OEM/ODM pricing, and check against Huayuesc listing standards.", count: "412 active SKUs" },
+  { icon: "📋", name: "Order management", desc: "Kanban pipeline: RFQ → Quote → PI → Deposit → Production → Ship-ready → Delivery. Escrow integrated.", count: "23 orders in progress" },
+  { icon: "📨", name: "RFQ inbox", desc: "Every quote request from Vietnamese buyers, filtered by industry/value/MOQ. AI suggests reply templates.", count: "23 unanswered RFQs" },
+  { icon: "💲", name: "Quick quoting", desc: "Create a professional bilingual VI-ZH PI / quote in 30 seconds. Auto-syncs with your pricing matrix.", count: "Avg. 18 min/quote" },
+  { icon: "🚚", name: "Shipment tracking", desc: "Real-time container tracking from Yantian/Shanghai to Hai Phong/Ho Chi Minh City. Auto-updates buyers.", count: "8 containers in transit" },
+  { icon: "📊", name: "Sales reporting", desc: "Revenue, margin, top buyers, top SKUs, and RFQ→Order conversion. Export to Excel/PDF for your boss.", count: "$187K in May" },
 ];
 
 const INTEGRATIONS = [
   { name: "SAP Business One", type: "ERP", logo: 11 },
   { name: "Oracle NetSuite", type: "ERP", logo: 12 },
-  { name: "Kingdee K3", type: "中国本土 ERP", logo: 13 },
-  { name: "Manhattan WMS", type: "仓储", logo: 14 },
-  { name: "Cainiao Fulfillment", type: "履约", logo: 15 },
+  { name: "Kingdee K3", type: "China domestic ERP", logo: 13 },
+  { name: "Manhattan WMS", type: "Warehouse", logo: 14 },
+  { name: "Cainiao Fulfillment", type: "Fulfillment", logo: 15 },
   { name: "Salesforce CRM", type: "CRM", logo: 16 },
-  { name: "WeCom (企业微信)", type: "员工沟通", logo: 17 },
-  { name: "DingTalk", type: "员工沟通", logo: 18 },
+  { name: "WeCom (企业微信)", type: "Team chat", logo: 17 },
+  { name: "DingTalk", type: "Team chat", logo: 18 },
 ];
 
 const STEPS = [
-  { n: 1, title: "单点登录", desc: "使用华越金牌账户单点登录（SSO）" },
-  { n: 2, title: "连接 ERP/WMS", desc: "向导自动映射字段，双向同步产品 + 库存" },
-  { n: 3, title: "统一运营", desc: "全团队共享同一订单流水线——告别分散的 Excel" },
+  { n: 1, title: "Single sign-on", desc: "Sign in once (SSO) with your Huayuesc Gold account" },
+  { n: 2, title: "Connect ERP/WMS", desc: "The wizard auto-maps fields and syncs products + inventory two-way" },
+  { n: 3, title: "Run operations as one", desc: "Your whole team sees the same order pipeline — no more scattered spreadsheets" },
 ];
 
 export default function TradeEhomePage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "供应商中心", href: "/seller-center" }, { label: "Foreign Trade e-Home" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "Foreign Trade e-Home" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/trade-ehome" />
         <div>
@@ -39,11 +39,11 @@ export default function TradeEhomePage() {
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🏡 ALL-IN-ONE PORTAL</div>
             <h1 className="text-[26px] font-bold leading-tight">Foreign Trade e-Home</h1>
             <p className="text-[14px] opacity-90 mt-2 leading-relaxed max-w-[680px]">
-              出口供应商的「数字之家」——6 大工具集成于一个控制台，连接内部 ERP/WMS/CRM。从询价到集装箱交货的全订单生命周期，尽在一处完成。
+              The "digital home" for export suppliers — 6 tools in one dashboard, connected to your in-house ERP/WMS/CRM. The entire order lifecycle, from RFQ to container delivery, runs through a single place.
             </p>
             <div className="flex gap-3 mt-4 max-md:flex-col">
-              <button className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[12.5px]">免费试用 14 天</button>
-              <button className="bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-sm font-semibold text-[12.5px] border border-white/30">观看演示（3 分钟）</button>
+              <button className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[12.5px]">Start a free 14-day trial</button>
+              <button className="bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-sm font-semibold text-[12.5px] border border-white/30">Watch demo (3 min)</button>
             </div>
           </div>
 
@@ -61,8 +61,8 @@ export default function TradeEhomePage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🔗 集成 8 大企业系统</b>
-            <p className="text-[12px] text-mute mb-4">e-Home 不取代您的 ERP——它是连接内部系统与越南采购商的桥梁。</p>
+            <b className="block text-[15px] text-ink mb-4">🔗 Integrates with 8 enterprise systems</b>
+            <p className="text-[12px] text-mute mb-4">e-Home does not replace your ERP — it bridges your internal systems and Vietnamese buyers.</p>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {INTEGRATIONS.map((i) => (
                 <div key={i.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
@@ -75,12 +75,12 @@ export default function TradeEhomePage() {
               ))}
             </div>
             <div className="mt-4 text-center">
-              <Link href="#" className="text-brand text-[12px] font-semibold">+ 申请定制 ERP 集成</Link>
+              <Link href="#" className="text-brand text-[12px] font-semibold">+ Request a custom ERP integration</Link>
             </div>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">⚙ 仅需 3 步设置</b>
+            <b className="block text-[15px] text-ink mb-4">⚙ Set up in just 3 steps</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-4 text-center">
@@ -95,23 +95,23 @@ export default function TradeEhomePage() {
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-2">
             <div className="bg-paper border border-line rounded p-4 text-center">
               <b className="block text-[24px] text-brand">−68%</b>
-              <span className="text-[11px] text-mute">订单处理时间</span>
+              <span className="text-[11px] text-mute">order processing time</span>
             </div>
             <div className="bg-paper border border-line rounded p-4 text-center">
               <b className="block text-[24px] text-success">+34%</b>
-              <span className="text-[11px] text-mute">询价 → 订单转化率</span>
+              <span className="text-[11px] text-mute">RFQ → Order conversion</span>
             </div>
             <div className="bg-paper border border-line rounded p-4 text-center">
-              <b className="block text-[24px] text-accent">14 天</b>
-              <span className="text-[11px] text-mute">免费试用，无需绑卡</span>
+              <b className="block text-[24px] text-accent">14 days</b>
+              <span className="text-[11px] text-mute">free trial, no card</span>
             </div>
           </div>
 
           <div className="bg-brand-dark text-white rounded p-5 text-center">
-            <b className="block text-[18px] mb-2">🏡 进入 e-Home——像大型外贸公司一样运营</b>
-            <p className="text-[12.5px] opacity-90 mb-4">免费 14 天 · 开通金牌即免费 · 随时取消</p>
+            <b className="block text-[18px] mb-2">🏡 Enter e-Home — operate like a major export company</b>
+            <p className="text-[12.5px] opacity-90 mb-4">Free for 14 days · Free with a Gold plan · Cancel anytime</p>
             <button className="bg-gold text-brand-dark px-7 py-3 rounded-sm font-bold text-[14px] hover:opacity-95">
-              开始体验 e-Home
+              Start using e-Home
             </button>
           </div>
         </div>
@@ -120,4 +120,4 @@ export default function TradeEhomePage() {
   );
 }
 
-export const metadata = { title: "Foreign Trade e-Home — 供应商中心" };
+export const metadata = { title: "Foreign Trade e-Home — Seller Center" };

@@ -1,16 +1,17 @@
 /**
- * 东芝家电品牌元数据。
+ * Brand metadata for Toshiba Home Appliances (东芝家电).
  *
- * 来源说明 —— 仅使用真实、可核实的信息：
- *   • 东芝公司于 1875 年在日本成立
- *   • 家电业务（Toshiba Lifestyle Products & Services）于 2016 年
- *     由美的集团以 5.37 亿美元收购 80.1% 股权，保留东京研发 +
- *     品牌 + 日本品质标准
- *   • 在越南由 Toshiba Lifestyle 正品分销（toshiba-lifestyle.com/vn）
+ * Honest sourcing — only REAL, verifiable facts:
+ *   • Toshiba Corporation founded in 1875 in Japan
+ *   • Home-appliance business (Toshiba Lifestyle Products & Services)
+ *     acquired 80.1% by the Midea Group in 2016 (USD 537 million), retaining Tokyo R&D +
+ *     brand + Japanese quality standards
+ *   • Officially distributed in Vietnam through Toshiba Lifestyle (toshiba-lifestyle.com/vn)
  *
- * 不杜撰各系列的技术参数表 —— 每款产品已有从 PDP 抓取的真实参数
- * + 真实描述。元数据仅提供品牌故事 + 服务承诺 + 运营 FAQ（符合 B2B 实际）。
- * 品牌故事为所有东芝产品线通用（technicalSpecs 留空 → 页面显示真实参数）。
+ * Do NOT fabricate per-series spec tables — each product already has real specs
+ * and real descriptions crawled from the PDP. The meta only provides a brand story + service
+ * commitments + operational FAQ (accurate to B2B reality). The brand story is shared across all
+ * Toshiba product lines (technicalSpecs left empty → the page shows the real specs).
  */
 
 export type SeriesMeta = {
@@ -29,107 +30,107 @@ export type SeriesMeta = {
 
 const TOSHIBA_BRAND: SeriesMeta = {
   story:
-    "标语：「Leading Innovation」—— 引领创新。\n\n东芝公司于 1875 年在日本成立 —— 是日本历史最悠久、最具声誉的科技集团之一，拥有逾 150 年历史。东芝是诸多开创性发明的鼻祖：日本首台冰箱、洗衣机、微波炉。\n\n2016 年，美的集团以 5.37 亿美元收购东芝家电业务（Toshiba Lifestyle Products & Services）80.1% 股权。根据协议，东芝保留品牌、核心技术与日本品质标准；美的负责大规模生产与全球供应链 —— 形成「日本技术 + 中国制造」的组合，价格更具优势。\n\n在越南，东芝通过 Toshiba Lifestyle 正品分销，产品线齐全：空调、冰箱、洗衣机、干衣机、厨房设备、净水器及家居用品 —— 聚焦保鲜技术、节能变频与日式精湛工艺。",
+    "Tagline: 「Leading Innovation」 — Leading innovation.\n\nToshiba Corporation was founded in 1875 in Japan — one of the oldest and most respected technology groups in the Land of the Rising Sun, with more than 150 years of history. Toshiba pioneered many firsts: Japan's first refrigerator, washing machine and microwave oven.\n\nIn 2016, the Midea Group acquired 80.1% of Toshiba's home-appliance business (Toshiba Lifestyle Products & Services) for USD 537 million. Under the agreement, Toshiba retains its brand, core technology and Japanese quality standards, while Midea handles large-scale manufacturing and the global supply chain — combining Japanese technology with Chinese manufacturing at more accessible prices.\n\nIn Vietnam, Toshiba is officially distributed through Toshiba Lifestyle with a full product range: air conditioners, refrigerators, washing machines, dryers, kitchen appliances, water purifiers and household goods — focused on freshness-keeping technology, energy-saving inverters and refined Japanese craftsmanship.",
   heritage:
-    "逾150年的日本技术传承（始于1875年）。日本首台冰箱+洗衣机+微波炉的鼻祖。2016年美的接管后研发仍设于东京——确保日本品质与核心技术。",
+    "More than 150 years of Japanese technology heritage (since 1875). The maker of Japan's first refrigerator, washing machine and microwave oven. R&D remains in Tokyo after Midea's 2016 acquisition — safeguarding Japanese quality and core technology.",
   technicalSpecs: [],
   manufacturing: [
-    "东芝公司成立于1875年——逾150年日本技术历史",
-    "家电业务自2016年起由美的集团运营（持股80.1%）",
-    "研发保留于东京实验室——日本技术与品质标准",
-    "通过美的全球工厂体系+供应链进行大规模生产",
-    "核心技术：节能变频、保鲜（NaturePURE、PureBIO）、精湛工艺",
+    "Toshiba Corporation, founded in 1875 — over 150 years of Japanese technology history",
+    "Home-appliance business operated by the Midea Group since 2016 (80.1% ownership)",
+    "R&D retained at the Tokyo Lab — Japanese technology and quality standards",
+    "Large-scale production through Midea's global factory network and supply chain",
+    "Core technology: energy-saving inverters, freshness-keeping (NaturePURE, PureBIO) and refined craftsmanship",
   ],
   careGuide: [
     {
-      title: "日常清洁",
-      desc: "用软布+温水+pH中性温和清洁剂擦拭。切勿直接向控制面板或电源插口喷水。",
+      title: "Daily cleaning",
+      desc: "Wipe with a soft cloth, warm water and a mild pH-neutral cleaner. Do NOT spray water directly onto the control panel or power outlet.",
     },
     {
-      title: "定期清洁",
-      desc: "每3个月一次：清洁滤网（空调、洗衣机、净水器、吸尘器）。东芝设计了便于拆装的机制。",
+      title: "Periodic cleaning",
+      desc: "Every 3 months: clean the filters (air conditioner, washing machine, water purifier, vacuum cleaner). Toshiba designs them for easy removal and reinstallation.",
     },
     {
-      title: "技术保养",
-      desc: "每12个月：致电东芝售后中心（toshiba-lifestyle.com/vn/support）检查空调制冷剂、清洁内腔、校准传感器。质保期内免费。",
+      title: "Technical maintenance",
+      desc: "Every 12 months: call a Toshiba Service Center (toshiba-lifestyle.com/vn/support) to check refrigerant, clean the cavity and calibrate sensors. Free during the warranty period.",
     },
     {
-      title: "原厂配件",
-      desc: "使用东芝原厂配件与部件以保持性能+质保。请联系服务中心或华越订购。",
+      title: "Genuine spare parts",
+      desc: "Use genuine Toshiba parts and components to maintain performance and warranty. Contact a Service Center or Huayue to order.",
     },
   ],
   installation: [
-    "安装前请仔细阅读使用说明（双语手册）",
-    "由东芝授权服务中心技师安装",
-    "通电前检查电压 + 接地 + 稳压器功率",
-    "冰箱+空调安装后请等待24小时再通电（待制冷剂稳定）",
-    "请保留发票+质保卡以享受原厂质保政策",
+    "Read the user manual (bilingual) carefully before installation",
+    "Install through a Toshiba Authorized Service Center technician",
+    "Check the voltage, grounding and stabilizer capacity before plugging in",
+    "Wait 24 hours after installing a refrigerator or air conditioner before powering on (to let the refrigerant settle)",
+    "Keep the invoice and warranty card to qualify for the official warranty",
   ],
   certifications: [
-    "正宗日本品牌——东芝公司（始于1875年）",
-    "在越南由Toshiba Lifestyle正品分销",
-    "符合越南工贸部规定的能效标签",
-    "日本品质标准——东京研发",
+    "An authentic Japanese brand — Toshiba Corporation (since 1875)",
+    "Officially distributed in Vietnam through Toshiba Lifestyle",
+    "Energy Label per Vietnam Ministry of Industry & Trade regulations",
+    "Japanese quality standards — Tokyo R&D",
   ],
   packaging: [
-    { label: "标准包装", value: "纸箱+泡沫+防撞打包带" },
-    { label: "运输保障", value: "运输导致的损坏予以赔付" },
-    { label: "进口起订量", value: "1 个 20ft / 40ft HQ 集装箱 —— 可混装 SKU" },
-    { label: "仓储保管", value: "干燥处，避免日晒，按建议堆叠" },
+    { label: "Standard packaging", value: "Carton + foam padding + straps for impact protection" },
+    { label: "Transit warranty", value: "Compensation for transit damage" },
+    { label: "Import MOQ", value: "1 x 20ft / 40ft HQ container — mixed SKUs OK" },
+    { label: "Warehouse storage", value: "Dry place, out of direct sunlight, stacked as recommended" },
   ],
   whyChoose: [
     {
       icon: "🇯🇵",
-      title: "源自1875年的日本技术",
-      desc: "逾150年传承。东京研发。日本首台冰箱+洗衣机+微波炉的鼻祖。",
+      title: "Japanese technology since 1875",
+      desc: "Over 150 years of heritage. Tokyo R&D. The maker of Japan's first refrigerator, washing machine and microwave oven.",
     },
     {
       icon: "🏭",
-      title: "由美的集团运营",
-      desc: "自2016年起，美的的生产实力+供应链使价格更具优势，同时保持日本品质。",
+      title: "Operated by the Midea Group",
+      desc: "Since 2016, Midea's manufacturing and supply-chain strength keeps prices more accessible while preserving Japanese quality.",
     },
     {
       icon: "❄️",
-      title: "保鲜技术+变频",
-      desc: "NaturePURE、PureBIO除味杀菌；变频节能；日式精湛工艺。",
+      title: "Freshness-keeping + inverter technology",
+      desc: "NaturePURE and PureBIO deodorize and sanitize; energy-saving inverters; refined Japanese craftsmanship.",
     },
     {
       icon: "🛡️",
-      title: "越南原厂质保",
-      desc: "通过Toshiba Lifestyle正品分销+华越DDP质保。原厂配件齐全。",
+      title: "Official Vietnam warranty",
+      desc: "Officially distributed through Toshiba Lifestyle, with DDP-backed warranty from Huayue. Full range of genuine parts.",
     },
   ],
   projectShowcase: [
-    "通过Toshiba Lifestyle越南体系全国正品分销",
-    "产品线齐全：空调、冰箱、洗衣机、灶具、净水",
-    "适合需要日系高端品牌的公寓+酒店+联排住宅项目",
-    "华越为大批量项目提供DDP进口+安装解决方案",
+    "Official nationwide distribution through the Toshiba Lifestyle Vietnam network",
+    "Full product range: air conditioners, refrigerators, washing machines, cooking appliances and water purifiers",
+    "Suited to apartment, hotel and townhouse projects that need a premium Japanese brand",
+    "Huayue provides DDP import and installation solutions for large-volume projects",
   ],
   faq: [
     {
-      q: "美的收购后东芝还是日本品牌吗？",
-      a: "是。美的于2016年收购家电业务80.1%股权，但东芝保留品牌、东京研发、核心技术与日本品质标准。美的负责大规模生产+供应链→价格更具优势而品质仍是日本水准。",
+      q: "Is Toshiba still a Japanese brand after the Midea acquisition?",
+      a: "Yes. Midea acquired 80.1% of the home-appliance business in 2016, but Toshiba retains its brand, Tokyo R&D, core technology and Japanese quality standards. Midea handles large-scale manufacturing and the supply chain, so prices are more accessible while quality stays at Japanese standards.",
     },
     {
-      q: "东芝在越南的质保如何？",
-      a: "通过Toshiba Lifestyle正品分销，设有全国售后中心（toshiba-lifestyle.com/vn/support）。华越+服务中心联合上门质保。每款产品详情页均有来源链接，可查询官方参数。",
+      q: "What is Toshiba's warranty in Vietnam?",
+      a: "Officially distributed through Toshiba Lifestyle with a nationwide Service Center network (toshiba-lifestyle.com/vn/support). Huayue and the Service Centers together provide in-home warranty service. Each product has a source link on its detail page so you can verify the official specifications.",
     },
     {
-      q: "是否提供送货+上门安装+越南DDP报价？",
-      a: "是。华越一站式服务：正规进口→河内/胡志明/岘港仓库→上门送货+安装。无论单件还是整柜项目，均在24小时内提供DDP报价（含税+运费）。",
+      q: "Do you offer delivery, in-home installation and DDP quotes to Vietnam?",
+      a: "Yes. Huayue handles the full package: official import → Hanoi/Ho Chi Minh City/Da Nang warehouse → delivery and in-home installation. DDP quotes (taxes + shipping included) within 24 hours for both single orders and container-scale projects.",
     },
     {
-      q: "起订量+交货周期？",
-      a: "起订量：1个20ft集装箱（可混装SKU）。现货：7-10个工作日。按项目排产：30-45天。大型项目订单可享优先交期。",
+      q: "MOQ and delivery lead time?",
+      a: "MOQ: one 20ft container (mixed SKUs OK). In-stock items: 7–10 business days. Project orders: 30–45 days. Large projects receive priority lead times.",
     },
     {
-      q: "页面上的技术参数准确吗？",
-      a: "所有产品名称+描述+参数+图片均直接取自Toshiba Lifestyle越南官网（每个详情页均有「来源」链接）。不修改、不杜撰。",
+      q: "Are the technical specs on the page accurate?",
+      a: "All product names, descriptions, specs and images are taken directly from the official Toshiba Lifestyle Vietnam site (with a source link on every detail page). Nothing is altered or fabricated.",
     },
   ],
 };
 
-/** 所有东芝产品线共用品牌故事（品牌统一）。 */
+/** All Toshiba product lines share the same brand story (a unified brand). */
 export function getSeriesMeta(_seriesOriginal?: string): SeriesMeta | undefined {
   return TOSHIBA_BRAND;
 }

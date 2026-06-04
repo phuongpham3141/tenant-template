@@ -2,33 +2,33 @@ import Link from "next/link";
 
 const NAV_GROUPS = [
   {
-    title: "概览",
+    title: "Overview",
     items: [
-      { label: "供应商中心", href: "/seller-center", icon: "🏭" },
+      { label: "Seller Center", href: "/seller-center", icon: "🏭" },
     ],
   },
   {
-    title: "供应商服务",
+    title: "Supplier Services",
     items: [
-      { label: "申请金牌会员", href: "/seller-center/gold-member", icon: "🥇" },
-      { label: "外贸服务市场", href: "/seller-center/trade-services", icon: "🛒" },
+      { label: "Gold Member Sign-Up", href: "/seller-center/gold-member", icon: "🥇" },
+      { label: "Import-Export Service Marketplace", href: "/seller-center/trade-services", icon: "🛒" },
       { label: "Foreign Trade e-Home", href: "/seller-center/trade-ehome", icon: "🏡" },
-      { label: "Smart Expo 云展会", href: "/seller-center/smart-expo", icon: "🎪" },
-      { label: "交易服务", href: "/seller-center/trading-service", icon: "🔒" },
+      { label: "Smart Expo Cloud", href: "/seller-center/smart-expo", icon: "🎪" },
+      { label: "Trading Service", href: "/seller-center/trading-service", icon: "🔒" },
     ],
   },
   {
-    title: "拓展市场",
+    title: "Market Expansion",
     items: [
-      { label: "国际物流", href: "/seller-center/logistics", icon: "🚢" },
-      { label: "出口北美", href: "/seller-center/export-na", icon: "🌎" },
-      { label: "中国内销", href: "/seller-center/domestic-cn", icon: "🇨🇳" },
+      { label: "International Logistics", href: "/seller-center/logistics", icon: "🚢" },
+      { label: "North America Export", href: "/seller-center/export-na", icon: "🌎" },
+      { label: "China Domestic", href: "/seller-center/domestic-cn", icon: "🇨🇳" },
     ],
   },
   {
-    title: "工具",
+    title: "Tools",
     items: [
-      { label: "Maike AI 助手", href: "/seller-center/ai-assistant", icon: "🤖" },
+      { label: "Maike AI Assistant", href: "/seller-center/ai-assistant", icon: "🤖" },
     ],
   },
 ];
@@ -37,10 +37,10 @@ export function SellerSidebar({ active }: { active?: string }) {
   return (
     <aside className="bg-paper border border-line rounded p-3 self-start">
       <div className="px-3 py-2.5 border-b border-line mb-2">
-        <b className="block text-[14px] text-ink">KUKA Home 有限公司</b>
+        <b className="block text-[14px] text-ink">KUKA Home Co., Ltd.</b>
         <span className="text-[11.5px] text-mute">
-          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">金牌</span>
-          供应商 · 广州
+          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">Gold</span>
+          Supplier · Guangzhou
         </span>
       </div>
       {NAV_GROUPS.map((group, gi) => (

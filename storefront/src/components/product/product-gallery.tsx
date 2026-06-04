@@ -10,9 +10,9 @@ type Props = {
 /**
  * Image gallery for the product detail page.
  *
- * - Click main image → open full-screen lightbox modal
- * - Thumbnail row below switches the main image (highlights active)
- * - In lightbox: keyboard ← → Esc, click outside to close
+ * - Click the main image → open a full-screen lightbox modal
+ * - The thumbnail row below swaps the main image (highlights active)
+ * - In the lightbox: keyboard ← → Esc, click outside to close
  */
 export function ProductGallery({ images, alt }: Props) {
   const safe = images.filter(Boolean);
@@ -59,18 +59,18 @@ export function ProductGallery({ images, alt }: Props) {
         type="button"
         onClick={() => setLightbox(true)}
         className="block w-full aspect-[4/3] bg-bg border border-line rounded-lg overflow-hidden relative group cursor-zoom-in"
-        aria-label="打开放大查看"
+        aria-label="Open zoomed image view"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={safe[active]}
-          alt={`${alt} — 图片 ${active + 1}`}
+          alt={`${alt} — image ${active + 1}`}
           className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform"
           loading="eager"
           referrerPolicy="no-referrer"
         />
         <span className="absolute bottom-2 right-2 bg-black/55 text-white text-[11px] px-2 py-1 rounded backdrop-blur-sm flex items-center gap-1">
-          🔍 点击放大
+          🔍 Click to zoom
         </span>
         {safe.length > 1 && (
           <span className="absolute top-2 right-2 bg-black/55 text-white text-[11px] px-2 py-0.5 rounded backdrop-blur-sm">
@@ -93,7 +93,7 @@ export function ProductGallery({ images, alt }: Props) {
                   ? "border-brand shadow-sm"
                   : "border-line hover:border-brand/50 opacity-80 hover:opacity-100")
               }
-              aria-label={`查看图片 ${i + 1}`}
+              aria-label={`View image ${i + 1}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -123,7 +123,7 @@ export function ProductGallery({ images, alt }: Props) {
             type="button"
             onClick={() => setLightbox(false)}
             className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white text-[20px] flex items-center justify-center backdrop-blur transition-colors"
-            aria-label="关闭"
+            aria-label="Close"
           >
             ✕
           </button>
@@ -142,7 +142,7 @@ export function ProductGallery({ images, alt }: Props) {
                 type="button"
                 onClick={prev}
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-[24px] flex items-center justify-center backdrop-blur transition-colors"
-                aria-label="上一张"
+                aria-label="Previous image"
               >
                 ‹
               </button>
@@ -150,7 +150,7 @@ export function ProductGallery({ images, alt }: Props) {
                 type="button"
                 onClick={next}
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white text-[24px] flex items-center justify-center backdrop-blur transition-colors"
-                aria-label="下一张"
+                aria-label="Next image"
               >
                 ›
               </button>
@@ -161,7 +161,7 @@ export function ProductGallery({ images, alt }: Props) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={safe[active]}
-            alt={`${alt} — 放大`}
+            alt={`${alt} — zoomed`}
             className="max-w-[92vw] max-h-[88vh] object-contain"
             referrerPolicy="no-referrer"
           />

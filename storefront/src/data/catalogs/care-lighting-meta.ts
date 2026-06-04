@@ -1,6 +1,6 @@
 /**
- * Metadata CareLighting 开尔照明 (Zhejiang Xuguang / Kaier Lighting) — 品牌通用元数据。
- * 来源：care-china.en.made-in-china.com。LED 灯具制造商，已挂牌新三板（839762）。
+ * CareLighting 开尔照明 (Zhejiang Xuguang / Kaier Lighting) metadata — shared brand meta.
+ * Source: care-china.en.made-in-china.com. LED lighting manufacturer, listed on the New Third Board (839762).
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -13,52 +13,52 @@ export type SeriesMeta = {
 };
 const BRAND: SeriesMeta = {
   story:
-    "CareLighting（开尔照明）隶属于浙江旭光电子科技股份有限公司——一家集 LED 灯具及家用电器研发、生产、销售与服务于一体的高新技术企业。公司于 2016 年挂牌新三板（代码 839762）；旗下「Kaier Lighting」是中国知名 LED 灯具品牌，产品覆盖流通/综合照明、家居、商业、集成设备及电器五大领域。",
+    "CareLighting (开尔照明) belongs to Zhejiang Xuguang Electronic Technology Co., Ltd. — a high-tech enterprise integrating R&D, manufacturing, sales and service of LED lighting and home appliances. The company was listed on the New Third Board in 2016 (code 839762); the 'Kaier Lighting' brand is a well-known LED lighting brand in China, with products spanning 5 areas: traffic/general lighting, residential, commercial, integrated devices and electrical equipment.",
   heritage:
-    "拥有逾 90,000 ㎡ 现代化生产厂房，产能约 1 亿套 LED 灯具/年。连续 4 年荣获中国「光源十大品牌」；建有 26 个省级运营中心、500+ 一级分销网点的网络，覆盖逾 100,000 个零售终端。",
+    "Over 90,000 m² of modern production facilities, with a capacity of around 100 million LED light sets per year. Honored as one of China's 'Top 10 Light Source Brands' for 4 consecutive years; a network of 26 provincial-level operation centers, 500+ tier-1 distributors, covering more than 100,000 retail points.",
   technicalSpecs: [
-    { label: "品牌", value: "CareLighting 开尔照明 (Kaier / 浙江旭光)" },
-    { label: "上市", value: "新三板 2016（代码 839762）" },
-    { label: "产品", value: "LED 球泡灯、GX53/嵌入式灯、应急灯" },
-    { label: "产能", value: "约 1 亿套灯具/年，90,000 ㎡ 厂房" },
+    { label: "Brand", value: "CareLighting 开尔照明 (Kaier / Zhejiang Xuguang)" },
+    { label: "Listing", value: "New Third Board 2016 (code 839762)" },
+    { label: "Products", value: "LED bulbs, GX53/recessed lamps, emergency lights" },
+    { label: "Capacity", value: "~100 million light sets/yr, 90,000 m² facility" },
   ],
   manufacturing: [
-    "浙江旭光电子科技（开尔照明 / Kaier Lighting）",
-    "现代化厂房 >90,000 ㎡，产能约 1 亿套 LED 灯具/年",
-    "122 项专利申请（82 项已授权）；ISO 9001:2015 & ISO 14001:2015",
-    "连续 4 年中国「光源十大品牌」",
+    "Zhejiang Xuguang Electronic Technology (开尔照明 / Kaier Lighting)",
+    "Modern facility >90,000 m², capacity ~100 million LED light sets/yr",
+    "122 patent applications (82 granted); ISO 9001:2015 & ISO 14001:2015",
+    "China's 'Top 10 Light Source Brands' for 4 consecutive years",
   ],
   careGuide: [
-    { title: "LED 灯具", desc: "寿命长、少维护；定期擦拭表面灰尘，室内型灯具应避免受潮。" },
-    { title: "灯头", desc: "选配正确的灯头类型（E27/E14/B22/GX53）；更换灯泡时切勿湿手触碰。" },
-    { title: "充电/应急型", desc: "首次使用前充满电；定期放电-充电以保持电池寿命。" },
+    { title: "LED lamps", desc: "Long lifespan, low maintenance; dust the surface periodically and keep indoor types away from moisture." },
+    { title: "Lamp base", desc: "Fit the correct base (E27/E14/B22/GX53); don't touch with wet hands when changing bulbs." },
+    { title: "Rechargeable/emergency types", desc: "Fully charge before first use; periodically discharge-recharge to maintain battery life." },
   ],
   installation: [
-    "按现有灯座的灯头与功率选配相匹配的灯泡/灯具",
-    "GX53 嵌入式/吸顶橱柜灯：按 GX53 标准开孔安装",
-    "按正确电压接线（通常 AC220-240V）；配用相匹配的驱动器/电源",
-    "为大功率灯具保证良好散热",
+    "Choose the bulb/lamp by base and wattage matching the existing fixture",
+    "GX53 recessed/cabinet lamps: install to the standard GX53 cutout",
+    "Wire at the correct voltage (usually AC220-240V); use a suitable driver/power supply",
+    "Ensure adequate heat dissipation for high-power lamps",
   ],
   certifications: [
-    "ISO 9001:2015（质量）& ISO 14001:2015（环境）",
-    "出口系列通过 CE 认证",
-    "高新技术企业，已挂牌新三板（839762）",
+    "ISO 9001:2015 (quality) & ISO 14001:2015 (environment)",
+    "CE certification for the export range",
+    "High-tech enterprise, listed on the New Third Board (839762)",
   ],
   packaging: [
-    { label: "供货方式", value: "按 SKU / 定制包装（OEM）" },
-    { label: "产品线", value: "G45 球泡灯、GX53 灯、筒灯、应急灯" },
-    { label: "灯头", value: "E27 / E14 / B22 / GX53（视 SKU 而定）" },
+    { label: "Supply format", value: "By SKU / custom packaging (OEM)" },
+    { label: "Product range", value: "G45 bulbs, GX53 lamps, downlights, emergency lights" },
+    { label: "Lamp base", value: "E27 / E14 / B22 / GX53 (by SKU)" },
   ],
   whyChoose: [
-    { icon: "💡", title: "知名 LED 品牌", desc: "Kaier Lighting——连续 4 年中国「光源十大品牌」，已上市。" },
-    { icon: "🏭", title: "规模庞大", desc: "90,000 ㎡ 厂房，约 1 亿套灯具/年。" },
-    { icon: "✅", title: "国际标准", desc: "ISO 9001/14001，多项专利，达 CE 出口标准。" },
+    { icon: "💡", title: "Major LED brand", desc: "Kaier Lighting — China's 'Top 10 Light Source' for 4 consecutive years, publicly listed." },
+    { icon: "🏭", title: "Large scale", desc: "90,000 m² facility, ~100 million light sets/yr." },
+    { icon: "✅", title: "International standards", desc: "ISO 9001/14001, numerous patents, CE-certified for export." },
   ],
-  projectShowcase: ["住宅与公寓", "办公室、客厅", "橱柜、展示柜（GX53 灯）", "零售与商业"],
+  projectShowcase: ["Homes & apartments", "Offices, living rooms", "Kitchen cabinets, display cabinets (GX53 lamps)", "Retail & commercial"],
   faq: [
-    { q: "CareLighting（Kaier）是什么品牌？", a: "是浙江旭光电子旗下的 LED 灯具品牌 开尔照明，为已挂牌新三板（839762）的高新技术企业，获中国「光源十大品牌」。" },
-    { q: "有哪些灯具类型？", a: "G45 LED 球泡灯（E27/E14/B22）、GX53 嵌入式/吸顶橱柜灯、筒灯、USB 充电应急灯。" },
-    { q: "是否在越南供货？", a: "请联系 Huayuesc，咨询为越南项目/经销商供应 CareLighting 灯具事宜。" },
+    { q: "Who is CareLighting (Kaier)?", a: "It is the LED lighting brand 开尔照明 of Zhejiang Xuguang Electronic, a high-tech enterprise listed on the New Third Board (839762), one of China's 'Top 10 Light Source' brands." },
+    { q: "What lamp types are available?", a: "G45 LED bulbs (E27/E14/B22), GX53 recessed/cabinet lamps, downlights and USB-rechargeable emergency lights." },
+    { q: "Does it supply to Vietnam?", a: "Contact Huayuesc for advice on supplying CareLighting products for projects/dealers in Vietnam." },
   ],
 };
 export function getSeriesMeta(_seriesOriginal?: string): SeriesMeta | undefined {

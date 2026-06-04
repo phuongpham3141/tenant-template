@@ -5,39 +5,39 @@ import { FACTORIES } from "@/data/home";
 
 const EVENTS = [
   {
-    badge: "线下",
-    title: "2026 广交会春季展",
+    badge: "IN PERSON",
+    title: "Canton Fair Spring 2026",
     date: "15/04 – 19/04/2026",
-    location: "广州 · 中国",
-    desc: "亚洲最大进出口展会——25,000 家供应商、5 大品类。华越组织越南采购团，配备翻译并预先安排一对一会谈。",
+    location: "Guangzhou · China",
+    desc: "Asia's largest import-export trade show — 25,000 suppliers, 5 industries. Huayuesc runs a Vietnamese buyer-delegation tour with interpreters and pre-booked 1-on-1 meetings.",
     color: "bg-accent",
-    cta: "报名参团",
+    cta: "Register delegation",
   },
   {
-    badge: "线上",
-    title: "2026 越南国际贸易博览会 – 中国展台",
+    badge: "VIRTUAL",
+    title: "Vietnam Expo 2026 – China Booth",
     date: "08/05 – 11/05/2026",
-    location: "讲武展览中心 · 河内",
-    desc: "120 家陶瓷、家具、卫浴工厂在河内设展台。华越采购商可免费领票，每个展台预约 30 分钟会谈。",
+    location: "Giang Vo Exhibition Center · Hanoi",
+    desc: "120 ceramics, furniture, and sanitaryware factories with booths in Hanoi. Free tickets for Huayuesc buyers, with 30-minute meeting slots per booth.",
     color: "bg-brand",
-    cta: "免费领票",
+    cta: "Get free tickets",
   },
   {
-    badge: "OEM 专场",
-    title: "2026 中国国际家具展 – 上海",
+    badge: "OEM FOCUS",
+    title: "Furniture China 2026 – Shanghai",
     date: "10/09 – 13/09/2026",
-    location: "上海 · 国家会展中心（虹桥）",
-    desc: "专为家具行业：KUKA、Landbond、OPPEIN、ZuoYou 均设展台。华越于展会结束后即组织佛山实地验厂（3 天）。",
+    location: "Shanghai · NECC Hongqiao",
+    desc: "Furniture industry only: KUKA, Landbond, OPPEIN, and ZuoYou all have booths. Huayuesc runs a 3-day Foshan factory tour right after the fair.",
     color: "bg-gold text-brand-dark",
-    cta: "查看行程详情",
+    cta: "View tour details",
   },
 ];
 
 const BOOKING_STEPS = [
-  { n: 1, title: "选择您关注的供应商", desc: "按行业 / 生产区域 / 成立年份筛选，勾选 1–3 家工厂。" },
-  { n: 2, title: "选择会谈时段", desc: "预约 30–60 分钟，通过 Zoom/Teams 或在佛山/深圳当面会谈。" },
-  { n: 3, title: "发送议程 + 资料", desc: "请求报价、样品、产能报告——提前准备，让会谈更高效。" },
-  { n: 4, title: "配翻译的一对一会谈", desc: "华越为前 60 分钟提供免费中越翻译。" },
+  { n: 1, title: "Pick the suppliers you're interested in", desc: "Filter by industry / production region / year founded, then select 1–3 factories." },
+  { n: 2, title: "Choose a meeting slot", desc: "Book 30–60 minutes via Zoom/Teams or meet in person in Foshan/Shenzhen." },
+  { n: 3, title: "Send your agenda + documents", desc: "RFQ, samples, capacity report — prepare ahead for a productive meeting." },
+  { n: 4, title: "1-on-1 meeting with an interpreter", desc: "Huayuesc provides a free Vietnamese–Chinese interpreter for the first 60 minutes." },
 ];
 
 const SUPPLIERS = FACTORIES.slice(0, 6);
@@ -45,22 +45,22 @@ const SUPPLIERS = FACTORIES.slice(0, 6);
 export default function MeetSuppliersPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "对接供应商" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Meet Suppliers" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/meet-suppliers" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 对接供应商</div>
-            <h1 className="text-[22px] font-bold text-ink">对接供应商</h1>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 MEET SUPPLIERS</div>
+            <h1 className="text-[22px] font-bold text-ink">Meet Suppliers</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              当面洽谈总比邮件高效。从行业展会到一对一视频会议，华越助您以正确的方式接触工厂：翻译就位、议程规范、后续跟进清晰。
+              Meeting in person always beats email. From industry trade shows to 1-on-1 video rooms, Huayuesc helps you reach factories the right way: interpreters ready, a solid agenda, and clear follow-up.
             </p>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="flex justify-between items-center mb-4">
-              <b className="text-[15px] text-ink">📅 近期活动</b>
-              <Link href="/factory-tour" className="text-brand text-[12px] hover:underline">查看全部 →</Link>
+              <b className="text-[15px] text-ink">📅 Upcoming events</b>
+              <Link href="/factory-tour" className="text-brand text-[12px] hover:underline">View All →</Link>
             </div>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {EVENTS.map((e) => (
@@ -79,8 +79,8 @@ export default function MeetSuppliersPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-1">🎯 预约与工厂一对一会谈</b>
-            <p className="text-[12px] text-mute mb-4">4 步流程，华越负责会务安排与翻译。</p>
+            <b className="block text-[15px] text-ink mb-1">🎯 Book a 1-on-1 meeting with a factory</b>
+            <p className="text-[12px] text-mute mb-4">A 4-step process — Huayuesc handles logistics and interpretation.</p>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 mb-5">
               {BOOKING_STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-3">
@@ -91,7 +91,7 @@ export default function MeetSuppliersPage() {
               ))}
             </div>
 
-            <b className="block text-[13px] text-ink mb-2">选择您想会面的工厂：</b>
+            <b className="block text-[13px] text-ink mb-2">Choose the factories you want to meet:</b>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {SUPPLIERS.map((f) => (
                 <label key={f.slug} className="border border-line rounded p-3 hover:border-brand cursor-pointer flex gap-3 items-start">
@@ -105,17 +105,17 @@ export default function MeetSuppliersPage() {
                 </label>
               ))}
             </div>
-            <button className="mt-4 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">📅 预约会谈</button>
+            <button className="mt-4 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">📅 Request a meeting</button>
           </div>
 
           <Link href="/factory-tour" className="block bg-brand-dark text-white rounded p-5 hover:opacity-95">
             <div className="flex justify-between items-center max-md:flex-col max-md:items-start max-md:gap-3">
               <div>
                 <div className="inline-block bg-gold text-brand-dark px-2 py-0.5 text-[10px] font-bold rounded-sm tracking-wider mb-2">🆕 360° VR</div>
-                <b className="block text-[16px] mb-1">360° 工厂云参观</b>
-                <p className="text-[12.5px] opacity-90">暂时无法飞往佛山？通过 360° 摄像头参观生产线、成品仓、QC 车间，并与 QC 主管在线直播互动。</p>
+                <b className="block text-[16px] mb-1">360° Factory Tour</b>
+                <p className="text-[12.5px] opacity-90">Can't fly to Foshan yet? Tour the production lines, finished-goods warehouse, and QC room via 360° cameras plus a livestream with the QC manager.</p>
               </div>
-              <span className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] whitespace-nowrap">开始参观 →</span>
+              <span className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] whitespace-nowrap">Start tour →</span>
             </div>
           </Link>
         </div>
@@ -124,4 +124,4 @@ export default function MeetSuppliersPage() {
   );
 }
 
-export const metadata = { title: "对接供应商 — 采购商中心" };
+export const metadata = { title: "Meet Suppliers — Buyer Center" };

@@ -6,53 +6,53 @@ type FooterLink = { label: string; href: string };
 
 const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
   {
-    title: "采购",
+    title: "Sourcing",
     links: [
-      { label: "查找产品", href: "/products" },
-      { label: "发送询价", href: "/buying-request" },
-      { label: "样品订购", href: "/info/sample-orders" },
-      { label: "订单追踪", href: "/info/order-tracking" },
-      { label: "支付保障", href: "/info/payment-protection" },
-      { label: "投诉与纠纷", href: "/info/disputes" },
+      { label: "Find Products", href: "/products" },
+      { label: "Send RFQ", href: "/buying-request" },
+      { label: "Sample Orders", href: "/info/sample-orders" },
+      { label: "Order Tracking", href: "/info/order-tracking" },
+      { label: "Payment Protection", href: "/info/payment-protection" },
+      { label: "Disputes & Complaints", href: "/info/disputes" },
     ],
   },
   {
-    title: "关于华越",
+    title: "About Huayue",
     links: [
-      { label: "公司简介", href: "/info/about-us" },
-      { label: "合作工厂", href: "/info/partners" },
-      { label: "服务网络", href: "/info/network" },
-      { label: "验厂流程", href: "/info/audit-process" },
-      { label: "行业资讯", href: "/info/industry-news" },
-      { label: "招贤纳士", href: "/info/careers" },
-      { label: "联系我们", href: "/info/contact" },
+      { label: "Company Profile", href: "/info/about-us" },
+      { label: "Partner Factories", href: "/info/partners" },
+      { label: "Service Network", href: "/info/network" },
+      { label: "Factory Audit Process", href: "/info/audit-process" },
+      { label: "Industry News", href: "/info/industry-news" },
+      { label: "Careers", href: "/info/careers" },
+      { label: "Contact Us", href: "/info/contact" },
     ],
   },
   {
-    title: "帮助支持",
+    title: "Help & Support",
     links: [
-      { label: "帮助中心", href: "/help" },
-      { label: "进口指南", href: "/info/import-guide" },
-      { label: "DDP 运费计算", href: "/info/ddp-calculator" },
-      { label: "物流政策", href: "/info/shipping-policy" },
-      { label: "服务条款", href: "/info/terms-of-service" },
-      { label: "隐私政策", href: "/info/privacy-policy" },
-      { label: "网站地图", href: "/sitemap" },
+      { label: "Help Center", href: "/help" },
+      { label: "Import Guide", href: "/info/import-guide" },
+      { label: "DDP Freight Calculator", href: "/info/ddp-calculator" },
+      { label: "Shipping Policy", href: "/info/shipping-policy" },
+      { label: "Terms of Service", href: "/info/terms-of-service" },
+      { label: "Privacy Policy", href: "/info/privacy-policy" },
+      { label: "Sitemap", href: "/sitemap" },
     ],
   },
   {
-    title: "供应商专区",
+    title: "Supplier Zone",
     links: [
-      { label: "工厂入驻", href: "/sell-on-csr" },
-      { label: "交易保障", href: "/info/trade-assurance" },
-      { label: "市场报告", href: "/info/market-reports" },
-      { label: "API 接入", href: "/info/api-integration" },
-      { label: "供应商中心", href: "/seller-center" },
+      { label: "Sell on CSR", href: "/sell-on-csr" },
+      { label: "Trade Assurance", href: "/info/trade-assurance" },
+      { label: "Market Reports", href: "/info/market-reports" },
+      { label: "API Integration", href: "/info/api-integration" },
+      { label: "Supplier Center", href: "/seller-center" },
     ],
   },
 ];
 
-const CERTS = ["✓ 越南工贸部", "✓ DMCA 保护", "✓ ISO 27001", "✓ TÜV 认证", "✓ SSL加密"];
+const CERTS = ["✓ Vietnam Ministry of Industry & Trade", "✓ DMCA Protected", "✓ ISO 27001", "✓ TÜV Certified", "✓ SSL Encrypted"];
 
 type Social = {
   name: string;
@@ -138,7 +138,7 @@ export async function Footer() {
             <Link
               href="/"
               className="block mx-auto mb-4 w-fit"
-              aria-label="华越 — 首页"
+              aria-label="Huayue — Home"
             >
               <img
                 src="/logo/cybersilkroads-horizontal.png?v=5"
@@ -149,8 +149,9 @@ export async function Footer() {
               />
             </Link>
             <p className="text-[12px] opacity-75 leading-relaxed mb-3.5 max-w-[320px] md:max-lg:mx-auto max-md:mx-auto">
-              连接越南采购商与 40+ 家中国已认证工厂的 B2B 平台。快速报价、
-              品质保障、DDP 送货到仓。
+              The B2B platform connecting Vietnamese buyers with 40+ certified
+              factories in China. Fast quotes, quality assurance, DDP delivery to
+              your warehouse.
             </p>
             <div className="flex gap-2 flex-wrap md:max-lg:justify-center max-md:justify-center">
               {SOCIALS.map((s) => (
@@ -206,12 +207,12 @@ export async function Footer() {
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
           <span className="opacity-80 max-lg:order-3 leading-relaxed">
-            © 2026 <b className="font-semibold">华越供应链（越南）有限公司</b>{" · "}
+            © 2026 <b className="font-semibold">Huayue Supply Chain (Vietnam) Co., Ltd.</b>{" · "}
             <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
-            税号：0111453693 · 河内市春芳坊宝玉大厦
+            Tax ID: 0111453693 · Bao Ngoc Building, Xuan Phuong Ward, Hanoi
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
-            <span className="text-white/60 text-[11px] uppercase tracking-wider">语言：</span>
+            <span className="text-white/60 text-[11px] uppercase tracking-wider">Language:</span>
             <LangSwitcher variant="compact" initialHost={host} />
           </div>
           <div className="flex gap-3.5 flex-wrap opacity-70 max-lg:justify-center max-lg:order-2">

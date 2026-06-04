@@ -32,9 +32,9 @@ function listingToProduct(lp: ListingProduct, leafTitle: string): Product {
     moq: `MOQ: ${lp.moq}`,
     rating: 4.7,
     seller: lp.supplier.name,
-    years: "已认证",
+    years: "Verified",
     image: lp.img.src,
-    badges: lp.amazing ? ["top"] : lp.monthLabel?.includes("新") ? ["new"] : undefined,
+    badges: lp.amazing ? ["top"] : lp.monthLabel?.toLowerCase().includes("mới") ? ["new"] : undefined,
     tags: [leafTitle],
   };
 }
@@ -108,67 +108,67 @@ function tierTable(price: string) {
 }
 
 const SPECS: [string, string][] = [
-  ["产地", "中国（China）"],
-  ["品牌", "支持OEM/ODM"],
-  ["材质", "高端 – Grade A"],
-  ["标准", "ISO 9001, CE, RoHS"],
-  ["包装", "纸箱 + 出口托盘"],
-  ["出货港", "佛山 / 深圳 / 宁波"],
-  ["生产周期", "20 – 30天"],
-  ["付款方式", "T/T 30%预付，70%出货前付清"],
-  ["运输", "FOB / CIF / DDP至越南"],
-  ["质保", "越南本地12个月"],
+  ["Origin", "China"],
+  ["Brand", "OEM/ODM supported"],
+  ["Material", "Premium – Grade A"],
+  ["Standards", "ISO 9001, CE, RoHS"],
+  ["Packaging", "Export carton + pallet"],
+  ["Port of Loading", "Foshan / Shenzhen / Ningbo"],
+  ["Production Lead Time", "20 – 30 days"],
+  ["Payment Terms", "T/T 30% deposit, 70% before shipment"],
+  ["Shipping", "FOB / CIF / DDP to Vietnam"],
+  ["Warranty", "12 months in Vietnam"],
 ];
 
 /* --- Reviews + breakdown ----------------------------------------------- */
 
 const REVIEWS = [
-  { name: "陈明辉", company: "西贡家具展厅", rating: 5, date: "2026-04-12", text: "收到的货与样品一致，交货速度快。第二批将再订2个集装箱。", helpful: 18 },
-  { name: "范国英", company: "南方建筑材料", rating: 5, date: "2026-03-28", text: "6小时内快速报价。供应商支持出货前视频验货。", helpful: 14 },
-  { name: "阮秋恒", company: "胡志明市酒店集团", rating: 4, date: "2026-03-15", text: "品质好，出口级包装。价格比国内低30%，很有竞争力。", helpful: 9 },
-  { name: "黎文德", company: "岘港经销商", rating: 5, date: "2026-02-22", text: "由华越组织的工厂验厂非常专业，下单很放心。", helpful: 12 },
+  { name: "Tran Minh Huy", company: "Saigon Furniture Showroom", rating: 5, date: "2026-04-12", text: "Goods arrived exactly as sampled, fast delivery. We will order 2 more containers in the next round.", helpful: 18 },
+  { name: "Pham Quoc Anh", company: "Phuong Nam Building Materials", rating: 5, date: "2026-03-28", text: "Quote returned within 6 hours. The supplier supported a video call to inspect goods before shipment.", helpful: 14 },
+  { name: "Nguyen Thu Hang", company: "Hotel Group HCMC", rating: 4, date: "2026-03-15", text: "Good quality, export-grade packaging. Pricing is 30% more competitive than domestic.", helpful: 9 },
+  { name: "Le Van Duc", company: "Da Nang Dealer", rating: 5, date: "2026-02-22", text: "The factory audit organized by Huayuesc was very professional. We order with confidence.", helpful: 12 },
 ];
 
 const RATING_BREAKDOWN = [
-  { label: "产品品质", score: 4.9 },
-  { label: "与供应商沟通", score: 4.8 },
-  { label: "包装与运输", score: 4.7 },
-  { label: "如期履约", score: 4.9 },
+  { label: "Product Quality", score: 4.9 },
+  { label: "Supplier Communication", score: 4.8 },
+  { label: "Packaging & Shipping", score: 4.7 },
+  { label: "On-Time Delivery", score: 4.9 },
 ];
 
 /* --- Trade certificates (placeholders) --------------------------------- */
 
 const CERTIFICATES = [
-  { code: "ISO 9001:2015", desc: "质量管理" },
+  { code: "ISO 9001:2015", desc: "Quality Management" },
   { code: "CE", desc: "EU Conformity" },
-  { code: "RoHS", desc: "有害物质限制" },
-  { code: "FSC", desc: "可持续森林木材" },
-  { code: "BSCI", desc: "商业道德" },
-  { code: "ISO 14001", desc: "环境管理" },
+  { code: "RoHS", desc: "Hazardous Substance Restriction" },
+  { code: "FSC", desc: "Sustainable Forestry" },
+  { code: "BSCI", desc: "Business Ethics" },
+  { code: "ISO 14001", desc: "Environmental" },
 ];
 
 /* --- FAQ --------------------------------------------------------------- */
 
 const FAQS = [
   {
-    q: "华越平台上的起订量是多少？",
-    a: "标准起订量显示在价格表中。部分产品可在大批量下单前先订样品（起订量 = 1）——请发送询价确认。",
+    q: "What is the MOQ on Huayuesc?",
+    a: "The standard MOQ is shown in the price table. Some products allow a sample order first (MOQ = 1) before placing a bulk order — please send an RFQ to confirm.",
   },
   {
-    q: "交货周期多久？",
-    a: "平均 20-30 天生产 + 12-18 天 DDP 运输至河内/胡志明市。自支付 T/T 30% 定金起，总交货周期 32-48 天。",
+    q: "How long is the delivery time?",
+    a: "On average 20-30 days of production + 12-18 days of DDP shipping to Hanoi/Ho Chi Minh City. Total delivery time is 32-48 days from the T/T 30% deposit.",
   },
   {
-    q: "可以按图纸做 OEM/ODM 吗？",
-    a: "可以。供应商支持按技术图纸印 logo、改色、定制尺寸。打样费通常 $50-200，达到起订量下单时可抵扣至正式订单。",
+    q: "Can you do OEM/ODM to drawing?",
+    a: "Yes. The supplier supports logo printing, color changes, and custom dimensions to your technical drawings. The sample fee is typically $50-200 and is credited against the main order once the MOQ is placed.",
   },
   {
-    q: "华越如何保障交易？",
-    a: "交易保障：货款托管于华越的担保账户，仅在采购商确认货物与描述相符后才向供应商放款。如不符约定，100% 退款。",
+    q: "How does Huayuesc protect transactions?",
+    a: "Trade Assurance: funds are held in Huayuesc's escrow account and released to the supplier only after the buyer confirms the goods match the description. 100% refund if commitments are not met.",
   },
   {
-    q: "DDP 运费包含哪些内容？",
-    a: "包含海运/陆运运费、进口关税、增值税、清关费、中转仓储费、越南境内运输至采购商仓库的费用。采购商无需办理任何手续。",
+    q: "What does the DDP shipping fee include?",
+    a: "It includes ocean/road freight, import duties, VAT, customs clearance, transit warehouse fees, and domestic Vietnam delivery to the buyer's warehouse. The buyer handles no paperwork.",
   },
 ];
 
@@ -185,13 +185,13 @@ export default async function ProductPage({
   if (!found) {
     return (
       <div className="max-w-[1400px] mx-auto px-4 py-16">
-        <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "产品", href: "/products" }, { label: id }]} />
+        <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: id }]} />
         <div className="bg-paper border border-line rounded p-12 mt-6 text-center">
           <div className="text-[48px] mb-3">📦</div>
-          <h1 className="text-[24px] font-bold text-ink mb-2">产品更新中</h1>
-          <p className="text-[13px] text-mute mb-5">产品编号 <b>{id}</b> 暂不可用，请稍后再来。</p>
+          <h1 className="text-[24px] font-bold text-ink mb-2">This product is being updated</h1>
+          <p className="text-[13px] text-mute mb-5">Product code <b>{id}</b> is not available yet. Please check back later.</p>
           <Link href="/products" className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light cursor-pointer">
-            ← 查看全部产品
+            ← View All Products
           </Link>
         </div>
       </div>
@@ -211,14 +211,14 @@ export default async function ProductPage({
   // Breadcrumb trail — branches by source (home section vs leaf category).
   const trail = section
     ? [
-        { label: "首页", href: "/" },
-        { label: "产品", href: "/products" },
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
         { label: section.title, href: `/category/${section.categorySlug}` },
         { label: p.title },
       ]
     : [
-        { label: "首页", href: "/" },
-        { label: "产品", href: "/products" },
+        { label: "Home", href: "/" },
+        { label: "Products", href: "/products" },
         ...(parentName && parentSlug ? [{ label: parentName, href: `/category/${parentSlug}` }] : []),
         ...(l2Name ? [{ label: l2Name }] : []),
         ...(leafTitle && leafSlug && parentSlug ? [{ label: leafTitle, href: `/category/${parentSlug}/${leafSlug}` }] : []),
@@ -255,7 +255,7 @@ export default async function ProductPage({
                   key={i}
                   htmlFor={`ig-${p.id}-${i}`}
                   className={`ig-thumb ig-thumb-${i} aspect-square w-full bg-[#F5F5F5] rounded overflow-hidden cursor-pointer hover:border-brand max-md:w-[64px] max-md:flex-shrink-0`}
-                  aria-label={`图片 ${i}`}
+                  aria-label={`Image ${i}`}
                 >
                   <img
                     src={`/img/${p.id}-${i}.jpg?v=5`}
@@ -281,12 +281,12 @@ export default async function ProductPage({
                 />
               ))}
               <div className="absolute bottom-3 right-3 bg-black/60 text-white text-[11px] px-2.5 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition pointer-events-none">
-                🔍 点击缩略图切换图片
+                🔍 Click a thumbnail to switch images
               </div>
               {p.badges && p.badges.length > 0 && (
                 <div className="absolute top-3 left-3 flex gap-1 flex-wrap z-10">
                   {p.badges.includes("top") && <span className="bg-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">⭐ HOT</span>}
-                  {p.badges.includes("new") && <span className="bg-success text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">新品</span>}
+                  {p.badges.includes("new") && <span className="bg-success text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">NEW</span>}
                   {p.badges.includes("deal") && <span className="bg-accent text-white text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider">-25%</span>}
                 </div>
               )}
@@ -296,11 +296,11 @@ export default async function ProductPage({
           {/* Title + meta */}
           <h1 className="text-[22px] font-bold text-ink mt-5 leading-tight max-md:text-[18px]">{p.title}</h1>
           <div className="flex items-center gap-3 mt-2 text-[12.5px] text-mute flex-wrap">
-            <span className="flex items-center gap-1"><span className="text-gold">★</span> <b className="text-ink">{p.rating}</b> <span>({REVIEWS.length * 31} 条评价)</span></span>
+            <span className="flex items-center gap-1"><span className="text-gold">★</span> <b className="text-ink">{p.rating}</b> <span>({REVIEWS.length * 31} reviews)</span></span>
             <span>·</span>
-            <span>340 笔已完成订单</span>
+            <span>340 orders completed</span>
             <span>·</span>
-            <span className="text-success font-semibold">✓ 现货</span>
+            <span className="text-success font-semibold">✓ In Stock</span>
             <span>·</span>
             <span>SKU: {p.id.toUpperCase()}</span>
           </div>
@@ -308,16 +308,16 @@ export default async function ProductPage({
           {/* Tier price table */}
           <div className="mt-5 border border-line rounded">
             <div className="bg-[#FAFBFC] px-4 py-2.5 border-b border-line text-[13px] font-semibold text-ink flex justify-between items-center">
-              <span>起订量阶梯价 <span className="text-mute font-normal">· FOB 中国</span></span>
-              <span className="text-[11.5px] text-success font-medium">⏱ 交货周期 20-30 天</span>
+              <span>Price by MOQ <span className="text-mute font-normal">· FOB China</span></span>
+              <span className="text-[11.5px] text-success font-medium">⏱ Delivery 20-30 days</span>
             </div>
             <table className="w-full text-[13px]">
               <thead className="bg-[#F5F7FA]">
                 <tr>
-                  <th className="text-left px-4 py-2 font-medium text-mute">数量</th>
-                  <th className="text-left px-4 py-2 font-medium text-mute">单价</th>
-                  <th className="text-left px-4 py-2 font-medium text-mute">节省</th>
-                  <th className="text-right px-4 py-2 font-medium text-mute">操作</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">Quantity</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">Price / unit</th>
+                  <th className="text-left px-4 py-2 font-medium text-mute">Savings</th>
+                  <th className="text-right px-4 py-2 font-medium text-mute">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -325,13 +325,13 @@ export default async function ProductPage({
                   <tr key={t.range} className="border-t border-line hover:bg-[#FAFBFC]">
                     <td className="px-4 py-2 text-ink">{t.range} {p.unit}</td>
                     <td className="px-4 py-2 text-accent font-bold">${t.price}{p.unit}</td>
-                    <td className="px-4 py-2 text-success">{t.discount === 0 ? "原价" : `-${t.discount}%`}</td>
+                    <td className="px-4 py-2 text-success">{t.discount === 0 ? "Base price" : `-${t.discount}%`}</td>
                     <td className="px-4 py-2 text-right">
                       <Link
                         href={`/buying-request?productId=${p.id}&qty=${encodeURIComponent(t.range)}&tier=${t.discount}`}
                         className="text-brand text-[12px] font-semibold cursor-pointer hover:underline"
                       >
-                        报价 →
+                        Get Quote →
                       </Link>
                     </td>
                   </tr>
@@ -341,7 +341,7 @@ export default async function ProductPage({
           </div>
 
           {/* === Variant + qty + CTAs — wrapped in a form so submitting
-              "Contact now" / "Request sample" carries the chosen color,
+              "Contact Now" / "Request Sample" carries the chosen color,
               size and quantity to /buying-request as query params. */}
           <form action="/buying-request" method="get" className="mt-5">
             <input type="hidden" name="productId" value={p.id} />
@@ -352,14 +352,14 @@ export default async function ProductPage({
               {/* Color swatches — radio + label, CSS-driven active state */}
               <div className="cv-root">
                 <span className="block text-[12px] font-semibold text-ink mb-1.5">
-                  颜色 <span className="text-mute2 font-normal">· 4 种可选</span>
+                  Color <span className="text-mute2 font-normal">· 4 options</span>
                 </span>
                 <div className="flex gap-1.5 flex-wrap">
                   {[
-                    { code: "#F5F1E8", label: "大理石白" },
-                    { code: "#3D3D3D", label: "深灰" },
-                    { code: "#E1C699", label: "米黄" },
-                    { code: "#5C4033", label: "胡桃棕" },
+                    { code: "#F5F1E8", label: "Marble White" },
+                    { code: "#3D3D3D", label: "Dark Gray" },
+                    { code: "#E1C699", label: "Golden Beige" },
+                    { code: "#5C4033", label: "Walnut Brown" },
                   ].map((c, i) => (
                     <span key={c.label}>
                       <input
@@ -382,16 +382,16 @@ export default async function ProductPage({
                 </div>
               </div>
               <div>
-                <label htmlFor={`size-${p.id}`} className="block text-[12px] font-semibold text-ink mb-1.5">尺寸</label>
+                <label htmlFor={`size-${p.id}`} className="block text-[12px] font-semibold text-ink mb-1.5">Size</label>
                 <select
                   id={`size-${p.id}`}
                   name="size"
                   className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand bg-white cursor-pointer"
-                  defaultValue="标准"
+                  defaultValue="Standard"
                 >
-                  <option>标准</option>
-                  <option>按图纸定制</option>
-                  <option>比例调整 ±5%</option>
+                  <option>Standard</option>
+                  <option>Custom to drawing</option>
+                  <option>Scale ±5%</option>
                 </select>
               </div>
             </div>
@@ -404,7 +404,7 @@ export default async function ProductPage({
                 value="contact"
                 className="flex-1 px-5 py-2.5 bg-accent text-white rounded-sm font-semibold text-[13px] hover:opacity-90 cursor-pointer text-center inline-flex items-center justify-center gap-1.5 max-md:w-full"
               >
-                💬 立即联系
+                💬 Contact Now
               </button>
               <button
                 type="submit"
@@ -413,13 +413,13 @@ export default async function ProductPage({
                 formAction="/buying-request"
                 className="px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light cursor-pointer inline-flex items-center gap-1.5"
               >
-                📦 索取样品
+                📦 Request Sample
               </button>
               <Link
                 href={`/buyer-center/favorites?add=${p.id}`}
                 className="px-4 py-2.5 border border-line rounded-sm text-[13px] text-ink hover:border-accent hover:text-accent cursor-pointer inline-flex items-center"
-                aria-label="加入收藏"
-                title="加入收藏"
+                aria-label="Add to favorites"
+                title="Add to favorites"
               >
                 ❤
               </Link>
@@ -431,38 +431,38 @@ export default async function ProductPage({
         <aside className="space-y-3 max-md:order-2">
           {/* Quick info pills */}
           <div className="bg-paper border border-line rounded p-4">
-            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">快速信息</div>
+            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">Quick Info</div>
             <ul className="space-y-2 text-[12.5px]">
               <li className="flex justify-between">
-                <span className="text-mute">📦 起订量</span>
+                <span className="text-mute">📦 MOQ</span>
                 <b className="text-ink">{p.moq.replace("MOQ:", "").trim()}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">⏱ 交货周期</span>
-                <b className="text-ink">20-30天</b>
+                <span className="text-mute">⏱ Delivery Time</span>
+                <b className="text-ink">20-30 days</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">🚚 出货港</span>
-                <b className="text-ink">佛山 / 宁波</b>
+                <span className="text-mute">🚚 Port of Loading</span>
+                <b className="text-ink">Foshan / Ningbo</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">💳 付款</span>
+                <span className="text-mute">💳 Payment</span>
                 <b className="text-ink">T/T 30% + 70%</b>
               </li>
               <li className="flex justify-between">
                 <span className="text-mute">🎨 OEM / ODM</span>
-                <b className="text-success">支持</b>
+                <b className="text-success">Supported</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">🧪 样品</span>
-                <b className="text-ink">$50-200（可抵扣订单）</b>
+                <span className="text-mute">🧪 Samples</span>
+                <b className="text-ink">$50-200 (credited to order)</b>
               </li>
             </ul>
           </div>
 
           {/* Supplier card */}
           <div className="bg-paper border border-line rounded p-4">
-            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">供应商</div>
+            <div className="text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5">Supplier</div>
             <Link href={`/supplier/${supplier.slug}`} className="flex gap-3 items-start mb-3 cursor-pointer">
               <div className="w-12 h-12 bg-paper border border-line rounded-sm flex items-center justify-center font-extrabold text-[16px] text-brand flex-shrink-0">
                 {supplier.initials}
@@ -475,8 +475,8 @@ export default async function ProductPage({
               </div>
             </Link>
             <div className="flex gap-1 mb-3 flex-wrap">
-              {supplier.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">⭐ 金牌</span>}
-              {supplier.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">✓ 已验厂</span>}
+              {supplier.badges.gold && <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">⭐ GOLD</span>}
+              {supplier.badges.audited && <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">✓ AUDITED</span>}
               <span className="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">{supplier.badges.years}</span>
             </div>
             <div className="grid grid-cols-3 gap-2 text-center text-[11px] mb-3">
@@ -486,18 +486,18 @@ export default async function ProductPage({
               </div>
               <div className="border border-line rounded-sm p-1.5">
                 <b className="block text-[14px] text-brand">340</b>
-                <small className="text-mute">单 / 年</small>
+                <small className="text-mute">orders / yr</small>
               </div>
               <div className="border border-line rounded-sm p-1.5">
                 <b className="block text-[14px] text-brand">98%</b>
-                <small className="text-mute">按时交货</small>
+                <small className="text-mute">on-time</small>
               </div>
             </div>
             <Link
               href={`/supplier/${supplier.slug}`}
               className="block w-full text-center py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px] hover:bg-brand-light cursor-pointer"
             >
-              查看工厂 →
+              View Factory →
             </Link>
           </div>
 
@@ -508,10 +508,10 @@ export default async function ProductPage({
             <input type="hidden" name="intent" value="rfq" />
             <div className="flex items-center gap-2 mb-2.5">
               <span className="text-[18px]">📋</span>
-              <b className="text-[13px] font-bold text-ink">发送询价</b>
+              <b className="text-[13px] font-bold text-ink">Send RFQ</b>
             </div>
             <p className="text-[11.5px] text-mute mb-2.5 leading-snug">
-              24 小时内获得该供应商 + 3-5 家同类供应商的免费报价。
+              Free quote within 24h from this supplier + 3-5 similar suppliers.
             </p>
             <input
               name="q"
@@ -520,12 +520,12 @@ export default async function ProductPage({
             />
             <input
               name="qty"
-              placeholder={`数量 + 单位（例：500${p.unit}）`}
+              placeholder={`Quantity + unit (e.g. 500${p.unit})`}
               className="w-full px-2.5 py-1.5 border border-line rounded-sm text-[12px] mb-2 outline-none focus:border-brand"
             />
             <textarea
               name="desc"
-              placeholder="详细描述需求、定制要求……"
+              placeholder="Describe your requirements, customization..."
               rows={3}
               className="w-full px-2.5 py-1.5 border border-line rounded-sm text-[12px] mb-2 outline-none focus:border-brand resize-none"
             />
@@ -533,19 +533,19 @@ export default async function ProductPage({
               type="submit"
               className="w-full py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] cursor-pointer hover:opacity-90"
             >
-              🚀 立即发送询价
+              🚀 Send RFQ Now
             </button>
           </form>
 
           {/* Trust pillars */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 华越保障</b>
+            <b className="block text-[13px] font-semibold text-ink mb-2.5">🛡 Huayuesc Protection</b>
             <ul className="text-[12px] text-mute space-y-1.5">
-              <li className="flex gap-2"><span className="text-success">✓</span> 未收到货物全额退款</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> 下单前免费验厂</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> 7×24 小时争议支持</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> DDP 运输——含税到门</li>
-              <li className="flex gap-2"><span className="text-success">✓</span> 交易保障（担保账户）</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> Refund if goods are not received</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> Free factory audit before ordering</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> 24/7 dispute support</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> DDP shipping — duties included</li>
+              <li className="flex gap-2"><span className="text-success">✓</span> Trade Assurance (escrow account)</li>
             </ul>
           </div>
         </aside>
@@ -555,11 +555,11 @@ export default async function ProductPage({
       <nav className="sticky top-[3.4rem] z-30 bg-paper border-y border-line mt-7 max-md:top-0">
         <div className="max-w-[1400px] mx-auto px-4 flex gap-0 overflow-x-auto text-[13.5px] font-semibold">
           {[
-            { href: "#mo-ta", label: "描述" },
-            { href: "#thong-so", label: "技术参数" },
-            { href: "#trade-assurance", label: "交易保障" },
-            { href: "#danh-gia", label: `评价 (${REVIEWS.length * 31})` },
-            { href: "#van-chuyen", label: "运输" },
+            { href: "#mo-ta", label: "Description" },
+            { href: "#thong-so", label: "Specifications" },
+            { href: "#trade-assurance", label: "Trade Assurance" },
+            { href: "#danh-gia", label: `Reviews (${REVIEWS.length * 31})` },
+            { href: "#van-chuyen", label: "Shipping" },
             { href: "#faq", label: "FAQ" },
           ].map((t) => (
             <a
@@ -576,20 +576,20 @@ export default async function ProductPage({
       {/* === DESCRIPTION ================================================== */}
       <section id="mo-ta" className="max-w-[1400px] mx-auto px-4 mt-7 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">产品描述</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">Product Description</h2>
           <p className="text-[13px] text-ink leading-relaxed mb-4">
-            <b>{p.title}</b> 由 <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link> 生产，是中国领先的工厂之一，拥有 <b>{p.years} 出口经验</b>。产品达到国际标准，适用于商业项目及高端民用工程。
+            <b>{p.title}</b> is manufactured by <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link>, one of the leading factories in China with <b>{p.years} of export experience</b>. The product meets international standards and is suited to commercial and high-end residential projects.
           </p>
           <img src={`/img/${p.id}-desc1.jpg?v=5`} alt="" className="w-full rounded mb-4" loading="lazy" />
           <p className="text-[13px] text-ink leading-relaxed mb-4">
-            按 <b>ISO 9001:2015</b> 执行严格的质量控制流程。每批货物出厂前均由华越广州团队验厂。支持按客户图纸进行 <b>OEM/ODM</b>，起订量灵活，交货周期 20-30 天。
+            Strict quality control to <b>ISO 9001:2015</b>. Every batch is audited by the Huayuesc team in Guangzhou before it leaves the factory. <b>OEM/ODM</b> to customer drawings is supported, with flexible MOQ and a 20-30 day delivery time.
           </p>
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
             <img src={`/img/${p.id}-desc2.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
             <img src={`/img/${p.id}-desc3.jpg?v=5`} alt="" className="w-full rounded" loading="lazy" />
           </div>
           <p className="text-[13px] text-ink leading-relaxed">
-            <b>DDP 运输至越南</b>——无需担心海关手续，不产生额外费用。凭祥（谅山）与友谊关（海防港）的中转仓确保货物从中国运至采购商仓库仅需 5-7 天。
+            <b>DDP shipping to Vietnam</b> — no customs paperwork to worry about, no surprise fees. Transit warehouses in Pingxiang (Lang Son) and Huu Nghi (Hai Phong port) ensure a 5-7 day delivery time from China to the buyer's warehouse.
           </p>
         </div>
       </section>
@@ -597,7 +597,7 @@ export default async function ProductPage({
       {/* === SPECS ======================================================== */}
       <section id="thong-so" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">技术参数</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">Specifications</h2>
           <div className="grid grid-cols-2 gap-x-6 max-md:grid-cols-1">
             {SPECS.map(([k, v], i) => (
               <div key={k} className={`grid grid-cols-[180px_1fr] py-2 text-[13px] border-b border-line max-md:grid-cols-[140px_1fr] ${i === SPECS.length - 1 || i === SPECS.length - 2 ? "max-md:border-b" : ""}`}>
@@ -613,16 +613,16 @@ export default async function ProductPage({
       <section id="trade-assurance" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
           <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2">
-            🛡 交易保障与认证
+            🛡 Trade Assurance & Certificates
           </h2>
           <p className="text-[13px] text-mute mb-4 leading-relaxed">
-            订单受华越交易保障保护：货款托管于担保账户，供应商仅在采购商确认货物符合约定后才收款。如不符，100% 退款。
+            Orders are protected by Huayuesc Trade Assurance: funds are held in escrow and the supplier is paid only after the buyer confirms the goods match the commitment. 100% refund if not.
           </p>
           <div className="grid grid-cols-3 gap-3 mb-4 max-md:grid-cols-1">
             {[
-              { icon: "🔒", t: "定金担保托管", d: "货款托管于华越，仅在采购商确认后放款" },
-              { icon: "🏭", t: "免费实地验厂", d: "验厂团队出货前验货，支持实时视频通话" },
-              { icon: "⚖", t: "争议支持", d: "7×24 小时调解，描述/数量不符 100% 退款" },
+              { icon: "🔒", t: "Deposit held in escrow", d: "Funds held by Huayuesc, released only when the buyer confirms" },
+              { icon: "🏭", t: "Free on-site inspection", d: "Our team inspects goods before shipment, with a live video call" },
+              { icon: "⚖", t: "Dispute support", d: "24/7 mediation, 100% refund for description/quantity mismatch" },
             ].map((x) => (
               <div key={x.t} className="bg-[#FFF7E6] border border-gold/40 rounded p-3.5">
                 <div className="text-[24px] mb-1">{x.icon}</div>
@@ -632,7 +632,7 @@ export default async function ProductPage({
             ))}
           </div>
           <div className="border-t border-line pt-4">
-            <b className="block text-[13px] font-semibold text-ink mb-3">供应商已获认证</b>
+            <b className="block text-[13px] font-semibold text-ink mb-3">Supplier Certifications</b>
             <div className="grid grid-cols-6 gap-2 max-md:grid-cols-3">
               {CERTIFICATES.map((c) => (
                 <Link
@@ -652,13 +652,13 @@ export default async function ProductPage({
       {/* === REVIEWS ====================================================== */}
       <section id="danh-gia" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">采购商评价</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">Buyer Reviews</h2>
           <div className="grid grid-cols-[280px_1fr] gap-6 mb-5 max-md:grid-cols-1 max-md:gap-4">
             {/* Left: overall rating */}
             <div className="text-center border-r border-line pr-6 max-md:border-r-0 max-md:border-b max-md:pr-0 max-md:pb-4">
               <div className="text-[44px] font-extrabold text-accent leading-none">{overallRating}</div>
               <div className="text-gold text-[18px] my-1">★★★★★</div>
-              <small className="text-[11.5px] text-mute">基于 {REVIEWS.length * 31} 条已验证评价</small>
+              <small className="text-[11.5px] text-mute">Based on {REVIEWS.length * 31} verified reviews</small>
             </div>
             {/* Right: breakdown bars */}
             <div className="space-y-2">
@@ -696,13 +696,13 @@ export default async function ProductPage({
                     href={`/login?next=${encodeURIComponent(`/product/${p.id}/reviews`)}`}
                     className="hover:text-brand cursor-pointer"
                   >
-                    👍 有用 ({r.helpful})
+                    👍 Helpful ({r.helpful})
                   </Link>
                   <Link
                     href={`/login?next=${encodeURIComponent(`/product/${p.id}/reviews`)}`}
                     className="hover:text-brand cursor-pointer"
                   >
-                    💬 回复
+                    💬 Reply
                   </Link>
                 </div>
               </div>
@@ -711,7 +711,7 @@ export default async function ProductPage({
 
           <div className="text-center mt-4">
             <Link href={`/product/${p.id}/reviews`} className="text-brand text-[13px] font-semibold cursor-pointer hover:underline">
-              查看全部 {REVIEWS.length * 31} 条评价 →
+              View All {REVIEWS.length * 31} Reviews →
             </Link>
           </div>
         </div>
@@ -720,12 +720,12 @@ export default async function ProductPage({
       {/* === SHIPPING ===================================================== */}
       <section id="van-chuyen" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">🚚 运输与 DDP 至越南</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">🚚 Shipping & DDP to Vietnam</h2>
           <div className="grid grid-cols-3 gap-4 mb-5 max-md:grid-cols-1">
             {[
-              { t: "FOB 中国", d: "运费、关税自理。价格最低。", price: "按价格表", time: "佛山 / 宁波自提", mode: "fob" },
-              { t: "CIF 海防 / 葛莱", d: "含运费 + 保险至越南港口。", price: "+ $200-400/CBM", time: "12-15 天", mode: "cif" },
-              { t: "DDP 送货到仓", d: "一站到底：关税 + 清关 + 境内运输。", price: "+ $400-700/CBM", time: "18-22 天", mode: "ddp" },
+              { t: "FOB China", d: "You arrange freight and duties. Lowest price.", price: "Per price list", time: "Pickup at Foshan / Ningbo", mode: "fob" },
+              { t: "CIF Hai Phong / Cat Lai", d: "Freight + insurance to the VN port included.", price: "+ $200-400/CBM", time: "12-15 days", mode: "cif" },
+              { t: "DDP to warehouse", d: "All-in: duties + customs + domestic delivery.", price: "+ $400-700/CBM", time: "18-22 days", mode: "ddp" },
             ].map((s, i) => (
               <Link
                 key={s.t}
@@ -734,12 +734,12 @@ export default async function ProductPage({
               >
                 <div className="flex justify-between items-start mb-1.5">
                   <b className="text-[14px] text-ink">{s.t}</b>
-                  {i === 2 && <span className="bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold">热门</span>}
+                  {i === 2 && <span className="bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold">POPULAR</span>}
                 </div>
                 <p className="text-[11.5px] text-mute leading-snug mb-2">{s.d}</p>
                 <div className="text-[12px] text-ink"><b className="text-accent">{s.price}</b></div>
                 <div className="text-[11.5px] text-mute mt-0.5 mb-1">⏱ {s.time}</div>
-                <span className="text-[11.5px] text-brand font-semibold">计算该方式运费 →</span>
+                <span className="text-[11.5px] text-brand font-semibold">Calculate freight for this option →</span>
               </Link>
             ))}
           </div>
@@ -749,20 +749,20 @@ export default async function ProductPage({
           <form action="/info/ddp-calculator" method="get" className="border-t border-line pt-4">
             <input type="hidden" name="productId" value={p.id} />
             <input type="hidden" name="mode" value="ddp" />
-            <b className="block text-[13px] font-semibold text-ink mb-2.5">⚡ DDP 运费快速测算</b>
+            <b className="block text-[13px] font-semibold text-ink mb-2.5">⚡ Quick DDP Freight Estimate</b>
             <div className="grid grid-cols-[1fr_1fr_1fr_auto] gap-2 max-md:grid-cols-1">
               <select name="port" className="px-3 py-2 border border-line rounded-sm text-[13px] bg-white outline-none focus:border-brand cursor-pointer" defaultValue="haiphong">
-                <option value="haiphong">目的港：海防</option>
-                <option value="catlai">目的港：葛莱（胡志明市）</option>
-                <option value="danang">目的港：岘港</option>
-                <option value="langson">经谅山陆运</option>
+                <option value="haiphong">Destination port: Hai Phong</option>
+                <option value="catlai">Destination port: Cat Lai (HCMC)</option>
+                <option value="danang">Destination port: Da Nang</option>
+                <option value="langson">Overland via Lang Son</option>
               </select>
               <input
                 name="qty"
                 type="number"
                 step="0.1"
                 min="0"
-                placeholder="数量（CBM 或 kg）"
+                placeholder="Quantity (CBM or kg)"
                 className="px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
               <input
@@ -770,11 +770,11 @@ export default async function ProductPage({
                 type="number"
                 step="1"
                 min="0"
-                placeholder="订单价值（$USD）"
+                placeholder="Order value ($USD)"
                 className="px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
               <button type="submit" className="px-5 py-2 bg-brand text-white rounded-sm font-semibold text-[13px] cursor-pointer hover:bg-brand-light">
-                计算运费 →
+                Calculate →
               </button>
             </div>
           </form>
@@ -784,7 +784,7 @@ export default async function ProductPage({
       {/* === FAQ ========================================================== */}
       <section id="faq" className="max-w-[1400px] mx-auto px-4 mt-5 scroll-mt-32">
         <div className="bg-paper border border-line rounded p-5 max-md:p-3">
-          <h2 className="text-[18px] font-bold text-ink mb-4">❓ 常见问题</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">❓ Frequently Asked Questions</h2>
           <div className="space-y-2">
             {FAQS.map((f, i) => (
               <details
@@ -806,8 +806,8 @@ export default async function ProductPage({
       {/* === SAME FACTORY RAIL ============================================ */}
       <section className="max-w-[1400px] mx-auto px-4 mt-7">
         <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center justify-between">
-          <span>同厂产品 <span className="text-mute font-normal text-[12.5px]">· {supplier.name}</span></span>
-          <Link href={`/supplier/${supplier.slug}`} className="text-brand text-[12.5px] font-semibold cursor-pointer hover:underline">查看全部 →</Link>
+          <span>Products from the Same Factory <span className="text-mute font-normal text-[12.5px]">· {supplier.name}</span></span>
+          <Link href={`/supplier/${supplier.slug}`} className="text-brand text-[12.5px] font-semibold cursor-pointer hover:underline">View All →</Link>
         </h2>
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {sameSection.map((x) => (
@@ -826,7 +826,7 @@ export default async function ProductPage({
 
       {/* === RECOMMENDED RAIL ============================================= */}
       <section className="max-w-[1400px] mx-auto px-4 mt-7 mb-7 max-md:mb-24">
-        <h2 className="text-[16px] font-bold text-ink mb-3">你可能感兴趣</h2>
+        <h2 className="text-[16px] font-bold text-ink mb-3">You May Also Like</h2>
         <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
           {otherSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
@@ -847,14 +847,14 @@ export default async function ProductPage({
         <Link
           href={`/buyer-center/favorites?add=${p.id}`}
           className="w-11 h-11 border border-line rounded-sm flex items-center justify-center text-[18px] cursor-pointer hover:border-accent hover:text-accent"
-          aria-label="收藏"
+          aria-label="Favorites"
         >
           ❤
         </Link>
         <Link
           href={`/supplier/${supplier.slug}`}
           className="w-11 h-11 border border-line rounded-sm flex items-center justify-center text-[18px] cursor-pointer"
-          aria-label="联系供应商"
+          aria-label="Contact supplier"
         >
           💬
         </Link>
@@ -862,13 +862,13 @@ export default async function ProductPage({
           href={`/buying-request?productId=${p.id}&intent=sample`}
           className="flex-1 h-11 bg-brand text-white rounded-sm font-bold text-[13px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          📦 索取样品
+          📦 Request Sample
         </Link>
         <Link
           href={`/buying-request?productId=${p.id}&intent=rfq`}
           className="flex-1 h-11 bg-accent text-white rounded-sm font-bold text-[13px] inline-flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          🚀 发送询价
+          🚀 Send RFQ
         </Link>
       </div>
     </>
@@ -879,7 +879,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const found = findProduct(id);
   return {
-    title: found ? `${found.product.title} — Huayuesc` : `产品 ${id} — Huayuesc`,
-    description: found ? `${found.product.title}。${found.product.seller}。价格自 ${found.product.price}${found.product.unit} 起。${found.product.moq}。交货周期 20-30 天，DDP 运输至越南。` : undefined,
+    title: found ? `${found.product.title} — Huayuesc` : `Product ${id} — Huayuesc`,
+    description: found ? `${found.product.title}. ${found.product.seller}. Price from ${found.product.price}${found.product.unit}. ${found.product.moq}. 20-30 day delivery, DDP shipping to Vietnam.` : undefined,
   };
 }

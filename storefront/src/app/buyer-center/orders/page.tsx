@@ -3,38 +3,38 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 
 const ORDERS = [
-  { id: "AVN-7831", supplier: "Dongpeng Ceramics", product: "Porcelain tile 600×1200", qty: "1,800 ㎡", total: "$15,300", status: "运输中", date: "12/04/2026" },
-  { id: "AVN-7820", supplier: "KUKA Home", product: "Sofa L-shape velvet", qty: "30 套", total: "$12,600", status: "已交货", date: "08/04/2026" },
-  { id: "AVN-7815", supplier: "Ortonbaths Group", product: "Smart toilet", qty: "80 个", total: "$14,400", status: "生产中", date: "05/04/2026" },
-  { id: "AVN-7808", supplier: "OPPEIN Home", product: "Kitchen cabinet OEM", qty: "1 套", total: "$3,200", status: "已交货", date: "02/04/2026" },
-  { id: "AVN-7795", supplier: "Monalisa Group", product: "Marble slab 1600×3200", qty: "120 ㎡", total: "$5,040", status: "投诉", date: "28/03/2026" },
-  { id: "AVN-7780", supplier: "Landbond Furniture", product: "King size bed walnut", qty: "10 个", total: "$3,800", status: "已交货", date: "20/03/2026" },
-  { id: "AVN-7765", supplier: "Taizhou Faucet", product: "Brushed brass mixer", qty: "200 个", total: "$7,600", status: "处理中", date: "15/03/2026" },
+  { id: "AVN-7831", supplier: "Dongpeng Ceramics", product: "Porcelain tile 600×1200", qty: "1,800 m²", total: "$15,300", status: "Shipping", date: "12/04/2026" },
+  { id: "AVN-7820", supplier: "KUKA Home", product: "Sofa L-shape velvet", qty: "30 set", total: "$12,600", status: "Delivered", date: "08/04/2026" },
+  { id: "AVN-7815", supplier: "Ortonbaths Group", product: "Smart toilet", qty: "80 pc", total: "$14,400", status: "In production", date: "05/04/2026" },
+  { id: "AVN-7808", supplier: "OPPEIN Home", product: "Kitchen cabinet OEM", qty: "1 set", total: "$3,200", status: "Delivered", date: "02/04/2026" },
+  { id: "AVN-7795", supplier: "Monalisa Group", product: "Marble slab 1600×3200", qty: "120 m²", total: "$5,040", status: "Complaint", date: "28/03/2026" },
+  { id: "AVN-7780", supplier: "Landbond Furniture", product: "King size bed walnut", qty: "10 pc", total: "$3,800", status: "Delivered", date: "20/03/2026" },
+  { id: "AVN-7765", supplier: "Taizhou Faucet", product: "Brushed brass mixer", qty: "200 pc", total: "$7,600", status: "Processing", date: "15/03/2026" },
 ];
 
 const STATUS_COLOR: Record<string, string> = {
-  "处理中": "bg-mute2/20 text-mute",
-  "生产中": "bg-brand/15 text-brand",
-  "运输中": "bg-gold/30 text-brand-dark",
-  "已交货": "bg-success/20 text-success",
-  "投诉": "bg-accent/20 text-accent",
+  "Processing": "bg-mute2/20 text-mute",
+  "In production": "bg-brand/15 text-brand",
+  "Shipping": "bg-gold/30 text-brand-dark",
+  "Delivered": "bg-success/20 text-success",
+  "Complaint": "bg-accent/20 text-accent",
 };
 
-const TABS = ["全部", "处理中", "运输中", "已交货", "投诉"];
+const TABS = ["All", "Processing", "Shipping", "Delivered", "Complaint"];
 
 export default function OrdersPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "订单" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Orders" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/orders" />
         <div>
           <div className="bg-paper border border-line rounded p-4 mb-4 flex justify-between items-center max-md:flex-col max-md:items-start max-md:gap-3">
             <div>
-              <h1 className="text-[20px] font-bold text-ink">我的订单</h1>
-              <p className="text-[12px] text-mute mt-0.5">共 {ORDERS.length} 个订单 · 12 分钟前更新</p>
+              <h1 className="text-[20px] font-bold text-ink">My Orders</h1>
+              <p className="text-[12px] text-mute mt-0.5">Total {ORDERS.length} orders · Updated 12 min ago</p>
             </div>
-            <Link href="/products" className="px-4 py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px]">+ 新建订单</Link>
+            <Link href="/products" className="px-4 py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px]">+ New Order</Link>
           </div>
 
           <div className="bg-paper border border-line rounded">
@@ -48,13 +48,13 @@ export default function OrdersPage() {
             <table className="w-full text-[12.5px]">
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
-                  <th className="text-left px-3 py-2.5 font-medium">订单编号</th>
-                  <th className="text-left px-3 py-2.5 font-medium">供应商</th>
-                  <th className="text-left px-3 py-2.5 font-medium">产品</th>
-                  <th className="text-left px-3 py-2.5 font-medium">数量</th>
-                  <th className="text-left px-3 py-2.5 font-medium">金额</th>
-                  <th className="text-left px-3 py-2.5 font-medium">下单日期</th>
-                  <th className="text-left px-3 py-2.5 font-medium">状态</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Order ID</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Supplier</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Product</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Qty</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Value</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Order Date</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Status</th>
                   <th className="text-left px-3 py-2.5 font-medium"></th>
                 </tr>
               </thead>
@@ -71,7 +71,7 @@ export default function OrdersPage() {
                       <span className={`text-[11px] px-2 py-0.5 rounded-sm font-semibold ${STATUS_COLOR[o.status]}`}>{o.status}</span>
                     </td>
                     <td className="px-3 py-3">
-                      <Link href="/info/order-tracking" className="text-brand text-[12px] hover:underline">详情 →</Link>
+                      <Link href="/info/order-tracking" className="text-brand text-[12px] hover:underline">Details →</Link>
                     </td>
                   </tr>
                 ))}
@@ -84,4 +84,4 @@ export default function OrdersPage() {
   );
 }
 
-export const metadata = { title: "订单 — 采购商中心" };
+export const metadata = { title: "Orders — Buyer Center" };

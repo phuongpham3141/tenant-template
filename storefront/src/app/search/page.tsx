@@ -5,10 +5,10 @@ import { SECTIONS, FACTORIES } from "@/data/home";
 const ALL_PRODUCTS = SECTIONS.flatMap((s) => s.products);
 
 const FILTERS = [
-  { title: "结果类型", options: ["产品", "供应商", "展会"] },
-  { title: "价格", options: ["< $10", "$10 – $50", "$50 – $200", "> $200"] },
-  { title: "起订量", options: ["1 – 50", "50 – 200", "200 – 1000", "1000+"] },
-  { title: "产地", options: ["佛山", "广州", "东莞", "上海"] },
+  { title: "Result Type", options: ["Products", "Suppliers", "Trade Show"] },
+  { title: "Price", options: ["< $10", "$10 – $50", "$50 – $200", "> $200"] },
+  { title: "MOQ", options: ["1 – 50", "50 – 200", "200 – 1000", "1000+"] },
+  { title: "Origin", options: ["Foshan", "Guangzhou", "Dongguan", "Shanghai"] },
 ];
 
 export default async function SearchPage({
@@ -34,15 +34,15 @@ export default async function SearchPage({
 
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "搜索" }, { label: q || "全部" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Search" }, { label: q || "All" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
           <h1 className="text-[22px] font-bold text-ink leading-tight">
-            <span className="text-brand">&ldquo;{q || "全部"}&rdquo;</span> 的搜索结果
+            Search results for <span className="text-brand">&ldquo;{q || "all"}&rdquo;</span>
           </h1>
-          <p className="text-[13px] text-mute mt-1">找到 {results.length} 个产品 · 12 家供应商 · 3 场展会</p>
+          <p className="text-[13px] text-mute mt-1">Found {results.length} products · 12 suppliers · 3 trade shows</p>
           <div className="flex gap-2 mt-3 flex-wrap">
-            {["产品", "供应商", "展会"].map((t, i) => (
+            {["Products", "Suppliers", "Trade Show"].map((t, i) => (
               <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t}</a>
             ))}
           </div>
@@ -82,7 +82,7 @@ export default async function SearchPage({
           </div>
 
           <div className="mt-7">
-            <h2 className="text-[15px] font-bold text-ink mb-3">相关供应商</h2>
+            <h2 className="text-[15px] font-bold text-ink mb-3">Related Suppliers</h2>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {FACTORIES.slice(0, 3).map((f) => (
                 <Link key={f.slug} href={`/supplier/${f.slug}`} className="bg-paper border border-line rounded-sm p-3 hover:border-brand flex gap-3 items-center">
@@ -99,10 +99,10 @@ export default async function SearchPage({
           {/* No results CTA */}
           <div className="mt-7 bg-brand-dark text-white rounded p-5 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <div>
-              <b className="block text-[16px] mb-1">没有找到合适的产品？</b>
-              <span className="text-[12.5px] opacity-85">发送询价——我们将在 24 小时内为您匹配 5-10 家工厂。</span>
+              <b className="block text-[16px] mb-1">Can&apos;t find the right product?</b>
+              <span className="text-[12.5px] opacity-85">Send an RFQ — we&apos;ll find 5-10 matching factories within 24h.</span>
             </div>
-            <Link href={`/buying-request${q ? `?q=${encodeURIComponent(q)}` : ""}`} className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]">📨 发送询价 →</Link>
+            <Link href={`/buying-request${q ? `?q=${encodeURIComponent(q)}` : ""}`} className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]">📨 Send RFQ →</Link>
           </div>
         </div>
       </div>
@@ -110,4 +110,4 @@ export default async function SearchPage({
   );
 }
 
-export const metadata = { title: "搜索 — Huayuesc" };
+export const metadata = { title: "Search — Huayuesc" };

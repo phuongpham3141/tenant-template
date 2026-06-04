@@ -4,23 +4,23 @@ import { PARTNERS, type PartnerBrand } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 
 export const metadata = {
-  title: "供应商名录 — Huayuesc 华越供应链",
+  title: "Supplier Directory — Huayuesc 华越供应链",
   description:
-    "华越已审核的中越工厂与品牌名录：工厂位置、成立年份、规模、SKU数量，以及上市公司的股票代码。",
+    "A directory of China-Vietnam factories and brands vetted by Huayue: factory location, year founded, scale, SKU count, and stock ticker if listed.",
 };
 
 type View = "cards" | "table";
 
 /**
- * /suppliers — supplier / factory directory.
+ * /suppliers — Supplier / factory directory.
  *
- * 2 display modes (chosen via URL `?view=cards|table`, default cards):
- *   • Cards — airy card grid, browse-first experience
- *   • Table — B2B data table, good for quick comparison
+ * 2 view modes (selected via URL `?view=cards|table`, default cards):
+ *   • Cards — spacious card grid, optimized for browsing
+ *   • Table — B2B data table, suited to quick comparison
  *
- * Filter by industry via URL `?cat=<NAV_CATEGORIES.slug>`. Left sidebar keeps
- * 4 visual filter dimensions (Industry functional + 3 decorative dimensions
- * for a later phase).
+ * Filter by industry via URL `?cat=<NAV_CATEGORIES.slug>`. The left sidebar
+ * keeps 4 visual filter dimensions (Industry functional + 3 decorative
+ * dimensions for a later phase).
  */
 export default async function SuppliersPage({
   searchParams,
@@ -35,8 +35,8 @@ export default async function SuppliersPage({
     : PARTNERS;
 
   const trail = [
-    { label: "首页", href: "/" },
-    { label: "供应商" },
+    { label: "Home", href: "/" },
+    { label: "Suppliers" },
   ];
 
   const totalSku = list.reduce((n, p) => n + p.products.length, 0);
@@ -51,20 +51,21 @@ export default async function SuppliersPage({
         <div className="bg-paper border border-line rounded p-5 flex justify-between items-end max-md:flex-col max-md:items-start max-md:gap-3">
           <div>
             <h1 className="text-[24px] font-extrabold text-ink leading-tight">
-              {PARTNERS.length}+ 家已审核工厂
+              {PARTNERS.length}+ vetted factories
             </h1>
             <p className="text-[13px] text-mute mt-1">
-              华越上的所有工厂均由广州团队每年实地验厂2次。
+              Every factory on Huayue is audited on-site twice a year by the
+              Guangzhou team.
             </p>
             <div className="flex gap-4 mt-3 text-[12px] text-mute flex-wrap">
               <span>
-                📦 <b className="text-brand">{totalSku}+</b> 个SKU
+                📦 <b className="text-brand">{totalSku}+</b> SKUs
               </span>
               <span>
-                ✓ <b className="text-brand">{listed}</b> 家已上市
+                ✓ <b className="text-brand">{listed}</b> publicly listed
               </span>
               <span>
-                🏭 <b className="text-brand">{NAV_CATEGORIES.length}</b> 个行业
+                🏭 <b className="text-brand">{NAV_CATEGORIES.length}</b> industries
               </span>
             </div>
           </div>
@@ -72,7 +73,7 @@ export default async function SuppliersPage({
           {/* View toggle */}
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-[12px] text-mute font-semibold">
-              显示方式：
+              View:
             </span>
             <div className="inline-flex rounded-sm border border-line overflow-hidden">
               <ViewToggle
@@ -80,14 +81,14 @@ export default async function SuppliersPage({
                 active={view === "cards"}
                 cat={sp.cat}
                 icon="🟦"
-                label="卡片"
+                label="Cards"
               />
               <ViewToggle
                 view="table"
                 active={view === "table"}
                 cat={sp.cat}
                 icon="📋"
-                label="表格"
+                label="Table"
               />
             </div>
           </div>
@@ -100,7 +101,7 @@ export default async function SuppliersPage({
         <aside className="bg-paper border border-line rounded p-4 self-start space-y-5 max-md:order-2">
           <div>
             <b className="block text-[13px] font-semibold text-ink mb-2">
-              行业
+              Industry
             </b>
             <ul className="space-y-1.5">
               <li>
@@ -115,7 +116,7 @@ export default async function SuppliersPage({
                 >
                   <span className="flex items-center gap-1.5">
                     <span>📋</span>
-                    <span>全部</span>
+                    <span>All</span>
                   </span>
                   <span className="text-[11px] text-mute">
                     {PARTNERS.length}
@@ -164,26 +165,27 @@ export default async function SuppliersPage({
 
           {/* Decorative filter dims — later phase */}
           <DecorFilter
-            title="省/市"
+            title="Province/City"
             options={[
-              "佛山",
-              "广州",
-              "杭州",
-              "深圳",
-              "福建",
-              "上海",
+              "Foshan",
+              "Guangzhou",
+              "Hangzhou",
+              "Shenzhen",
+              "Fujian",
+              "Shanghai",
             ]}
           />
           <DecorFilter
-            title="规模（员工）"
+            title="Scale (employees)"
             options={["< 100", "100 – 500", "500 – 2,000", "2,000+"]}
           />
           <DecorFilter
-            title="成立年份"
-            options={["< 10 年", "10–30年", "30–60年", "60+年"]}
+            title="Year Founded"
+            options={["< 10 yrs", "10 – 30 yrs", "30 – 60 yrs", "60+ yrs"]}
           />
           <div className="text-[11px] text-mute2 italic">
-            * 省份/规模/年份筛选将在下一阶段随目录扩充后启用。
+            * The Province/Scale/Year filters will go live in the next phase as
+            the catalog expands.
           </div>
         </aside>
 
@@ -191,11 +193,11 @@ export default async function SuppliersPage({
         <div>
           <div className="text-[12px] text-mute mb-2 flex items-center justify-between">
             <span>
-              显示 <b className="text-ink">{list.length}</b> /{" "}
-              {PARTNERS.length} 家供应商
+              Showing <b className="text-ink">{list.length}</b> /{" "}
+              {PARTNERS.length} suppliers
               {activeCat && (
                 <span className="ml-1">
-                  · 行业 <b className="text-ink">{activeCat.name}</b>
+                  · industry <b className="text-ink">{activeCat.name}</b>
                 </span>
               )}
             </span>
@@ -203,14 +205,15 @@ export default async function SuppliersPage({
 
           {list.length === 0 ? (
             <div className="bg-paper border border-line rounded p-10 text-center text-mute text-[13px]">
-              该行业暂无供应商。欢迎稍后再来，或通过{" "}
+              No suppliers in this industry yet. Please check back later or send
+              a partnership request to{" "}
               <a
                 href="mailto:partnership@huayuesc.vn"
                 className="text-brand font-semibold hover:underline"
               >
                 partnership@huayuesc.vn
-              </a>{" "}
-              发送合作申请。
+              </a>
+              .
             </div>
           ) : view === "table" ? (
             <TableView list={list} />
@@ -222,15 +225,17 @@ export default async function SuppliersPage({
           <section className="bg-[#FFFBEB] border-l-4 border-gold rounded-r p-4 mt-6">
             <h3 className="text-[13.5px] font-bold text-[#92400E] mb-2 flex items-center gap-2">
               <span>⚠️</span>
-              <span>2家合作伙伴的工厂数据待补充</span>
+              <span>2 partners with pending factory data</span>
             </h3>
             <p className="text-[12px] text-ink leading-relaxed mb-2">
-              下方2家供应商的网站屏蔽了来自中国大陆以外网络的访问——华越正在等待官方PDF资料，或通过中国代理补充工厂数据。
+              The websites of the 2 suppliers below block access from networks
+              outside mainland China — Huayue is awaiting official PDF documents
+              or using a CN proxy to fill in the factory data.
             </p>
             <ul className="text-[12px] text-ink/85 space-y-1 ml-1">
               <li>
                 ·{" "}
-                <b>Mijic（米吉克）</b> ·{" "}
+                <b>Mijic (米吉克)</b> ·{" "}
                 <a
                   href="https://www.mijic.cn/"
                   className="text-brand hover:underline break-all"
@@ -243,11 +248,11 @@ export default async function SuppliersPage({
                 <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
                   47.90.164.246
                 </code>{" "}
-                无法访问
+                not reachable
               </li>
               <li>
                 ·{" "}
-                <b>广钢（Gise-Gnm）</b> ·{" "}
+                <b>Guanggang (Gise-Gnm)</b> ·{" "}
                 <a
                   href="http://www.gise-gnm.com/"
                   className="text-brand hover:underline break-all"
@@ -260,7 +265,7 @@ export default async function SuppliersPage({
                 <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
                   219.137.250.200
                 </code>{" "}
-                被服务器拒绝
+                refused by the server
               </li>
             </ul>
           </section>
@@ -268,23 +273,24 @@ export default async function SuppliersPage({
           {/* ── CTA ────────────────────────────────────────────────── */}
           <section className="mt-6 bg-brand text-white rounded-lg p-6 text-center max-md:p-5">
             <h2 className="text-[18px] font-bold mb-2">
-              需要工厂审核 + DDP 至越南报价？
+              Need factory vetting + a DDP quote to Vietnam?
             </h2>
             <p className="text-[13px] opacity-90 mb-4">
-              广州采购团队随时为您核验营业执照、认证，并在 24 小时内发送报价。
+              The Guangzhou sourcing team is ready to verify licenses and
+              certifications and send a quote within 24h.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link
                 href="/buying-request"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-bold rounded px-5 py-2.5 hover:bg-white hover:text-brand transition-colors text-[13px]"
               >
-                📩 发送询价
+                📩 Send RFQ
               </Link>
               <Link
                 href="/info/partners"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-semibold rounded px-5 py-2.5 hover:bg-white/10 transition-colors text-[13px]"
               >
-                🏭 品牌故事
+                🏭 Brand Stories
               </Link>
             </div>
           </section>
@@ -335,7 +341,7 @@ function withView(href: string, view: View): string {
   return href.includes("?") ? `${href}&view=table` : `${href}?view=table`;
 }
 
-/* ─── Decorative sidebar filter (enabled in a later phase) ─────────── */
+/* ─── Decorative sidebar filter (goes live in a later phase) ──────── */
 
 function DecorFilter({
   title,
@@ -367,7 +373,7 @@ function DecorFilter({
   );
 }
 
-/* ─── Cards view (default — restores original visual) ─────────────── */
+/* ─── Cards view (default — restores the original visual) ─────────── */
 
 function CardsView({ list }: { list: PartnerBrand[] }) {
   return (
@@ -419,11 +425,11 @@ function SupplierCard({ partner }: { partner: PartnerBrand }) {
       <div className="flex gap-1 mb-2.5 flex-wrap">
         {partner.listed && (
           <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
-            金牌
+            GOLD
           </span>
         )}
         <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
-          已验厂
+          AUDITED
         </span>
         {years && (
           <span className="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
@@ -461,7 +467,7 @@ function SupplierCard({ partner }: { partner: PartnerBrand }) {
 }
 
 function CnFlag() {
-  // Simplified: emoji flag instead of the .cn-flag CSS class (not present in globals)
+  // Simplified: an emoji flag instead of the .cn-flag CSS class (not present in globals)
   return <span>🇨🇳</span>;
 }
 
@@ -474,16 +480,16 @@ function TableView({ list }: { list: PartnerBrand[] }) {
         <table className="w-full text-[13px]">
           <thead className="bg-bg border-b border-line">
             <tr className="text-left text-mute text-[12px]">
-              <th className="px-4 py-2.5 font-semibold">品牌</th>
-              <th className="px-3 py-2.5 font-semibold">行业</th>
-              <th className="px-3 py-2.5 font-semibold">工厂位置</th>
+              <th className="px-4 py-2.5 font-semibold">Brand</th>
+              <th className="px-3 py-2.5 font-semibold">Industry</th>
+              <th className="px-3 py-2.5 font-semibold">Factory Location</th>
               <th className="px-3 py-2.5 font-semibold text-right">
-                成立
+                Founded
               </th>
-              <th className="px-3 py-2.5 font-semibold">规模 / 产能</th>
+              <th className="px-3 py-2.5 font-semibold">Scale / Capacity</th>
               <th className="px-3 py-2.5 font-semibold text-right">SKU</th>
-              <th className="px-3 py-2.5 font-semibold">上市</th>
-              <th className="px-3 py-2.5 font-semibold text-right">详情</th>
+              <th className="px-3 py-2.5 font-semibold">Listed</th>
+              <th className="px-3 py-2.5 font-semibold text-right">Details</th>
             </tr>
           </thead>
           <tbody>
@@ -568,7 +574,7 @@ function SupplierRow({ partner }: { partner: PartnerBrand }) {
           href={`/info/partners/${partner.slug}`}
           className="inline-flex items-center gap-1 text-brand font-semibold text-[12.5px] hover:underline"
         >
-          查看 →
+          View →
         </Link>
       </td>
     </tr>
@@ -633,9 +639,9 @@ function categoryLabel(slug: PartnerBrand["category"]): {
   return { icon: c?.icon ?? "📦", name: c?.name ?? slug };
 }
 
-/** 1-2 character initials from brand name (ignoring parentheses). */
+/** 1-2 character initials from a brand name (ignoring parentheses). */
 function initials(name: string): string {
-  // Strip parenthetical part — "Bối Lãng (BRAVAT)" → "Bối Lãng"
+  // Drop the parenthetical — "Boi Lang (BRAVAT)" → "Boi Lang"
   const clean = name.replace(/\s*\([^)]*\)\s*/g, " ").trim();
   const words = clean.split(/\s+/).filter(Boolean);
   if (words.length === 0) return "?";
@@ -643,21 +649,21 @@ function initials(name: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-/** Compute "X年" from founded (year only). Handles content like "1958" or "1995 (CareLighting brand)". */
+/** Computes "X yrs" from founded (year only). Parses inputs like "1958" or "1995 (CareLighting brand)". */
 function yearsBadge(founded?: string): string | null {
   if (!founded) return null;
   const m = founded.match(/(\d{4})/);
   if (!m) return null;
   const year = parseInt(m[1], 10);
-  // Snapshot of the current year from page data (server-side stable — avoid
-  // Date.now() to prevent hydration mismatch if run on an edge in another zone).
+  // Snapshot of the current year per page data (server-side stable — does
+  // not use Date.now() to avoid hydration mismatch if run on an edge in another zone).
   const NOW = 2026;
   const diff = NOW - year;
   if (diff <= 0) return null;
-  return `${diff} 年`;
+  return `${diff} yrs`;
 }
 
-/** Short metric line (capacity > area > facilities > founded year). */
+/** Short metric line (capacity > area > facilities > year founded). */
 function factoryHeadline(p: PartnerBrand): string {
   const f = p.factory;
   if (f.capacity) return f.capacity;
@@ -668,7 +674,7 @@ function factoryHeadline(p: PartnerBrand): string {
       ? f.facilities.slice(0, 50) + "…"
       : f.facilities;
   }
-  if (p.founded) return `成立于 ${p.founded}`;
+  if (p.founded) return `Founded ${p.founded}`;
   return p.factory.location.split(",")[0];
 }
 
@@ -687,12 +693,12 @@ function factoryScale(p: PartnerBrand): string {
   return parts.join(" · ") || "—";
 }
 
-/** 2 tags from the products list (favor the first SKU — concise). */
+/** 2 tags from the products list (favoring the first SKUs — kept short). */
 function brandTags(p: PartnerBrand): string[] {
   return p.products
     .slice(0, 2)
     .map((pr) => {
-      // Take the part before "—" or "·" to keep it concise
+      // Take the part before "—" or "·" to keep it short
       const n = pr.name.split(/[—·\-(]/)[0].trim();
       return n.length > 22 ? n.slice(0, 22) + "…" : n;
     })

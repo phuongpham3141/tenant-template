@@ -5,26 +5,26 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 const CHANNELS = [
   {
     icon: "📧",
-    title: "邮件支持",
+    title: "Email Support",
     primary: "buyer@alibabavn.com",
     secondary: "support@alibabavn.com",
-    hours: "4 个工作小时内回复 · 每日 7:00–22:00",
+    hours: "Reply within 4 business hours · 7:00–22:00 daily",
     color: "bg-brand/10 text-brand",
   },
   {
     icon: "📞",
-    title: "7×24 热线",
+    title: "24/7 Hotline",
     primary: "1900 6868 (VN)",
     secondary: "+86 020 8888 6868 (CN)",
-    hours: "越南语 · 中文 · 英语",
+    hours: "Vietnamese · Chinese · English",
     color: "bg-accent/10 text-accent",
   },
   {
     icon: "💬",
-    title: "在线客服",
+    title: "Live Chat",
     primary: "Zalo: Huayuesc-Buyer",
     secondary: "WeChat: Huayuesc_Service",
-    hours: "在线 8:00–22:00 · 5 分钟内响应",
+    hours: "Online 8:00–22:00 · reply in under 5 min",
     color: "bg-success/10 text-success",
   },
 ];
@@ -32,62 +32,62 @@ const CHANNELS = [
 const OFFICES = [
   {
     flag: "🇻🇳",
-    city: "河内办事处",
-    address: "河内市巴亭郡柳街 54 号乐天中心大厦 18 层",
+    city: "Hanoi Office",
+    address: "18th Floor, Lotte Center, 54 Lieu Giai, Ba Dinh, Hanoi",
     phone: "+84 24 3939 6868",
     email: "hanoi@alibabavn.com",
-    hours: "周一至周六：8:00 – 18:00",
+    hours: "Mon – Sat: 8:00 – 18:00",
   },
   {
     flag: "🇻🇳",
-    city: "胡志明市办事处",
-    address: "胡志明市第一郡海潮街 2 号 Bitexco 金融大厦 12 层",
+    city: "Ho Chi Minh City Office",
+    address: "12th Floor, Bitexco Financial Tower, 2 Hai Trieu, District 1, Ho Chi Minh City",
     phone: "+84 28 3868 6868",
     email: "hcm@alibabavn.com",
-    hours: "周一至周六：8:00 – 18:00",
+    hours: "Mon – Sat: 8:00 – 18:00",
   },
   {
     flag: "🇨🇳",
-    city: "广州办事处",
-    address: "广州市天河区华夏路 10 号富力中心 1808 室",
+    city: "Guangzhou Office",
+    address: "Room 1808, R&F Center, No.10 Huaxia Rd, Tianhe District, Guangzhou",
     phone: "+86 020 8888 6868",
     email: "guangzhou@alibabavn.com",
-    hours: "周一至周五：9:00 – 18:00 (GMT+8)",
+    hours: "Mon – Fri: 9:00 – 18:00 (GMT+8)",
   },
   {
     flag: "🇨🇳",
-    city: "佛山代表处",
-    address: "广东省佛山市禅城区中国陶瓷城 5 层",
+    city: "Foshan Representative Office",
+    address: "5th Floor, China Ceramics City, Chancheng District, Foshan, Guangdong",
     phone: "+86 0757 8222 6868",
     email: "foshan@alibabavn.com",
-    hours: "周一至周五：9:00 – 18:00 (GMT+8)",
+    hours: "Mon – Fri: 9:00 – 18:00 (GMT+8)",
   },
 ];
 
 const SUBJECTS = [
-  "综合咨询",
-  "询价 / 报价问题",
-  "处理中订单问题",
-  "品质 / 物流投诉",
-  "工厂验厂申请",
-  "QC 验货申请",
-  "支付 / 交易保障支持",
-  "系统故障反馈",
-  "产品建议 / 反馈",
+  "General support",
+  "RFQ / quote issue",
+  "Issue with an order in progress",
+  "Quality / shipping complaint",
+  "Factory audit request",
+  "QC inspection request",
+  "Payment / Trade Assurance support",
+  "System bug report",
+  "Product suggestion / feedback",
 ];
 
 export default function ContactPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "联系我们" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Contact Us" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/contact" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📞 CONTACT US</div>
-            <h1 className="text-[22px] font-bold text-ink">联系我们</h1>
+            <h1 className="text-[22px] font-bold text-ink">Contact Us</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              华越 Buyer Success 团队遍布河内、胡志明市、广州和佛山。您的每一项需求均由专业团队人工处理——无机器人、无误译。
+              The Huayuesc Buyer Success team is on the ground in Hanoi, Ho Chi Minh City, Guangzhou, and Foshan. Every request is handled by native Vietnamese-speaking staff — no chatbots, no lost-in-translation.
             </p>
           </div>
 
@@ -120,38 +120,38 @@ export default function ContactPage() {
 
           <div className="bg-[#F5F7FA] border border-line rounded p-3 mb-4 text-center">
             <div className="aspect-[3/1] bg-paper border border-dashed border-line rounded flex items-center justify-center text-mute text-[13px]">
-              🗺️ Google Maps 地图 – 河内办事处（乐天中心）
+              🗺️ Google Maps – Hanoi office (Lotte Center)
             </div>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-1">✉️ 给我们留言</b>
-            <p className="text-[12px] text-mute mb-4">4 个工作小时内回复——并附工单编号供您追踪。</p>
+            <b className="block text-[15px] text-ink mb-1">✉️ Send us a message</b>
+            <p className="text-[12px] text-mute mb-4">Reply within 4 business hours — with a ticket number so you can track it.</p>
             <form className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
-              <input placeholder="姓名 *" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
-              <input placeholder="邮箱 *" type="email" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
-              <input placeholder="电话" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
-              <input placeholder="公司（选填）" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
+              <input placeholder="Full name *" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
+              <input placeholder="Email *" type="email" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
+              <input placeholder="Phone" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
+              <input placeholder="Company (optional)" className="px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand" />
               <select className="col-span-2 px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white outline-none focus:border-brand">
-                <option value="">-- 咨询主题 * --</option>
+                <option value="">-- Subject * --</option>
                 {SUBJECTS.map((s) => <option key={s}>{s}</option>)}
               </select>
-              <textarea placeholder="详细内容 *" rows={5} className="col-span-2 px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand resize-none" />
+              <textarea placeholder="Message details *" rows={5} className="col-span-2 px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand resize-none" />
               <label className="col-span-2 flex items-center gap-2 text-[12px] text-mute">
-                <input type="checkbox" className="accent-brand" /> 我同意华越使用我的邮箱/电话就此事与我联系。
+                <input type="checkbox" className="accent-brand" /> I agree to let Huayuesc use my email/phone to contact me about this matter.
               </label>
-              <button type="button" className="col-span-2 px-5 py-3 bg-accent text-white rounded-sm font-bold text-[13.5px] hover:opacity-90 max-md:col-span-1">发送留言 📨</button>
+              <button type="button" className="col-span-2 px-5 py-3 bg-accent text-white rounded-sm font-bold text-[13.5px] hover:opacity-90 max-md:col-span-1">Send Message 📨</button>
             </form>
           </div>
 
           <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
             <Link href="/buyer-center/contact?subject=bug" className="bg-paper border border-line rounded p-4 hover:border-accent">
-              <b className="block text-[13px] text-ink mb-1">🐞 系统故障反馈</b>
-              <p className="text-[11.5px] text-mute leading-snug">在发起询价、支付或查看报告时遇到错误？反馈给技术团队，2 小时内优先处理。</p>
+              <b className="block text-[13px] text-ink mb-1">🐞 Report a system issue</b>
+              <p className="text-[11.5px] text-mute leading-snug">Hit an error posting an RFQ, paying, or viewing a report? Tell our engineering team for priority handling within 2 hours.</p>
             </Link>
             <Link href="/info/cau-hoi-thuong-gap" className="bg-paper border border-line rounded p-4 hover:border-brand">
-              <b className="block text-[13px] text-ink mb-1">❓ FAQ – 常见问题</b>
-              <p className="text-[11.5px] text-mute leading-snug">90% 采购商的问题都有详细解答——提交工单前请先查阅。</p>
+              <b className="block text-[13px] text-ink mb-1">❓ FAQ – frequently asked questions</b>
+              <p className="text-[11.5px] text-mute leading-snug">90% of buyer questions already have detailed answers — check before submitting a ticket.</p>
             </Link>
           </div>
         </div>
@@ -160,4 +160,4 @@ export default function ContactPage() {
   );
 }
 
-export const metadata = { title: "联系我们 — 采购商中心" };
+export const metadata = { title: "Contact Us — Buyer Center" };

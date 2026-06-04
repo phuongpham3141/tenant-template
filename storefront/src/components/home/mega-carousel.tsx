@@ -23,7 +23,7 @@ export function MegaCarousel({ items }: { items: CarouselItem[] }) {
     <div className="relative">
       <button
         type="button"
-        aria-label="向左滚动"
+        aria-label="Scroll left"
         onClick={() => scroll(-1)}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-paper border border-line shadow-sm flex items-center justify-center text-[14px] text-ink hover:bg-brand hover:text-white hover:border-brand cursor-pointer"
       >
@@ -55,7 +55,7 @@ export function MegaCarousel({ items }: { items: CarouselItem[] }) {
       </div>
       <button
         type="button"
-        aria-label="向右滚动"
+        aria-label="Scroll right"
         onClick={() => scroll(1)}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-paper border border-line shadow-sm flex items-center justify-center text-[14px] text-ink hover:bg-brand hover:text-white hover:border-brand cursor-pointer"
       >

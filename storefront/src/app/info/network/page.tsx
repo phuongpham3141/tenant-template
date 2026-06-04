@@ -5,100 +5,100 @@ import { COMPANY } from "@/data/company";
 // ─── DATA ────────────────────────────────────────────────────────────────
 
 const HERO_STATS = [
-  { n: "63", l: "越南省市", icon: "🇻🇳" },
-  { n: "3", l: "中国主力集群", icon: "🇨🇳" },
-  { n: "4", l: "分销合作伙伴类型", icon: "🤝" },
-  { n: "2", l: "运营办公室", icon: "🏢" },
+  { n: "63", l: "Provinces in Vietnam", icon: "🇻🇳" },
+  { n: "3", l: "Core China clusters", icon: "🇨🇳" },
+  { n: "4", l: "Distribution partner types", icon: "🤝" },
+  { n: "2", l: "Operating offices", icon: "🏢" },
 ];
 
 const DISTRIBUTION_PARTNERS = [
   {
     icon: "🏪",
     color: "#005F6B",
-    title: "建材分销经销商",
-    summary: "连锁门店、瓷砖展厅、材料仓",
-    desc: "各省市的瓷砖、卫浴、铺贴石材、油漆、地板经销商。",
+    title: "Building Materials Dealers",
+    summary: "Store chains, tile showrooms, materials warehouses",
+    desc: "Dealers of porcelain tile, sanitaryware, cladding stone, paint and wood flooring across provinces and cities.",
     benefits: [
-      "送货入仓DDP价",
-      "按原厂质保",
-      "经河内团队支持退换货",
-      "越南语目录与样品",
+      "DDP price delivered to warehouse",
+      "Warranty from the original factory",
+      "Returns and exchanges handled by the Hanoi team",
+      "Catalog and samples in Vietnamese",
     ],
   },
   {
     icon: "🏗",
     color: "#9C6A1F",
-    title: "建筑承包商",
-    summary: "建筑公司、房地产承包商、保障性住房",
-    desc: "按项目报价，按施工进度交货，≥30套订单免费提供样品。",
+    title: "Construction Contractors",
+    summary: "Construction companies, property contractors, social housing",
+    desc: "Project-based quotes, delivery aligned to the construction schedule, free samples on orders of 30 sets or more.",
     benefits: [
-      "整包项目报价",
-      "按施工进度分批交货",
-      "≥30套订单免费样品",
-      "经华越质保+退换货",
+      "Turnkey project quotations",
+      "Phased delivery by construction schedule",
+      "Free samples on orders of 30 sets or more",
+      "Warranty and returns handled by Huayue",
     ],
   },
   {
     icon: "🎨",
     color: "#7C2D12",
-    title: "室内设计公司",
-    summary: "设计工作室、室内设计",
-    desc: "越南语目录+为下单≥30套的VIP客户免费提供3D效果图。",
+    title: "Interior Design Firms",
+    summary: "Design studios, interior design",
+    desc: "Vietnamese-language catalogs plus free 3D visuals for VIP clients with orders of 30 sets or more.",
     benefits: [
-      "中国品牌越南语目录",
-      "真实木材/石材/面料样品",
-      "为VIP客户免费提供3D效果图",
-      "整包项目优惠折扣",
+      "Vietnamese catalogs for China brands",
+      "Real wood/stone/fabric samples",
+      "Free 3D visuals for VIP clients",
+      "Preferential discounts on turnkey projects",
     ],
   },
   {
     icon: "🔌",
     color: "#7C3AED",
-    title: "家电与厨房设备经销商",
-    summary: "家电连锁、区域经销商",
-    desc: "电热水器、燃气灶、抽油烟机、智能马桶盖。",
+    title: "Appliance & Kitchen Equipment Dealers",
+    summary: "Appliance chains, regional dealers",
+    desc: "Electric water heaters, gas cooktops, range hoods and smart toilet seats.",
     benefits: [
-      "区域独家经销合同",
-      "中国原厂质保",
-      "终端门店营销支持",
-      "进货价优于自行进口的分销商",
+      "Exclusive regional dealership contracts",
+      "Genuine China manufacturer warranty",
+      "Point-of-sale marketing support",
+      "Better landed cost than self-importing distributors",
     ],
   },
 ];
 
 const CN_CLUSTERS = [
   {
-    province: "广东",
+    province: "Guangdong",
     provinceCn: "广东省",
     color: "#C8102E",
-    weight: "主力集群",
+    weight: "Primary cluster",
     cities: [
-      { name: "佛山", spec: "陶瓷、卫浴、瓷砖——1,200+ 家工厂" },
-      { name: "乐从 / 顺德", spec: "沙发、木质家具——中国最大家具市场" },
-      { name: "东莞", spec: "橱柜、衣柜、高端 MDF" },
-      { name: "中山", spec: "LED 灯、家电" },
-      { name: "潮州", spec: "装饰墙地砖" },
+      { name: "Foshan (佛山)", spec: "Ceramics, sanitaryware, porcelain tile — 1,200+ factories" },
+      { name: "Lecong / Shunde (乐从顺德)", spec: "Sofas, wood furniture — China's largest furniture market" },
+      { name: "Dongguan (东莞)", spec: "Kitchen cabinets, wardrobes, premium MDF" },
+      { name: "Zhongshan (中山)", spec: "LED lighting, home appliances" },
+      { name: "Chaozhou (潮州)", spec: "Decorative ceramic tile" },
     ],
   },
   {
-    province: "福建",
+    province: "Fujian",
     provinceCn: "福建省",
     color: "#0E7490",
-    weight: "辅助集群",
+    weight: "Secondary cluster",
     cities: [
-      { name: "晋江", spec: "天然石材、强化地板" },
-      { name: "厦门", spec: "进口木材加工" },
+      { name: "Jinjiang (晋江)", spec: "Natural stone, engineered wood flooring" },
+      { name: "Xiamen (厦门)", spec: "Processed imported timber" },
     ],
   },
   {
-    province: "山东及其他",
+    province: "Shandong + Others",
     provinceCn: "山东省",
     color: "#475569",
-    weight: "补充",
+    weight: "Supplementary",
     cities: [
-      { name: "永康", spec: "机械、五金" },
-      { name: "秦皇岛", spec: "建筑玻璃" },
-      { name: "美的（中山）", spec: "高端家电" },
+      { name: "Yongkang (永康)", spec: "Machinery, hardware" },
+      { name: "Qinhuangdao (秦皇岛)", spec: "Construction glass" },
+      { name: "Midea (美的 Zhongshan)", spec: "Premium home appliances" },
     ],
   },
 ];
@@ -106,71 +106,71 @@ const CN_CLUSTERS = [
 const PARTNERSHIP_MECHANISMS = [
   {
     icon: "📚",
-    title: "中越双语目录",
-    desc: "华越将中国品牌目录翻译并出版为越南语版，供经销商印刷/分享给客户。",
+    title: "Bilingual Chinese–Vietnamese Catalogs",
+    desc: "Huayue translates and publishes China brand catalogs into Vietnamese, ready for dealers to print or share with customers.",
   },
   {
     icon: "🎤",
-    title: "新品发布会",
-    desc: "每年在河内和胡志明市举办，邀请中国品牌发布新品，直接对接房地产/承包商/设计公司。",
+    title: "New Product Launch Conferences",
+    desc: "Held annually in Hanoi and Ho Chi Minh City, inviting China brands to unveil new products and connect directly with property developers, contractors and design firms.",
   },
   {
     icon: "💡",
-    title: "专题论坛",
-    desc: "环保建材、家电技术、瓷砖新工艺——与两国专家交流。",
+    title: "Topical Forums",
+    desc: "Eco-friendly building materials, home appliance technology and new porcelain tile innovations — meet experts from both countries.",
   },
   {
     icon: "📢",
-    title: "线上 + 线下传播",
-    desc: "在越南行业媒体、Facebook/Zalo、线下活动开展中国品牌推广活动——让品牌触达本地采购商。",
+    title: "Online + Offline Media",
+    desc: "Campaigns promoting China brands in Vietnamese trade press, on Facebook/Zalo and at live events — bringing brands to local buyers.",
   },
   {
     icon: "✈",
-    title: "中国工厂参观团",
-    desc: "越南采购团每年赴厂参观 2-4 次：广交会（4 月和 10 月）、CIFF（3 月和 9 月）、佛山陶瓷展（4 月和 10 月）。华越提供一站式组织。",
+    title: "China Factory Tours",
+    desc: "Vietnamese buyer delegations visit factories 2–4 times a year: Canton Fair (April & October), CIFF (March & September), Foshan Pottery (April & October). Huayue organizes the full package.",
   },
 ];
 
 const TRADE_FAIRS = [
-  { month: "3月", name: "CIFF 广州", desc: "中国国际家具博览会——家具行业", color: "#005F6B" },
-  { month: "4月", name: "广交会第 1-3 期", desc: "中国最大 B2B 展会", color: "#C8102E" },
-  { month: "4月", name: "佛山陶瓷展", desc: "瓷砖与卫浴专业展", color: "#9C6A1F" },
-  { month: "6月", name: "VIETBUILD 胡志明市", desc: "越南建材展——华越邀请中国工厂参展团", color: "#7C3AED" },
-  { month: "9月", name: "CIFF 上海", desc: "CIFF 第 2 场——规模大于广州", color: "#005F6B" },
-  { month: "10月", name: "广交会秋季", desc: "秋季展——品类丰富", color: "#C8102E" },
-  { month: "10月", name: "佛山陶瓷秋季展", desc: "秋季展——陶瓷新品系列", color: "#9C6A1F" },
-  { month: "11月", name: "VIETBUILD 河内", desc: "北部场", color: "#7C3AED" },
+  { month: "Mar", name: "CIFF Guangzhou", desc: "China International Furniture Fair — furniture industry", color: "#005F6B" },
+  { month: "Apr", name: "Canton Fair Phase 1-3", desc: "China's largest B2B trade fair", color: "#C8102E" },
+  { month: "Apr", name: "Foshan Pottery Show", desc: "Specializing in porcelain tile and sanitaryware", color: "#9C6A1F" },
+  { month: "Jun", name: "VIETBUILD HCMC", desc: "Vietnam building materials fair — Huayue invites a China factory delegation", color: "#7C3AED" },
+  { month: "Sep", name: "CIFF Shanghai", desc: "CIFF session 2 — larger in scale than Guangzhou", color: "#005F6B" },
+  { month: "Oct", name: "Canton Fair Autumn", desc: "Autumn session — diverse product categories", color: "#C8102E" },
+  { month: "Oct", name: "Foshan Pottery Autumn", desc: "Autumn session — new ceramics collections", color: "#9C6A1F" },
+  { month: "Nov", name: "VIETBUILD Hanoi", desc: "Northern Vietnam session", color: "#7C3AED" },
 ];
 
 const BUYER_BENEFITS = [
-  { icon: "💰", title: "源头真实价", desc: "不经中间商之手，无暗中加价，有来自工厂的审计留痕。" },
-  { icon: "✅", title: "源头品质把控", desc: "华越广州QC团队出厂前按AQL 2.5验货。" },
-  { icon: "🚛", title: "全程DDP运抵越南", desc: "含物流+清关+税费+送货入仓。无需操心订舱、海关。" },
-  { icon: "🇻🇳", title: "越南语支持", desc: "全程经河内团队沟通——无需懂中文。" },
-  { icon: "🎁", title: "免费样品与3D", desc: "面向≥30套订单——先投入以敲定正确款式。" },
-  { icon: "📊", title: "市场更新", desc: "每月工厂价格报告、CNY/VND汇率、新税收政策。" },
+  { icon: "💰", title: "True Factory-Gate Pricing", desc: "No middlemen, no hidden markups, with a full audit trail from the factory." },
+  { icon: "✅", title: "Quality Inspected at Source", desc: "Huayue's Guangzhou QC team performs AQL 2.5 inspection before shipment." },
+  { icon: "🚛", title: "Turnkey DDP to Vietnam", desc: "Includes logistics, customs clearance, duties and delivery to your warehouse. No worrying about booking vessels or customs." },
+  { icon: "🇻🇳", title: "Vietnamese-Language Support", desc: "All communication handled by the Hanoi team — no Chinese required." },
+  { icon: "🎁", title: "Free Samples & 3D", desc: "On orders of 30 sets or more — invest upfront to lock in the right design." },
+  { icon: "📊", title: "Market Updates", desc: "Monthly factory price reports, CNY/VND exchange rates and new tax policies." },
 ];
 
 const FAQS = [
   {
-    q: "我想成为华越在本省的分销经销商——流程如何？",
-    a: "发邮件至partnership@huayuesc.vn并附：营业执照、现有展厅/仓库信息、正在分销的行业（建材/家具/家电）、覆盖区域。华越河内团队将在5个工作日内电话联系，必要时上门拜访。核实后签订经销合同——无会员费，仅按销售额分成佣金。",
+    q: "I want to become a Huayue distribution dealer in my province — what is the process?",
+    a: "Email partnership@huayuesc.vn with your business license, details of your existing showroom/warehouse, the category you currently distribute (building materials / furniture / appliances) and your coverage area. The Huayue Hanoi team will call you within 5 business days and can visit in person if needed. After verification, you sign a dealership contract — no membership fee, just commission shared by sales volume.",
   },
   {
-    q: "我是建筑承包商——华越能为我的项目提供什么支持？",
-    a: "华越为建材与室内装饰（瓷砖、卫浴、铺贴石材、油漆、地板）提供送货到工地的DDP报价。支持：≥30套订单免费提供样品、按施工进度交货、按原厂质保+如有瑕疵华越负责退换货。请联系sales@huayuesc.vn或+86 181-2225-6999。",
+    q: "I am a construction contractor — what support does Huayue offer for my projects?",
+    a: "Huayue provides DDP quotes delivered to the job site for building materials and interior finishes (tile, sanitaryware, cladding stone, paint, wood flooring). Support includes free samples on orders of 30 sets or more, delivery aligned to the construction schedule, and warranty from the original factory plus Huayue's responsibility for returns on defects. Contact sales@huayuesc.vn or +86 181-2225-6999.",
   },
   {
-    q: "我是室内设计公司——能为我的VIP客户提供优惠吗？",
-    a: "可以。华越为设计公司提供合作套餐：中国品牌的越南语目录、木材/石材/面料样品、为高端客户免费提供3D效果图（≥30套订单）、整包项目的优惠折扣。",
+    q: "I run an interior design firm — are there offers for my VIP clients?",
+    a: "Yes. Huayue offers a partnership package for design firms: Vietnamese catalogs for China brands, wood/stone/fabric samples, free 3D visual support for premium clients (orders of 30 sets or more) and preferential discounts on turnkey projects.",
   },
   {
-    q: "我想赴华参观工厂——华越组团吗？",
-    a: "组团。华越组织越南采购团赴广交会（4月和10月）、CIFF广州（3月和9月）、佛山陶瓷展（4月和10月）。每团10-25名采购商，配专业翻译，由华越广州采购团队接待。行前预约与工厂的商务对接。请联系partnership@huayuesc.vn。",
+    q: "I want to visit factories in China — does Huayue organize delegations?",
+    a: "Yes. Huayue organizes Vietnamese buyer delegations to the Canton Fair (April and October), CIFF Guangzhou (March and September) and the Foshan Pottery Show (April and October). Each delegation has 10–25 buyers, with industry interpreters and the Huayue Guangzhou sourcing team to host you. Book factory business matching ahead of the trip. Contact partnership@huayuesc.vn.",
   },
   {
-    q: "为什么我该通过华越采购，而不是自己赴华或通过中间商？",
-    a: "自己赴华：要懂中文、熟悉市场、与工厂有关系、操心物流+清关。通过中间商：无法在源头把控品质、易被暗中加价、缺乏清晰法律保障。华越：越南注册法人主体（税号0111453693），出厂前在工厂验货，DDP送货入仓，7×24越南语支持，有交易保障——货物若不符承诺即可退款。",
+    q: "Why should I buy through Huayue instead of going to China myself or buying through a broker?",
+    a: "Going to China yourself means you need to speak Chinese, know the market, have factory relationships and handle logistics and customs. Buying through a broker means no quality control at source, vulnerability to hidden markups and no clear legal standing. With Huayue: a registered Vietnamese legal entity (Tax ID 0111453693), goods inspected at the factory before shipment, DDP delivery to your warehouse, 24/7 Vietnamese-language support and Trade Assurance — you are refunded if goods do not match what was promised.",
   },
 ];
 
@@ -181,9 +181,9 @@ export default function NetworkPage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "信息", href: "/help" },
-          { label: "合作伙伴网络" },
+          { label: "Home", href: "/" },
+          { label: "Information", href: "/help" },
+          { label: "Partner Network" },
         ]}
       />
 
@@ -202,17 +202,17 @@ export default function NetworkPage() {
           </div>
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-              合作伙伴网络
+              PARTNER NETWORK
             </span>
             <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[22px]">
-              合作伙伴网络——越南分销 & 中国工厂
+              Partner Network — Vietnam Distribution &amp; China Factories
             </h1>
             <p className="text-[14.5px] opacity-90 leading-relaxed max-w-[820px] max-md:text-[13px]">
-              华越的供应链建立在两张相辅相成的网络之上：
-              <b className="text-gold">遍布越南63省市的分销合作伙伴</b>（出口端）与{" "}
-              <b className="text-gold">中国制造集群的顶尖工厂</b>（进口端）。
-              这正是华越按宣传册落实
-              <i> 本地化分销渠道拓展</i>与<i>源头精选</i>服务的方式。
+              Huayue builds its supply chain on two complementary networks:
+              <b className="text-gold"> distribution partners across 63 provinces in Vietnam</b> (the output) and{" "}
+              <b className="text-gold">leading factories in China's manufacturing clusters</b> (the input).
+              This is how Huayue delivers
+              <i> localized distribution channel expansion</i> alongside <i>source-vetted procurement</i>, per the brochure.
             </p>
           </div>
         </div>
@@ -233,10 +233,10 @@ export default function NetworkPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-8 max-md:mt-5">
         <div className="text-center mb-6">
           <h2 className="text-[24px] font-bold text-ink mb-1.5 max-md:text-[20px]">
-            两张网络——一条供应链
+            Two networks — one supply chain
           </h2>
           <p className="text-[13px] text-mute max-md:text-[12px]">
-            甄选的中国工厂 ⇄ 越南分销合作伙伴——华越充当桥梁
+            Vetted China factories ⇄ Vietnam distribution partners — Huayue is the bridge
           </p>
         </div>
         <div className="grid grid-cols-[1fr_auto_1fr] gap-4 items-stretch max-md:grid-cols-1">
@@ -245,18 +245,18 @@ export default function NetworkPage() {
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[32px]">🇨🇳</span>
               <div>
-                <b className="block text-[17px] text-ink leading-tight">进口端——中国</b>
-                <small className="text-[11.5px] text-mute">广州办事处</small>
+                <b className="block text-[17px] text-ink leading-tight">Input — China</b>
+                <small className="text-[11.5px] text-mute">Guangzhou Office</small>
               </div>
             </div>
             <p className="text-[13px] text-ink/80 mb-3 leading-relaxed">
-              华越采购团队（广州市海珠区数娱创兴港3层）在3大主力集群甄选并验厂合作工厂。
+              The Huayue sourcing team (3rd Floor, Shuyu Chuangxing Port 数娱创兴港 — Haizhu, Guangzhou) screens and audits partner factories across the 3 main clusters.
             </p>
             <ul className="space-y-1.5 text-[12.5px] text-ink/85">
-              <li className="flex gap-2"><span className="text-success">●</span> 采购与甄选（源头精选）</li>
-              <li className="flex gap-2"><span className="text-success">●</span> 出厂前AQL 2.5 QC</li>
-              <li className="flex gap-2"><span className="text-success">●</span> 每12个月定期实地验厂</li>
-              <li className="flex gap-2"><span className="text-success">●</span> 翻译与行业协会关系</li>
+              <li className="flex gap-2"><span className="text-success">●</span> Sourcing &amp; source vetting (源头精选)</li>
+              <li className="flex gap-2"><span className="text-success">●</span> AQL 2.5 QC before shipment</li>
+              <li className="flex gap-2"><span className="text-success">●</span> On-site audits every 12 months</li>
+              <li className="flex gap-2"><span className="text-success">●</span> Interpreting &amp; trade-association relationships</li>
             </ul>
           </div>
 
@@ -264,8 +264,8 @@ export default function NetworkPage() {
           <div className="flex items-center justify-center max-md:py-2">
             <div className="bg-brand text-white px-4 py-6 rounded-lg text-center max-md:py-3 max-md:w-full">
               <div className="text-[40px] mb-1 max-md:text-[28px]">🚢</div>
-              <b className="block text-[13px] leading-tight">华越</b>
-              <small className="text-[10.5px] opacity-85">物流+DDP清关</small>
+              <b className="block text-[13px] leading-tight">Huayue</b>
+              <small className="text-[10.5px] opacity-85">Logistics + DDP Customs Clearance</small>
             </div>
           </div>
 
@@ -274,18 +274,18 @@ export default function NetworkPage() {
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[32px]">🇻🇳</span>
               <div>
-                <b className="block text-[17px] text-ink leading-tight">出口端——越南</b>
-                <small className="text-[11.5px] text-mute">海防总部</small>
+                <b className="block text-[17px] text-ink leading-tight">Output — Vietnam</b>
+                <small className="text-[11.5px] text-mute">Hanoi Headquarters</small>
               </div>
             </div>
             <p className="text-[13px] text-ink/80 mb-3 leading-relaxed">
-              总部位于河内市春芳坊宝玉大厦——仓储、清关、分销至越南63个省市。
+              Headquarters at Bao Ngoc Building, Xuan Phuong, Hanoi — warehousing, customs clearance and distribution to 63 provinces across Vietnam.
             </p>
             <ul className="space-y-1.5 text-[12.5px] text-ink/85">
-              <li className="flex gap-2"><span className="text-accent">●</span> 建材与家具分销经销商</li>
-              <li className="flex gap-2"><span className="text-accent">●</span> 建筑承包商与室内设计</li>
-              <li className="flex gap-2"><span className="text-accent">●</span> 家电与厨房设备经销商</li>
-              <li className="flex gap-2"><span className="text-accent">●</span> 海防仓储+VNACCS清关</li>
+              <li className="flex gap-2"><span className="text-accent">●</span> Building materials &amp; furniture dealers</li>
+              <li className="flex gap-2"><span className="text-accent">●</span> Construction contractors &amp; interior designers</li>
+              <li className="flex gap-2"><span className="text-accent">●</span> Appliance &amp; kitchen equipment dealers</li>
+              <li className="flex gap-2"><span className="text-accent">●</span> Warehouse + VNACCS customs clearance in Hanoi</li>
             </ul>
           </div>
         </div>
@@ -295,13 +295,13 @@ export default function NetworkPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-10 max-md:mt-7">
         <div className="text-center mb-6">
           <span className="inline-block bg-accent/10 text-accent px-3 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">
-            出口端——越南
+            OUTPUT — VIETNAM
           </span>
           <h2 className="text-[22px] font-bold text-ink mb-1.5 max-md:text-[18px]">
-            四类分销合作伙伴
+            Four distribution partner types
           </h2>
           <p className="text-[13px] text-mute max-md:text-[12px]">
-            每类均有专属扶持计划——按销售额分成佣金，无会员费
+            Each type has its own support program — commission shared by sales volume, no membership fee
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -334,13 +334,13 @@ export default function NetworkPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-10 max-md:mt-7">
         <div className="text-center mb-6">
           <span className="inline-block bg-brand/10 text-brand px-3 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">
-            进口端——中国
+            INPUT — CHINA
           </span>
           <h2 className="text-[22px] font-bold text-ink mb-1.5 max-md:text-[18px]">
-            三大主力工厂集群
+            Three core factory clusters
           </h2>
           <p className="text-[13px] text-mute max-md:text-[12px]">
-            华越广州办事处与中国各制造重镇直接对接
+            Huayue's Guangzhou office connects directly with China's manufacturing capitals
           </p>
         </div>
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
@@ -369,10 +369,10 @@ export default function NetworkPage() {
         <div className="max-w-[1200px] mx-auto px-4">
           <div className="text-center mb-6">
             <h2 className="text-[22px] font-bold text-ink mb-1.5 max-md:text-[18px]">
-              合作伙伴合作机制
+              Partnership mechanisms
             </h2>
             <p className="text-[13px] text-mute max-md:text-[12px]">
-              依宣传册<i>「展会服务」</i>与<i>「市场推广」</i>章节
+              Per the brochure sections <i>'Trade Exhibition Services'</i> and <i>'Market Promotion'</i>
             </p>
           </div>
           <div className="grid grid-cols-5 gap-3 max-lg:grid-cols-3 max-md:grid-cols-1">
@@ -391,10 +391,10 @@ export default function NetworkPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-10 max-md:mt-7">
         <div className="text-center mb-6">
           <h2 className="text-[22px] font-bold text-ink mb-1.5 max-md:text-[18px]">
-            华越每年参加的展会日历
+            Annual trade fairs Huayue attends
           </h2>
           <p className="text-[13px] text-mute max-md:text-[12px]">
-            华越采购团有日程、专业翻译、机场接机
+            Huayue buyer delegations get a schedule, industry interpreters and airport pickup
           </p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -417,10 +417,10 @@ export default function NetworkPage() {
         <div className="bg-paper border border-line rounded-lg p-6 max-md:p-4">
           <div className="text-center mb-5">
             <h2 className="text-[22px] font-bold text-ink mb-1.5 max-md:text-[18px]">
-              越南采购商与分销合作伙伴的收益
+              Benefits for buyers &amp; Vietnam distribution partners
             </h2>
             <p className="text-[13px] text-mute max-md:text-[12px]">
-              相比自行直接采购或通过无法律保障的中间商采购
+              Compared with sourcing directly yourself or buying through an unregulated broker
             </p>
           </div>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
@@ -439,16 +439,16 @@ export default function NetworkPage() {
       <section className="max-w-[1100px] mx-auto px-4 mt-10 max-md:mt-7">
         <blockquote className="bg-bg border-l-4 border-gold rounded-r-lg px-6 py-5 max-md:px-4 max-md:py-4">
           <p className="text-[16px] text-ink italic leading-relaxed max-md:text-[14px]">
-            「华越不是产品挂牌平台——我们是供应链。货物经过真实的仓库、真实的集装箱、真实的清关团队。合作伙伴网络正是运转的血脉：缺一方，链条即断。」
+            "Huayue is not a product-listing marketplace — we are a supply chain. Goods move through real warehouses, real containers and a real customs team. The partner network is the lifeblood of the operation: take one side away and the chain breaks."
           </p>
-          <footer className="mt-3 text-[12.5px] text-mute not-italic">— 合作团队，华越越南</footer>
+          <footer className="mt-3 text-[12.5px] text-mute not-italic">— Partnership Team, Huayue Vietnam</footer>
         </blockquote>
       </section>
 
       {/* ═══ FAQ ═════════════════════════════════════════════════════════ */}
       <section className="max-w-[1100px] mx-auto px-4 mt-10 max-md:mt-7">
         <h2 className="text-[22px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[18px]">
-          <span>❓</span> 常见问题
+          <span>❓</span> Frequently Asked Questions
         </h2>
         <div className="space-y-2">
           {FAQS.map((f, i) => (
@@ -472,11 +472,11 @@ export default function NetworkPage() {
           <div className="grid grid-cols-[1fr_auto] gap-5 items-center max-md:grid-cols-1">
             <div>
               <span className="inline-block bg-gold text-brand-dark px-2 py-0.5 text-[10px] font-bold rounded-sm tracking-wider mb-2">
-                联系合作
+                PARTNER CONTACT
               </span>
-              <b className="block text-[20px] mb-1.5 max-md:text-[17px]">成为华越分销合作伙伴</b>
+              <b className="block text-[20px] mb-1.5 max-md:text-[17px]">Become a Huayue distribution partner</b>
               <p className="text-[13px] opacity-90 leading-relaxed max-md:text-[12.5px]">
-                建材经销商、建筑承包商、室内设计公司或家电经销商——请提交营业执照及展厅/仓库信息。华越河内团队将在 5 个工作日内联系。
+                Building materials dealers, construction contractors, interior design firms or appliance dealers — send your business license and showroom/warehouse details. The Huayue Hanoi team will be in touch within 5 business days.
               </p>
               <p className="text-[12px] opacity-80 mt-2">
                 📞 {COMPANY.contact.hotline} · ✉ <a href={`mailto:${COMPANY.contact.emails.partnership}`} className="underline hover:text-gold">{COMPANY.contact.emails.partnership}</a>
@@ -484,16 +484,16 @@ export default function NetworkPage() {
             </div>
             <div className="flex flex-col gap-2 max-md:w-full">
               <a
-                href={`mailto:${COMPANY.contact.emails.partnership}?subject=%E7%94%B3%E8%AF%B7%E6%88%90%E4%B8%BA%E5%8D%8E%E8%B6%8A%E5%88%86%E9%94%80%E5%90%88%E4%BD%9C%E4%BC%99%E4%BC%B4`}
+                href={`mailto:${COMPANY.contact.emails.partnership}?subject=Huayue%20distribution%20partner%20application`}
                 className="px-5 py-2.5 bg-gold text-brand-dark rounded font-bold text-[13px] hover:bg-[#E8943A] cursor-pointer text-center whitespace-nowrap"
               >
-                ✉ 提交申请
+                ✉ Send Application
               </a>
               <Link
                 href="/info/contact"
                 className="px-5 py-2.5 border-2 border-white/40 text-white rounded font-bold text-[13px] hover:bg-white/10 cursor-pointer text-center whitespace-nowrap"
               >
-                📍 查看办公室
+                📍 View Offices
               </Link>
             </div>
           </div>
@@ -504,7 +504,7 @@ export default function NetworkPage() {
 }
 
 export const metadata = {
-  title: "合作伙伴网络——Huayuesc华越供应链",
+  title: "Partner Network — Huayuesc 华越供应链",
   description:
-    "华越连接广东、福建、山东的顶尖工厂与越南4类分销合作伙伴：建材经销商、建筑承包商、室内设计公司、家电经销商。覆盖63省市，2个运营办公室海防+广州。",
+    "Huayue connects leading factories in Guangdong, Fujian and Shandong with 4 types of distribution partners in Vietnam: building materials dealers, construction contractors, interior design firms and appliance dealers. Coverage across 63 provinces, with 2 operating offices in Hanoi and Guangzhou.",
 };

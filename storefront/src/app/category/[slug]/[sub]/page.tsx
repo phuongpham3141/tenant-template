@@ -28,8 +28,8 @@ export default async function LeafCategoryPage({
       <div className="max-w-[1400px] mx-auto px-4 py-12">
         <Breadcrumb
           trail={[
-            { label: "首页", href: "/" },
-            { label: "产品分类" },
+            { label: "Home", href: "/" },
+            { label: "Product Categories" },
             {
               label: parent?.title ?? navEntry?.name ?? slug,
               href: `/category/${slug}`,
@@ -41,13 +41,14 @@ export default async function LeafCategoryPage({
           <div className="text-[48px] mb-3">🔧</div>
           <h1 className="text-[24px] font-bold text-ink mb-2">{sub}</h1>
           <p className="text-[13px] text-mute mb-5">
-            该分类的产品列表正在更新中。敬请稍后再来，或浏览上级分类。
+            The product list for this category is being updated. Please check
+            back soon or browse the parent category.
           </p>
           <Link
             href={`/category/${slug}`}
             className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light"
           >
-            ← {parent?.title ?? navEntry?.name ?? "返回分类"}
+            ← {parent?.title ?? navEntry?.name ?? "Back to Category"}
           </Link>
         </div>
       </div>
@@ -58,8 +59,8 @@ export default async function LeafCategoryPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "产品分类" },
+          { label: "Home", href: "/" },
+          { label: "Product Categories" },
           { label: data.parentName, href: `/category/${data.parentSlug}` },
           { label: data.l2Name },
           { label: data.title },
@@ -97,9 +98,9 @@ export async function generateMetadata({
   const { slug, sub } = await params;
   const data = getLeafCategory(slug, sub);
   return {
-    title: data ? `${data.title} — ${data.resultsCount} 个结果 · Huayuesc` : `${sub} · Huayuesc`,
+    title: data ? `${data.title} — ${data.resultsCount} results · Huayuesc` : `${sub} · Huayuesc`,
     description: data
-      ? `${data.resultsCount} 款${data.title}，来自中国已认证供应商。在 Huayuesc 24 小时内快速报价。`
+      ? `${data.resultsCount} ${data.title} from certified suppliers in China. Get fast quotes within 24h on Huayuesc.`
       : undefined,
   };
 }

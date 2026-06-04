@@ -14,7 +14,7 @@
   --color-paper: #FFFFFF;
   --color-success: #2A9D8F;
 
-  --font-sans: var(--font-inter), "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  --font-sans: var(--font-inter), Arial, sans-serif;
 }
 
 html, body {

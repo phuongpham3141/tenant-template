@@ -22,8 +22,8 @@ export default async function CategoryPage({
       <div className="max-w-[1400px] mx-auto px-4 py-16">
         <Breadcrumb
           trail={[
-            { label: "首页", href: "/" },
-            { label: "产品分类" },
+            { label: "Home", href: "/" },
+            { label: "Product Categories" },
             { label: navEntry?.name ?? slug },
           ]}
         />
@@ -33,13 +33,14 @@ export default async function CategoryPage({
             {navEntry?.name ?? slug}
           </h1>
           <p className="text-[13px] text-mute mb-5">
-            该分类正在完善中。敬请稍后再来，或浏览其他分类。
+            This category is being finalized. Please check back soon or browse
+            our other categories.
           </p>
           <Link
             href="/"
             className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light"
           >
-            ← 返回首页
+            ← Back to Home
           </Link>
         </div>
       </div>
@@ -50,8 +51,8 @@ export default async function CategoryPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "产品分类" },
+          { label: "Home", href: "/" },
+          { label: "Product Categories" },
           { label: data.title },
         ]}
       />
@@ -67,12 +68,13 @@ export default async function CategoryPage({
 }
 
 /**
- * 列出华越在该行业的官方合作工厂。
- * 仅当至少有 1 个 partner 映射到 category slug 时才渲染。
+ * Lists Huayue's official partner factories within this industry.
+ * Only renders if at least 1 partner is mapped to the category slug.
  */
 function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
-  // 来自 categories.ts 的 category slug（如 "noi-that"）需要与
-  // partners.category union 匹配——仅当匹配 type-allow 中的某个值时才渲染。
+  // category slug from categories.ts (e.g. "noi-that") must match the
+  // partners.category union — only render if it matches one of the
+  // type-allowed values.
   const allowed = [
     "home-garden",
     "construction-materials",
@@ -94,9 +96,9 @@ function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
       <div className="bg-paper border border-line rounded p-5 max-md:p-3">
         <h2 className="text-[18px] font-bold text-ink mb-4 flex items-center gap-2 max-md:text-[16px]">
           <span className="w-1 h-5 bg-brand rounded-sm" />
-          该行业的合作工厂
+          Partner Factories in This Industry
           <span className="text-[12px] text-mute font-normal ml-1">
-            · {partners.length} 个已认证品牌
+            · {partners.length} certified brands
           </span>
         </h2>
 
@@ -144,7 +146,7 @@ function PartnersInCategory({ categorySlug }: { categorySlug: string }) {
             href="/info/partners"
             className="inline-flex items-center gap-1 text-[13px] text-brand font-semibold hover:underline"
           >
-            查看华越全部合作工厂 →
+            View All Huayue Partner Factories →
           </Link>
         </div>
       </div>
@@ -165,6 +167,6 @@ export async function generateMetadata({
     title: `${name} — Huayuesc`,
     description:
       data?.intro ??
-      `在 Huayuesc 探索来自中国一流制造商的${name}。`,
+      `Discover ${name} from leading Chinese manufacturers on Huayuesc.`,
   };
 }

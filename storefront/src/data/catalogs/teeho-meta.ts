@@ -1,6 +1,6 @@
 /**
- * TEEHO 智能锁元数据 — 详情页。按 seriesOriginal (catKey) 索引。
- * 货源：teeho.com（Shopify）。出口型电子 / 智能门锁（主要面向美国市场）。
+ * TEEHO smart lock metadata — detail page. Keyed by seriesOriginal (catKey).
+ * Sourcing: teeho.com (Shopify). Electronic/smart door locks for export (primarily the US market).
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -11,82 +11,82 @@ export type SeriesMeta = {
   whyChoose: { icon: string; title: string; desc: string }[];
   projectShowcase: string[]; faq: { q: string; a: string }[];
 };
-const CERTS = ["国际电子安全认证", "民用门锁标准（参照 ANSI/BHMA）", "RoHS —— 安全材料", "指纹 / 密码数据加密安全"];
+const CERTS = ["International electronic safety certification", "Residential door lock standards (ANSI/BHMA referenced)", "RoHS — safe materials", "Encrypted protection of fingerprint/passcode data"];
 const MFG = [
-  "TEEHO —— 智能 / 电子门锁品牌，通过 D2C/B2B 渠道分销（Shopify，美国市场）",
-  "产品系列：密码插芯锁、执手锁、执手套装、WiFi/蓝牙锁、网关",
-  "多种开锁方式：指纹、密码、卡片/App、机械应急钥匙",
-  "按民用电子门锁标准进行质量与安全管控",
+  "TEEHO — electronic/smart door lock brand, distributed through D2C/B2B channels (Shopify, US market)",
+  "Product range: keypad deadbolts, lever locks, handle sets, WiFi/Bluetooth locks, gateways",
+  "Multi-method unlocking: fingerprint, passcode, card/app, backup mechanical key",
+  "Quality control & security in line with residential electronic lock standards",
 ];
 const PACK = [
-  { label: "包装", value: "零售包装，含安装配件与电池" },
-  { label: "随附配件", value: "螺丝、机械应急钥匙、说明书（电池）" },
-  { label: "起订量", value: "按批量 / 集装箱；支持多型号混搭" },
+  { label: "Packaging", value: "Retail box with installation accessories & batteries" },
+  { label: "Included accessories", value: "Screws, backup mechanical keys, manual, (batteries)" },
+  { label: "MOQ", value: "By batch/container; mixed models OK" },
 ];
 const INSTALL = [
-  "适用于标准门（常见门厚与锁舌中心距）；下单前请核对",
-  "可按说明书用螺丝刀自行安装（DIY）；无需布线",
-  "安装后录入指纹 / 密码并连接 App（WiFi/蓝牙系列）",
-  "交付前检查开锁 / 上锁、自动上锁及电量",
+  "Fits standard doors (common thickness & backset); verify before ordering",
+  "DIY installation with a screwdriver per the manual; no wiring required",
+  "Set up fingerprints/passcodes & connect the app (WiFi/Bluetooth models) after installation",
+  "Test unlock/lock, auto-lock and battery before handover",
 ];
 const CARE = [
-  { title: "电池", desc: "使用优质 AA 电池；电量不足提示时更换。部分型号配有应急供电接口。" },
-  { title: "清洁", desc: "用干燥软布擦拭指纹传感器与键盘；避免接触水或强化学品。" },
-  { title: "安全", desc: "定期更换密码，临时密码使用后删除；及时更新 App（WiFi 系列）。" },
+  { title: "Battery", desc: "Use quality AA batteries; replace when the low-battery alert appears. Emergency power port available (model-dependent)." },
+  { title: "Cleaning", desc: "Wipe the fingerprint sensor & keypad with a soft, dry cloth; avoid water and harsh chemicals." },
+  { title: "Security", desc: "Change passcodes periodically, delete temporary codes after use; keep the app updated (WiFi models)." },
 ];
 const FAQ = [
-  { q: "TEEHO 门锁能否安装在越南的门上？", a: "适用于符合门厚与锁舌中心距的标准门；下单前请按各型号确认门体参数。" },
-  { q: "是否配有机械应急钥匙与应急供电？", a: "多数型号配有机械应急钥匙和 / 或应急供电接口；详情视各产品而定。" },
-  { q: "起订量与交期？", a: "按批量计；交期随订单确认。" },
+  { q: "Can TEEHO locks fit Vietnamese doors?", a: "They fit standard doors by thickness & backset; please confirm the door specifications for each model before ordering." },
+  { q: "Are backup mechanical keys & emergency power available?", a: "Most models include a backup mechanical key and/or an emergency power port; details vary by product." },
+  { q: "MOQ & lead time?", a: "Priced by batch; delivery schedule quoted per order." },
 ];
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const WHY = { icon: "🔐", title: "多种开锁方式", desc: "指纹、密码、卡片/App 及机械应急钥匙 —— 便捷又安全。" };
-const SHOW = ["住宅、公寓、别墅", "办公室、民宿/Airbnb", "智能家居交付项目"];
+const WHY = { icon: "🔐", title: "Multi-method unlocking", desc: "Fingerprint, passcode, card/app & backup mechanical key — convenient & secure." };
+const SHOW = ["Homes, apartments, villas", "Offices, homestays/Airbnb", "Smart-home handover projects"];
 const DEADBOLT = mk({
-  story: "TEEHO 密码插芯锁（TE001/TE002）—— 支持指纹与密码开锁的电子插芯锁，配机械应急钥匙，DIY 安装免布线，自动上锁。",
-  heritage: "插芯锁系列是 TEEHO 面向通道门最普及的产品。",
-  technicalSpecs: [{ label: "类型", value: "电子插芯锁（deadbolt）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "安装", value: "DIY，免布线" }, { label: "供电", value: "AA电池 + 应急供电接口（视型号而定）" }],
-  whyChoose: [WHY, { icon: "🛠️", title: "DIY安装简便", desc: "用螺丝刀即可自行安装，适用于标准门。" }, { icon: "🔄", title: "自动上锁", desc: "关门后自动上锁，省心不遗忘。" }],
+  story: "TEEHO keypad deadbolts (TE001/TE002) — electronic deadbolts unlocked by fingerprint & passcode, with a backup mechanical key, DIY wire-free installation and auto-lock.",
+  heritage: "The deadbolt line is TEEHO's most popular product for entry doors.",
+  technicalSpecs: [{ label: "Type", value: "Electronic deadbolt" }, { label: "Unlocking", value: "Fingerprint, passcode, mechanical key" }, { label: "Installation", value: "DIY, no wiring" }, { label: "Power", value: "AA batteries + emergency port (model-dependent)" }],
+  whyChoose: [WHY, { icon: "🛠️", title: "Easy DIY install", desc: "Install yourself with a screwdriver; fits standard doors." }, { icon: "🔄", title: "Auto-lock", desc: "Locks automatically after the door closes — no more forgetting." }],
   projectShowcase: SHOW,
 });
 const WIFI = mk({
-  story: "TEEHO WiFi智能锁（TE011W/TE012W）——可通过App远程控制与下发密码、查看进出记录、集成语音助手，支持指纹/密码/App/钥匙开锁。",
-  heritage: "WiFi系列将TEEHO门锁接入智能家居生态。",
-  technicalSpecs: [{ label: "类型", value: "WiFi智能锁" }, { label: "连接方式", value: "WiFi（部分含蓝牙）" }, { label: "控制", value: "App远程控制、下发/锁定密码、记录" }, { label: "开锁方式", value: "指纹、密码、App、机械钥匙" }],
-  whyChoose: [WHY, { icon: "📱", title: "远程控制", desc: "随时随地通过App下发密码与开锁。" }, { icon: "🗣️", title: "智能家居", desc: "集成语音助手（Alexa/Google，视型号而定）。" }],
+  story: "TEEHO smart WiFi locks (TE011W/TE012W) — remote control & code provisioning via the app, access history, voice-assistant integration, and unlocking by fingerprint/passcode/app/key.",
+  heritage: "The WiFi line brings TEEHO locks into the smart-home ecosystem.",
+  technicalSpecs: [{ label: "Type", value: "Smart WiFi lock" }, { label: "Connectivity", value: "WiFi (some include Bluetooth)" }, { label: "Control", value: "Remote app, issue/revoke codes, history" }, { label: "Unlocking", value: "Fingerprint, passcode, app, mechanical key" }],
+  whyChoose: [WHY, { icon: "📱", title: "Remote control", desc: "Issue codes & unlock via the app anytime, anywhere." }, { icon: "🗣️", title: "Smart home", desc: "Voice-assistant integration (Alexa/Google, model-dependent)." }],
   projectShowcase: SHOW,
 });
 export const TEEHO_SERIES_META: Record<string, SeriesMeta> = {
   "keypad-deadbolt": DEADBOLT,
   "lever-lock": mk({
-    story: "TEEHO密码执手锁（TE001L/TE002L/TE003/TE004）——适用于房门/入户门的电子执手锁，支持指纹与密码开锁，配机械应急钥匙。",
-    heritage: "执手锁系列适用于需要执手而非单纯插芯的门。",
-    technicalSpecs: [{ label: "类型", value: "电子执手锁（lever）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "房门、入户门、办公室" }],
-    whyChoose: [WHY, { icon: "🚪", title: "执手便捷", desc: "通过执手开关门，适用于多种门型。" }, { icon: "🔑", title: "应急钥匙", desc: "需要时有机械钥匙可用，使用安心。" }],
+    story: "TEEHO keypad lever locks (TE001L/TE002L/TE003/TE004) — electronic lever locks for room/entry doors, unlocked by fingerprint & passcode, with a backup mechanical key.",
+    heritage: "The lever line suits doors that need a handle rather than a single deadbolt.",
+    technicalSpecs: [{ label: "Type", value: "Electronic lever lock" }, { label: "Unlocking", value: "Fingerprint, passcode, mechanical key" }, { label: "Applications", value: "Room doors, entry doors, offices" }],
+    whyChoose: [WHY, { icon: "🚪", title: "Convenient lever", desc: "Open and close with a lever; suits many door types." }, { icon: "🔑", title: "Backup key", desc: "A mechanical key when needed, for peace of mind." }],
     projectShowcase: SHOW,
   }),
   "handle-set": mk({
-    story: "TEEHO执手锁套装（TE001K/TE002K/TE001H）——插芯锁+同步执手套装组合，适用于入户门，支持指纹与密码开锁。",
-    heritage: "执手套装为入户门带来完整外观与双重安全。",
-    technicalSpecs: [{ label: "类型", value: "插芯锁+执手套装（handle set）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "入户门、外立面门" }],
-    whyChoose: [WHY, { icon: "🏠", title: "双重安全", desc: "插芯锁+同步执手，守护入户门。" }, { icon: "✨", title: "美观", desc: "完整套装，外观高雅大气。" }],
+    story: "TEEHO handle sets (TE001K/TE002K/TE001H) — deadbolt + matching handle set combos for entry doors, unlocked by fingerprint & passcode.",
+    heritage: "The handle set delivers a complete look & dual security for entry doors.",
+    technicalSpecs: [{ label: "Type", value: "Deadbolt + handle set" }, { label: "Unlocking", value: "Fingerprint, passcode, mechanical key" }, { label: "Applications", value: "Entry doors, facades" }],
+    whyChoose: [WHY, { icon: "🏠", title: "Dual security", desc: "Matching deadbolt + handle set for entry doors." }, { icon: "✨", title: "Aesthetics", desc: "A complete set with an elegant exterior finish." }],
     projectShowcase: SHOW,
   }),
   "wifi-lock": WIFI, "wifi-handle": WIFI,
   "smart-handle": mk({
-    story: "TEEHO智能执手（TE018）——集成指纹/密码的门执手，简洁紧凑，适用于房门。",
-    heritage: "智能执手提供轻巧紧凑的门锁解决方案。",
-    technicalSpecs: [{ label: "类型", value: "智能执手" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "房门" }],
-    whyChoose: [WHY, { icon: "🤚", title: "轻巧紧凑", desc: "执手集成门锁，安装紧凑，适用于房门。" }],
+    story: "TEEHO smart handles (TE018) — door handles with integrated fingerprint/passcode, compact for room doors.",
+    heritage: "The smart handle offers a compact lock solution.",
+    technicalSpecs: [{ label: "Type", value: "Smart handle" }, { label: "Unlocking", value: "Fingerprint, passcode, mechanical key" }, { label: "Applications", value: "Room doors" }],
+    whyChoose: [WHY, { icon: "🤚", title: "Compact", desc: "An all-in-one handle lock that installs neatly on room doors." }],
     projectShowcase: SHOW,
   }),
   gateway: mk({
-    story: "TEEHO网关（G1）——连接器/hub，让蓝牙门锁可通过WiFi实现远程控制，扩展智能家居功能。",
-    heritage: "网关是TEEHO门锁系统的连接扩展配件。",
-    technicalSpecs: [{ label: "类型", value: "网关/连接Hub" }, { label: "功能", value: "蓝牙↔WiFi桥接，实现远程控制" }, { label: "兼容性", value: "支持网关的TEEHO门锁" }],
-    whyChoose: [{ icon: "📡", title: "远程控制", desc: "让蓝牙门锁可通过App实现远程控制。" }, WHY],
+    story: "TEEHO Gateway (G1) — a connectivity hub/bridge that lets Bluetooth locks be controlled remotely over WiFi, extending smart-home capabilities.",
+    heritage: "The gateway is a connectivity accessory that extends the TEEHO lock system.",
+    technicalSpecs: [{ label: "Type", value: "Gateway / connectivity hub" }, { label: "Function", value: "Bluetooth ↔ WiFi bridge for remote control" }, { label: "Compatibility", value: "Gateway-enabled TEEHO locks" }],
+    whyChoose: [{ icon: "📡", title: "Remote control", desc: "Turns Bluetooth locks into remotely controllable locks via the app." }, WHY],
     projectShowcase: SHOW,
   }),
   other: DEADBOLT,

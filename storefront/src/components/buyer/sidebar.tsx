@@ -2,29 +2,29 @@ import Link from "next/link";
 
 const NAV_GROUPS = [
   {
-    title: "服务",
+    title: "Services",
     items: [
-      { label: "新用户指南", href: "/buyer-center/new-user-guide", icon: "📖" },
-      { label: "已认证工厂报告", href: "/buyer-center/audited-reports", icon: "🛡" },
-      { label: "对接供应商", href: "/buyer-center/meet-suppliers", icon: "🤝" },
-      { label: "交易保障服务", href: "/buyer-center/secured-trading", icon: "🔒" },
-      { label: "采购商中心", href: "/buyer-center", icon: "🏠" },
-      { label: "联系我们", href: "/buyer-center/contact", icon: "📞" },
+      { label: "New Buyer Guide", href: "/buyer-center/new-user-guide", icon: "📖" },
+      { label: "Audited Factory Reports", href: "/buyer-center/audited-reports", icon: "🛡" },
+      { label: "Meet Suppliers", href: "/buyer-center/meet-suppliers", icon: "🤝" },
+      { label: "Trade Assurance Service", href: "/buyer-center/secured-trading", icon: "🔒" },
+      { label: "Buyer Center", href: "/buyer-center", icon: "🏠" },
+      { label: "Contact Us", href: "/buyer-center/contact", icon: "📞" },
     ],
   },
   {
-    title: "查找",
+    title: "Discover",
     items: [
-      { label: "产品目录", href: "/buyer-center/product-directory", icon: "🗂" },
-      { label: "发现供应商", href: "/buyer-center/supplier-discover", icon: "🏭" },
-      { label: "发布询价", href: "/buyer-center/post-rfq", icon: "📨" },
+      { label: "Product Directory", href: "/buyer-center/product-directory", icon: "🗂" },
+      { label: "Discover Suppliers", href: "/buyer-center/supplier-discover", icon: "🏭" },
+      { label: "Post an RFQ", href: "/buyer-center/post-rfq", icon: "📨" },
     ],
   },
   {
-    title: "快速访问",
+    title: "Quick Access",
     items: [
-      { label: "收藏", href: "/buyer-center/favorites", icon: "❤" },
-      { label: "浏览历史", href: "/buyer-center/browsing-history", icon: "🕘" },
+      { label: "Favorites", href: "/buyer-center/favorites", icon: "❤" },
+      { label: "Browsing History", href: "/buyer-center/browsing-history", icon: "🕘" },
     ],
   },
 ];
@@ -33,8 +33,8 @@ export function BuyerSidebar({ active }: { active?: string }) {
   return (
     <aside className="bg-paper border border-line rounded p-3 self-start">
       <div className="px-3 py-2.5 border-b border-line mb-2">
-        <b className="block text-[14px] text-ink">陈文 A</b>
-        <span className="text-[11.5px] text-mute">采购商 · 河内</span>
+        <b className="block text-[14px] text-ink">Tran Van A</b>
+        <span className="text-[11.5px] text-mute">Buyer · Hanoi</span>
       </div>
       {NAV_GROUPS.map((group, gi) => (
         <div key={group.title} className={gi === 0 ? "" : "mt-3 pt-2 border-t border-line"}>

@@ -1,9 +1,9 @@
 /**
- * Vr360Frame — server component, renders plain HTML + inline <script>.
+ * Vr360Frame — server component, renders plain HTML + an inline <script>.
  * Does NOT use "use client" → does NOT depend on React hydration.
  *
  * 2 buttons:
- *   ⛶ Fullscreen — native FS + CSS fallback. Reloads iframe each time for a fresh 360.
+ *   ⛶ Fullscreen — native FS + CSS fallback. Reloads the iframe each time so 360 is fresh.
  *   🪟 Open new window — window.open full screen with iframe + 2 branding overlays.
  */
 export function Vr360Frame({
@@ -61,19 +61,19 @@ export function Vr360Frame({
 
 <div style="margin-bottom:12px">
   <p style="font-size:12px;color:#6b7280;margin:0 0 8px;line-height:1.55">
-    💡 <b>提示</b>：拖动鼠标360°旋转，滚动缩放，点击光点前往其他区域。点击 <b>全屏</b> 查看更宽视野（每次点击会重新加载360°），或 <b>打开新窗口</b> 在独立窗口中查看。按 <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> 退出。
+    💡 <b>Tip</b>: drag to rotate 360°, scroll to zoom, click the hotspots to move around. Click <b>Fullscreen</b> for a wider view (each click reloads the 360°) or <b>Open new window</b> to view it in a separate window. Press <kbd style="padding:1px 6px;background:#f3f4f6;border:1px solid #d1d5db;border-radius:2px;font-size:11px;font-family:Consolas,monospace">Esc</kbd> to exit.
   </p>
   <div style="display:flex;flex-wrap:wrap;gap:8px">
-    <button type="button" class="csr-vr-btn" onclick="csrVrCombined()">⛶ 全屏</button>
-    <button type="button" class="csr-vr-btn" onclick="csrVrPopup()">🪟 打开新窗口</button>
+    <button type="button" class="csr-vr-btn" onclick="csrVrCombined()">⛶ Fullscreen</button>
+    <button type="button" class="csr-vr-btn" onclick="csrVrPopup()">🪟 Open new window</button>
   </div>
 </div>
 
 <div id="csr-vr-wrap">
-  <iframe id="csr-vr-iframe" src="${safeUrl}" title="360° 全景 ${safeFactory}" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>
+  <iframe id="csr-vr-iframe" src="${safeUrl}" title="360° Tour ${safeFactory}" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>
   <div class="csr-vr-ov1">🏭 ${safeOverlay}</div>
   <div class="csr-vr-ov2">${safeLine2 ? `<span>${safeLine1}<br/>${safeLine2}</span>` : `<span>${safeLine1}</span>`}</div>
-  <button type="button" class="csr-vr-exit" onclick="csrVrCombined()">✕ 退出 (Esc)</button>
+  <button type="button" class="csr-vr-exit" onclick="csrVrCombined()">✕ Exit (Esc)</button>
 </div>
 
 <script>
@@ -126,18 +126,18 @@ export function Vr360Frame({
     reqFs(w).catch(function(){ setCssFs(true); });
   };
 
-  // Popup: open a full-size separate window with iframe + 2 branding overlays
+  // Popup: open a full-size window with iframe + 2 branding overlays
   window.csrVrPopup = function(){
     var sw = (window.screen && window.screen.availWidth) || 1920;
     var sh = (window.screen && window.screen.availHeight) || 1080;
     var feat = 'width=' + sw + ',height=' + sh + ',left=0,top=0,fullscreen=yes,menubar=no,toolbar=no,location=no';
     var p = window.open('', 'csr_vr_fullscreen', feat);
-    if(!p){ alert('窗口被拦截。请允许本页面的弹出窗口后重试。'); return; }
+    if(!p){ alert('The window was blocked. Please allow pop-ups for this page and try again.'); return; }
     var sep = VR_URL.indexOf('?') >= 0 ? '&' : '?';
     var url = VR_URL + sep + '_t=' + Date.now();
     var ov2 = LINE2 ? '<span>' + LINE1 + '<br>' + LINE2 + '</span>' : '<span>' + LINE1 + '</span>';
     var doc =
-      '<!doctype html><html><head><meta charset="utf-8"><title>360° 全景 ' + FACTORY + '</title><style>' +
+      '<!doctype html><html><head><meta charset="utf-8"><title>360° Tour ' + FACTORY + '</title><style>' +
       'html,body{margin:0;padding:0;width:100%;height:100%;background:#000;overflow:hidden;font-family:Arial,sans-serif}' +
       'iframe{width:100%;height:100%;border:0;display:block}' +
       '.ov1{position:fixed;top:0;left:0;width:280px;height:70px;background:linear-gradient(90deg,#005f6b,#066875);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:16px;border-radius:6px;z-index:10}' +
@@ -147,7 +147,7 @@ export function Vr360Frame({
       '<iframe src="' + url + '" allow="accelerometer; gyroscope; magnetometer; xr-spatial-tracking; fullscreen"></iframe>' +
       '<div class="ov1">🏭 ' + OVERLAY + '</div>' +
       '<div class="ov2">' + ov2 + '</div>' +
-      '<button class="cls" onclick="window.close()">✕ 关闭</button>' +
+      '<button class="cls" onclick="window.close()">✕ Close</button>' +
       '</body></html>';
     p.document.open();
     p.document.write(doc);
@@ -155,7 +155,7 @@ export function Vr360Frame({
     p.focus();
   };
 
-  // Esc exits CSS pseudo-FS (native FS already has the browser's own Esc)
+  // Esc exits CSS pseudo-FS (native FS already has the browser's Esc)
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
       var w = $('csr-vr-wrap');

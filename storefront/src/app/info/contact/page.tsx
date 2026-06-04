@@ -35,11 +35,11 @@ const OFFICES: Office[] = [
     id: "hn",
     flag: "🇻🇳",
     region: "VN",
-    city: "河内",
+    city: "Hanoi",
     cityEn: "Hanoi",
-    role: "总部——越南运营、销售与分销",
+    role: "Headquarters — Operations, Sales & Vietnam Distribution",
     isHQ: true,
-    address: "越南河内市春芳坊清林街 2 号宝玉大厦 7 楼",
+    address: "Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi, Vietnam",
     addressCn: "越南河内市春芳坊清林街2号宝玉大厦7楼",
     addressEn:
       "Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi, Vietnam",
@@ -47,33 +47,33 @@ const OFFICES: Office[] = [
     hotline: "+86 181-2225-6999",
     email: "support@huayuesc.vn",
     manager: {
-      name: "河内运营团队",
-      title: "运营与分销负责人",
+      name: "Hanoi Operations Team",
+      title: "Head of Operations & Distribution",
       initials: "HN",
     },
     teamSize: 20,
     departments: [
-      "VNACCS/VCIS 海关申报（对接海防港）",
-      "物流与船公司协调",
-      "越南分销（河内、胡志明市、63 省）",
-      "建筑材料与家具 B2B 销售",
-      "越南语客户成功",
-      "经销商与建筑承包商合作",
+      "VNACCS/VCIS customs clearance (working with Hai Phong port)",
+      "Logistics & carrier coordination",
+      "Vietnam distribution (Hanoi, Ho Chi Minh City, 63 provinces)",
+      "B2B sales of building materials & furniture",
+      "Vietnamese-language Customer Success",
+      "Dealer & construction contractor partnerships",
     ],
-    hours: "周一 – 周六：8:00 – 17:30",
+    hours: "Mon – Sat: 8:00 – 17:30",
     timezone: "GMT+7 (Asia/Ho_Chi_Minh)",
     transit:
-      "宝玉大厦位于春芳坊清林街 2 号——河内西部，距美亭中心约 3 km，经升龙大道距内排机场约 30 km。27、29、32 路公交车在附近停靠。",
-    parking: "宝玉大厦内部停车场——预约访客免费（请提前通过热线告知前台）",
+      "Bao Ngoc Building at No. 02 Thanh Lam Street, Xuan Phuong Ward — in western Hanoi, about 3 km from the My Dinh center and about 30 km from Noi Bai airport via Thang Long Boulevard. Buses 27, 29, and 32 stop near the building.",
+    parking: "On-site parking at Bao Ngoc Building — free for visitors with an appointment (notify reception in advance via hotline)",
     landmark:
-      "宝玉大厦，春芳坊，位于河内西部南慈廉区——临近河内及北部各省的建材分销商和家具展厅",
+      "Bao Ngoc Building, Xuan Phuong Ward, in the Nam Tu Liem area of western Hanoi — near building-materials dealers and furniture showrooms in Hanoi and the northern provinces",
     services: [
-      "越南端供应链管理（物流 + 清关 + 分销）",
-      "为自中国进口的集装箱办理 VNACCS/VCIS 申报（海防港 / 吉莱港）",
-      "DDP 国内运输至河内、胡志明市及 63 省市",
-      "通过热线 + 邮件为越南采购商提供销售与咨询",
-      "经销商、建筑承包商、室内设计公司合作",
-      "24/7 越南语客户成功支持",
+      "Vietnam-end supply chain management (logistics + customs clearance + distribution)",
+      "VNACCS/VCIS clearance for containers imported from China (Hai Phong / Cat Lai ports)",
+      "DDP domestic shipping to Hanoi, Ho Chi Minh City, and 63 provinces",
+      "Sales & advisory for Vietnamese buyers via hotline + email",
+      "Partnerships with dealers, construction contractors, and interior design firms",
+      "24/7 Vietnamese-language Customer Success support",
     ],
     googleMapsQuery: "Bao+Ngoc+Building+02+Thanh+Lam+Xuan+Phuong+Hanoi",
   },
@@ -81,54 +81,54 @@ const OFFICES: Office[] = [
     id: "gz",
     flag: "🇨🇳",
     region: "CN",
-    city: "广州",
+    city: "Guangzhou",
     cityEn: "Guangzhou",
-    role: "代表处——采购、验厂与寻源",
-    address: "中国广州市海珠区新港东路黄埔村北码头数娱创兴港 1 号楼 3 楼",
+    role: "Representative Office — Procurement, Factory Audit & Sourcing",
+    address: "3F, Building 1, Shuyu Chuangxing Port, North Wharf of Huangpu Village, East Xingang Road, Haizhu District, Guangzhou, China",
     addressCn: "广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼",
     addressEn: "3F, Building 1, Shuyu Chuangxing Port, North Wharf of Huangpu Village, East Xingang Road, Haizhu District, Guangzhou, China",
     phone: "+86 181-2225-6999",
     email: "sales@huayuesc.vn",
-    manager: { name: "广州寻源团队", title: "寻源与品控团队负责人", initials: "GZ" },
+    manager: { name: "Guangzhou Sourcing Team", title: "Sourcing & QC Team Lead", initials: "GZ" },
     teamSize: 15,
     departments: [
-      "寻源与源头精选",
-      "工厂驻厂品控检验员",
-      "供应商实地验厂",
-      "中越商务翻译",
-      "广东工厂及行业协会关系",
+      "Sourcing & curated supplier selection",
+      "On-site factory QC inspectors",
+      "On-site supplier audits",
+      "Chinese – Vietnamese commercial interpretation",
+      "Factory & industry-association relations in Guangdong",
     ],
-    hours: "周一 – 周五：9:00 – 18:00 · 周六：9:00 – 12:00（北京时间）",
+    hours: "Mon – Fri: 9:00 – 18:00 · Sat: 9:00 – 12:00 (Beijing time)",
     timezone: "GMT+8 (Asia/Shanghai)",
-    transit: "海珠区——老广州中心，距广州东站 6 km，距白云国际机场 35 km。临近佛山陶瓷（50 km）、乐从家具（40 km）、美的电器（30 km）等产业带。",
-    parking: "数娱创兴港停车场——设有预约访客车位",
-    landmark: "数娱创兴港（数字娱乐 – 文化港）位于黄埔村北码头，海珠区中心商务区，临近珠江",
+    transit: "Haizhu District — the old center of Guangzhou, about 6 km from Guangzhou East railway station and 35 km from Baiyun International Airport. Near the Foshan ceramics cluster (50 km), the Lecong furniture cluster (40 km), and the Midea appliances cluster (30 km).",
+    parking: "Parking at Shuyu Chuangxing Port — with space for visitors with an appointment",
+    landmark: "The Shuyu Chuangxing digital-culture port at the North Wharf of Huangpu Village, the central commercial district of Haizhu, near the Pearl River",
     services: [
-      "在华越 3 大行业（建材 / 装饰材料 / 厨卫小家电）筛选与验厂中国工厂",
-      "出厂前品控检验员——AQL 2.5 标准",
-      "为询价及谈判提供中越翻译",
-      "代表越南采购商实地验厂",
-      "对接广东、佛山、中山、潮州行业协会",
+      "Screening & auditing of Chinese factories across Huayue's 3 industries (building materials / interior materials / kitchen & bathroom appliances)",
+      "Pre-shipment QC inspectors — AQL 2.5 standard",
+      "Vietnamese – Chinese interpretation for RFQs and negotiations",
+      "Representing Vietnamese buyers on factory visits",
+      "Liaison with industry associations in Guangdong, Foshan, Zhongshan, and Chaozhou",
     ],
     googleMapsQuery: "数娱创兴港+Shuyu+Chuangxing+Xingang+East+Road+Haizhu+Guangzhou",
   },
 ];
 
 const DEPARTMENTS = [
-  { icon: "💼", title: "销售与寻源咨询", email: "sales@huayuesc.vn", desc: "询价咨询、筛选中国供应商、价格谈判、PI/PO 合同。" },
-  { icon: "🚚", title: "物流、清关与仓储", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF——订舱、VNACCS 申报（海防港与吉莱港）、订单追踪。" },
-  { icon: "🔍", title: "品控与验厂", email: "sales@huayuesc.vn", desc: "出厂前 AQL 2.5 验货、广东供应商实地验厂、附图片/视频报告。" },
-  { icon: "🛡", title: "交易保障与投诉", email: "support@huayuesc.vn", desc: "担保账户、争议调解、依据条款第 7 节退款或换货。" },
-  { icon: "🤝", title: "越南分销与经销商合作", email: "partnership@huayuesc.vn", desc: "与分销经销商、建筑承包商、室内装饰设计公司合作。" },
-  { icon: "👥", title: "招聘与人力资源", email: "hr@huayuesc.vn", desc: "河内与广州职位的应聘材料、内部培训。" },
-  { icon: "🔒", title: "数据保护与 DPO", email: "privacy@huayuesc.vn", desc: "数据主体权利、NĐ 13/2023 号法令、72 小时内泄露通知。" },
+  { icon: "💼", title: "Sales & Sourcing Advisory", email: "sales@huayuesc.vn", desc: "RFQ advisory, screening Chinese suppliers, price negotiation, PI/PO contracts." },
+  { icon: "🚚", title: "Logistics, Customs Clearance & Warehouse", email: "support@huayuesc.vn", desc: "DDP / FOB / CIF — booking shipping, VNACCS clearance (Hai Phong & Cat Lai ports), order tracking." },
+  { icon: "🔍", title: "QC & Factory Audit", email: "sales@huayuesc.vn", desc: "AQL 2.5 pre-shipment inspection, on-site supplier audits in Guangdong, reports with photos/video." },
+  { icon: "🛡", title: "Trade Assurance & Complaints", email: "support@huayuesc.vn", desc: "Escrow account, dispute mediation, refund or replacement under Section 7 of the Terms." },
+  { icon: "🤝", title: "Distribution & Dealer Partners (Vietnam)", email: "partnership@huayuesc.vn", desc: "Partnerships with distribution dealers, construction contractors, and interior design firms." },
+  { icon: "👥", title: "Recruitment & HR", email: "hr@huayuesc.vn", desc: "Applications for roles in Hanoi and Guangzhou, internal training." },
+  { icon: "🔒", title: "Privacy & DPO", email: "privacy@huayuesc.vn", desc: "Data subject rights, NĐ 13/2023, breach notification within 72h." },
 ];
 
 const CHANNELS = [
-  { icon: "📞", title: "热线", desc: "+86 181-2225-6999——越南语 + 中文支持，8:00–22:00", action: "立即拨打", href: "tel:+8618122256999" },
-  { icon: "✉", title: "邮箱", desc: "support@huayuesc.vn——工作时间 6 小时内响应", action: "撰写邮件", href: "mailto:support@huayuesc.vn" },
-  { icon: "💬", title: "网站在线客服", desc: "工作时间 5 分钟内响应；非工作时间 AI 24/7", action: "打开客服", href: "#chat" },
-  { icon: "📱", title: "Zalo OA", desc: "华越——最快的越南语沟通", action: "打开 Zalo", href: "https://zalo.me/huayuesc" },
+  { icon: "📞", title: "Hotline", desc: "+86 181-2225-6999 — Vietnamese + Chinese support, 8am–10pm", action: "Call Now", href: "tel:+8618122256999" },
+  { icon: "✉", title: "Email", desc: "support@huayuesc.vn — response under 6 business hours", action: "Compose Email", href: "mailto:support@huayuesc.vn" },
+  { icon: "💬", title: "Website Live Chat", desc: "Response under 5 minutes during business hours; AI 24/7 after hours", action: "Open Chat", href: "#chat" },
+  { icon: "📱", title: "Zalo OA", desc: "Huayuesc — fastest Vietnamese-language chat", action: "Open Zalo", href: "https://zalo.me/huayuesc" },
 ];
 
 function MapCard({ office }: { office: Office }) {
@@ -152,7 +152,7 @@ function MapCard({ office }: { office: Office }) {
           rel="noopener noreferrer"
           className="text-center py-2 bg-paper border border-line rounded-sm text-[12px] text-ink font-semibold cursor-pointer hover:border-brand hover:text-brand"
         >
-          🗺 打开 Google 地图
+          🗺 Open Google Maps
         </a>
         <a
           href={dirUrl}
@@ -160,7 +160,7 @@ function MapCard({ office }: { office: Office }) {
           rel="noopener noreferrer"
           className="text-center py-2 bg-brand text-white rounded-sm text-[12px] font-bold cursor-pointer hover:bg-brand-light"
         >
-          🧭 获取路线
+          🧭 Get Directions
         </a>
       </div>
     </div>
@@ -177,9 +177,9 @@ export default function LienHePage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "信息", href: "/help" },
-          { label: "联系" },
+          { label: "Home", href: "/" },
+          { label: "Information", href: "/help" },
+          { label: "Contact" },
         ]}
       />
 
@@ -190,20 +190,20 @@ export default function LienHePage() {
       >
         <div className="max-w-[1100px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            📍 联系 · CONTACT
+            📍 CONTACT
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
-            联系华越——两地办公，一条供应链
+            Contact Huayuesc — Two offices, one supply chain
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
-            总部位于<b>河内市春芳坊清林街 2 号宝玉大厦 7 楼</b>，负责仓储、VNACCS 清关及越南境内分销。采购代表处位于<b>广州市海珠区数娱创兴港 3 楼</b>，负责寻源、验厂及出厂前品控。唯一热线：<b>+86 181-2225-6999</b>——提供越南语和中文支持。
+            Our headquarters at <b>Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi</b> handles warehousing, VNACCS clearance, and distribution in Vietnam. Our procurement representative office at <b>3F, Shuyu Chuangxing Port, Haizhu District, Guangzhou</b> handles sourcing, factory audits, and pre-shipment QC. A single hotline: <b>+86 181-2225-6999</b> — with Vietnamese and Chinese support.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {[
-              { n: "8", l: "办事处" },
-              { n: "114", l: "员工" },
-              { n: "5", l: "国家" },
-              { n: "24/7", l: "在线支持" },
+              { n: "8", l: "Offices" },
+              { n: "114", l: "Staff" },
+              { n: "5", l: "Countries" },
+              { n: "24/7", l: "Online support" },
             ].map((s) => (
               <div key={s.l} className="bg-white/10 border border-white/20 rounded p-3 text-center backdrop-blur">
                 <div className="text-[22px] font-extrabold">{s.n}</div>
@@ -219,8 +219,8 @@ export default function LienHePage() {
         <div className="bg-paper border border-line rounded p-5 max-md:p-4">
           <div className="flex justify-between items-end gap-4 mb-4 flex-wrap">
             <div>
-              <h2 className="text-[18px] font-bold text-ink">选择办事处查看详情</h2>
-              <p className="text-[12.5px] text-mute mt-0.5">2 个办事处——河内总部（越南）和广州代表处（中国）</p>
+              <h2 className="text-[18px] font-bold text-ink">Select an office to view details</h2>
+              <p className="text-[12.5px] text-mute mt-0.5">2 offices — the Hanoi headquarters (Vietnam) and the Guangzhou representative office (China)</p>
             </div>
             {/* Region filter chips */}
             <div className="flex gap-1.5 bg-bg border border-line rounded-sm p-1">
@@ -237,7 +237,7 @@ export default function LienHePage() {
                     region === r ? "bg-brand text-white" : "text-mute hover:text-brand"
                   }`}
                 >
-                  {r === "all" ? "全部 (2)" : r === "VN" ? "🇻🇳 越南 (1)" : "🇨🇳 中国 (1)"}
+                  {r === "all" ? "All (2)" : r === "VN" ? "🇻🇳 Vietnam (1)" : "🇨🇳 China (1)"}
                 </button>
               ))}
             </div>
@@ -311,8 +311,8 @@ export default function LienHePage() {
                 </div>
               </div>
               <div className="text-right max-md:text-left">
-                <div className="text-[11px] opacity-80 uppercase tracking-wider">团队</div>
-                <div className="text-[20px] font-extrabold">{active.teamSize} 人</div>
+                <div className="text-[11px] opacity-80 uppercase tracking-wider">Team</div>
+                <div className="text-[20px] font-extrabold">{active.teamSize} people</div>
                 <div className="text-[11px] opacity-80">{active.timezone}</div>
               </div>
             </div>
@@ -324,7 +324,7 @@ export default function LienHePage() {
             <div className="space-y-5">
               {/* Address */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📍 地址</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📍 Address</b>
                 <p className="text-[14px] text-ink leading-relaxed">{active.address}</p>
                 <p className="text-[12px] text-mute italic mt-0.5">{active.addressEn}</p>
               </div>
@@ -332,12 +332,12 @@ export default function LienHePage() {
               {/* Contact */}
               <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
                 <div>
-                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📞 电话</b>
+                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📞 Phone</b>
                   <a href={`tel:${active.phone.replace(/\s/g, "")}`} className="text-[13.5px] text-brand font-semibold hover:underline">
                     {active.phone}
                   </a>
                   {active.hotline && (
-                    <div className="text-[12px] text-mute mt-0.5">越南热线：<b className="text-ink">{active.hotline}</b></div>
+                    <div className="text-[12px] text-mute mt-0.5">Vietnam hotline: <b className="text-ink">{active.hotline}</b></div>
                   )}
                 </div>
                 <div>
@@ -355,20 +355,20 @@ export default function LienHePage() {
                     {active.manager.initials}
                   </div>
                   <div>
-                    <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold">负责人</b>
+                    <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold">Contact person</b>
                     <div className="text-[13.5px] text-ink font-semibold">{active.manager.name}</div>
                     <div className="text-[11.5px] text-mute">{active.manager.title}</div>
                   </div>
                 </div>
                 <div className="bg-bg border border-line rounded p-3">
-                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">⏰ 营业时间</b>
+                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1">⏰ Business hours</b>
                   <div className="text-[12.5px] text-ink leading-relaxed">{active.hours}</div>
                 </div>
               </div>
 
               {/* Departments */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🏢 办事处部门</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🏢 Departments at this office</b>
                 <div className="flex flex-wrap gap-1.5">
                   {active.departments.map((d) => (
                     <span key={d} className="text-[11.5px] bg-brand/8 text-brand border border-brand/20 px-2 py-1 rounded-sm font-semibold">
@@ -380,7 +380,7 @@ export default function LienHePage() {
 
               {/* Services */}
               <div>
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">⚡ {active.city}主要服务</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">⚡ Key services in {active.city}</b>
                 <ul className="space-y-1.5">
                   {active.services.map((s, i) => (
                     <li key={i} className="flex gap-2 text-[13px] text-ink leading-relaxed">
@@ -393,11 +393,11 @@ export default function LienHePage() {
 
               {/* Transit + Parking + Landmark */}
               <div className="border-t border-line pt-4">
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🧭 交通方式</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🧭 Getting here</b>
                 <div className="space-y-2 text-[12.5px] text-ink leading-relaxed">
-                  <div><b className="text-mute">公共交通：</b> {active.transit}</div>
-                  <div><b className="text-mute">停车：</b> {active.parking}</div>
-                  <div><b className="text-mute">地标：</b> {active.landmark}</div>
+                  <div><b className="text-mute">Public transit:</b> {active.transit}</div>
+                  <div><b className="text-mute">Parking:</b> {active.parking}</div>
+                  <div><b className="text-mute">Landmark:</b> {active.landmark}</div>
                 </div>
               </div>
             </div>
@@ -408,26 +408,26 @@ export default function LienHePage() {
 
               {/* Schedule visit CTA */}
               <div className="bg-bg border border-line rounded p-4">
-                <b className="block text-[13px] text-ink mb-1">📅 预约到访</b>
+                <b className="block text-[13px] text-ink mb-1">📅 Schedule a visit</b>
                 <p className="text-[11.5px] text-mute leading-relaxed mb-3">
-                  办事处接待企业采购商到访面谈。请提前 24 小时预约，以便准备专属会议室及符合行业的资料。
+                  Our offices welcome business buyers for in-person meetings. Book at least 24h ahead so we can prepare a private room and materials tailored to your industry.
                 </p>
                 <Link
                   href="/info/contact#dat-lich"
                   className="block text-center py-2 bg-brand text-white rounded-sm text-[12px] font-bold cursor-pointer hover:bg-brand-light"
                 >
-                  在线预约 →
+                  Book online →
                 </Link>
               </div>
 
               {/* Quick stats */}
               <div className="bg-paper border border-line rounded p-4">
-                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">速览信息</b>
+                <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">Quick facts</b>
                 <ul className="space-y-1.5 text-[12px]">
-                  <li className="flex justify-between"><span className="text-mute">地区</span><b className="text-ink">{active.region === "VN" ? "越南" : "中国"}</b></li>
-                  <li className="flex justify-between"><span className="text-mute">职能</span><b className="text-ink text-right text-[11.5px]">{active.role.split(" · ")[0]}</b></li>
-                  <li className="flex justify-between"><span className="text-mute">团队</span><b className="text-ink">{active.teamSize} 人</b></li>
-                  <li className="flex justify-between"><span className="text-mute">时区</span><b className="text-ink">{active.timezone.split(" ")[0]}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">Region</span><b className="text-ink">{active.region === "VN" ? "Vietnam" : "China"}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">Role</span><b className="text-ink text-right text-[11.5px]">{active.role.split(" · ")[0]}</b></li>
+                  <li className="flex justify-between"><span className="text-mute">Team</span><b className="text-ink">{active.teamSize} people</b></li>
+                  <li className="flex justify-between"><span className="text-mute">Time zone</span><b className="text-ink">{active.timezone.split(" ")[0]}</b></li>
                 </ul>
               </div>
             </div>
@@ -438,8 +438,8 @@ export default function LienHePage() {
       {/* === Contact channels =============================================== */}
       <div className="max-w-[1100px] mx-auto px-4 mb-9">
         <div className="text-center mb-5">
-          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">即时联系渠道</h2>
-          <p className="text-[13px] text-mute mt-1">无法到访办事处？选择下方合适的渠道——多数在几分钟内回复</p>
+          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">Instant contact channels</h2>
+          <p className="text-[13px] text-mute mt-1">Cannot make it to an office? Choose the right channel below — most reply within minutes</p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
           {CHANNELS.map((c) => (
@@ -462,8 +462,8 @@ export default function LienHePage() {
       {/* === Departments =================================================== */}
       <div className="max-w-[1100px] mx-auto px-4 mb-9">
         <div className="text-center mb-5">
-          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">各部门邮箱</h2>
-          <p className="text-[13px] text-mute mt-1">8 个专责联络点——选对部门可获最快回复</p>
+          <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">Email by department</h2>
+          <p className="text-[13px] text-mute mt-1">8 dedicated contacts — pick the right department for the fastest reply</p>
         </div>
         <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
           {DEPARTMENTS.map((d) => (
@@ -491,22 +491,22 @@ export default function LienHePage() {
           className="rounded p-7 text-white text-center max-md:p-5"
           style={{ background: "linear-gradient(135deg, #002557 0%, #001A3F 100%)" }}
         >
-          <h3 className="text-[24px] font-bold mb-2 max-md:text-[20px]">需要一对一企业咨询？</h3>
+          <h3 className="text-[24px] font-bold mb-2 max-md:text-[20px]">Need a 1-on-1 business consultation?</h3>
           <p className="text-[13.5px] opacity-85 mb-5 max-w-[640px] mx-auto leading-relaxed">
-            预约与销售团队 30 分钟咨询——分析采购需求、选择合适的等级、介绍交易保障和市场报告。经营满 3 年以上的企业免费。
+            Book a 30-minute consultation with our sales team — analyzing your sourcing needs, choosing the right tier, and introducing Trade Assurance and Market Reports. Free for businesses with 3+ years of operation.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buying-request"
               className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              🚀 立即发送询价
+              🚀 Send an RFQ Now
             </Link>
             <a
               href="mailto:hello@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              📧 预约咨询
+              📧 Book a Consultation
             </a>
           </div>
         </div>

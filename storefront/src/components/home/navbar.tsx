@@ -4,14 +4,14 @@ import { SubItemPanel } from "@/components/home/mega-submenu";
 
 export function NavBar() {
   const links: { label: string; href: string }[] = [
-    { label: "首页", href: "/" },
-    { label: "产品", href: "/products" },
-    { label: "供应商", href: "/suppliers" },
-    { label: "展会", href: "/trade-shows" },
-    { label: "行业频道", href: "/industry-channels" },
-    { label: "交易预警", href: "/trade-alert" },
-    { label: "采购需求", href: "/buying-request" },
-    { label: "入驻 CSR", href: "/sell-on-csr" },
+    { label: "Home", href: "/" },
+    { label: "Products", href: "/products" },
+    { label: "Suppliers", href: "/suppliers" },
+    { label: "Trade Shows", href: "/trade-shows" },
+    { label: "Industry Channels", href: "/industry-channels" },
+    { label: "Trade Alert", href: "/trade-alert" },
+    { label: "Buying Request", href: "/buying-request" },
+    { label: "Sell on CSR", href: "/sell-on-csr" },
   ];
 
   // Flatten sub-items with global index so each gets a unique mm-sub-N class
@@ -33,7 +33,7 @@ export function NavBar() {
             CSS :has(.mm-sub-N:hover) reveals the matching panel. */}
         <div className="mm-root relative max-xl:hidden">
           <div className="px-6 py-3.5 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[13.5px] cursor-pointer w-[280px]">
-            <span>☰</span> 全部分类 <span className="ml-auto">▾</span>
+            <span>☰</span> ALL CATEGORIES <span className="ml-auto">▾</span>
           </div>
           <div className="mm-wrap absolute top-full left-0 flex items-stretch bg-paper text-ink border border-line shadow-lg z-40">
             <aside className="mm-l1 w-[260px] border-r border-line py-2">
@@ -99,18 +99,18 @@ export function NavBar() {
             href="/factory-tour"
             className="px-4 py-3.5 text-gold text-[13.5px] font-medium border-b-[3px] border-transparent -mb-[3px] hover:bg-brand-dark hover:border-b-gold whitespace-nowrap text-center md:max-xl:flex-1 md:max-xl:basis-[20%] md:max-xl:px-2 md:max-xl:py-2.5 md:max-xl:text-[12.5px]"
           >
-            🔥 实地验厂
+            🔥 Factory Tour
           </Link>
         </div>
 
-        {/* TABLET + MOBILE: hamburger drawer for "Tất cả danh mục".
+        {/* TABLET + MOBILE: hamburger drawer for "All Categories".
             Renders each main category as a heading + its full sub-items
             list below (NAV_MENU, not NAV_CATEGORIES) so users can drill
             straight to a sub-category without an extra tap. */}
         <details className="hidden max-xl:block group md:max-xl:order-1">
           <summary className="px-4 py-3 bg-brand-dark text-white flex items-center gap-2.5 font-bold text-[14px] cursor-pointer list-none [&::-webkit-details-marker]:hidden">
             <span className="text-[18px]">☰</span>
-            <span className="flex-1">全部分类</span>
+            <span className="flex-1">ALL CATEGORIES</span>
             <span className="group-open:rotate-180 transition-transform">▾</span>
           </summary>
           <div className="bg-paper text-ink border-t border-brand-dark max-h-[70vh] overflow-y-auto">
@@ -157,7 +157,7 @@ export function NavBar() {
             href="/factory-tour"
             className="px-3.5 py-2.5 text-gold text-[12.5px] font-medium whitespace-nowrap flex-shrink-0 active:bg-brand-dark"
           >
-            🔥 工厂
+            🔥 Factory
           </Link>
         </div>
       </div>

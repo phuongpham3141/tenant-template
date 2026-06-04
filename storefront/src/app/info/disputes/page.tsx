@@ -2,128 +2,128 @@ import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const HERO_STATS = [
-  { n: "多数", l: "证据充分时投诉结果有利于采购商", icon: "⚖️" },
-  { n: "<24h", l: "平均响应时间", icon: "⏱" },
-  { n: "累计", l: "受华越保障的订单价值", icon: "🛡" },
-  { n: "24/7", l: "紧急热线", icon: "📞" },
+  { n: "Majority", l: "Of disputes resolved in the buyer's favor with full evidence", icon: "⚖️" },
+  { n: "<24h", l: "Average response time", icon: "⏱" },
+  { n: "Cumulative", l: "Order value protected by Huayue", icon: "🛡" },
+  { n: "24/7", l: "Emergency hotline", icon: "📞" },
 ];
 
 const COMPLAINT_TYPES = [
   {
     icon: "🎨",
     color: "#DC2626",
-    title: "技术规格不符",
-    desc: "交货不符合 PI/合同中约定的规格——尺寸、颜色、材质有误，认证（CE、FCC、RoHS）缺失或造假。",
+    title: "Wrong Technical Specification",
+    desc: "Goods delivered do not match the spec signed in the PI/contract — wrong size, color, material, or missing/forged certification (CE, FCC, RoHS).",
     successRate: "94%",
     avgDays: "5",
-    evidence: "仓库货品照片 · PO 规格 · 必要时提供实验室报告",
+    evidence: "Photos of goods at warehouse · PO spec · lab report if needed",
   },
   {
     icon: "📊",
     color: "#7C2D12",
-    title: "品质不合格 / AQL 不达标",
-    desc: "主要缺陷 + 次要缺陷率超过约定的 AQL 2.5。缺陷超出已确认产前样的容差范围。",
+    title: "Poor Quality / AQL Failure",
+    desc: "Major + minor defect rate exceeds the agreed AQL 2.5. Defects fall outside the tolerance of the signed pre-production sample.",
     successRate: "82%",
     avgDays: "9",
-    evidence: "SGS/BV 报告 · 缺陷照片 · 对比样品 · 开箱视频",
+    evidence: "SGS/BV report · defect photos · comparison sample · unboxing video",
   },
   {
     icon: "🔢",
     color: "#92400E",
-    title: "数量短缺",
-    desc: "实际清点数量少于 PO——且无事先通知。通常允许的容差为 ±2%（依据 Incoterms 2020）。",
+    title: "Short Quantity",
+    desc: "Actual count is lower than the PO with no prior notice. The usual allowed tolerance is ±2% (per Incoterms 2020).",
     successRate: "96%",
     avgDays: "3",
-    evidence: "装箱单 · 点货照片 · 集装箱卸货视频 · 仓库记录",
+    evidence: "Packing List · count photos · container unload video · warehouse report",
   },
   {
     icon: "⏰",
     color: "#1E3A8A",
-    title: "交货延迟",
-    desc: "供应商未在 PO 约定期限内交货，且无有效的不可抗力理由通知。通常容差为 14 天。",
+    title: "Late Delivery",
+    desc: "The supplier failed to deliver by the deadline stated in the PO without a valid force majeure notice. Usual tolerance is 14 days.",
     successRate: "78%",
     avgDays: "7",
-    evidence: "PO 期限日期 · 邮件/聊天证据 · 损失记录（若有终端客户取消）",
+    evidence: "PO deadline date · email/chat evidence · loss tracker (if an end customer canceled)",
   },
   {
     icon: "📦",
     color: "#0E7490",
-    title: "包装不当导致损坏",
-    desc: "因供应商包装不符合标准导致损坏——纸箱受潮、无托盘、易碎品无护角、无气泡膜等。",
+    title: "Damage From Packaging",
+    desc: "Damage caused by the supplier packing below standard — wet cartons, no pallet, no corner protectors for fragile goods, no bubble wrap, and so on.",
     successRate: "85%",
     avgDays: "11",
-    evidence: "卸货时纸箱状态照片 · 港口记录 · 与包装规格对比",
+    evidence: "Photos of carton condition at unload · report at port · comparison with packaging spec",
   },
   {
     icon: "🚢",
     color: "#0369A1",
-    title: "运输途中损坏",
-    desc: "因自然灾害、碰撞、火灾、船舶沉没等运输途中造成的损失——非供应商责任。通过海运保险处理，不走交易保障。",
+    title: "Shipping Damage",
+    desc: "Loss in transit due to natural disaster, collision, fire, or sinking — NOT the supplier's fault. Handled via Marine Insurance, not Trade Assurance.",
     successRate: "91%",
     avgDays: "21",
-    evidence: "提单 · 船公司记录 · 损失照片 · 保险公估报告",
+    evidence: "Bill of Lading · carrier report · loss photos · insurance survey report",
   },
   {
     icon: "🚨",
     color: "#9F1239",
-    title: "欺诈 / 诈骗",
-    desc: "供应商收款后不生产、失联，或交付假冒品牌货品。最严重的情形——立即上报升级。",
+    title: "Fraud / Scam",
+    desc: "The supplier took payment but never produced, disappeared, or delivered counterfeit-brand goods. The most serious case — escalate immediately.",
     successRate: "100%",
     avgDays: "5",
-    evidence: "全部沟通记录 · 付款追踪 · 天眼查供应商报告",
+    evidence: "All communications · payment tracking · Tianyancha report on the supplier",
   },
   {
     icon: "©",
     color: "#581C87",
-    title: "侵犯知识产权 / 抄袭",
-    desc: "交付货品侵犯第三方商标、外观专利、著作权——采购商进口时存在法律风险。高优先级处理。",
+    title: "IP Infringement / Copying",
+    desc: "Delivered goods infringe a third party's trademark, design patent, or copyright — the buyer faces legal risk on import. Handled as high priority.",
     successRate: "89%",
     avgDays: "15",
-    evidence: "知识产权原始文件 · 侵权货品照片 · 海关通知（若有）",
+    evidence: "Original IP documents · photos of infringing goods · notice from customs authority if any",
   },
 ];
 
 const ESCALATION_TIERS = [
   {
     tier: "1",
-    label: "直接对话",
+    label: "Direct Dialogue",
     color: "#16A34A",
-    duration: "0-3 天",
+    duration: "0–3 days",
     bgRate: "62%",
-    description: "采购商在控制台发起争议，供应商在 1 小时内收到通知。双方通过 CSR 聊天（配备翻译）直接协商，寻求自愿解决方案。约 62% 的案件在此层级结案——供应商承认问题并提出解决方案（折扣、补发货、部分退款）。",
+    description: "The buyer opens a dispute on the dashboard, and the supplier receives notice within 1 hour. Both sides negotiate directly via CSR chat (with a translator) to reach a voluntary resolution. About 62% of cases close at this tier — the supplier accepts fault and proposes a solution (discount, replacement shipment, partial refund).",
     actions: [
-      "采购商发起争议并附上证据",
-      "供应商在 24-48 小时内响应",
-      "对话过程由华越广州团队跟进",
-      "达成协议 → 关闭争议",
+      "Buyer opens the dispute with evidence attached",
+      "Supplier responds within 24–48h",
+      "Dialogue monitored by the Huayue Guangzhou team",
+      "Agreement reached → close the dispute",
     ],
   },
   {
     tier: "2",
-    label: "华越调解",
+    label: "Huayue Mediation",
     color: "#005F6B",
-    duration: "3-14 天",
+    duration: "3–14 days",
     bgRate: "31%",
-    description: "若第 1 层级在 5 天内未达成协议，争议升级至第 2 层级——由华越争议专员（持有依据越南 NĐ 22/2017 号商事调解证书）接手。专员审查证据，组织采购商-供应商-CSR 三方通话，依据服务条款作出具约束力的裁决。",
+    description: "If tier 1 reaches no agreement within 5 days, the dispute is escalated to tier 2 — a Huayue Dispute Officer (certified in commercial mediation under NĐ 22/2017) takes over. The officer reviews the evidence, organizes a three-way Buyer–Supplier–CSR call, and issues a binding ruling under the terms of service.",
     actions: [
-      "争议专员审查案件 2-3 天",
-      "三方通话 60-90 分钟（配备同声传译）",
-      "CSR 依据证据 + 条款作出裁决",
-      "执行：通过担保账户退款/换货/抵扣额度",
+      "Dispute Officer reviews the case in 2–3 days",
+      "Three-way call of 60–90 minutes (with simultaneous interpretation)",
+      "CSR issues a ruling based on evidence + terms",
+      "Enforcement: refund/replace/credit via escrow account",
     ],
   },
   {
     tier: "3",
-    label: "VIAC / CIETAC 仲裁",
+    label: "VIAC / CIETAC Arbitration",
     color: "#A21CAF",
-    duration: "60-180 天",
+    duration: "60–180 days",
     bgRate: "7%",
-    description: "若一方不接受第 2 层级裁决，有权提交正式仲裁——按 PI 中约定的条款，越南法律适用 VIAC（越南国际仲裁中心），中国法律适用 CIETAC（中国国际经济贸易仲裁委员会）。仲裁裁决具有国际执行效力（1958 年纽约公约）。",
+    description: "If either party rejects the tier 2 ruling, they may bring the matter to formal arbitration — VIAC (Vietnam International Arbitration Centre) under Vietnamese law, or CIETAC (China International Economic and Trade Arbitration Commission) under Chinese law, per the clause chosen in the PI. An arbitral award is internationally enforceable (New York Convention 1958).",
     actions: [
-      "提交仲裁申请 + 费用约 $2,000-8,000",
-      "指定 1-3 名仲裁员组成仲裁庭",
-      "线上或在仲裁机构总部开庭审理",
-      "裁决具约束力，依据纽约公约国际执行",
+      "File the arbitration request + fee of ~$2,000–8,000",
+      "A panel of 1–3 arbitrators is appointed",
+      "Hearing held online or at the arbitration HQ",
+      "Binding award, internationally enforceable via the New York Convention",
     ],
   },
 ];
@@ -131,162 +131,162 @@ const ESCALATION_TIERS = [
 const PROCESS_STEPS = [
   {
     n: "01",
-    title: "发现问题",
-    deadline: "收货后 7 天内",
-    desc: "采购商在自有仓库验货（不在港口——须在卸货并完成布置后）。7 天验货期是交易保障条款中公开的标准——此后系统自动确认且担保账户放款。",
+    title: "Identify the Problem",
+    deadline: "Within 7 days of receiving the goods",
+    desc: "The buyer inspects the goods at their own warehouse (not at the port — only after unloading and setup). The 7-day inspection period is the standard published in the Trade Assurance terms — after that, the system auto-confirms and the escrow account releases payment.",
     tips: [
-      "货值 < $10K 时 100% 全检，> $10K 时抽检 32 件（依据 AQL 2.5）",
-      "拍摄外箱开箱 + 内部产品视频，至少 90 秒",
-      "随机测量 5 件尺寸，与 PO 规格对比",
+      "Inspect 100% of the shipment if value is under $10K, or a 32-pc sample if over $10K (per AQL 2.5)",
+      "Record an unboxing video of the outer carton + the product inside, at least 90 seconds",
+      "Measure 5 random units and compare against the PO spec",
     ],
   },
   {
     n: "02",
-    title: "收集证据",
-    deadline: "发现问题后 24 小时内",
-    desc: "证据越详尽，争议越快得到有利处理。投入 2-4 小时准备充分证据，通常可将胜诉率从约 60% 提升至 90% 以上。",
+    title: "Gather Evidence",
+    deadline: "Within 24 hours of discovery",
+    desc: "The more detailed the evidence, the faster the dispute is resolved in your favor. Investing 2–4 hours in solid evidence typically raises the win rate from about 60% to 90%+.",
     tips: [
-      "8 张以上多角度照片，重点拍摄缺陷特写",
-      "60-180 秒连续拍摄视频，不剪辑",
-      "PO 规格与实物对比表（Excel/PDF）",
-      "强烈建议：> $20K 订单提供第三方验货报告（SGS/BV）",
+      "8+ photos from multiple angles, focusing on close-ups of the defect",
+      "A 60–180 second video, recorded continuously without cuts",
+      "A spec comparison table, PO vs. actual (Excel/PDF)",
+      "Strongly recommended: a third-party inspection report (SGS/BV) for orders over $20K",
     ],
   },
   {
     n: "03",
-    title: "在华越控制台发起争议",
-    deadline: "7 天内",
-    desc: "登录 /buyer-center/orders，选择订单 → “发起投诉” → 上传全部证据。系统立即自动冻结担保账户——供应商在争议解决前无法收款。",
+    title: "Open a Dispute on the Huayue Dashboard",
+    deadline: "Within 7 days",
+    desc: "Sign in at /buyer-center/orders, select the order → 'Open a Complaint' → upload all evidence. The system instantly locks the escrow account — the supplier cannot receive payment until the matter is resolved.",
     tips: [
-      "选择正确的类别（规格不符 / 品质 / 数量 等）",
-      "清晰描述问题，不带情绪——只陈述事实",
-      "明确写出期望的解决方案（退款 X% / 换货 / 抵扣额度）",
+      "Choose the correct category (wrong spec / quality / quantity / etc.)",
+      "Describe the issue clearly and without emotion — state the facts",
+      "Specify your expected resolution (refund X% / replace / credit)",
     ],
   },
   {
     n: "04",
-    title: "供应商响应",
-    deadline: "供应商有 48 小时",
-    desc: "供应商收到通知（邮件 + 微信/钉钉），须在 48 个工作小时内响应。不响应 = 丧失自我抗辩权，争议自动升级至第 2 层级，并推定为供应商责任。",
+    title: "Supplier Responds",
+    deadline: "The supplier has 48 hours",
+    desc: "The supplier receives notice (email + WeChat/DingTalk) and must respond within 48 business hours. No response = loss of the right to self-defense, and the dispute auto-escalates to tier 2 with a presumption of supplier fault.",
     tips: [
-      "供应商承认问题 → 第 1 层级直接协商",
-      "供应商否认 → 72 小时内上传反驳证据",
-      "采购商可要求三方视频通话（配备翻译）",
+      "If the supplier accepts fault → tier 1 direct settlement",
+      "If the supplier disputes it → upload counter-evidence within 72h",
+      "The buyer may request a three-way video call (with interpretation)",
     ],
   },
   {
     n: "05",
-    title: "直接对话（第 1 层级）",
-    deadline: "5 天",
-    desc: "双方通过有调度员跟进的 CSR 聊天协商。约 62% 案件在此达成协议。常见方案：退款 15-50% + 保留货品、退款 100% + 退货、免费补发货、抵扣后续订单额度。",
+    title: "Direct Dialogue (Tier 1)",
+    deadline: "5 days",
+    desc: "Both sides negotiate via CSR chat with a dispatcher monitoring. About 62% of cases reach agreement here. Common solutions: 15–50% refund + keep the goods, 100% refund + return, free replacement shipment, or credit toward a future order.",
     tips: [
-      "提供至少 2 种方案供供应商选择",
-      "在华越上以书面形式记录协议（自动具约束力）",
-      "不要在系统外进行私下协议——无法律保护",
+      "Offer at least 2 options for the supplier to choose from",
+      "Record the agreement in writing on Huayue (auto-binding)",
+      "Do not settle privately outside the system — there is no legal protection",
     ],
   },
   {
     n: "06",
-    title: "华越调解（第 2 层级）",
-    deadline: "14 天",
-    desc: "若第 1 层级失败，由华越争议专员（持 NĐ 22/2017 号调解证书）接手。审查证据 2-3 天，组织三方通话 60-90 分钟，依据证据 + 服务条款作出裁决。裁决通过已签署条款对双方均具约束力。",
+    title: "Huayue Mediation (Tier 2)",
+    deadline: "14 days",
+    desc: "If tier 1 fails, a Huayue Dispute Officer (certified in mediation under NĐ 22/2017) takes over. They review evidence for 2–3 days, hold a three-way call of 60–90 minutes, and issue a ruling based on evidence + the terms of service. The ruling is binding on both parties under the signed terms.",
     tips: [
-      "裁决依据：PO 规格、证据质量、供应商历史记录、AQL 标准",
-      "供应商不执行 → 暂停账户 + 没收保证金",
-      "采购商在裁决生效前有 5 天上诉期",
+      "Ruling is based on: PO spec, evidence quality, supplier track record, AQL standard",
+      "Supplier fails to comply → account suspension + reserved fund forfeit",
+      "The buyer has 5 days to appeal before the ruling takes effect",
     ],
   },
   {
     n: "07",
-    title: "执行并关闭争议",
-    deadline: "5-10 天",
-    desc: "裁决得到执行：退款通过担保账户退回采购商账户，换货免费寄出并享 QC 优先，或抵扣额度计入 CSR 钱包用于后续订单。违约供应商被扣减评分和保证金。",
+    title: "Enforce & Close the Dispute",
+    deadline: "5–10 days",
+    desc: "The ruling is enforced: a refund is returned from the escrow account to the buyer's account, a replacement is shipped free with priority QC, or a credit is recorded in the CSR Wallet for a future order. Suppliers in breach have their rating and reserved fund deducted.",
     tips: [
-      "退款在 5-10 个工作日内退回原账户",
-      "换货免费快递寄出，并经出厂前 QC",
-      "抵扣额度 12 个月内有效，适用于华越上所有供应商",
+      "Refund is returned to the original account within 5–10 business days",
+      "Replacement ships free by express with pre-shipment QC",
+      "Credit is valid for 12 months and applies to any supplier on Huayue",
     ],
   },
 ];
 
 const OUTCOMES = [
-  { icon: "💰", title: "全额退款 100%", pct: "38%", desc: "通过担保账户全额退还订单价值。适用于欺诈、严重规格不符、供应商不交货等情形。" },
-  { icon: "📊", title: "部分退款", pct: "27%", desc: "视程度退款 15-70%。采购商保留货品，适用于不严重但可降价销售的瑕疵。" },
-  { icon: "🔄", title: "换货", pct: "19%", desc: "供应商免费补发货并享 QC 优先。适用于采购商需要符合规格货品以供应终端客户的情形。" },
-  { icon: "🎟", title: "抵扣额度 / 代金券", pct: "11%", desc: "抵扣额度计入 CSR 钱包用于后续订单，通常为损失价值的 100-150% 以留住采购商。" },
-  { icon: "⚖️", title: "仲裁", pct: "5%", desc: "未达成协议的大额争议提交 VIAC / CIETAC。裁决具国际约束力。" },
+  { icon: "💰", title: "100% Refund", pct: "38%", desc: "Full refund of the order value via escrow account. Applies to fraud, severe spec mismatch, and supplier non-delivery." },
+  { icon: "📊", title: "Partial Refund", pct: "27%", desc: "A 15–70% refund depending on severity. The buyer keeps the goods; applies to non-serious defects that can still be sold at a discount." },
+  { icon: "🔄", title: "Replacement", pct: "19%", desc: "The supplier ships a free replacement with priority QC. Applies when the buyer needs goods that match spec to sell to end customers." },
+  { icon: "🎟", title: "Credit / Voucher", pct: "11%", desc: "A credit recorded in the CSR Wallet for a future order, typically 100–150% of the loss value to retain the buyer." },
+  { icon: "⚖️", title: "Arbitration", pct: "5%", desc: "Brought to VIAC / CIETAC for large disputes with no agreement. Internationally binding award." },
 ];
 
 const CASE_STUDIES = [
   {
-    title: "$42K 木制家具订单——木纹不符",
-    industry: "家具",
-    days: "11 天",
-    outcome: "退款 35% + 保留货品",
-    detail: "河内采购商订购 220 件橱柜，佛山供应商交货尺寸正确，但“深胡桃木”木纹比已确认样品偏浅。采购商提交 24 张照片 + Pantone 对比表发起争议。供应商起初否认（“天然木纹存在色差”）。第 2 层级调解审查 CSR 存档的批次样品——确认色差超出容差。裁决退款 35% 货值，采购商保留货品以较低价格转售给二级经销商。",
+    title: "$42K wooden furniture order — wrong wood grain",
+    industry: "Furniture",
+    days: "11 days",
+    outcome: "35% refund + keep the goods",
+    detail: "A Hanoi buyer ordered 220 cabinets; the Foshan supplier delivered the correct size, but the 'walnut dark' grain was lighter than the signed sample. The buyer opened a dispute with 24 photos + a Pantone comparison chart. The supplier initially rejected it ('natural wood grain varies'). Tier 2 mediation reviewed the batch sample archived at CSR — and found the color deviation exceeded tolerance. The ruling was a 35% refund, with the buyer keeping the goods to sell at a lower price to a tier-2 dealer.",
   },
   {
-    title: "$18K LED 灯具订单——12% 灯不亮",
-    industry: "电子产品",
-    days: "7 天",
-    outcome: "免费换货 + 赔偿",
-    detail: "胡志明市采购商订购 1,200 个 LED 面板灯，随机抽检 100 个发现 12% 不亮（缺陷率超过 AQL 2.5）。SGS 报告确认为电路缺陷。第 1 层级：供应商立即承认，免费快递补发 150 个灯 + 后续 $500 代金券。7 天内关闭争议——无需升级至第 2 层级。",
+    title: "$18K LED order — 12% of lights did not turn on",
+    industry: "Electronics",
+    days: "7 days",
+    outcome: "Free replacement + compensation",
+    detail: "A Ho Chi Minh City buyer ordered 1,200 LED panel lights; a random check of 100 units found 12% would not turn on (defect rate exceeding AQL 2.5). An SGS report confirmed a circuit fault. Tier 1: the supplier accepted immediately, shipped 150 replacement lights free by express + a $500 voucher for next time. The dispute closed in 7 days — no need to reach tier 2.",
   },
   {
-    title: "$76K 卫浴订单——供应商违约",
-    industry: "卫浴",
-    days: "21 天",
-    outcome: "全额退款 100%",
-    detail: "海防采购商订购 380 个佛山马桶。收取 30% 定金后，供应商停止响应 14 天，天眼查显示该供应商进入破产预警名单。CSR 立即上报升级，查封担保账户，供应商 5 天未响应后第 2 层级调解自动触发。通过越南合作银行在 14 个工作日内全额退款 100%。供应商被永久暂停 CSR 资格。",
+    title: "$76K sanitary order — supplier default",
+    industry: "Sanitary",
+    days: "21 days",
+    outcome: "100% refund",
+    detail: "A Hai Phong buyer ordered 380 toilets from Foshan. After receiving a 30% deposit, the supplier went silent for 14 days, and Tianyancha showed the supplier was flagged for bankruptcy risk. CSR escalated immediately, sealed the escrow account, and tier 2 mediation auto-triggered after 5 days of no supplier response. A 100% refund was issued within 14 business days through a Vietnamese partner bank. The supplier was permanently suspended from CSR.",
   },
   {
-    title: "$135K 纺织订单——侵犯知识产权",
-    industry: "纺织",
-    days: "28 天",
-    outcome: "全额退款 100% + 法律费用赔偿",
-    detail: "岘港采购商订购 5,000 件衬衫。货物抵达仙沙港时，海关因检测到标志与已注册马德里协定的品牌高度相似而扣留货物。供应商起初否认，但第 3 层级 VIAC 仲裁在 28 天内审结，判令供应商全额退款 100% + 赔偿 $14K 海关仓储费及法律费用。裁决通过纽约公约在中国执行。",
+    title: "$135K textile order — IP infringement",
+    industry: "Textile",
+    days: "28 days",
+    outcome: "100% refund + legal compensation",
+    detail: "A Da Nang buyer ordered 5,000 shirts. When the goods arrived at Tien Sa port, customs held the shipment after detecting a logo too similar to a brand registered under the Madrid Protocol. The supplier initially denied it, but tier 3 VIAC arbitration ruled within 28 days, ordering the supplier to refund 100% + pay $14K in customs storage fees + legal fees. The award was enforced via the New York Convention in China.",
   },
 ];
 
 const EMERGENCY_CHANNELS = [
-  { icon: "🚨", title: "24/7 紧急热线", value: "+86 181-2225-6999", desc: "适用于欺诈、侵犯知识产权、海关扣货——立即来电，30 分钟内响应" },
-  { icon: "💬", title: "争议在线客服", value: "dashboard /buyer-center", desc: "在订单上点击“发起投诉”——直接与争议专员对话" },
-  { icon: "✉", title: "争议团队邮箱", value: "dispute@huayuesc.vn", desc: "提交复杂案件并附上证据——工作时间内 2 小时内响应" },
-  { icon: "📱", title: "WhatsApp / Zalo", value: "+84 +86 181-2225-6999", desc: "适用于网络不稳定的偏远地区采购商，由升级经理负责" },
+  { icon: "🚨", title: "24/7 Emergency Hotline", value: "+86 181-2225-6999", desc: "For fraud, IP infringement, or customs holds — call now, response within 30 minutes" },
+  { icon: "💬", title: "Dispute Live Chat", value: "dashboard /buyer-center", desc: "Click 'Open a Complaint' on the order — chat directly with a Dispute Officer" },
+  { icon: "✉", title: "Dispute Team Email", value: "dispute@huayuesc.vn", desc: "Send complex cases with evidence attached — response under 2 hours during business hours" },
+  { icon: "📱", title: "WhatsApp / Zalo", value: "+84 +86 181-2225-6999", desc: "For buyers in remote areas without stable internet, handled by an escalation manager" },
 ];
 
 const FAQ = [
   {
-    q: "我收货已经 10 天才发现问题——还能提起投诉吗？",
-    a: "正式验货期为收货后 7 天。7 天后，担保账户自动放款，通过交易保障提起投诉的权利失效。但若属于隐蔽缺陷（例如机器运行 30 天后才因材料不良损坏），您仍可在 30 天内发起争议——不过举证责任更高，需提供独立实验室报告证明系供应商责任。超过 30 天：只能依据越南《商法 2005》提交 VIAC 仲裁（依据第 318 条，投诉时效为 6 个月）。",
+    q: "I received the goods 10 days ago and only just found a defect — can I still file a complaint?",
+    a: "The official inspection period is 7 days from receipt of the goods. After 7 days, the escrow account auto-releases payment and the right to claim through Trade Assurance expires. However, if the defect is hidden (for example, a machine that runs for 30 days before failing due to poor material), you can still open a dispute within 30 days — but the burden of proof is higher and requires an independent lab report proving the fault lies with the supplier. Beyond 30 days: the only option is VIAC arbitration under the Commercial Law 2005 (a 6-month limitation period for claims under Article 318).",
   },
   {
-    q: "投诉费用是多少？",
-    a: "第 1 层级（直接对话）和第 2 层级（CSR 调解）——对采购商完全免费。CSR 将争议处理系统作为交易保障的一部分进行投入。第 3 层级（VIAC 河内仲裁）——仲裁费用 $2,000-8,000，视争议金额而定，通常由败诉方承担。若采购商胜诉，CSR 为第 3 层级提供法律费用支持——不额外收费。",
+    q: "How much does filing a complaint cost?",
+    a: "Tier 1 (direct dialogue) and Tier 2 (CSR mediation) are COMPLETELY FREE for the buyer. CSR invests in the dispute system as part of Trade Assurance. Tier 3 (VIAC arbitration in Hanoi) carries an arbitration fee of $2,000–8,000 depending on the value in dispute, and the loser typically pays. CSR supports the legal costs for tier 3 if the buyer wins — at no extra charge.",
   },
   {
-    q: "我需要聘请律师吗？",
-    a: "并非必须。第 1 层级和第 2 层级只需采购商与华越争议专员直接对接——他们持有依据 NĐ 22/2017 号的商事调解证书，并已处理数千起案件。第 3 层级（VIAC）则建议 > $50K 订单聘请律师——CSR 备有为客户提供优惠费率的合作律所名单（Baker McKenzie、YKVN、VILAF 等——费率 $200-450/小时）。",
+    q: "Do I need to hire a lawyer?",
+    a: "Not required. For Tier 1 and Tier 2, the buyer simply works directly with a Huayue Dispute Officer — they are certified in commercial mediation under NĐ 22/2017 and have handled thousands of cases. For Tier 3 (VIAC), a lawyer is recommended for orders over $50K — CSR maintains a list of partner law firms with preferred rates for clients (Baker McKenzie, YKVN, VILAF, and others — rates of $200–450/hour).",
   },
   {
-    q: "供应商已交货 5 天，但我需要更多时间验货（仓库在偏远省份，货未到）——如何延期？",
-    a: "在 /buyer-center/orders 控制台选择订单 → “申请延长验货期”。系统允许免费自动延长至累计 21 天（7 + 14 天额外天数）——只需正当理由（仓库偏远、出差中、春节假期）。供应商收到延期通知，但无否决权。21 天后即截止，担保账户自动放款。",
+    q: "The supplier delivered 5 days ago but I need more time to inspect (my warehouse is in a distant province and the goods have not arrived) — how do I get an extension?",
+    a: "On the dashboard at /buyer-center/orders, select the order → 'Request an inspection period extension'. The system automatically grants an extension up to 21 days total (7 + a 14-day bonus) free of charge — you just need a valid reason (distant warehouse, business travel, public holiday). The supplier is notified of the extension but cannot veto it. After 21 days it ends, and the escrow account auto-releases.",
   },
   {
-    q: "若裁决对我不利，我有权上诉吗？",
-    a: "有。第 2 层级裁决（华越调解）在生效执行前有 5 天上诉期。采购商可附上新证据或新法律论点提交上诉——由（级别更高的）高级争议专员重新审查 7-10 天。若仍不同意，采购商有权提交第 3 层级——按 PI 中条款提交 VIAC 河内仲裁。仲裁裁决为终局，不可上诉（依据《商事仲裁法 2010》）。",
+    q: "If the ruling is not in my favor, do I have the right to appeal?",
+    a: "Yes. A Tier 2 (Huayue Mediation) ruling has a 5-day appeal window before it takes effect. The buyer files an appeal with new evidence or new legal arguments — a Senior Dispute Officer (a higher level) reviews it again over 7–10 days. If you still disagree, you have the right to bring the matter to Tier 3 — VIAC arbitration in Hanoi per the clause in the PI. An arbitral award is final and cannot be appealed (under the Commercial Arbitration Law 2010).",
   },
   {
-    q: "我担心发起争议后供应商报复（将我列入黑名单、抬高后续订单价格……）",
-    a: "CSR 服务条款绝对禁止报复行为。供应商若被发现对曾发起争议（且裁决已生效）的采购商抬价或拒单，将立即被暂停 90 天 + 冻结 25% 保证金。采购商可通过 dispute@huayuesc.vn 举报报复行为——CSR 将独立调查处理。实际上，报复极为罕见，因为供应商担心失去“已认证”等级。",
+    q: "I'm worried the supplier will retaliate after I open a dispute (blacklist me, raise prices on future orders, etc.).",
+    a: "The CSR terms of service strictly prohibit retaliation. A supplier found raising prices or refusing orders from a buyer who previously opened a dispute (with a ruling that took effect) is immediately suspended for 90 days + has 25% of its reserved fund frozen. Buyers can report retaliation to dispute@huayuesc.vn — CSR investigates and handles it independently. In practice, retaliation is very rare because suppliers fear losing their Verified tier.",
   },
   {
-    q: "投诉会影响我作为采购商的评分吗？",
-    a: "不会。CSR 仅依据争议历史追踪供应商评分，不会依据采购商是否发起争议来追踪其评分。鼓励采购商在确有问题时发起争议——这正是系统自我完善的方式。但若采购商提起虚假投诉（不实主张），其评分可能被下调并失去访问高级供应商的权限。",
+    q: "Does filing a complaint affect my rating as a buyer?",
+    a: "No. CSR only tracks supplier ratings based on dispute history; it does NOT track buyer ratings based on opening disputes. Buyers are encouraged to open a dispute whenever there is a real problem — that is how the system improves itself. However, a buyer who opens a fraudulent dispute (a false claim) may have their buyer rating lowered and lose access to Premium-tier suppliers.",
   },
   {
-    q: "特殊情形：货物为违禁品或违反越南法律——如何处理？",
-    a: "若货物违反 NĐ 69/2018 号（禁止进口）、《食品安全法》或专业领域法规（药品、危险化学品检疫等）：海关扣货，CSR 立即升级至第 3 层级 VIAC 仲裁 + 向海关总局报告。采购商获全额退款 100% + 法律费用赔偿。供应商被永久暂停平台资格并列入公开黑名单 trustpage.huayuesc.vn。",
+    q: "Special case: goods are prohibited or violate Vietnamese law — how is this handled?",
+    a: "If the shipment violates NĐ 69/2018 (import ban), the Food Safety Law, or sector-specific regulations (drug authorities, hazardous chemicals, etc.): customs holds the goods, and CSR immediately escalates to Tier 3 VIAC arbitration + reports to the Customs Department. The buyer receives a full 100% refund + compensation for legal expenses. The supplier is permanently suspended from the platform and added to the public blacklist at trustpage.huayuesc.vn.",
   },
 ];
 
@@ -305,9 +305,9 @@ export default function KhieuNaiPage() {
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "信息", href: "/help" },
-          { label: "投诉与争议" },
+          { label: "Home", href: "/" },
+          { label: "Information", href: "/help" },
+          { label: "Complaints & Disputes" },
         ]}
       />
 
@@ -322,14 +322,14 @@ export default function KhieuNaiPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-12 max-md:py-8">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            ⚖️ 投诉与争议
+            ⚖️ COMPLAINTS & DISPUTES
           </span>
           <h1 className="text-[40px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
-            当一切不按计划进行时<br />
-            <span className="text-gold">华越始终站在您这边</span>
+            When things do not go to plan<br />
+            <span className="text-gold">Huayuesc stands on your side</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
-            三级争议解决体系——从直接对话，到依据 NĐ 22/2017 号的华越调解，再到依据 1958 年纽约公约的 VIAC 河内国际仲裁。越南采购商受法律保护，而非空头承诺。证据充分时，多数案件以有利于采购商的结果收场。
+            A 3-tier dispute resolution system — from direct dialogue, through Huayue Mediation under NĐ 22/2017, to international VIAC arbitration in Hanoi under the New York Convention 1958. Vietnamese buyers are protected by law, not by promises. Most cases close in the buyer's favor when the evidence is complete.
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -341,13 +341,13 @@ export default function KhieuNaiPage() {
               href="#mo-disputes"
               className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              📝 立即发起投诉
+              📝 Open a Complaint Now
             </a>
             <a
               href="tel:19006688"
               className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              🚨 紧急热线 +86 181-2225-6999
+              🚨 Emergency Hotline +86 181-2225-6999
             </a>
           </div>
         </div>
@@ -361,22 +361,22 @@ export default function KhieuNaiPage() {
               ⏰
             </div>
             <div className="flex-1">
-              <h2 className="text-[18px] font-bold text-ink mb-2">验货期——收货后 7 天</h2>
+              <h2 className="text-[18px] font-bold text-ink mb-2">Inspection Period — 7 days from receipt of goods</h2>
               <p className="text-[13px] text-mute leading-relaxed mb-3">
-                这是采购商有权通过交易保障免费验货并提起投诉的期间。7 天后，担保账户自动向供应商放款，投诉权转入更高举证标准模式（隐蔽缺陷 30 天，或依据《商法 2005》仲裁——时效 6 个月）。
+                This is the window in which the buyer has the right to inspect and file a complaint for free through Trade Assurance. After 7 days, the escrow account auto-releases payment to the supplier, and the right to claim shifts to a higher-evidence mode (30-day hidden defect, or arbitration under the Commercial Law 2005 — a 6-month limitation period).
               </p>
               <div className="grid grid-cols-3 gap-2 text-center text-[12px] max-md:grid-cols-1">
                 <div className="bg-success/10 border border-success/30 rounded-sm p-3">
-                  <div className="font-bold text-success">0-7 天</div>
-                  <div className="text-mute">交易保障 · 免费 · 多数有利于采购商</div>
+                  <div className="font-bold text-success">0–7 days</div>
+                  <div className="text-mute">Trade Assurance · Free · Mostly in the buyer's favor</div>
                 </div>
                 <div className="bg-gold/10 border border-gold/30 rounded-sm p-3">
-                  <div className="font-bold text-[#9C6A1F]">8-30 天</div>
-                  <div className="text-mute">隐蔽缺陷 · 需实验室报告 · 胜诉率 71%</div>
+                  <div className="font-bold text-[#9C6A1F]">8–30 days</div>
+                  <div className="text-mute">Hidden defect · Lab report required · Win rate 71%</div>
                 </div>
                 <div className="bg-mute/10 border border-mute2/30 rounded-sm p-3">
-                  <div className="font-bold text-mute">31 天 - 6 个月</div>
-                  <div className="text-mute">VIAC 仲裁 · 费用 $2-8K · 胜诉率 54%</div>
+                  <div className="font-bold text-mute">31 days – 6 months</div>
+                  <div className="text-mute">VIAC arbitration · Fee $2–8K · Win rate 54%</div>
                 </div>
               </div>
             </div>
@@ -387,10 +387,10 @@ export default function KhieuNaiPage() {
       {/* === Complaint types ================================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-10">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">8 类投诉</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">投诉分类——每类各有专属流程</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">8 COMPLAINT TYPES</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Complaint Categories — Each Has Its Own Process</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            胜诉率、解决时长和所需证据因类别而异。发起争议时选择正确类别可将处理速度提升 30-40%。
+            Win rate, resolution time, and required evidence differ by type. Choosing the right category when you open a dispute speeds resolution by 30–40%.
           </p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -400,7 +400,7 @@ export default function KhieuNaiPage() {
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-[26px]">{t.icon}</span>
                   <span className="text-[10.5px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded-sm" style={{ backgroundColor: t.color, color: "#fff" }}>
-                    {t.successRate} 胜诉
+                    {t.successRate} win
                   </span>
                 </div>
                 <b className="block text-[14px] font-bold text-ink leading-tight">{t.title}</b>
@@ -408,7 +408,7 @@ export default function KhieuNaiPage() {
               <div className="p-4 flex-1 flex flex-col">
                 <p className="text-[12px] text-mute leading-relaxed mb-3 flex-1">{t.desc}</p>
                 <div className="text-[11px] space-y-1 border-t border-line pt-2.5">
-                  <div className="flex justify-between"><span className="text-mute">⏱ 平均解决时长</span><b className="text-ink">{t.avgDays} 天</b></div>
+                  <div className="flex justify-between"><span className="text-mute">⏱ Avg. resolution</span><b className="text-ink">{t.avgDays} days</b></div>
                   <div className="text-mute pt-1">📎 <span className="text-ink">{t.evidence}</span></div>
                 </div>
               </div>
@@ -420,10 +420,10 @@ export default function KhieuNaiPage() {
       {/* === 3-tier escalation =============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">3 级解决体系</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">升级体系——层级越高越正式</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">3 RESOLUTION TIERS</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Escalation System — The Higher the Tier, the More Formal</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            每起案件都从第 1 层级（直接对话）开始。仅在未达成协议时才升级至更高层级。原则：先快速、低成本、自愿协商，后走正式程序。
+            Every case begins at Tier 1 (direct dialogue). It escalates only when no agreement is reached. The principle: fast, cheap, and voluntary first; formal later.
           </p>
         </div>
         <div className="space-y-4">
@@ -436,16 +436,16 @@ export default function KhieuNaiPage() {
                 <div className="flex-1">
                   <div className="flex items-center justify-between gap-3 mb-2 flex-wrap">
                     <div>
-                      <span className="text-[10.5px] uppercase tracking-wider font-bold" style={{ color: t.color }}>第 {t.tier} 层级</span>
+                      <span className="text-[10.5px] uppercase tracking-wider font-bold" style={{ color: t.color }}>TIER {t.tier}</span>
                       <h3 className="text-[20px] font-bold text-ink leading-tight">{t.label}</h3>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="text-center">
-                        <div className="text-[10px] text-mute uppercase">时长</div>
+                        <div className="text-[10px] text-mute uppercase">Duration</div>
                         <b className="text-[14px] text-ink">{t.duration}</b>
                       </div>
                       <div className="text-center">
-                        <div className="text-[10px] text-mute uppercase">本层级处理案件占比</div>
+                        <div className="text-[10px] text-mute uppercase">% of cases resolved at this tier</div>
                         <b className="text-[18px] font-extrabold" style={{ color: t.color }}>{t.bgRate}</b>
                       </div>
                     </div>
@@ -469,10 +469,10 @@ export default function KhieuNaiPage() {
       {/* === Process steps ================================================== */}
       <section id="mo-disputes" className="max-w-[1200px] mx-auto px-4 mt-12 scroll-mt-20">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">7 步流程</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">从发现问题到关闭争议</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">7-STEP PROCESS</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">From Identifying the Problem to Closing the Dispute</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            简单案件整个流程平均 3.2 天内结案，需第 2 层级调解的复杂案件为 11-21 天。
+            On average the full process wraps up in 3.2 days for simple cases, and 11–21 days for complex cases that require tier 2 mediation.
           </p>
         </div>
         <div className="space-y-3">
@@ -495,7 +495,7 @@ export default function KhieuNaiPage() {
                 </div>
                 <p className="text-[13px] text-mute leading-relaxed mb-3">{s.desc}</p>
                 <div className="bg-bg border border-line rounded p-3">
-                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5 block">💡 重要提示</b>
+                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5 block">💡 KEY TIPS</b>
                   <ul className="space-y-1 text-[12px]">
                     {s.tips.map((tip, i) => (
                       <li key={i} className="flex gap-2 text-ink">
@@ -514,10 +514,10 @@ export default function KhieuNaiPage() {
       {/* === Outcomes distribution ========================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">可能的结果</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">2025 年争议结果分布</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">POSSIBLE OUTCOMES</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">2025 Dispute Outcome Distribution</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            数据来自华越已解决的争议——证据充分时，多数以各种形式有利于采购商。
+            Data from resolved disputes at Huayue — most resolve in the buyer's favor, in various forms, when the evidence is complete.
           </p>
         </div>
         <div className="grid grid-cols-5 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -537,10 +537,10 @@ export default function KhieuNaiPage() {
       {/* === Case studies =================================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">典型案例</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">4 个真实案例（已匿名处理）</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">REPRESENTATIVE CASES</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">4 Real Cases (Anonymized)</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            选自已关闭的争议——代表越南采购商最常遇到的 4 类情形。
+            Selected from closed disputes — representing the 4 most common situations Vietnamese buyers face.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -556,11 +556,11 @@ export default function KhieuNaiPage() {
               </div>
               <div className="grid grid-cols-2 gap-3 mb-3 text-[12px]">
                 <div className="bg-bg border border-line rounded p-2">
-                  <div className="text-mute uppercase tracking-wider text-[10px]">⏱ 时长</div>
+                  <div className="text-mute uppercase tracking-wider text-[10px]">⏱ Duration</div>
                   <b className="text-ink">{c.days}</b>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-2">
-                  <div className="text-success uppercase tracking-wider text-[10px]">✓ 结果</div>
+                  <div className="text-success uppercase tracking-wider text-[10px]">✓ Outcome</div>
                   <b className="text-success">{c.outcome}</b>
                 </div>
               </div>
@@ -578,9 +578,9 @@ export default function KhieuNaiPage() {
               🚨
             </div>
             <div>
-              <h2 className="text-[20px] font-bold text-ink mb-1">紧急情形——请立即联系</h2>
+              <h2 className="text-[20px] font-bold text-ink mb-1">Emergency Cases — Contact Now</h2>
               <p className="text-[13px] text-mute leading-relaxed">
-                适用于欺诈、严重侵犯知识产权、海关扣货、供应商失联——不必等待自动流程，立即 24/7 来电/在线沟通，由高级争议专员优先处理。
+                For fraud, serious IP infringement, customs holds, or a supplier that disappears — do not wait for the automated process; call or chat 24/7 to have a Senior Dispute Officer handle it as a priority.
               </p>
             </div>
           </div>
@@ -600,35 +600,35 @@ export default function KhieuNaiPage() {
       {/* === Legal references =============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="bg-paper border border-line rounded p-5">
-          <h2 className="text-[18px] font-bold text-ink mb-3">📚 法律依据——参考</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-3">📚 Legal Basis — References</h2>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 text-[12.5px]">
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">越南法律</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">Vietnamese Law</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• 《商法 2005》——第 318 条（投诉时效）</li>
-                <li>• 《商事仲裁法 2010》</li>
-                <li>• NĐ 22/2017/NĐ-CP 号关于商事调解的法令</li>
-                <li>• 《民法典 2015》——合同制度</li>
-                <li>• NĐ 13/2023/NĐ-CP 号——个人数据保护</li>
+                <li>• Commercial Law 2005 — Article 318 (claim limitation period)</li>
+                <li>• Commercial Arbitration Law 2010</li>
+                <li>• NĐ 22/2017/NĐ-CP on commercial mediation</li>
+                <li>• Civil Code 2015 — contract provisions</li>
+                <li>• NĐ 13/2023/NĐ-CP — personal data protection</li>
               </ul>
             </div>
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">国际</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">International</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• 1958 年纽约公约——仲裁裁决的执行</li>
-                <li>• UNCITRAL 国际商事仲裁示范法</li>
-                <li>• ICC 仲裁规则 2021</li>
-                <li>• Incoterms 2020（ICC）——责任划分</li>
-                <li>• CISG 1980——国际货物销售合同</li>
+                <li>• New York Convention 1958 — enforcement of arbitral awards</li>
+                <li>• UNCITRAL Model Law on International Commercial Arbitration</li>
+                <li>• ICC Rules of Arbitration 2021</li>
+                <li>• Incoterms 2020 (ICC) — allocation of responsibility</li>
+                <li>• CISG 1980 — international sale of goods contracts</li>
               </ul>
             </div>
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">仲裁机构</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">Arbitration Institutions</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• <b className="text-ink">VIAC</b> — 越南国际仲裁中心（河内 + 胡志明市）</li>
-                <li>• <b className="text-ink">CIETAC</b> — 中国国际经济贸易仲裁委员会（北京）</li>
-                <li>• <b className="text-ink">SIAC</b> — 新加坡国际仲裁中心（适用于东盟案件）</li>
-                <li>• <b className="text-ink">HKIAC</b> — 香港国际仲裁中心</li>
+                <li>• <b className="text-ink">VIAC</b> — Vietnam International Arbitration Centre (Hanoi + Ho Chi Minh City)</li>
+                <li>• <b className="text-ink">CIETAC</b> — China International Economic and Trade Arbitration Commission (Beijing)</li>
+                <li>• <b className="text-ink">SIAC</b> — Singapore International Arbitration Centre (for ASEAN cases)</li>
+                <li>• <b className="text-ink">HKIAC</b> — Hong Kong International Arbitration Centre</li>
               </ul>
             </div>
           </div>
@@ -638,8 +638,8 @@ export default function KhieuNaiPage() {
       {/* === FAQ =========================================================== */}
       <section className="max-w-[900px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">常见问题</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">8 个最重要的问题</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">The 8 Most Important Questions</h2>
         </div>
         <div className="space-y-2">
           {FAQ.map((f, i) => (
@@ -662,16 +662,16 @@ export default function KhieuNaiPage() {
           className="rounded p-8 text-white text-center max-md:p-5"
           style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
         >
-          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">现在就要发起投诉？</h3>
+          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Need to open a complaint right now?</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            登录采购商控制台，选择需投诉的订单，点击“发起投诉”。系统自动冻结担保账户并启动7步流程。情形严重时也可拨打24/7紧急热线。
+            Sign in to your buyer dashboard, select the order to dispute, and click 'Open a Complaint'. The system automatically locks the escrow account and triggers the 7-step process. Or call the 24/7 emergency hotline for serious cases.
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buyer-center/orders"
               className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              📝 前往采购商控制台
+              📝 Go to Buyer Dashboard
             </Link>
             <a
               href="mailto:dispute@huayuesc.vn"
@@ -687,7 +687,7 @@ export default function KhieuNaiPage() {
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            第1层级（对话）和第2层级（华越调解）完全免费。第3层级（VIAC河内仲裁）费用$2,000-8,000——按裁决由败诉方承担。CSR将争议处理系统作为交易保障的核心组成部分进行投入，不额外收费。
+            Tier 1 (dialogue) and Tier 2 (Huayue Mediation) are completely free. Tier 3 (VIAC arbitration in Hanoi) carries a $2,000–8,000 fee — paid by the losing party per the award. CSR invests in the dispute system as a core part of Trade Assurance, at no extra charge.
           </div>
         </div>
       </section>
@@ -696,6 +696,6 @@ export default function KhieuNaiPage() {
 }
 
 export const metadata = {
-  title: "投诉与争议 — 华越争议解决",
-  description: "三级争议解决体系：直接对话、依据 NĐ 22/2017 号的华越调解、依据 1958 年纽约公约的 VIAC 河内仲裁。证据充分时，多数案件以有利于采购商的结果收场，平均 3.2 天解决。24/7 热线：+86 181-2225-6999。",
+  title: "Complaints & Disputes — Huayuesc Dispute Resolution",
+  description: "A 3-tier dispute resolution system: direct dialogue, Huayue Mediation under NĐ 22/2017, and VIAC arbitration in Hanoi under the New York Convention 1958. Most cases resolve in the buyer's favor when evidence is complete, in 3.2 days on average. 24/7 hotline: +86 181-2225-6999.",
 };

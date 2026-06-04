@@ -5,74 +5,74 @@ import { BuyerSidebar } from "@/components/buyer/sidebar";
 const STEPS = [
   {
     n: 1,
-    title: "创建采购商账户",
-    desc: "使用企业邮箱注册，验证 OTP，填写企业信息（税号、地址、所属行业）。约需 3 分钟。",
-    cta: "创建账户 →",
+    title: "Create a buyer account",
+    desc: "Sign up with your company email, verify by OTP, and fill in your business details (Tax ID, address, industry). Takes about 3 minutes.",
+    cta: "Create account →",
     href: "/account/register",
   },
   {
     n: 2,
-    title: "采购商认证与完善资料",
-    desc: "上传营业执照即可解锁交易保障、优先询价及工厂直供价。24 个工作小时内审核。",
-    cta: "完善资料 →",
+    title: "Verify your buyer profile",
+    desc: "Upload your Business License to unlock Trade Assurance, priority RFQs, and factory-direct pricing. Approved within 24 business hours.",
+    cta: "Complete profile →",
     href: "/account/verify",
   },
   {
     n: 3,
-    title: "发出首条询价",
-    desc: "一次描述——系统自动发送至 5–10 家匹配工厂。24 小时内收到含样品、交期及 DDP 到越南的报价。",
-    cta: "发送询价 →",
+    title: "Send your first RFQ",
+    desc: "Describe it once — the system routes it to 5–10 matching factories. Quotes come with samples, lead times, and DDP to Vietnam within 24 hours.",
+    cta: "Send RFQ →",
     href: "/buying-request",
   },
   {
     n: 4,
-    title: "跟进并敲定报价",
-    desc: "比对报价、直接与供应商沟通、下单样品、签订合同。全流程受交易保障服务保护。",
-    cta: "进入控制台 →",
+    title: "Track & close the quote",
+    desc: "Compare quotes, chat directly with suppliers, order samples, and sign the contract. The entire flow is protected by Trade Assurance.",
+    cta: "Go to dashboard →",
     href: "/buyer-center",
   },
 ];
 
 const FAQS = [
   {
-    q: "华越与 Alibaba.com 或 Made-in-China.com 有何不同？",
-    a: "华越是面向越南市场运营的中越 B2B 门户：7×24 中文支持、DDP 到越南仓库报价、合同支持、以及覆盖吉莱港—海防—凭祥的处理团队。您无需身处中国或精通英语即可完成交易。",
+    q: "How is Huayuesc different from Alibaba.com or Made-in-China.com?",
+    a: "Huayuesc is a China–Vietnam B2B gateway built for the Vietnamese market: 24/7 Vietnamese-language support, DDP quotes to Vietnamese warehouses, Vietnamese-language contracts, and a handling team across Cat Lai – Hai Phong – Pingxiang. You don't need China or English to trade.",
   },
   {
-    q: "发送询价需要支付定金吗？",
-    a: "无需。发送询价与接收报价完全免费、无任何承诺。只有在您选定供应商、签订合同并通过交易保障服务确认定金后才付款（担保账户托管款项，直至交货通过 QC 验收）。",
+    q: "Do I need a deposit to send an RFQ?",
+    a: "No. Sending an RFQ and receiving quotes is completely free with no commitment. You only pay once you've chosen a supplier, signed the contract, and confirmed the deposit through Trade Assurance (escrow holds the funds until the goods pass QC).",
   },
   {
-    q: "华越的起订量是多少？",
-    a: "起订量视工厂和产品而定——通常为 50–500 个产品，建筑材料则为 100–500 ㎡。部分已认证供应商可为新采购商提供更低起订量，或在您未满整柜时拼柜（LCL）发货。",
+    q: "What is the MOQ on Huayuesc?",
+    a: "MOQ depends on the factory and product — typically 50–500 pieces, or 100–500 m² for building materials. Some audited suppliers allow a lower MOQ for new buyers, or shared-container consolidation (LCL) when you don't yet have a full container.",
   },
   {
-    q: "DDP 到越南的交期与运费是多久、多少？",
-    a: "平均生产周期 15–30 天。海运佛山—吉莱 7–10 天，陆运凭祥—河内 3–5 天。DDP 费用已包含进口关税 + 增值税 + 仓储费用，视货物种类约为 FOB 价的 8–15%。",
+    q: "How long does DDP delivery to Vietnam take, and how much does it cost?",
+    a: "Production averages 15–30 days. Sea freight from Foshan to Cat Lai takes 7–10 days, and road transport from Pingxiang to Hanoi takes 3–5 days. The DDP fee already includes import duty + VAT + warehousing, averaging 8–15% of the FOB price depending on the goods.",
   },
   {
-    q: "如果货物品质不达标，我能退款吗？",
-    a: "可以。所有通过交易保障服务的订单均设三重保护：(1) 华越担保账户托管款项；(2) 出厂前 QC 验货（可选，$300/次）；(3) 运输保险。若货物与描述不符或存在技术缺陷，您可获 100% 退款或换发新批次。",
+    q: "If the goods don't meet quality standards, will I get a refund?",
+    a: "Yes. Every order through Trade Assurance has three layers of protection: (1) escrow holds the funds at Huayuesc; (2) QC inspection before the goods leave the factory (optional, $300 per inspection); (3) shipping insurance. If the goods don't match the description or have technical defects, you get a 100% refund or a replacement batch.",
   },
 ];
 
 const DOWNLOADS = [
   {
     icon: "📕",
-    title: "2026 中国进口手册",
-    desc: "84 页 · HS 编码 · 按品类划分进口关税 · 越南海关资料清单",
+    title: "China Import Handbook 2026",
+    desc: "84 pages · HS codes · import duty by product group · Vietnam customs paperwork checklist",
     size: "PDF · 4.2 MB",
   },
   {
     icon: "📘",
-    title: "DDP 流程——从工厂到越南仓库",
-    desc: "12 步流程图 · 示例时间表 · 凭祥与吉莱关键查验要点",
+    title: "DDP Process – from factory to Vietnamese warehouse",
+    desc: "12-step diagram · sample timeline · checkpoints at Pingxiang and Cat Lai",
     size: "PDF · 2.8 MB",
   },
   {
     icon: "📗",
-    title: "中越双语合同模板",
-    desc: "5 份合同模板：购销、OEM、代工、独家经销、NDA——均经法务审核",
+    title: "Bilingual Vietnamese–Chinese contract templates",
+    desc: "5 contract templates: sales, OEM, processing, exclusive dealer, NDA — legally reviewed",
     size: "PDF · 1.5 MB",
   },
 ];
@@ -80,20 +80,20 @@ const DOWNLOADS = [
 export default function NewUserGuidePage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "新用户指南" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "New Buyer Guide" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/new-user-guide" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📖 BUYER ONBOARDING</div>
-            <h1 className="text-[22px] font-bold text-ink">新用户指南</h1>
+            <h1 className="text-[22px] font-bold text-ink">New Buyer Guide</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              首次从中国批量采购？华越已将整个流程——从创建账户到在越南仓库收货——标准化为 4 个清晰步骤。读完本页，您将能在 10 分钟内自信地发出首条询价。
+              First time buying wholesale from China? Huayuesc has standardized the entire process — from creating an account to receiving goods at a Vietnamese warehouse — into four clear steps. After reading this page, you'll be ready to send your first RFQ in 10 minutes.
             </p>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🚀 4 步流程</b>
+            <b className="block text-[15px] text-ink mb-4">🚀 4-step process</b>
             <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
               {STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-4 hover:border-brand transition-colors">
@@ -109,7 +109,7 @@ export default function NewUserGuidePage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-3">❓ 新采购商常见问题</b>
+            <b className="block text-[15px] text-ink mb-3">❓ Frequently asked questions for new buyers</b>
             <div className="space-y-2">
               {FAQS.map((f, i) => (
                 <details key={i} className="border border-line rounded group" open={i === 0}>
@@ -131,7 +131,7 @@ export default function NewUserGuidePage() {
                 <p className="text-[11.5px] text-mute leading-snug mb-2">{d.desc}</p>
                 <div className="flex justify-between items-center pt-2 border-t border-line">
                   <span className="text-[10.5px] text-mute">{d.size}</span>
-                  <button className="text-brand text-[11.5px] font-semibold hover:underline">下载 ↓</button>
+                  <button className="text-brand text-[11.5px] font-semibold hover:underline">Download ↓</button>
                 </div>
               </div>
             ))}
@@ -139,10 +139,10 @@ export default function NewUserGuidePage() {
 
           <div className="bg-brand-dark text-white rounded p-5 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:items-start">
             <div>
-              <b className="block text-[16px] mb-1">需要专人协助？</b>
-              <p className="text-[12.5px] opacity-90">Buyer Success 团队驻河内与胡志明市，提供中文支持。热线每日 8:00–22:00。</p>
+              <b className="block text-[16px] mb-1">Need direct support?</b>
+              <p className="text-[12.5px] opacity-90">Our Vietnamese-speaking Buyer Success team is in Hanoi & Ho Chi Minh City. Hotline 8:00–22:00 every day.</p>
             </div>
-            <Link href="/buyer-center/contact" className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] hover:opacity-90 whitespace-nowrap">📞 联系我们</Link>
+            <Link href="/buyer-center/contact" className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] hover:opacity-90 whitespace-nowrap">📞 Contact Us</Link>
           </div>
         </div>
       </div>
@@ -150,4 +150,4 @@ export default function NewUserGuidePage() {
   );
 }
 
-export const metadata = { title: "新用户指南 — 采购商中心" };
+export const metadata = { title: "New Buyer Guide — Buyer Center" };

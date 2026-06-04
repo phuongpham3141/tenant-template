@@ -51,9 +51,9 @@ export default async function BlogIndexPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "首页", href: "/" },
-          { label: "信息", href: "/help" },
-          { label: "行业资讯" },
+          { label: "Home", href: "/" },
+          { label: "Information", href: "/help" },
+          { label: "Industry News" },
         ]}
       />
 
@@ -67,10 +67,10 @@ export default async function BlogIndexPage({
             📰 BLOG · HUAYUESC
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-2 max-md:text-[24px]">
-            越南—中国采购行业资讯
+            Vietnam – China sourcing industry news
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed max-w-[720px] max-md:text-[12.5px] mb-5">
-            分析价格趋势、展会、税收政策、越南采购商案例及供应商概况。由广州+河内团队每周更新。
+            Price-trend analysis, trade shows, tax policy, case studies from Vietnamese buyers and supplier profiles. Updated weekly by the Guangzhou + Hanoi team.
           </p>
 
           {/* Category filter chips */}
@@ -81,7 +81,7 @@ export default async function BlogIndexPage({
                 !activeCat ? "bg-gold text-brand-dark" : "bg-white/15 text-white hover:bg-white/25"
               }`}
             >
-              全部 ({allArticles.length})
+              All ({allArticles.length})
             </Link>
             {catCounts.map((c) => (
               <Link
@@ -125,7 +125,7 @@ export default async function BlogIndexPage({
                     >
                       {CATEGORIES[featured.category].label}
                     </span>
-                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ 精选</span>
+                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ FEATURED</span>
                   </div>
                   <h2 className="text-[22px] font-bold text-ink leading-tight mb-2 group-hover/feat:text-brand max-md:text-[18px]">
                     {featured.title}
@@ -136,7 +136,7 @@ export default async function BlogIndexPage({
                     <span>·</span>
                     <span>{fmtDate(featured.date)}</span>
                     <span>·</span>
-                    <span>⏱ {featured.readMinutes} 分钟阅读</span>
+                    <span>⏱ {featured.readMinutes} min read</span>
                   </div>
                 </div>
               </div>
@@ -175,7 +175,7 @@ export default async function BlogIndexPage({
                     <span>·</span>
                     <span>{fmtDate(a.date)}</span>
                     <span>·</span>
-                    <span>⏱ {a.readMinutes} 分钟</span>
+                    <span>⏱ {a.readMinutes} min</span>
                   </div>
                 </div>
               </Link>
@@ -184,17 +184,17 @@ export default async function BlogIndexPage({
 
           {filtered.length === 0 && (
             <div className="bg-paper border border-line rounded p-12 text-center text-mute">
-              该分类下暂无文章。
+              No articles in this category yet.
             </div>
           )}
 
           {/* Pagination placeholder */}
           {filtered.length > 8 && (
             <div className="flex justify-center mt-8 gap-2">
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">← 上一页</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">← Previous</button>
               <span className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12.5px] font-bold">1</span>
               <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">2</button>
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">下一页 →</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">Next →</button>
             </div>
           )}
         </div>
@@ -208,30 +208,30 @@ export default async function BlogIndexPage({
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[18px]">📬</span>
-              <b className="text-[13px] font-bold">免费交易预警</b>
+              <b className="text-[13px] font-bold">Free Trade Alert</b>
             </div>
             <p className="text-[11.5px] opacity-90 leading-snug mb-3">
-              12,000+越南采购商已订阅。每周四资讯，涵盖价格趋势、限时优惠、展会。
+              12,000+ Vietnamese buyers have subscribed. A newsletter every Thursday with price trends, limited deals and trade shows.
             </p>
             <form action="/trade-alert" method="get" className="space-y-2">
               <input
                 type="email"
                 name="email"
-                placeholder="email@congty.vn"
+                placeholder="email@company.vn"
                 className="w-full px-2.5 py-1.5 text-[12px] rounded-sm bg-white text-ink outline-none"
               />
               <button
                 type="submit"
                 className="w-full py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A]"
               >
-                免费订阅
+                Subscribe Free
               </button>
             </form>
           </div>
 
           {/* Categories list */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 分类</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 Categories</b>
             <ul className="space-y-1.5">
               {catCounts.map((c) => (
                 <li key={c.code}>
@@ -254,13 +254,13 @@ export default async function BlogIndexPage({
 
           {/* Popular tags */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 热门标签</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 Popular Tags</b>
             <div className="flex flex-wrap gap-1.5">
               {popularTags.map(([tag, n]) => (
                 <span
                   key={tag}
                   className="text-[11px] text-ink bg-bg border border-line px-2 py-0.5 rounded-sm hover:border-brand hover:text-brand cursor-pointer"
-                  title={`${n} 篇文章`}
+                  title={`${n} articles`}
                 >
                   {tag}
                 </span>
@@ -270,26 +270,26 @@ export default async function BlogIndexPage({
 
           {/* Related links */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 链接</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 Links</b>
             <ul className="space-y-1.5">
               <li>
                 <Link href="/info/about-us" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → 公司介绍
+                  → About Huayuesc
                 </Link>
               </li>
               <li>
                 <Link href="/info/import-guide" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → 进口指南
+                  → Import Guide
                 </Link>
               </li>
               <li>
                 <Link href="/buying-request" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → 发送询价
+                  → Send RFQ
                 </Link>
               </li>
               <li>
                 <Link href="/help" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → 帮助中心
+                  → Help Center
                 </Link>
               </li>
             </ul>
@@ -301,7 +301,7 @@ export default async function BlogIndexPage({
 }
 
 export const metadata = {
-  title: "采购行业资讯——Huayuesc博客",
+  title: "Sourcing Industry News — Huayuesc Blog",
   description:
-    "分析价格趋势、展会、税收政策、越南采购商案例及中国供应商概况。由Huayuesc团队每周更新。",
+    "Price-trend analysis, trade shows, tax policy, Vietnamese buyer case studies and Chinese supplier profiles. Updated weekly by the Huayuesc team.",
 };

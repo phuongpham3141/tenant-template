@@ -1,6 +1,6 @@
 /**
- * Dulux Professional 多乐士专业 元数据 —— 产品详情页。Keyed by seriesOriginal（catKey）。
- * 来源：duluxpro.com.cn —— Dulux Professional（隶属阿克苏诺贝尔）。
+ * Metadata Dulux Professional 多乐士专业 — detail page. Keyed by seriesOriginal (catKey).
+ * Sourcing: duluxpro.com.cn — Dulux Professional (an AkzoNobel brand).
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -11,95 +11,95 @@ export type SeriesMeta = {
   whyChoose: { icon: string; title: string; desc: string }[];
   projectShowcase: string[]; faq: { q: string; a: string }[];
 };
-const CERTS = ["涂料中国国家标准（GB）", "环境标志（十环）/ 低 VOC", "阿克苏诺贝尔全球质量体系", "ISO 9001 / ISO 14001"];
+const CERTS = ["China national standard (GB) for paints", "Environmental label (Ten Ring) / Low VOC", "AkzoNobel global quality system", "ISO 9001 / ISO 14001"];
 const MFG = [
-  "Dulux Professional 多乐士专业 —— 阿克苏诺贝尔（荷兰涂料集团）旗下的专业/工程涂料系列",
-  "产品线：内外墙漆、真石漆、艺术质感漆、无机矿物漆、底漆、腻子",
-  "阿克苏诺贝尔全球涂料技术；多款净味、抗菌、防霉系列",
-  "色彩体系与专业工程解决方案",
+  "Dulux Professional 多乐士专业 — the professional/project paint line from AkzoNobel (Dutch paint group)",
+  "Product range: interior/exterior paints, real-stone paints, artistic texture paints, inorganic mineral paints, primers, putties",
+  "AkzoNobel global paint technology; many odor-neutralizing, antibacterial and anti-mold lines",
+  "Professional color systems and project solutions",
 ];
 const PACK = [
-  { label: "规格", value: "按系列分桶（如 18L、5L）；腻子按袋装" },
-  { label: "起订量", value: "按集装箱 / 托盘计；可混装多型号" },
-  { label: "仓储", value: "阴凉干燥处，避免日晒与冰冻；用后密封" },
+  { label: "Pack size", value: "Pails/buckets by line (e.g. 18L, 5L); putty by bag" },
+  { label: "MOQ", value: "By container/pallet; mixed SKUs OK" },
+  { label: "Storage", value: "Cool, dry place, away from sunlight and freezing; reseal after use" },
 ];
 const INSTALL = [
-  "基层处理需洁净、干燥、平整；面漆前先批腻子并涂底漆",
-  "按规定用量与道数施工，各道间留足干燥时间",
-  "按厂商推荐比例稀释；使用前搅拌均匀",
-  "外墙/真石漆系统：按底涂—面涂—罩面流程施工",
+  "Prepare a clean, dry, even surface; apply putty and primer before the topcoat",
+  "Apply at the correct spread rate and coat count, allowing enough drying time between coats",
+  "Thin to the manufacturer's recommended ratio; stir thoroughly before use",
+  "Exterior/real-stone systems: follow the correct primer – topcoat – protective coat process",
 ];
 const CARE = [
-  { title: "仓储", desc: "密封存放于阴凉干燥处，避免日晒/冰冻；在保质期内使用。" },
-  { title: "施工", desc: "遵守温湿度条件；雨天/高湿环境下勿施工。" },
-  { title: "清洁", desc: "水性涂料用后立即用清水清洗工具。" },
+  { title: "Storage", desc: "Reseal tightly and store in a cool, dry place away from sunlight and freezing; use within shelf life." },
+  { title: "Application", desc: "Observe the recommended temperature/humidity conditions; do not apply in rain or high humidity." },
+  { title: "Cleaning", desc: "Clean tools with water (water-based paint) immediately after use." },
 ];
 const FAQ = [
-  { q: "Dulux Pro 有环保标志吗？", a: "有。多款产品获绿色标志/低 VOC；按产品提供技术资料。" },
-  { q: "可按项目类型提供选漆建议吗？", a: "可以。请告知项目类型（内/外墙、真石漆、防水……），即可获得合适系列的建议。" },
-  { q: "起订量与交货时间？", a: "按集装箱 / 托盘计；交期按订单确认。" },
+  { q: "Does Dulux Pro carry an environmental label?", a: "Yes. Many lines hold green/low-VOC labels; technical documentation is provided per product." },
+  { q: "Can you advise on the right paint system for our application?", a: "Yes. Send your application (interior/exterior, real stone, waterproofing, etc.) and we will recommend the right line." },
+  { q: "MOQ and lead time?", a: "Calculated by container/pallet; delivery schedule quoted per order." },
 ];
 function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
 }
-const WHY = { icon: "🎨", title: "阿克苏诺贝尔全球", desc: "Dulux Pro —— 阿克苏诺贝尔的专业系列，国际品质。" };
-const SHOW = ["住宅、公寓、别墅项目", "商业及公共工程", "精装交付与高端外立面项目"];
+const WHY = { icon: "🎨", title: "AkzoNobel global", desc: "Dulux Pro — AkzoNobel's professional line, international quality." };
+const SHOW = ["Residential, apartment and villa projects", "Commercial and public buildings", "Handover projects and premium facades"];
 const INTERIOR = mk({
-  story: "多乐士专业内墙漆 —— 净味水性涂料，多款抗菌/防霉/防潮系列，遮盖力高、色彩持久、易擦洗。",
-  heritage: "内墙漆是采用阿克苏诺贝尔技术的核心系列。",
-  technicalSpecs: [{ label: "类型", value: "内墙水性涂料" }, { label: "特性", value: "净味、抗菌/防霉（视系列）、遮盖力高" }, { label: "应用", value: "室内墙面与顶棚" }],
-  whyChoose: [WHY, { icon: "🌬️", title: "净味安全", desc: "低 VOC，部分系列抗菌，室内安全。" }, { icon: "🎨", title: "色彩持久，遮盖力佳", desc: "遮盖力高，色泽持久美观，易擦洗。" }],
+  story: "Dulux Professional interior paint — odor-neutralizing water-based paint with antibacterial/anti-mold/moisture-resistant lines, high coverage, durable color, easy to clean.",
+  heritage: "Interior paint is the core line, built on AkzoNobel technology.",
+  technicalSpecs: [{ label: "Type", value: "Water-based interior paint" }, { label: "Properties", value: "Odor-neutralizing, antibacterial/anti-mold (line-dependent), high coverage" }, { label: "Application", value: "Interior walls and ceilings" }],
+  whyChoose: [WHY, { icon: "🌬️", title: "Odor-neutralizing & safe", desc: "Low VOC, some lines antibacterial, safe for indoor use." }, { icon: "🎨", title: "Durable color, good coverage", desc: "High coverage, beautiful durable color, easy to clean." }],
   projectShowcase: SHOW,
 });
 const EXTERIOR = mk({
-  story: "多乐士专业外墙漆 —— 耐候、抗积尘、风吹雨打下色彩持久；备有用于外立面的弹性遮裂系列。",
-  heritage: "外墙系列保护并美化建筑外立面。",
-  technicalSpecs: [{ label: "类型", value: "外墙水性涂料（含弹性系列）" }, { label: "特性", value: "耐候、抗积尘、色彩持久、遮裂（弹性系列）" }, { label: "应用", value: "外墙、外立面" }],
-  whyChoose: [WHY, { icon: "☀️", title: "耐候", desc: "经受日晒雨淋，不易褪色，防霉防藻。" }, { icon: "🧱", title: "遮裂", desc: "弹性系列遮盖细微裂纹，保护墙体。" }],
+  story: "Dulux Professional exterior paint — weather-resistant, dirt-resistant, color-fast under sun and rain; elastomeric lines bridge cracks on facades.",
+  heritage: "The exterior line protects and beautifies building facades.",
+  technicalSpecs: [{ label: "Type", value: "Water-based exterior paint (elastomeric lines available)" }, { label: "Properties", value: "Weather-resistant, dirt-resistant, color-fast, crack-bridging (elastomeric line)" }, { label: "Application", value: "Exterior walls, facades" }],
+  whyChoose: [WHY, { icon: "☀️", title: "Weather-durable", desc: "Withstands sun and rain, minimal fading, resists moss and mold." }, { icon: "🧱", title: "Crack-bridging", desc: "Elastomeric line bridges fine cracks and protects the wall." }],
   projectShowcase: SHOW,
 });
 const PRIMER = mk({
-  story: "多乐士专业底漆 —— 抗碱、增强附着力、抗反渗，为面漆打造耐久基底；备有真石漆/矿物专用底漆系列。",
-  heritage: "底漆是涂料系统耐久美观的重要基础环节。",
-  technicalSpecs: [{ label: "类型", value: "内/外墙底漆" }, { label: "功能", value: "抗碱、增强附着力、抗反渗" }, { label: "应用", value: "面漆前的底层" }],
-  whyChoose: [WHY, { icon: "🛡️", title: "耐久基底", desc: "抗碱，增强附着力与涂层寿命。" }],
+  story: "Dulux Professional primer — alkali-resistant, improves adhesion, blocks reverse seepage and builds a durable base for the topcoat; dedicated real-stone/mineral primer lines available.",
+  heritage: "The primer is the key base layer for a durable, beautiful paint system.",
+  technicalSpecs: [{ label: "Type", value: "Interior/exterior primer" }, { label: "Function", value: "Alkali-resistant, improves adhesion, blocks reverse seepage" }, { label: "Application", value: "Base layer before topcoat" }],
+  whyChoose: [WHY, { icon: "🛡️", title: "Durable base", desc: "Alkali-resistant, boosts adhesion and topcoat lifespan." }],
   projectShowcase: SHOW,
 });
 export const DULUX_PRO_SERIES_META: Record<string, SeriesMeta> = {
   interior: INTERIOR, exterior: EXTERIOR, primer: PRIMER,
   "real-stone": mk({
-    story: "多乐士专业真石漆（真石漆）—— 再现天然石材效果（花岗岩、真石）用于高端外立面，纹色多样。",
-    heritage: "真石漆以合理成本呈现天然石材之美。",
-    technicalSpecs: [{ label: "类型", value: "真石漆（real stone）" }, { label: "效果", value: "天然石纹、花岗岩" }, { label: "应用", value: "外立面、高端装饰饰面" }],
-    whyChoose: [WHY, { icon: "🪨", title: "媲美真石", desc: "天然石材效果，外立面尽显高雅。" }, { icon: "☀️", title: "户外耐久", desc: "耐候，美观持久。" }],
+    story: "Dulux Professional real-stone paint (真石漆) — recreates the look of natural stone (granite, real stone) for premium facades, with a wide range of grains and colors.",
+    heritage: "Real-stone paint brings the beauty of natural stone at a reasonable cost.",
+    technicalSpecs: [{ label: "Type", value: "Real-stone paint" }, { label: "Effect", value: "Natural stone grain, granite" }, { label: "Application", value: "Facades, premium decorative cladding" }],
+    whyChoose: [WHY, { icon: "🪨", title: "Looks like real stone", desc: "Luxurious natural-stone effect for facades." }, { icon: "☀️", title: "Outdoor-durable", desc: "Weather-resistant, keeps its beauty for years." }],
     projectShowcase: SHOW,
   }),
   texture: mk({
-    story: "多乐士专业艺术质感漆（质感/岩彩/浮雕）—— 装饰性表面效果（质感、浮雕纹理、堆塑）打造令人印象深刻的空间。",
-    heritage: "艺术涂料营造高端美学亮点。",
-    technicalSpecs: [{ label: "类型", value: "艺术质感/堆塑涂料" }, { label: "效果", value: "质感、浮雕纹理、堆塑" }, { label: "应用", value: "内 / 外墙装饰亮点" }],
-    whyChoose: [WHY, { icon: "✨", title: "高美学", desc: "独特而高雅的表面效果。" }, { icon: "🖌️", title: "多效果", desc: "多种纹理与层次满足个性化设计。" }],
+    story: "Dulux Professional artistic texture paint (质感/岩彩/浮雕) — decorative surface effects (texture, raised grain, relief) for striking spaces.",
+    heritage: "Artistic paint creates a premium aesthetic highlight.",
+    technicalSpecs: [{ label: "Type", value: "Artistic texture/relief paint" }, { label: "Effect", value: "Texture, raised grain, relief" }, { label: "Application", value: "Interior/exterior accents" }],
+    whyChoose: [WHY, { icon: "✨", title: "High aesthetics", desc: "Unique, luxurious surface effects." }, { icon: "🖌️", title: "Multi-effect", desc: "Many grain styles and layers for a custom design." }],
     projectShowcase: SHOW,
   }),
   mineral: mk({
-    story: "多乐士专业无机矿物漆（无机矿物）—— 无机矿物基环保配方，透气、色彩持久、抗碱性佳，适用于内/外墙。",
-    heritage: "无机矿物系列提供可持续的涂料解决方案。",
-    technicalSpecs: [{ label: "类型", value: "无机矿物漆" }, { label: "特性", value: "透气、色彩持久、环保" }, { label: "应用", value: "内/外墙、可持续工程" }],
-    whyChoose: [WHY, { icon: "🌱", title: "可持续", desc: "无机矿物基，透气环保。" }, { icon: "🧱", title: "色彩持久", desc: "抗碱化，色彩保持持久。" }],
+    story: "Dulux Professional inorganic mineral paint (无机矿物) — inorganic-mineral-based, environmentally friendly, breathable, color-fast, with good alkali resistance for interior/exterior.",
+    heritage: "The inorganic mineral line offers a sustainable paint solution.",
+    technicalSpecs: [{ label: "Type", value: "Inorganic mineral paint" }, { label: "Properties", value: "Breathable, color-fast, environmentally friendly" }, { label: "Application", value: "Interior/exterior, sustainable projects" }],
+    whyChoose: [WHY, { icon: "🌱", title: "Sustainable", desc: "Inorganic-mineral-based, breathable, environmentally friendly." }, { icon: "🧱", title: "Color-fast", desc: "Resists alkali aging and holds color for years." }],
     projectShowcase: SHOW,
   }),
   metal: mk({
-    story: "多乐士专业金属效果漆 —— 金属光泽效果涂层，用于高端外立面与装饰。",
-    heritage: "金属漆带来独特的美学效果。",
-    technicalSpecs: [{ label: "类型", value: "金属效果漆（水性）" }, { label: "效果", value: "装饰性金属光泽" }, { label: "应用", value: "外立面、高端亮点" }],
-    whyChoose: [WHY, { icon: "🥇", title: "金属光泽高雅", desc: "独特金属效果，适合高端工程。" }],
+    story: "Dulux Professional metallic-effect paint — metallic-sheen coating for premium facades and decoration.",
+    heritage: "Metallic paint delivers a special aesthetic effect.",
+    technicalSpecs: [{ label: "Type", value: "Metallic-effect paint (water-based)" }, { label: "Effect", value: "Decorative metallic sheen" }, { label: "Application", value: "Facades, premium accents" }],
+    whyChoose: [WHY, { icon: "🥇", title: "Luxe metallic sheen", desc: "Unique metallic effect for premium buildings." }],
     projectShowcase: SHOW,
   }),
   waterproof: mk({
-    story: "多乐士专业防水 —— 用于墙面、屋面、潮湿区的防水涂料/解决方案；保护工程免受渗漏侵害。",
-    heritage: "防水系列保护工程。",
-    technicalSpecs: [{ label: "类型", value: "防水涂料/解决方案" }, { label: "特性", value: "弹性、附着力、耐水" }, { label: "应用", value: "墙面、屋面、潮湿区" }],
-    whyChoose: [WHY, { icon: "💧", title: "持久防水", desc: "封闭水分的涂层，保护结构。" }],
+    story: "Dulux Professional waterproofing — paints/solutions for walls, roofs and wet areas; protects the building from leaks and seepage.",
+    heritage: "The waterproofing line protects the building.",
+    technicalSpecs: [{ label: "Type", value: "Waterproofing paint/solution" }, { label: "Properties", value: "Elastic, good adhesion, water-durable" }, { label: "Application", value: "Walls, roofs, wet areas" }],
+    whyChoose: [WHY, { icon: "💧", title: "Durable waterproofing", desc: "Watertight coating that protects the structure." }],
     projectShowcase: SHOW,
   }),
   other: INTERIOR,

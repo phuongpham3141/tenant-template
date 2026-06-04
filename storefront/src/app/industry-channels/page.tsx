@@ -4,34 +4,34 @@ import { NAV_CATEGORIES } from "@/data/home";
 
 const STATS_BY_INDUSTRY: Record<string, { factories: string; sku: string; lead: string; cluster: string }> = {
   "construction-materials": {
-    factories: "20+", sku: "480+", lead: "18-25天",
-    cluster: "佛山（陶瓷、卫浴） · 潮州（瓷砖） · 福建（天然石材）",
+    factories: "20+", sku: "480+", lead: "18-25 days",
+    cluster: "Foshan (ceramics, sanitary) · Chaozhou (glazed tile) · Fujian (natural stone)",
   },
   "noi-that": {
-    factories: "20+", sku: "480+", lead: "20-30天",
-    cluster: "佛山乐从（沙发） · 东莞（橱柜/衣柜） · 晋江（工程木）",
+    factories: "20+", sku: "480+", lead: "20-30 days",
+    cluster: "Lecong, Foshan (sofas) · Dongguan (kitchen/wardrobe cabinets) · Jinjiang (engineered wood)",
   },
-  // Kitchen-bathroom appliances — 来自 PDF 的第三大行业（NAV_CATEGORIES 中暂无，回退）
+  // Kitchen-bathroom appliances — the 3rd industry from the PDF (not yet in NAV_CATEGORIES, fallback)
   "kitchen-bathroom-appliances": {
-    factories: "15+", sku: "320+", lead: "20-25天",
-    cluster: "中山（灯具、燃气灶） · 美的（家用电器） · 巨贺（智能马桶盖）",
+    factories: "15+", sku: "320+", lead: "20-25 days",
+    cluster: "Zhongshan (lighting, gas cooktops) · Shunde (home appliances) · Juhe (smart toilet seats)",
   },
 };
 
 export default function IndustryChannelsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "行业频道" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Industry Channels" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
-          <h1 className="text-[24px] font-extrabold text-ink leading-tight">行业频道</h1>
-          <p className="text-[13px] text-mute mt-1">华越深耕三大主业：建材、装饰材料和厨卫小家电。每个频道均由广州办事处的专业采购经理团队运营，直连中国头部产业集群。</p>
+          <h1 className="text-[24px] font-extrabold text-ink leading-tight">Industry Channels</h1>
+          <p className="text-[13px] text-mute mt-1">Huayue focuses deeply on 3 core industries: Building Materials, Interior Decor Materials, and Kitchen & Bathroom Appliances. Each channel is run by specialized sourcing managers at our Guangzhou office, connecting directly with China's leading factory clusters.</p>
         </div>
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 mt-5 grid grid-cols-3 gap-4 max-md:grid-cols-1 mb-7">
         {NAV_CATEGORIES.map((c) => {
-          const stats = STATS_BY_INDUSTRY[c.slug] ?? { factories: "100+", sku: "2,000", lead: "20-30天" };
+          const stats = STATS_BY_INDUSTRY[c.slug] ?? { factories: "100+", sku: "2,000", lead: "20-30 days" };
           return (
             <Link key={c.slug} href={`/category/${c.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
               <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
@@ -42,22 +42,22 @@ export default function IndustryChannelsPage() {
                 <h3 className="text-[16px] font-bold text-ink mb-2">{c.name}</h3>
                 <div className="grid grid-cols-3 gap-2 text-[11.5px] mb-2">
                   <div>
-                    <div className="text-mute">已验厂供应商</div>
+                    <div className="text-mute">Audited suppliers</div>
                     <b className="text-brand">{stats.factories}</b>
                   </div>
                   <div>
-                    <div className="text-mute">在售SKU</div>
+                    <div className="text-mute">SKUs on sale</div>
                     <b className="text-brand">{stats.sku}</b>
                   </div>
                   <div>
-                    <div className="text-mute">DDP到越南</div>
+                    <div className="text-mute">DDP to Vietnam</div>
                     <b className="text-brand">{stats.lead}</b>
                   </div>
                 </div>
                 <div className="text-[11px] text-mute leading-snug border-t border-line pt-2">
-                  <b className="text-ink">产业集群：</b> {stats.cluster}
+                  <b className="text-ink">Cluster:</b> {stats.cluster}
                 </div>
-                <span className="text-brand text-[12.5px] font-semibold mt-3 block">探索频道 →</span>
+                <span className="text-brand text-[12.5px] font-semibold mt-3 block">Explore the channel →</span>
               </div>
             </Link>
           );
@@ -67,4 +67,4 @@ export default function IndustryChannelsPage() {
   );
 }
 
-export const metadata = { title: "行业频道 — 华越SC" };
+export const metadata = { title: "Industry Channels — Huayuesc" };

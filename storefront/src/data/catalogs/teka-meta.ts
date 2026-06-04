@@ -1,13 +1,13 @@
 /**
- * Teka 厨房设备各系列的富元数据 —— 用于产品详情页。
+ * Rich metadata for Teka kitchen appliance lines — for product detail pages.
  *
  * Keyed by seriesOriginal (category: "oven", "range-hood", "hob"...).
  *
  * Honest sourcing:
- *   • 企业资料：Teka 集团（西班牙）—— 旗下 3 个品牌 Teka（1924）、
- *     Küppersbusch（1875）、Intra（1871）。数据来自 teka.com 公布信息。
- *   • 产品参数：teka.com/zh-cn 详情页（真实抓取）。
- *   • 标准：CE/CB/GB + 各产品对应的欧盟能效标签（EEI）。
+ *   - Company profile: Teka Group (Spain) — 3 brands, Teka (1924),
+ *     Küppersbusch (1875), Intra (1871). Data published on teka.com.
+ *   - Product specs: teka.com/zh-cn detail pages (real crawl).
+ *   - Standards: CE/CB/GB + EU energy label (EEI) per product.
  */
 
 export type SeriesMeta = {
@@ -25,49 +25,49 @@ export type SeriesMeta = {
 };
 
 const COMMON_CERTS = [
-  "CE —— 欧洲认证",
-  "CB Scheme —— 国际电气安全认证（IEC）",
-  "欧盟能效标签 —— 按EEI分级A至G",
-  "ISO 9001 —— 质量管理",
-  "ISO 14001 —— 环境管理",
-  "RoHS —— 不含有害重金属",
-  "Red Dot与iF Design（高端Küppersbusch系列）",
+  "CE — European certification",
+  "CB Scheme — international electrical safety certification (IEC)",
+  "EU energy label — graded A to G by EEI",
+  "ISO 9001 — Quality management",
+  "ISO 14001 — Environmental management",
+  "RoHS — Free of hazardous heavy metals",
+  "Red Dot & iF Design (premium Küppersbusch line)",
 ];
 
 const COMMON_MFG = [
-  "Teka 集团 —— 源自欧洲的厨卫设备集团，旗下拥有 3 个品牌：Teka（1924）、Küppersbusch（1875，德国高端）、Intra（1871，瑞典不锈钢水槽）",
-  "全球 15 家工厂 —— 服务 120 多个国家",
-  "约 5,000 名员工；约 50% 的西班牙家庭使用 Teka 产品",
-  "欧洲研发与设计中心 —— 多次荣获 Red Dot、iF Design 奖（Küppersbusch）",
-  "按欧盟标准进行生产与检测；逐批进行电气安全、能效测试",
+  "Teka Group — a European-origin kitchen & bathroom appliance group, owner of 3 brands: Teka (1924), Küppersbusch (1875, premium German), Intra (1871, Swedish stainless-steel sinks)",
+  "15 factories worldwide — serving more than 120 countries",
+  "~5,000 employees; about 50% of Spanish households use Teka products",
+  "European R&D & design center — numerous Red Dot and iF Design awards (Küppersbusch)",
+  "Manufacturing & testing to EU standards; per-batch electrical safety and energy efficiency testing",
 ];
 
 const COMMON_PACKAGING = [
-  { label: "包装", value: "多层纸箱 + 定型泡棉 + 护角" },
-  { label: "运输保障", value: "运输致损可获赔" },
-  { label: "进口起订量", value: "1 个 20ft/40ft 集装箱 —— 可混装多型号" },
-  { label: "资料", value: "说明书 + 质保卡；协助进口单证" },
-  { label: "仓储", value: "干燥避光处；竖放，勿超量堆叠" },
+  { label: "Packaging", value: "Multi-layer carton + molded foam + protective corners" },
+  { label: "Shipping warranty", value: "Compensation for transit damage" },
+  { label: "Import MOQ", value: "1 20ft/40ft container — mixing multiple models is OK" },
+  { label: "Documentation", value: "Manual + warranty card; import paperwork support" },
+  { label: "Warehouse storage", value: "Dry place, out of sunlight; store upright, do not overload stacking" },
 ];
 
 const COMMON_INSTALL = [
-  "由专业技术人员按 Teka 说明书安装",
-  "核对橱柜开孔（cut-out）尺寸与产品嵌装尺寸是否匹配",
-  "接驳前确保电源/燃气管路/给排水符合标准",
-  "抽油烟机：安装符合管径的排烟管，减少弯折以保持排风量",
-  "交付前对全部功能进行试机验收",
+  "Installed by qualified technicians per the Teka manual",
+  "Verify the cabinet cut-out matches the product's built-in dimensions",
+  "Ensure the power supply / gas line / water supply-drainage meet standards before connecting",
+  "For range hoods: install the exhaust duct at the correct diameter, minimizing sharp bends to preserve airflow",
+  "Commission and test all functions before handover",
 ];
 
 const COMMON_CARE = [
-  { title: "日常清洁", desc: "用湿软布 + 中性溶液擦拭表面。请勿使用研磨性清洁剂或硬物刮擦玻璃/不锈钢。" },
-  { title: "定期清洁", desc: "定期清洁滤油网（抽油烟机）、烤盘/内腔（烤箱）、滤网（洗衣机）。烤箱配有蒸汽自清洁（AquaClean）或热解清洁模式。" },
-  { title: "技术维护", desc: "定期检查门封、燃烧器、燃气/水路；出现异常时联系技术人员，以保持性能与安全。" },
+  { title: "Daily cleaning", desc: "Wipe surfaces with a soft damp cloth + a neutral solution. Do not use abrasive cleaners or hard objects that scratch glass/stainless steel." },
+  { title: "Periodic cleaning", desc: "Periodically clean the grease filter (range hood), tray/cavity (oven), and filter (washer). The oven has a steam self-cleaning mode (AquaClean) or pyrolytic cleaning." },
+  { title: "Technical maintenance", desc: "Periodically check the door gasket, burners, and gas/water lines; call a technician for anything unusual to maintain performance & safety." },
 ];
 
 const COMMON_FAQ = [
-  { q: "Teka 产品是否适配越南 220V 电网？", a: "适配。本处收录的型号标注电压为 220-240V / 50-60Hz，符合越南电网。华越供应链可按项目提供配置咨询。" },
-  { q: "是否提供进口单证与质保支持？", a: "提供。提供 CO/CQ、技术资料；协助进口单证并按厂商政策提供质保。" },
-  { q: "最低起订量与交货时间？", a: "按集装箱计，可混装多型号。具体交期按订单确认。" },
+  { q: "Are Teka products compatible with Vietnam's 220V power?", a: "Yes. The models crawled here list 220-240V / 50-60Hz, compatible with Vietnam's grid. Huayuesc advises on configurations for each project." },
+  { q: "Do you support import paperwork & warranty?", a: "Yes. We provide CO/CQ and technical documents; we support import paperwork and the manufacturer's warranty policy." },
+  { q: "What is the minimum order and delivery time?", a: "Calculated by container; multiple models can be mixed. Specific delivery schedules are quoted per order." },
 ];
 
 function mk(p: Pick<SeriesMeta, "story" | "heritage" | "technicalSpecs" | "whyChoose" | "projectShowcase">): SeriesMeta {
@@ -75,172 +75,172 @@ function mk(p: Pick<SeriesMeta, "story" | "heritage" | "technicalSpecs" | "whyCh
     certifications: COMMON_CERTS, packaging: COMMON_PACKAGING, faq: COMMON_FAQ };
 }
 
-const WHY_EU = { icon: "🇪🇺", title: "欧洲设计与标准", desc: "源自欧洲品牌（1924），符合欧盟安全与能效标准。" };
+const WHY_EU = { icon: "🇪🇺", title: "European design & standards", desc: "European brand origin (1924), EU safety & performance standards." };
 
 export const TEKA_SERIES_META: Record<string, SeriesMeta> = {
   oven: mk({
-    story: "Teka 嵌入式烤箱系列 —— 从多功能 iOven/iOven P 到 HLB/HSB/HLC 及 SteakMaster —— 以多维热风烹饪（MultiFunction）、AquaClean 水洁自清洁系统及 TFT 触控面板著称。",
-    heritage: "烤箱自 20 世纪 20 年代起便是 Teka 的核心产品，热风、蒸烤一体与自清洁技术持续升级。",
+    story: "Teka built-in ovens — from the versatile iOven/iOven P to HLB/HSB/HLC and SteakMaster — stand out with multi-directional hot-air cooking (MultiFunction), the AquaClean steam self-cleaning system, and a TFT touch control panel.",
+    heritage: "Ovens have been a core Teka product since the 1920s, with continual upgrades to hot-air, combi-steam, and self-cleaning technology.",
     technicalSpecs: [
-      { label: "容积", value: "63 – 71 L（60cm 系列）" },
-      { label: "嵌装尺寸", value: "595 × 595 × ~560 mm" },
-      { label: "温度", value: "30°C – 270°C" },
-      { label: "自清洁", value: "AquaClean（蒸汽）/ 热解（Pyrolytic）" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
-      { label: "能效", value: "常见 A / A+" },
+      { label: "Capacity", value: "63 – 71 L (60cm line)" },
+      { label: "Built-in dimensions", value: "595 × 595 × ~560 mm" },
+      { label: "Temperature", value: "30°C – 270°C" },
+      { label: "Self-cleaning", value: "AquaClean (steam) / Pyrolytic" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
+      { label: "Energy efficiency", value: "commonly A / A+" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "♨️", title: "多维热风", desc: "多层热量均匀分布，可同时多盘烘烤。" },
-      { icon: "💧", title: "AquaClean 自清洁", desc: "用蒸汽软化污渍，无需化学剂即可快速清洁。" }],
-    projectShowcase: ["高端公寓、别墅厨房", "家具展厅厨房区", "整体厨房交付项目"],
+      { icon: "♨️", title: "Multi-directional hot air", desc: "Even heat distribution across multiple levels, baking several trays at once." },
+      { icon: "💧", title: "AquaClean self-cleaning", desc: "Softens grime with steam for fast, chemical-free cleaning." }],
+    projectShowcase: ["Premium apartment and villa kitchens", "Furniture showroom kitchen areas", "Turnkey kitchen handover projects"],
   }),
   "steam-oven": mk({
-    story: "Teka 蒸箱及蒸烤一体机系列（HLC/HSC 847、HSB……）—— 蒸制锁住营养，结合烧烤功能可烹饪多样菜式。",
-    heritage: "Teka 顺应健康烹饪潮流开发蒸制系列，集成于标准嵌装尺寸之中。",
+    story: "Teka steam & combi steam-bake ovens (HLC/HSC 847, HSB, and others) — steam cooking that retains full nutrition, combined with baking for a wide range of dishes.",
+    heritage: "Teka developed its steam line to meet the trend toward healthy cooking, integrated within the same standard built-in dimensions.",
     technicalSpecs: [
-      { label: "类型", value: "蒸箱/蒸烤一体机" },
-      { label: "尺寸", value: "45cm 或 60cm 嵌入式" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
-      { label: "操控", value: "TFT / LED 触控" },
+      { label: "Type", value: "Steam oven / combi steam-bake oven" },
+      { label: "Size", value: "45cm or 60cm built-in" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
+      { label: "Controls", value: "TFT / LED touch" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🥗", title: "锁住营养", desc: "蒸制保留维生素与食材水分。" },
-      { icon: "🍞", title: "蒸 + 烤", desc: "一机兼具蒸制与对流烧烤。" }],
-    projectShowcase: ["高端家庭厨房", "服务式公寓", "厨房设备展厅"],
+      { icon: "🥗", title: "Retains nutrition", desc: "Steam cooking preserves vitamins & food moisture." },
+      { icon: "🍞", title: "Steam + bake", desc: "One appliance for both steaming and convection baking." }],
+    projectShowcase: ["Premium home kitchens", "Serviced apartments", "Kitchen appliance showrooms"],
   }),
   "microwave-oven": mk({
-    story: "Teka 嵌入式微波炉（MS/MC/HLC 847 C/HSC 644 C）—— 快速加热，部分型号兼具烧烤功能，与橱柜同步嵌装。",
-    heritage: "Teka 提供与同系烤箱设计协调的嵌入式微波炉系列。",
+    story: "Teka built-in microwaves (MS/MC/HLC 847 C/HSC 644 C) — fast heating, some models combine grilling, flush-fitted to match the kitchen cabinetry.",
+    heritage: "Teka offers built-in microwaves designed to match ovens in the same series.",
     technicalSpecs: [
-      { label: "类型", value: "嵌入式微波炉 / 微波烤箱一体机" },
-      { label: "安装", value: "嵌入式" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
+      { label: "Type", value: "Built-in microwave / microwave-grill" },
+      { label: "Installation", value: "Built-in" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "⚡", title: "快速加热", desc: "日常加热 / 快煮便捷" },
-      { icon: "🧩", title: "橱柜协调", desc: "嵌装贴合，玻璃面板与烤箱协调一致" }],
-    projectShowcase: ["公寓厨房", "办公室 / 茶水间厨房", "家居项目"],
+      { icon: "⚡", title: "Fast heating", desc: "Convenient for everyday quick reheating/cooking." },
+      { icon: "🧩", title: "Matches the cabinetry", desc: "Flush-fitted, with glass fronts that match the oven." }],
+    projectShowcase: ["Apartment kitchens", "Office/pantry kitchens", "Interior projects"],
   }),
   "range-hood": mk({
-    story: "Teka 抽油烟机 —— 侧吸式（CXW-220 DLV/iHood）与壁挂 T 型（DH/GFH）系列 —— 吸力强劲、运行静音、不锈钢滤油网可拆卸",
-    heritage: "抽油烟机是 Teka 的长期强项，款式多样适配各种厨房布局",
+    story: "Teka range hoods — the side-draft line (CXW-220 DLV/iHood) and wall-mounted T-shape (DH/GFH) — strong suction, quiet operation, and removable stainless-steel grease filters.",
+    heritage: "Range hoods are a longstanding Teka strength, with many shapes for every kitchen layout.",
     technicalSpecs: [
-      { label: "类型", value: "侧吸式 / 壁挂 T 型" },
-      { label: "中国标准型号", value: "CXW-220（厨房抽油烟类）" },
-      { label: "电源", value: "220-240V / 50Hz" },
-      { label: "过滤", value: "不锈钢滤油网，可拆卸清洗" },
+      { label: "Type", value: "Side-draft / wall-mounted T-shape" },
+      { label: "Chinese standard code", value: "CXW-220 (kitchen smoke extraction type)" },
+      { label: "Power", value: "220-240V / 50Hz" },
+      { label: "Filter", value: "Removable, washable stainless-steel grease filter" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🌪️", title: "吸力强劲", desc: "高效排除油烟，适合重油烟的中式厨房" },
-      { icon: "🔇", title: "运行静音", desc: "电机优化噪声，多档风速可调" }],
-    projectShowcase: ["公寓与联排别墅厨房", "小型餐厅", "厨房展厅"],
+      { icon: "🌪️", title: "Strong suction", desc: "Effectively clears oily smoke from greasy Asian cooking." },
+      { icon: "🔇", title: "Quiet operation", desc: "Noise-optimized motor with multiple speed levels." }],
+    projectShowcase: ["Apartment & townhouse kitchens", "Small restaurants", "Kitchen showrooms"],
   }),
   hob: mk({
-    story: "Teka 灶具 —— 燃气灶（IG/GFH/JZT）与电磁 / 电嵌入灶 —— 钢化玻璃、高效燃烧器、安全熄火保护",
-    heritage: "Teka 为燃气与电 / 电磁市场提供多样化嵌入式灶具",
+    story: "Teka hobs — gas hobs (IG/GFH/JZT) and built-in induction/electric hobs — toughened glass, high-efficiency burners, and gas safety cut-off.",
+    heritage: "Teka offers a wide range of built-in hobs for the gas and electric/induction markets.",
     technicalSpecs: [
-      { label: "类型", value: "燃气灶 / 电磁灶 / 嵌入式电灶" },
-      { label: "灶面", value: "微晶玻璃 / 不锈钢" },
-      { label: "安全", value: "熄火自动断气传感器（燃气系列）" },
+      { label: "Type", value: "Gas hob / induction hob / built-in electric hob" },
+      { label: "Cooktop", value: "Ceramic glass / stainless steel" },
+      { label: "Safety", value: "Flame-failure gas cut-off sensor (gas line)" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🔥", title: "高效燃烧器", desc: "火力强劲、分布均匀、节省燃气" },
-      { icon: "🛡️", title: "安全", desc: "自动熄火断气，耐热玻璃面板" }],
-    projectShowcase: ["家庭厨房", "公寓", "整体厨房交付项目"],
+      { icon: "🔥", title: "High-efficiency burners", desc: "Strong, evenly distributed heat that saves gas." },
+      { icon: "🛡️", title: "Safety", desc: "Automatic gas cut-off, heat-resistant glass surface." }],
+    projectShowcase: ["Home kitchens", "Apartments", "Kitchen handover projects"],
   }),
   "coffee-machine": mk({
-    story: "Teka 嵌入式咖啡机（CLC 855 GM）—— 集成磨豆，自动制作 espresso/cappuccino，与橱柜同步嵌装",
-    heritage: "Teka 拓展至现代厨房的高端集成饮品设备",
+    story: "Teka built-in coffee machine (CLC 855 GM) — integrated bean grinder, automatic espresso/cappuccino, flush-fitted to match the kitchen cabinetry.",
+    heritage: "Teka expanded into premium integrated beverage appliances for the modern kitchen.",
     technicalSpecs: [
-      { label: "类型", value: "集成磨豆嵌入式咖啡机" },
-      { label: "安装", value: "嵌入式" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
+      { label: "Type", value: "Built-in coffee machine with integrated grinder" },
+      { label: "Installation", value: "Built-in" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "☕", title: "自动磨豆冲泡", desc: "从豆到 espresso/cappuccino 一键完成" },
-      { icon: "🧩", title: "嵌入式高雅", desc: "与同系烤箱、微波炉设计协调" }],
-    projectShowcase: ["顶层公寓厨房", "酒店 / 服务式公寓", "高端展厅"],
+      { icon: "☕", title: "Automatic grind & brew", desc: "From bean to espresso/cappuccino at one touch." },
+      { icon: "🧩", title: "Elegant built-in fit", desc: "Design matches ovens and microwaves in the same series." }],
+    projectShowcase: ["Penthouse kitchens", "Hotels/serviced apartments", "Premium showrooms"],
   }),
   refrigerator: mk({
-    story: "Teka 冰箱 —— 包括多门手工不锈钢系列（RMF）及嵌入 / 独立式（RFD/RFC）欧式风格冰箱",
-    heritage: "Teka 为高端厨房提供协调一致的冷藏保鲜解决方案",
+    story: "Teka refrigerators — including the hand-crafted multi-door stainless-steel line (RMF) and built-in/freestanding units (RFD/RFC) in a European style.",
+    heritage: "Teka offers integrated cold-storage solutions for premium kitchens.",
     technicalSpecs: [
-      { label: "类型", value: "独立式 / 嵌入式 / 多门不锈钢冰箱" },
-      { label: "电源", value: "220-240V / 50Hz" },
-      { label: "能效", value: "依欧盟能效标签" },
+      { label: "Type", value: "Freestanding / built-in / multi-door stainless-steel refrigerator" },
+      { label: "Power", value: "220-240V / 50Hz" },
+      { label: "Energy efficiency", value: "per the EU energy label" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "❄️", title: "优化保鲜", desc: "分区温控，使食材持久保鲜" },
-      { icon: "✨", title: "高端不锈钢", desc: "RMF 手工不锈钢系列高雅耐用、历久弥新" }],
-    projectShowcase: ["别墅厨房", "高端公寓", "家具展厅"],
+      { icon: "❄️", title: "Optimal preservation", desc: "Temperature zoning keeps food fresh longer." },
+      { icon: "✨", title: "Premium stainless steel", desc: "The hand-crafted RMF stainless-steel line is elegant and durable." }],
+    projectShowcase: ["Villa kitchens", "Premium apartments", "Furniture showrooms"],
   }),
   washer: mk({
-    story: "Teka 洗衣机（WML/WDL）—— 前开门、变频节能、多种洗涤程序，适合家庭使用",
-    heritage: "Teka 为现代生活空间提供洗涤设备系列",
+    story: "Teka washing machines (WML/WDL) — front-loading, energy-saving inverter, with many wash programs for the household.",
+    heritage: "Teka offers laundry appliances for modern living spaces.",
     technicalSpecs: [
-      { label: "类型", value: "前开门洗衣机 / 洗干一体机" },
-      { label: "电源", value: "220-240V / 50Hz" },
-      { label: "能效", value: "依欧盟能效标签" },
+      { label: "Type", value: "Front-loading washer / washer-dryer" },
+      { label: "Power", value: "220-240V / 50Hz" },
+      { label: "Energy efficiency", value: "per the EU energy label" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "💧", title: "洁净节能", desc: "变频静音，节水省电" },
-      { icon: "🌀", title: "多程序", desc: "针对不同面料的多种模式" }],
-    projectShowcase: ["公寓", "联排别墅", "服务式公寓"],
+      { icon: "💧", title: "Efficient, clean washing", desc: "Quiet inverter that saves electricity and water." },
+      { icon: "🌀", title: "Many programs", desc: "Multiple modes for each fabric type." }],
+    projectShowcase: ["Apartments", "Townhouses", "Serviced apartments"],
   }),
   dryer: mk({
-    story: "Teka 热泵干衣机（SHL）—— 柔和烘干、节能省电、呵护衣物纤维",
-    heritage: "Teka 为洗烘系列增添高效热泵干衣机。",
+    story: "Teka heat-pump dryers (SHL) — gentle drying, energy-saving, fabric-protecting.",
+    heritage: "Teka added a high-efficiency heat-pump dryer line to its laundry system.",
     technicalSpecs: [
-      { label: "类型", value: "热泵干衣机（heat pump）" },
-      { label: "电源", value: "220-240V / 50Hz" },
-      { label: "能效", value: "高（热泵）" },
+      { label: "Type", value: "Heat-pump dryer" },
+      { label: "Power", value: "220-240V / 50Hz" },
+      { label: "Energy efficiency", value: "high (heat pump)" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🌡️", title: "热泵烘干", desc: "低温呵护衣物，节省电力。" },
-      { icon: "👕", title: "呵护纤维", desc: "烘干均匀，减少褶皱与缩水。" }],
-    projectShowcase: ["高端公寓", "联排别墅", "公寓共用洗衣区"],
+      { icon: "🌡️", title: "Heat-pump drying", desc: "Low heat protects fabrics and saves energy." },
+      { icon: "👕", title: "Protects fibers", desc: "Even drying, reducing wrinkling and shrinkage." }],
+    projectShowcase: ["Premium apartments", "Townhouses", "Apartment-building laundry rooms"],
   }),
   sink: mk({
-    story: "Teka/Intra 水槽 —— Square/ForSquare/Stone 系列 —— 不锈钢与花岗岩材质，现代方形造型，部分配自动下水阀。",
-    heritage: "Intra（1871，瑞典）是 Teka 集团旗下历史悠久的不锈钢水槽品牌。",
+    story: "Teka/Intra sinks — the Square/ForSquare/Stone lines — stainless steel and granite, a modern square design, some with an automatic drain valve.",
+    heritage: "Intra (1871, Sweden) is the longstanding stainless-steel sink brand in the Teka Group.",
     technicalSpecs: [
-      { label: "材质", value: "不锈钢 / 花岗岩（Tegranite）" },
-      { label: "类型", value: "台下 / 台上，1-2 槽" },
-      { label: "系列", value: "Square、ForSquare、Stone" },
+      { label: "Material", value: "Stainless steel / granite (Tegranite)" },
+      { label: "Type", value: "Undermount / drop-in, 1-2 bowls" },
+      { label: "Line", value: "Square, ForSquare, Stone" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🪣", title: "耐用易洁", desc: "不锈钢 / 石材防污、耐刮。" },
-      { icon: "📐", title: "方形设计", desc: "小 R 角现代造型，优化槽内空间。" }],
-    projectShowcase: ["家庭厨房", "厨房展厅", "家居项目"],
+      { icon: "🪣", title: "Durable & easy to clean", desc: "Stainless steel/granite resists grime and scratches well." },
+      { icon: "📐", title: "Square design", desc: "A modern small-radius corner that maximizes bowl area." }],
+    projectShowcase: ["Home kitchens", "Kitchen showrooms", "Interior projects"],
   }),
   vacuum: mk({
-    story: "Teka 食品真空封装机（VS 152）—— 真空包装、延长保鲜、抽屉式嵌装。",
-    heritage: "Teka 为高端厨房增添专业保鲜设备。",
+    story: "Teka food vacuum sealer (VS 152) — vacuum packaging that extends storage, fitted as a built-in drawer.",
+    heritage: "Teka added professional preservation appliances for premium kitchens.",
     technicalSpecs: [
-      { label: "类型", value: "抽屉式真空封装" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
+      { label: "Type", value: "Built-in drawer vacuum sealer" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🧪", title: "持久保鲜", desc: "真空封装使食材保鲜更久。" },
-      { icon: "🍳", title: "支持低温慢煮", desc: "支持低温真空慢煮（Sous-vide）。" }],
-    projectShowcase: ["顶层公寓厨房", "高端餐厅", "展厅"],
+      { icon: "🧪", title: "Longer preservation", desc: "Vacuum sealing keeps food fresh longer." },
+      { icon: "🍳", title: "Sous-vide ready", desc: "Supports low-temperature sous-vide cooking." }],
+    projectShowcase: ["Penthouse kitchens", "Premium restaurants", "Showrooms"],
   }),
   "warming-drawer": mk({
-    story: "Teka 暖食抽屉（CP 15 GS）—— 推拉式，为餐盘 / 食物保温，与橱柜同步嵌装。",
-    heritage: "Teka 高端嵌入式厨房系统的完善配件。",
+    story: "Teka warming drawer (CP 15 GS) — push-pull style, keeps plates/food warm, fitted as a built-in to match the cabinetry.",
+    heritage: "A finishing accessory for Teka's premium built-in kitchen system.",
     technicalSpecs: [
-      { label: "类型", value: "推拉式暖食 / 保温抽屉（push-pull）" },
-      { label: "安装", value: "嵌入式" },
-      { label: "电源", value: "220-240V / 50-60Hz" },
+      { label: "Type", value: "Push-pull warming drawer" },
+      { label: "Installation", value: "Built-in" },
+      { label: "Power", value: "220-240V / 50-60Hz" },
     ],
     whyChoose: [WHY_EU,
-      { icon: "🍽️", title: "为餐食保温", desc: "用餐前为餐盘加热并保温食物。" },
-      { icon: "🧩", title: "橱柜协调", desc: "与同系烤箱及设备嵌装贴合。" }],
-    projectShowcase: ["高端厨房", "酒店", "展厅"],
+      { icon: "🍽️", title: "Keeps food warm", desc: "Warms plates and keeps food hot before serving." },
+      { icon: "🧩", title: "Matches the cabinetry", desc: "Flush-fitted with ovens and appliances in the same series." }],
+    projectShowcase: ["Premium kitchens", "Hotels", "Showrooms"],
   }),
 };
 
-/** 辅助函数：按 Teka 的 seriesOriginal（category）获取 meta。 */
+/** Helper: get the meta by Teka's seriesOriginal (category). */
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {
   if (!seriesOriginal) return undefined;
   const key = seriesOriginal.trim();

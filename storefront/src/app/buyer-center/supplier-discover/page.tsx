@@ -3,30 +3,30 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { FACTORIES } from "@/data/home";
 
-const INDUSTRIES = ["全部行业", "陶瓷与材料", "家具与家居用品", "卫浴洁具", "灯具照明", "橱柜与整体家居", "门窗"];
-const PROVINCES = ["全部省份", "广东", "浙江", "福建", "山东", "江苏", "四川"];
-const RATINGS = ["全部评级", "5星", "4.5星以上", "4星以上"];
-const YEARS = ["全部成立年限", "15年以上", "10–15年", "5–10年", "5年以下"];
-const SIZES = ["全部规模", "大型企业（>500 名员工）", "中型（100–500）", "小型（<100）"];
+const INDUSTRIES = ["All industries", "Ceramics & Materials", "Furniture & Home Furnishing", "Bathroom & Sanitary", "Lighting", "Kitchen Cabinets & Whole-Home Interiors", "Doors & Windows"];
+const PROVINCES = ["All provinces", "Guangdong", "Zhejiang", "Fujian", "Shandong", "Jiangsu", "Sichuan"];
+const RATINGS = ["All ratings", "5 stars", "4.5 stars and up", "4 stars and up"];
+const YEARS = ["All years founded", "Over 15 years", "10–15 years", "5–10 years", "Under 5 years"];
+const SIZES = ["All sizes", "Large (over 500 employees)", "Medium (100–500)", "Small (under 100)"];
 const SORTS = [
-  { v: "newest", l: "最新" },
-  { v: "rating", l: "高评分" },
-  { v: "orders", l: "订单多" },
-  { v: "audit", l: "近期验厂" },
+  { v: "newest", l: "Newest" },
+  { v: "rating", l: "Top Rated" },
+  { v: "orders", l: "Most Orders" },
+  { v: "audit", l: "Recently Audited" },
 ];
 
 export default function SupplierDiscoverPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "采购商中心", href: "/buyer-center" }, { label: "发现供应商" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Discover Suppliers" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/supplier-discover" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 发现供应商</div>
-            <h1 className="text-[22px] font-bold text-ink">发现供应商</h1>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🏭 DISCOVER SUPPLIERS</div>
+            <h1 className="text-[22px] font-bold text-ink">Discover Suppliers</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              4,500余家工厂已通过华越认证，可按行业、生产区域、规模及成立年份筛选。此处每家供应商均至少有1笔与越南采购商的成功订单，并可使用中文沟通。
+              Over 4,500 factories audited by Huayuesc, filterable by industry, production region, size, and year founded. Every supplier here has at least one successful order with a Vietnamese buyer and is ready to work in Vietnamese over email.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function SupplierDiscoverPage() {
               </select>
             </div>
             <div className="flex justify-between items-center pt-3 border-t border-line max-md:flex-col max-md:items-start max-md:gap-2">
-              <span className="text-[12px] text-mute">找到 <b className="text-ink">{FACTORIES.length}</b> 家匹配供应商 · <a className="text-brand">保存筛选</a></span>
+              <span className="text-[12px] text-mute">Found <b className="text-ink">{FACTORIES.length}</b> matching suppliers · <a className="text-brand">Save filter</a></span>
               <div className="flex gap-1">
                 {SORTS.map((s, i) => (
                   <button key={s.v} className={`px-3 py-1.5 text-[11.5px] rounded-sm ${i === 0 ? "bg-brand text-white font-semibold" : "text-mute hover:text-brand border border-line"}`}>{s.l}</button>
@@ -69,8 +69,8 @@ export default function SupplierDiscoverPage() {
                     </Link>
                     <span className="text-[11px] text-mute">{f.location}</span>
                     <div className="flex gap-1 mt-1 flex-wrap">
-                      {f.badges.gold && <span className="text-[9.5px] bg-gold text-brand-dark px-1.5 py-0.5 rounded-sm font-bold">金牌</span>}
-                      {f.badges.audited && <span className="text-[9.5px] bg-success/20 text-success px-1.5 py-0.5 rounded-sm font-bold">✓ 已认证</span>}
+                      {f.badges.gold && <span className="text-[9.5px] bg-gold text-brand-dark px-1.5 py-0.5 rounded-sm font-bold">GOLD</span>}
+                      {f.badges.audited && <span className="text-[9.5px] bg-success/20 text-success px-1.5 py-0.5 rounded-sm font-bold">✓ AUDITED</span>}
                       <span className="text-[9.5px] bg-brand/10 text-brand px-1.5 py-0.5 rounded-sm font-bold">{f.badges.years}</span>
                     </div>
                   </div>
@@ -78,15 +78,15 @@ export default function SupplierDiscoverPage() {
                 <div className="grid grid-cols-3 gap-2 mb-3 text-center">
                   <div className="bg-[#FAFBFC] rounded-sm py-1.5">
                     <b className="block text-[12px] text-success">★ {f.rating}</b>
-                    <span className="text-[9.5px] text-mute">{f.reviews} 条评价</span>
+                    <span className="text-[9.5px] text-mute">{f.reviews} reviews</span>
                   </div>
                   <div className="bg-[#FAFBFC] rounded-sm py-1.5">
                     <b className="block text-[11px] text-ink">{f.meta}</b>
-                    <span className="text-[9.5px] text-mute">产能</span>
+                    <span className="text-[9.5px] text-mute">Capacity</span>
                   </div>
                   <div className="bg-[#FAFBFC] rounded-sm py-1.5">
                     <b className="block text-[12px] text-brand">DDP ✓</b>
-                    <span className="text-[9.5px] text-mute">到越南</span>
+                    <span className="text-[9.5px] text-mute">To VN</span>
                   </div>
                 </div>
                 <div className="flex gap-1 flex-wrap mb-3">
@@ -95,21 +95,21 @@ export default function SupplierDiscoverPage() {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <Link href={`/supplier/${f.slug}`} className="flex-1 px-3 py-1.5 bg-brand text-white rounded-sm text-[11.5px] font-semibold text-center hover:opacity-90">查看资料</Link>
-                  <Link href={`/buying-request?supplier=${f.slug}`} className="flex-1 px-3 py-1.5 border border-brand text-brand rounded-sm text-[11.5px] font-semibold text-center hover:bg-brand hover:text-white">发送询价</Link>
+                  <Link href={`/supplier/${f.slug}`} className="flex-1 px-3 py-1.5 bg-brand text-white rounded-sm text-[11.5px] font-semibold text-center hover:opacity-90">View Profile</Link>
+                  <Link href={`/buying-request?supplier=${f.slug}`} className="flex-1 px-3 py-1.5 border border-brand text-brand rounded-sm text-[11.5px] font-semibold text-center hover:bg-brand hover:text-white">Send RFQ</Link>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="bg-paper border border-line rounded p-3 flex justify-center items-center gap-1 text-[12px]">
-            <button className="px-3 py-1.5 border border-line rounded-sm text-mute hover:border-brand hover:text-brand">‹ 上一页</button>
+            <button className="px-3 py-1.5 border border-line rounded-sm text-mute hover:border-brand hover:text-brand">‹ Previous</button>
             {[1, 2, 3, 4, 5].map((p) => (
               <button key={p} className={`w-9 py-1.5 rounded-sm ${p === 1 ? "bg-brand text-white font-bold" : "border border-line text-ink hover:border-brand hover:text-brand"}`}>{p}</button>
             ))}
             <span className="px-2 text-mute">…</span>
             <button className="w-9 py-1.5 border border-line rounded-sm text-ink hover:border-brand hover:text-brand">42</button>
-            <button className="px-3 py-1.5 border border-line rounded-sm text-mute hover:border-brand hover:text-brand">下一页 ›</button>
+            <button className="px-3 py-1.5 border border-line rounded-sm text-mute hover:border-brand hover:text-brand">Next ›</button>
           </div>
         </div>
       </div>
@@ -117,4 +117,4 @@ export default function SupplierDiscoverPage() {
   );
 }
 
-export const metadata = { title: "发现供应商 — 采购商中心" };
+export const metadata = { title: "Discover Suppliers — Buyer Center" };

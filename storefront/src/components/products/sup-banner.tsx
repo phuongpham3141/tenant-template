@@ -39,7 +39,7 @@ export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
               <div className="flex items-center gap-2 flex-wrap">
                 {sup.audited && (
                   <span className="bg-gold text-brand-dark text-[10.5px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">
-                    ✓ 已验厂
+                    ✓ Audited
                   </span>
                 )}
                 <span className="text-gold text-[12px]">
@@ -51,10 +51,10 @@ export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
           </div>
           <div className="flex gap-2 mb-3.5">
             <a className="flex-1 px-3.5 py-2 bg-accent text-white text-[12.5px] font-semibold rounded-full text-center cursor-pointer hover:bg-[#B81827]">
-              📧 立即联系
+              📧 Contact Now
             </a>
             <a className="flex-1 px-3.5 py-2 bg-paper text-brand border border-brand text-[12.5px] font-semibold rounded-full text-center cursor-pointer hover:bg-brand hover:text-white">
-              💬 与供应商聊天
+              💬 Chat with Supplier
             </a>
           </div>
           <div className="grid grid-cols-5 gap-1.5 max-md:grid-cols-3">

@@ -6,14 +6,14 @@ import { NAV_MENU } from "@/data/home";
 import { SubItemPanel } from "@/components/home/mega-submenu";
 
 const NAV_LINKS: { label: string; href: string }[] = [
-  { label: "首页", href: "/" },
-  { label: "产品", href: "/products" },
-  { label: "供应商", href: "/suppliers" },
-  { label: "展会", href: "/trade-shows" },
-  { label: "行业频道", href: "/industry-channels" },
-  { label: "交易预警", href: "/trade-alert" },
-  { label: "采购需求", href: "/buying-request" },
-  { label: "入驻 CSR", href: "/sell-on-csr" },
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
+  { label: "Suppliers", href: "/suppliers" },
+  { label: "Trade Shows", href: "/trade-shows" },
+  { label: "Industry Channels", href: "/industry-channels" },
+  { label: "Trade Alert", href: "/trade-alert" },
+  { label: "Buying Request", href: "/buying-request" },
+  { label: "Sell on CSR", href: "/sell-on-csr" },
 ];
 
 export function StickyHeader() {
@@ -60,7 +60,7 @@ export function StickyHeader() {
         <Link
           href="/"
           className="flex items-center flex-shrink-0"
-          aria-label="Huayuesc — Trang chủ"
+          aria-label="Huayuesc — Home"
         >
           <img
             src="/logo/cybersilkroads-horizontal.png?v=5"
@@ -89,27 +89,27 @@ export function StickyHeader() {
             className="px-3 py-1.5 text-[12.5px] text-mute bg-[#F5F7FA] border-r border-line outline-none cursor-pointer max-md:hidden"
             defaultValue="products"
           >
-            <option value="products">产品</option>
-            <option value="suppliers">供应商</option>
-            <option value="rfq">询价</option>
+            <option value="products">Products</option>
+            <option value="suppliers">Suppliers</option>
+            <option value="rfq">Quote</option>
           </select>
           <input
             name="q"
-            placeholder="输入关键词搜索产品…"
+            placeholder="Enter a keyword to search products..."
             className="flex-1 px-3 py-1.5 outline-none text-[13px] min-w-0 max-md:text-[12px]"
           />
           <button
             type="button"
             className="px-2.5 text-mute hover:text-brand cursor-pointer text-[16px] max-md:hidden"
-            aria-label="以图搜图"
-            title="以图搜图"
+            aria-label="Search by image"
+            title="Search by image"
           >
             📷
           </button>
           <button
             type="submit"
             className="w-9 h-9 bg-brand text-white font-bold flex items-center justify-center hover:bg-brand-light cursor-pointer flex-shrink-0"
-            aria-label="搜索"
+            aria-label="Search"
           >
             🔍
           </button>
@@ -121,14 +121,14 @@ export function StickyHeader() {
           className="flex items-center gap-1.5 text-[12.5px] text-accent font-semibold hover:text-[#B81827] flex-shrink-0 max-xl:hidden"
         >
           <span className="text-[16px]">📨</span>
-          <span>发送询价</span>
+          <span>Send RFQ</span>
         </Link>
         <Link
           href="/buyer-center/favorites"
           className="flex items-center gap-1.5 text-[12.5px] text-ink hover:text-brand flex-shrink-0 max-xl:hidden"
         >
           <span className="text-[16px]">🛒</span>
-          <span>购物车</span>
+          <span>Cart</span>
         </Link>
       </div>
 
@@ -136,7 +136,7 @@ export function StickyHeader() {
           surfaces primary navigation when the original NavBar is scrolled
           off-screen. Hidden on tablet/mobile to keep sticky height slim.
 
-          The "TẤT CẢ DANH MỤC" trigger reuses the same mm-root/mm-wrap
+          The "ALL CATEGORIES" trigger reuses the same mm-root/mm-wrap
           pattern as the original NavBar so hovering reveals the full
           mega-menu (2 main categories × N sub-items + a right-side
           SubItemPanel for the hovered sub). globals.css :has() rules are
@@ -169,7 +169,7 @@ export function StickyHeader() {
               aria-haspopup="menu"
               aria-expanded={menuOpen}
             >
-              <span>☰</span> 全部分类{" "}
+              <span>☰</span> ALL CATEGORIES{" "}
               <span className={`transition-transform ${menuOpen ? "rotate-180" : ""}`}>▾</span>
             </button>
             <div
@@ -241,7 +241,7 @@ export function StickyHeader() {
             href="/factory-tour"
             className="px-3.5 py-2 text-gold text-[12.5px] font-medium border-b-[2px] border-transparent -mb-[2px] hover:bg-brand-dark hover:border-b-gold whitespace-nowrap"
           >
-            🔥 实地验厂
+            🔥 Factory Tour
           </Link>
         </div>
       </nav>

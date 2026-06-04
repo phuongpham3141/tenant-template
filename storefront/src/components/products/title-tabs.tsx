@@ -1,10 +1,10 @@
 import type { LeafCategoryPage } from "@/data/products";
 
 const TABS = [
-  { name: "产品列表", active: true },
-  { name: "供应商列表" },
-  { name: "已认证工厂" },
-  { name: "交易保障" },
+  { name: "Product List", active: true },
+  { name: "Supplier List" },
+  { name: "Certified Factories" },
+  { name: "Trade Assurance" },
 ];
 
 export function TitleTabs({ data }: { data: LeafCategoryPage }) {
@@ -15,7 +15,7 @@ export function TitleTabs({ data }: { data: LeafCategoryPage }) {
           {data.title}
         </h1>
         <span className="text-[13px] text-mute">
-          {data.title} 的 <b className="text-ink">{data.resultsCount}</b> 个结果
+          <b className="text-ink">{data.resultsCount}</b> results for {data.title}
         </span>
       </div>
       <div className="flex justify-between items-center border-b border-line max-md:flex-col max-md:items-stretch max-md:gap-2">
@@ -34,16 +34,16 @@ export function TitleTabs({ data }: { data: LeafCategoryPage }) {
           ))}
         </div>
         <div className="flex items-center gap-2 text-[12px] text-mute max-md:px-1">
-          <span>显示</span>
+          <span>View</span>
           <div className="flex border border-line rounded-sm overflow-hidden">
             <button className="px-2.5 py-1 bg-brand text-white text-[14px]">☰</button>
             <button className="px-2.5 py-1 bg-paper text-mute text-[14px] border-l border-line">▦</button>
           </div>
           <select className="px-2 py-1 border border-line rounded-sm text-[12px] bg-paper">
-            <option>最新</option>
-            <option>价格从低到高</option>
-            <option>价格从高到低</option>
-            <option>热销</option>
+            <option>Newest</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Best Seller</option>
           </select>
         </div>
       </div>

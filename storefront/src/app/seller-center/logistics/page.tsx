@@ -5,62 +5,62 @@ import { SellerSidebar } from "@/components/seller/sidebar";
 const MODES = [
   {
     icon: "📦",
-    title: "LCL 海运（拼箱）",
-    leadtime: "10-14 天",
+    title: "LCL Sea (less-than-container load)",
+    leadtime: "10–14 days",
     cost: "$45-70/CBM",
-    bestFor: "小订单 < 15 CBM，家具/纺织起订量",
-    pros: ["成本最低", "无需装满整柜", "适合新供应商"],
+    bestFor: "Small orders under 15 CBM, furniture/textile MOQ",
+    pros: ["Lowest cost", "No need to fill a container", "Great for new suppliers"],
   },
   {
     icon: "🚢",
-    title: "FCL 海运（整柜）",
-    leadtime: "8-12 天",
-    cost: "$1,800-3,200/40' 柜",
-    bestFor: "大订单 > 28 CBM、酒店连锁、项目工程",
-    pros: ["按立方计单价最低", "安全（不与他货拼装）", "实时追踪"],
+    title: "FCL Sea (full container)",
+    leadtime: "8–12 days",
+    cost: "$1,800-3,200/cont 40'",
+    bestFor: "Large orders over 28 CBM, hotel chains, projects",
+    pros: ["Cheapest unit price per m³", "Safe (not consolidated with other cargo)", "Real-time tracking"],
   },
   {
     icon: "✈",
-    title: "空运快递",
-    leadtime: "2-4 天",
+    title: "Air Express",
+    leadtime: "2–4 days",
     cost: "$5.8-9.2/kg",
-    bestFor: "样品、高端货、急单",
-    pros: ["速度最快", "逐小时详细追踪", "适合电子、珠宝"],
+    bestFor: "Samples, premium goods, urgent orders",
+    pros: ["Fastest", "Detailed hour-by-hour tracking", "Great for electronics, jewelry"],
   },
 ];
 
 const FORWARDERS = [
-  { name: "Maersk", coverage: "全球", img: 51 },
-  { name: "COSCO Shipping", coverage: "中国-东南亚", img: 52 },
-  { name: "DHL Express", coverage: "全球空运", img: 53 },
-  { name: "FedEx", coverage: "空运优先", img: 54 },
-  { name: "VietExpress", coverage: "中越 DDP", img: 55 },
-  { name: "Cainiao Logistics", coverage: "中国-东南亚拼货", img: 56 },
-  { name: "Yang Ming", coverage: "台湾-越南海运", img: 57 },
-  { name: "Evergreen", coverage: "海运集装箱", img: 58 },
+  { name: "Maersk", coverage: "Global", img: 51 },
+  { name: "COSCO Shipping", coverage: "China-Southeast Asia", img: 52 },
+  { name: "DHL Express", coverage: "Global air", img: 53 },
+  { name: "FedEx", coverage: "Priority air", img: 54 },
+  { name: "VietExpress", coverage: "China-Vietnam DDP", img: 55 },
+  { name: "Cainiao Logistics", coverage: "China-SEA consolidation", img: 56 },
+  { name: "Yang Ming", coverage: "Taiwan-Vietnam sea", img: 57 },
+  { name: "Evergreen", coverage: "Sea container", img: 58 },
 ];
 
 const ROUTES = [
-  { from: "广州", to: "海防", mode: "FCL 40'", time: "8 天", price: "$1,950" },
-  { from: "宁波", to: "胡志明市（吉莱港）", mode: "FCL 40'", time: "11 天", price: "$2,420" },
-  { from: "厦门", to: "岘港", mode: "FCL 20'", time: "9 天", price: "$1,180" },
-  { from: "深圳", to: "河内（内排）", mode: "空运快递", time: "3天", price: "$6.4/kg" },
-  { from: "上海", to: "海防", mode: "LCL", time: "12 天", price: "$58/CBM" },
-  { from: "凭祥", to: "谅山（友谊关）", mode: "陆运", time: "1 天", price: "$680/车" },
+  { from: "Guangzhou", to: "Hai Phong", mode: "FCL 40'", time: "8 days", price: "$1,950" },
+  { from: "Ningbo", to: "Ho Chi Minh City (Cat Lai)", mode: "FCL 40'", time: "11 days", price: "$2,420" },
+  { from: "Xiamen", to: "Da Nang", mode: "FCL 20'", time: "9 days", price: "$1,180" },
+  { from: "Shenzhen", to: "Hanoi (Noi Bai)", mode: "Air Express", time: "3 days", price: "$6.4/kg" },
+  { from: "Shanghai", to: "Hai Phong", mode: "LCL", time: "12 days", price: "$58/CBM" },
+  { from: "Pingxiang", to: "Lang Son (Huu Nghi)", mode: "Road", time: "1 day", price: "$680/truck" },
 ];
 
 export default function LogisticsPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "首页", href: "/" }, { label: "供应商中心", href: "/seller-center" }, { label: "国际物流" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Seller Center", href: "/seller-center" }, { label: "International Logistics" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/logistics" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="inline-block bg-brand/15 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🚢 INTERNATIONAL LOGISTICS</div>
-            <h1 className="text-[22px] font-bold text-ink">面向供应商的国际物流</h1>
+            <h1 className="text-[22px] font-bold text-ink">International logistics for suppliers</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              3 种运输方式 + 8 家货代 + 6 条常用中越线路。实时报价、7×24 追踪、DDP 选项让采购商无忧清关。每笔运单均集成 STS 担保。
+              3 shipping modes + 8 forwarders + 6 popular China-Vietnam routes. Real-time quotes, 24/7 tracking, and a DDP option so buyers never worry about customs clearance. STS escrow integrated on every shipment.
             </p>
           </div>
 
@@ -71,15 +71,15 @@ export default function LogisticsPage() {
                 <b className="block text-[14px] text-ink mb-2">{m.title}</b>
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   <div className="bg-[#FAFBFC] rounded p-2">
-                    <span className="text-[10px] text-mute block">交货时间</span>
+                    <span className="text-[10px] text-mute block">Delivery time</span>
                     <b className="text-[12px] text-brand">{m.leadtime}</b>
                   </div>
                   <div className="bg-[#FAFBFC] rounded p-2">
-                    <span className="text-[10px] text-mute block">费用</span>
+                    <span className="text-[10px] text-mute block">Cost</span>
                     <b className="text-[12px] text-accent">{m.cost}</b>
                   </div>
                 </div>
-                <p className="text-[11px] text-mute mb-2"><b className="text-ink">适合：</b> {m.bestFor}</p>
+                <p className="text-[11px] text-mute mb-2"><b className="text-ink">Best for:</b> {m.bestFor}</p>
                 <ul className="space-y-1 border-t border-line pt-2">
                   {m.pros.map((p) => (
                     <li key={p} className="text-[11.5px] text-ink flex gap-1.5"><span className="text-success">✓</span> {p}</li>
@@ -90,27 +90,27 @@ export default function LogisticsPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🧮 快速运费估算（mock）</b>
+            <b className="block text-[15px] text-ink mb-4">🧮 Quick freight calculator (mock)</b>
             <div className="grid grid-cols-5 gap-3 max-md:grid-cols-1">
               <select className="border border-line rounded-sm px-3 py-2 text-[12.5px]">
-                <option>起运港：广州</option>
-                <option>宁波</option>
-                <option>深圳</option>
+                <option>Origin port: Guangzhou</option>
+                <option>Ningbo</option>
+                <option>Shenzhen</option>
               </select>
               <select className="border border-line rounded-sm px-3 py-2 text-[12.5px]">
-                <option>目的港：海防</option>
-                <option>胡志明市</option>
-                <option>岘港</option>
+                <option>Destination port: Hai Phong</option>
+                <option>Ho Chi Minh City</option>
+                <option>Da Nang</option>
               </select>
-              <input type="text" placeholder="体积（CBM）" className="border border-line rounded-sm px-3 py-2 text-[12.5px]" />
-              <input type="text" placeholder="重量（kg）" className="border border-line rounded-sm px-3 py-2 text-[12.5px]" />
-              <button className="bg-brand text-white rounded-sm px-3 py-2 text-[12.5px] font-semibold">估算运费 →</button>
+              <input type="text" placeholder="Volume (CBM)" className="border border-line rounded-sm px-3 py-2 text-[12.5px]" />
+              <input type="text" placeholder="Weight (kg)" className="border border-line rounded-sm px-3 py-2 text-[12.5px]" />
+              <button className="bg-brand text-white rounded-sm px-3 py-2 text-[12.5px] font-semibold">Calculate →</button>
             </div>
-            <p className="text-[11px] text-mute mt-3">估算结果即时显示——正式报价将由货代在 2 小时内连同附加费一并提供。</p>
+            <p className="text-[11px] text-mute mt-3">An estimate appears instantly — the official quote, including surcharges, follows from the forwarder within 2 hours.</p>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🤝 8 家运输合作伙伴</b>
+            <b className="block text-[15px] text-ink mb-4">🤝 8 shipping partners</b>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {FORWARDERS.map((f) => (
                 <div key={f.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
@@ -125,15 +125,15 @@ export default function LogisticsPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🗺 中国 → 越南常用线路</b>
+            <b className="block text-[15px] text-ink mb-4">🗺 Popular China → Vietnam routes</b>
             <table className="w-full text-[12.5px]">
               <thead className="bg-[#FAFBFC] text-mute">
                 <tr>
-                  <th className="text-left px-3 py-2.5 font-medium">起运港</th>
-                  <th className="text-left px-3 py-2.5 font-medium">目的港</th>
-                  <th className="text-left px-3 py-2.5 font-medium">方式</th>
-                  <th className="text-left px-3 py-2.5 font-medium">时间</th>
-                  <th className="text-left px-3 py-2.5 font-medium">参考价格</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Origin port</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Destination port</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Mode</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Time</th>
+                  <th className="text-left px-3 py-2.5 font-medium">Reference price</th>
                 </tr>
               </thead>
               <tbody>
@@ -151,17 +151,17 @@ export default function LogisticsPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-3">📍 在线追踪（demo）</b>
+            <b className="block text-[15px] text-ink mb-3">📍 Live tracking (demo)</b>
             <div className="border border-line rounded p-4 bg-[#FAFBFC]">
               <div className="flex justify-between items-center mb-3">
                 <div>
                   <b className="text-[13px] text-ink">Container TEMU-928412 · MAEU-7821</b>
-                  <span className="text-[11px] text-mute block">FCL 40' HQ · 广州 → 海防 · ETD 02/05 · ETA 10/05</span>
+                  <span className="text-[11px] text-mute block">FCL 40' HQ · Guangzhou → Hai Phong · ETD May 02 · ETA May 10</span>
                 </div>
-                <span className="bg-success text-white text-[10.5px] font-bold px-2 py-0.5 rounded-sm">在途</span>
+                <span className="bg-success text-white text-[10.5px] font-bold px-2 py-0.5 rounded-sm">In transit</span>
               </div>
               <div className="grid grid-cols-5 gap-1 mt-3">
-                {["工厂提货", "盐田港", "海运中", "海防港", "采购商仓库"].map((stage, i) => (
+                {["Factory pickup", "Yantian Port", "At sea", "Hai Phong", "Buyer warehouse"].map((stage, i) => (
                   <div key={stage} className="text-center">
                     <div className={`w-6 h-6 mx-auto rounded-full flex items-center justify-center text-[10px] font-bold ${i <= 2 ? "bg-success text-white" : "bg-mute2/30 text-mute"}`}>{i + 1}</div>
                     <span className={`text-[10.5px] mt-1 block ${i <= 2 ? "text-ink font-semibold" : "text-mute"}`}>{stage}</span>
@@ -172,8 +172,8 @@ export default function LogisticsPage() {
           </div>
 
           <Link href="#" className="block bg-brand text-white rounded p-5 hover:opacity-95 text-center">
-            <b className="block text-[18px] mb-1">📦 为下一单预订运输</b>
-            <p className="text-[12.5px] opacity-90">8 家货代 5 分钟内自动报价——任选最便宜或最快方案。</p>
+            <b className="block text-[18px] mb-1">📦 Book shipping for your next order</b>
+            <p className="text-[12.5px] opacity-90">Automatic quotes within 5 minutes from 8 forwarders — pick the cheapest or the fastest.</p>
           </Link>
         </div>
       </div>
@@ -181,4 +181,4 @@ export default function LogisticsPage() {
   );
 }
 
-export const metadata = { title: "国际物流 — 供应商中心" };
+export const metadata = { title: "International Logistics — Seller Center" };

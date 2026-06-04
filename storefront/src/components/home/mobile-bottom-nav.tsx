@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const NAV_ITEMS = [
-  { icon: "🏠", label: "首页", href: "/" },
-  { icon: "🗂", label: "分类", href: "#nav-categories" },
-  { icon: "📨", label: "询价", href: "/buying-request", primary: true },
-  { icon: "💬", label: "消息", href: "/buyer-center" },
-  { icon: "👤", label: "账户", href: "/login" },
+  { icon: "🏠", label: "Home", href: "/" },
+  { icon: "🗂", label: "Categories", href: "#nav-categories" },
+  { icon: "📨", label: "RFQ", href: "/buying-request", primary: true },
+  { icon: "💬", label: "Messages", href: "/buyer-center" },
+  { icon: "👤", label: "Account", href: "/login" },
 ];
 
 export function MobileBottomNav() {

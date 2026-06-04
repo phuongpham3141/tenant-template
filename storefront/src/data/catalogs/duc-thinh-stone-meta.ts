@@ -1,10 +1,10 @@
 /**
- * 德盛石材 (Đức Thịnh Stone) 人造石系列丰富元数据 — 产品详情页。
- * 按 seriesOriginal（类目："quartz"、"marble"、"onyx"）索引。
+ * Rich metadata for the Đức Thịnh Stone engineered-stone lines — product detail page.
+ * Keyed by seriesOriginal (category: "quartz", "marble", "onyx").
  *
- * 货源说明：
- *   • 资料与参数：ducthinhstone.com（Duc Thinh Stone Technology Co., Ltd）。
- *   • 人造石（engineered stone）系列由石英粉 / 石粉 + 树脂制成。
+ * Honest sourcing:
+ *   • Profile & specs: ducthinhstone.com (Duc Thinh Stone Technology Co., Ltd).
+ *   • Engineered-stone lines made from quartz/stone powder + resin.
  */
 
 export type SeriesMeta = {
@@ -22,39 +22,39 @@ export type SeriesMeta = {
 };
 
 const COMMON_CERTS = [
-  "ISO 9001 —— 质量管理体系",
-  "无放射性材料认证（按批次 NSF/Class A）",
-  "吸水率、抗弯强度、耐磨性检测",
-  "环保材料（低VOC树脂）",
+  "ISO 9001 — Quality management",
+  "Non-radioactive material certification (NSF/Class A by batch)",
+  "Testing of water absorption, flexural strength, and abrasion resistance",
+  "Environmentally friendly material (low-VOC resin)",
 ];
 const COMMON_MFG = [
-  "德盛石材——面向越南室内装饰市场的人造石（engineered stone）供应与加工商",
-  "人造石由约90%石英粉/石粉+树脂经真空振压成型",
-  "大规格板材3200×1600mm、3000×1400/1600mm；厚度18–30mm；可按需切割尺寸",
-  "供应能力雄厚（每年数百万平方米），原料供应稳定",
+  "Đức Thịnh Stone — supplier & fabricator of engineered stone for the Vietnamese interiors market",
+  "Engineered stone pressed from ~90% quartz / stone powder + resin under vacuum vibro-compaction",
+  "Large-format slabs 3200×1600mm, 3000×1400/1600mm; thickness 18–30mm; cut to size on request",
+  "Large supply capacity (millions of m² per year), with a stable raw-material source",
 ];
 const COMMON_PACKAGING = [
-  { label: "包装", value: "铁架（A字架）+护角+缠绕膜；出口采用木箱" },
-  { label: "板材规格", value: "3200×1600mm / 3000×1400mm / 3000×1600mm / 3000×1200mm + 可按需切割" },
-  { label: "厚度", value: "18–30mm（视系列而定）" },
-  { label: "起订量", value: "按集装箱计；支持多色/多规格混装" },
-  { label: "存储", value: "竖立于A字架上，避免碰撞板材边缘" },
+  { label: "Packaging", value: "Steel A-frame + corner protectors + wrap film; wooden crates for export" },
+  { label: "Slab format", value: "3200×1600mm / 3000×1400mm / 3000×1600mm / 3000×1200mm + cut to size" },
+  { label: "Thickness", value: "18 – 30mm depending on the line" },
+  { label: "MOQ", value: "By container; mixing colors/sizes is fine" },
+  { label: "Storage", value: "Stand upright on an A-frame; avoid impact to slab edges" },
 ];
 const COMMON_INSTALL = [
-  "加工前进行测量并制定排版图（nesting），优化石纹衔接",
-  "CNC切割+边缘打磨；接缝处使用人造石专用胶",
-  "确保支撑面平整、受力均匀；大跨度处（台面）加固",
-  "安装后清洁并抛光接缝",
+  "Measure & create a cut (nesting) layout to optimize veining before fabrication",
+  "CNC cutting + edge polishing; use dedicated engineered-stone adhesive for joints",
+  "Ensure a flat, evenly load-bearing substrate; reinforce at large spans (countertops)",
+  "Clean & polish the joints after installation",
 ];
 const COMMON_CARE = [
-  { title: "日常清洁", desc: "用软布加温水/中性清洁剂擦拭。避免强力清洁剂及高浓度酸/碱。" },
-  { title: "预防保养", desc: "切割及放置热锅时使用砧板/隔热垫。石英石耐热性佳，但应避免骤冷骤热。" },
-  { title: "污渍处理", desc: "顽固污渍使用温和清洁液加不伤表面的清洁垫处理；随后立即擦净。" },
+  { title: "Daily cleaning", desc: "Wipe with a soft cloth + warm water/neutral cleaner. Avoid harsh cleaners and concentrated acids/alkalis." },
+  { title: "Prevention", desc: "Use a cutting board/trivet when cutting and placing hot pots. Quartz is heat-resistant but avoid sudden thermal shock." },
+  { title: "Stain removal", desc: "For stubborn stains use a mild cleaning solution + a non-scratch scrub pad; wipe clean immediately." },
 ];
 const COMMON_FAQ = [
-  { q: "德盛人造石可否按需切割尺寸？", a: "可以。支持按尺寸切割（cut-to-size）并按图纸进行边缘加工。" },
-  { q: "最低起订量与交期？", a: "按集装箱/数量计；交期随订单协商（参考约15天）。" },
-  { q: "是否提供样品以确认颜色？", a: "提供。可提供小块样板，供大批量下单前确认颜色/纹理。" },
+  { q: "Does Đức Thịnh engineered stone come cut to size?", a: "Yes. We support cut-to-size and edge fabrication per drawings." },
+  { q: "What is the minimum order and delivery time?", a: "Calculated by container/volume; delivery time is negotiated per order (reference ~15 days)." },
+  { q: "Do you provide samples for color approval?", a: "Yes. We provide small slab samples to approve color/veining before placing a large order." },
 ];
 function mk(p: Pick<SeriesMeta, "story" | "heritage" | "technicalSpecs" | "whyChoose" | "projectShowcase">): SeriesMeta {
   return { ...p, manufacturing: COMMON_MFG, careGuide: COMMON_CARE, installation: COMMON_INSTALL,
@@ -63,58 +63,58 @@ function mk(p: Pick<SeriesMeta, "story" | "heritage" | "technicalSpecs" | "whyCh
 
 export const DTS_SERIES_META: Record<string, SeriesMeta> = {
   quartz: mk({
-    story: "德盛人造石英石（engineered quartz）——由约90%石英粉+树脂压制而成，硬度高、耐刮擦、防渗透、耐酸性能优异。适用于厨房台面、台盆面、地面及墙面铺贴。",
-    heritage: "石英石凭借优于天然石材的耐用性以及无孔、抗菌的表面，是最受欢迎的厨房台面人造石系列。",
+    story: "Đức Thịnh engineered quartz — pressed from ~90% quartz powder + resin for high hardness, scratch resistance, water resistance, and good acid resistance. Suited to countertops, vanity tops, floors, and wall cladding.",
+    heritage: "Quartz is the most popular engineered-stone line for countertops thanks to durability that surpasses natural stone and a non-porous, antibacterial surface.",
     technicalSpecs: [
-      { label: "材质", value: "石英粉约90%+树脂" },
-      { label: "板材规格", value: "3200×1600 / 3000×1400 / 3000×1600 mm" },
-      { label: "厚度", value: "20 – 30 mm" },
-      { label: "表面", value: "抛光/哑光（honed）" },
-      { label: "特性", value: "耐酸、耐污、耐热、耐刮擦" },
+      { label: "Material", value: "~90% quartz powder + resin" },
+      { label: "Slab format", value: "3200×1600 / 3000×1400 / 3000×1600 mm" },
+      { label: "Thickness", value: "20 – 30 mm" },
+      { label: "Surface", value: "Polished / honed" },
+      { label: "Properties", value: "Resistant to acids, stains, heat, and scratches" },
     ],
     whyChoose: [
-      { icon: "💎", title: "坚硬耐用", value: undefined as never, desc: "硬度高于天然石材，耐刮擦，几乎免维护。" } as never,
-      { icon: "🛡️", title: "不渗透、抗菌", desc: "表面无孔，不渗水/渗油，易于清洁。" },
-      { icon: "🎨", title: "纹色丰富", desc: "白/灰/黑/米等多种色调及Calacatta金纹系列。" },
+      { icon: "💎", title: "Hard & durable", value: undefined as never, desc: "Harder than natural stone, scratch-resistant, low maintenance." } as never,
+      { icon: "🛡️", title: "Non-porous, antibacterial", desc: "Non-porous surface that does not absorb water/oil, easy to clean." },
+      { icon: "🎨", title: "Variety of veins and colors", desc: "Many white/gray/black/beige tones & the gold-veined Calacatta line." },
     ],
-    projectShowcase: ["公寓与别墅厨房台面", "前台接待台、商用台面", "高端室内墙面与地面铺贴"],
+    projectShowcase: ["Countertops in apartments & villas", "Reception counters, commercial worktops", "Premium interior wall cladding & flooring"],
   }),
   marble: mk({
-    story: "德盛人造大理石（engineered/artificial marble）——高度还原天然大理石纹理之美，且均匀度高、易于加工、价格合理，适用于墙面、地面及室内装饰。",
-    heritage: "人造大理石纹理媲美天然石材，但更均匀、瑕疵更少，适用于大面积铺贴。",
+    story: "Đức Thịnh engineered/artificial marble — recreates the beauty of natural marble veining with high consistency, easy fabrication, and a reasonable price for wall cladding, floors, and interiors.",
+    heritage: "Artificial marble offers veining as beautiful as natural stone but more uniform and with fewer defects, well suited to large areas.",
     technicalSpecs: [
-      { label: "材质", value: "天然石材+大理石粉+树脂" },
-      { label: "板材规格", value: "3200×1600 / 2400×1600 mm + 可按需切割" },
-      { label: "厚度", value: "18 – 30 mm" },
-      { label: "表面", value: "抛光/哑光/喷砂" },
-      { label: "适用场景", value: "墙面、地面、卫浴、客厅" },
+      { label: "Material", value: "Natural stone + marble powder + resin" },
+      { label: "Slab format", value: "3200×1600 / 2400×1600 mm + cut to size" },
+      { label: "Thickness", value: "18 – 30 mm" },
+      { label: "Surface", value: "Polished / honed / sandblasted" },
+      { label: "Applications", value: "Wall cladding, floors, bathrooms, living rooms" },
     ],
     whyChoose: [
-      { icon: "🏛️", title: "大理石之美", desc: "大理石纹理高雅，大面积铺贴均匀一致。" },
-      { icon: "✂️", title: "易于加工", desc: "切割/拼接灵活，损耗低于天然石块。" },
-      { icon: "💰", title: "性价比高", desc: "在同等美学效果下，价格优于天然大理石。" },
+      { icon: "🏛️", title: "Marble beauty", desc: "Elegant marble veining, consistent across large areas." },
+      { icon: "✂️", title: "Easy to fabricate", desc: "Flexible cutting/joining with less waste than natural stone blocks." },
+      { icon: "💰", title: "Reasonable cost", desc: "Better price than natural marble for the same aesthetic effect." },
     ],
-    projectShowcase: ["酒店大堂与墙面", "别墅客厅地面", "外立面与商用室内装饰"],
+    projectShowcase: ["Hotel lobbies & wall cladding", "Villa living-room floors", "Commercial facades & interiors"],
   }),
   onyx: mk({
-    story: "德盛人造玉石（onyx）——具备透光（translucent）效果与独特的玉石纹理，适用于装饰点缀、透光隔断、吧台等项目。",
-    heritage: "人造玉石再现天然玉石的梦幻之美，且耐用性更高，适用于背光（backlit）项目。",
+    story: "Đức Thịnh artificial onyx — a translucent effect and unique onyx veining for accent decor features, backlit panels, and bar counters.",
+    heritage: "Artificial onyx recreates the dreamy look of natural onyx with greater durability, well suited to backlit applications.",
     technicalSpecs: [
-      { label: "材质", value: "矿物粉+树脂（玉石效果）" },
-      { label: "板材规格", value: "大规格板材，可按需切割" },
-      { label: "特性", value: "玉石纹理，部分系列具备透光（backlit）效果" },
-      { label: "适用场景", value: "点缀隔断、吧台、装饰台面" },
+      { label: "Material", value: "Mineral powder + resin (onyx effect)" },
+      { label: "Slab format", value: "Large slabs, cut to size" },
+      { label: "Properties", value: "Onyx veining; some lines are translucent (backlit)" },
+      { label: "Applications", value: "Accent panels, bar counters, decorative worktops" },
     ],
     whyChoose: [
-      { icon: "✨", title: "透光效果", desc: "背光（backlit）照射时尤为出彩，营造高雅点缀" },
-      { icon: "🎨", title: "纹理独特", desc: "玉石纹理梦幻，每块板材各具特色" },
-      { icon: "💪", title: "比天然玉石更耐用", desc: "不易开裂，比天然石块更易施工" },
+      { icon: "✨", title: "Translucent effect", desc: "Beautiful when backlit for a luxurious accent." },
+      { icon: "🎨", title: "Unique veining", desc: "Dreamy onyx veining, with each slab one of a kind." },
+      { icon: "💪", title: "More durable than natural onyx", desc: "Less prone to cracking and easier to install than stone blocks." },
     ],
-    projectShowcase: ["酒店大堂背光隔断", "吧台与前台", "高端室内装饰点缀"],
+    projectShowcase: ["Backlit panels in hotel lobbies", "Bar & reception counters", "Premium interior accents"],
   }),
 };
 
-/** Helper：按 seriesOriginal（类目）获取元数据。 */
+/** Helper: get meta by seriesOriginal (category). */
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {
   if (!seriesOriginal) return undefined;
   return DTS_SERIES_META[seriesOriginal.trim()] || DTS_SERIES_META.quartz;

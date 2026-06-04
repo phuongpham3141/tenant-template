@@ -16,43 +16,43 @@ type HeroSlide = {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "🏭 专注家具与建材",
-    titleStart: "陶瓷与家具 ",
-    titleGold: "源头工厂",
-    titleEnd: "\n中国直采。",
-    desc: "960+ 款产品，来自 20+ 家陶瓷工厂（佛山）与家具工厂（晋江、KUKA、OPPEIN）。源头直接报价，无中间环节。",
-    primary: { label: "📨 发送询价", href: "/buying-request" },
-    secondary: { label: "🏭 查看工厂 →", href: "/suppliers" },
+    badge: "🏭 Furniture & Building Materials Specialist",
+    titleStart: "Source ",
+    titleGold: "ceramics & furniture",
+    titleEnd: "\ndirect from China.",
+    desc: "960+ products from 20+ ceramic factories (Foshan) and furniture factories (Jinjiang, KUKA, OPPEIN). Direct quotes, no middlemen.",
+    primary: { label: "📨 Send RFQ", href: "/buying-request" },
+    secondary: { label: "🏭 View Factories →", href: "/suppliers" },
     image: "/img/heroint.jpg?v=5",
   },
   {
-    badge: "🎁 新采购商专享优惠",
-    titleStart: "免费 ",
-    titleGold: "验厂审核",
-    titleEnd: "\n+ 首单立减 10%。",
-    desc: "注册新采购商即享价值 $300 的免费验厂审核、免费 DDP 物流，首单立减 10%。",
-    primary: { label: "🎁 注册采购商", href: "/register/buyer" },
-    secondary: { label: "了解更多 →", href: "/info/gold-membership" },
+    badge: "🎁 New Buyer Offer",
+    titleStart: "Free factory ",
+    titleGold: "audit",
+    titleEnd: "\n+ 10% off your first order.",
+    desc: "New buyers get a $300 factory audit free, free DDP shipping, and 10% off the first order.",
+    primary: { label: "🎁 Register as Buyer", href: "/register/buyer" },
+    secondary: { label: "Learn More →", href: "/info/gold-membership" },
     image: "/img/hero-buyer-promo.jpg?v=5",
   },
   {
-    badge: "📹 智能云展会",
-    titleStart: "360° ",
-    titleGold: "在线验厂",
-    titleEnd: "\n无需亲赴现场。",
-    desc: "实时视频验厂，对接 QC 经理，在线查看生产线。相比实地考察节省 5-7 天。",
-    primary: { label: "🏭 立即参观", href: "/factory-tour" },
-    secondary: { label: "预约参观 →", href: "/buyer-center/meet-suppliers" },
+    badge: "📹 Smart Expo Online",
+    titleStart: "Tour the ",
+    titleGold: "factory in 360°",
+    titleEnd: "\nno flight required.",
+    desc: "Live video factory tour, meet the QC manager, watch the production line in real time. Save 5–7 days versus an on-site visit.",
+    primary: { label: "🏭 Tour Now", href: "/factory-tour" },
+    secondary: { label: "Schedule a Tour →", href: "/buyer-center/meet-suppliers" },
     image: "/img/hero-factory-tour.jpg?v=5",
   },
   {
-    badge: "🚢 DDP 物流",
-    titleStart: "DDP 直送 ",
-    titleGold: "河内/胡志明仓",
-    titleEnd: "\n18 天到仓。",
-    desc: "一站式：物流 + 税费 + 清关。广州、宁波、厦门发运 LCL/FCL。1 小时内运费报价。",
-    primary: { label: "💰 测算 DDP 运费", href: "/info/ddp-calculator" },
-    secondary: { label: "查看发运港口 →", href: "/info/shipping-policy" },
+    badge: "🚢 DDP Logistics",
+    titleStart: "DDP to your ",
+    titleGold: "Hanoi/HCMC warehouse",
+    titleEnd: "\nin 18 days.",
+    desc: "All-inclusive: shipping + duties + customs clearance. LCL/FCL from Guangzhou, Ningbo, and Xiamen. Freight quote within 1 hour.",
+    primary: { label: "💰 Calculate DDP Freight", href: "/info/ddp-calculator" },
+    secondary: { label: "View Ports →", href: "/info/shipping-policy" },
     image: "/img/hero-ddp-logistics.jpg?v=5",
   },
 ];
@@ -191,14 +191,14 @@ export function HeroSlider() {
           <Fragment key={`nav-${idx}`}>
             <label
               htmlFor={`hs-${prevTarget}`}
-              aria-label="上一张"
+              aria-label="Previous slide"
               className={`hero-prev hero-prev-${idx} absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ‹
             </label>
             <label
               htmlFor={`hs-${nextTarget}`}
-              aria-label="下一张"
+              aria-label="Next slide"
               className={`hero-next hero-next-${idx} absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ›
@@ -213,7 +213,7 @@ export function HeroSlider() {
           <label
             key={i}
             htmlFor={`hs-${i + 1}`}
-            aria-label={`第 ${i + 1} 张`}
+            aria-label={`Slide ${i + 1}`}
             className={`hero-dot hero-dot-${i + 1} h-[3px] rounded-sm cursor-pointer transition-all`}
           />
         ))}

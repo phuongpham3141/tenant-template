@@ -12,8 +12,8 @@ type NavMenuGroup = typeof NAV_MENU[number];
  *      its first sections[].items[] (or highlights) listed underneath.
  *   2. "More Categories →" link bridge.
  *   3. Row of 6 round-cornered sub-item image thumbnails + captions.
- *   4. "Sản phẩm bán chạy:" inline list (top sub-item names).
- *   5. Footer breadcrumb + "Xem toàn bộ {main} →".
+ *   4. "Best Sellers:" inline list (top sub-item names).
+ *   5. Footer breadcrumb + "View All [main] →".
  */
 export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
   const mainHref = `/category/${group.main.slug}`;
@@ -28,11 +28,11 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
             <span>{group.main.name}</span>
           </h3>
           <Link href={mainHref} className="text-[12px] text-accent font-semibold hover:underline">
-            查看全部 →
+            View All →
           </Link>
         </div>
         <div className="flex-1 flex items-center justify-center text-mute italic text-[13px]">
-          分类持续更新中…
+          This category is being updated…
         </div>
       </div>
     );
@@ -78,7 +78,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
       {/* More Categories bridge */}
       <div className="border-t border-line mt-3 pt-2.5 flex-shrink-0">
         <Link href={mainHref} className="text-[12px] text-brand font-semibold hover:underline">
-          更多分类 →
+          More Categories →
         </Link>
       </div>
 
@@ -109,7 +109,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
       {/* Bestsellers inline list */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          热销产品
+          Best Sellers:
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.slug} className="flex items-baseline">
@@ -133,7 +133,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
           <span>{group.main.name}</span>
         </span>
         <Link href={mainHref} className="text-accent font-semibold hover:underline">
-          查看全部{group.main.name} →
+          View All {group.main.name} →
         </Link>
       </div>
     </div>
@@ -147,7 +147,7 @@ export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {
  *  2. "More Categories →" link bridge
  *  3. Horizontal row of product highlight thumbnails (round-cornered
  *     image + caption) drawn from `item.highlights`
- *  4. "Sản phẩm bán chạy:" inline list (top items from highlights)
+ *  4. "Best Sellers:" inline list (top items from highlights)
  *
  * Hero image strip was removed — the original reference does not have
  * one above the sections, only the 4-col grid + thumbnails.
@@ -205,7 +205,7 @@ export function SubItemPanel({
           href={itemHref}
           className="text-[12px] text-brand font-semibold hover:underline"
         >
-          更多分类 →
+          More Categories →
         </Link>
       </div>
 
@@ -236,7 +236,7 @@ export function SubItemPanel({
       {/* Bestsellers footer line */}
       <div className="mt-2.5 pt-2 border-t border-line flex items-baseline gap-2 flex-shrink-0 flex-wrap">
         <span className="text-[11.5px] font-bold text-ink flex-shrink-0">
-          热销产品
+          Best Sellers:
         </span>
         {bestsellers.map((b, i) => (
           <span key={b.name} className="flex items-baseline">

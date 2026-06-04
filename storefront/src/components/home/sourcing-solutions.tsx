@@ -12,63 +12,63 @@ type SolutionCard = {
 
 const SOLUTIONS: SolutionCard[] = [
   {
-    title: "陶瓷与石材产业带",
+    title: "Ceramics & Stone Manufacturing Cluster",
     bullets: [
-      "佛山 — 1,200 家陶瓷工厂",
-      "大规格瓷砖与大板岩板",
-      "FOB / DDP 海防报价",
+      "Foshan — 1,200 ceramic factories",
+      "Large-format porcelain & marble slabs",
+      "FOB / DDP Hai Phong quotes",
     ],
     image: "/img/sol-hubs.jpg?v=5",
     href: "/zones",
     subcats: [
-      { name: "瓷砖", image: "/img/cer1.jpg?v=5", href: "/category/construction-materials" },
-      { name: "大板岩板", image: "/img/cer2.jpg?v=5", href: "/category/construction-materials" },
-      { name: "工程木地板", image: "/img/cer8.jpg?v=5", href: "/category/construction-materials" },
+      { name: "Porcelain Tile", image: "/img/cer1.jpg?v=5", href: "/category/construction-materials" },
+      { name: "Large-Format Marble Slabs", image: "/img/cer2.jpg?v=5", href: "/category/construction-materials" },
+      { name: "Engineered Wood Flooring", image: "/img/cer8.jpg?v=5", href: "/category/construction-materials" },
     ],
   },
   {
-    title: "家具产业带",
+    title: "Furniture Manufacturing Cluster",
     bullets: [
-      "佛山 — 3,000+ 家家具工厂",
-      "晋江 — 340 家木制品工厂",
-      "沙发、床、柜、餐桌 OEM/ODM",
+      "Foshan — 3,000+ furniture factories",
+      "Jinjiang — 340 woodworking factories",
+      "OEM/ODM sofas, beds, cabinets & dining tables",
     ],
     image: "/img/sol-mei.jpg?v=5",
     href: "/zones",
     subcats: [
-      { name: "沙发与客厅", image: "/img/fur1.jpg?v=5", href: "/category/noi-that" },
-      { name: "床与卧室", image: "/img/fur3.jpg?v=5", href: "/category/noi-that" },
-      { name: "橱柜与衣柜", image: "/img/fur7.jpg?v=5", href: "/category/noi-that" },
+      { name: "Sofas & Living Room", image: "/img/fur1.jpg?v=5", href: "/category/noi-that" },
+      { name: "Beds & Bedroom", image: "/img/fur3.jpg?v=5", href: "/category/noi-that" },
+      { name: "Kitchen & Wardrobe Cabinets", image: "/img/fur7.jpg?v=5", href: "/category/noi-that" },
     ],
   },
   {
-    title: "OEM/ODM 定制",
+    title: "OEM/ODM Customization",
     bullets: [
-      "Logo / 尺寸 / 颜色 定制",
-      "订单 ≥ 30 套享免费 3D 设计",
-      "大批量下单前可提供样品",
+      "Custom logo / size / color",
+      "Free 3D design on orders of 30+ sets",
+      "Samples available before large orders",
     ],
     image: "/img/sol-custom.jpg?v=5",
     href: "/buying-request",
     subcats: [
-      { name: "建筑材料", image: "/img/showcase-construction-materials.jpg?v=5", href: "/category/construction-materials" },
-      { name: "定制家具", image: "/img/showcase-noi-that.jpg?v=5", href: "/category/noi-that" },
-      { name: "五星酒店 OEM", image: "/img/fur6.jpg?v=5", href: "/category/noi-that" },
+      { name: "Building Materials", image: "/img/showcase-construction-materials.jpg?v=5", href: "/category/construction-materials" },
+      { name: "Custom Furniture", image: "/img/showcase-noi-that.jpg?v=5", href: "/category/noi-that" },
+      { name: "5-Star Hotel OEM", image: "/img/fur6.jpg?v=5", href: "/category/noi-that" },
     ],
   },
   {
-    title: "智能展会 — 云端虚拟展",
+    title: "Smart Expo — Virtual Trade Show",
     bullets: [
-      "供应商均经过认证",
-      "360° VR 工厂参观",
-      "视频通话对接 QC 经理",
+      "Verified suppliers",
+      "360° VR factory tours",
+      "Video call to meet the QC manager",
     ],
     image: "/img/sol-expo.jpg?v=5",
     href: "/seller-center/smart-expo",
     subcats: [
-      { name: "VR 工厂参观", image: "/img/sub-expo1.jpg?v=5", href: "/factory-tour" },
-      { name: "陶瓷产品图册", image: "/img/sub-expo3.jpg?v=5", href: "/category/construction-materials" },
-      { name: "家具产品图册", image: "/img/cer8.jpg?v=5", href: "/category/noi-that" },
+      { name: "VR Factory Tour", image: "/img/sub-expo1.jpg?v=5", href: "/factory-tour" },
+      { name: "Ceramics Catalog", image: "/img/sub-expo3.jpg?v=5", href: "/category/construction-materials" },
+      { name: "Furniture Catalog", image: "/img/cer8.jpg?v=5", href: "/category/noi-that" },
     ],
   },
 ];
@@ -77,7 +77,7 @@ export function SourcingSolutions() {
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-6 max-md:px-3 max-md:mt-4">
       <h2 className="text-[20px] font-bold text-ink text-center mb-4 max-md:text-[17px] max-md:mb-3">
-        采购解决方案与专业服务
+        Sourcing Solutions & Specialized Services
       </h2>
       <div className="grid grid-cols-4 gap-3 md:max-xl:grid-cols-2 md:max-xl:gap-2.5 max-md:grid-cols-1 max-md:gap-2">
         {SOLUTIONS.map((s) => (
