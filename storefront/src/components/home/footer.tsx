@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { LangSwitcher } from "@/components/lang-switcher";
 
 type FooterLink = { label: string; href: string };
@@ -124,7 +125,8 @@ const SOCIALS: Social[] = [
   },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const host = (await headers()).get("host");
   return (
     <footer className="bg-brand-dark text-white mt-7 pt-9 pb-5 max-md:mt-4 max-md:pt-5 max-md:pb-3">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -210,7 +212,7 @@ export function Footer() {
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">语言：</span>
-            <LangSwitcher variant="compact" />
+            <LangSwitcher variant="compact" initialHost={host} />
           </div>
           <div className="flex gap-3.5 flex-wrap opacity-70 max-lg:justify-center max-lg:order-2">
             {CERTS.map((c) => (

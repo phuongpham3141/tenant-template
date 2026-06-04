@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { SocialIcons } from "@/components/icons/social";
 import { LangSwitcher } from "@/components/lang-switcher";
 
@@ -233,6 +233,7 @@ function SocialBtn({
 export async function TopStrip() {
   const cookieStore = await cookies();
   const isLoggedIn = !!cookieStore.get("auth_token")?.value;
+  const host = (await headers()).get("host");
 
   return (
     <div className="bg-brand-dark text-white text-[12px] relative z-50">
@@ -439,12 +440,12 @@ export async function TopStrip() {
               tabIndex={0}
             >
               {I_GLOBE}
-              <LangSwitcher variant="trigger" />
+              <LangSwitcher variant="trigger" initialHost={host} />
               <span className="text-[10px] opacity-70">▾</span>
             </span>
             <div className="ts-pop absolute right-0 top-full w-[260px] bg-paper text-ink rounded shadow-xl border border-line">
               <PopHeader title="语言与货币" />
-              <LangSwitcher variant="full" />
+              <LangSwitcher variant="full" initialHost={host} />
             </div>
           </div>
         </div>

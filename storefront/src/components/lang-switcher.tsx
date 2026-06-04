@@ -20,8 +20,17 @@ import {
 
 type Variant = "trigger" | "compact" | "full";
 
-export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
-  const [host, setHost] = useState<string | null>(null);
+export function LangSwitcher({
+  variant = "full",
+  initialHost = null,
+}: {
+  variant?: Variant;
+  initialHost?: string | null;
+}) {
+  // Seed host from the server-detected Host header so the active locale +
+  // currency render correctly on first paint (no VI/VND flash). The client
+  // re-confirms with window.location.host on hydration.
+  const [host, setHost] = useState<string | null>(initialHost);
   const [path, setPath] = useState<string>("/");
 
   useEffect(() => {
