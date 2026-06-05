@@ -8,11 +8,14 @@ export function CatFoot({ data }: { data: CategoryPage }) {
           查看相关的{data.title}供应商 ›
         </a>
         <p className="text-[12.5px] text-mute leading-relaxed mb-4 max-w-[900px]">
-          直接从中国已验厂的工厂采购{data.title}。华越为您对接 40 多家行业龙头供应商，集成工厂验厂、QC 验货及 DDP 运输至越南仓库服务。24 小时内快速报价，起订量灵活，按需 OEM/ODM。
+          直接从经过审核认证的中国工厂采购{data.title.toLowerCase()}。Cybersilkroads
+          为您对接 40 多家行业领先供应商，整合工厂验厂、QC 验货以及 DDP 送货
+          至越南仓库等一站式服务。24 小时内快速报价，灵活 MOQ，支持按需 OEM/ODM
+          定制。
         </p>
         <form className="flex gap-2 max-w-[700px] max-md:flex-col">
           <input
-            placeholder={`在 ${data.title} 中搜索……`}
+            placeholder={`在${data.title}中搜索...`}
             className="flex-1 px-3.5 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
           />
           <select className="px-3 py-2.5 border border-line rounded-sm text-[13px] bg-paper text-ink outline-none">

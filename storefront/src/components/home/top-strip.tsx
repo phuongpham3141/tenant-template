@@ -10,7 +10,7 @@ import { LangSwitcher } from "@/components/lang-switcher";
  * gap shrinks so 7 items still fit in 768px.
  *
  * Auth-aware: reads the `auth_token` cookie server-side. When logged in,
- * the "Đăng nhập / Đăng ký" item is replaced by "Tài khoản" — keeping
+ * the "登录 / 注册" item is replaced by "账户" — keeping
  * the same item count (7), so the row stays balanced either way.
  */
 
@@ -19,27 +19,27 @@ type LinkRow = {
   href: string;
   desc?: string;
   icon?: string;          // emoji glyph shown left of label
-  badge?: string;         // optional pill text (e.g. "12", "MỚI", "VIP")
+  badge?: string;         // optional pill text (e.g. "12", "新", "VIP")
   badgeTone?: "info" | "success" | "warning" | "accent" | "muted";
   thumb?: string;         // 32×32 image thumbnail (favorites)
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "控制台", href: "/buyer-center", desc: "查看询价、订单、消息" },
-  { icon: "📨", label: "询价请求 (RFQ)", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "物流与运输追踪", badge: "5", badgeTone: "info" },
+  { icon: "📊", label: "概览面板", href: "/buyer-center", desc: "查看询价、订单、消息" },
+  { icon: "📨", label: "询价单 (RFQ)", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "跟踪与运输", badge: "5", badgeTone: "info" },
   { icon: "❤️", label: "收藏的产品", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
   { icon: "📍", label: "地址簿", href: "/buyer-center/addresses" },
   { icon: "📄", label: "合同与发票", href: "/buyer-center/invoices" },
 ];
 
 const SELLER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "控制台", href: "/seller-center", desc: "销售额、收到的订单、消息" },
+  { icon: "📊", label: "概览面板", href: "/seller-center", desc: "销售额、接收订单、消息" },
   { icon: "🏷", label: "我的产品", href: "/seller-center/products" },
   { icon: "💬", label: "已发送报价", href: "/seller-center/quotes" },
   { icon: "📥", label: "收到的订单", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "工厂入驻", href: "/sell-on-csr", desc: "成为认证供应商" },
-  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "跨境支付担保中介", badge: "担保", badgeTone: "success" },
+  { icon: "🏭", label: "工厂入驻", href: "/sell-on-csr", desc: "成为已认证供应商" },
+  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "保护跨境付款的中间担保", badge: "担保", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
@@ -55,7 +55,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🚚",
     label: "PO-202611-0042",
     href: "/buyer-center/orders/PO-202611-0042",
-    desc: "600D 尼龙布 · 佛山纺织",
+    desc: "600D 尼龙布 · Foshan Textile",
     badge: "运输中",
     badgeTone: "info",
   },
@@ -63,7 +63,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "✅",
     label: "PO-202611-0038",
     href: "/buyer-center/orders/PO-202611-0038",
-    desc: "HDMI 2.1 线缆 · 深圳线缆",
+    desc: "HDMI 2.1 线缆 · Shenzhen Cable",
     badge: "已送达",
     badgeTone: "success",
   },
@@ -71,7 +71,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "YKK 拉链·杭州拉链",
+    desc: "YKK 拉链 · Hangzhou Zip Co",
     badge: "生产中",
     badgeTone: "warning",
   },
@@ -79,22 +79,22 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/cer1.jpg?v=5",
-    label: "卡拉卡塔抛光砖 600×1200",
-    href: "/product/ceramic-1",
-    desc: "东鹏陶瓷·$8.50/㎡",
+    thumb: "/img/fav-oxford.jpg?v=4",
+    label: "420D 牛津防水布",
+    href: "/products/vai-oxford-420d",
+    desc: "湖北 Textile · $3.20/m",
   },
   {
-    thumb: "/img/fur1.jpg?v=5",
-    label: "L型转角沙发 6座绒布",
-    href: "/product/furniture-1",
-    desc: "顾家家居·$420/套",
+    thumb: "/img/fav-led.jpg?v=4",
+    label: "60×60 LED 面板灯",
+    href: "/products/den-led-panel",
+    desc: "广东 Lighting · $12/个",
   },
   {
-    thumb: "/img/fur7.jpg?v=5",
-    label: "欧派亮光亚克力橱柜",
-    href: "/product/furniture-7",
-    desc: "欧派家居·$210/米",
+    thumb: "/img/fav-powerbank.jpg?v=4",
+    label: "20000mAh 移动电源",
+    href: "/products/pin-sac-20000",
+    desc: "深圳 Power · $8.50/个",
   },
 ];
 
@@ -269,7 +269,7 @@ export async function TopStrip() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="邮箱或手机号"
+                  placeholder="邮箱或电话号码"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <input
@@ -342,14 +342,14 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_PHONE}
-              <span>APP</span>
+              <span>应用</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="下载华越APP" />
+              <PopHeader title="下载 Cybersilkroads 应用" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
-                  二维码
+                  QR Code
                   <br />
                   扫码下载
                 </div>
@@ -383,7 +383,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Huayuesc — only when logged in */}
+          {/* My Cybersilkroads — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link

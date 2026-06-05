@@ -18,10 +18,10 @@ const UNSPLASH = (id: string, w: number, h: number) =>
 const FEATURED: TradeShow = {
   name: "Canton Fair 2026 — Phase 1",
   banner: UNSPLASH("1505373877841-8d25f7d46678", 720, 420), // expo crowd
-  duration: "2026/04/15 – 05/05",
+  duration: "15/04 – 05/05/2026",
   location: "中国 广州",
-  badge: "精选",
-  category: "综合·25K+ 供应商",
+  badge: "重点推荐",
+  category: "综合 · 25K+ 供应商",
   href: "/trade-shows",
 };
 
@@ -29,15 +29,15 @@ const SHOWS: TradeShow[] = [
   {
     name: "Vietnam Expo 2026",
     banner: UNSPLASH("1540575467063-178a50c2df87", 200, 150), // conference hall
-    duration: "2026/04/09 – 04/12",
+    duration: "09/04 – 12/04/2026",
     location: "越南 河内",
-    category: "综合行业",
+    category: "多行业",
     href: "/trade-shows",
   },
   {
     name: "ProPak China 2026",
     banner: UNSPLASH("1559223607-a43c990c692c", 200, 150), // expo booth
-    duration: "2026/06/15 – 06/17",
+    duration: "15/06 – 17/06/2026",
     location: "中国 上海",
     category: "包装与物流",
     href: "/trade-shows",
@@ -45,7 +45,7 @@ const SHOWS: TradeShow[] = [
   {
     name: "Furniture China 2026",
     banner: UNSPLASH("1492684223066-81342ee5ff30", 200, 150), // exhibition
-    duration: "2026/09/08 – 09/11",
+    duration: "08/09 – 11/09/2026",
     location: "中国 上海",
     category: "家具与家居",
     href: "/trade-shows",
@@ -60,10 +60,10 @@ export function TradeShowsSection() {
         <div className="flex justify-between items-start mb-4 max-md:flex-col max-md:gap-2 max-md:mb-3">
           <div className="text-center flex-1 max-md:text-left">
             <h2 className="text-[20px] font-bold text-ink max-md:text-[17px]">
-              贸易展会
+              展会
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              华越将携Made-in-China合作伙伴共同参展的展会清单。
+              Cybersilkroads 将携手 Made-in-China 合作伙伴参加的展会列表。
             </p>
           </div>
           <Link
@@ -119,10 +119,10 @@ export function TradeShowsSection() {
               </div>
               <div className="flex items-center gap-3 mt-3">
                 <span className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-[#E8943A] transition">
-                  📩 报名参展 →
+                  📩 报名参加 →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  华越带队·提供签证协助与B2B日程对接
+                  Cybersilkroads 代表团带队 · 协助签证及 B2B 行程
                 </span>
               </div>
             </div>
@@ -185,17 +185,17 @@ export function TradeShowsSection() {
               </div>
               <div className="flex-1 min-w-0">
                 <b className="block text-[13px] font-bold mb-0.5">
-                  贸易提醒 — 不错过任何展会
+                  交易预警 — 不错过任何展会
                 </b>
                 <p className="text-[11.5px] opacity-85 leading-snug">
-                  每月通过邮件获取展会日程与B2B配对安排。
+                  每月通过邮件接收展会日程 + B2B 配对行程。
                 </p>
               </div>
               <Link
                 href="/trade-alert"
                 className="px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm cursor-pointer hover:bg-[#E8943A] flex-shrink-0 whitespace-nowrap"
               >
-                订阅 →
+                立即注册 →
               </Link>
             </div>
           </div>
