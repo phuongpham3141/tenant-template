@@ -17,15 +17,14 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    title: "About Huayue",
+    title: "About Cybersilkroads",
     links: [
-      { label: "Company Profile", href: "/info/about-us" },
-      { label: "Partner Factories", href: "/info/partners" },
-      { label: "Service Network", href: "/info/network" },
-      { label: "Factory Audit Process", href: "/info/audit-process" },
+      { label: "About Us", href: "/info/about-us" },
+      { label: "Our Network", href: "/info/network" },
+      { label: "Audit Process", href: "/info/audit-process" },
       { label: "Industry News", href: "/info/industry-news" },
       { label: "Careers", href: "/info/careers" },
-      { label: "Contact Us", href: "/info/contact" },
+      { label: "Contact", href: "/info/contact" },
     ],
   },
   {
@@ -138,11 +137,11 @@ export async function Footer() {
             <Link
               href="/"
               className="block mx-auto mb-4 w-fit"
-              aria-label="Huayue — Home"
+              aria-label="Cybersilkroads — Home"
             >
               <img
                 src="/logo/cybersilkroads-horizontal.png?v=5"
-                alt="Huayuesc"
+                alt="Cybersilkroads"
                 width={400}
                 height={200}
                 className="h-32 w-auto max-md:h-24"
@@ -206,10 +205,8 @@ export async function Footer() {
             Desktop: 3-col strip [copy | lang | certs].
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
-          <span className="opacity-80 max-lg:order-3 leading-relaxed">
-            © 2026 <b className="font-semibold">Huayue Supply Chain (Vietnam) Co., Ltd.</b>{" · "}
-            <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
-            Tax ID: 0111453693 · Bao Ngoc Building, Xuan Phuong Ward, Hanoi
+          <span className="opacity-80 max-lg:order-3">
+            © 2026 Cybersilkroads (CSR) · B2B Platform · Operated by Beeagents.com
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Language:</span>

@@ -11,7 +11,7 @@ import { HOT_SEARCHES } from "@/data/home";
  */
 export function Header() {
   return (
-    <header className="search-root bg-paper py-4 border-b-[3px] border-brand relative z-10 max-md:py-3">
+    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40">
       {/* Hidden radios — drive .search-root:has() rules in globals.css */}
       <input
         type="radio"
@@ -40,24 +40,25 @@ export function Header() {
         <Link
           href="/"
           className="col-start-1 row-start-1 row-span-3 self-center flex items-center max-md:row-span-1 max-md:w-full max-md:justify-center"
-          aria-label="Huayuesc — Home"
+          aria-label="Cybersilkroads — Home"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
           <img
             src="/logo/cybersilkroads-horizontal.png?v=5"
-            alt="Huayuesc"
+            alt="Cybersilkroads"
             width={400}
             height={200}
             className="w-[240px] h-auto max-md:hidden md:max-xl:w-[200px]"
           />
-          {/* Mobile: compact horizontal logo. Capped at max-w to keep header
-              tidy on small screens (avoids huge logo dominating viewport). */}
+          {/* Mobile: compact horizontal logo (400×120 — wider, shorter
+              aspect than the 400×200 used on desktop). At 80% width the
+              height stays ~64px so the header remains tidy. */}
           <img
             src="/logo/cybersilkroads-horizontal-compact.png?v=5"
-            alt="Huayuesc"
+            alt="Cybersilkroads"
             width={400}
             height={120}
-            className="hidden h-auto max-md:block max-md:max-h-[56px] max-md:w-auto"
+            className="hidden w-4/5 h-auto max-md:block"
           />
         </Link>
 

@@ -79,22 +79,22 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/products/mijic/mijic-20240627104150-88430.png",
-    label: "Bồn cầu thông minh nguyên khối Mijic",
-    href: "/info/partners/mijic/mijic-20240627104150-88430",
-    desc: "民洁 Mijic · 卫浴洁具",
+    thumb: "/img/fav-oxford.jpg?v=4",
+    label: "420D Waterproof Oxford Fabric",
+    href: "/products/vai-oxford-420d",
+    desc: "Hubei Textile · $3.20/m",
   },
   {
-    thumb: "/img/products/bravat/f518102c.png",
-    label: "Vòi bồn tắm 5 lỗ Bravat F518102C",
-    href: "/info/partners/bravat/f518102c",
-    desc: "贝朗 Bravat · 德国卫浴",
+    thumb: "/img/fav-led.jpg?v=4",
+    label: "60×60 LED Panel Light",
+    href: "/products/den-led-panel",
+    desc: "Guangdong Lighting · $12/pc",
   },
   {
-    thumb: "/img/products/sylvania/equinox.png",
-    label: "Đèn LED downlight Concord Equinox",
-    href: "/info/partners/sylvania/equinox",
-    desc: "Sylvania · 专业照明",
+    thumb: "/img/fav-powerbank.jpg?v=4",
+    label: "20000mAh Power Bank",
+    href: "/products/pin-sac-20000",
+    desc: "Shenzhen Power · $8.50/pc",
   },
 ];
 
@@ -346,7 +346,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Download the Huayue App" />
+              <PopHeader title="Download the Cybersilkroads App" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
                   QR Code
@@ -383,7 +383,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Huayuesc — only when logged in */}
+          {/* My Cybersilkroads — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link

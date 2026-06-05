@@ -119,7 +119,37 @@ body {
 .mm-wrap:has(.mm-sub-13:hover) .mm-sub-panel-13,
 .mm-wrap:has(.mm-sub-14:hover) .mm-sub-panel-14,
 .mm-wrap:has(.mm-sub-15:hover) .mm-sub-panel-15,
-.mm-wrap:has(.mm-sub-16:hover) .mm-sub-panel-16 {
+.mm-wrap:has(.mm-sub-16:hover) .mm-sub-panel-16,
+.mm-wrap:has(.mm-sub-17:hover) .mm-sub-panel-17,
+.mm-wrap:has(.mm-sub-18:hover) .mm-sub-panel-18,
+.mm-wrap:has(.mm-sub-19:hover) .mm-sub-panel-19,
+.mm-wrap:has(.mm-sub-20:hover) .mm-sub-panel-20,
+.mm-wrap:has(.mm-sub-21:hover) .mm-sub-panel-21,
+.mm-wrap:has(.mm-sub-22:hover) .mm-sub-panel-22,
+.mm-wrap:has(.mm-sub-23:hover) .mm-sub-panel-23,
+.mm-wrap:has(.mm-sub-24:hover) .mm-sub-panel-24,
+.mm-wrap:has(.mm-sub-25:hover) .mm-sub-panel-25,
+.mm-wrap:has(.mm-sub-26:hover) .mm-sub-panel-26,
+.mm-wrap:has(.mm-sub-27:hover) .mm-sub-panel-27,
+.mm-wrap:has(.mm-sub-28:hover) .mm-sub-panel-28,
+.mm-wrap:has(.mm-sub-29:hover) .mm-sub-panel-29,
+.mm-wrap:has(.mm-sub-30:hover) .mm-sub-panel-30,
+.mm-wrap:has(.mm-sub-31:hover) .mm-sub-panel-31,
+.mm-wrap:has(.mm-sub-32:hover) .mm-sub-panel-32,
+.mm-wrap:has(.mm-sub-33:hover) .mm-sub-panel-33,
+.mm-wrap:has(.mm-sub-34:hover) .mm-sub-panel-34,
+.mm-wrap:has(.mm-sub-35:hover) .mm-sub-panel-35,
+.mm-wrap:has(.mm-sub-36:hover) .mm-sub-panel-36,
+.mm-wrap:has(.mm-sub-37:hover) .mm-sub-panel-37,
+.mm-wrap:has(.mm-sub-38:hover) .mm-sub-panel-38,
+.mm-wrap:has(.mm-sub-39:hover) .mm-sub-panel-39,
+.mm-wrap:has(.mm-sub-40:hover) .mm-sub-panel-40,
+.mm-wrap:has(.mm-sub-41:hover) .mm-sub-panel-41,
+.mm-wrap:has(.mm-sub-42:hover) .mm-sub-panel-42,
+.mm-wrap:has(.mm-sub-43:hover) .mm-sub-panel-43,
+.mm-wrap:has(.mm-sub-44:hover) .mm-sub-panel-44,
+.mm-wrap:has(.mm-sub-45:hover) .mm-sub-panel-45,
+.mm-wrap:has(.mm-sub-46:hover) .mm-sub-panel-46 {
   display: block;
 }
 
@@ -139,7 +169,37 @@ body {
 .mm-wrap:has(.mm-sub-panel-13:hover) .mm-sub-panel-13,
 .mm-wrap:has(.mm-sub-panel-14:hover) .mm-sub-panel-14,
 .mm-wrap:has(.mm-sub-panel-15:hover) .mm-sub-panel-15,
-.mm-wrap:has(.mm-sub-panel-16:hover) .mm-sub-panel-16 {
+.mm-wrap:has(.mm-sub-panel-16:hover) .mm-sub-panel-16,
+.mm-wrap:has(.mm-sub-panel-17:hover) .mm-sub-panel-17,
+.mm-wrap:has(.mm-sub-panel-18:hover) .mm-sub-panel-18,
+.mm-wrap:has(.mm-sub-panel-19:hover) .mm-sub-panel-19,
+.mm-wrap:has(.mm-sub-panel-20:hover) .mm-sub-panel-20,
+.mm-wrap:has(.mm-sub-panel-21:hover) .mm-sub-panel-21,
+.mm-wrap:has(.mm-sub-panel-22:hover) .mm-sub-panel-22,
+.mm-wrap:has(.mm-sub-panel-23:hover) .mm-sub-panel-23,
+.mm-wrap:has(.mm-sub-panel-24:hover) .mm-sub-panel-24,
+.mm-wrap:has(.mm-sub-panel-25:hover) .mm-sub-panel-25,
+.mm-wrap:has(.mm-sub-panel-26:hover) .mm-sub-panel-26,
+.mm-wrap:has(.mm-sub-panel-27:hover) .mm-sub-panel-27,
+.mm-wrap:has(.mm-sub-panel-28:hover) .mm-sub-panel-28,
+.mm-wrap:has(.mm-sub-panel-29:hover) .mm-sub-panel-29,
+.mm-wrap:has(.mm-sub-panel-30:hover) .mm-sub-panel-30,
+.mm-wrap:has(.mm-sub-panel-31:hover) .mm-sub-panel-31,
+.mm-wrap:has(.mm-sub-panel-32:hover) .mm-sub-panel-32,
+.mm-wrap:has(.mm-sub-panel-33:hover) .mm-sub-panel-33,
+.mm-wrap:has(.mm-sub-panel-34:hover) .mm-sub-panel-34,
+.mm-wrap:has(.mm-sub-panel-35:hover) .mm-sub-panel-35,
+.mm-wrap:has(.mm-sub-panel-36:hover) .mm-sub-panel-36,
+.mm-wrap:has(.mm-sub-panel-37:hover) .mm-sub-panel-37,
+.mm-wrap:has(.mm-sub-panel-38:hover) .mm-sub-panel-38,
+.mm-wrap:has(.mm-sub-panel-39:hover) .mm-sub-panel-39,
+.mm-wrap:has(.mm-sub-panel-40:hover) .mm-sub-panel-40,
+.mm-wrap:has(.mm-sub-panel-41:hover) .mm-sub-panel-41,
+.mm-wrap:has(.mm-sub-panel-42:hover) .mm-sub-panel-42,
+.mm-wrap:has(.mm-sub-panel-43:hover) .mm-sub-panel-43,
+.mm-wrap:has(.mm-sub-panel-44:hover) .mm-sub-panel-44,
+.mm-wrap:has(.mm-sub-panel-45:hover) .mm-sub-panel-45,
+.mm-wrap:has(.mm-sub-panel-46:hover) .mm-sub-panel-46 {
   display: block;
 }
 
@@ -520,3 +580,9 @@ a[style*="--social-brand"]:hover {
   display: none;
 }
 
+
+/* Hide Next.js dev-tools launcher ("N") + error overlay portal in dev preview.
+   Production (next start) renders no <nextjs-portal>, so this is a no-op there. */
+nextjs-portal {
+  display: none !important;
+}

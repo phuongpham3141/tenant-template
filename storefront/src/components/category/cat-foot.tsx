@@ -8,11 +8,11 @@ export function CatFoot({ data }: { data: CategoryPage }) {
           View related {data.title} suppliers ›
         </a>
         <p className="text-[12.5px] text-mute leading-relaxed mb-4 max-w-[900px]">
-          Source {data.title.toLowerCase()} directly from audited factories in
-          China. Huayuesc connects you with over 40 industry-leading suppliers,
-          bundling factory audit services, QC inspection, and DDP shipping to
-          your warehouse in Vietnam. Fast quotes within 24 hours, flexible MOQ,
-          and OEM/ODM on request.
+          Source {data.title.toLowerCase()} directly from certified factories in
+          China. Cybersilkroads connects you with 40+ leading suppliers, with
+          integrated factory audit, QC inspection, and DDP shipping to your
+          warehouse in Vietnam. Fast quotes within 24 hours, flexible MOQ, OEM/ODM
+          on request.
         </p>
         <form className="flex gap-2 max-w-[700px] max-md:flex-col">
           <input

@@ -63,7 +63,7 @@ export function TradeShowsSection() {
               Trade Shows
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              The trade shows Huayuesc will attend alongside its Made-in-China partners.
+              Trade shows Cybersilkroads will attend together with our Made-in-China partners.
             </p>
           </div>
           <Link
@@ -122,7 +122,7 @@ export function TradeShowsSection() {
                   📩 Register to Attend →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  Led by the Huayuesc delegation · Visa support & B2B scheduling
+                  Led by the Cybersilkroads delegation · Visa & B2B scheduling support
                 </span>
               </div>
             </div>
