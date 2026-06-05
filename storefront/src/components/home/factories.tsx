@@ -2,59 +2,51 @@ import Link from "next/link";
 import { PARTNERS, type PartnerBrand } from "@/data/partners";
 
 /**
- * 合作工厂 — 首页精选的 9 个品牌。
+ * Partner factories — 9 curated brands on the homepage.
  *
- * 每张卡片使用品牌专属横幅图：优先采用品牌官方 CDN
- * (Midea / LINVOL / Bravat / KITO / FSL / Toshiba)，而非通用的
- * Unsplash 图片。对于 3 个暂无可热链 hero 图的品牌
- * (TTLock / Teka / 3TREES) → 使用主题化 Unsplash + 品牌 logo 叠加
- * 以保持品牌辨识度。
+ * Each card uses a brand-specific banner image: prefer the brand's official
+ * CDN (Midea / LINVOL / Bravat / KITO / FSL / Toshiba) over generic
+ * Unsplash. For the 3 brands without a hot-linkable hero image
+ * (TTLock / Teka / 3TREES) → use a thematic Unsplash image + brand logo
+ * overlay to preserve recognizability.
  *
- * 卡片数据（名称、工厂位置、SKU 数、上市状态、成立年份）直接
- * 取自 PARTNERS — single source of truth。
+ * Card data (name, factory location, SKU count, listing, founding year) is
+ * pulled straight from PARTNERS — single source of truth.
  */
 
-/** 首页精选的 9 个品牌 slug，每个行业 1+ 个品牌。 */
+/** 9 curated brand slugs for the homepage, 1+ brand per industry. */
 const FEATURED_SLUGS = [
-  "midea", // ⚡ electrical — 全球顶级品牌
-  "toshiba-elevator", // 🏠 home-garden — 日本高端
-  "linvol", // 🛋 noi-that — 美的电梯
-  "bravat", // 🚿 bathroom-sanitary — 德国百年品牌
-  "kito", // 🧱 construction — 陶瓷砖
-  "3trees", // 🧱 construction — 上交所上市涂料
-  "fsl", // 💡 lighting — 1958 年传承
-  "teka", // 🍳 kitchen — 西班牙欧洲品牌
-  "ttlock", // 🪟 doors-windows — 智能门锁
+  "midea", // ⚡ electrical — top global brand
+  "toshiba-elevator", // 🏠 home-garden — premium Japanese
+  "linvol", // 🛋 noi-that — Midea elevators
+  "bravat", // 🚿 bathroom-sanitary — German, 100 years
+  "kito", // 🧱 construction — ceramic tile
+  "3trees", // 🧱 construction — SSE-listed paint
+  "fsl", // 💡 lighting — 1958 heritage
+  "teka", // 🍳 kitchen — Spanish, European
+  "ttlock", // 🪟 doors-windows — smart locks
 ] as const;
 
-/** 各品牌横幅图（16:9 比例）。 */
+/** Banner image for each brand (16:9 ratio). */
 const BRAND_BANNER: Record<string, string> = {
-  midea:
-    "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%841.png",
-  "toshiba-elevator":
-    "https://www.toshiba-elevator.com.cn/upload/2023/12-11/14-59-580999930083743.jpg",
-  linvol:
-    "https://static-btri.midea.com/btri-apaas-files/3d7a8f2d-4ff8-4615-9e80-732999e4d325@btri-apaas@%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-12-15_172059_812(1).jpg",
-  bravat:
-    "https://www.bravat.com.cn/ftp/fj/SYS26012718003945710X@26_1113132.jpg",
-  kito: "https://kito.cn/img/img45.708220b9.png",
-  fsl: "https://www.chinafsl.com/static/img/banner.jpg",
-  // 3 个品牌回退至主题化 Unsplash — 品牌专属横幅暂不可热链
-  "3trees":
-    "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=640&h=360&fit=crop&auto=format&q=75",
-  teka: "https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?w=640&h=360&fit=crop&auto=format&q=75",
-  ttlock:
-    "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?w=640&h=360&fit=crop&auto=format&q=75",
+  midea: "/img/factory-midea.jpg?v=3",
+  "toshiba-elevator": "/img/factory-toshiba-elevator.jpg?v=3",
+  linvol: "/img/factory-linvol.jpg?v=3",
+  bravat: "/img/factory-bravat.jpg?v=3",
+  kito: "/img/factory-kito.jpg?v=3",
+  fsl: "/img/factory-fsl.jpg?v=3",
+  "3trees": "/img/factory-3trees.jpg?v=3",
+  teka: "/img/factory-teka.jpg?v=3",
+  ttlock: "/img/factory-ttlock.jpg?v=3",
 };
 
-const FALLBACK_BANNER =
-  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=640&h=360&fit=crop&auto=format&q=75";
+const FALLBACK_BANNER = "/img/factory-fallback.jpg?v=6";
 
 function bannerUrl(slug: string) {
   return BRAND_BANNER[slug] ?? FALLBACK_BANNER;
 }
 
-/** 从品牌名取 1-2 个字母缩写（跳过括号内内容）。 */
+/** 1-2 character initials from the brand name (skip content in parentheses). */
 function initials(name: string): string {
   const clean = name.replace(/\s*\([^)]*\)\s*/g, " ").trim();
   const words = clean.split(/\s+/).filter(Boolean);
@@ -63,7 +55,7 @@ function initials(name: string): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
-/** 由成立年份计算 "X年"（快照 NOW = 2026，保证 SSR 稳定）。 */
+/** "X yrs" from founded year (snapshot NOW = 2026 for stable SSR). */
 function yearsBadge(founded?: string): string | null {
   if (!founded) return null;
   const m = founded.match(/(\d{4})/);
@@ -72,7 +64,7 @@ function yearsBadge(founded?: string): string | null {
   return diff > 0 ? `${diff} 年` : null;
 }
 
-/** 简短指标行（产能 > 面积 > 员工 > 设施）。 */
+/** Short metric line (capacity > area > employees > facilities). */
 function factoryMeta(p: PartnerBrand): string {
   const f = p.factory;
   if (f.capacity) return f.capacity;
@@ -86,7 +78,7 @@ function factoryMeta(p: PartnerBrand): string {
   return "—";
 }
 
-/** 从前几个产品取 2 个标签（清理后）。 */
+/** 2 tag chips from the first products (cleanly trimmed). */
 function brandTags(p: PartnerBrand): string[] {
   return p.products
     .slice(0, 2)
@@ -116,13 +108,13 @@ export function Factories() {
         </h2>
         <div className="flex gap-3.5 text-[12.5px] text-mute max-md:flex-wrap max-md:gap-2 max-md:text-[11.5px]">
           <span>
-            <b className="text-ink">{PARTNERS.length}</b> 家已审核
+            <b className="text-ink">{PARTNERS.length}</b> 家供应商
           </span>
           <span>
             <b className="text-ink">{totalListed}</b> 家上市供应商
           </span>
           <span>
-            <b className="text-ink">100%</b> 完成实地验厂
+            <b className="text-ink">100%</b> 工厂实地验厂
           </span>
         </div>
         <Link
@@ -144,24 +136,22 @@ export function Factories() {
               className="border border-line rounded-sm overflow-hidden transition cursor-pointer hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] block group/fact"
             >
               {/* === Banner ========================================== */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-[#0E2A33]">
+              <div className="relative aspect-[3/2] overflow-hidden bg-[#0E2A33]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={bannerUrl(p.slug)}
                   alt={p.name}
                   loading="lazy"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover opacity-90 group-hover/fact:opacity-100 group-hover/fact:scale-[1.03] transition-all duration-300"
+                  className="w-full h-full object-cover group-hover/fact:scale-[1.03] transition-all duration-300"
                 />
                 {/* Top badges */}
                 <div className="absolute top-2 left-2 flex gap-1 flex-wrap z-10">
-                  {p.listed && (
-                    <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
-                      ⭐ 金牌
-                    </span>
-                  )}
+                  <span className="bg-gradient-to-r from-[#A5F3FC] to-[#38BDF8] text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
+                    💎 钻石
+                  </span>
                   <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
-                    ✓ 已认证
+                    ✓ 供应商
                   </span>
                 </div>
                 {/* Years pill (right) */}
@@ -172,13 +162,13 @@ export function Factories() {
                 )}
                 {/* Bottom gradient */}
                 <div
-                  className="absolute inset-x-0 bottom-0 h-2/3 z-0"
+                  className="absolute inset-x-0 bottom-0 h-1/2 z-0"
                   style={{
                     background:
-                      "linear-gradient(transparent, rgba(0,37,87,0.85))",
+                      "linear-gradient(transparent, rgba(0,22,52,0.78))",
                   }}
                 />
-                {/* Brand seal (有 logo 则用 logo，否则回退为首字母) */}
+                {/* Brand seal (logo if available, fallback to initials) */}
                 <div className="absolute bottom-2 left-2 right-2 flex items-end gap-2 z-10">
                   <div className={`w-12 h-12 border-2 rounded-sm flex items-center justify-center font-extrabold text-[16px] flex-shrink-0 shadow-md overflow-hidden p-1 ${p.logoBg === "dark" ? "bg-brand-dark border-white/90 text-white" : "bg-paper border-white/90 text-brand"}`}>
                     {p.logo ? (
@@ -221,9 +211,9 @@ export function Factories() {
                   </span>
                 </div>
                 <div className="flex gap-1 flex-wrap">
-                  {brandTags(p).map((t) => (
+                  {brandTags(p).map((t, ti) => (
                     <span
-                      key={t}
+                      key={`${p.slug}-${ti}`}
                       className="text-[10.5px] bg-[#F5F5F5] text-mute px-2 py-0.5 rounded-sm"
                     >
                       {t}

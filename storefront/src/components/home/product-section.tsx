@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Section, Badge, Product } from "@/data/home";
 
 /**
- * Product section — purely Vietnamese (no 中文 subtitle), with instant
+ * Product section — single-language labels (no secondary subtitle), with instant
  * tab switching driven by hidden radios + CSS :has() (zero JS, zero
  * navigation, no flash). The feature image stretches to the full height
  * of the products grid via items-stretch + h-full.
@@ -21,16 +21,16 @@ const badgeStyle: Record<Badge, string> = {
 
 const badgeLabel: Record<Badge, string> = {
   top: "热销",
-  new: "新品",
+  new: "新",
   deal: "-25%",
   oem: "OEM",
-  gold: "金牌",
+  gold: "GOLD",
 };
 
 function ProductCard({ p }: { p: Product }) {
   return (
     <Link
-      href={`/product/${p.id}`}
+      href={p.href ?? `/product/${p.id}`}
       className="border border-line rounded-sm bg-white transition cursor-pointer overflow-hidden hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] hover:-translate-y-0.5 block"
     >
       <div className="aspect-square overflow-hidden relative bg-[#F5F5F5]">
@@ -75,7 +75,7 @@ function ProductCard({ p }: { p: Product }) {
 }
 
 export function ProductSection({ section }: { section: Section }) {
-  // Pre-compute each tab's product list. Tab[0] = "全部" → all products;
+  // Pre-compute each tab's product list. Tab[0] = "All" → all products;
   // others filter by tag matching the tab name. Cap at 8 = 2 rows × 4 cols
   // so every section has identical 2-row height (image stays compact).
   const PER_TAB = 8;
@@ -114,7 +114,7 @@ export function ProductSection({ section }: { section: Section }) {
         >
           {section.tabs.map((t, i) => (
             <label
-              key={t}
+              key={`${t}-${i}`}
               htmlFor={`ps-${section.id}-${i + 1}`}
               role="tab"
               className={`ps-tab ps-tab-${
@@ -137,8 +137,8 @@ export function ProductSection({ section }: { section: Section }) {
       <div className="bg-paper rounded-b border-l border-r border-b border-line p-4 grid grid-cols-[320px_1fr] gap-4 items-stretch md:max-xl:grid-cols-[220px_1fr] md:max-xl:gap-3 max-md:grid-cols-1 max-md:p-2.5 max-md:gap-2.5">
         {/* Feature image — h-full stretches to full grid row height (matches products) */}
         <Link
-          href={`/supplier/${section.featureSlug}`}
-          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[16/7] max-md:h-auto"
+          href={section.feature.href ?? `/supplier/${section.featureSlug}`}
+          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[3/4] max-md:h-auto"
         >
           <span className="absolute top-3.5 left-3.5 bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider z-10">
             {section.feature.badge}
@@ -147,13 +147,13 @@ export function ProductSection({ section }: { section: Section }) {
             <img
               src={section.feature.image}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-65"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           ) : null}
           <div
             className="absolute inset-0 p-5 flex flex-col justify-end max-md:p-3"
             style={{
-              background: "linear-gradient(transparent 20%, rgba(0,37,87,0.9))",
+              background: "linear-gradient(transparent 45%, rgba(0,18,45,0.85))",
             }}
           >
             <h3 className="text-[22px] font-bold mb-1.5 leading-tight max-md:text-[15px] max-md:mb-1">
@@ -195,7 +195,7 @@ export function ProductSection({ section }: { section: Section }) {
                       <span className="text-center px-2">
                         暂无产品
                         <br />
-                        <small className="text-[11px]">"{tabName}" 分类下</small>
+                        <small className="text-[11px]">在 "{tabName}" 分类中</small>
                       </span>
                     ) : (
                       <span className="opacity-60">+ 查看更多</span>

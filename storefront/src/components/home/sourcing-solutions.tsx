@@ -12,63 +12,63 @@ type SolutionCard = {
 
 const SOLUTIONS: SolutionCard[] = [
   {
-    title: "产业集群采购",
+    title: "陶瓷与石材产业集群",
     bullets: [
-      "集中型工业园区",
-      "源头价格更具竞争力",
-      "原厂 OEM/ODM 产品",
+      "佛山 — 1,200家陶瓷工厂",
+      "大规格瓷砖与大理石板材",
+      "海防FOB / DDP报价",
     ],
-    image: "/img/sol-hubs.jpg?v=4",
+    image: "/img/sol-hubs.jpg?v=7",
     href: "/zones",
     subcats: [
-      { name: "礼品与体育用品", image: "/img/sub-gifts.jpg?v=4", href: "/category/decoration" },
-      { name: "电气与电子", image: "/img/sub-electric.jpg?v=4", href: "/category/electrical" },
-      { name: "运输", image: "/img/sub-transport.jpg?v=4", href: "/category/hardware-tools" },
+      { name: "瓷砖", image: "/img/cer1.jpg?v=7", href: "/category/construction-materials" },
+      { name: "大规格大理石板材", image: "/img/cer2.jpg?v=7", href: "/category/construction-materials" },
+      { name: "强化复合地板", image: "/img/cer8.jpg?v=7", href: "/category/construction-materials" },
     ],
   },
   {
-    title: "MEI 获奖产品",
+    title: "家居产业集群",
     bullets: [
-      "卓越的制造品质",
-      "突破性设计",
-      "经行业专家评审",
+      "佛山 — 3,000多家家居工厂",
+      "晋江 — 340家木材加工厂",
+      "沙发、床、柜与餐桌OEM/ODM",
     ],
-    image: "/img/sol-mei.jpg?v=4",
-    href: "/info/mei-awards",
+    image: "/img/sol-mei.jpg?v=7",
+    href: "/zones",
     subcats: [
-      { name: "生产与加工", image: "/img/sub-mfg.jpg?v=4", href: "/category/construction-materials" },
-      { name: "冶金与矿产", image: "/img/sub-metal.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "包装与印刷", image: "/img/sub-pack.jpg?v=4", href: "/category/decoration" },
+      { name: "沙发与客厅", image: "/img/fur1.jpg?v=7", href: "/category/noi-that" },
+      { name: "床与卧室", image: "/img/fur3.jpg?v=7", href: "/category/noi-that" },
+      { name: "橱柜与衣柜", image: "/img/fur7.jpg?v=7", href: "/category/noi-that" },
     ],
   },
   {
-    title: "产品定制",
+    title: "定制OEM/ODM加工",
     bullets: [
-      "定制 Logo / 尺寸 / 颜色",
-      "按需专属设计",
-      "下单前提供样品",
+      "定制logo / 尺寸 / 颜色",
+      "30套起订单免费3D设计",
+      "大批量下单前提供样品",
     ],
-    image: "/img/sol-custom.jpg?v=4",
+    image: "/img/sol-custom.jpg?v=7",
     href: "/buying-request",
     subcats: [
-      { name: "雨伞", image: "/img/sub-umb.jpg?v=4", href: "/category/outdoor-garden" },
-      { name: "拖鞋与鞋类", image: "/img/sub-slip.jpg?v=4", href: "/category/hotel-supplies" },
-      { name: "手机壳", image: "/img/sub-case.jpg?v=4", href: "/category/electrical" },
+      { name: "建筑材料", image: "/img/showcase-construction-materials.jpg?v=7", href: "/category/construction-materials" },
+      { name: "定制家居", image: "/img/showcase-noi-that.jpg?v=7", href: "/category/noi-that" },
+      { name: "五星级酒店OEM", image: "/img/fur6.jpg?v=7", href: "/category/noi-that" },
     ],
   },
   {
-    title: "智能展会 — 线上展会",
+    title: "Smart Expo — 虚拟展会",
     bullets: [
-      "经过审核认证的供应商",
-      "亮相国际展会",
-      "7×24 小时虚拟展位",
+      "信誉供应商",
+      "360° VR工厂参观",
+      "视频通话直接对接QC主管",
     ],
-    image: "/img/sol-expo.jpg?v=4",
+    image: "/img/sol-expo.jpg?v=7",
     href: "/seller-center/smart-expo",
     subcats: [
-      { name: "生产与加工", image: "/img/sub-expo1.jpg?v=4", href: "/category/construction-materials" },
-      { name: "运输与车辆", image: "/img/sub-expo2.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "建筑与装饰", image: "/img/sub-expo3.jpg?v=4", href: "/category/construction-materials" },
+      { name: "VR工厂参观", image: "/img/sub-expo1.jpg?v=7", href: "/factory-tour" },
+      { name: "陶瓷分类", image: "/img/sub-expo3.jpg?v=7", href: "/category/construction-materials" },
+      { name: "家居分类", image: "/img/cer8.jpg?v=7", href: "/category/noi-that" },
     ],
   },
 ];
@@ -93,7 +93,7 @@ export function SourcingSolutions() {
               <img
                 src={s.image}
                 alt={s.title}
-                className="w-full h-full object-cover opacity-65 group-hover/sol:opacity-50 transition-opacity"
+                className="w-full h-full object-cover opacity-80 group-hover/sol:opacity-70 transition-opacity"
               />
               <div
                 className="absolute inset-0 px-4 py-4 flex flex-col justify-center"
@@ -119,9 +119,9 @@ export function SourcingSolutions() {
             </Link>
             {/* Bottom: 3 sub-icons with labels */}
             <div className="grid grid-cols-3 gap-1.5 p-3 max-md:p-2">
-              {s.subcats.map((sub) => (
+              {s.subcats.map((sub, si) => (
                 <Link
-                  key={sub.name}
+                  key={`${sub.name}-${si}`}
                   href={sub.href}
                   className="flex flex-col items-center gap-1.5 group/sub"
                 >

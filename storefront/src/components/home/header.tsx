@@ -11,7 +11,7 @@ import { HOT_SEARCHES } from "@/data/home";
  */
 export function Header() {
   return (
-    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40">
+    <header className="search-root bg-paper py-4 border-b-[3px] border-brand relative z-10 max-md:py-3">
       {/* Hidden radios — drive .search-root:has() rules in globals.css */}
       <input
         type="radio"
@@ -34,31 +34,30 @@ export function Header() {
       />
 
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_auto] grid-rows-[auto_auto_auto] gap-x-6 gap-y-1.5 md:max-xl:grid-cols-[200px_1fr] md:max-xl:gap-x-4 max-md:grid-cols-1 max-md:gap-x-0 max-md:gap-y-2">
-        {/* LOGO — desktop: horizontal logo, width = 240px (matches the 全部分类
-            sidebar width); tablet: 200px (matches col-1 width).
+        {/* LOGO — desktop: horizontal logo, width = 240px (matches ALL
+            CATEGORIES sidebar width); tablet: 200px (matches col-1 width).
             Mobile: horizontal logo at 80% of the row width. */}
         <Link
           href="/"
           className="col-start-1 row-start-1 row-span-3 self-center flex items-center max-md:row-span-1 max-md:w-full max-md:justify-center"
-          aria-label="Cybersilkroads — 首页"
+          aria-label="Huayuesc — Home"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
           <img
-            src="/logo/cybersilkroads-horizontal.png?v=5"
-            alt="Cybersilkroads"
+            src="/logo/cybersilkroads-horizontal.png?v=6"
+            alt="Huayuesc"
             width={400}
             height={200}
             className="w-[240px] h-auto max-md:hidden md:max-xl:w-[200px]"
           />
-          {/* Mobile: compact horizontal logo (400×120 — wider, shorter
-              aspect than the 400×200 used on desktop). At 80% width the
-              height stays ~64px so the header remains tidy. */}
+          {/* Mobile: compact horizontal logo. Capped at max-w to keep header
+              tidy on small screens (avoids huge logo dominating viewport). */}
           <img
-            src="/logo/cybersilkroads-horizontal-compact.png?v=5"
-            alt="Cybersilkroads"
+            src="/logo/cybersilkroads-horizontal-compact.png?v=6"
+            alt="Huayuesc"
             width={400}
             height={120}
-            className="hidden w-4/5 h-auto max-md:block"
+            className="hidden h-auto max-md:block max-md:max-h-[56px] max-md:w-auto"
           />
         </Link>
 
@@ -97,7 +96,7 @@ export function Header() {
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="输入关键词搜索产品..."
+            placeholder="输入产品关键词搜索..."
           />
           <button
             type="submit"
@@ -128,7 +127,7 @@ export function Header() {
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="输入供应商名称或所在地区..."
+            placeholder="输入供应商名称或地区..."
           />
           <button
             type="submit"
@@ -141,8 +140,8 @@ export function Header() {
           </button>
           <button
             type="submit"
-            aria-label="查找供应商"
-            title="查找供应商"
+            aria-label="搜索供应商"
+            title="搜索供应商"
             className="px-7 bg-brand text-white text-[22px] hover:bg-brand-light cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             🏭
@@ -165,8 +164,8 @@ export function Header() {
             type="submit"
             formAction="/search/by-image"
             className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
-            aria-label="发送询价时附上图片"
-            title="附上产品图片以便更清楚地描述"
+            aria-label="在询价中附加图片"
+            title="附加产品图片以更清晰地描述"
           >
             📷
           </button>
@@ -198,7 +197,7 @@ export function Header() {
 
         {/* HOT SEARCH — row 3 col 2 */}
         <div className="col-start-2 row-start-3 text-[11.5px] text-mute flex gap-3 flex-wrap max-md:hidden">
-          <b className="text-ink">热门搜索：</b>
+          <b className="text-ink">热门搜索:</b>
           {HOT_SEARCHES.map((s) => (
             <Link
               key={s}

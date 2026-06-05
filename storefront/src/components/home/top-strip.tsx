@@ -10,7 +10,7 @@ import { LangSwitcher } from "@/components/lang-switcher";
  * gap shrinks so 7 items still fit in 768px.
  *
  * Auth-aware: reads the `auth_token` cookie server-side. When logged in,
- * the "登录 / 注册" item is replaced by "账户" — keeping
+ * the "Sign In / Sign Up" item is replaced by "Account" — keeping
  * the same item count (7), so the row stays balanced either way.
  */
 
@@ -19,27 +19,27 @@ type LinkRow = {
   href: string;
   desc?: string;
   icon?: string;          // emoji glyph shown left of label
-  badge?: string;         // optional pill text (e.g. "12", "新", "VIP")
+  badge?: string;         // optional pill text (e.g. "12", "NEW", "VIP")
   badgeTone?: "info" | "success" | "warning" | "accent" | "muted";
   thumb?: string;         // 32×32 image thumbnail (favorites)
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "概览面板", href: "/buyer-center", desc: "查看询价、订单、消息" },
-  { icon: "📨", label: "询价单 (RFQ)", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "跟踪与运输", badge: "5", badgeTone: "info" },
+  { icon: "📊", label: "控制台", href: "/buyer-center", desc: "查看询价、订单和消息" },
+  { icon: "📨", label: "采购需求", href: "/buyer-center/rfqs", desc: "管理已发送的询价", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "我的订单", href: "/buyer-center/orders", desc: "跟踪运输与交付", badge: "5", badgeTone: "info" },
   { icon: "❤️", label: "收藏的产品", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
   { icon: "📍", label: "地址簿", href: "/buyer-center/addresses" },
   { icon: "📄", label: "合同与发票", href: "/buyer-center/invoices" },
 ];
 
 const SELLER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "概览面板", href: "/seller-center", desc: "销售额、接收订单、消息" },
+  { icon: "📊", label: "控制台", href: "/seller-center", desc: "销售额、新到订单和消息" },
   { icon: "🏷", label: "我的产品", href: "/seller-center/products" },
   { icon: "💬", label: "已发送报价", href: "/seller-center/quotes" },
-  { icon: "📥", label: "收到的订单", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "工厂入驻", href: "/sell-on-csr", desc: "成为已认证供应商" },
-  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "保护跨境付款的中间担保", badge: "担保", badgeTone: "success" },
+  { icon: "📥", label: "新到订单", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
+  { icon: "🏭", label: "入驻CSR", href: "/sell-on-csr", desc: "成为认证供应商" },
+  { icon: "🛡", label: "交易保障", href: "/info/trade-assurance", desc: "跨境支付资金托管", badge: "托管", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
@@ -55,7 +55,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🚚",
     label: "PO-202611-0042",
     href: "/buyer-center/orders/PO-202611-0042",
-    desc: "600D 尼龙布 · Foshan Textile",
+    desc: "600D尼龙布 · Foshan Textile",
     badge: "运输中",
     badgeTone: "info",
   },
@@ -63,7 +63,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "✅",
     label: "PO-202611-0038",
     href: "/buyer-center/orders/PO-202611-0038",
-    desc: "HDMI 2.1 线缆 · Shenzhen Cable",
+    desc: "HDMI 2.1线缆 · Shenzhen Cable",
     badge: "已送达",
     badgeTone: "success",
   },
@@ -71,7 +71,7 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "YKK 拉链 · Hangzhou Zip Co",
+    desc: "YKK拉链 · Hangzhou Zipper",
     badge: "生产中",
     badgeTone: "warning",
   },
@@ -79,22 +79,22 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/fav-oxford.jpg?v=4",
-    label: "420D 牛津防水布",
-    href: "/products/vai-oxford-420d",
-    desc: "湖北 Textile · $3.20/m",
+    thumb: "/img/products/mijic/mijic-20240627104150-88430.png",
+    label: "Mijic一体式智能马桶",
+    href: "/info/partners/mijic/mijic-20240627104150-88430",
+    desc: "Mijic · 卫浴设备",
   },
   {
-    thumb: "/img/fav-led.jpg?v=4",
-    label: "60×60 LED 面板灯",
-    href: "/products/den-led-panel",
-    desc: "广东 Lighting · $12/个",
+    thumb: "/img/products/bravat/f518102c.png",
+    label: "Bravat F518102C五孔浴缸龙头",
+    href: "/info/partners/bravat/f518102c",
+    desc: "Bravat · 德国卫浴",
   },
   {
-    thumb: "/img/fav-powerbank.jpg?v=4",
-    label: "20000mAh 移动电源",
-    href: "/products/pin-sac-20000",
-    desc: "深圳 Power · $8.50/个",
+    thumb: "/img/products/sylvania/equinox.png",
+    label: "Concord Equinox LED筒灯",
+    href: "/info/partners/sylvania/equinox",
+    desc: "Sylvania · 专业照明",
   },
 ];
 
@@ -269,7 +269,7 @@ export async function TopStrip() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="邮箱或电话号码"
+                  placeholder="邮箱或手机号"
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <input
@@ -286,15 +286,15 @@ export async function TopStrip() {
                 </button>
                 <div className="flex justify-between text-[11.5px] pt-1">
                   <Link href="/forgot-password" className="text-mute hover:text-brand cursor-pointer">
-                    忘记密码？
+                    忘记密码?
                   </Link>
                   <Link href="/register/buyer" className="text-brand font-semibold cursor-pointer hover:underline">
-                    注册采购商 →
+                    注册采购 →
                   </Link>
                 </div>
               </form>
               <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
-                您是供应商？{" "}
+                您是供应商?{" "}
                 <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
                   注册供应商
                 </Link>
@@ -314,7 +314,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="采购商专区" more="查看全部" moreHref="/buyer-center" />
+              <PopHeader title="采购商中心" more="查看全部" moreHref="/buyer-center" />
               <LinkList items={BUYER_LINKS} />
             </div>
           </div>
@@ -330,7 +330,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="供应商专区" more="查看全部" moreHref="/seller-center" />
+              <PopHeader title="供应商中心" more="查看全部" moreHref="/seller-center" />
               <LinkList items={SELLER_LINKS} />
             </div>
           </div>
@@ -342,14 +342,14 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_PHONE}
-              <span>应用</span>
+              <span>APP</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="下载 Cybersilkroads 应用" />
+              <PopHeader title="下载Huayue应用" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
-                  QR Code
+                  二维码
                   <br />
                   扫码下载
                 </div>
@@ -383,7 +383,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Cybersilkroads — only when logged in */}
+          {/* My Huayuesc — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link
@@ -428,7 +428,7 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="已收藏产品" more="查看全部" moreHref="/buyer-center/favorites" />
+              <PopHeader title="收藏的产品" more="查看全部" moreHref="/buyer-center/favorites" />
               <LinkList items={RECENT_FAVORITES} />
             </div>
           </div>

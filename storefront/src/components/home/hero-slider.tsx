@@ -16,44 +16,44 @@ type HeroSlide = {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "⚡ Canton Fair 2026",
-    titleStart: "寻找来自\n",
-    titleGold: "中国",
-    titleEnd: "的优质工厂。",
-    desc: "来自 40 多家经过审核认证工厂的 2,400 多款产品。直接报价，无中间环节。",
+    badge: "🏭 家居与建材专家",
+    titleStart: "从中国 ",
+    titleGold: "陶瓷与家居",
+    titleEnd: "\n直接进口。",
+    desc: "960+产品来自20+家陶瓷工厂(佛山)和家居工厂(晋江、KUKA、OPPEIN)。直接报价,无中间商。",
     primary: { label: "📨 发送询价", href: "/buying-request" },
     secondary: { label: "🏭 查看工厂 →", href: "/suppliers" },
-    image: "/img/heroint.jpg?v=4",
+    image: "/img/heroint.jpg?v=7",
   },
   {
-    badge: "🎁 新买家优惠",
-    titleStart: "工厂验厂 ",
-    titleGold: "免费",
-    titleEnd: "\n+ 首单立减 10%。",
-    desc: "新买家注册即享价值 $300 的免费工厂验厂、免费 DDP 运输及首单立减 10%。",
+    badge: "🎁 新采购商专享优惠",
+    titleStart: "免费 ",
+    titleGold: "工厂验厂",
+    titleEnd: "\n+ 首单立减10%。",
+    desc: "新采购商可享价值$300的免费工厂验厂、免费DDP运输及首单立减10%。",
     primary: { label: "🎁 注册采购商", href: "/register/buyer" },
     secondary: { label: "了解更多 →", href: "/info/gold-membership" },
-    image: "/img/hero-buyer-promo.jpg?v=4",
+    image: "/img/hero-buyer-promo.jpg?v=7",
   },
   {
-    badge: "📹 Smart Expo Online",
-    titleStart: "参观 ",
-    titleGold: "360° 工厂",
-    titleEnd: "\n无需亲自飞行。",
-    desc: "实时视频工厂参观，会见 QC 经理，实时查看生产线。比实地走访节省 5-7 天。",
+    badge: "📹 智能在线展会",
+    titleStart: "360° ",
+    titleGold: "工厂参观",
+    titleEnd: "\n无需飞往现场。",
+    desc: "通过直播视频参观工厂,与QC主管会面,实时查看生产线。比亲临现场节省5–7天。",
     primary: { label: "🏭 立即参观", href: "/factory-tour" },
     secondary: { label: "预约参观 →", href: "/buyer-center/meet-suppliers" },
-    image: "/img/hero-factory-tour.jpg?v=4",
+    image: "/img/hero-factory-tour.jpg?v=7",
   },
   {
-    badge: "🚢 Logistics DDP",
-    titleStart: "DDP 送货上门至 ",
-    titleGold: "河内/胡志明市",
-    titleEnd: "\n18 天送达。",
-    desc: "全包服务：运输 + 税费 + 清关。从广州、宁波、厦门发运 LCL/FCL。1 小时内报运费。",
-    primary: { label: "💰 DDP 运费计算", href: "/info/ddp-calculator" },
-    secondary: { label: "查看出发港 →", href: "/info/shipping-policy" },
-    image: "/img/hero-ddp-logistics.jpg?v=4",
+    badge: "🚢 DDP运输",
+    titleStart: "DDP直达 ",
+    titleGold: "河内/胡志明市仓库",
+    titleEnd: "\n18天内送达。",
+    desc: "一站式服务:运输 + 关税 + 清关。从广州、宁波和厦门发LCL/FCL。1小时内提供运费报价。",
+    primary: { label: "💰 计算DDP运费", href: "/info/ddp-calculator" },
+    secondary: { label: "查看港口 →", href: "/info/shipping-policy" },
+    image: "/img/hero-ddp-logistics.jpg?v=7",
   },
 ];
 
@@ -141,14 +141,14 @@ export function HeroSlider() {
           <img
             src={slide.image}
             alt=""
-            className="w-full h-full object-cover opacity-70 pointer-events-none"
+            className="w-full h-full object-cover opacity-95 pointer-events-none"
             draggable={false}
           />
           <div
             className="absolute inset-0 px-12 py-10 flex flex-col justify-center text-white max-md:px-4 max-md:py-4"
             style={{
               background:
-                "linear-gradient(90deg, rgba(0,37,87,0.9), rgba(0,37,87,0.3))",
+                "linear-gradient(90deg, rgba(0,28,66,0.62) 0%, rgba(0,28,66,0.28) 45%, rgba(0,28,66,0.04) 100%)",
             }}
           >
             <span className="inline-block self-start bg-gold text-brand-dark px-3 py-1 rounded-sm text-[11px] font-bold tracking-wider uppercase mb-3.5">
@@ -213,7 +213,7 @@ export function HeroSlider() {
           <label
             key={i}
             htmlFor={`hs-${i + 1}`}
-            aria-label={`第 ${i + 1} 张`}
+            aria-label={`Slide ${i + 1}`}
             className={`hero-dot hero-dot-${i + 1} h-[3px] rounded-sm cursor-pointer transition-all`}
           />
         ))}
