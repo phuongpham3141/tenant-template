@@ -12,63 +12,63 @@ type SolutionCard = {
 
 const SOLUTIONS: SolutionCard[] = [
   {
-    title: "Source from Industry Hubs",
+    title: "Ceramics & Stone Manufacturing Cluster",
     bullets: [
-      "Concentrated industrial clusters",
-      "Competitive source pricing",
-      "Original OEM/ODM products",
+      "Foshan — 1,200 ceramics factories",
+      "Large-format porcelain & marble slabs",
+      "FOB / DDP Hai Phong quotes",
     ],
-    image: "/img/sol-hubs.jpg?v=4",
+    image: "/img/sol-hubs.jpg?v=7",
     href: "/zones",
     subcats: [
-      { name: "Gifts & Sports", image: "/img/sub-gifts.jpg?v=4", href: "/category/decoration" },
-      { name: "Electrical & Electronics", image: "/img/sub-electric.jpg?v=4", href: "/category/electrical" },
-      { name: "Transportation", image: "/img/sub-transport.jpg?v=4", href: "/category/hardware-tools" },
+      { name: "Porcelain tiles", image: "/img/cer1.jpg?v=7", href: "/category/construction-materials" },
+      { name: "Large-format marble slabs", image: "/img/cer2.jpg?v=7", href: "/category/construction-materials" },
+      { name: "Engineered wood flooring", image: "/img/cer8.jpg?v=7", href: "/category/construction-materials" },
     ],
   },
   {
-    title: "MEI Award–Winning Products",
+    title: "Furniture Manufacturing Cluster",
     bullets: [
-      "Outstanding manufacturing quality",
-      "Breakthrough design",
-      "Reviewed by industry experts",
+      "Foshan — over 3,000 furniture factories",
+      "Jinjiang — 340 wood-processing factories",
+      "OEM/ODM sofas, beds, cabinets & dining tables",
     ],
-    image: "/img/sol-mei.jpg?v=4",
-    href: "/info/mei-awards",
+    image: "/img/sol-mei.jpg?v=7",
+    href: "/zones",
     subcats: [
-      { name: "Manufacturing & Processing", image: "/img/sub-mfg.jpg?v=4", href: "/category/construction-materials" },
-      { name: "Metallurgy & Minerals", image: "/img/sub-metal.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "Packaging & Printing", image: "/img/sub-pack.jpg?v=4", href: "/category/decoration" },
+      { name: "Sofas & Living Room", image: "/img/fur1.jpg?v=7", href: "/category/noi-that" },
+      { name: "Beds & Bedroom", image: "/img/fur3.jpg?v=7", href: "/category/noi-that" },
+      { name: "Kitchen & Wardrobe Cabinets", image: "/img/fur7.jpg?v=7", href: "/category/noi-that" },
     ],
   },
   {
-    title: "Product Customization",
+    title: "Custom OEM/ODM Manufacturing",
     bullets: [
-      "Custom Logo / Size / Color",
-      "Bespoke design on request",
-      "Samples available before ordering",
+      "Custom logo / size / color",
+      "Free 3D design for orders of 30 sets or more",
+      "Samples available before placing bulk orders",
     ],
-    image: "/img/sol-custom.jpg?v=4",
+    image: "/img/sol-custom.jpg?v=7",
     href: "/buying-request",
     subcats: [
-      { name: "Umbrellas", image: "/img/sub-umb.jpg?v=4", href: "/category/outdoor-garden" },
-      { name: "Slippers & Shoes", image: "/img/sub-slip.jpg?v=4", href: "/category/hotel-supplies" },
-      { name: "Phone Cases", image: "/img/sub-case.jpg?v=4", href: "/category/electrical" },
+      { name: "Building Materials", image: "/img/showcase-construction-materials.jpg?v=7", href: "/category/construction-materials" },
+      { name: "Custom Furniture", image: "/img/showcase-noi-that.jpg?v=7", href: "/category/noi-that" },
+      { name: "5-Star Hotel OEM", image: "/img/fur6.jpg?v=7", href: "/category/noi-that" },
     ],
   },
   {
     title: "Smart Expo — Virtual Trade Show",
     bullets: [
-      "Certified suppliers",
-      "Showcased at international trade shows",
-      "24/7 virtual booths",
+      "Trusted suppliers",
+      "Tour factories in VR 360°",
+      "Video call the QC manager directly",
     ],
-    image: "/img/sol-expo.jpg?v=4",
+    image: "/img/sol-expo.jpg?v=7",
     href: "/seller-center/smart-expo",
     subcats: [
-      { name: "Manufacturing & Processing", image: "/img/sub-expo1.jpg?v=4", href: "/category/construction-materials" },
-      { name: "Transport & Vehicles", image: "/img/sub-expo2.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "Construction & Decoration", image: "/img/sub-expo3.jpg?v=4", href: "/category/construction-materials" },
+      { name: "VR Factory Tour", image: "/img/sub-expo1.jpg?v=7", href: "/factory-tour" },
+      { name: "Ceramics Category", image: "/img/sub-expo3.jpg?v=7", href: "/category/construction-materials" },
+      { name: "Furniture Category", image: "/img/cer8.jpg?v=7", href: "/category/noi-that" },
     ],
   },
 ];
@@ -93,7 +93,7 @@ export function SourcingSolutions() {
               <img
                 src={s.image}
                 alt={s.title}
-                className="w-full h-full object-cover opacity-65 group-hover/sol:opacity-50 transition-opacity"
+                className="w-full h-full object-cover opacity-80 group-hover/sol:opacity-70 transition-opacity"
               />
               <div
                 className="absolute inset-0 px-4 py-4 flex flex-col justify-center"
@@ -119,9 +119,9 @@ export function SourcingSolutions() {
             </Link>
             {/* Bottom: 3 sub-icons with labels */}
             <div className="grid grid-cols-3 gap-1.5 p-3 max-md:p-2">
-              {s.subcats.map((sub) => (
+              {s.subcats.map((sub, si) => (
                 <Link
-                  key={sub.name}
+                  key={`${sub.name}-${si}`}
                   href={sub.href}
                   className="flex flex-col items-center gap-1.5 group/sub"
                 >

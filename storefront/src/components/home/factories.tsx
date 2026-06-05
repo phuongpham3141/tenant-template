@@ -29,26 +29,18 @@ const FEATURED_SLUGS = [
 
 /** Banner image for each brand (16:9 ratio). */
 const BRAND_BANNER: Record<string, string> = {
-  midea:
-    "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%841.png",
-  "toshiba-elevator":
-    "https://www.toshiba-elevator.com.cn/upload/2023/12-11/14-59-580999930083743.jpg",
-  linvol:
-    "https://static-btri.midea.com/btri-apaas-files/3d7a8f2d-4ff8-4615-9e80-732999e4d325@btri-apaas@%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-12-15_172059_812(1).jpg",
-  bravat:
-    "https://www.bravat.com.cn/ftp/fj/SYS26012718003945710X@26_1113132.jpg",
-  kito: "https://kito.cn/img/img45.708220b9.png",
-  fsl: "https://www.chinafsl.com/static/img/banner.jpg",
-  // 3 brands fall back to thematic Unsplash — brand-specific banner not yet hot-linkable
-  "3trees":
-    "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=640&h=360&fit=crop&auto=format&q=75",
-  teka: "https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?w=640&h=360&fit=crop&auto=format&q=75",
-  ttlock:
-    "https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?w=640&h=360&fit=crop&auto=format&q=75",
+  midea: "/img/factory-midea.jpg?v=3",
+  "toshiba-elevator": "/img/factory-toshiba-elevator.jpg?v=3",
+  linvol: "/img/factory-linvol.jpg?v=3",
+  bravat: "/img/factory-bravat.jpg?v=3",
+  kito: "/img/factory-kito.jpg?v=3",
+  fsl: "/img/factory-fsl.jpg?v=3",
+  "3trees": "/img/factory-3trees.jpg?v=3",
+  teka: "/img/factory-teka.jpg?v=3",
+  ttlock: "/img/factory-ttlock.jpg?v=3",
 };
 
-const FALLBACK_BANNER =
-  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=640&h=360&fit=crop&auto=format&q=75";
+const FALLBACK_BANNER = "/img/factory-fallback.jpg?v=6";
 
 function bannerUrl(slug: string) {
   return BRAND_BANNER[slug] ?? FALLBACK_BANNER;
@@ -116,13 +108,13 @@ export function Factories() {
         </h2>
         <div className="flex gap-3.5 text-[12.5px] text-mute max-md:flex-wrap max-md:gap-2 max-md:text-[11.5px]">
           <span>
-            <b className="text-ink">{PARTNERS.length}</b> Verified
+            <b className="text-ink">{PARTNERS.length}</b> Partners
           </span>
           <span>
-            <b className="text-ink">{totalListed}</b> Listed suppliers
+            <b className="text-ink">{totalListed}</b> Listed Partners
           </span>
           <span>
-            <b className="text-ink">100%</b> On-site audited
+            <b className="text-ink">100%</b> Factory Verified
           </span>
         </div>
         <Link
@@ -144,24 +136,22 @@ export function Factories() {
               className="border border-line rounded-sm overflow-hidden transition cursor-pointer hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] block group/fact"
             >
               {/* === Banner ========================================== */}
-              <div className="relative aspect-[16/9] overflow-hidden bg-[#0E2A33]">
+              <div className="relative aspect-[3/2] overflow-hidden bg-[#0E2A33]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={bannerUrl(p.slug)}
                   alt={p.name}
                   loading="lazy"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover opacity-90 group-hover/fact:opacity-100 group-hover/fact:scale-[1.03] transition-all duration-300"
+                  className="w-full h-full object-cover group-hover/fact:scale-[1.03] transition-all duration-300"
                 />
                 {/* Top badges */}
                 <div className="absolute top-2 left-2 flex gap-1 flex-wrap z-10">
-                  {p.listed && (
-                    <span className="bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
-                      ⭐ GOLD
-                    </span>
-                  )}
+                  <span className="bg-gradient-to-r from-[#A5F3FC] to-[#38BDF8] text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
+                    💎 DIAMOND
+                  </span>
                   <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider shadow-sm">
-                    ✓ VERIFIED
+                    ✓ PARTNER
                   </span>
                 </div>
                 {/* Years pill (right) */}
@@ -172,10 +162,10 @@ export function Factories() {
                 )}
                 {/* Bottom gradient */}
                 <div
-                  className="absolute inset-x-0 bottom-0 h-2/3 z-0"
+                  className="absolute inset-x-0 bottom-0 h-1/2 z-0"
                   style={{
                     background:
-                      "linear-gradient(transparent, rgba(0,37,87,0.85))",
+                      "linear-gradient(transparent, rgba(0,22,52,0.78))",
                   }}
                 />
                 {/* Brand seal (logo if available, fallback to initials) */}
@@ -221,9 +211,9 @@ export function Factories() {
                   </span>
                 </div>
                 <div className="flex gap-1 flex-wrap">
-                  {brandTags(p).map((t) => (
+                  {brandTags(p).map((t, ti) => (
                     <span
-                      key={t}
+                      key={`${p.slug}-${ti}`}
                       className="text-[10.5px] bg-[#F5F5F5] text-mute px-2 py-0.5 rounded-sm"
                     >
                       {t}

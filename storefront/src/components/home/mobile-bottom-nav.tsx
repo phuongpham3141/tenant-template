@@ -3,7 +3,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { icon: "🏠", label: "Home", href: "/" },
   { icon: "🗂", label: "Categories", href: "#nav-categories" },
-  { icon: "📨", label: "RFQ", href: "/buying-request", primary: true },
+  { icon: "📨", label: "Buying Request", href: "/buying-request", primary: true },
   { icon: "💬", label: "Messages", href: "/buyer-center" },
   { icon: "👤", label: "Account", href: "/login" },
 ];

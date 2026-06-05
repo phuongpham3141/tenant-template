@@ -9,13 +9,13 @@ export function Zones() {
           <span className="w-7 h-7 bg-gold text-brand-dark rounded-sm flex items-center justify-center font-bold max-md:w-6 max-md:h-6 max-md:text-[12px]">
             📍
           </span>
-          Industrial Parks
+          Industrial Zones
         </h2>
         <span className="text-[12.5px] text-mute max-md:hidden">
-          Certified industrial parks — buy directly at the source
+          Certified industrial zones — buy direct at the source
         </span>
         <Link href="/zones" className="text-brand text-[12.5px] flex items-center gap-1 cursor-pointer max-md:self-end max-md:text-[11.5px]">
-          View Park Map →
+          View Zone Map →
         </Link>
       </div>
       <div className="bg-paper rounded-b border-l border-r border-b border-line p-4 grid grid-cols-6 gap-2.5 md:max-xl:grid-cols-3 max-md:grid-cols-3 max-md:p-2.5 max-md:gap-2">
@@ -29,13 +29,13 @@ export function Zones() {
               <img
                 src={z.image}
                 alt={z.name}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-80 transition"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform"
               />
             ) : null}
             <div
               className="absolute inset-0 p-2.5 flex flex-col justify-end text-white max-md:p-2"
               style={{
-                background: "linear-gradient(transparent 40%, rgba(0,37,87,0.92))",
+                background: "linear-gradient(transparent 52%, rgba(0,18,45,0.82))",
               }}
             >
               <b className="block text-[13px] font-bold leading-tight mb-0.5 max-md:text-[11.5px]">

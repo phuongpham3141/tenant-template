@@ -13,15 +13,16 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
       { label: "Sample Orders", href: "/info/sample-orders" },
       { label: "Order Tracking", href: "/info/order-tracking" },
       { label: "Payment Protection", href: "/info/payment-protection" },
-      { label: "Disputes & Complaints", href: "/info/disputes" },
+      { label: "Complaints & Disputes", href: "/info/disputes" },
     ],
   },
   {
-    title: "About Cybersilkroads",
+    title: "About Huayue",
     links: [
-      { label: "About Us", href: "/info/about-us" },
-      { label: "Our Network", href: "/info/network" },
-      { label: "Audit Process", href: "/info/audit-process" },
+      { label: "Company Profile", href: "/info/about-us" },
+      { label: "Partner Factories", href: "/info/partners" },
+      { label: "Service Network", href: "/info/network" },
+      { label: "Factory Audit Process", href: "/info/audit-process" },
       { label: "Industry News", href: "/info/industry-news" },
       { label: "Careers", href: "/info/careers" },
       { label: "Contact", href: "/info/contact" },
@@ -40,7 +41,7 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    title: "Supplier Zone",
+    title: "Supplier Area",
     links: [
       { label: "Sell on CSR", href: "/sell-on-csr" },
       { label: "Trade Assurance", href: "/info/trade-assurance" },
@@ -51,7 +52,7 @@ const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
   },
 ];
 
-const CERTS = ["✓ Vietnam Ministry of Industry & Trade", "✓ DMCA Protected", "✓ ISO 27001", "✓ TÜV Certified", "✓ SSL Encrypted"];
+const CERTS = ["✓ Vietnam Ministry of Industry and Trade", "✓ DMCA Protected", "✓ ISO 27001", "✓ TÜV Certified", "✓ SSL Encryption"];
 
 type Social = {
   name: string;
@@ -137,20 +138,20 @@ export async function Footer() {
             <Link
               href="/"
               className="block mx-auto mb-4 w-fit"
-              aria-label="Cybersilkroads — Home"
+              aria-label="Huayue — Home"
             >
               <img
-                src="/logo/cybersilkroads-horizontal.png?v=5"
-                alt="Cybersilkroads"
+                src="/logo/cybersilkroads-horizontal.png?v=6"
+                alt="Huayuesc"
                 width={400}
                 height={200}
                 className="h-32 w-auto max-md:h-24"
               />
             </Link>
             <p className="text-[12px] opacity-75 leading-relaxed mb-3.5 max-w-[320px] md:max-lg:mx-auto max-md:mx-auto">
-              The B2B platform connecting Vietnamese buyers with 40+ certified
-              factories in China. Fast quotes, quality assurance, DDP delivery to
-              your warehouse.
+              A B2B platform connecting Vietnamese buyers with 40+ certified
+              factories in China. Fast quotes, quality assurance, and DDP
+              delivery straight to your warehouse.
             </p>
             <div className="flex gap-2 flex-wrap md:max-lg:justify-center max-md:justify-center">
               {SOCIALS.map((s) => (
@@ -205,8 +206,10 @@ export async function Footer() {
             Desktop: 3-col strip [copy | lang | certs].
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
-          <span className="opacity-80 max-lg:order-3">
-            © 2026 Cybersilkroads (CSR) · B2B Platform · Operated by Beeagents.com
+          <span className="opacity-80 max-lg:order-3 leading-relaxed">
+            © 2026 <b className="font-semibold">Huayue Supply Chain (Vietnam) Co., Ltd.</b>{" · "}
+            <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
+            Tax ID: 0111453693 · Bao Ngoc Building, Xuan Phuong Ward, Hanoi
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Language:</span>

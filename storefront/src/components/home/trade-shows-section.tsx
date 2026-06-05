@@ -17,7 +17,7 @@ const UNSPLASH = (id: string, w: number, h: number) =>
 
 const FEATURED: TradeShow = {
   name: "Canton Fair 2026 — Phase 1",
-  banner: UNSPLASH("1505373877841-8d25f7d46678", 720, 420), // expo crowd
+  banner: "/img/trade-canton.jpg?v=6", // Canton Fair expo hall
   duration: "15/04 – 05/05/2026",
   location: "Guangzhou, China",
   badge: "FEATURED",
@@ -28,15 +28,15 @@ const FEATURED: TradeShow = {
 const SHOWS: TradeShow[] = [
   {
     name: "Vietnam Expo 2026",
-    banner: UNSPLASH("1540575467063-178a50c2df87", 200, 150), // conference hall
+    banner: "/img/trade-vietnam-expo.jpg?v=6", // exhibition hall
     duration: "09/04 – 12/04/2026",
     location: "Hanoi, Vietnam",
-    category: "Multi-Industry",
+    category: "Multi-industry",
     href: "/trade-shows",
   },
   {
     name: "ProPak China 2026",
-    banner: UNSPLASH("1559223607-a43c990c692c", 200, 150), // expo booth
+    banner: "/img/trade-propak.jpg?v=6", // packaging & logistics expo
     duration: "15/06 – 17/06/2026",
     location: "Shanghai, China",
     category: "Packaging & Logistics",
@@ -44,7 +44,7 @@ const SHOWS: TradeShow[] = [
   },
   {
     name: "Furniture China 2026",
-    banner: UNSPLASH("1492684223066-81342ee5ff30", 200, 150), // exhibition
+    banner: "/img/trade-furniture.jpg?v=6", // furniture exhibition
     duration: "08/09 – 11/09/2026",
     location: "Shanghai, China",
     category: "Furniture & Home Goods",
@@ -63,7 +63,7 @@ export function TradeShowsSection() {
               Trade Shows
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              Trade shows Cybersilkroads will attend together with our Made-in-China partners.
+              Trade shows Huayuesc will attend together with our Chinese partner factories.
             </p>
           </div>
           <Link
@@ -87,7 +87,7 @@ export function TradeShowsSection() {
             <img
               src={FEATURED.banner}
               alt={FEATURED.name}
-              className="w-full h-full object-cover opacity-85 group-hover/feat:opacity-95 transition"
+              className="w-full h-full object-cover group-hover/feat:scale-[1.02] transition-transform"
             />
             {FEATURED.badge && (
               <span className="absolute top-3 left-3 bg-accent text-white text-[10.5px] px-2 py-0.5 rounded-sm font-bold tracking-wider z-10">
@@ -103,7 +103,7 @@ export function TradeShowsSection() {
               className="absolute inset-0 px-5 py-4 flex flex-col justify-end text-white"
               style={{
                 background:
-                  "linear-gradient(transparent 30%, rgba(0,37,87,0.85))",
+                  "linear-gradient(transparent 42%, rgba(0,18,45,0.8))",
               }}
             >
               <h3 className="text-[22px] font-bold leading-tight mb-2 max-md:text-[17px]">
@@ -122,7 +122,7 @@ export function TradeShowsSection() {
                   📩 Register to Attend →
                 </span>
                 <span className="text-[11.5px] opacity-80">
-                  Led by the Cybersilkroads delegation · Visa & B2B scheduling support
+                  Led by the Huayuesc delegation · Visa support & B2B meeting scheduling
                 </span>
               </div>
             </div>
@@ -185,10 +185,10 @@ export function TradeShowsSection() {
               </div>
               <div className="flex-1 min-w-0">
                 <b className="block text-[13px] font-bold mb-0.5">
-                  Trade Alert — Never Miss a Trade Show
+                  Trade Show Alert — Never miss a show
                 </b>
                 <p className="text-[11.5px] opacity-85 leading-snug">
-                  Get the trade-show calendar + B2B matchmaking schedule by email every month.
+                  Get the trade show calendar + B2B matchmaking schedule by email every month.
                 </p>
               </div>
               <Link

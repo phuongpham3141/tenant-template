@@ -114,7 +114,7 @@ export function ProductSection({ section }: { section: Section }) {
         >
           {section.tabs.map((t, i) => (
             <label
-              key={t}
+              key={`${t}-${i}`}
               htmlFor={`ps-${section.id}-${i + 1}`}
               role="tab"
               className={`ps-tab ps-tab-${
@@ -138,7 +138,7 @@ export function ProductSection({ section }: { section: Section }) {
         {/* Feature image — h-full stretches to full grid row height (matches products) */}
         <Link
           href={section.feature.href ?? `/supplier/${section.featureSlug}`}
-          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[16/7] max-md:h-auto"
+          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[3/4] max-md:h-auto"
         >
           <span className="absolute top-3.5 left-3.5 bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider z-10">
             {section.feature.badge}
@@ -147,13 +147,13 @@ export function ProductSection({ section }: { section: Section }) {
             <img
               src={section.feature.image}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-65"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           ) : null}
           <div
             className="absolute inset-0 p-5 flex flex-col justify-end max-md:p-3"
             style={{
-              background: "linear-gradient(transparent 20%, rgba(0,37,87,0.9))",
+              background: "linear-gradient(transparent 45%, rgba(0,18,45,0.85))",
             }}
           >
             <h3 className="text-[22px] font-bold mb-1.5 leading-tight max-md:text-[15px] max-md:mb-1">
@@ -195,7 +195,7 @@ export function ProductSection({ section }: { section: Section }) {
                       <span className="text-center px-2">
                         No products yet
                         <br />
-                        <small className="text-[11px]">in the "{tabName}" tab</small>
+                        <small className="text-[11px]">in "{tabName}"</small>
                       </span>
                     ) : (
                       <span className="opacity-60">+ View More</span>

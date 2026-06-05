@@ -16,44 +16,44 @@ type HeroSlide = {
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "⚡ Canton Fair 2026",
-    titleStart: "Find the best factories\nin ",
-    titleGold: "China",
-    titleEnd: ".",
-    desc: "2,400+ products from 40+ certified factories. Direct quotes, no middlemen.",
+    badge: "🏭 Furniture & Building Materials Experts",
+    titleStart: "Import ",
+    titleGold: "ceramics & furniture",
+    titleEnd: "\ndirect from China.",
+    desc: "960+ products from 20+ ceramics factories (Foshan) and furniture factories (Jinjiang, KUKA, OPPEIN). Direct quotes, no middlemen.",
     primary: { label: "📨 Send RFQ", href: "/buying-request" },
     secondary: { label: "🏭 View Factories →", href: "/suppliers" },
-    image: "/img/heroint.jpg?v=4",
+    image: "/img/heroint.jpg?v=7",
   },
   {
-    badge: "🎁 New buyer offer",
-    titleStart: "Free factory audit ",
-    titleGold: "on us",
+    badge: "🎁 New Buyer Offer",
+    titleStart: "Free ",
+    titleGold: "factory audit",
     titleEnd: "\n+ 10% off your first order.",
-    desc: "Register as a new buyer to receive a $300 factory audit free, free DDP shipping, and 10% off your first order.",
-    primary: { label: "🎁 Register as Buyer", href: "/register/buyer" },
+    desc: "New buyers get a free $300 factory audit, free DDP shipping, and 10% off their first order.",
+    primary: { label: "🎁 Sign Up as Buyer", href: "/register/buyer" },
     secondary: { label: "Learn More →", href: "/info/gold-membership" },
-    image: "/img/hero-buyer-promo.jpg?v=4",
+    image: "/img/hero-buyer-promo.jpg?v=7",
   },
   {
-    badge: "📹 Smart Expo Online",
-    titleStart: "Tour the ",
-    titleGold: "factory in 360°",
-    titleEnd: "\nno flight needed.",
-    desc: "Live video factory tour, meet the QC manager, and watch the production line in real time. Save 5-7 days versus visiting in person.",
-    primary: { label: "🏭 Visit Now", href: "/factory-tour" },
-    secondary: { label: "Book a Tour →", href: "/buyer-center/meet-suppliers" },
-    image: "/img/hero-factory-tour.jpg?v=4",
+    badge: "📹 Smart Online Sourcing",
+    titleStart: "Tour ",
+    titleGold: "factories in 360°",
+    titleEnd: "\nwithout flying over.",
+    desc: "Tour factories via live video, meet the QC manager, and watch production lines in real time. Save 5–7 days versus visiting in person.",
+    primary: { label: "🏭 Tour Now", href: "/factory-tour" },
+    secondary: { label: "Schedule a Tour →", href: "/buyer-center/meet-suppliers" },
+    image: "/img/hero-factory-tour.jpg?v=7",
   },
   {
-    badge: "🚢 Logistics DDP",
-    titleStart: "DDP to your warehouse in ",
-    titleGold: "Hanoi/HCMC",
-    titleEnd: "\nwithin 18 days.",
-    desc: "All-inclusive: shipping + duties + customs clearance. LCL/FCL from Guangzhou, Ningbo, and Xiamen. Freight quote within 1h.",
+    badge: "🚢 DDP Shipping",
+    titleStart: "DDP to your ",
+    titleGold: "Hanoi/Ho Chi Minh City warehouse",
+    titleEnd: "\nin 18 days.",
+    desc: "All-in: shipping + duties + customs clearance. LCL/FCL from Guangzhou, Ningbo, and Xiamen. Freight quote within 1 hour.",
     primary: { label: "💰 Calculate DDP Freight", href: "/info/ddp-calculator" },
-    secondary: { label: "View Departure Ports →", href: "/info/shipping-policy" },
-    image: "/img/hero-ddp-logistics.jpg?v=4",
+    secondary: { label: "View Ports →", href: "/info/shipping-policy" },
+    image: "/img/hero-ddp-logistics.jpg?v=7",
   },
 ];
 
@@ -141,14 +141,14 @@ export function HeroSlider() {
           <img
             src={slide.image}
             alt=""
-            className="w-full h-full object-cover opacity-70 pointer-events-none"
+            className="w-full h-full object-cover opacity-95 pointer-events-none"
             draggable={false}
           />
           <div
             className="absolute inset-0 px-12 py-10 flex flex-col justify-center text-white max-md:px-4 max-md:py-4"
             style={{
               background:
-                "linear-gradient(90deg, rgba(0,37,87,0.9), rgba(0,37,87,0.3))",
+                "linear-gradient(90deg, rgba(0,28,66,0.62) 0%, rgba(0,28,66,0.28) 45%, rgba(0,28,66,0.04) 100%)",
             }}
           >
             <span className="inline-block self-start bg-gold text-brand-dark px-3 py-1 rounded-sm text-[11px] font-bold tracking-wider uppercase mb-3.5">

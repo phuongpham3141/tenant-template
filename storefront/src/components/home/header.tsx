@@ -11,7 +11,7 @@ import { HOT_SEARCHES } from "@/data/home";
  */
 export function Header() {
   return (
-    <header className="search-root bg-paper py-4 border-b-[3px] border-brand sticky top-0 z-40">
+    <header className="search-root bg-paper py-4 border-b-[3px] border-brand relative z-10 max-md:py-3">
       {/* Hidden radios — drive .search-root:has() rules in globals.css */}
       <input
         type="radio"
@@ -40,25 +40,24 @@ export function Header() {
         <Link
           href="/"
           className="col-start-1 row-start-1 row-span-3 self-center flex items-center max-md:row-span-1 max-md:w-full max-md:justify-center"
-          aria-label="Cybersilkroads — Home"
+          aria-label="Huayuesc — Home"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
           <img
-            src="/logo/cybersilkroads-horizontal.png?v=5"
-            alt="Cybersilkroads"
+            src="/logo/cybersilkroads-horizontal.png?v=6"
+            alt="Huayuesc"
             width={400}
             height={200}
             className="w-[240px] h-auto max-md:hidden md:max-xl:w-[200px]"
           />
-          {/* Mobile: compact horizontal logo (400×120 — wider, shorter
-              aspect than the 400×200 used on desktop). At 80% width the
-              height stays ~64px so the header remains tidy. */}
+          {/* Mobile: compact horizontal logo. Capped at max-w to keep header
+              tidy on small screens (avoids huge logo dominating viewport). */}
           <img
-            src="/logo/cybersilkroads-horizontal-compact.png?v=5"
-            alt="Cybersilkroads"
+            src="/logo/cybersilkroads-horizontal-compact.png?v=6"
+            alt="Huayuesc"
             width={400}
             height={120}
-            className="hidden w-4/5 h-auto max-md:block"
+            className="hidden h-auto max-md:block max-md:max-h-[56px] max-md:w-auto"
           />
         </Link>
 
@@ -75,13 +74,13 @@ export function Header() {
             htmlFor="st-suppliers"
             className="search-tab tab-suppliers flex-1 py-1.5 font-medium rounded-t cursor-pointer transition text-center max-md:text-[12px]"
           >
-            Suppliers
+            Partners
           </label>
           <label
             htmlFor="st-rfq"
             className="search-tab tab-rfq flex-1 py-1.5 font-medium rounded-t cursor-pointer transition text-center max-md:text-[12px]"
           >
-            Quote
+            RFQ
           </label>
         </div>
 
@@ -97,7 +96,7 @@ export function Header() {
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="Enter a product keyword to search..."
+            placeholder="Enter product keywords to search..."
           />
           <button
             type="submit"
@@ -128,21 +127,21 @@ export function Header() {
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="Enter a supplier name or region..."
+            placeholder="Enter partner name or region..."
           />
           <button
             type="submit"
             formAction="/search/by-image"
             className="px-3 bg-[#F5F7FA] hover:bg-[#E0E5EC] text-mute text-[18px] border-l border-line cursor-pointer flex items-center"
-            aria-label="Find suppliers by product image"
-            title="Upload a product image to find suppliers"
+            aria-label="Find partners by product image"
+            title="Upload a product image to find partners"
           >
             📷
           </button>
           <button
             type="submit"
-            aria-label="Search suppliers"
-            title="Search suppliers"
+            aria-label="Search partners"
+            title="Search partners"
             className="px-7 bg-brand text-white text-[22px] hover:bg-brand-light cursor-pointer flex items-center justify-center max-md:px-5 max-md:text-[19px]"
           >
             🏭
@@ -159,7 +158,7 @@ export function Header() {
           <input
             name="q"
             className="flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]"
-            placeholder="Briefly describe your needs to send an RFQ..."
+            placeholder="Briefly describe your need to send an RFQ..."
           />
           <button
             type="submit"
@@ -192,7 +191,7 @@ export function Header() {
             href="/register/buyer"
             className="h-12 w-[170px] inline-flex items-center justify-center gap-1.5 bg-brand text-white border-2 border-brand rounded font-semibold text-[13px] hover:bg-brand-light hover:border-brand-light cursor-pointer"
           >
-            Register as Buyer →
+            Sign Up as Buyer →
           </Link>
         </div>
 

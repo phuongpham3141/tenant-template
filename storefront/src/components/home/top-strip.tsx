@@ -25,9 +25,9 @@ type LinkRow = {
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "Dashboard", href: "/buyer-center", desc: "View RFQs, orders, and messages" },
-  { icon: "📨", label: "RFQs", href: "/buyer-center/rfqs", desc: "Manage your sent RFQs", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "My Orders", href: "/buyer-center/orders", desc: "Logistics and shipment tracking", badge: "5", badgeTone: "info" },
+  { icon: "📊", label: "Dashboard", href: "/buyer-center", desc: "View your RFQs, orders, and messages" },
+  { icon: "📨", label: "RFQs", href: "/buyer-center/rfqs", desc: "Manage your submitted RFQs", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "My Orders", href: "/buyer-center/orders", desc: "Track shipping and delivery", badge: "5", badgeTone: "info" },
   { icon: "❤️", label: "Saved Products", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
   { icon: "📍", label: "Address Book", href: "/buyer-center/addresses" },
   { icon: "📄", label: "Contracts & Invoices", href: "/buyer-center/invoices" },
@@ -36,7 +36,7 @@ const BUYER_LINKS: LinkRow[] = [
 const SELLER_LINKS: LinkRow[] = [
   { icon: "📊", label: "Dashboard", href: "/seller-center", desc: "Sales, incoming orders, and messages" },
   { icon: "🏷", label: "My Products", href: "/seller-center/products" },
-  { icon: "💬", label: "Sent Quotes", href: "/seller-center/quotes" },
+  { icon: "💬", label: "Quotes Sent", href: "/seller-center/quotes" },
   { icon: "📥", label: "Incoming Orders", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
   { icon: "🏭", label: "Sell on CSR", href: "/sell-on-csr", desc: "Become a certified supplier" },
   { icon: "🛡", label: "Trade Assurance", href: "/info/trade-assurance", desc: "Cross-border payment escrow", badge: "Escrow", badgeTone: "success" },
@@ -79,22 +79,22 @@ const RECENT_ORDERS: LinkRow[] = [
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/fav-oxford.jpg?v=4",
-    label: "420D Waterproof Oxford Fabric",
-    href: "/products/vai-oxford-420d",
-    desc: "Hubei Textile · $3.20/m",
+    thumb: "/img/products/mijic/mijic-20240627104150-88430.png",
+    label: "Mijic One-Piece Smart Toilet",
+    href: "/info/partners/mijic/mijic-20240627104150-88430",
+    desc: "Mijic · Sanitary ware",
   },
   {
-    thumb: "/img/fav-led.jpg?v=4",
-    label: "60×60 LED Panel Light",
-    href: "/products/den-led-panel",
-    desc: "Guangdong Lighting · $12/pc",
+    thumb: "/img/products/bravat/f518102c.png",
+    label: "Bravat F518102C 5-Hole Bathtub Faucet",
+    href: "/info/partners/bravat/f518102c",
+    desc: "Bravat · German sanitary ware",
   },
   {
-    thumb: "/img/fav-powerbank.jpg?v=4",
-    label: "20000mAh Power Bank",
-    href: "/products/pin-sac-20000",
-    desc: "Shenzhen Power · $8.50/pc",
+    thumb: "/img/products/sylvania/equinox.png",
+    label: "Concord Equinox LED Downlight",
+    href: "/info/partners/sylvania/equinox",
+    desc: "Sylvania · Professional lighting",
   },
 ];
 
@@ -286,17 +286,17 @@ export async function TopStrip() {
                 </button>
                 <div className="flex justify-between text-[11.5px] pt-1">
                   <Link href="/forgot-password" className="text-mute hover:text-brand cursor-pointer">
-                    Forgot Password?
+                    Forgot password?
                   </Link>
                   <Link href="/register/buyer" className="text-brand font-semibold cursor-pointer hover:underline">
-                    Register as Buyer →
+                    Sign Up to Buy →
                   </Link>
                 </div>
               </form>
               <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
                 Are you a supplier?{" "}
                 <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Register as Supplier
+                  Register as a Supplier
                 </Link>
               </div>
             </div>
@@ -326,7 +326,7 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_FACTORY}
-              <span>Suppliers</span>
+              <span>Partners</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
@@ -346,12 +346,12 @@ export async function TopStrip() {
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Download the Cybersilkroads App" />
+              <PopHeader title="Download the Huayue App" />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
                   QR Code
                   <br />
-                  Scan to Download
+                  Scan to download
                 </div>
                 <div className="flex-1 space-y-2">
                   <Link
@@ -383,7 +383,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Cybersilkroads — only when logged in */}
+          {/* My Huayuesc — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link

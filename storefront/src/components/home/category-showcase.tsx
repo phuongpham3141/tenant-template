@@ -1,7 +1,15 @@
 import Link from "next/link";
-import { NAV_CATEGORIES } from "@/data/home";
+import { NAV_MENU } from "@/data/home";
+
+// Only main categories with at least 4 sub-items (i.e. enough to fill
+// a single 4-col row) are surfaced on the homepage showcase. Categories
+// like 🏠 Home & Garden that currently carry just 1 sub-item are
+// skipped to keep the section visually tidy.
+const MIN_ITEMS = 4;
 
 export function CategoryShowcase() {
+  const shown = NAV_MENU.filter((g) => g.items.length >= MIN_ITEMS);
+  const totalSubs = shown.reduce((n, g) => n + g.items.length, 0);
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-4 max-md:px-3 max-md:mt-3">
       <div className="bg-paper border border-line rounded p-5 max-md:p-3">
@@ -9,37 +17,52 @@ export function CategoryShowcase() {
           <span className="w-1 h-5 bg-brand rounded-sm" />
           Main Product Categories
           <span className="text-[12px] text-mute font-normal ml-1">
-            · 12 leading product categories
+            · {shown.length} main categories, {totalSubs} subcategories
           </span>
         </h2>
-        <div className="grid grid-cols-6 gap-3 md:max-xl:grid-cols-4 max-md:grid-cols-3 max-md:gap-2">
-          {NAV_CATEGORIES.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/category/${c.slug}`}
-              className="group/cat flex flex-col items-center text-center hover:bg-[#FCFBF8] rounded p-2 transition-colors max-md:p-1.5"
-            >
-              <div className="relative w-full aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-2 border border-line group-hover/cat:border-brand transition-colors max-md:mb-1.5">
-                <img
-                  src={`/img/showcase-${c.slug}.jpg`}
-                  alt={c.name}
-                  className="w-full h-full object-cover group-hover/cat:scale-105 transition-transform"
-                  loading="lazy"
-                />
-                {c.isNew && (
-                  <span className="absolute top-1.5 right-1.5 bg-accent text-white text-[9px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider">
-                    NEW
-                  </span>
-                )}
-                <span className="absolute bottom-1.5 left-1.5 text-[18px] drop-shadow-lg">
-                  {c.icon}
-                </span>
+
+        <div className="flex flex-col gap-5 max-md:gap-4">
+          {shown.map((group) => {
+            const extra = Math.max(0, group.items.length - 4);
+            return (
+              <div key={group.main.slug} className="cat-block flex flex-col">
+                <Link
+                  href={`/category/${group.main.slug}`}
+                  className="flex items-center gap-2 text-[15px] font-bold text-ink hover:text-brand mb-3"
+                >
+                  <span className="text-[18px]">{group.main.icon}</span>
+                  <span>{group.main.name}</span>
+                  <span className="text-mute2 text-[12px] font-normal">→</span>
+                  {extra > 0 && (
+                    <span className="cat-more text-[11px] text-mute2 font-normal ml-auto">
+                      +{extra} more (hover to view)
+                    </span>
+                  )}
+                </Link>
+                <div className="cat-grid grid grid-cols-4 gap-2.5 max-md:grid-cols-4 max-md:gap-2">
+                  {group.items.map((it) => (
+                    <Link
+                      key={it.slug}
+                      href={`/category/${group.main.slug}/${it.slug}`}
+                      className="group/cat flex flex-col items-center text-center hover:bg-[#FCFBF8] rounded p-1.5 transition-colors"
+                    >
+                      <div className="w-full aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-1.5 border border-line group-hover/cat:border-brand transition-colors">
+                        <img
+                          src={it.image}
+                          alt={it.name}
+                          className="w-full h-full object-cover group-hover/cat:scale-105 transition-transform"
+                          loading="lazy"
+                        />
+                      </div>
+                      <span className="text-[11.5px] font-medium text-ink group-hover/cat:text-brand line-clamp-2 leading-tight max-md:text-[11px]">
+                        {it.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <span className="text-[12.5px] font-medium text-ink group-hover/cat:text-brand line-clamp-2 leading-tight max-md:text-[11.5px]">
-                {c.name}
-              </span>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
