@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import type { CatSection, SecAccent, CatSubcatItem } from "@/data/categories";
 
 const accentText: Record<SecAccent, string> = {

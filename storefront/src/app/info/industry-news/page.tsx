@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ARTICLES, CATEGORIES, type BlogCategory } from "@/lib/blog";
+import { getT } from "@/lib/t";
 
 /**
  * Blog index — /info/industry-news.
@@ -24,6 +25,7 @@ export default async function BlogIndexPage({
 }: {
   searchParams: Promise<{ cat?: string }>;
 }) {
+  const t = await getT();
   const sp = await searchParams;
   const activeCat = sp.cat as BlogCategory | undefined;
 
@@ -51,9 +53,9 @@ export default async function BlogIndexPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Tin tức ngành" },
+          { label: t("info_industry_news.bc_home"), href: "/" },
+          { label: t("info_industry_news.bc_info"), href: "/help" },
+          { label: t("info_industry_news.bc_news") },
         ]}
       />
 
@@ -64,13 +66,13 @@ export default async function BlogIndexPage({
       >
         <div className="max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-            📰 BLOG · CYBERSILKROADS
+            📰 BLOG · HUAYUESC
           </span>
           <h1 className="text-[34px] font-extrabold leading-tight mb-2 max-md:text-[24px]">
-            Tin tức ngành sourcing Việt Nam – Trung Quốc
+            {t("info_industry_news.hero_title")}
           </h1>
           <p className="text-[14px] opacity-90 leading-relaxed max-w-[720px] max-md:text-[12.5px] mb-5">
-            Phân tích xu hướng giá, hội chợ, chính sách thuế, case study từ buyer Việt Nam và profile NCC. Cập nhật mỗi tuần bởi đội ngũ Quảng Châu + Hà Nội.
+            {t("info_industry_news.hero_intro")}
           </p>
 
           {/* Category filter chips */}
@@ -81,7 +83,7 @@ export default async function BlogIndexPage({
                 !activeCat ? "bg-gold text-brand-dark" : "bg-white/15 text-white hover:bg-white/25"
               }`}
             >
-              Tất cả ({allArticles.length})
+              {t("info_industry_news.chip_all")} ({allArticles.length})
             </Link>
             {catCounts.map((c) => (
               <Link
@@ -125,7 +127,7 @@ export default async function BlogIndexPage({
                     >
                       {CATEGORIES[featured.category].label}
                     </span>
-                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ NỔI BẬT</span>
+                    <span className="text-[10.5px] text-mute2 uppercase tracking-wider font-bold">⭐ {t("info_industry_news.featured_badge")}</span>
                   </div>
                   <h2 className="text-[22px] font-bold text-ink leading-tight mb-2 group-hover/feat:text-brand max-md:text-[18px]">
                     {featured.title}
@@ -136,7 +138,7 @@ export default async function BlogIndexPage({
                     <span>·</span>
                     <span>{fmtDate(featured.date)}</span>
                     <span>·</span>
-                    <span>⏱ {featured.readMinutes} phút đọc</span>
+                    <span>⏱ {featured.readMinutes} {t("info_industry_news.read_minutes_suffix")}</span>
                   </div>
                 </div>
               </div>
@@ -184,17 +186,17 @@ export default async function BlogIndexPage({
 
           {filtered.length === 0 && (
             <div className="bg-paper border border-line rounded p-12 text-center text-mute">
-              Chưa có bài viết trong danh mục này.
+              {t("info_industry_news.empty_category")}
             </div>
           )}
 
           {/* Pagination placeholder */}
           {filtered.length > 8 && (
             <div className="flex justify-center mt-8 gap-2">
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">← Trang trước</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-mute hover:border-brand hover:text-brand cursor-pointer">{t("info_industry_news.pg_prev")}</button>
               <span className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12.5px] font-bold">1</span>
               <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">2</button>
-              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">Trang sau →</button>
+              <button className="px-3 py-1.5 border border-line rounded-sm text-[12.5px] text-ink hover:border-brand hover:text-brand cursor-pointer">{t("info_industry_news.pg_next")}</button>
             </div>
           )}
         </div>
@@ -208,30 +210,30 @@ export default async function BlogIndexPage({
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-[18px]">📬</span>
-              <b className="text-[13px] font-bold">Cảnh báo Thương mại miễn phí</b>
+              <b className="text-[13px] font-bold">{t("info_industry_news.nl_heading")}</b>
             </div>
             <p className="text-[11.5px] opacity-90 leading-snug mb-3">
-              12,000+ buyer Việt Nam đã đăng ký. Newsletter mỗi thứ 5 với xu hướng giá, deal limited, hội chợ.
+              {t("info_industry_news.nl_body")}
             </p>
             <form action="/trade-alert" method="get" className="space-y-2">
               <input
                 type="email"
                 name="email"
-                placeholder="email@congty.vn"
+                placeholder={t("info_industry_news.nl_email_placeholder")}
                 className="w-full px-2.5 py-1.5 text-[12px] rounded-sm bg-white text-ink outline-none"
               />
               <button
                 type="submit"
                 className="w-full py-2 bg-gold text-brand-dark rounded-sm font-bold text-[12.5px] cursor-pointer hover:bg-[#E8943A]"
               >
-                Đăng ký miễn phí
+                {t("info_industry_news.nl_submit")}
               </button>
             </form>
           </div>
 
           {/* Categories list */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 Danh mục</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📁 {t("info_industry_news.sidebar_categories")}</b>
             <ul className="space-y-1.5">
               {catCounts.map((c) => (
                 <li key={c.code}>
@@ -254,7 +256,7 @@ export default async function BlogIndexPage({
 
           {/* Popular tags */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 Tag phổ biến</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🏷 {t("info_industry_news.sidebar_tags")}</b>
             <div className="flex flex-wrap gap-1.5">
               {popularTags.map(([tag, n]) => (
                 <span
@@ -270,26 +272,26 @@ export default async function BlogIndexPage({
 
           {/* Related links */}
           <div className="bg-paper border border-line rounded p-4">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 Liên kết</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">🔗 {t("info_industry_news.sidebar_links")}</b>
             <ul className="space-y-1.5">
               <li>
                 <Link href="/info/about-us" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Giới thiệu Cybersilkroads
+                  {t("info_industry_news.link_about")}
                 </Link>
               </li>
               <li>
                 <Link href="/info/import-guide" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Hướng dẫn nhập khẩu
+                  {t("info_industry_news.link_import_guide")}
                 </Link>
               </li>
               <li>
                 <Link href="/buying-request" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Gửi RFQ
+                  {t("info_industry_news.link_rfq")}
                 </Link>
               </li>
               <li>
                 <Link href="/help" className="text-[12.5px] text-brand hover:underline cursor-pointer block">
-                  → Trung tâm trợ giúp
+                  {t("info_industry_news.link_help")}
                 </Link>
               </li>
             </ul>
@@ -301,7 +303,7 @@ export default async function BlogIndexPage({
 }
 
 export const metadata = {
-  title: "Tin tức ngành sourcing — Cybersilkroads Blog",
+  title: "Tin tức ngành sourcing — Huayuesc Blog",
   description:
-    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Cybersilkroads.",
+    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Huayuesc.",
 };

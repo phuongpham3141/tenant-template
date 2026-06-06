@@ -2,24 +2,17 @@
     auto_https off
 }
 
-# Reusable: dev-mode no-cache headers for storefront (and catch-all)
+# Aggressive no-cache for dev — applies to ALL paths so the browser
+# never serves stale HTML/JS/CSS from disk cache.
 (no_cache_dev) {
-    header /_next/* {
-        Cache-Control "no-store, must-revalidate"
+    header * {
+        Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Pragma "no-cache"
+        Expires "0"
         -ETag
         -Last-Modified
     }
-    header / {
-        Cache-Control "no-store, must-revalidate"
-    }
 }
-
-# === Storefront — multi-locale subdomains ============================
-# `shop.` = default Vietnamese (vi locale)
-# `en.`   = English locale
-# `cn.`   = Chinese locale
-# All proxy to the same Next.js storefront; locale is read from the
-# request's `Host` header by middleware.ts and stored as cookie.
 
 http://shop.huayuesc.local,
 http://en.huayuesc.local,
@@ -29,13 +22,11 @@ http://vi.huayuesc.local {
     reverse_proxy storefront:3001
 }
 
-# Catch-all (raw IP, external domain, etc.) — also storefront (defaults to vi)
 :80 {
     import no_cache_dev
     reverse_proxy storefront:3001
 }
 
-# Medusa Admin (v2: /app path on same port as API)
 http://admin.huayuesc.local {
     redir / /app permanent
     reverse_proxy medusa-server:9000

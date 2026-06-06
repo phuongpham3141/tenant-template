@@ -1,0 +1,465 @@
+{
+  "summary": "Bọc render tên-data (product/category/partner) bằng td() ở home + trang sản phẩm/đối tác",
+  "agentCount": 12,
+  "logs": [],
+  "result": [
+    {
+      "file": "src/components/home/product-section.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "async function ProductCard({ p }: { p: Product }) {\n  return (",
+          "async function ProductCard({ p }: { p: Product }) {\n  const td = await getTd();\n  return ("
+        ],
+        [
+          "        {p.image ? (\n          <img src={p.image} alt={p.title} className=\"w-full h-full object-cover\" />",
+          "        {p.image ? (\n          <img src={p.image} alt={td(p.title)} className=\"w-full h-full object-cover\" />"
+        ],
+        [
+          "        <h4 className=\"text-[12.5px] font-medium leading-tight text-ink mb-1.5 min-h-[32px] line-clamp-2\">\n          {p.title}\n        </h4>",
+          "        <h4 className=\"text-[12.5px] font-medium leading-tight text-ink mb-1.5 min-h-[32px] line-clamp-2\">\n          {td(p.title)}\n        </h4>"
+        ],
+        [
+          "          <small className=\"text-mute font-normal text-[11px]\">{p.unit}</small>",
+          "          <small className=\"text-mute font-normal text-[11px]\">{td(p.unit)}</small>"
+        ],
+        [
+          "          <span className=\"bg-brand text-white px-1.5 py-px rounded-sm text-[9px] font-bold ml-auto\">\n            {p.years}\n          </span>",
+          "          <span className=\"bg-brand text-white px-1.5 py-px rounded-sm text-[9px] font-bold ml-auto\">\n            {td(p.years)}\n          </span>"
+        ],
+        [
+          "export async function ProductSection({ section }: { section: Section }) {\n  const t = await getT();",
+          "export async function ProductSection({ section }: { section: Section }) {\n  const t = await getT();\n  const td = await getTd();"
+        ],
+        [
+          "          <span className=\"truncate\">{section.title}</span>",
+          "          <span className=\"truncate\">{td(section.title)}</span>"
+        ],
+        [
+          "            >\n              {t}\n            </label>",
+          "            >\n              {td(t)}\n            </label>"
+        ],
+        [
+          "            {section.feature.badge}\n          </span>",
+          "            {td(section.feature.badge)}\n          </span>"
+        ],
+        [
+          "            <h3 className=\"text-[22px] font-bold mb-1.5 leading-tight max-md:text-[15px] max-md:mb-1\">\n              {section.feature.title}\n            </h3>",
+          "            <h3 className=\"text-[22px] font-bold mb-1.5 leading-tight max-md:text-[15px] max-md:mb-1\">\n              {td(section.feature.title)}\n            </h3>"
+        ],
+        [
+          "            <p className=\"text-[12px] opacity-90 mb-3.5 max-md:text-[11px] max-md:mb-2 max-md:line-clamp-2\">\n              {section.feature.desc}\n            </p>",
+          "            <p className=\"text-[12px] opacity-90 mb-3.5 max-md:text-[11px] max-md:mb-2 max-md:line-clamp-2\">\n              {td(section.feature.desc)}\n            </p>"
+        ],
+        [
+          "              {section.feature.cta}\n            </span>",
+          "              {td(section.feature.cta)}\n            </span>"
+        ],
+        [
+          "                        <small className=\"text-[11px]\">{t(\"product.inCategory\")} \"{tabName}\"</small>",
+          "                        <small className=\"text-[11px]\">{t(\"product.inCategory\")} \"{td(tabName)}\"</small>"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/mega-submenu.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "export function CategoryOverviewPanel({ group, t }: { group: NavMenuGroup; t: (k: string) => string }) {",
+          "export function CategoryOverviewPanel({ group, t, td }: { group: NavMenuGroup; t: (k: string) => string; td: (s: string) => string }) {"
+        ],
+        [
+          "                <h4 className=\"text-[13px] font-bold text-brand group-hover/sect:underline truncate\">\n                  {it.name}\n                </h4>",
+          "                <h4 className=\"text-[13px] font-bold text-brand group-hover/sect:underline truncate\">\n                  {td(it.name)}\n                </h4>"
+        ],
+        [
+          "                      className=\"block text-[12px] text-ink/85 hover:text-brand hover:underline truncate leading-snug py-0.5\"\n                    >\n                      {sub.name}\n                    </Link>",
+          "                      className=\"block text-[12px] text-ink/85 hover:text-brand hover:underline truncate leading-snug py-0.5\"\n                    >\n                      {td(sub.name)}\n                    </Link>"
+        ],
+        [
+          "                <img\n                  src={it.image}\n                  alt={it.name}",
+          "                <img\n                  src={it.image}\n                  alt={td(it.name)}"
+        ],
+        [
+          "              <p className=\"text-[10.5px] text-ink/85 text-center mt-1 leading-tight line-clamp-2 group-hover/hl:text-brand\">\n                {it.name}\n              </p>",
+          "              <p className=\"text-[10.5px] text-ink/85 text-center mt-1 leading-tight line-clamp-2 group-hover/hl:text-brand\">\n                {td(it.name)}\n              </p>"
+        ],
+        [
+          "              className=\"text-[11.5px] text-accent hover:underline\"\n            >\n              {b.name}\n            </Link>\n            {i < bestsellers.length - 1 && (\n              <span className=\"text-mute2 ml-1.5 mr-0.5\">,</span>\n            )}\n          </span>\n        ))}\n      </div>\n\n      {/* Footer: breadcrumb + view all */}",
+          "              className=\"text-[11.5px] text-accent hover:underline\"\n            >\n              {td(b.name)}\n            </Link>\n            {i < bestsellers.length - 1 && (\n              <span className=\"text-mute2 ml-1.5 mr-0.5\">,</span>\n            )}\n          </span>\n        ))}\n      </div>\n\n      {/* Footer: breadcrumb + view all */}"
+        ],
+        [
+          "export function SubItemPanel({\n  groupSlug,\n  item,\n  t,\n}: {\n  groupSlug: string;\n  item: NavSubItem;\n  t: (k: string) => string;\n}) {",
+          "export function SubItemPanel({\n  groupSlug,\n  item,\n  t,\n  td,\n}: {\n  groupSlug: string;\n  item: NavSubItem;\n  t: (k: string) => string;\n  td: (s: string) => string;\n}) {"
+        ],
+        [
+          "              <h4 className=\"text-[13px] font-bold text-brand group-hover/sect:underline truncate\">\n                {s.title}\n              </h4>",
+          "              <h4 className=\"text-[13px] font-bold text-brand group-hover/sect:underline truncate\">\n                {td(s.title)}\n              </h4>"
+        ],
+        [
+          "                    className=\"block text-[12px] text-ink/85 hover:text-brand hover:underline truncate leading-snug py-0.5\"\n                  >\n                    {sub.name}\n                  </Link>",
+          "                    className=\"block text-[12px] text-ink/85 hover:text-brand hover:underline truncate leading-snug py-0.5\"\n                  >\n                    {td(sub.name)}\n                  </Link>"
+        ],
+        [
+          "                <img\n                  src={h.image}\n                  alt={h.name}",
+          "                <img\n                  src={h.image}\n                  alt={td(h.name)}"
+        ],
+        [
+          "              <p className=\"text-[10.5px] text-ink/85 text-center mt-1 leading-tight line-clamp-2 group-hover/hl:text-brand\">\n                {h.name}\n              </p>",
+          "              <p className=\"text-[10.5px] text-ink/85 text-center mt-1 leading-tight line-clamp-2 group-hover/hl:text-brand\">\n                {td(h.name)}\n              </p>"
+        ],
+        [
+          "              className=\"text-[11.5px] text-accent hover:underline\"\n            >\n              {b.name}\n            </Link>\n            {i < bestsellers.length - 1 && (\n              <span className=\"text-mute2 ml-1.5 mr-0.5\">,</span>\n            )}\n          </span>\n        ))}\n      </div>\n    </div>\n  );\n}",
+          "              className=\"text-[11.5px] text-accent hover:underline\"\n            >\n              {td(b.name)}\n            </Link>\n            {i < bestsellers.length - 1 && (\n              <span className=\"text-mute2 ml-1.5 mr-0.5\">,</span>\n            )}\n          </span>\n        ))}\n      </div>\n    </div>\n  );\n}"
+        ]
+      ],
+      "deferred": "None. mega-submenu.tsx is a Server Component but both exported panels (CategoryOverviewPanel, SubItemPanel) receive their translator `t` via props rather than calling getT() internally, so they are not async. Per the mega-submenu rule, I added a `td: (s: string) => string` prop (same shape as `t`) to BOTH component signatures instead of importing getTd/awaiting locally. The orchestrator must pass `td` from navbar/banner alongside `t` to both <CategoryOverviewPanel ... td={td}/> and <SubItemPanel ... td={td}/>. All data display names (it.name, sub.name, s.title, h.name, b.name, plus the two `alt={...}` thumbnail attributes) are wrapped with td(). NOT wrapped: t() UI labels (cat.*, mega.*), counts (s.items.length, count), icons, slugs, hrefs, images src."
+    },
+    {
+      "file": "src/components/home/factories.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();\n  const featured",
+          "  const t = await getT();\n  const td = await getTd();\n  const featured"
+        ],
+        [
+          "                  <span className=\"truncate flex-1\">\n                    {p.factory.location}\n                  </span>",
+          "                  <span className=\"truncate flex-1\">\n                    {td(p.factory.location)}\n                  </span>"
+        ],
+        [
+          "                  <span className=\"text-mute truncate ml-2 text-right\">\n                    {factoryMeta(p)}\n                  </span>",
+          "                  <span className=\"text-mute truncate ml-2 text-right\">\n                    {td(factoryMeta(p))}\n                  </span>"
+        ],
+        [
+          "                    >\n                      {tag}\n                    </span>",
+          "                    >\n                      {td(tag)}\n                    </span>"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/trade-shows-section.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import Link from \"@/components/i18n-link\";\nimport { getT } from \"@/lib/t\";",
+          "import Link from \"@/components/i18n-link\";\nimport { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();\n  return (",
+          "  const t = await getT();\n  const td = await getTd();\n  return ("
+        ],
+        [
+          "            <img\n              src={FEATURED.banner}\n              alt={FEATURED.name}",
+          "            <img\n              src={FEATURED.banner}\n              alt={td(FEATURED.name)}"
+        ],
+        [
+          "                ⭐ {FEATURED.badge}",
+          "                ⭐ {td(FEATURED.badge)}"
+        ],
+        [
+          "                {FEATURED.category}\n              </span>\n            )}",
+          "                {td(FEATURED.category)}\n              </span>\n            )}"
+        ],
+        [
+          "              <h3 className=\"text-[22px] font-bold leading-tight mb-2 max-md:text-[17px]\">\n                {FEATURED.name}\n              </h3>",
+          "              <h3 className=\"text-[22px] font-bold leading-tight mb-2 max-md:text-[17px]\">\n                {td(FEATURED.name)}\n              </h3>"
+        ],
+        [
+          "                  📍 {FEATURED.location}",
+          "                  📍 {td(FEATURED.location)}"
+        ],
+        [
+          "                    src={show.banner}\n                    alt={show.name}",
+          "                    src={show.banner}\n                    alt={td(show.name)}"
+        ],
+        [
+          "                      {show.category}\n                    </span>",
+          "                      {td(show.category)}\n                    </span>"
+        ],
+        [
+          "                  <b className=\"block text-[13.5px] text-ink leading-snug mb-1 group-hover/item:text-brand truncate max-md:text-[12.5px]\">\n                    {show.name}\n                  </b>",
+          "                  <b className=\"block text-[13.5px] text-ink leading-snug mb-1 group-hover/item:text-brand truncate max-md:text-[12.5px]\">\n                    {td(show.name)}\n                  </b>"
+        ],
+        [
+          "                      📍 {show.location}",
+          "                      📍 {td(show.location)}"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/sourcing-solutions.tsx",
+      "isClient": false,
+      "edits": [],
+      "deferred": "Không có chỗ nào cần bọc td(). File này là Server Component (không \"use client\", đã async), và TẤT CẢ chuỗi hiển thị đều đã được sinh ra bằng t() — không có dữ liệu nào import từ src/data. Cụ thể: mảng SOLUTIONS được build hoàn toàn từ t(\"sourcing.cardN.title\"), t(\"sourcing.cardN.bulletN\"), t(\"sourcing.cardN.subN\"). Các render {s.title}, {b}, {sub.name}, alt={s.title}, alt={sub.name} đều là chuỗi đã bọc t() → theo quy ước KHÔNG bọc lại. Vì không có render TÊN-DATA nào, cũng không cần thêm import getTd / const td = await getTd(). edits rỗng."
+    },
+    {
+      "file": "src/components/home/mega-carousel.tsx",
+      "isClient": true,
+      "edits": [],
+      "deferred": "This is a Client Component (\"use client\" on line 1), so the server-side `td` from getTd() cannot be used here. The following data display-name renders (CarouselItem.name = Vietnamese category/data names) are NOT wrapped and are deferred for client-side translation handling:\n- Line 53: `{it.name}` (category/data display name in the <span>)\n- Line 48: `alt={it.name}` (same data name used as image alt)\n\nBoth come from `it` (a CarouselItem element of the `items` array prop) and carry Vietnamese display text. They need a client-side translation approach (e.g. a useTd() client hook or pre-translating `items` server-side before passing into this component) rather than the server `td()`. No edits applied per the client-component rule."
+    },
+    {
+      "file": "src/app/products/page.tsx",
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();",
+          "  const t = await getT();\n  const td = await getTd();"
+        ],
+        [
+          "<span className=\"text-[13px]\">{NAV_CATEGORIES[i]?.icon}</span> {o}",
+          "<span className=\"text-[13px]\">{NAV_CATEGORIES[i]?.icon}</span> {td(o)}"
+        ],
+        [
+          "<img src={p.image} alt={p.title} loading=\"lazy\" className=\"w-full h-full object-cover\" />",
+          "<img src={p.image} alt={td(p.title)} loading=\"lazy\" className=\"w-full h-full object-cover\" />"
+        ],
+        [
+          "<h4 className=\"text-[12.5px] text-ink line-clamp-2 mb-1 min-h-[32px] leading-tight\">{p.title}</h4>",
+          "<h4 className=\"text-[12.5px] text-ink line-clamp-2 mb-1 min-h-[32px] leading-tight\">{td(p.title)}</h4>"
+        ],
+        [
+          "{p.series && <div className=\"text-[11px] text-mute2 truncate mb-1\">{p.series}</div>}",
+          "{p.series && <div className=\"text-[11px] text-mute2 truncate mb-1\">{td(p.series)}</div>}"
+        ]
+      ],
+      "isClient": false,
+      "deferred": ""
+    },
+    {
+      "file": "src/app/suppliers/page.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();\n  const sp = await searchParams;",
+          "  const t = await getT();\n  const td = await getTd();\n  const sp = await searchParams;"
+        ],
+        [
+          "                      <span className=\"flex items-center gap-1.5\">\n                        <span>{c.icon}</span>\n                        <span>{c.name}</span>\n                      </span>\n                      <span className=\"text-[11px]\">{n}</span>",
+          "                      <span className=\"flex items-center gap-1.5\">\n                        <span>{c.icon}</span>\n                        <span>{td(c.name)}</span>\n                      </span>\n                      <span className=\"text-[11px]\">{n}</span>"
+        ],
+        [
+          "                      <span className=\"flex items-center gap-1.5\">\n                        <span>{c.icon}</span>\n                        <span>{c.name}</span>\n                      </span>\n                      <span className=\"text-[11px] text-mute\">{n}</span>",
+          "                      <span className=\"flex items-center gap-1.5\">\n                        <span>{c.icon}</span>\n                        <span>{td(c.name)}</span>\n                      </span>\n                      <span className=\"text-[11px] text-mute\">{n}</span>"
+        ],
+        [
+          "                  · {t(\"suppliers.industry_inline\")} <b className=\"text-ink\">{activeCat.name}</b>",
+          "                  · {t(\"suppliers.industry_inline\")} <b className=\"text-ink\">{td(activeCat.name)}</b>"
+        ],
+        [
+          "function SupplierCard({ partner }: { partner: PartnerBrand }) {\n  const cat = categoryLabel(partner.category);",
+          "async function SupplierCard({ partner }: { partner: PartnerBrand }) {\n  const td = await getTd();\n  const cat = categoryLabel(partner.category);"
+        ],
+        [
+          "            <span className=\"truncate\">{partner.factory.location}</span>",
+          "            <span className=\"truncate\">{td(partner.factory.location)}</span>"
+        ],
+        [
+          "        <span className=\"truncate flex-1\">{meta}</span>",
+          "        <span className=\"truncate flex-1\">{td(meta)}</span>"
+        ],
+        [
+          "          <span>{cat.name}</span>",
+          "          <span>{td(cat.name)}</span>"
+        ],
+        [
+          "          >\n            {t}\n          </span>",
+          "          >\n            {td(t)}\n          </span>"
+        ],
+        [
+          "function SupplierRow({ partner }: { partner: PartnerBrand }) {\n  const cat = categoryLabel(partner.category);",
+          "async function SupplierRow({ partner }: { partner: PartnerBrand }) {\n  const td = await getTd();\n  const cat = categoryLabel(partner.category);"
+        ],
+        [
+          "          <span className=\"text-ink\">{cat.name}</span>",
+          "          <span className=\"text-ink\">{td(cat.name)}</span>"
+        ],
+        [
+          "      <td className=\"px-3 py-3 align-top text-[12.5px] text-ink max-w-[260px]\">\n        {partner.factory.location}\n      </td>",
+          "      <td className=\"px-3 py-3 align-top text-[12.5px] text-ink max-w-[260px]\">\n        {td(partner.factory.location)}\n      </td>"
+        ],
+        [
+          "      <td className=\"px-3 py-3 align-top text-[12px] text-ink/85 max-w-[260px]\">\n        {factoryScale(partner)}\n      </td>",
+          "      <td className=\"px-3 py-3 align-top text-[12px] text-ink/85 max-w-[260px]\">\n        {td(factoryScale(partner))}\n      </td>"
+        ],
+        [
+          "function SupplierMobileRow({ partner }: { partner: PartnerBrand }) {\n  const cat = categoryLabel(partner.category);",
+          "async function SupplierMobileRow({ partner }: { partner: PartnerBrand }) {\n  const td = await getTd();\n  const cat = categoryLabel(partner.category);"
+        ],
+        [
+          "            <span>\n              {cat.icon} {cat.name}\n            </span>\n            <span>📍 {partner.factory.location.split(\",\")[0]}</span>",
+          "            <span>\n              {cat.icon} {td(cat.name)}\n            </span>\n            <span>📍 {td(partner.factory.location).split(\",\")[0]}</span>"
+        ]
+      ],
+      "deferred": "Không có gì deferred — đây là Server Component (không \"use client\", default export đã async). Các sub-component render data (SupplierCard, SupplierRow, SupplierMobileRow) được chuyển sang async + thêm getTd() để bọc td() tại render site.\n\nĐã bọc td() cho TÊN-DATA tiếng Việt từ src/data:\n- c.name (NAV_CATEGORIES, sidebar 2 nhánh) + activeCat.name (dòng \"ngành\" inline).\n- cat.name (categoryLabel → NAV_CATEGORIES) ở SupplierCard/SupplierRow/SupplierMobileRow.\n- partner.factory.location (chuỗi vị trí nhà máy tiếng Việt) — bản mobile dùng td(...).split(\",\")[0] để dịch trước rồi cắt.\n- meta = factoryHeadline(partner) và factoryScale(partner) (chuỗi quy mô/năng lực tiếng Việt).\n- tag trong tags.map((t)=>...): {t} → {td(t)} (t là tên sản phẩm rút gọn, KHÔNG phải translator; chỉ bọc giá trị render, giữ nguyên key={t}).\n\nKHÔNG bọc (đúng yêu cầu):\n- partner.name (tên thương hiệu: Midea, Bravat... + alt={partner.name}, initials(partner.name)).\n- partner.nameOriginal (tên gốc Hán + Latin của thương hiệu).\n- yearsBadge → \"X năm\" (chuỗi tính từ số năm), partner.products.length (số/SKU), partner.founded (năm), partner.listed (mã chứng khoán).\n- href/slug, email, icon emoji, c.icon/cat.icon.\n- Các UI label hardcode (th \"Thương hiệu/Ngành/...\", \"💎 KIM CƯƠNG\", \"Đối tác\", \"Xem →\") và literal \"Foshan\"/dải số trong DecorFilter — không phải data từ src/data, ngoài phạm vi td (nên dùng t() ở task UI label riêng).\n\nLưu ý kiến trúc: SupplierCard/Row/MobileRow giờ là async server component, được render trong list.map(...) của CardsView/TableView — RSC hỗ trợ render mảng các async component (Promise), nên CardsView/TableView KHÔNG cần async."
+    },
+    {
+      "file": "src/app/product/[id]/page.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const { id } = await params;\n  const t = await getT();",
+          "  const { id } = await params;\n  const t = await getT();\n  const td = await getTd();"
+        ],
+        [
+          "    ? [\n        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        { label: section.title, href: `/category/${section.categorySlug}` },\n        { label: p.title },\n      ]",
+          "    ? [\n        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        { label: td(section.title), href: `/category/${section.categorySlug}` },\n        { label: td(p.title) },\n      ]"
+        ],
+        [
+          "    : [\n        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        ...(parentName && parentSlug ? [{ label: parentName, href: `/category/${parentSlug}` }] : []),\n        ...(l2Name ? [{ label: l2Name }] : []),\n        ...(leafTitle && leafSlug && parentSlug ? [{ label: leafTitle, href: `/category/${parentSlug}/${leafSlug}` }] : []),\n        { label: p.title },\n      ];",
+          "    : [\n        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        ...(parentName && parentSlug ? [{ label: td(parentName), href: `/category/${parentSlug}` }] : []),\n        ...(l2Name ? [{ label: td(l2Name) }] : []),\n        ...(leafTitle && leafSlug && parentSlug ? [{ label: td(leafTitle), href: `/category/${parentSlug}/${leafSlug}` }] : []),\n        { label: td(p.title) },\n      ];"
+        ],
+        [
+          "                  alt={p.title}",
+          "                  alt={td(p.title)}"
+        ],
+        [
+          "          <h1 className=\"text-[22px] font-bold text-ink mt-5 leading-tight max-md:text-[18px]\">{p.title}</h1>",
+          "          <h1 className=\"text-[22px] font-bold text-ink mt-5 leading-tight max-md:text-[18px]\">{td(p.title)}</h1>"
+        ],
+        [
+          "              defaultValue={p.title}",
+          "              defaultValue={td(p.title)}"
+        ],
+        [
+          "            <b>{p.title}</b> {t(\"product_id.desc_p1_a\")}",
+          "            <b>{td(p.title)}</b> {t(\"product_id.desc_p1_a\")}"
+        ],
+        [
+          "          {sameSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={x.title} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{x.title}</h4>",
+          "          {sameSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>"
+        ],
+        [
+          "          {otherSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={x.title} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{x.title}</h4>",
+          "          {otherSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>"
+        ]
+      ],
+      "deferred": "None — this is a Server Component (async, no \\\"use client\\\"), so all data-name renders are wrapped with td(). Intentionally NOT wrapped: supplier.name (lines 473, 811 — company/brand name e.g. \\\"Guangdong Dongpeng Ceramics Co., Ltd.\\\"), p.seller (brand), hidden input value={p.title} (line 350, productTitle submitted to /buying-request — not display text, kept canonical), p.price/p.unit/p.moq/p.id/SKU/rating, SPECS k/v (English constants), and all t(...) UI labels including the tabs map var (t) which is already translated."
+    },
+    {
+      "file": "src/app/supplier/[slug]/SupplierDetail.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();\n  const foundedYear = 2026 - parseInt(f.badges.years);",
+          "  const t = await getT();\n  const td = await getTd();\n  const foundedYear = 2026 - parseInt(f.badges.years);"
+        ],
+        [
+          "async function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: number; heroProducts: Product[] }) {\n  const t = await getT();\n  return (",
+          "async function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: number; heroProducts: Product[] }) {\n  const t = await getT();\n  const td = await getTd();\n  return ("
+        ],
+        [
+          "async function ProductsTab({ f, products, radioName }: { f: Factory; products: Product[]; radioName: string }) {\n  const t = await getT();\n  const categories = [\"All\", ...Array.from(new Set(products.flatMap((p) => p.tags ?? []))).slice(0, 6)];",
+          "async function ProductsTab({ f, products, radioName }: { f: Factory; products: Product[]; radioName: string }) {\n  const t = await getT();\n  const td = await getTd();\n  const categories = [\"All\", ...Array.from(new Set(products.flatMap((p) => p.tags ?? []))).slice(0, 6)];"
+        ],
+        [
+          "              {f.tags.map((t) => (\n                <span key={t} className=\"text-[11px] bg-[#F5F5F5] text-mute px-2 py-1 rounded-sm\">{t}</span>\n              ))}",
+          "              {f.tags.map((t) => (\n                <span key={t} className=\"text-[11px] bg-[#F5F5F5] text-mute px-2 py-1 rounded-sm\">{td(t)}</span>\n              ))}"
+        ],
+        [
+          "              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {p.image ? <img src={p.image} alt={p.title} className=\"w-full h-full object-cover\" /> : null}",
+          "              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {p.image ? <img src={p.image} alt={td(p.title)} className=\"w-full h-full object-cover\" /> : null}"
+        ],
+        [
+          "                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1\">{p.title}</h4>",
+          "                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1\">{td(p.title)}</h4>"
+        ],
+        [
+          "        {categories.map((c, i) => (\n          <span\n            key={c}\n            className={`text-[11.5px] px-3 py-1.5 rounded-sm cursor-pointer ${\n              i === 0 ? \"bg-brand text-white font-semibold\" : \"bg-bg border border-line text-mute hover:border-brand\"\n            }`}\n          >\n            {c}\n          </span>\n        ))}",
+          "        {categories.map((c, i) => (\n          <span\n            key={c}\n            className={`text-[11.5px] px-3 py-1.5 rounded-sm cursor-pointer ${\n              i === 0 ? \"bg-brand text-white font-semibold\" : \"bg-bg border border-line text-mute hover:border-brand\"\n            }`}\n          >\n            {td(c)}\n          </span>\n        ))}"
+        ],
+        [
+          "            <div className=\"aspect-square bg-[#F5F5F5] relative\">\n              {p.image ? <img src={p.image} alt={p.title} className=\"w-full h-full object-cover\" /> : null}",
+          "            <div className=\"aspect-square bg-[#F5F5F5] relative\">\n              {p.image ? <img src={p.image} alt={td(p.title)} className=\"w-full h-full object-cover\" /> : null}"
+        ],
+        [
+          "              <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 min-h-[32px]\">{p.title}</h4>",
+          "              <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 min-h-[32px]\">{td(p.title)}</h4>"
+        ]
+      ],
+      "deferred": "Server Component — all wraps applied directly. No client-side deferrals.\n\nNOT wrapped (intentionally, per rules):\n- {f.name} / factoryName={f.name} / overlayName từ f.name: tên CÔNG TY/THƯƠNG HIỆU (OPPEIN, KUKA, Dongpeng, Monalisa, Landbond...). Brand names — không dịch.\n- {f.location}: tên địa danh (\"Foshan, Guangdong · CN\") — place name, không dịch.\n- {f.meta} (\"50 triệu m²/năm\"), {f.badges.years} (\"12 năm\"): metric/số liệu (giống MOQ) — không dịch.\n- {p.price}{p.unit}, {p.moq}, {p.rating}, ★{f.rating}: giá/số/rating/MOQ.\n- f.tags.join(\", \") và f.tags[0] nhúng trong câu văn tiếng Anh hardcoded (HomeTab \"About\" prose dòng 164-166; CompanyTab dòng 357,418,429; ContactTab dòng 616; AiTab dòng 794): là interpolation vào prose tiếng Anh CỨNG (chưa dịch), không phải nhãn tên — để nguyên.\n- Mảng literal CỨNG trong component (KHÔNG từ src/data): TABS labels, milestones (m.t/m.d), leaders (l.name \"Wang Lei\"/l.role), CapacityTab lines/machinery (l.name/m.t/m.brand), QC stages (q.stage/q.desc), Vr360Tab \"what you see\" (s.t/s.d), AiTab conversation/trainingSources/quickTopics (s.label/s.value, {t} trong quickTopics.map, m.text). Đây là chuỗi tiếng Anh hardcoded, ngoài phạm vi td() (chỉ data từ src/data) — đã có {t()} cho UI labels riêng.\n- {t} trong TABS.map / quickTopics.map nơi t là literal English element — KHÔNG bọc (không phải data tiếng Việt).\n\nĐã wrap (data từ src/data, tên hiển thị tiếng Việt theo locale):\n- p.title (Product.title = prod.name): HomeTab heroProducts (text + alt), ProductsTab products (text + alt).\n- f.tags (Factory tags = danh mục tiếng Việt \"Gạch porcelain\"/\"Sofa\"/\"Tủ bếp\"): sidebar Main tags map((t)) -> td(t).\n- categories chips ProductsTab (dẫn xuất từ p.tags + \"All\"): td(c) — \"All\" pass-through, tag tiếng Việt được dịch.\n\nLưu ý map shadowing: trong f.tags.map((t)=>...) biến t là phần tử tag (che translator t trong scope đó); dùng td(t) vẫn đúng, không đụng translator.\n\nKhông có sub-component nào render data mà chưa async (HomeTab/ProductsTab đã async, đã thêm const td). mega-submenu.tsx không liên quan file này."
+    },
+    {
+      "file": "src/app/category/[slug]/page.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();\n  const { slug } = await params;",
+          "  const t = await getT();\n  const td = await getTd();\n  const { slug } = await params;"
+        ],
+        [
+          "            { label: navEntry?.name ?? slug },",
+          "            { label: td(navEntry?.name ?? slug) },"
+        ],
+        [
+          "            {navEntry?.name ?? slug}\n          </h1>",
+          "            {td(navEntry?.name ?? slug)}\n          </h1>"
+        ],
+        [
+          "            { label: data.title },",
+          "            { label: td(data.title) },"
+        ]
+      ],
+      "deferred": "PartnersInCategory section renders only brand names (p.name, p.nameOriginal) and p.factory.location — intentionally NOT wrapped (p.name/p.nameOriginal are tên thương hiệu; location is an address, not a product/category/partner name). generateMetadata (line 159-174) is a Next.js metadata function, not a JSX render — data?.title / navEntry?.name there were left unwrapped since the task targets rendered display names; could be wrapped later if browser-tab title localization is wanted."
+    },
+    {
+      "file": "src/app/buyer-center/supplier-discover/page.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { getT } from \"@/lib/t\";",
+          "import { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "  const t = await getT();",
+          "  const t = await getT();\n  const td = await getTd();"
+        ],
+        [
+          "<span className=\"text-[9.5px] bg-brand/10 text-brand px-1.5 py-0.5 rounded-sm font-bold\">{f.badges.years}</span>",
+          "<span className=\"text-[9.5px] bg-brand/10 text-brand px-1.5 py-0.5 rounded-sm font-bold\">{td(f.badges.years)}</span>"
+        ],
+        [
+          "<b className=\"block text-[11px] text-ink\">{f.meta}</b>",
+          "<b className=\"block text-[11px] text-ink\">{td(f.meta)}</b>"
+        ],
+        [
+          "<span key={t} className=\"text-[10.5px] bg-[#F5F7FA] text-mute px-1.5 py-0.5 rounded-sm\">{t}</span>",
+          "<span key={t} className=\"text-[10.5px] bg-[#F5F7FA] text-mute px-1.5 py-0.5 rounded-sm\">{td(t)}</span>"
+        ]
+      ],
+      "deferred": ""
+    }
+  ]
+}

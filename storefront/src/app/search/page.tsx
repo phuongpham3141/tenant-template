@@ -1,14 +1,15 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SECTIONS, FACTORIES } from "@/data/home";
+import { getT } from "@/lib/t";
 
 const ALL_PRODUCTS = SECTIONS.flatMap((s) => s.products);
 
 const FILTERS = [
-  { title: "Loại kết quả", options: ["Sản phẩm", "Nhà cung cấp", "Trade Show"] },
-  { title: "Giá", options: ["< $10", "$10 – $50", "$50 – $200", "> $200"] },
-  { title: "MOQ", options: ["1 – 50", "50 – 200", "200 – 1000", "1000+"] },
-  { title: "Xuất xứ", options: ["Foshan", "Quảng Châu", "Đông Quan", "Thượng Hải"] },
+  { title: "search.filter_result_type", options: ["search.opt_products", "search.opt_suppliers", "search.opt_trade_show"] },
+  { title: "search.filter_price", options: ["< $10", "$10 – $50", "$50 – $200", "> $200"] },
+  { title: "search.filter_moq", options: ["1 – 50", "50 – 200", "200 – 1000", "1000+"] },
+  { title: "search.filter_origin", options: ["Foshan", "Guangzhou", "Dongguan", "Shanghai"] },
 ];
 
 export default async function SearchPage({
@@ -16,6 +17,7 @@ export default async function SearchPage({
 }: {
   searchParams: Promise<{ q?: string }>;
 }) {
+  const t = await getT();
   const sp = await searchParams;
   const q = (sp.q ?? "").trim();
 
@@ -34,16 +36,16 @@ export default async function SearchPage({
 
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Tìm kiếm" }, { label: q || "Tất cả" }]} />
+      <Breadcrumb trail={[{ label: t("search.bc_home"), href: "/" }, { label: t("search.bc_search") }, { label: q || t("search.bc_all") }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
           <h1 className="text-[22px] font-bold text-ink leading-tight">
-            Kết quả tìm kiếm cho <span className="text-brand">&ldquo;{q || "tất cả"}&rdquo;</span>
+            {t("search.results_for")} <span className="text-brand">&ldquo;{q || t("search.all")}&rdquo;</span>
           </h1>
-          <p className="text-[13px] text-mute mt-1">Tìm thấy {results.length} sản phẩm · 12 nhà cung cấp · 3 trade show</p>
+          <p className="text-[13px] text-mute mt-1">{t("search.found_summary").replace("{n}", String(results.length))}</p>
           <div className="flex gap-2 mt-3 flex-wrap">
-            {["Sản phẩm", "Nhà cung cấp", "Trade Show"].map((t, i) => (
-              <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t}</a>
+            {["search.opt_products", "search.opt_suppliers", "search.opt_trade_show"].map((label, i) => (
+              <a key={label} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? "bg-brand text-white font-semibold" : "border border-line text-mute hover:border-brand"}`}>{t(label)}</a>
             ))}
           </div>
         </div>
@@ -53,11 +55,11 @@ export default async function SearchPage({
         <aside className="bg-paper border border-line rounded p-4 self-start space-y-5">
           {FILTERS.map((f) => (
             <div key={f.title}>
-              <b className="block text-[13px] font-semibold text-ink mb-2">{f.title}</b>
+              <b className="block text-[13px] font-semibold text-ink mb-2">{t(f.title)}</b>
               <ul className="space-y-1.5">
                 {f.options.map((o) => (
                   <li key={o} className="flex items-center gap-2 text-[12.5px] text-mute hover:text-brand cursor-pointer">
-                    <input type="checkbox" className="accent-brand" /> {o}
+                    <input type="checkbox" className="accent-brand" /> {f.title === "search.filter_result_type" ? t(o) : o}
                   </li>
                 ))}
               </ul>
@@ -82,7 +84,7 @@ export default async function SearchPage({
           </div>
 
           <div className="mt-7">
-            <h2 className="text-[15px] font-bold text-ink mb-3">Nhà cung cấp liên quan</h2>
+            <h2 className="text-[15px] font-bold text-ink mb-3">{t("search.related_suppliers")}</h2>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {FACTORIES.slice(0, 3).map((f) => (
                 <Link key={f.slug} href={`/supplier/${f.slug}`} className="bg-paper border border-line rounded-sm p-3 hover:border-brand flex gap-3 items-center">
@@ -99,10 +101,10 @@ export default async function SearchPage({
           {/* No results CTA */}
           <div className="mt-7 bg-brand-dark text-white rounded p-5 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <div>
-              <b className="block text-[16px] mb-1">Không tìm thấy sản phẩm phù hợp?</b>
-              <span className="text-[12.5px] opacity-85">Gửi RFQ — chúng tôi sẽ tìm 5-10 nhà máy phù hợp trong 24h.</span>
+              <b className="block text-[16px] mb-1">{t("search.cant_find")}</b>
+              <span className="text-[12.5px] opacity-85">{t("search.rfq_desc")}</span>
             </div>
-            <Link href={`/buying-request${q ? `?q=${encodeURIComponent(q)}` : ""}`} className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]">📨 Gửi RFQ →</Link>
+            <Link href={`/buying-request${q ? `?q=${encodeURIComponent(q)}` : ""}`} className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]">📨 {t("search.send_rfq")} →</Link>
           </div>
         </div>
       </div>
@@ -110,4 +112,4 @@ export default async function SearchPage({
   );
 }
 
-export const metadata = { title: "Tìm kiếm — Cybersilkroads" };
+export const metadata = { title: "Search — Huayuesc" };

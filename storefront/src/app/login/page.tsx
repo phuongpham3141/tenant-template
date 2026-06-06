@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { LOGIN_PROVIDERS } from "@/components/icons/social";
+import { getT } from "@/lib/t";
 
 /**
  * /login — full standalone page (used when user lands here directly).
@@ -12,43 +13,44 @@ import { LOGIN_PROVIDERS } from "@/components/icons/social";
 const VALUE_PROPS = [
   {
     icon: "🏭",
-    title: "40+ nhà máy đã audit",
-    desc: "Nhà cung cấp đã xác minh với báo cáo kiểm định on-site, ảnh và video dây chuyền sản xuất.",
+    title: "login.vp_factories_title",
+    desc: "login.vp_factories_desc",
   },
   {
     icon: "💰",
-    title: "Báo giá < 24h",
-    desc: "Gửi 1 RFQ, nhận 5–10 báo giá từ nhà máy phù hợp trong 1 ngày làm việc.",
+    title: "login.vp_quotes_title",
+    desc: "login.vp_quotes_desc",
   },
   {
     icon: "🛡",
-    title: "Bảo đảm Giao dịch",
-    desc: "Hoàn 100% nếu hàng giao sai mô tả, sai số lượng hoặc trễ thời hạn đã ký.",
+    title: "login.vp_trade_title",
+    desc: "login.vp_trade_desc",
   },
   {
     icon: "🚚",
-    title: "DDP tận kho 18 ngày",
-    desc: "Trọn gói vận chuyển + thuế + thông quan từ Quảng Châu/Ninh Ba về Hà Nội/HCM.",
+    title: "login.vp_ddp_title",
+    desc: "login.vp_ddp_desc",
   },
 ];
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const t = await getT();
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Đăng nhập" }]} />
+      <Breadcrumb trail={[{ label: t("login.bc_home"), href: "/" }, { label: t("login.bc_signin") }]} />
       <div className="max-w-[1100px] mx-auto px-4 mt-6 mb-10 grid grid-cols-[480px_1fr] gap-8 max-md:grid-cols-1 max-md:gap-5">
         {/* === LEFT: login card =========================================== */}
         <div className="bg-paper border border-line rounded p-6 max-md:p-4">
           {/* Tabs */}
           <div className="flex border-b border-line mb-5 -mx-6 -mt-6 max-md:-mx-4 max-md:-mt-4">
             <span className="flex-1 px-4 py-3 text-center text-[14px] font-bold border-b-2 border-brand text-brand cursor-default">
-              Đăng nhập
+              {t("login.tab_signin")}
             </span>
             <Link
               href="/register/buyer"
               className="flex-1 px-4 py-3 text-center text-[14px] font-semibold border-b-2 border-transparent text-mute hover:text-brand cursor-pointer"
             >
-              Đăng ký
+              {t("login.tab_signup")}
             </Link>
           </div>
 
@@ -59,7 +61,7 @@ export default function LoginPage() {
                 key={p.name}
                 href={`/login/oauth/${p.name.toLowerCase()}`}
                 className="flex items-center justify-center gap-2 py-2.5 border border-line rounded-sm text-[12.5px] font-semibold text-ink cursor-pointer hover:border-brand hover:bg-bg"
-                aria-label={`Đăng nhập với ${p.name}`}
+                aria-label={`${t("login.social_aria")} ${p.name}`}
               >
                 <span className="flex-shrink-0">{p.icon}</span>
                 <span>{p.name}</span>
@@ -71,7 +73,7 @@ export default function LoginPage() {
           <div className="flex items-center gap-3 mb-5">
             <div className="flex-1 h-px bg-line" />
             <span className="text-[10.5px] text-mute2 uppercase tracking-wider">
-              Hoặc đăng nhập bằng email
+              {t("login.divider_email")}
             </span>
             <div className="flex-1 h-px bg-line" />
           </div>
@@ -80,17 +82,17 @@ export default function LoginPage() {
           <form action="/buyer-center" method="get" className="space-y-3">
             <div>
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                Email hoặc số điện thoại
+                {t("login.label_login")}
               </label>
               <input
                 name="login"
-                placeholder="email@example.com hoặc 09xx xxx xxx"
+                placeholder={t("login.ph_login")}
                 className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
             </div>
             <div>
               <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                Mật khẩu
+                {t("login.label_password")}
               </label>
               <input
                 name="password"
@@ -102,32 +104,32 @@ export default function LoginPage() {
             <div className="flex justify-between items-center text-[12px]">
               <label className="flex items-center gap-1.5 text-mute cursor-pointer">
                 <input type="checkbox" className="accent-brand" />
-                Ghi nhớ đăng nhập
+                {t("login.remember_me")}
               </label>
               <Link href="/info/quen-mat-khau" className="text-brand hover:underline cursor-pointer">
-                Quên mật khẩu?
+                {t("login.forgot_password")}
               </Link>
             </div>
             <button
               type="submit"
               className="w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light"
             >
-              Đăng nhập
+              {t("login.btn_signin")}
             </button>
           </form>
 
           {/* Register CTAs */}
           <div className="mt-6 pt-5 border-t border-line">
-            <p className="text-[12.5px] text-mute mb-3 text-center">Chưa có tài khoản?</p>
+            <p className="text-[12.5px] text-mute mb-3 text-center">{t("login.no_account")}</p>
             <div className="grid grid-cols-2 gap-2.5">
               <Link
                 href="/register/buyer"
                 className="flex flex-col items-center text-center px-3 py-3.5 border-2 border-brand rounded-sm cursor-pointer hover:bg-brand/5 transition"
               >
                 <span className="text-[22px] mb-1">🛍</span>
-                <b className="block text-[13px] text-brand mb-0.5">Đăng ký Người mua</b>
+                <b className="block text-[13px] text-brand mb-0.5">{t("login.register_buyer")}</b>
                 <small className="text-[10.5px] text-mute leading-tight">
-                  Người mua, đại lý Việt Nam
+                  {t("login.register_buyer_sub")}
                 </small>
               </Link>
               <Link
@@ -135,9 +137,9 @@ export default function LoginPage() {
                 className="flex flex-col items-center text-center px-3 py-3.5 border-2 border-gold rounded-sm bg-gold/5 cursor-pointer hover:bg-gold/15 transition"
               >
                 <span className="text-[22px] mb-1">🏭</span>
-                <b className="block text-[13px] text-brand-dark mb-0.5">Đăng ký Nhà cung cấp</b>
+                <b className="block text-[13px] text-brand-dark mb-0.5">{t("login.register_supplier")}</b>
                 <small className="text-[10.5px] text-mute leading-tight">
-                  Nhà máy Trung Quốc
+                  {t("login.register_supplier_sub")}
                 </small>
               </Link>
             </div>
@@ -145,11 +147,11 @@ export default function LoginPage() {
 
           {/* Help links */}
           <div className="mt-5 pt-4 border-t border-line text-[11.5px] text-mute text-center space-x-3">
-            <Link href="/help" className="hover:text-brand cursor-pointer">Trung tâm trợ giúp</Link>
+            <Link href="/help" className="hover:text-brand cursor-pointer">{t("login.help_center")}</Link>
             <span>·</span>
-            <Link href="/info/terms-of-service" className="hover:text-brand cursor-pointer">Điều khoản</Link>
+            <Link href="/info/terms-of-service" className="hover:text-brand cursor-pointer">{t("login.terms")}</Link>
             <span>·</span>
-            <Link href="/info/privacy-policy" className="hover:text-brand cursor-pointer">Bảo mật</Link>
+            <Link href="/info/privacy-policy" className="hover:text-brand cursor-pointer">{t("login.privacy")}</Link>
           </div>
         </div>
 
@@ -161,14 +163,13 @@ export default function LoginPage() {
             style={{ background: "linear-gradient(135deg, #005F6B 0%, #003A42 100%)" }}
           >
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3">
-              ⚡ Cybersilkroads 2026
+              {t("login.hero_badge")}
             </span>
             <h2 className="text-[22px] font-extrabold leading-tight mb-2">
-              Cánh cửa nhập khẩu trực tiếp <br />từ <span className="text-gold">40+ nhà máy</span> Trung Quốc
+              {t("login.hero_title_a")} <br />{t("login.hero_title_b")} <span className="text-gold">{t("login.hero_title_c")}</span> {t("login.hero_title_d")}
             </h2>
             <p className="text-[12.5px] opacity-85 leading-relaxed">
-              Đăng nhập để tiếp tục RFQ đang dở, theo dõi đơn hàng, lưu sản phẩm yêu thích
-              và quản lý hợp đồng — tất cả ở một nơi.
+              {t("login.hero_desc")}
             </p>
           </div>
 
@@ -177,8 +178,8 @@ export default function LoginPage() {
             {VALUE_PROPS.map((v) => (
               <div key={v.title} className="bg-paper border border-line rounded p-3.5">
                 <div className="text-[24px] mb-1.5">{v.icon}</div>
-                <b className="block text-[13px] text-ink mb-1">{v.title}</b>
-                <p className="text-[11.5px] text-mute leading-snug">{v.desc}</p>
+                <b className="block text-[13px] text-ink mb-1">{t(v.title)}</b>
+                <p className="text-[11.5px] text-mute leading-snug">{t(v.desc)}</p>
               </div>
             ))}
           </div>
@@ -187,24 +188,24 @@ export default function LoginPage() {
           <div className="bg-paper border border-line rounded p-4 grid grid-cols-3 gap-3 text-center">
             <div>
               <b className="block text-[18px] text-brand font-extrabold">600+</b>
-              <small className="text-[11px] text-mute">Dealer VN đã đăng ký</small>
+              <small className="text-[11px] text-mute">{t("login.stat_dealers")}</small>
             </div>
             <div className="border-x border-line">
               <b className="block text-[18px] text-brand font-extrabold">2,400+</b>
-              <small className="text-[11px] text-mute">Sản phẩm đã verified</small>
+              <small className="text-[11px] text-mute">{t("login.stat_products")}</small>
             </div>
             <div>
               <b className="block text-[18px] text-brand font-extrabold">$8.2M</b>
-              <small className="text-[11px] text-mute">Giao dịch / năm 2025</small>
+              <small className="text-[11px] text-mute">{t("login.stat_gmv")}</small>
             </div>
           </div>
 
           {/* Trust badges */}
           <div className="flex flex-wrap gap-2 text-[11px] text-mute">
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ Bộ Công Thương</span>
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ ISO 27001</span>
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ Bảo mật SSL</span>
-            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">✓ Audit TUV</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">{t("login.badge_moit")}</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">{t("login.badge_iso")}</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">{t("login.badge_ssl")}</span>
+            <span className="px-2.5 py-1 bg-bg border border-line rounded-sm">{t("login.badge_tuv")}</span>
           </div>
         </aside>
       </div>
@@ -212,4 +213,4 @@ export default function LoginPage() {
   );
 }
 
-export const metadata = { title: "Đăng nhập — Cybersilkroads" };
+export const metadata = { title: "Sign In — Huayuesc" };

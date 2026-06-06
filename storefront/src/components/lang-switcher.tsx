@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useT } from "@/components/i18n-provider";
 import {
   LOCALE_LIST,
   detectLocaleFromHost,
   localeHref,
+  detectLocaleFromPath,
   type LocaleCode,
 } from "@/lib/i18n";
 
@@ -29,7 +31,8 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
     setPath(window.location.pathname || "/");
   }, []);
 
-  const active: LocaleCode = detectLocaleFromHost(host);
+  const active: LocaleCode = detectLocaleFromPath(path) ?? detectLocaleFromHost(host);
+  const t = useT();
 
   if (variant === "trigger") {
     const cur = LOCALE_LIST.find((l) => l.code === active)!;
@@ -48,7 +51,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
           return (
             <a
               key={l.code}
-              href={localeHref(l.code, path, host)}
+              href={localeHref(l.code, path)}
               hrefLang={l.code}
               aria-current={isActive ? "true" : undefined}
               className={`px-2 py-1 text-[11px] font-semibold rounded-sm border transition cursor-pointer ${
@@ -71,7 +74,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
     <div className="p-4 space-y-3">
       <div>
         <div className="text-[11px] text-mute uppercase tracking-wider mb-1.5">
-          Ngôn ngữ
+          {t("lang.language")}
         </div>
         <div className="grid grid-cols-2 gap-1.5">
           {LOCALE_LIST.map((l) => {
@@ -79,7 +82,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
             return (
               <a
                 key={l.code}
-                href={localeHref(l.code, path, host)}
+                href={localeHref(l.code, path)}
                 hrefLang={l.code}
                 aria-current={isActive ? "true" : undefined}
                 className={`px-2.5 py-1.5 text-[12px] rounded-sm cursor-pointer text-center font-semibold transition ${
@@ -96,7 +99,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
       </div>
       <div>
         <div className="text-[11px] text-mute uppercase tracking-wider mb-1.5">
-          Tiền tệ
+          {t("lang.currency")}
         </div>
         <div className="grid grid-cols-3 gap-1.5">
           {LOCALE_LIST.map((l) => {
@@ -104,7 +107,7 @@ export function LangSwitcher({ variant = "full" }: { variant?: Variant }) {
             return (
               <a
                 key={l.code}
-                href={localeHref(l.code, path, host)}
+                href={localeHref(l.code, path)}
                 hrefLang={l.code}
                 className={`px-2 py-1.5 text-[12px] rounded-sm cursor-pointer text-center font-semibold transition ${
                   isActive

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import type { ListingProduct } from "@/data/products";
 
 export function ProdCard({ p }: { p: ListingProduct }) {

@@ -7,6 +7,9 @@ import { NavBar } from "@/components/home/navbar";
 import { Footer } from "@/components/home/footer";
 import { MobileBottomNav } from "@/components/home/mobile-bottom-nav";
 import { StickyHeader } from "@/components/home/sticky-header";
+import { getLocale, getT } from "@/lib/t";
+import { getMessages } from "@/messages";
+import { I18nProvider } from "@/components/i18n-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,28 +17,33 @@ const inter = Inter({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "Cybersilkroads — Con đường tơ lụa trên không gian mạng",
-  description:
-    "Nền tảng B2B kết nối người mua Việt Nam với nhà sản xuất Trung Quốc. 2,400+ SKU từ 40+ nhà máy đã audit. Báo giá trực tiếp, không qua trung gian.",
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getT();
+  return {
+  title: t("meta.title"),
+  description: t("meta.desc"),
   icons: {
     icon: [
-      { url: "/logo/favicon-16.png?v=5", sizes: "16x16", type: "image/png" },
-      { url: "/logo/favicon-32.png?v=5", sizes: "32x32", type: "image/png" },
-      { url: "/logo/favicon-48.png?v=5", sizes: "48x48", type: "image/png" },
+      { url: "/logo/favicon-16.png?v=6", sizes: "16x16", type: "image/png" },
+      { url: "/logo/favicon-32.png?v=6", sizes: "32x32", type: "image/png" },
+      { url: "/logo/favicon-48.png?v=6", sizes: "48x48", type: "image/png" },
     ],
-    apple: { url: "/logo/apple-touch-icon.png?v=5", sizes: "180x180" },
+    apple: { url: "/logo/apple-touch-icon.png?v=6", sizes: "180x180" },
   },
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = getMessages(locale);
   return (
-    <html lang="vi" className={`${inter.variable} antialiased`}>
+    <html lang={locale} className={`${inter.variable} antialiased`}>
       <body className="min-h-full flex flex-col bg-bg text-ink">
+        <I18nProvider messages={messages} locale={locale}>
         <StickyHeader />
         <TopStrip />
         <Header />
@@ -43,6 +51,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <MobileBottomNav />
+        </I18nProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ARTICLES } from "@/lib/blog";
+import { getT } from "@/lib/t";
 
 type SitemapLink = { label: string; href: string; desc?: string };
 
@@ -16,140 +17,141 @@ const SECTIONS: SitemapSection[] = [
   {
     icon: "🏠",
     color: "#005F6B",
-    title: "Trang chủ & Khám phá",
-    subtitle: "Điểm vào chính của nền tảng",
+    title: "Home & Discover",
+    subtitle: "The platform's main entry points",
     links: [
-      { label: "Trang chủ", href: "/", desc: "Điểm khởi đầu — featured products, RFQ form, promotions" },
-      { label: "Tất cả sản phẩm", href: "/products", desc: "Catalog 200K+ SKU từ 1,840+ NCC verified" },
-      { label: "Tìm kiếm", href: "/search", desc: "Full-text search theo SKU, NCC, ngành" },
-      { label: "Tìm kiếm bằng hình ảnh", href: "/search/by-image", desc: "Upload ảnh để tìm sản phẩm tương tự" },
-      { label: "Suppliers", href: "/suppliers", desc: "Danh sách 1,840+ NCC đã pass audit" },
-      { label: "Zones", href: "/zones", desc: "Sản xuất theo cluster — Foshan, Đông Quan, Yiwu..." },
-      { label: "Industry Channels", href: "/industry-channels", desc: "Kênh chuyên ngành — nội thất, sanitary, điện tử..." },
-      { label: "Factory Tour", href: "/factory-tour", desc: "Video tour 360° nhà máy đối tác" },
+      { label: "sitemap.lbl_home", href: "/", desc: "sitemap.desc_home" },
+      { label: "sitemap.lbl_all_products", href: "/products", desc: "sitemap.desc_all_products" },
+      { label: "sitemap.lbl_search", href: "/search", desc: "sitemap.desc_search" },
+      { label: "sitemap.lbl_image_search", href: "/search/by-image", desc: "sitemap.desc_image_search" },
+      { label: "sitemap.lbl_suppliers", href: "/suppliers", desc: "sitemap.desc_suppliers" },
+      { label: "sitemap.lbl_zones", href: "/zones", desc: "sitemap.desc_zones" },
+      { label: "sitemap.lbl_industry_channels", href: "/industry-channels", desc: "sitemap.desc_industry_channels" },
+      { label: "sitemap.lbl_factory_tour", href: "/factory-tour", desc: "sitemap.desc_factory_tour" },
     ],
   },
   {
     icon: "🛒",
     color: "#16A34A",
-    title: "Mua hàng (Buyer)",
-    subtitle: "Quy trình từ RFQ đến nhận hàng",
+    title: "Buying",
+    subtitle: "From RFQ to receiving the goods",
     links: [
-      { label: "Gửi RFQ — Yêu cầu báo giá", href: "/buying-request", desc: "Form RFQ — AI matching đẩy 5-10 NCC trong 24h" },
-      { label: "Cảnh báo Thương mại (Newsletter)", href: "/trade-alert", desc: "12,000+ buyer đăng ký — tin tức + sale alert tuần" },
-      { label: "Trade Shows 2026", href: "/trade-shows", desc: "12 sự kiện CSR đại diện hoặc đồng tổ chức" },
-      { label: "Trung tâm trợ giúp", href: "/help", desc: "300+ bài hướng dẫn theo 5 stage hành trình mua" },
+      { label: "sitemap.lbl_send_rfq", href: "/buying-request", desc: "sitemap.desc_send_rfq" },
+      { label: "sitemap.lbl_trade_alert", href: "/trade-alert", desc: "sitemap.desc_trade_alert" },
+      { label: "sitemap.lbl_trade_shows", href: "/trade-shows", desc: "sitemap.desc_trade_shows" },
+      { label: "sitemap.lbl_help_center", href: "/help", desc: "sitemap.desc_help_center" },
     ],
   },
   {
     icon: "📊",
     color: "#0891B2",
-    title: "Buyer Center — Sau khi đăng nhập",
-    subtitle: "Dashboard người mua với 12 chức năng",
+    title: "Buyer Center — After Sign-In",
+    subtitle: "The buyer dashboard with 12 features",
     links: [
-      { label: "Trang tổng quan", href: "/buyer-center", desc: "Tổng hợp RFQ, đơn hàng, tin nhắn" },
-      { label: "Đơn hàng của tôi", href: "/buyer-center/orders", desc: "Tracking realtime, ảnh/video từng mốc" },
-      { label: "Sản phẩm yêu thích", href: "/buyer-center/favorites", desc: "Wishlist các SKU đang cân nhắc" },
-      { label: "Báo cáo audit nhà máy", href: "/buyer-center/audited-reports", desc: "Download báo cáo audit ký số blockchain" },
-      { label: "Lịch sử duyệt", href: "/buyer-center/browsing-history", desc: "Sản phẩm đã xem 30 ngày gần nhất" },
-      { label: "Liên hệ — chat", href: "/buyer-center/contact", desc: "Chat với quản lý tài khoản, NCC" },
-      { label: "Gặp NCC trực tuyến", href: "/buyer-center/meet-suppliers", desc: "Đặt video call với NCC qua dispatcher CSR" },
-      { label: "Hướng dẫn buyer mới", href: "/buyer-center/new-user-guide", desc: "30 ngày đầu — onboarding chi tiết" },
-      { label: "Đăng RFQ", href: "/buyer-center/post-rfq", desc: "Multi-supplier RFQ với template ngành" },
-      { label: "Product Directory", href: "/buyer-center/product-directory", desc: "Phân loại theo HS code, MOQ, thời gian giao" },
-      { label: "Secured Trading", href: "/buyer-center/secured-trading", desc: "Bảo đảm Giao dịch (tài khoản trung gian) workflow" },
-      { label: "Khám phá NCC mới", href: "/buyer-center/supplier-discover", desc: "AI gợi ý NCC theo lịch sử mua" },
+      { label: "sitemap.lbl_overview_buyer", href: "/buyer-center", desc: "sitemap.desc_overview_buyer" },
+      { label: "sitemap.lbl_my_orders", href: "/buyer-center/orders", desc: "sitemap.desc_my_orders" },
+      { label: "sitemap.lbl_favorites", href: "/buyer-center/favorites", desc: "sitemap.desc_favorites" },
+      { label: "sitemap.lbl_audit_reports", href: "/buyer-center/audited-reports", desc: "sitemap.desc_audit_reports" },
+      { label: "sitemap.lbl_browsing_history", href: "/buyer-center/browsing-history", desc: "sitemap.desc_browsing_history" },
+      { label: "sitemap.lbl_contact_chat", href: "/buyer-center/contact", desc: "sitemap.desc_contact_chat" },
+      { label: "sitemap.lbl_meet_suppliers", href: "/buyer-center/meet-suppliers", desc: "sitemap.desc_meet_suppliers" },
+      { label: "sitemap.lbl_new_buyer_guide", href: "/buyer-center/new-user-guide", desc: "sitemap.desc_new_buyer_guide" },
+      { label: "sitemap.lbl_post_rfq", href: "/buyer-center/post-rfq", desc: "sitemap.desc_post_rfq" },
+      { label: "sitemap.lbl_product_directory", href: "/buyer-center/product-directory", desc: "sitemap.desc_product_directory" },
+      { label: "sitemap.lbl_secured_trading", href: "/buyer-center/secured-trading", desc: "sitemap.desc_secured_trading" },
+      { label: "sitemap.lbl_supplier_discover", href: "/buyer-center/supplier-discover", desc: "sitemap.desc_supplier_discover" },
     ],
   },
   {
     icon: "🏭",
     color: "#9C6A1F",
-    title: "Bán hàng (Seller / Supplier)",
-    subtitle: "Đăng ký và quản lý gian hàng NCC",
+    title: "Selling (Seller / Supplier)",
+    subtitle: "Register and manage your supplier storefront",
     links: [
-      { label: "Sell on Cybersilkroads", href: "/sell-on-csr", desc: "3 tier (Free / Verified / Premium) — quy trình audit 4 bước" },
-      { label: "Đăng ký nhà máy", href: "/register/factory", desc: "Form đăng ký + upload giấy tờ pháp lý" },
-      { label: "Đăng ký dealer", href: "/register/dealer", desc: "Đại lý phân phối tại VN/ASEAN" },
+      { label: "sitemap.lbl_sell_on_csr", href: "/sell-on-csr", desc: "sitemap.desc_sell_on_csr" },
+      { label: "sitemap.lbl_register_factory_a", href: "/register/factory", desc: "sitemap.desc_register_factory_a" },
+      { label: "sitemap.lbl_register_dealer_a", href: "/register/dealer", desc: "sitemap.desc_register_dealer_a" },
     ],
   },
   {
     icon: "💼",
     color: "#7C2D12",
-    title: "Seller Center — Sau khi audit",
-    subtitle: "10 công cụ vận hành cho NCC verified",
+    title: "Seller Center — After Audit",
+    subtitle: "10 operational tools for verified suppliers",
     links: [
-      { label: "Trang tổng quan", href: "/seller-center", desc: "Doanh số, đơn nhận, RFQ inbox, conversion" },
-      { label: "AI Assistant", href: "/seller-center/ai-assistant", desc: "Trợ lý AI viết quote, dịch tiếng Việt, optimize listing" },
-      { label: "Domestic CN", href: "/seller-center/domestic-cn", desc: "Bán hàng nội địa Trung Quốc qua Taobao/Tmall" },
-      { label: "Export NA", href: "/seller-center/export-na", desc: "Xuất khẩu Bắc Mỹ qua Amazon FBA + 3PL" },
-      { label: "Gold Member", href: "/seller-center/gold-member", desc: "Tier cao nhất — featured banner, priority RFQ" },
-      { label: "Logistics", href: "/seller-center/logistics", desc: "Booking tàu, customs broker, container tracking" },
-      { label: "Smart Expo", href: "/seller-center/smart-expo", desc: "Virtual booth tại trade fair online" },
-      { label: "Trade eHome", href: "/seller-center/trade-ehome", desc: "Showroom số cho ngành nội thất" },
-      { label: "Trade Services", href: "/seller-center/trade-services", desc: "Dịch thuật, pháp lý, tài chính cho NCC" },
-      { label: "Trading Service", href: "/seller-center/trading-service", desc: "CSR đại diện trade — buyer's agent thuê ngoài" },
+      { label: "sitemap.lbl_overview_seller", href: "/seller-center", desc: "sitemap.desc_overview_seller" },
+      { label: "sitemap.lbl_ai_assistant", href: "/seller-center/ai-assistant", desc: "sitemap.desc_ai_assistant" },
+      { label: "sitemap.lbl_domestic_cn", href: "/seller-center/domestic-cn", desc: "sitemap.desc_domestic_cn" },
+      { label: "sitemap.lbl_export_na", href: "/seller-center/export-na", desc: "sitemap.desc_export_na" },
+      { label: "sitemap.lbl_gold_member", href: "/seller-center/gold-member", desc: "sitemap.desc_gold_member" },
+      { label: "sitemap.lbl_logistics", href: "/seller-center/logistics", desc: "sitemap.desc_logistics" },
+      { label: "sitemap.lbl_smart_expo", href: "/seller-center/smart-expo", desc: "sitemap.desc_smart_expo" },
+      { label: "sitemap.lbl_trade_ehome", href: "/seller-center/trade-ehome", desc: "sitemap.desc_trade_ehome" },
+      { label: "sitemap.lbl_trade_services", href: "/seller-center/trade-services", desc: "sitemap.desc_trade_services" },
+      { label: "sitemap.lbl_trading_service", href: "/seller-center/trading-service", desc: "sitemap.desc_trading_service" },
     ],
   },
   {
     icon: "📚",
     color: "#7C3AED",
-    title: "Thông tin & Tài liệu",
-    subtitle: "Hướng dẫn, chính sách, và tài liệu nghiên cứu",
+    title: "Information & Documents",
+    subtitle: "Guides, policies, and research materials",
     links: [
-      { label: "Giới thiệu CSR", href: "/info/about-us", desc: "Tầm nhìn 'con đường tơ lụa số' — 4 trụ cột" },
-      { label: "Mạng lưới đối tác hiệp hội", href: "/info/network", desc: "42 hiệp hội VN · TQ · ASEAN, 28+ MOU" },
-      { label: "Quy trình kiểm định nhà máy", href: "/info/audit-process", desc: "7 bước, 32% pass rate, lab SGS/BV/TÜV/Intertek" },
-      { label: "Bảo đảm Giao dịch", href: "/info/trade-assurance", desc: "Trung gian VCB · BIDV · Bank of China — bảo vệ thanh toán" },
-      { label: "Khiếu nại & tranh chấp", href: "/info/disputes", desc: "3 cấp escalation — Direct · Mediation · VIAC trọng tài" },
-      { label: "Đặt mẫu (Sample Order)", href: "/info/sample-orders", desc: "Quy trình 6 bước, Trung tâm Mẫu Quảng Châu" },
-      { label: "Hướng dẫn nhập khẩu", href: "/info/import-guide", desc: "9 sections — VNACCS, Form E, ACFTA, RCEP" },
-      { label: "Chính sách vận chuyển", href: "/info/shipping-policy", desc: "Incoterms 2020, 5 cảng VN, đường bộ Lạng Sơn" },
-      { label: "Tính cước DDP", href: "/info/ddp-calculator", desc: "Calculator interactive — input CBM, weight, route" },
-      { label: "Theo dõi đơn realtime", href: "/info/order-tracking", desc: "5 stages, ảnh/video tại mỗi mốc" },
-      { label: "Bảo vệ thanh toán", href: "/info/payment-protection", desc: "Cơ chế trung gian + bảo hiểm" },
-      { label: "Tìm sản phẩm hiệu quả", href: "/info/find-products", desc: "Tips RFQ, AI matching, multi-supplier comparison" },
-      { label: "Tích hợp API", href: "/info/api-integration", desc: "REST + Webhook + 4 SDK (Node/Py/PHP/Go)" },
-      { label: "Báo cáo thị trường", href: "/info/market-reports", desc: "48 báo cáo/năm, 12 ngành cover" },
-      { label: "Tin tức ngành (Blog)", href: "/info/industry-news", desc: "12+ bài analysis, weekly pulse" },
-      { label: "Tuyển dụng (Careers)", href: "/info/careers", desc: "37+ vị trí mở — Engineering, Product, Sales" },
-      { label: "Liên hệ", href: "/info/contact", desc: "8 văn phòng VN + ASEAN, dropdown chọn theo khu vực" },
+      { label: "sitemap.lbl_about_csr", href: "/info/about-us", desc: "sitemap.desc_about_csr" },
+      { label: "sitemap.lbl_network", href: "/info/network", desc: "sitemap.desc_network" },
+      { label: "sitemap.lbl_audit_process", href: "/info/audit-process", desc: "sitemap.desc_audit_process" },
+      { label: "sitemap.lbl_trade_assurance", href: "/info/trade-assurance", desc: "sitemap.desc_trade_assurance" },
+      { label: "sitemap.lbl_disputes", href: "/info/disputes", desc: "sitemap.desc_disputes" },
+      { label: "sitemap.lbl_sample_orders", href: "/info/sample-orders", desc: "sitemap.desc_sample_orders" },
+      { label: "sitemap.lbl_import_guide", href: "/info/import-guide", desc: "sitemap.desc_import_guide" },
+      { label: "sitemap.lbl_shipping_policy", href: "/info/shipping-policy", desc: "sitemap.desc_shipping_policy" },
+      { label: "sitemap.lbl_ddp_calculator", href: "/info/ddp-calculator", desc: "sitemap.desc_ddp_calculator" },
+      { label: "sitemap.lbl_order_tracking", href: "/info/order-tracking", desc: "sitemap.desc_order_tracking" },
+      { label: "sitemap.lbl_payment_protection", href: "/info/payment-protection", desc: "sitemap.desc_payment_protection" },
+      { label: "sitemap.lbl_find_products", href: "/info/find-products", desc: "sitemap.desc_find_products" },
+      { label: "sitemap.lbl_api_integration", href: "/info/api-integration", desc: "sitemap.desc_api_integration" },
+      { label: "sitemap.lbl_market_reports", href: "/info/market-reports", desc: "sitemap.desc_market_reports" },
+      { label: "sitemap.lbl_industry_news", href: "/info/industry-news", desc: "sitemap.desc_industry_news" },
+      { label: "sitemap.lbl_careers", href: "/info/careers", desc: "sitemap.desc_careers" },
+      { label: "sitemap.lbl_contact", href: "/info/contact", desc: "sitemap.desc_contact" },
     ],
   },
   {
     icon: "⚖",
     color: "#475569",
-    title: "Pháp lý & Chính sách",
-    subtitle: "Điều khoản sử dụng và bảo mật dữ liệu",
+    title: "Legal & Policies",
+    subtitle: "Terms of use and data privacy",
     links: [
-      { label: "Điều khoản dịch vụ", href: "/info/terms-of-service", desc: "14 sections, VIAC arbitration, force majeure" },
-      { label: "Chính sách bảo mật", href: "/info/privacy-policy", desc: "ISO 27001, NĐ 13/2023, PIPL, GDPR compliance" },
+      { label: "sitemap.lbl_terms", href: "/info/terms-of-service", desc: "sitemap.desc_terms" },
+      { label: "sitemap.lbl_privacy", href: "/info/privacy-policy", desc: "sitemap.desc_privacy" },
     ],
   },
   {
     icon: "🔐",
     color: "#A21CAF",
-    title: "Tài khoản & Đăng ký",
-    subtitle: "Authentication và onboarding",
+    title: "Account & Registration",
+    subtitle: "Authentication and onboarding",
     links: [
-      { label: "Đăng nhập", href: "/login", desc: "Email/password + Google + Apple + Facebook OAuth" },
-      { label: "Đăng ký Người mua", href: "/register/buyer", desc: "Cá nhân hoặc doanh nghiệp — KYC nhanh" },
-      { label: "Đăng ký Dealer", href: "/register/dealer", desc: "Đại lý phân phối VN/ASEAN — verified workflow" },
-      { label: "Đăng ký Factory", href: "/register/factory", desc: "Nhà máy NCC — bắt đầu audit 7 bước" },
-      { label: "Tải app mobile", href: "/app", desc: "iOS + Android — RFQ + tracking trên di động" },
+      { label: "sitemap.lbl_login", href: "/login", desc: "sitemap.desc_login" },
+      { label: "sitemap.lbl_register_buyer", href: "/register/buyer", desc: "sitemap.desc_register_buyer" },
+      { label: "sitemap.lbl_register_dealer_as", href: "/register/dealer", desc: "sitemap.desc_register_dealer_as" },
+      { label: "sitemap.lbl_register_factory_as", href: "/register/factory", desc: "sitemap.desc_register_factory_as" },
+      { label: "sitemap.lbl_app", href: "/app", desc: "sitemap.desc_app" },
     ],
   },
 ];
 
-export default function SitemapPage() {
+export default async function SitemapPage() {
+  const t = await getT();
   const totalLinks = SECTIONS.reduce((acc, s) => acc + s.links.length, 0) + ARTICLES.length;
-  const sectionsCount = SECTIONS.length + 1; // +1 cho blog
+  const sectionsCount = SECTIONS.length + 1; // +1 for blog
 
   return (
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Sitemap" },
+          { label: t("sitemap.breadcrumb_home"), href: "/" },
+          { label: t("sitemap.breadcrumb_self") },
         ]}
       />
 
@@ -164,34 +166,34 @@ export default function SitemapPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-10 max-md:py-7">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            🗺 BẢN ĐỒ TRANG
+            {t("sitemap.badge")}
           </span>
           <h1 className="text-[36px] font-extrabold leading-[1.1] mb-3 max-md:text-[24px]">
-            Bản đồ trang Cybersilkroads
+            {t("sitemap.h1")}
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[760px] leading-relaxed mb-6 max-md:text-[13px]">
-            {totalLinks}+ trang được tổ chức theo {sectionsCount} nhóm chức năng. Dùng sitemap này để khám phá nhanh toàn bộ tính năng và tài liệu của nền tảng. Sitemap XML cho search engine: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
+            {totalLinks}+ pages organized into {sectionsCount} functional groups. Use this sitemap to quickly explore all of the platform's features and documentation. XML sitemap for search engines: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📄</div>
               <div className="text-[22px] font-extrabold">{totalLinks}+</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Tổng số trang</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">{t("sitemap.stat_total_pages")}</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🗂</div>
               <div className="text-[22px] font-extrabold">{sectionsCount}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Nhóm chức năng</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">{t("sitemap.stat_functional_groups")}</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">📰</div>
               <div className="text-[22px] font-extrabold">{ARTICLES.length}</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">Bài viết blog</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">{t("sitemap.stat_blog_articles")}</div>
             </div>
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
               <div className="text-[18px] mb-0.5">🌐</div>
               <div className="text-[22px] font-extrabold">EN</div>
-              <div className="text-[10.5px] opacity-85 mt-0.5">URL slugs (SEO ready)</div>
+              <div className="text-[10.5px] opacity-85 mt-0.5">{t("sitemap.stat_url_slugs")}</div>
             </div>
           </div>
         </div>
@@ -200,7 +202,7 @@ export default function SitemapPage() {
       {/* === Section anchors quick nav ====================================== */}
       <div className="max-w-[1200px] mx-auto px-4 mt-6">
         <div className="bg-paper border border-line rounded p-4">
-          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">📍 NHẢY NHANH ĐẾN NHÓM</div>
+          <div className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">{t("sitemap.jump_to_group")}</div>
           <div className="flex flex-wrap gap-2">
             {SECTIONS.map((s) => (
               <a
@@ -219,7 +221,7 @@ export default function SitemapPage() {
               style={{ borderColor: "#E8943A40", color: "#E8943A", background: "#E8943A08" }}
             >
               <span className="mr-1">📰</span>
-              Blog mới nhất
+              {t("sitemap.latest_blog")}
             </a>
           </div>
         </div>
@@ -247,14 +249,14 @@ export default function SitemapPage() {
                 </div>
                 <div>
                   <h2 className="text-[18px] font-extrabold text-ink leading-tight">{s.title}</h2>
-                  <p className="text-[12px] text-mute mt-0.5">{s.subtitle}</p>
+                  <p className="text-[12px] text-mute mt-0.5">{t(s.subtitle)}</p>
                 </div>
               </div>
               <div className="text-right">
                 <div className="text-[22px] font-extrabold leading-none" style={{ color: s.color }}>
                   {s.links.length}
                 </div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">trang</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">{t("sitemap.pages_label")}</div>
               </div>
             </div>
 
@@ -267,11 +269,11 @@ export default function SitemapPage() {
                     className="block py-2 px-2.5 rounded-sm hover:bg-bg group"
                   >
                     <div className="flex items-baseline gap-2">
-                      <span className="text-[13.5px] font-semibold text-ink group-hover:text-brand">{l.label}</span>
+                      <span className="text-[13.5px] font-semibold text-ink group-hover:text-brand">{t(l.label)}</span>
                       <span className="text-[10.5px] text-mute2 font-mono">{l.href}</span>
                     </div>
                     {l.desc && (
-                      <span className="block text-[11.5px] text-mute leading-snug mt-0.5">{l.desc}</span>
+                      <span className="block text-[11.5px] text-mute leading-snug mt-0.5">{t(l.desc)}</span>
                     )}
                   </Link>
                 </li>
@@ -294,8 +296,8 @@ export default function SitemapPage() {
                 📰
               </div>
               <div>
-                <h2 className="text-[18px] font-extrabold text-ink leading-tight">Blog — Tin tức ngành</h2>
-                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} bài viết phân tích thị trường, case study, hướng dẫn</p>
+                <h2 className="text-[18px] font-extrabold text-ink leading-tight">{t("sitemap.blog_title")}</h2>
+                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} articles on market analysis, case studies, and guides</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -303,11 +305,11 @@ export default function SitemapPage() {
                 href="/info/industry-news"
                 className="text-[12px] text-brand font-semibold hover:underline whitespace-nowrap"
               >
-                Xem tất cả →
+                {t("sitemap.view_all")}
               </Link>
               <div className="text-right">
                 <div className="text-[22px] font-extrabold leading-none text-[#E8943A]">{ARTICLES.length}</div>
-                <div className="text-[10.5px] uppercase tracking-wider text-mute">bài</div>
+                <div className="text-[10.5px] uppercase tracking-wider text-mute">{t("sitemap.articles_label")}</div>
               </div>
             </div>
           </div>
@@ -321,7 +323,7 @@ export default function SitemapPage() {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <span className="text-[13px] font-semibold text-ink group-hover:text-brand leading-snug flex-1 line-clamp-2">{a.title}</span>
-                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes}p</span>
+                    <span className="text-[10px] text-mute2 whitespace-nowrap">{a.readMinutes} min</span>
                   </div>
                   <span className="block text-[10.5px] text-mute2 font-mono mt-1">/info/industry-news/{a.slug}</span>
                 </Link>
@@ -335,16 +337,16 @@ export default function SitemapPage() {
       <div className="max-w-[1200px] mx-auto px-4 mt-8 mb-10">
         <div className="bg-bg border border-line rounded p-5 text-center">
           <p className="text-[13px] text-mute leading-relaxed max-w-[680px] mx-auto">
-            <b className="text-ink">Sitemap XML cho search engine</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">cybersilkroads.com/sitemap.xml</a>
+            <b className="text-ink">{t("sitemap.footer_xml_label")}</b>: <a href="/sitemap.xml" className="text-brand font-semibold hover:underline">huayuesc.vn/sitemap.xml</a>
             {" · "}
-            Cập nhật tự động khi thêm trang hoặc blog post mới. Toàn bộ slug đã chuẩn hoá tiếng Anh để tối ưu SEO quốc tế.
+            {t("sitemap.footer_note")}
           </p>
           <div className="mt-3 flex justify-center gap-3 flex-wrap">
             <Link href="/help" className="text-[12px] px-4 py-2 border border-line rounded-sm font-semibold text-ink hover:border-brand hover:text-brand">
-              Trung tâm trợ giúp
+              {t("sitemap.footer_help")}
             </Link>
             <Link href="/info/contact" className="text-[12px] px-4 py-2 bg-brand text-white rounded-sm font-bold hover:bg-brand-light">
-              Liên hệ CSR
+              {t("sitemap.footer_contact")}
             </Link>
           </div>
         </div>
@@ -354,6 +356,6 @@ export default function SitemapPage() {
 }
 
 export const metadata = {
-  title: "Sitemap — Cybersilkroads",
-  description: "Bản đồ toàn bộ trang Cybersilkroads — 80+ pages tổ chức theo 9 nhóm chức năng. XML sitemap cho search engine tại /sitemap.xml.",
+  title: "Sitemap — Huayuesc",
+  description: "A map of the entire Huayuesc site — 80+ pages organized into 9 functional groups. XML sitemap for search engines at /sitemap.xml.",
 };

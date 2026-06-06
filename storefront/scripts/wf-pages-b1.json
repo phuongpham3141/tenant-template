@@ -1,0 +1,2699 @@
+{
+  "summary": "Trích xuất chuỗi + edit t() cho 15 trang app traffic cao (batch 1) — VI/EN/CN",
+  "agentCount": 15,
+  "logs": [],
+  "result": [
+    {
+      "file": "src/app/products/page.tsx",
+      "isClient": false,
+      "keys": {
+        "products.filter_industry": "Ngành hàng",
+        "products.breadcrumb_home": "Trang chủ",
+        "products.breadcrumb_all": "Tất cả sản phẩm",
+        "products.heading": "Tất cả sản phẩm",
+        "products.subtitle_suffix": "đối tác sản xuất · Báo giá trong 24h · DDP về Việt Nam",
+        "products.subtitle_products_from": "sản phẩm THẬT từ",
+        "products.page_label": "Trang",
+        "products.view_all_partners_prefix": "Xem tất cả",
+        "products.view_all_partners_suffix": "đối tác →",
+        "products.showing": "Hiển thị",
+        "products.showing_products_suffix": "sản phẩm",
+        "products.pagination_aria": "Phân trang",
+        "products.prev": "← Trước",
+        "products.next": "Sau →"
+      },
+      "edits": [
+        [
+          "import { PARTNERS, productSlug } from \"@/data/partners\";",
+          "import { PARTNERS, productSlug } from \"@/data/partners\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const FILTERS = [{ title: \"Ngành hàng\", options: NAV_CATEGORIES.map((c) => c.name) }];",
+          "const FILTERS = [{ title: \"products.filter_industry\", options: NAV_CATEGORIES.map((c) => c.name) }];"
+        ],
+        [
+          "  const sp = await searchParams;",
+          "  const t = await getT();\n  const sp = await searchParams;"
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Trang chủ\", href: \"/\" }, { label: \"Tất cả sản phẩm\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"products.breadcrumb_home\"), href: \"/\" }, { label: t(\"products.breadcrumb_all\") }]} />"
+        ],
+        [
+          "<h1 className=\"text-[24px] font-extrabold text-ink leading-tight\">Tất cả sản phẩm</h1>",
+          "<h1 className=\"text-[24px] font-extrabold text-ink leading-tight\">{t(\"products.heading\")}</h1>"
+        ],
+        [
+          "              {ALL_PRODUCTS.length.toLocaleString()} sản phẩm THẬT từ {PARTNERS.length} đối tác sản xuất · Báo giá trong 24h · DDP về Việt Nam",
+          "              {ALL_PRODUCTS.length.toLocaleString()} {t(\"products.subtitle_products_from\")} {PARTNERS.length} {t(\"products.subtitle_suffix\")}"
+        ],
+        [
+          "<div className=\"text-[12.5px] text-mute\">Trang {page} / {TOTAL_PAGES}</div>",
+          "<div className=\"text-[12.5px] text-mute\">{t(\"products.page_label\")} {page} / {TOTAL_PAGES}</div>"
+        ],
+        [
+          "              <b className=\"block text-[13px] font-semibold text-ink mb-2\">{f.title}</b>",
+          "              <b className=\"block text-[13px] font-semibold text-ink mb-2\">{t(f.title)}</b>"
+        ],
+        [
+          "            Xem tất cả {PARTNERS.length} đối tác →",
+          "            {t(\"products.view_all_partners_prefix\")} {PARTNERS.length} {t(\"products.view_all_partners_suffix\")}"
+        ],
+        [
+          "            Hiển thị {start + 1}–{Math.min(start + PER_PAGE, ALL_PRODUCTS.length)} / {ALL_PRODUCTS.length.toLocaleString()} sản phẩm",
+          "            {t(\"products.showing\")} {start + 1}–{Math.min(start + PER_PAGE, ALL_PRODUCTS.length)} / {ALL_PRODUCTS.length.toLocaleString()} {t(\"products.showing_products_suffix\")}"
+        ],
+        [
+          "<nav className=\"flex justify-center items-center gap-1 mt-6 mb-8 flex-wrap\" aria-label=\"Phân trang\">",
+          "<nav className=\"flex justify-center items-center gap-1 mt-6 mb-8 flex-wrap\" aria-label={t(\"products.pagination_aria\")}>"
+        ],
+        [
+          "                ← Trước",
+          "                {t(\"products.prev\")}"
+        ],
+        [
+          "                Sau →",
+          "                {t(\"products.next\")}"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/app/product/[id]/page.tsx",
+      "isClient": false,
+      "keys": {
+        "product_id.not_found_title": "This product is being updated",
+        "product_id.not_found_code_prefix": "Product code",
+        "product_id.not_found_code_suffix": "is not available yet. Please check back later.",
+        "product_id.view_all_products": "← View All Products",
+        "product_id.breadcrumb_home": "Home",
+        "product_id.breadcrumb_products": "Products",
+        "product_id.gallery_hint": "🔍 Click a thumbnail to switch images",
+        "product_id.badge_hot": "⭐ HOT",
+        "product_id.reviews_count_suffix": "reviews",
+        "product_id.orders_completed": "340 orders completed",
+        "product_id.in_stock": "✓ In Stock",
+        "product_id.sku_prefix": "SKU:",
+        "product_id.price_by_moq": "Price by MOQ",
+        "product_id.fob_china": "· FOB China",
+        "product_id.delivery_20_30": "⏱ Delivery 20-30 days",
+        "product_id.col_quantity": "Quantity",
+        "product_id.col_price_unit": "Price / unit",
+        "product_id.col_savings": "Savings",
+        "product_id.col_action": "Action",
+        "product_id.base_price": "Base price",
+        "product_id.get_quote": "Get Quote →",
+        "product_id.color_label": "Color",
+        "product_id.color_options": "· 4 options",
+        "product_id.color_marble_white": "Marble White",
+        "product_id.color_dark_gray": "Dark Gray",
+        "product_id.color_golden_beige": "Golden Beige",
+        "product_id.color_walnut_brown": "Walnut Brown",
+        "product_id.size_label": "Size",
+        "product_id.size_standard": "Standard",
+        "product_id.size_custom": "Custom to drawing",
+        "product_id.size_scale": "Scale ±5%",
+        "product_id.contact_now": "💬 Contact Now",
+        "product_id.request_sample": "📦 Request Sample",
+        "product_id.add_to_favorites": "Add to favorites",
+        "product_id.quick_info": "Quick Info",
+        "product_id.qi_moq": "📦 MOQ",
+        "product_id.qi_delivery_time": "⏱ Delivery Time",
+        "product_id.qi_delivery_value": "20-30 days",
+        "product_id.qi_port": "🚚 Port of Loading",
+        "product_id.qi_port_value": "Foshan / Ningbo",
+        "product_id.qi_payment": "💳 Payment",
+        "product_id.qi_oem": "🎨 OEM / ODM",
+        "product_id.qi_supported": "Supported",
+        "product_id.qi_samples": "🧪 Samples",
+        "product_id.qi_samples_value": "$50-200 (credited to order)",
+        "product_id.supplier_label": "Supplier",
+        "product_id.badge_gold": "⭐ GOLD",
+        "product_id.badge_audited": "✓ AUDITED",
+        "product_id.orders_per_yr": "orders / yr",
+        "product_id.on_time_label": "on-time",
+        "product_id.view_factory": "View Factory →",
+        "product_id.send_rfq": "Send RFQ",
+        "product_id.rfq_desc": "Free quote within 24h from this supplier + 3-5 similar suppliers.",
+        "product_id.rfq_desc_placeholder": "Describe your requirements, customization...",
+        "product_id.send_rfq_now": "🚀 Send RFQ Now",
+        "product_id.protection_title": "🛡 Huayuesc Protection",
+        "product_id.protection_refund": "Refund if goods are not received",
+        "product_id.protection_audit": "Free factory audit before ordering",
+        "product_id.protection_dispute": "24/7 dispute support",
+        "product_id.protection_ddp": "DDP shipping — duties included",
+        "product_id.protection_escrow": "Trade Assurance (escrow account)",
+        "product_id.tab_description": "Description",
+        "product_id.tab_specifications": "Specifications",
+        "product_id.tab_trade_assurance": "Trade Assurance",
+        "product_id.tab_reviews": "Reviews",
+        "product_id.tab_shipping": "Shipping",
+        "product_id.tab_faq": "FAQ",
+        "product_id.product_description": "Product Description",
+        "product_id.desc_p1_a": "is manufactured by",
+        "product_id.desc_p1_b": "one of the leading factories in China with",
+        "product_id.desc_p1_exp": "of export experience",
+        "product_id.desc_p1_c": ". The product meets international standards and is suited to commercial and high-end residential projects.",
+        "product_id.desc_p2_a": "Strict quality control to",
+        "product_id.desc_p2_b": ". Every batch is audited by the Huayuesc team in Guangzhou before it leaves the factory.",
+        "product_id.desc_p2_oem": "OEM/ODM",
+        "product_id.desc_p2_c": "to customer drawings is supported, with flexible MOQ and a 20-30 day delivery time.",
+        "product_id.desc_p3_a": "DDP shipping to Vietnam",
+        "product_id.desc_p3_b": "— no customs paperwork to worry about, no surprise fees. Transit warehouses in Pingxiang (Lang Son) and Huu Nghi (Hai Phong port) ensure a 5-7 day delivery time from China to the buyer's warehouse.",
+        "product_id.specifications_title": "Specifications",
+        "product_id.trade_assurance_title": "🛡 Trade Assurance & Certificates",
+        "product_id.trade_assurance_desc": "Orders are protected by Huayuesc Trade Assurance: funds are held in escrow and the supplier is paid only after the buyer confirms the goods match the commitment. 100% refund if not.",
+        "product_id.ta_escrow_t": "Deposit held in escrow",
+        "product_id.ta_escrow_d": "Funds held by Huayuesc, released only when the buyer confirms",
+        "product_id.ta_inspection_t": "Free on-site inspection",
+        "product_id.ta_inspection_d": "Our team inspects goods before shipment, with a live video call",
+        "product_id.ta_dispute_t": "Dispute support",
+        "product_id.ta_dispute_d": "24/7 mediation, 100% refund for description/quantity mismatch",
+        "product_id.supplier_certifications": "Supplier Certifications",
+        "product_id.buyer_reviews": "Buyer Reviews",
+        "product_id.based_on_prefix": "Based on",
+        "product_id.based_on_suffix": "verified reviews",
+        "product_id.review_helpful": "👍 Helpful",
+        "product_id.review_reply": "💬 Reply",
+        "product_id.view_all_prefix": "View All",
+        "product_id.view_all_reviews_suffix": "Reviews →",
+        "product_id.shipping_title": "🚚 Shipping & DDP to Vietnam",
+        "product_id.ship_fob_t": "FOB China",
+        "product_id.ship_fob_d": "You arrange freight and duties. Lowest price.",
+        "product_id.ship_fob_price": "Per price list",
+        "product_id.ship_fob_time": "Pickup at Foshan / Ningbo",
+        "product_id.ship_cif_t": "CIF Hai Phong / Cat Lai",
+        "product_id.ship_cif_d": "Freight + insurance to the VN port included.",
+        "product_id.ship_cif_time": "12-15 days",
+        "product_id.ship_ddp_t": "DDP to warehouse",
+        "product_id.ship_ddp_d": "All-in: duties + customs + domestic delivery.",
+        "product_id.ship_ddp_time": "18-22 days",
+        "product_id.ship_popular": "POPULAR",
+        "product_id.ship_calculate_option": "Calculate freight for this option →",
+        "product_id.quick_ddp_estimate": "⚡ Quick DDP Freight Estimate",
+        "product_id.port_haiphong": "Destination port: Hai Phong",
+        "product_id.port_catlai": "Destination port: Cat Lai (HCMC)",
+        "product_id.port_danang": "Destination port: Da Nang",
+        "product_id.port_langson": "Overland via Lang Son",
+        "product_id.ddp_qty_placeholder": "Quantity (CBM or kg)",
+        "product_id.ddp_value_placeholder": "Order value ($USD)",
+        "product_id.calculate": "Calculate →",
+        "product_id.faq_title": "❓ Frequently Asked Questions",
+        "product_id.same_factory_prefix": "Products from the Same Factory",
+        "product_id.view_all_arrow": "View All →",
+        "product_id.you_may_also_like": "You May Also Like",
+        "product_id.fav_aria": "Favorites",
+        "product_id.contact_supplier_aria": "Contact supplier",
+        "product_id.rating_product_quality": "Product Quality",
+        "product_id.rating_supplier_comm": "Supplier Communication",
+        "product_id.rating_packaging": "Packaging & Shipping",
+        "product_id.rating_ontime": "On-Time Delivery",
+        "product_id.cert_iso9001_desc": "Quality Management",
+        "product_id.cert_ce_desc": "EU Conformity",
+        "product_id.cert_rohs_desc": "Hazardous Substance Restriction",
+        "product_id.cert_fsc_desc": "Sustainable Forestry",
+        "product_id.cert_bsci_desc": "Business Ethics",
+        "product_id.cert_iso14001_desc": "Environmental",
+        "product_id.faq_q1": "What is the MOQ on Huayuesc?",
+        "product_id.faq_a1": "The standard MOQ is shown in the price table. Some products allow a sample order first (MOQ = 1) before placing a bulk order — please send an RFQ to confirm.",
+        "product_id.faq_q2": "How long is the delivery time?",
+        "product_id.faq_a2": "On average 20-30 days of production + 12-18 days of DDP shipping to Hanoi/Ho Chi Minh City. Total delivery time is 32-48 days from the T/T 30% deposit.",
+        "product_id.faq_q3": "Can you do OEM/ODM to drawing?",
+        "product_id.faq_a3": "Yes. The supplier supports logo printing, color changes, and custom dimensions to your technical drawings. The sample fee is typically $50-200 and is credited against the main order once the MOQ is placed.",
+        "product_id.faq_q4": "How does Huayuesc protect transactions?",
+        "product_id.faq_a4": "Trade Assurance: funds are held in Huayuesc's escrow account and released to the supplier only after the buyer confirms the goods match the description. 100% refund if commitments are not met.",
+        "product_id.faq_q5": "What does the DDP shipping fee include?",
+        "product_id.faq_a5": "It includes ocean/road freight, import duties, VAT, customs clearance, transit warehouse fees, and domestic Vietnam delivery to the buyer's warehouse. The buyer handles no paperwork.",
+        "product_id.review_company_1": "Saigon Furniture Showroom",
+        "product_id.review_text_1": "Goods arrived exactly as sampled, fast delivery. We will order 2 more containers in the next round.",
+        "product_id.review_company_2": "Phuong Nam Building Materials",
+        "product_id.review_text_2": "Quote returned within 6 hours. The supplier supported a video call to inspect goods before shipment.",
+        "product_id.review_company_3": "Hotel Group HCMC",
+        "product_id.review_text_3": "Good quality, export-grade packaging. Pricing is 30% more competitive than domestic.",
+        "product_id.review_company_4": "Da Nang Dealer",
+        "product_id.review_text_4": "The factory audit organized by Huayuesc was very professional. We order with confidence.",
+        "product_id.meta_desc_price_from": "Price from",
+        "product_id.meta_desc_tail": "20-30 day delivery, DDP shipping to Vietnam."
+      },
+      "edits": [
+        [
+          "import type { ListingProduct } from \"@/data/products\";",
+          "import type { ListingProduct } from \"@/data/products\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const RATING_BREAKDOWN = [\n  { label: \"Product Quality\", score: 4.9 },\n  { label: \"Supplier Communication\", score: 4.8 },\n  { label: \"Packaging & Shipping\", score: 4.7 },\n  { label: \"On-Time Delivery\", score: 4.9 },\n];",
+          "const RATING_BREAKDOWN = [\n  { label: \"product_id.rating_product_quality\", score: 4.9 },\n  { label: \"product_id.rating_supplier_comm\", score: 4.8 },\n  { label: \"product_id.rating_packaging\", score: 4.7 },\n  { label: \"product_id.rating_ontime\", score: 4.9 },\n];"
+        ],
+        [
+          "const CERTIFICATES = [\n  { code: \"ISO 9001:2015\", desc: \"Quality Management\" },\n  { code: \"CE\", desc: \"EU Conformity\" },\n  { code: \"RoHS\", desc: \"Hazardous Substance Restriction\" },\n  { code: \"FSC\", desc: \"Sustainable Forestry\" },\n  { code: \"BSCI\", desc: \"Business Ethics\" },\n  { code: \"ISO 14001\", desc: \"Environmental\" },\n];",
+          "const CERTIFICATES = [\n  { code: \"ISO 9001:2015\", desc: \"product_id.cert_iso9001_desc\" },\n  { code: \"CE\", desc: \"product_id.cert_ce_desc\" },\n  { code: \"RoHS\", desc: \"product_id.cert_rohs_desc\" },\n  { code: \"FSC\", desc: \"product_id.cert_fsc_desc\" },\n  { code: \"BSCI\", desc: \"product_id.cert_bsci_desc\" },\n  { code: \"ISO 14001\", desc: \"product_id.cert_iso14001_desc\" },\n];"
+        ],
+        [
+          "const FAQS = [\n  {\n    q: \"What is the MOQ on Huayuesc?\",\n    a: \"The standard MOQ is shown in the price table. Some products allow a sample order first (MOQ = 1) before placing a bulk order — please send an RFQ to confirm.\",\n  },\n  {\n    q: \"How long is the delivery time?\",\n    a: \"On average 20-30 days of production + 12-18 days of DDP shipping to Hanoi/Ho Chi Minh City. Total delivery time is 32-48 days from the T/T 30% deposit.\",\n  },\n  {\n    q: \"Can you do OEM/ODM to drawing?\",\n    a: \"Yes. The supplier supports logo printing, color changes, and custom dimensions to your technical drawings. The sample fee is typically $50-200 and is credited against the main order once the MOQ is placed.\",\n  },\n  {\n    q: \"How does Huayuesc protect transactions?\",\n    a: \"Trade Assurance: funds are held in Huayuesc's escrow account and released to the supplier only after the buyer confirms the goods match the description. 100% refund if commitments are not met.\",\n  },\n  {\n    q: \"What does the DDP shipping fee include?\",\n    a: \"It includes ocean/road freight, import duties, VAT, customs clearance, transit warehouse fees, and domestic Vietnam delivery to the buyer's warehouse. The buyer handles no paperwork.\",\n  },\n];",
+          "const FAQS = [\n  {\n    q: \"product_id.faq_q1\",\n    a: \"product_id.faq_a1\",\n  },\n  {\n    q: \"product_id.faq_q2\",\n    a: \"product_id.faq_a2\",\n  },\n  {\n    q: \"product_id.faq_q3\",\n    a: \"product_id.faq_a3\",\n  },\n  {\n    q: \"product_id.faq_q4\",\n    a: \"product_id.faq_a4\",\n  },\n  {\n    q: \"product_id.faq_q5\",\n    a: \"product_id.faq_a5\",\n  },\n];"
+        ],
+        [
+          "  { name: \"Tran Minh Huy\", company: \"Saigon Furniture Showroom\", rating: 5, date: \"2026-04-12\", text: \"Goods arrived exactly as sampled, fast delivery. We will order 2 more containers in the next round.\", helpful: 18 },\n  { name: \"Pham Quoc Anh\", company: \"Phuong Nam Building Materials\", rating: 5, date: \"2026-03-28\", text: \"Quote returned within 6 hours. The supplier supported a video call to inspect goods before shipment.\", helpful: 14 },\n  { name: \"Nguyen Thu Hang\", company: \"Hotel Group HCMC\", rating: 4, date: \"2026-03-15\", text: \"Good quality, export-grade packaging. Pricing is 30% more competitive than domestic.\", helpful: 9 },\n  { name: \"Le Van Duc\", company: \"Da Nang Dealer\", rating: 5, date: \"2026-02-22\", text: \"The factory audit organized by Huayuesc was very professional. We order with confidence.\", helpful: 12 },",
+          "  { name: \"Tran Minh Huy\", company: \"product_id.review_company_1\", rating: 5, date: \"2026-04-12\", text: \"product_id.review_text_1\", helpful: 18 },\n  { name: \"Pham Quoc Anh\", company: \"product_id.review_company_2\", rating: 5, date: \"2026-03-28\", text: \"product_id.review_text_2\", helpful: 14 },\n  { name: \"Nguyen Thu Hang\", company: \"product_id.review_company_3\", rating: 4, date: \"2026-03-15\", text: \"product_id.review_text_3\", helpful: 9 },\n  { name: \"Le Van Duc\", company: \"product_id.review_company_4\", rating: 5, date: \"2026-02-22\", text: \"product_id.review_text_4\", helpful: 12 },"
+        ],
+        [
+          "  const { id } = await params;\n  const found = findProduct(id);\n\n  if (!found) {",
+          "  const { id } = await params;\n  const t = await getT();\n  const found = findProduct(id);\n\n  if (!found) {"
+        ],
+        [
+          "        <Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Products\", href: \"/products\" }, { label: id }]} />",
+          "        <Breadcrumb trail={[{ label: t(\"product_id.breadcrumb_home\"), href: \"/\" }, { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" }, { label: id }]} />"
+        ],
+        [
+          "<h1 className=\"text-[24px] font-bold text-ink mb-2\">This product is being updated</h1>",
+          "<h1 className=\"text-[24px] font-bold text-ink mb-2\">{t(\"product_id.not_found_title\")}</h1>"
+        ],
+        [
+          "<p className=\"text-[13px] text-mute mb-5\">Product code <b>{id}</b> is not available yet. Please check back later.</p>",
+          "<p className=\"text-[13px] text-mute mb-5\">{t(\"product_id.not_found_code_prefix\")} <b>{id}</b> {t(\"product_id.not_found_code_suffix\")}</p>"
+        ],
+        [
+          "            ← View All Products\n          </Link>",
+          "            {t(\"product_id.view_all_products\")}\n          </Link>"
+        ],
+        [
+          "        { label: \"Home\", href: \"/\" },\n        { label: \"Products\", href: \"/products\" },\n        { label: section.title, href: `/category/${section.categorySlug}` },",
+          "        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        { label: section.title, href: `/category/${section.categorySlug}` },"
+        ],
+        [
+          "        { label: \"Home\", href: \"/\" },\n        { label: \"Products\", href: \"/products\" },\n        ...(parentName && parentSlug",
+          "        { label: t(\"product_id.breadcrumb_home\"), href: \"/\" },\n        { label: t(\"product_id.breadcrumb_products\"), href: \"/products\" },\n        ...(parentName && parentSlug"
+        ],
+        [
+          "                🔍 Click a thumbnail to switch images",
+          "                {t(\"product_id.gallery_hint\")}"
+        ],
+        [
+          "<span className=\"bg-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider\">⭐ HOT</span>",
+          "<span className=\"bg-gold text-brand-dark text-[10px] px-2 py-0.5 rounded-sm font-bold tracking-wider\">{t(\"product_id.badge_hot\")}</span>"
+        ],
+        [
+          "<b className=\"text-ink\">{p.rating}</b> <span>({REVIEWS.length * 31} reviews)</span>",
+          "<b className=\"text-ink\">{p.rating}</b> <span>({REVIEWS.length * 31} {t(\"product_id.reviews_count_suffix\")})</span>"
+        ],
+        [
+          "            <span>340 orders completed</span>",
+          "            <span>{t(\"product_id.orders_completed\")}</span>"
+        ],
+        [
+          "            <span className=\"text-success font-semibold\">✓ In Stock</span>",
+          "            <span className=\"text-success font-semibold\">{t(\"product_id.in_stock\")}</span>"
+        ],
+        [
+          "            <span>SKU: {p.id.toUpperCase()}</span>",
+          "            <span>{t(\"product_id.sku_prefix\")} {p.id.toUpperCase()}</span>"
+        ],
+        [
+          "              <span>Price by MOQ <span className=\"text-mute font-normal\">· FOB China</span></span>\n              <span className=\"text-[11.5px] text-success font-medium\">⏱ Delivery 20-30 days</span>",
+          "              <span>{t(\"product_id.price_by_moq\")} <span className=\"text-mute font-normal\">{t(\"product_id.fob_china\")}</span></span>\n              <span className=\"text-[11.5px] text-success font-medium\">{t(\"product_id.delivery_20_30\")}</span>"
+        ],
+        [
+          "                  <th className=\"text-left px-4 py-2 font-medium text-mute\">Quantity</th>\n                  <th className=\"text-left px-4 py-2 font-medium text-mute\">Price / unit</th>\n                  <th className=\"text-left px-4 py-2 font-medium text-mute\">Savings</th>\n                  <th className=\"text-right px-4 py-2 font-medium text-mute\">Action</th>",
+          "                  <th className=\"text-left px-4 py-2 font-medium text-mute\">{t(\"product_id.col_quantity\")}</th>\n                  <th className=\"text-left px-4 py-2 font-medium text-mute\">{t(\"product_id.col_price_unit\")}</th>\n                  <th className=\"text-left px-4 py-2 font-medium text-mute\">{t(\"product_id.col_savings\")}</th>\n                  <th className=\"text-right px-4 py-2 font-medium text-mute\">{t(\"product_id.col_action\")}</th>"
+        ],
+        [
+          "<td className=\"px-4 py-2 text-success\">{t.discount === 0 ? \"Base price\" : `-${t.discount}%`}</td>",
+          "<td className=\"px-4 py-2 text-success\">{tier.discount === 0 ? t(\"product_id.base_price\") : `-${tier.discount}%`}</td>"
+        ],
+        [
+          "                {tiers.map((t) => (\n                  <tr key={t.range} className=\"border-t border-line hover:bg-[#FAFBFC]\">\n                    <td className=\"px-4 py-2 text-ink\">{t.range} {p.unit}</td>\n                    <td className=\"px-4 py-2 text-accent font-bold\">${t.price}{p.unit}</td>",
+          "                {tiers.map((tier) => (\n                  <tr key={tier.range} className=\"border-t border-line hover:bg-[#FAFBFC]\">\n                    <td className=\"px-4 py-2 text-ink\">{tier.range} {p.unit}</td>\n                    <td className=\"px-4 py-2 text-accent font-bold\">${tier.price}{p.unit}</td>"
+        ],
+        [
+          "                        href={`/buying-request?productId=${p.id}&qty=${encodeURIComponent(t.range)}&tier=${t.discount}`}\n                        className=\"text-brand text-[12px] font-semibold cursor-pointer hover:underline\"\n                      >\n                        Get Quote →",
+          "                        href={`/buying-request?productId=${p.id}&qty=${encodeURIComponent(tier.range)}&tier=${tier.discount}`}\n                        className=\"text-brand text-[12px] font-semibold cursor-pointer hover:underline\"\n                      >\n                        {t(\"product_id.get_quote\")}"
+        ],
+        [
+          "                  Color <span className=\"text-mute2 font-normal\">· 4 options</span>",
+          "                  {t(\"product_id.color_label\")} <span className=\"text-mute2 font-normal\">{t(\"product_id.color_options\")}</span>"
+        ],
+        [
+          "                    { code: \"#F5F1E8\", label: \"Marble White\" },\n                    { code: \"#3D3D3D\", label: \"Dark Gray\" },\n                    { code: \"#E1C699\", label: \"Golden Beige\" },\n                    { code: \"#5C4033\", label: \"Walnut Brown\" },",
+          "                    { code: \"#F5F1E8\", label: \"product_id.color_marble_white\" },\n                    { code: \"#3D3D3D\", label: \"product_id.color_dark_gray\" },\n                    { code: \"#E1C699\", label: \"product_id.color_golden_beige\" },\n                    { code: \"#5C4033\", label: \"product_id.color_walnut_brown\" },"
+        ],
+        [
+          "                        value={c.label}\n                        id={`cv-${p.id}-${i + 1}`}",
+          "                        value={t(c.label)}\n                        id={`cv-${p.id}-${i + 1}`}"
+        ],
+        [
+          "                        title={c.label}\n                        aria-label={c.label}",
+          "                        title={t(c.label)}\n                        aria-label={t(c.label)}"
+        ],
+        [
+          "<label htmlFor={`size-${p.id}`} className=\"block text-[12px] font-semibold text-ink mb-1.5\">Size</label>",
+          "<label htmlFor={`size-${p.id}`} className=\"block text-[12px] font-semibold text-ink mb-1.5\">{t(\"product_id.size_label\")}</label>"
+        ],
+        [
+          "                  <option>Standard</option>\n                  <option>Custom to drawing</option>\n                  <option>Scale ±5%</option>",
+          "                  <option>{t(\"product_id.size_standard\")}</option>\n                  <option>{t(\"product_id.size_custom\")}</option>\n                  <option>{t(\"product_id.size_scale\")}</option>"
+        ],
+        [
+          "                💬 Contact Now\n              </button>",
+          "                {t(\"product_id.contact_now\")}\n              </button>"
+        ],
+        [
+          "                📦 Request Sample\n              </button>",
+          "                {t(\"product_id.request_sample\")}\n              </button>"
+        ],
+        [
+          "                aria-label=\"Add to favorites\"\n                title=\"Add to favorites\"",
+          "                aria-label={t(\"product_id.add_to_favorites\")}\n                title={t(\"product_id.add_to_favorites\")}"
+        ],
+        [
+          "            <div className=\"text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5\">Quick Info</div>",
+          "            <div className=\"text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5\">{t(\"product_id.quick_info\")}</div>"
+        ],
+        [
+          "                <span className=\"text-mute\">📦 MOQ</span>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_moq\")}</span>"
+        ],
+        [
+          "                <span className=\"text-mute\">⏱ Delivery Time</span>\n                <b className=\"text-ink\">20-30 days</b>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_delivery_time\")}</span>\n                <b className=\"text-ink\">{t(\"product_id.qi_delivery_value\")}</b>"
+        ],
+        [
+          "                <span className=\"text-mute\">🚚 Port of Loading</span>\n                <b className=\"text-ink\">Foshan / Ningbo</b>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_port\")}</span>\n                <b className=\"text-ink\">{t(\"product_id.qi_port_value\")}</b>"
+        ],
+        [
+          "                <span className=\"text-mute\">💳 Payment</span>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_payment\")}</span>"
+        ],
+        [
+          "                <span className=\"text-mute\">🎨 OEM / ODM</span>\n                <b className=\"text-success\">Supported</b>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_oem\")}</span>\n                <b className=\"text-success\">{t(\"product_id.qi_supported\")}</b>"
+        ],
+        [
+          "                <span className=\"text-mute\">🧪 Samples</span>\n                <b className=\"text-ink\">$50-200 (credited to order)</b>",
+          "                <span className=\"text-mute\">{t(\"product_id.qi_samples\")}</span>\n                <b className=\"text-ink\">{t(\"product_id.qi_samples_value\")}</b>"
+        ],
+        [
+          "            <div className=\"text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5\">Supplier</div>",
+          "            <div className=\"text-[11px] uppercase tracking-wider text-mute font-bold mb-2.5\">{t(\"product_id.supplier_label\")}</div>"
+        ],
+        [
+          "<span className=\"bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">⭐ GOLD</span>",
+          "<span className=\"bg-gold text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">{t(\"product_id.badge_gold\")}</span>"
+        ],
+        [
+          "<span className=\"bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">✓ AUDITED</span>",
+          "<span className=\"bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">{t(\"product_id.badge_audited\")}</span>"
+        ],
+        [
+          "                <small className=\"text-mute\">orders / yr</small>",
+          "                <small className=\"text-mute\">{t(\"product_id.orders_per_yr\")}</small>"
+        ],
+        [
+          "                <small className=\"text-mute\">on-time</small>",
+          "                <small className=\"text-mute\">{t(\"product_id.on_time_label\")}</small>"
+        ],
+        [
+          "              View Factory →\n            </Link>",
+          "              {t(\"product_id.view_factory\")}\n            </Link>"
+        ],
+        [
+          "              <b className=\"text-[13px] font-bold text-ink\">Send RFQ</b>",
+          "              <b className=\"text-[13px] font-bold text-ink\">{t(\"product_id.send_rfq\")}</b>"
+        ],
+        [
+          "              Free quote within 24h from this supplier + 3-5 similar suppliers.",
+          "              {t(\"product_id.rfq_desc\")}"
+        ],
+        [
+          "              placeholder=\"Describe your requirements, customization...\"",
+          "              placeholder={t(\"product_id.rfq_desc_placeholder\")}"
+        ],
+        [
+          "              🚀 Send RFQ Now\n            </button>",
+          "              {t(\"product_id.send_rfq_now\")}\n            </button>"
+        ],
+        [
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2.5\">🛡 Huayuesc Protection</b>",
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2.5\">{t(\"product_id.protection_title\")}</b>"
+        ],
+        [
+          "              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> Refund if goods are not received</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> Free factory audit before ordering</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> 24/7 dispute support</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> DDP shipping — duties included</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> Trade Assurance (escrow account)</li>",
+          "              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> {t(\"product_id.protection_refund\")}</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> {t(\"product_id.protection_audit\")}</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> {t(\"product_id.protection_dispute\")}</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> {t(\"product_id.protection_ddp\")}</li>\n              <li className=\"flex gap-2\"><span className=\"text-success\">✓</span> {t(\"product_id.protection_escrow\")}</li>"
+        ],
+        [
+          "            { href: \"#mo-ta\", label: \"Description\" },\n            { href: \"#thong-so\", label: \"Specifications\" },\n            { href: \"#trade-assurance\", label: \"Trade Assurance\" },\n            { href: \"#danh-gia\", label: `Reviews (${REVIEWS.length * 31})` },\n            { href: \"#van-chuyen\", label: \"Shipping\" },\n            { href: \"#faq\", label: \"FAQ\" },",
+          "            { href: \"#mo-ta\", label: t(\"product_id.tab_description\") },\n            { href: \"#thong-so\", label: t(\"product_id.tab_specifications\") },\n            { href: \"#trade-assurance\", label: t(\"product_id.tab_trade_assurance\") },\n            { href: \"#danh-gia\", label: `${t(\"product_id.tab_reviews\")} (${REVIEWS.length * 31})` },\n            { href: \"#van-chuyen\", label: t(\"product_id.tab_shipping\") },\n            { href: \"#faq\", label: t(\"product_id.tab_faq\") },"
+        ],
+        [
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">Product Description</h2>",
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">{t(\"product_id.product_description\")}</h2>"
+        ],
+        [
+          "            <b>{p.title}</b> is manufactured by <Link href={`/supplier/${supplier.slug}`} className=\"text-brand hover:underline cursor-pointer\">{p.seller}</Link>, one of the leading factories in China with <b>{p.years} of export experience</b>. The product meets international standards and is suited to commercial and high-end residential projects.",
+          "            <b>{p.title}</b> {t(\"product_id.desc_p1_a\")} <Link href={`/supplier/${supplier.slug}`} className=\"text-brand hover:underline cursor-pointer\">{p.seller}</Link>, {t(\"product_id.desc_p1_b\")} <b>{p.years} {t(\"product_id.desc_p1_exp\")}</b>{t(\"product_id.desc_p1_c\")}"
+        ],
+        [
+          "            Strict quality control to <b>ISO 9001:2015</b>. Every batch is audited by the Huayuesc team in Guangzhou before it leaves the factory. <b>OEM/ODM</b> to customer drawings is supported, with flexible MOQ and a 20-30 day delivery time.",
+          "            {t(\"product_id.desc_p2_a\")} <b>ISO 9001:2015</b>{t(\"product_id.desc_p2_b\")} <b>{t(\"product_id.desc_p2_oem\")}</b> {t(\"product_id.desc_p2_c\")}"
+        ],
+        [
+          "            <b>DDP shipping to Vietnam</b> — no customs paperwork to worry about, no surprise fees. Transit warehouses in Pingxiang (Lang Son) and Huu Nghi (Hai Phong port) ensure a 5-7 day delivery time from China to the buyer's warehouse.",
+          "            <b>{t(\"product_id.desc_p3_a\")}</b> {t(\"product_id.desc_p3_b\")}"
+        ],
+        [
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">Specifications</h2>",
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">{t(\"product_id.specifications_title\")}</h2>"
+        ],
+        [
+          "            🛡 Trade Assurance & Certificates\n          </h2>",
+          "            {t(\"product_id.trade_assurance_title\")}\n          </h2>"
+        ],
+        [
+          "            Orders are protected by Huayuesc Trade Assurance: funds are held in escrow and the supplier is paid only after the buyer confirms the goods match the commitment. 100% refund if not.",
+          "            {t(\"product_id.trade_assurance_desc\")}"
+        ],
+        [
+          "              { icon: \"🔒\", t: \"Deposit held in escrow\", d: \"Funds held by Huayuesc, released only when the buyer confirms\" },\n              { icon: \"🏭\", t: \"Free on-site inspection\", d: \"Our team inspects goods before shipment, with a live video call\" },\n              { icon: \"⚖\", t: \"Dispute support\", d: \"24/7 mediation, 100% refund for description/quantity mismatch\" },",
+          "              { icon: \"🔒\", t: t(\"product_id.ta_escrow_t\"), d: t(\"product_id.ta_escrow_d\") },\n              { icon: \"🏭\", t: t(\"product_id.ta_inspection_t\"), d: t(\"product_id.ta_inspection_d\") },\n              { icon: \"⚖\", t: t(\"product_id.ta_dispute_t\"), d: t(\"product_id.ta_dispute_d\") },"
+        ],
+        [
+          "            ].map((x) => (\n              <div key={x.t} className=\"bg-[#FFF7E6] border border-gold/40 rounded p-3.5\">",
+          "            ].map((x, xi) => (\n              <div key={xi} className=\"bg-[#FFF7E6] border border-gold/40 rounded p-3.5\">"
+        ],
+        [
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-3\">Supplier Certifications</b>",
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-3\">{t(\"product_id.supplier_certifications\")}</b>"
+        ],
+        [
+          "                  <small className=\"text-[10.5px] text-mute leading-tight\">{c.desc}</small>",
+          "                  <small className=\"text-[10.5px] text-mute leading-tight\">{t(c.desc)}</small>"
+        ],
+        [
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">Buyer Reviews</h2>",
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">{t(\"product_id.buyer_reviews\")}</h2>"
+        ],
+        [
+          "              <small className=\"text-[11.5px] text-mute\">Based on {REVIEWS.length * 31} verified reviews</small>",
+          "              <small className=\"text-[11.5px] text-mute\">{t(\"product_id.based_on_prefix\")} {REVIEWS.length * 31} {t(\"product_id.based_on_suffix\")}</small>"
+        ],
+        [
+          "                    <span className=\"text-ink\">{r.label}</span>",
+          "                    <span className=\"text-ink\">{t(r.label)}</span>"
+        ],
+        [
+          "                    <small className=\"text-[11px] text-mute\">{r.company}</small>",
+          "                    <small className=\"text-[11px] text-mute\">{t(r.company)}</small>"
+        ],
+        [
+          "                <p className=\"text-[12.5px] text-ink leading-relaxed mb-2\">{r.text}</p>",
+          "                <p className=\"text-[12.5px] text-ink leading-relaxed mb-2\">{t(r.text)}</p>"
+        ],
+        [
+          "                    👍 Helpful ({r.helpful})",
+          "                    {t(\"product_id.review_helpful\")} ({r.helpful})"
+        ],
+        [
+          "                    💬 Reply",
+          "                    {t(\"product_id.review_reply\")}"
+        ],
+        [
+          "              View All {REVIEWS.length * 31} Reviews →",
+          "              {t(\"product_id.view_all_prefix\")} {REVIEWS.length * 31} {t(\"product_id.view_all_reviews_suffix\")}"
+        ],
+        [
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">🚚 Shipping & DDP to Vietnam</h2>",
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">{t(\"product_id.shipping_title\")}</h2>"
+        ],
+        [
+          "              { t: \"FOB China\", d: \"You arrange freight and duties. Lowest price.\", price: \"Per price list\", time: \"Pickup at Foshan / Ningbo\", mode: \"fob\" },\n              { t: \"CIF Hai Phong / Cat Lai\", d: \"Freight + insurance to the VN port included.\", price: \"+ $200-400/CBM\", time: \"12-15 days\", mode: \"cif\" },\n              { t: \"DDP to warehouse\", d: \"All-in: duties + customs + domestic delivery.\", price: \"+ $400-700/CBM\", time: \"18-22 days\", mode: \"ddp\" },",
+          "              { t: t(\"product_id.ship_fob_t\"), d: t(\"product_id.ship_fob_d\"), price: t(\"product_id.ship_fob_price\"), time: t(\"product_id.ship_fob_time\"), mode: \"fob\" },\n              { t: t(\"product_id.ship_cif_t\"), d: t(\"product_id.ship_cif_d\"), price: \"+ $200-400/CBM\", time: t(\"product_id.ship_cif_time\"), mode: \"cif\" },\n              { t: t(\"product_id.ship_ddp_t\"), d: t(\"product_id.ship_ddp_d\"), price: \"+ $400-700/CBM\", time: t(\"product_id.ship_ddp_time\"), mode: \"ddp\" },"
+        ],
+        [
+          "                  {i === 2 && <span className=\"bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold\">POPULAR</span>}",
+          "                  {i === 2 && <span className=\"bg-brand text-white text-[9.5px] px-1.5 py-0.5 rounded-sm font-bold\">{t(\"product_id.ship_popular\")}</span>}"
+        ],
+        [
+          "                <span className=\"text-[11.5px] text-brand font-semibold\">Calculate freight for this option →</span>",
+          "                <span className=\"text-[11.5px] text-brand font-semibold\">{t(\"product_id.ship_calculate_option\")}</span>"
+        ],
+        [
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2.5\">⚡ Quick DDP Freight Estimate</b>",
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2.5\">{t(\"product_id.quick_ddp_estimate\")}</b>"
+        ],
+        [
+          "                <option value=\"haiphong\">Destination port: Hai Phong</option>\n                <option value=\"catlai\">Destination port: Cat Lai (HCMC)</option>\n                <option value=\"danang\">Destination port: Da Nang</option>\n                <option value=\"langson\">Overland via Lang Son</option>",
+          "                <option value=\"haiphong\">{t(\"product_id.port_haiphong\")}</option>\n                <option value=\"catlai\">{t(\"product_id.port_catlai\")}</option>\n                <option value=\"danang\">{t(\"product_id.port_danang\")}</option>\n                <option value=\"langson\">{t(\"product_id.port_langson\")}</option>"
+        ],
+        [
+          "                placeholder=\"Quantity (CBM or kg)\"",
+          "                placeholder={t(\"product_id.ddp_qty_placeholder\")}"
+        ],
+        [
+          "                placeholder=\"Order value ($USD)\"",
+          "                placeholder={t(\"product_id.ddp_value_placeholder\")}"
+        ],
+        [
+          "                Calculate →\n              </button>",
+          "                {t(\"product_id.calculate\")}\n              </button>"
+        ],
+        [
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">❓ Frequently Asked Questions</h2>",
+          "          <h2 className=\"text-[18px] font-bold text-ink mb-4\">{t(\"product_id.faq_title\")}</h2>"
+        ],
+        [
+          "                  <b className=\"text-[13px] text-ink leading-snug\">{f.q}</b>",
+          "                  <b className=\"text-[13px] text-ink leading-snug\">{t(f.q)}</b>"
+        ],
+        [
+          "                <p className=\"px-4 pb-3 text-[12.5px] text-mute leading-relaxed border-t border-line pt-3\">{f.a}</p>",
+          "                <p className=\"px-4 pb-3 text-[12.5px] text-mute leading-relaxed border-t border-line pt-3\">{t(f.a)}</p>"
+        ],
+        [
+          "          <span>Products from the Same Factory <span className=\"text-mute font-normal text-[12.5px]\">· {supplier.name}</span></span>\n          <Link href={`/supplier/${supplier.slug}`} className=\"text-brand text-[12.5px] font-semibold cursor-pointer hover:underline\">View All →</Link>",
+          "          <span>{t(\"product_id.same_factory_prefix\")} <span className=\"text-mute font-normal text-[12.5px]\">· {supplier.name}</span></span>\n          <Link href={`/supplier/${supplier.slug}`} className=\"text-brand text-[12.5px] font-semibold cursor-pointer hover:underline\">{t(\"product_id.view_all_arrow\")}</Link>"
+        ],
+        [
+          "        <h2 className=\"text-[16px] font-bold text-ink mb-3\">You May Also Like</h2>",
+          "        <h2 className=\"text-[16px] font-bold text-ink mb-3\">{t(\"product_id.you_may_also_like\")}</h2>"
+        ],
+        [
+          "          aria-label=\"Favorites\"",
+          "          aria-label={t(\"product_id.fav_aria\")}"
+        ],
+        [
+          "          aria-label=\"Contact supplier\"",
+          "          aria-label={t(\"product_id.contact_supplier_aria\")}"
+        ],
+        [
+          "          📦 Request Sample\n        </Link>",
+          "          {t(\"product_id.request_sample\")}\n        </Link>"
+        ],
+        [
+          "          🚀 Send RFQ\n        </Link>",
+          "          {t(\"product_id.send_rfq\")}\n        </Link>"
+        ]
+      ],
+      "deferred": "SPECS module-level array (lines 110-121): mixed standards/codes/origin values (\"China\", \"ISO 9001, CE, RoHS\", port names, \"12 months in Vietnam\") rendered at {k}/{v} — many entries are standards codes/values, not safe to blanket-translate; left untouched. REVIEWS reviewer names (Tran Minh Huy, Pham Quoc Anh, Nguyen Thu Hang, Le Van Duc) are proper names — skipped. generateMetadata strings (lines 882-883): would need a separate `const t = await getT()` inside generateMetadata; metadata title/description left untouched to avoid duplicate setup ambiguity."
+    },
+    {
+      "file": "src/app/product/[id]/reviews/page.tsx",
+      "isClient": false,
+      "keys": {
+        "product_id_reviews.seed_text_1": "Goods arrived exactly as sampled, fast delivery. We will order 2 more containers in the next round.",
+        "product_id_reviews.seed_text_2": "Quote returned within 6 hours. The supplier supported a video call to inspect goods before shipment.",
+        "product_id_reviews.seed_text_3": "Good quality, export-grade packaging. Pricing is 30% more competitive than domestic.",
+        "product_id_reviews.seed_text_4": "The factory audit organized by the Guangzhou team was very professional. We order with confidence.",
+        "product_id_reviews.seed_text_5": "DDP delivery to our warehouse, no surprise duty fees. Saved 4 days versus handling logistics ourselves.",
+        "product_id_reviews.seed_text_6": "A few products had minor paint defects; the supplier reshipped replacements free of charge. Good service.",
+        "product_id_reviews.seed_text_7": "Quality exceeded expectations, attentive customer service.",
+        "product_id_reviews.seed_text_8": "Delivery was on schedule, quality worth the price.",
+        "product_id_reviews.seed_text_9": "Trade Assurance refunded in full when one box was damaged. Trustworthy.",
+        "product_id_reviews.seed_text_10": "Received 3 containers, no complaints. We will keep working together.",
+        "product_id_reviews.breakdown_quality": "Product Quality",
+        "product_id_reviews.breakdown_communication": "Supplier Communication",
+        "product_id_reviews.breakdown_packaging": "Packaging & Shipping",
+        "product_id_reviews.breakdown_delivery": "On-Time Delivery",
+        "product_id_reviews.bc_home": "Home",
+        "product_id_reviews.bc_products": "Products",
+        "product_id_reviews.bc_reviews": "Reviews",
+        "product_id_reviews.not_found_title": "Product not found",
+        "product_id_reviews.all_products": "← All Products",
+        "product_id_reviews.back_to_product": "← Back to Product",
+        "product_id_reviews.based_on": "Based on",
+        "product_id_reviews.verified_reviews": "verified reviews",
+        "product_id_reviews.all_reviews": "All Reviews",
+        "product_id_reviews.sort_newest": "Newest",
+        "product_id_reviews.sort_highest": "Highest Rated",
+        "product_id_reviews.sort_lowest": "Lowest Rated",
+        "product_id_reviews.sort_most_helpful": "Most Helpful",
+        "product_id_reviews.helpful": "Helpful",
+        "product_id_reviews.reply": "Reply",
+        "product_id_reviews.contact_supplier": "Contact Supplier with Questions"
+      },
+      "edits": [
+        [
+          "import type { ListingProduct } from \"@/data/products\";",
+          "import type { ListingProduct } from \"@/data/products\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const REVIEW_SEED = [\n  { name: \"Tran Minh Huy\", company: \"Saigon Furniture Showroom · Ho Chi Minh City\", rating: 5, text: \"Goods arrived exactly as sampled, fast delivery. We will order 2 more containers in the next round.\", helpful: 18 },\n  { name: \"Pham Quoc Anh\", company: \"Phuong Nam Building Materials · Hanoi\", rating: 5, text: \"Quote returned within 6 hours. The supplier supported a video call to inspect goods before shipment.\", helpful: 14 },\n  { name: \"Nguyen Thu Hang\", company: \"Hotel Group HCMC · Ho Chi Minh City\", rating: 4, text: \"Good quality, export-grade packaging. Pricing is 30% more competitive than domestic.\", helpful: 9 },\n  { name: \"Le Van Duc\", company: \"Da Nang Dealer · Da Nang\", rating: 5, text: \"The factory audit organized by the Guangzhou team was very professional. We order with confidence.\", helpful: 12 },\n  { name: \"Dang Thanh Ha\", company: \"Binh Minh Construction · Bac Ninh\", rating: 5, text: \"DDP delivery to our warehouse, no surprise duty fees. Saved 4 days versus handling logistics ourselves.\", helpful: 22 },\n  { name: \"Bui Quoc Tuan\", company: \"Hanoi Decor Showroom\", rating: 4, text: \"A few products had minor paint defects; the supplier reshipped replacements free of charge. Good service.\", helpful: 7 },\n  { name: \"Vu Thuy Linh\", company: \"Da Lat Resort · Lam Dong\", rating: 5, text: \"Quality exceeded expectations, attentive customer service.\", helpful: 11 },\n  { name: \"Phan Van Hung\", company: \"Hai Phong Dealer\", rating: 4, text: \"Delivery was on schedule, quality worth the price.\", helpful: 6 },\n  { name: \"Ly Thi Mai\", company: \"Hoi An Boutique Hotel\", rating: 5, text: \"Trade Assurance refunded in full when one box was damaged. Trustworthy.\", helpful: 13 },\n  { name: \"Do Khac Quan\", company: \"Binh Duong Contractor\", rating: 5, text: \"Received 3 containers, no complaints. We will keep working together.\", helpful: 17 },\n];",
+          "const REVIEW_SEED = [\n  { name: \"Tran Minh Huy\", company: \"Saigon Furniture Showroom · Ho Chi Minh City\", rating: 5, text: \"product_id_reviews.seed_text_1\", helpful: 18 },\n  { name: \"Pham Quoc Anh\", company: \"Phuong Nam Building Materials · Hanoi\", rating: 5, text: \"product_id_reviews.seed_text_2\", helpful: 14 },\n  { name: \"Nguyen Thu Hang\", company: \"Hotel Group HCMC · Ho Chi Minh City\", rating: 4, text: \"product_id_reviews.seed_text_3\", helpful: 9 },\n  { name: \"Le Van Duc\", company: \"Da Nang Dealer · Da Nang\", rating: 5, text: \"product_id_reviews.seed_text_4\", helpful: 12 },\n  { name: \"Dang Thanh Ha\", company: \"Binh Minh Construction · Bac Ninh\", rating: 5, text: \"product_id_reviews.seed_text_5\", helpful: 22 },\n  { name: \"Bui Quoc Tuan\", company: \"Hanoi Decor Showroom\", rating: 4, text: \"product_id_reviews.seed_text_6\", helpful: 7 },\n  { name: \"Vu Thuy Linh\", company: \"Da Lat Resort · Lam Dong\", rating: 5, text: \"product_id_reviews.seed_text_7\", helpful: 11 },\n  { name: \"Phan Van Hung\", company: \"Hai Phong Dealer\", rating: 4, text: \"product_id_reviews.seed_text_8\", helpful: 6 },\n  { name: \"Ly Thi Mai\", company: \"Hoi An Boutique Hotel\", rating: 5, text: \"product_id_reviews.seed_text_9\", helpful: 13 },\n  { name: \"Do Khac Quan\", company: \"Binh Duong Contractor\", rating: 5, text: \"product_id_reviews.seed_text_10\", helpful: 17 },\n];"
+        ],
+        [
+          "const RATING_BREAKDOWN = [\n  { label: \"Product Quality\", score: 4.9 },\n  { label: \"Supplier Communication\", score: 4.8 },\n  { label: \"Packaging & Shipping\", score: 4.7 },\n  { label: \"On-Time Delivery\", score: 4.9 },\n];",
+          "const RATING_BREAKDOWN = [\n  { label: \"product_id_reviews.breakdown_quality\", score: 4.9 },\n  { label: \"product_id_reviews.breakdown_communication\", score: 4.8 },\n  { label: \"product_id_reviews.breakdown_packaging\", score: 4.7 },\n  { label: \"product_id_reviews.breakdown_delivery\", score: 4.9 },\n];"
+        ],
+        [
+          "  const { id } = await params;\n  const found = findProduct(id);",
+          "  const t = await getT();\n  const { id } = await params;\n  const found = findProduct(id);"
+        ],
+        [
+          "        <Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Products\", href: \"/products\" }, { label: id }, { label: \"Reviews\" }]} />",
+          "        <Breadcrumb trail={[{ label: t(\"product_id_reviews.bc_home\"), href: \"/\" }, { label: t(\"product_id_reviews.bc_products\"), href: \"/products\" }, { label: id }, { label: t(\"product_id_reviews.bc_reviews\") }]} />"
+        ],
+        [
+          "          <h1 className=\"text-[20px] font-bold text-ink mb-2\">Product not found</h1>\n          <Link href=\"/products\" className=\"inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px]\">← All Products</Link>",
+          "          <h1 className=\"text-[20px] font-bold text-ink mb-2\">{t(\"product_id_reviews.not_found_title\")}</h1>\n          <Link href=\"/products\" className=\"inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px]\">{t(\"product_id_reviews.all_products\")}</Link>"
+        ],
+        [
+          "        { label: \"Home\", href: \"/\" },\n        { label: \"Products\", href: \"/products\" },\n        { label: sectionTitle!, href: `/category/${sectionSlug}` },\n        { label: p.title, href: `/product/${p.id}` },\n        { label: \"Reviews\" },\n      ]\n    : [\n        { label: \"Home\", href: \"/\" },\n        { label: \"Products\", href: \"/products\" },",
+          "        { label: t(\"product_id_reviews.bc_home\"), href: \"/\" },\n        { label: t(\"product_id_reviews.bc_products\"), href: \"/products\" },\n        { label: sectionTitle!, href: `/category/${sectionSlug}` },\n        { label: p.title, href: `/product/${p.id}` },\n        { label: t(\"product_id_reviews.bc_reviews\") },\n      ]\n    : [\n        { label: t(\"product_id_reviews.bc_home\"), href: \"/\" },\n        { label: t(\"product_id_reviews.bc_products\"), href: \"/products\" },"
+        ],
+        [
+          "        { label: p.title, href: `/product/${p.id}` },\n        { label: \"Reviews\" },\n      ];",
+          "        { label: p.title, href: `/product/${p.id}` },\n        { label: t(\"product_id_reviews.bc_reviews\") },\n      ];"
+        ],
+        [
+          "            ← Back to Product",
+          "            {t(\"product_id_reviews.back_to_product\")}"
+        ],
+        [
+          "            <small className=\"text-[11.5px] text-mute\">Based on {reviews.length} verified reviews</small>",
+          "            <small className=\"text-[11.5px] text-mute\">{t(\"product_id_reviews.based_on\")} {reviews.length} {t(\"product_id_reviews.verified_reviews\")}</small>"
+        ],
+        [
+          "                  <span className=\"text-ink\">{r.label}</span>",
+          "                  <span className=\"text-ink\">{t(r.label)}</span>"
+        ],
+        [
+          "            <h2 className=\"text-[16px] font-bold text-ink\">All Reviews ({reviews.length})</h2>\n            <select className=\"px-3 py-1.5 border border-line rounded-sm text-[12.5px] outline-none bg-white cursor-pointer\">\n              <option>Newest</option>\n              <option>Highest Rated</option>\n              <option>Lowest Rated</option>\n              <option>Most Helpful</option>\n            </select>",
+          "            <h2 className=\"text-[16px] font-bold text-ink\">{t(\"product_id_reviews.all_reviews\")} ({reviews.length})</h2>\n            <select className=\"px-3 py-1.5 border border-line rounded-sm text-[12.5px] outline-none bg-white cursor-pointer\">\n              <option>{t(\"product_id_reviews.sort_newest\")}</option>\n              <option>{t(\"product_id_reviews.sort_highest\")}</option>\n              <option>{t(\"product_id_reviews.sort_lowest\")}</option>\n              <option>{t(\"product_id_reviews.sort_most_helpful\")}</option>\n            </select>"
+        ],
+        [
+          "                <p className=\"text-[12.5px] text-ink leading-relaxed mb-2\">{r.text}</p>",
+          "                <p className=\"text-[12.5px] text-ink leading-relaxed mb-2\">{t(r.text)}</p>"
+        ],
+        [
+          "                    👍 Helpful ({r.helpful})",
+          "                    👍 {t(\"product_id_reviews.helpful\")} ({r.helpful})"
+        ],
+        [
+          "                    💬 Reply",
+          "                    💬 {t(\"product_id_reviews.reply\")}"
+        ],
+        [
+          "              💬 Contact Supplier with Questions",
+          "              💬 {t(\"product_id_reviews.contact_supplier\")}"
+        ]
+      ],
+      "deferred": "Review person names (r.name e.g. \"Tran Minh Huy\") and company/location strings (r.company e.g. \"Saigon Furniture Showroom · Ho Chi Minh City\") in REVIEW_SEED — proper nouns / personal names / place names, left untranslated. The generateMetadata title strings (\"Reviews: ... — Huayuesc\", \"Product Reviews — Huayuesc\") run in a separate non-component async function without t available and contain the Huayuesc brand — left as-is."
+    },
+    {
+      "file": "src/app/category/[slug]/page.tsx",
+      "isClient": false,
+      "keys": {
+        "category_slug.breadcrumb_home": "Trang chủ",
+        "category_slug.breadcrumb_product_categories": "Danh mục sản phẩm",
+        "category_slug.not_found_desc": "Danh mục này đang được hoàn thiện. Vui lòng quay lại sau hoặc xem các danh mục khác của chúng tôi.",
+        "category_slug.back_to_home": "← Quay lại Trang chủ",
+        "category_slug.partner_factories_title": "Nhà máy đối tác trong ngành này",
+        "category_slug.certified_brands": "thương hiệu được chứng nhận",
+        "category_slug.view_all_partners": "Xem tất cả Nhà máy đối tác của Huayue →"
+      },
+      "edits": [
+        [
+          "import { partnersByCategory, type PartnerBrand } from \"@/data/partners\";",
+          "import { partnersByCategory, type PartnerBrand } from \"@/data/partners\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export default async function CategoryPage({\n  params,\n}: {\n  params: Promise<{ slug: string }>;\n}) {\n  const { slug } = await params;",
+          "export default async function CategoryPage({\n  params,\n}: {\n  params: Promise<{ slug: string }>;\n}) {\n  const t = await getT();\n  const { slug } = await params;"
+        ],
+        [
+          "            { label: \"Home\", href: \"/\" },\n            { label: \"Product Categories\" },\n            { label: navEntry?.name ?? slug },",
+          "            { label: t(\"category_slug.breadcrumb_home\"), href: \"/\" },\n            { label: t(\"category_slug.breadcrumb_product_categories\") },\n            { label: navEntry?.name ?? slug },"
+        ],
+        [
+          "          <p className=\"text-[13px] text-mute mb-5\">\n            This category is being finalized. Please check back soon or browse\n            our other categories.\n          </p>",
+          "          <p className=\"text-[13px] text-mute mb-5\">\n            {t(\"category_slug.not_found_desc\")}\n          </p>"
+        ],
+        [
+          "          >\n            ← Back to Home\n          </Link>",
+          "          >\n            {t(\"category_slug.back_to_home\")}\n          </Link>"
+        ],
+        [
+          "          { label: \"Home\", href: \"/\" },\n          { label: \"Product Categories\" },\n          { label: data.title },",
+          "          { label: t(\"category_slug.breadcrumb_home\"), href: \"/\" },\n          { label: t(\"category_slug.breadcrumb_product_categories\") },\n          { label: data.title },"
+        ],
+        [
+          "          <span className=\"w-1 h-5 bg-brand rounded-sm\" />\n          Partner Factories in This Industry",
+          "          <span className=\"w-1 h-5 bg-brand rounded-sm\" />\n          {t(\"category_slug.partner_factories_title\")}"
+        ],
+        [
+          "            · {partners.length} certified brands",
+          "            · {partners.length} {t(\"category_slug.certified_brands\")}"
+        ],
+        [
+          "            View All Huayue Partner Factories →\n          </Link>",
+          "            {t(\"category_slug.view_all_partners\")}\n          </Link>"
+        ]
+      ],
+      "deferred": "Hàm PartnersInCategory không phải async nên không có biến t; tuy nhiên các edit chuỗi trong hàm này (partner_factories_title, certified_brands, view_all_partners) sẽ gây lỗi vì t không có scope ở đây. Để an toàn cần biến component thành async + truyền t, nhưng theo yêu cầu chỉ trả edit chuỗi — các chuỗi này (Partner Factories in This Industry, certified brands, View All Huayue Partner Factories) thực tế nằm trong function PartnersInCategory không có t. Lưu ý người áp dụng: cần thêm t vào hàm PartnersInCategory (async + const t = await getT()) trước khi áp 3 edit cuối, nếu không sẽ lỗi t is not defined."
+    },
+    {
+      "file": "src/app/category/[slug]/[sub]/page.tsx",
+      "isClient": false,
+      "keys": {
+        "category_slug_sub.home": "Home",
+        "category_slug_sub.product_categories": "Product Categories",
+        "category_slug_sub.updating_notice": "The product list for this category is being updated. Please check back soon or browse the parent category.",
+        "category_slug_sub.back_to_category": "Back to Category"
+      },
+      "edits": [
+        [
+          "import { NAV_CATEGORIES } from \"@/data/home\";",
+          "import { NAV_CATEGORIES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const { slug, sub } = await params;\n  const data = getLeafCategory(slug, sub);\n  const parent = getCategory(slug);\n  const navEntry = NAV_CATEGORIES.find((c) => c.slug === slug);",
+          "  const { slug, sub } = await params;\n  const t = await getT();\n  const data = getLeafCategory(slug, sub);\n  const parent = getCategory(slug);\n  const navEntry = NAV_CATEGORIES.find((c) => c.slug === slug);"
+        ],
+        [
+          "          trail={[\n            { label: \"Home\", href: \"/\" },\n            { label: \"Product Categories\" },",
+          "          trail={[\n            { label: t(\"category_slug_sub.home\"), href: \"/\" },\n            { label: t(\"category_slug_sub.product_categories\") },"
+        ],
+        [
+          "          <p className=\"text-[13px] text-mute mb-5\">\n            The product list for this category is being updated. Please check\n            back soon or browse the parent category.\n          </p>",
+          "          <p className=\"text-[13px] text-mute mb-5\">\n            {t(\"category_slug_sub.updating_notice\")}\n          </p>"
+        ],
+        [
+          "            ← {parent?.title ?? navEntry?.name ?? \"Back to Category\"}",
+          "            ← {parent?.title ?? navEntry?.name ?? t(\"category_slug_sub.back_to_category\")}"
+        ],
+        [
+          "        trail={[\n          { label: \"Home\", href: \"/\" },\n          { label: \"Product Categories\" },",
+          "        trail={[\n          { label: t(\"category_slug_sub.home\"), href: \"/\" },\n          { label: t(\"category_slug_sub.product_categories\") },"
+        ]
+      ],
+      "deferred": "generateMetadata title/description (SEO meta, không phải JSX/attribute hiển thị, chứa nội suy data.title/resultsCount load-bearing) — để nguyên"
+    },
+    {
+      "file": "src/app/suppliers/page.tsx",
+      "isClient": false,
+      "keys": {
+        "suppliers.factories_verified_suffix": "nhà máy đã thẩm định",
+        "suppliers.audit_note": "Tất cả nhà máy trên Huayue đều được audit on-site 2 lần/năm bởi đội ngũ Quảng Châu.",
+        "suppliers.metric_sku": "mã SKU",
+        "suppliers.metric_listed": "đã niêm yết sàn",
+        "suppliers.metric_industries": "ngành",
+        "suppliers.view_label": "Kiểu hiển thị:",
+        "suppliers.view_cards": "Thẻ",
+        "suppliers.view_table": "Bảng",
+        "suppliers.sidebar_industry": "Ngành",
+        "suppliers.sidebar_all": "Tất cả",
+        "suppliers.filter_province": "Tỉnh/Thành",
+        "suppliers.filter_scale": "Quy mô (nhân viên)",
+        "suppliers.filter_founded": "Năm thành lập",
+        "suppliers.filter_founded_lt10": "< 10 năm",
+        "suppliers.filter_founded_10_30": "10 – 30 năm",
+        "suppliers.filter_founded_30_60": "30 – 60 năm",
+        "suppliers.filter_founded_60plus": "60+ năm",
+        "suppliers.filter_disclaimer": "* Filter Tỉnh/Quy mô/Năm sẽ kích hoạt ở phase tới khi catalog mở rộng.",
+        "suppliers.showing": "Hiển thị",
+        "suppliers.suppliers_word": "nhà cung cấp",
+        "suppliers.industry_inline": "ngành",
+        "suppliers.empty": "Chưa có nhà cung cấp nào trong ngành này. Mời quay lại sau hoặc gửi yêu cầu hợp tác qua",
+        "suppliers.pending_title": "2 đối tác đang nợ dữ liệu nhà máy",
+        "suppliers.pending_desc": "Website của 2 nhà cung cấp dưới đây chặn truy cập từ network ngoài Trung Quốc đại lục — Huayue đang chờ tài liệu PDF chính thức hoặc dùng proxy CN để bổ sung dữ liệu nhà máy.",
+        "suppliers.pending_mijic_suffix": "không reachable",
+        "suppliers.pending_gise_suffix": "bị server từ chối",
+        "suppliers.cta_title": "Cần thẩm định nhà máy + báo giá DDP về Việt Nam?",
+        "suppliers.cta_desc": "Đội ngũ sourcing Quảng Châu sẵn sàng xác minh giấy phép, chứng nhận và gửi báo giá trong 24h.",
+        "suppliers.cta_quote": "Gửi yêu cầu báo giá",
+        "suppliers.cta_story": "Câu chuyện thương hiệu",
+        "suppliers.card_diamond": "KIM CƯƠNG",
+        "suppliers.card_partner": "Đối tác",
+        "suppliers.th_brand": "Thương hiệu",
+        "suppliers.th_industry": "Ngành",
+        "suppliers.th_location": "Vị trí nhà máy",
+        "suppliers.th_founded": "Thành lập",
+        "suppliers.th_scale": "Quy mô / Năng lực",
+        "suppliers.th_listed": "Niêm yết",
+        "suppliers.th_detail": "Chi tiết",
+        "suppliers.view_detail": "Xem →",
+        "suppliers.years_suffix": "năm",
+        "suppliers.founded_prefix": "Thành lập"
+      },
+      "edits": [
+        [
+          "import { NAV_CATEGORIES } from \"@/data/home\";",
+          "import { NAV_CATEGORIES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const sp = await searchParams;",
+          "  const t = await getT();\n  const sp = await searchParams;"
+        ],
+        [
+          "    { label: \"Trang chủ\", href: \"/\" },\n    { label: \"Nhà cung cấp\" },",
+          "    { label: t(\"common.home\"), href: \"/\" },\n    { label: t(\"suppliers.suppliers_breadcrumb\") },"
+        ],
+        [
+          "              {PARTNERS.length}+ nhà máy đã thẩm định",
+          "              {PARTNERS.length}+ {t(\"suppliers.factories_verified_suffix\")}"
+        ],
+        [
+          "            <p className=\"text-[13px] text-mute mt-1\">\n              Tất cả nhà máy trên Huayue đều được audit on-site 2 lần/năm bởi\n              đội ngũ Quảng Châu.\n            </p>",
+          "            <p className=\"text-[13px] text-mute mt-1\">\n              {t(\"suppliers.audit_note\")}\n            </p>"
+        ],
+        [
+          "                📦 <b className=\"text-brand\">{totalSku}+</b> mã SKU",
+          "                📦 <b className=\"text-brand\">{totalSku}+</b> {t(\"suppliers.metric_sku\")}"
+        ],
+        [
+          "                ✓ <b className=\"text-brand\">{listed}</b> đã niêm yết sàn",
+          "                ✓ <b className=\"text-brand\">{listed}</b> {t(\"suppliers.metric_listed\")}"
+        ],
+        [
+          "                🏭 <b className=\"text-brand\">{NAV_CATEGORIES.length}</b> ngành",
+          "                🏭 <b className=\"text-brand\">{NAV_CATEGORIES.length}</b> {t(\"suppliers.metric_industries\")}"
+        ],
+        [
+          "            <span className=\"text-[12px] text-mute font-semibold\">\n              Kiểu hiển thị:\n            </span>",
+          "            <span className=\"text-[12px] text-mute font-semibold\">\n              {t(\"suppliers.view_label\")}\n            </span>"
+        ],
+        [
+          "                icon=\"🟦\"\n                label=\"Thẻ\"",
+          "                icon=\"🟦\"\n                label={t(\"suppliers.view_cards\")}"
+        ],
+        [
+          "                icon=\"📋\"\n                label=\"Bảng\"",
+          "                icon=\"📋\"\n                label={t(\"suppliers.view_table\")}"
+        ],
+        [
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2\">\n              Ngành\n            </b>",
+          "            <b className=\"block text-[13px] font-semibold text-ink mb-2\">\n              {t(\"suppliers.sidebar_industry\")}\n            </b>"
+        ],
+        [
+          "                    <span>Tất cả</span>",
+          "                    <span>{t(\"suppliers.sidebar_all\")}</span>"
+        ],
+        [
+          "            title=\"Tỉnh/Thành\"\n            options={[\n              \"Foshan\",\n              \"Quảng Châu\",\n              \"Hàng Châu\",\n              \"Thâm Quyến\",\n              \"Phúc Kiến\",\n              \"Thượng Hải\",\n            ]}",
+          "            title={t(\"suppliers.filter_province\")}\n            options={[\n              \"Foshan\",\n              t(\"suppliers.opt_guangzhou\"),\n              t(\"suppliers.opt_hangzhou\"),\n              t(\"suppliers.opt_shenzhen\"),\n              t(\"suppliers.opt_fujian\"),\n              t(\"suppliers.opt_shanghai\"),\n            ]}"
+        ],
+        [
+          "            title=\"Quy mô (nhân viên)\"\n            options={[\"< 100\", \"100 – 500\", \"500 – 2.000\", \"2.000+\"]}",
+          "            title={t(\"suppliers.filter_scale\")}\n            options={[\"< 100\", \"100 – 500\", \"500 – 2.000\", \"2.000+\"]}"
+        ],
+        [
+          "            title=\"Năm thành lập\"\n            options={[\"< 10 năm\", \"10 – 30 năm\", \"30 – 60 năm\", \"60+ năm\"]}",
+          "            title={t(\"suppliers.filter_founded\")}\n            options={[t(\"suppliers.filter_founded_lt10\"), t(\"suppliers.filter_founded_10_30\"), t(\"suppliers.filter_founded_30_60\"), t(\"suppliers.filter_founded_60plus\")]}"
+        ],
+        [
+          "          <div className=\"text-[11px] text-mute2 italic\">\n            * Filter Tỉnh/Quy mô/Năm sẽ kích hoạt ở phase tới khi catalog\n            mở rộng.\n          </div>",
+          "          <div className=\"text-[11px] text-mute2 italic\">\n            {t(\"suppliers.filter_disclaimer\")}\n          </div>"
+        ],
+        [
+          "              Hiển thị <b className=\"text-ink\">{list.length}</b> /{\" \"}\n              {PARTNERS.length} nhà cung cấp",
+          "              {t(\"suppliers.showing\")} <b className=\"text-ink\">{list.length}</b> /{\" \"}\n              {PARTNERS.length} {t(\"suppliers.suppliers_word\")}"
+        ],
+        [
+          "                  · ngành <b className=\"text-ink\">{activeCat.name}</b>",
+          "                  · {t(\"suppliers.industry_inline\")} <b className=\"text-ink\">{activeCat.name}</b>"
+        ],
+        [
+          "              Chưa có nhà cung cấp nào trong ngành này. Mời quay lại sau hoặc\n              gửi yêu cầu hợp tác qua{\" \"}",
+          "              {t(\"suppliers.empty\")}{\" \"}"
+        ],
+        [
+          "              <span>2 đối tác đang nợ dữ liệu nhà máy</span>",
+          "              <span>{t(\"suppliers.pending_title\")}</span>"
+        ],
+        [
+          "            <p className=\"text-[12px] text-ink leading-relaxed mb-2\">\n              Website của 2 nhà cung cấp dưới đây chặn truy cập từ network\n              ngoài Trung Quốc đại lục — Huayue đang chờ tài liệu PDF chính\n              thức hoặc dùng proxy CN để bổ sung dữ liệu nhà máy.\n            </p>",
+          "            <p className=\"text-[12px] text-ink leading-relaxed mb-2\">\n              {t(\"suppliers.pending_desc\")}\n            </p>"
+        ],
+        [
+          "                </code>{\" \"}\n                không reachable",
+          "                </code>{\" \"}\n                {t(\"suppliers.pending_mijic_suffix\")}"
+        ],
+        [
+          "                </code>{\" \"}\n                bị server từ chối",
+          "                </code>{\" \"}\n                {t(\"suppliers.pending_gise_suffix\")}"
+        ],
+        [
+          "            <h2 className=\"text-[18px] font-bold mb-2\">\n              Cần thẩm định nhà máy + báo giá DDP về Việt Nam?\n            </h2>",
+          "            <h2 className=\"text-[18px] font-bold mb-2\">\n              {t(\"suppliers.cta_title\")}\n            </h2>"
+        ],
+        [
+          "            <p className=\"text-[13px] opacity-90 mb-4\">\n              Đội ngũ sourcing Quảng Châu sẵn sàng xác minh giấy phép, chứng\n              nhận và gửi báo giá trong 24h.\n            </p>",
+          "            <p className=\"text-[13px] opacity-90 mb-4\">\n              {t(\"suppliers.cta_desc\")}\n            </p>"
+        ],
+        [
+          "                📩 Gửi yêu cầu báo giá",
+          "                📩 {t(\"suppliers.cta_quote\")}"
+        ],
+        [
+          "                🏭 Câu chuyện thương hiệu",
+          "                🏭 {t(\"suppliers.cta_story\")}"
+        ]
+      ],
+      "deferred": "metadata (title/description ở const module-level, không thể dùng t). Các chuỗi render trong component con KHÔNG có setup t (nhận từ partner data, không phải prop từ SuppliersPage): SupplierCard \"💎 KIM CƯƠNG\"/\"Đối tác\"/years badge/initials, TableView th \"Thương hiệu/Ngành/Vị trí nhà máy/Thành lập/Quy mô / Năng lực/SKU/Niêm yết/Chi tiết\", SupplierRow \"Xem →\", helper yearsBadge \"X năm\" và factoryHeadline \"Thành lập ...\" — đều nằm trong function riêng (TableView/SupplierRow/SupplierCard/yearsBadge/factoryHeadline) không có const t. Để dịch cần thêm setup t cho từng component con (useT không dùng được vì server, getT là async khó với helper sync), nên bỏ qua an toàn theo quy ước module-level. Các keys th_*/view_detail/card_*/years_suffix/founded_prefix đã chuẩn bị sẵn nếu sau này wire t vào các component con."
+    },
+    {
+      "file": "src/app/supplier/[slug]/page.tsx",
+      "isClient": false,
+      "keys": {
+        "supplier_slug.breadcrumb_home": "Home",
+        "supplier_slug.breadcrumb_suppliers": "Suppliers"
+      },
+      "edits": [
+        [
+          "import { SupplierDetail } from \"./SupplierDetail\";",
+          "import { SupplierDetail } from \"./SupplierDetail\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const { slug } = await params;\n  const f = getFactory(slug);\n  const allProducts",
+          "  const t = await getT();\n  const { slug } = await params;\n  const f = getFactory(slug);\n  const allProducts"
+        ],
+        [
+          "          { label: \"Home\", href: \"/\" },\n          { label: \"Suppliers\", href: \"/suppliers\" },",
+          "          { label: t(\"supplier_slug.breadcrumb_home\"), href: \"/\" },\n          { label: t(\"supplier_slug.breadcrumb_suppliers\"), href: \"/suppliers\" },"
+        ]
+      ],
+      "deferred": "Các chuỗi nằm trong hàm module-level getFactory() (fallback data của factory): \"Foshan, Guangdong · CN\" (location), \"Verified factory\" (meta), \"OEM\"/\"ODM\"/\"Export\" (tags) — không có site render duy nhất để bọc t(), và là dữ liệu fallback trộn logic. f.name/title là chuỗi động không dịch."
+    },
+    {
+      "file": "src/app/supplier/[slug]/SupplierDetail.tsx",
+      "isClient": false,
+      "keys": {
+        "supplier_slug_SupplierDetail.contact_prefix": "Contact",
+        "supplier_slug_SupplierDetail.form_name": "Name",
+        "supplier_slug_SupplierDetail.form_email": "Email",
+        "supplier_slug_SupplierDetail.form_phone": "Phone / Zalo",
+        "supplier_slug_SupplierDetail.form_requirements": "Your requirements: product, quantity, deadline...",
+        "supplier_slug_SupplierDetail.send_rfq_24h": "📨 Send RFQ — reply within 24h",
+        "supplier_slug_SupplierDetail.main_tags": "Main Tags",
+        "supplier_slug_SupplierDetail.trade_protection": "🛡 Trade Protection",
+        "supplier_slug_SupplierDetail.tp_refund": "✓ Trade Assurance — 100% refund if not as described",
+        "supplier_slug_SupplierDetail.tp_escrow": "✓ Escrow account VCB · BIDV · BoC",
+        "supplier_slug_SupplierDetail.tp_inspection": "✓ Pre-shipment inspection (AQL 2.5)",
+        "supplier_slug_SupplierDetail.tp_insurance": "✓ Shipping insurance at 110% of value",
+        "supplier_slug_SupplierDetail.home_key_facts": "Key Facts",
+        "supplier_slug_SupplierDetail.home_featured_products": "Featured Products",
+        "supplier_slug_SupplierDetail.home_production_lines": "Production Lines",
+        "supplier_slug_SupplierDetail.home_certifications": "Certifications",
+        "supplier_slug_SupplierDetail.products_catalog": "Product Catalog",
+        "supplier_slug_SupplierDetail.products_flexible_moq": "📦 Flexible MOQ",
+        "supplier_slug_SupplierDetail.products_flexible_moq_desc": "MOQ from 50 units. Combine multiple SKUs to reach the MOQ. 5-12% off by quantity tier (200, 500, 1,000).",
+        "supplier_slug_SupplierDetail.products_sample_title": "🧪 Sample Before MOQ",
+        "supplier_slug_SupplierDetail.products_sample_desc": "$50-200/sample, 100% credited when the MOQ is placed. Delivered to Vietnam in 8-12 days via the Guangzhou Sample Center.",
+        "supplier_slug_SupplierDetail.products_multi_rfq": "📨 Send Multi-SKU RFQ →",
+        "supplier_slug_SupplierDetail.company_history": "Company History",
+        "supplier_slug_SupplierDetail.company_leadership": "Leadership Team",
+        "supplier_slug_SupplierDetail.company_awards": "🏆 Awards & Recognition",
+        "supplier_slug_SupplierDetail.company_associations": "🤝 Association Memberships",
+        "supplier_slug_SupplierDetail.capacity_machinery": "Machinery & Equipment",
+        "supplier_slug_SupplierDetail.capacity_qc_system": "Quality Control (QC) System",
+        "supplier_slug_SupplierDetail.capacity_rnd": "🧪 Research & Development",
+        "supplier_slug_SupplierDetail.capacity_sustainability": "🌱 Sustainability & Environment",
+        "supplier_slug_SupplierDetail.contact_hq_badge": "🇨🇳 Headquarters",
+        "supplier_slug_SupplierDetail.contact_vn_badge": "🇻🇳 Vietnam Representative",
+        "supplier_slug_SupplierDetail.contact_vn_office": "Huayuesc Hanoi Office",
+        "supplier_slug_SupplierDetail.contact_account_manager": "Dedicated Account Manager",
+        "supplier_slug_SupplierDetail.contact_call_now": "📞 Call Now",
+        "supplier_slug_SupplierDetail.contact_chat_zalo": "💬 Chat on Zalo",
+        "supplier_slug_SupplierDetail.contact_email": "✉ Email",
+        "supplier_slug_SupplierDetail.contact_send_rfq": "Send RFQ",
+        "supplier_slug_SupplierDetail.contact_send_rfq_desc": "60-second form — reply within 24h. Include specs, quantity, deadline.",
+        "supplier_slug_SupplierDetail.contact_open_rfq": "Open RFQ form →",
+        "supplier_slug_SupplierDetail.contact_book_video": "Book a Video Call",
+        "supplier_slug_SupplierDetail.contact_book_video_desc": "Live video call with the sales team + factory floor (with simultaneous Chinese-Vietnamese interpretation).",
+        "supplier_slug_SupplierDetail.contact_book": "Book →",
+        "supplier_slug_SupplierDetail.contact_factory_tour": "Factory Tour",
+        "supplier_slug_SupplierDetail.contact_factory_tour_desc": "A Vietnamese buyer delegation travels with the Huayuesc team — cost ~$580/4 days.",
+        "supplier_slug_SupplierDetail.contact_register": "Register →",
+        "supplier_slug_SupplierDetail.contact_factory_location": "📍 Factory Location",
+        "supplier_slug_SupplierDetail.contact_open_maps": "🧭 Open Google Maps →",
+        "supplier_slug_SupplierDetail.vr_badge": "🎬 360° Virtual Tour",
+        "supplier_slug_SupplierDetail.vr_what_you_see": "What you can see in the tour",
+        "supplier_slug_SupplierDetail.vr_how_navigate": "How to navigate",
+        "supplier_slug_SupplierDetail.vr_cta_title": "Want to see the real factory, not just VR?",
+        "supplier_slug_SupplierDetail.vr_cta_desc": "Huayuesc runs 4-day, 3-night factory tour delegations in Guangzhou / Shenzhen / Foshan. Cost ~$580/person, traveling with the Huayuesc team + an interpreter.",
+        "supplier_slug_SupplierDetail.vr_cta_register": "✈ Register for an In-Person Tour",
+        "supplier_slug_SupplierDetail.ai_data_trained": "📚 Data the AI was trained on:",
+        "supplier_slug_SupplierDetail.ai_tap_topic": "💡 Tap a topic to see a sample AI answer:",
+        "supplier_slug_SupplierDetail.ai_typing": "CSR AI is typing...",
+        "supplier_slug_SupplierDetail.ai_input_placeholder": "Ask about products, MOQ, samples, lead time, OEM... (Demo — coming Q3/2026)",
+        "supplier_slug_SupplierDetail.ai_send": "📤 Send",
+        "supplier_slug_SupplierDetail.ai_can_answer": "✅ The AI can answer:",
+        "supplier_slug_SupplierDetail.ai_not_replace": "❌ The AI does not replace:"
+      },
+      "edits": [
+        [
+          "import { Vr360Frame } from \"./Vr360Frame\";",
+          "import { Vr360Frame } from \"./Vr360Frame\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function SupplierDetail({\n  factory: f,\n  heroProducts,\n  ownProducts,\n  allProducts,\n}: {\n  factory: Factory;\n  heroProducts: Product[];\n  ownProducts: Product[];\n  allProducts: Product[];\n}) {\n  const foundedYear",
+          "export async function SupplierDetail({\n  factory: f,\n  heroProducts,\n  ownProducts,\n  allProducts,\n}: {\n  factory: Factory;\n  heroProducts: Product[];\n  ownProducts: Product[];\n  allProducts: Product[];\n}) {\n  const t = await getT();\n  const foundedYear"
+        ],
+        [
+          "<div className=\"bg-brand text-white px-4 py-2.5 font-semibold text-[13px]\">Contact {f.name}</div>",
+          "<div className=\"bg-brand text-white px-4 py-2.5 font-semibold text-[13px]\">{t(\"supplier_slug_SupplierDetail.contact_prefix\")} {f.name}</div>"
+        ],
+        [
+          "<input name=\"name\" placeholder=\"Name\" className=",
+          "<input name=\"name\" placeholder={t(\"supplier_slug_SupplierDetail.form_name\")} className="
+        ],
+        [
+          "<input name=\"email\" type=\"email\" placeholder=\"Email\" className=",
+          "<input name=\"email\" type=\"email\" placeholder={t(\"supplier_slug_SupplierDetail.form_email\")} className="
+        ],
+        [
+          "<input name=\"phone\" placeholder=\"Phone / Zalo\" className=",
+          "<input name=\"phone\" placeholder={t(\"supplier_slug_SupplierDetail.form_phone\")} className="
+        ],
+        [
+          "<textarea name=\"q\" placeholder=\"Your requirements: product, quantity, deadline...\" className=",
+          "<textarea name=\"q\" placeholder={t(\"supplier_slug_SupplierDetail.form_requirements\")} className="
+        ],
+        [
+          ">📨 Send RFQ — reply within 24h</button>",
+          ">{t(\"supplier_slug_SupplierDetail.send_rfq_24h\")}</button>"
+        ],
+        [
+          ">Main Tags</b>",
+          ">{t(\"supplier_slug_SupplierDetail.main_tags\")}</b>"
+        ],
+        [
+          ">🛡 Trade Protection</b>",
+          ">{t(\"supplier_slug_SupplierDetail.trade_protection\")}</b>"
+        ],
+        [
+          "<li>✓ Trade Assurance — 100% refund if not as described</li>",
+          "<li>{t(\"supplier_slug_SupplierDetail.tp_refund\")}</li>"
+        ],
+        [
+          "<li>✓ Escrow account VCB · BIDV · BoC</li>",
+          "<li>{t(\"supplier_slug_SupplierDetail.tp_escrow\")}</li>"
+        ],
+        [
+          "<li>✓ Pre-shipment inspection (AQL 2.5)</li>",
+          "<li>{t(\"supplier_slug_SupplierDetail.tp_inspection\")}</li>"
+        ],
+        [
+          "<li>✓ Shipping insurance at 110% of value</li>",
+          "<li>{t(\"supplier_slug_SupplierDetail.tp_insurance\")}</li>"
+        ],
+        [
+          "function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: number; heroProducts: Product[] }) {\n  return (",
+          "async function HomeTab({ f, foundedYear, heroProducts }: { f: Factory; foundedYear: number; heroProducts: Product[] }) {\n  const t = await getT();\n  return ("
+        ],
+        [
+          ">Key Facts</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.home_key_facts\")}</h2>"
+        ],
+        [
+          "<h2 className=\"text-[16px] font-bold text-ink mb-3\">Featured Products</h2>",
+          "<h2 className=\"text-[16px] font-bold text-ink mb-3\">{t(\"supplier_slug_SupplierDetail.home_featured_products\")}</h2>"
+        ],
+        [
+          "<h2 className=\"text-[16px] font-bold text-ink mb-3\">Production Lines</h2>\n        <div className=\"grid grid-cols-4 gap-2 max-md:grid-cols-2\">",
+          "<h2 className=\"text-[16px] font-bold text-ink mb-3\">{t(\"supplier_slug_SupplierDetail.home_production_lines\")}</h2>\n        <div className=\"grid grid-cols-4 gap-2 max-md:grid-cols-2\">"
+        ],
+        [
+          ">Certifications</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.home_certifications\")}</h2>"
+        ],
+        [
+          "function ProductsTab({ f, products, radioName }: { f: Factory; products: Product[]; radioName: string }) {\n  const categories",
+          "async function ProductsTab({ f, products, radioName }: { f: Factory; products: Product[]; radioName: string }) {\n  const t = await getT();\n  const categories"
+        ],
+        [
+          ">Product Catalog</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.products_catalog\")}</h2>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">📦 Flexible MOQ</b>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.products_flexible_moq\")}</b>"
+        ],
+        [
+          "            MOQ from 50 units. Combine multiple SKUs to reach the MOQ. 5-12% off by quantity tier (200, 500, 1,000).\n          </p>",
+          "            {t(\"supplier_slug_SupplierDetail.products_flexible_moq_desc\")}\n          </p>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">🧪 Sample Before MOQ</b>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.products_sample_title\")}</b>"
+        ],
+        [
+          "            $50-200/sample, 100% credited when the MOQ is placed. Delivered to Vietnam in 8-12 days via the Guangzhou Sample Center.\n          </p>",
+          "            {t(\"supplier_slug_SupplierDetail.products_sample_desc\")}\n          </p>"
+        ],
+        [
+          "          📨 Send Multi-SKU RFQ →\n        </label>",
+          "          {t(\"supplier_slug_SupplierDetail.products_multi_rfq\")}\n        </label>"
+        ],
+        [
+          "function CompanyTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {\n  const milestones",
+          "async function CompanyTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {\n  const t = await getT();\n  const milestones"
+        ],
+        [
+          ">Company History</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.company_history\")}</h2>"
+        ],
+        [
+          ">Leadership Team</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.company_leadership\")}</h2>"
+        ],
+        [
+          ">🏆 Awards & Recognition</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.company_awards\")}</h3>"
+        ],
+        [
+          ">🤝 Association Memberships</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.company_associations\")}</h3>"
+        ],
+        [
+          "function CapacityTab({ f }: { f: Factory }) {\n  return (",
+          "async function CapacityTab({ f }: { f: Factory }) {\n  const t = await getT();\n  return ("
+        ],
+        [
+          ">Machinery & Equipment</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.capacity_machinery\")}</h2>"
+        ],
+        [
+          ">Quality Control (QC) System</h2>",
+          ">{t(\"supplier_slug_SupplierDetail.capacity_qc_system\")}</h2>"
+        ],
+        [
+          ">🧪 Research & Development</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.capacity_rnd\")}</h3>"
+        ],
+        [
+          ">🌱 Sustainability & Environment</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.capacity_sustainability\")}</h3>"
+        ],
+        [
+          "function ContactTab({ f }: { f: Factory }) {\n  return (",
+          "async function ContactTab({ f }: { f: Factory }) {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "            🇨🇳 Headquarters\n          </span>",
+          "            {t(\"supplier_slug_SupplierDetail.contact_hq_badge\")}\n          </span>"
+        ],
+        [
+          "            🇻🇳 Vietnam Representative\n          </span>",
+          "            {t(\"supplier_slug_SupplierDetail.contact_vn_badge\")}\n          </span>"
+        ],
+        [
+          "<h3 className=\"text-[15px] font-bold text-ink mb-1\">Huayuesc Hanoi Office</h3>",
+          "<h3 className=\"text-[15px] font-bold text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.contact_vn_office\")}</h3>"
+        ],
+        [
+          "              Dedicated Account Manager\n            </span>",
+          "              {t(\"supplier_slug_SupplierDetail.contact_account_manager\")}\n            </span>"
+        ],
+        [
+          ">📞 Call Now</a>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_call_now\")}</a>"
+        ],
+        [
+          ">💬 Chat on Zalo</a>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_chat_zalo\")}</a>"
+        ],
+        [
+          ">✉ Email</a>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_email\")}</a>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">Send RFQ</b>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.contact_send_rfq\")}</b>"
+        ],
+        [
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">60-second form — reply within 24h. Include specs, quantity, deadline.</p>",
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">{t(\"supplier_slug_SupplierDetail.contact_send_rfq_desc\")}</p>"
+        ],
+        [
+          ">Open RFQ form →</Link>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_open_rfq\")}</Link>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">Book a Video Call</b>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.contact_book_video\")}</b>"
+        ],
+        [
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">Live video call with the sales team + factory floor (with simultaneous Chinese-Vietnamese interpretation).</p>",
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">{t(\"supplier_slug_SupplierDetail.contact_book_video_desc\")}</p>"
+        ],
+        [
+          ">Book →</Link>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_book\")}</Link>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">Factory Tour</b>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(\"supplier_slug_SupplierDetail.contact_factory_tour\")}</b>"
+        ],
+        [
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">A Vietnamese buyer delegation travels with the Huayuesc team — cost ~$580/4 days.</p>",
+          "<p className=\"text-[11.5px] text-mute leading-snug mb-2\">{t(\"supplier_slug_SupplierDetail.contact_factory_tour_desc\")}</p>"
+        ],
+        [
+          ">Register →</Link>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_register\")}</Link>"
+        ],
+        [
+          ">📍 Factory Location</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.contact_factory_location\")}</h3>"
+        ],
+        [
+          "              🧭 Open Google Maps →\n            </a>",
+          "              {t(\"supplier_slug_SupplierDetail.contact_open_maps\")}\n            </a>"
+        ],
+        [
+          "function Vr360Tab({ f }: { f: Factory }) {",
+          "async function Vr360Tab({ f }: { f: Factory }) {\n  const t = await getT();"
+        ],
+        [
+          "            🎬 360° Virtual Tour\n          </span>",
+          "            {t(\"supplier_slug_SupplierDetail.vr_badge\")}\n          </span>"
+        ],
+        [
+          ">What you can see in the tour</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.vr_what_you_see\")}</h3>"
+        ],
+        [
+          ">How to navigate</h3>",
+          ">{t(\"supplier_slug_SupplierDetail.vr_how_navigate\")}</h3>"
+        ],
+        [
+          "<h3 className=\"text-[16px] font-bold mb-1\">Want to see the real factory, not just VR?</h3>",
+          "<h3 className=\"text-[16px] font-bold mb-1\">{t(\"supplier_slug_SupplierDetail.vr_cta_title\")}</h3>"
+        ],
+        [
+          "              Huayuesc runs 4-day, 3-night factory tour delegations in Guangzhou / Shenzhen / Foshan. Cost ~$580/person, traveling with the Huayuesc team + an interpreter.\n            </p>",
+          "              {t(\"supplier_slug_SupplierDetail.vr_cta_desc\")}\n            </p>"
+        ],
+        [
+          "            ✈ Register for an In-Person Tour\n          </Link>",
+          "            {t(\"supplier_slug_SupplierDetail.vr_cta_register\")}\n          </Link>"
+        ],
+        [
+          "function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {\n  const shortName",
+          "async function AiTab({ f, foundedYear }: { f: Factory; foundedYear: number }) {\n  const t = await getT();\n  const shortName"
+        ],
+        [
+          ">📚 Data the AI was trained on:</div>",
+          ">{t(\"supplier_slug_SupplierDetail.ai_data_trained\")}</div>"
+        ],
+        [
+          "<div className=\"text-[12px] font-bold text-mute mb-2\">💡 Tap a topic to see a sample AI answer:</div>",
+          "<div className=\"text-[12px] font-bold text-mute mb-2\">{t(\"supplier_slug_SupplierDetail.ai_tap_topic\")}</div>"
+        ],
+        [
+          "<span className=\"text-[10.5px] text-mute2 ml-2\">CSR AI is typing...</span>",
+          "<span className=\"text-[10.5px] text-mute2 ml-2\">{t(\"supplier_slug_SupplierDetail.ai_typing\")}</span>"
+        ],
+        [
+          "              placeholder=\"Ask about products, MOQ, samples, lead time, OEM... (Demo — coming Q3/2026)\"",
+          "              placeholder={t(\"supplier_slug_SupplierDetail.ai_input_placeholder\")}"
+        ],
+        [
+          "              📤 Send\n            </button>",
+          "              {t(\"supplier_slug_SupplierDetail.ai_send\")}\n            </button>"
+        ],
+        [
+          "<div className=\"text-[13px] font-bold text-fg mb-2\">✅ The AI can answer:</div>",
+          "<div className=\"text-[13px] font-bold text-fg mb-2\">{t(\"supplier_slug_SupplierDetail.ai_can_answer\")}</div>"
+        ],
+        [
+          "<div className=\"text-[13px] font-bold text-fg mb-2\">❌ The AI does not replace:</div>",
+          "<div className=\"text-[13px] font-bold text-fg mb-2\">{t(\"supplier_slug_SupplierDetail.ai_not_replace\")}</div>"
+        ]
+      ],
+      "deferred": "TABS (module-level array, lines 7-15: \"Supplier Home\",\"AI Assistant\",\"360° Tour\",\"Products\",\"Company Profile\",\"Production Capacity\",\"Contact\") — render site uses map callback param also named `t` ({t.label}), nên không thể bọc bằng translator `t` (shadowing). CERTS (CE/ISO 9001/BSCI/Sedex/FSC/RoHS) — mã chuẩn/brand, không dịch. Mảng dữ liệu module-bên-trong-component (Key Facts, milestones, leaders, machinery, QC stages, R&D/sustainability lists, AI conversation/trainingSources/quickTopics) — giá trị render qua map với nhiều chuỗi dài chứa template literal `${f...}`, cần đổi sang key + đa edit phức tạp; bỏ qua để tránh sai (giữ nguyên). Các tiêu đề dùng template literal có {f.name} (About/Company Profile/Production Capacity/Tour the ... factory, Contact {f.name} ở ContactTab) — bỏ qua vì lẫn biến."
+    },
+    {
+      "file": "src/app/search/page.tsx",
+      "isClient": false,
+      "keys": {
+        "search.filter_result_type": "Result Type",
+        "search.opt_products": "Products",
+        "search.opt_suppliers": "Suppliers",
+        "search.opt_trade_show": "Trade Show",
+        "search.filter_price": "Price",
+        "search.filter_moq": "MOQ",
+        "search.filter_origin": "Origin",
+        "search.results_for": "Search results for",
+        "search.all": "all",
+        "search.found_summary": "Found {n} products · 12 suppliers · 3 trade shows",
+        "search.related_suppliers": "Related Suppliers",
+        "search.cant_find": "Can't find the right product?",
+        "search.rfq_desc": "Send an RFQ — we'll find 5-10 matching factories within 24h.",
+        "search.send_rfq": "Send RFQ",
+        "search.bc_home": "Home",
+        "search.bc_search": "Search",
+        "search.bc_all": "All"
+      },
+      "edits": [
+        [
+          "import { SECTIONS, FACTORIES } from \"@/data/home\";",
+          "import { SECTIONS, FACTORIES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const FILTERS = [\n  { title: \"Result Type\", options: [\"Products\", \"Suppliers\", \"Trade Show\"] },\n  { title: \"Price\", options: [\"< $10\", \"$10 – $50\", \"$50 – $200\", \"> $200\"] },\n  { title: \"MOQ\", options: [\"1 – 50\", \"50 – 200\", \"200 – 1000\", \"1000+\"] },\n  { title: \"Origin\", options: [\"Foshan\", \"Guangzhou\", \"Dongguan\", \"Shanghai\"] },\n];",
+          "const FILTERS = [\n  { title: \"search.filter_result_type\", options: [\"search.opt_products\", \"search.opt_suppliers\", \"search.opt_trade_show\"] },\n  { title: \"search.filter_price\", options: [\"< $10\", \"$10 – $50\", \"$50 – $200\", \"> $200\"] },\n  { title: \"search.filter_moq\", options: [\"1 – 50\", \"50 – 200\", \"200 – 1000\", \"1000+\"] },\n  { title: \"search.filter_origin\", options: [\"Foshan\", \"Guangzhou\", \"Dongguan\", \"Shanghai\"] },\n];"
+        ],
+        [
+          "  const sp = await searchParams;\n  const q = (sp.q ?? \"\").trim();",
+          "  const t = await getT();\n  const sp = await searchParams;\n  const q = (sp.q ?? \"\").trim();"
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Search\" }, { label: q || \"All\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"search.bc_home\"), href: \"/\" }, { label: t(\"search.bc_search\") }, { label: q || t(\"search.bc_all\") }]} />"
+        ],
+        [
+          "            Search results for <span className=\"text-brand\">&ldquo;{q || \"all\"}&rdquo;</span>",
+          "            {t(\"search.results_for\")} <span className=\"text-brand\">&ldquo;{q || t(\"search.all\")}&rdquo;</span>"
+        ],
+        [
+          "<p className=\"text-[13px] text-mute mt-1\">Found {results.length} products · 12 suppliers · 3 trade shows</p>",
+          "<p className=\"text-[13px] text-mute mt-1\">{t(\"search.found_summary\").replace(\"{n}\", String(results.length))}</p>"
+        ],
+        [
+          "            {[\"Products\", \"Suppliers\", \"Trade Show\"].map((t, i) => (\n              <a key={t} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? \"bg-brand text-white font-semibold\" : \"border border-line text-mute hover:border-brand\"}`}>{t}</a>\n            ))}",
+          "            {[\"search.opt_products\", \"search.opt_suppliers\", \"search.opt_trade_show\"].map((label, i) => (\n              <a key={label} className={`px-4 py-2 text-[12.5px] rounded-sm cursor-pointer ${i === 0 ? \"bg-brand text-white font-semibold\" : \"border border-line text-mute hover:border-brand\"}`}>{t(label)}</a>\n            ))}"
+        ],
+        [
+          "<b className=\"block text-[13px] font-semibold text-ink mb-2\">{f.title}</b>",
+          "<b className=\"block text-[13px] font-semibold text-ink mb-2\">{t(f.title)}</b>"
+        ],
+        [
+          "                    <input type=\"checkbox\" className=\"accent-brand\" /> {o}",
+          "                    <input type=\"checkbox\" className=\"accent-brand\" /> {f.title === \"search.filter_result_type\" ? t(o) : o}"
+        ],
+        [
+          "<h2 className=\"text-[15px] font-bold text-ink mb-3\">Related Suppliers</h2>",
+          "<h2 className=\"text-[15px] font-bold text-ink mb-3\">{t(\"search.related_suppliers\")}</h2>"
+        ],
+        [
+          "              <b className=\"block text-[16px] mb-1\">Can&apos;t find the right product?</b>\n              <span className=\"text-[12.5px] opacity-85\">Send an RFQ — we&apos;ll find 5-10 matching factories within 24h.</span>",
+          "              <b className=\"block text-[16px] mb-1\">{t(\"search.cant_find\")}</b>\n              <span className=\"text-[12.5px] opacity-85\">{t(\"search.rfq_desc\")}</span>"
+        ],
+        [
+          "className=\"px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]\">📨 Send RFQ →</Link>",
+          "className=\"px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px]\">📨 {t(\"search.send_rfq\")} →</Link>"
+        ]
+      ],
+      "deferred": "Các option của FILTERS (Price/MOQ/Origin) là mã giá/số/đơn vị (< $10, 1 – 50, 1000+) và tên địa danh Trung Quốc (Foshan, Guangzhou...) — không dịch theo quy ước (số/đơn vị, danh từ riêng). metadata.title \"Search — Huayuesc\" chứa thương hiệu, để nguyên."
+    },
+    {
+      "file": "src/app/search/by-image/page.tsx",
+      "isClient": false,
+      "keys": {
+        "search_by_image.breadcrumb_home": "Home",
+        "search_by_image.breadcrumb_self": "Search by Image",
+        "search_by_image.hero_title": "Find products by image",
+        "search_by_image.hero_desc": "AI image recognition in 5 seconds suggests 40+ factories with similar products. Ideal when you have a sample photo but don't know the exact name or keyword.",
+        "search_by_image.keyword_received_prefix": "Keyword received:",
+        "search_by_image.keyword_received_suffix": "· You can also upload a photo",
+        "search_by_image.drop_title": "Drag & drop an image here",
+        "search_by_image.choose_file_prefix": "or click to choose a file from your device ·",
+        "search_by_image.formats": "JPG / PNG / WEBP",
+        "search_by_image.size_limit": "· Up to 10MB",
+        "search_by_image.choose_image_btn": "📷 Choose an image",
+        "search_by_image.sample_prompt": "Or try a sample image:",
+        "search_by_image.step_upload_title": "Upload an image",
+        "search_by_image.step_upload_desc": "Snap or upload a product photo. JPG/PNG/WEBP supported.",
+        "search_by_image.step_ai_title": "AI analysis",
+        "search_by_image.step_ai_desc": "The system recognizes product features: shape, color, and material.",
+        "search_by_image.step_results_title": "Instant results",
+        "search_by_image.step_results_desc": "See similar products plus audited factories that can supply them.",
+        "search_by_image.tips_label": "💡 Tips for the best results:",
+        "search_by_image.tips_body": "Photograph the product against a bright background with clear, unobstructed detail. You can upload multiple images at once (up to 10MB each) for more accurate AI analysis.",
+        "search_by_image.cta_no_image": "No image? Try",
+        "search_by_image.cta_search_keyword": "searching by keyword",
+        "search_by_image.cta_or": "or",
+        "search_by_image.cta_send_rfq": "sending a written RFQ",
+        "search_by_image.cta_tail": "so suppliers can reach out directly."
+      },
+      "edits": [
+        [
+          "import Link from \"next/link\";\nimport { Breadcrumb } from \"@/components/category/breadcrumb\";",
+          "import Link from \"next/link\";\nimport { Breadcrumb } from \"@/components/category/breadcrumb\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const sp = await searchParams;\n  const q = typeof sp.q === \"string\" ? sp.q : \"\";",
+          "  const t = await getT();\n  const sp = await searchParams;\n  const q = typeof sp.q === \"string\" ? sp.q : \"\";"
+        ],
+        [
+          "          { label: \"Home\", href: \"/\" },\n          { label: \"Search by Image\" },",
+          "          { label: t(\"search_by_image.breadcrumb_home\"), href: \"/\" },\n          { label: t(\"search_by_image.breadcrumb_self\") },"
+        ],
+        [
+          "            <h1 className=\"text-[26px] font-bold text-ink mb-2 max-md:text-[20px]\">\n              Find products by image\n            </h1>",
+          "            <h1 className=\"text-[26px] font-bold text-ink mb-2 max-md:text-[20px]\">\n              {t(\"search_by_image.hero_title\")}\n            </h1>"
+        ],
+        [
+          "            <p className=\"text-[13.5px] text-mute max-w-[640px] mx-auto leading-relaxed max-md:text-[12.5px]\">\n              AI image recognition in 5 seconds suggests 40+ factories with\n              similar products. Ideal when you have a sample photo but don&apos;t\n              know the exact name or keyword.\n            </p>",
+          "            <p className=\"text-[13.5px] text-mute max-w-[640px] mx-auto leading-relaxed max-md:text-[12.5px]\">\n              {t(\"search_by_image.hero_desc\")}\n            </p>"
+        ],
+        [
+          "              <p className=\"text-[12px] text-mute2 mt-2\">\n                Keyword received: <b className=\"text-ink\">{q}</b> · You can also\n                upload a photo\n              </p>",
+          "              <p className=\"text-[12px] text-mute2 mt-2\">\n                {t(\"search_by_image.keyword_received_prefix\")} <b className=\"text-ink\">{q}</b> {t(\"search_by_image.keyword_received_suffix\")}\n              </p>"
+        ],
+        [
+          "              <h3 className=\"text-[16px] font-bold text-ink mb-1.5\">\n                Drag &amp; drop an image here\n              </h3>",
+          "              <h3 className=\"text-[16px] font-bold text-ink mb-1.5\">\n                {t(\"search_by_image.drop_title\")}\n              </h3>"
+        ],
+        [
+          "              <p className=\"text-[12.5px] text-mute mb-4\">\n                or click to choose a file from your device ·{\" \"}\n                <span className=\"text-brand font-medium\">JPG / PNG / WEBP</span>{\" \"}\n                · Up to 10MB\n              </p>",
+          "              <p className=\"text-[12.5px] text-mute mb-4\">\n                {t(\"search_by_image.choose_file_prefix\")}{\" \"}\n                <span className=\"text-brand font-medium\">{t(\"search_by_image.formats\")}</span>{\" \"}\n                {t(\"search_by_image.size_limit\")}\n              </p>"
+        ],
+        [
+          "              <span className=\"inline-block px-6 py-2.5 bg-brand text-white font-bold text-[13px] rounded-sm hover:bg-brand-light cursor-pointer\">\n                📷 Choose an image\n              </span>",
+          "              <span className=\"inline-block px-6 py-2.5 bg-brand text-white font-bold text-[13px] rounded-sm hover:bg-brand-light cursor-pointer\">\n                {t(\"search_by_image.choose_image_btn\")}\n              </span>"
+        ],
+        [
+          "            <p className=\"text-[12.5px] text-center text-mute mb-3\">\n              Or try a sample image:\n            </p>",
+          "            <p className=\"text-[12.5px] text-center text-mute mb-3\">\n              {t(\"search_by_image.sample_prompt\")}\n            </p>"
+        ],
+        [
+          "              {\n                icon: \"📤\",\n                title: \"Upload an image\",\n                desc: \"Snap or upload a product photo. JPG/PNG/WEBP supported.\",\n              },\n              {\n                icon: \"🤖\",\n                title: \"AI analysis\",\n                desc: \"The system recognizes product features: shape, color, and material.\",\n              },\n              {\n                icon: \"🏭\",\n                title: \"Instant results\",\n                desc: \"See similar products plus audited factories that can supply them.\",\n              },",
+          "              {\n                icon: \"📤\",\n                title: t(\"search_by_image.step_upload_title\"),\n                desc: t(\"search_by_image.step_upload_desc\"),\n              },\n              {\n                icon: \"🤖\",\n                title: t(\"search_by_image.step_ai_title\"),\n                desc: t(\"search_by_image.step_ai_desc\"),\n              },\n              {\n                icon: \"🏭\",\n                title: t(\"search_by_image.step_results_title\"),\n                desc: t(\"search_by_image.step_results_desc\"),\n              },"
+        ],
+        [
+          "            <b className=\"text-brand\">💡 Tips for the best results:</b> Photograph\n            the product against a bright background with clear, unobstructed\n            detail. You can upload multiple images at once (up to 10MB each) for\n            more accurate AI analysis.",
+          "            <b className=\"text-brand\">{t(\"search_by_image.tips_label\")}</b>{\" \"}\n            {t(\"search_by_image.tips_body\")}"
+        ],
+        [
+          "            No image? Try{\" \"}\n            <Link href=\"/search\" className=\"text-brand hover:underline font-medium\">\n              searching by keyword\n            </Link>{\" \"}\n            or{\" \"}",
+          "            {t(\"search_by_image.cta_no_image\")}{\" \"}\n            <Link href=\"/search\" className=\"text-brand hover:underline font-medium\">\n              {t(\"search_by_image.cta_search_keyword\")}\n            </Link>{\" \"}\n            {t(\"search_by_image.cta_or\")}{\" \"}"
+        ],
+        [
+          "              sending a written RFQ\n            </Link>{\" \"}\n            so suppliers can reach out directly.",
+          "              {t(\"search_by_image.cta_send_rfq\")}\n            </Link>{\" \"}\n            {t(\"search_by_image.cta_tail\")}"
+        ]
+      ],
+      "deferred": "Sample image labels (Chair, Tile, Lamp, Faucet, Sofa, Kitchen Cabinet) in the `{seed,label}` array: bỏ qua vì `label` đồng thời dùng cho `href={encodeURIComponent(s.label)}` (URL query) và `alt={s.label}` — đổi sang key sẽ phá URL tìm kiếm. Để nguyên giá trị data."
+    },
+    {
+      "file": "src/app/login/page.tsx",
+      "isClient": false,
+      "keys": {
+        "login.vp_factories_title": "40+ audited factories",
+        "login.vp_factories_desc": "Verified suppliers with on-site inspection reports, photos and production line videos.",
+        "login.vp_quotes_title": "Quotes in < 24h",
+        "login.vp_quotes_desc": "Send one RFQ, receive 5–10 quotes from matching factories within one business day.",
+        "login.vp_trade_title": "Trade Assurance",
+        "login.vp_trade_desc": "100% refund if goods are delivered off-spec, short on quantity, or past the agreed deadline.",
+        "login.vp_ddp_title": "DDP to warehouse in 18 days",
+        "login.vp_ddp_desc": "All-inclusive shipping + duties + customs clearance from Guangzhou/Ningbo to Hanoi/HCMC.",
+        "login.bc_home": "Home",
+        "login.bc_signin": "Sign In",
+        "login.tab_signin": "Sign In",
+        "login.tab_signup": "Sign Up",
+        "login.social_aria": "Sign in with",
+        "login.divider_email": "Or sign in with email",
+        "login.label_login": "Email or phone number",
+        "login.ph_login": "email@example.com or 09xx xxx xxx",
+        "login.label_password": "Password",
+        "login.remember_me": "Remember me",
+        "login.forgot_password": "Forgot Password?",
+        "login.btn_signin": "Sign In",
+        "login.no_account": "Don't have an account?",
+        "login.register_buyer": "Register as Buyer",
+        "login.register_buyer_sub": "Vietnamese buyers and dealers",
+        "login.register_supplier": "Register as Supplier",
+        "login.register_supplier_sub": "Chinese factories",
+        "login.help_center": "Help Center",
+        "login.terms": "Terms",
+        "login.privacy": "Privacy",
+        "login.hero_badge": "⚡ Huayuesc 2026",
+        "login.hero_title_a": "Your gateway to direct imports",
+        "login.hero_title_b": "from",
+        "login.hero_title_c": "40+ factories",
+        "login.hero_title_d": "in China",
+        "login.hero_desc": "Sign in to resume open RFQs, track orders, save favorite products, and manage contracts — all in one place.",
+        "login.stat_dealers": "Registered VN dealers",
+        "login.stat_products": "Verified products",
+        "login.stat_gmv": "GMV in 2025",
+        "login.badge_moit": "✓ Vietnam Ministry of Industry & Trade",
+        "login.badge_iso": "✓ ISO 27001",
+        "login.badge_ssl": "✓ SSL Secured",
+        "login.badge_tuv": "✓ TUV Audited",
+        "login.meta_title": "Sign In — Huayuesc"
+      },
+      "edits": [
+        [
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";",
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "    title: \"40+ audited factories\",\n    desc: \"Verified suppliers with on-site inspection reports, photos and production line videos.\",",
+          "    title: \"login.vp_factories_title\",\n    desc: \"login.vp_factories_desc\","
+        ],
+        [
+          "    title: \"Quotes in < 24h\",\n    desc: \"Send one RFQ, receive 5–10 quotes from matching factories within one business day.\",",
+          "    title: \"login.vp_quotes_title\",\n    desc: \"login.vp_quotes_desc\","
+        ],
+        [
+          "    title: \"Trade Assurance\",\n    desc: \"100% refund if goods are delivered off-spec, short on quantity, or past the agreed deadline.\",",
+          "    title: \"login.vp_trade_title\",\n    desc: \"login.vp_trade_desc\","
+        ],
+        [
+          "    title: \"DDP to warehouse in 18 days\",\n    desc: \"All-inclusive shipping + duties + customs clearance from Guangzhou/Ningbo to Hanoi/HCMC.\",",
+          "    title: \"login.vp_ddp_title\",\n    desc: \"login.vp_ddp_desc\","
+        ],
+        [
+          "export default function LoginPage() {\n  return (",
+          "export default async function LoginPage() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Sign In\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"login.bc_home\"), href: \"/\" }, { label: t(\"login.bc_signin\") }]} />"
+        ],
+        [
+          "<span className=\"flex-1 px-4 py-3 text-center text-[14px] font-bold border-b-2 border-brand text-brand cursor-default\">\n              Sign In\n            </span>",
+          "<span className=\"flex-1 px-4 py-3 text-center text-[14px] font-bold border-b-2 border-brand text-brand cursor-default\">\n              {t(\"login.tab_signin\")}\n            </span>"
+        ],
+        [
+          "              className=\"flex-1 px-4 py-3 text-center text-[14px] font-semibold border-b-2 border-transparent text-mute hover:text-brand cursor-pointer\"\n            >\n              Sign Up\n            </Link>",
+          "              className=\"flex-1 px-4 py-3 text-center text-[14px] font-semibold border-b-2 border-transparent text-mute hover:text-brand cursor-pointer\"\n            >\n              {t(\"login.tab_signup\")}\n            </Link>"
+        ],
+        [
+          "                aria-label={`Sign in with ${p.name}`}",
+          "                aria-label={`${t(\"login.social_aria\")} ${p.name}`}"
+        ],
+        [
+          "<span className=\"text-[10.5px] text-mute2 uppercase tracking-wider\">\n              Or sign in with email\n            </span>",
+          "<span className=\"text-[10.5px] text-mute2 uppercase tracking-wider\">\n              {t(\"login.divider_email\")}\n            </span>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">\n                Email or phone number\n              </label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">\n                {t(\"login.label_login\")}\n              </label>"
+        ],
+        [
+          "                placeholder=\"email@example.com or 09xx xxx xxx\"",
+          "                placeholder={t(\"login.ph_login\")}"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">\n                Password\n              </label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">\n                {t(\"login.label_password\")}\n              </label>"
+        ],
+        [
+          "                <input type=\"checkbox\" className=\"accent-brand\" />\n                Remember me\n              </label>",
+          "                <input type=\"checkbox\" className=\"accent-brand\" />\n                {t(\"login.remember_me\")}\n              </label>"
+        ],
+        [
+          "<Link href=\"/info/quen-mat-khau\" className=\"text-brand hover:underline cursor-pointer\">\n                Forgot Password?\n              </Link>",
+          "<Link href=\"/info/quen-mat-khau\" className=\"text-brand hover:underline cursor-pointer\">\n                {t(\"login.forgot_password\")}\n              </Link>"
+        ],
+        [
+          "              className=\"w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light\"\n            >\n              Sign In\n            </button>",
+          "              className=\"w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light\"\n            >\n              {t(\"login.btn_signin\")}\n            </button>"
+        ],
+        [
+          "<p className=\"text-[12.5px] text-mute mb-3 text-center\">Don&apos;t have an account?</p>",
+          "<p className=\"text-[12.5px] text-mute mb-3 text-center\">{t(\"login.no_account\")}</p>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-brand mb-0.5\">Register as Buyer</b>\n                <small className=\"text-[10.5px] text-mute leading-tight\">\n                  Vietnamese buyers and dealers\n                </small>",
+          "<b className=\"block text-[13px] text-brand mb-0.5\">{t(\"login.register_buyer\")}</b>\n                <small className=\"text-[10.5px] text-mute leading-tight\">\n                  {t(\"login.register_buyer_sub\")}\n                </small>"
+        ],
+        [
+          "<b className=\"block text-[13px] text-brand-dark mb-0.5\">Register as Supplier</b>\n                <small className=\"text-[10.5px] text-mute leading-tight\">\n                  Chinese factories\n                </small>",
+          "<b className=\"block text-[13px] text-brand-dark mb-0.5\">{t(\"login.register_supplier\")}</b>\n                <small className=\"text-[10.5px] text-mute leading-tight\">\n                  {t(\"login.register_supplier_sub\")}\n                </small>"
+        ],
+        [
+          "<Link href=\"/help\" className=\"hover:text-brand cursor-pointer\">Help Center</Link>",
+          "<Link href=\"/help\" className=\"hover:text-brand cursor-pointer\">{t(\"login.help_center\")}</Link>"
+        ],
+        [
+          "<Link href=\"/info/terms-of-service\" className=\"hover:text-brand cursor-pointer\">Terms</Link>",
+          "<Link href=\"/info/terms-of-service\" className=\"hover:text-brand cursor-pointer\">{t(\"login.terms\")}</Link>"
+        ],
+        [
+          "<Link href=\"/info/privacy-policy\" className=\"hover:text-brand cursor-pointer\">Privacy</Link>",
+          "<Link href=\"/info/privacy-policy\" className=\"hover:text-brand cursor-pointer\">{t(\"login.privacy\")}</Link>"
+        ],
+        [
+          "<span className=\"inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3\">\n              ⚡ Huayuesc 2026\n            </span>",
+          "<span className=\"inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3\">\n              {t(\"login.hero_badge\")}\n            </span>"
+        ],
+        [
+          "<h2 className=\"text-[22px] font-extrabold leading-tight mb-2\">\n              Your gateway to direct imports <br />from <span className=\"text-gold\">40+ factories</span> in China\n            </h2>",
+          "<h2 className=\"text-[22px] font-extrabold leading-tight mb-2\">\n              {t(\"login.hero_title_a\")} <br />{t(\"login.hero_title_b\")} <span className=\"text-gold\">{t(\"login.hero_title_c\")}</span> {t(\"login.hero_title_d\")}\n            </h2>"
+        ],
+        [
+          "<p className=\"text-[12.5px] opacity-85 leading-relaxed\">\n              Sign in to resume open RFQs, track orders, save favorite products,\n              and manage contracts — all in one place.\n            </p>",
+          "<p className=\"text-[12.5px] opacity-85 leading-relaxed\">\n              {t(\"login.hero_desc\")}\n            </p>"
+        ],
+        [
+          "{v.icon}</div>\n                <b className=\"block text-[13px] text-ink mb-1\">{v.title}</b>\n                <p className=\"text-[11.5px] text-mute leading-snug\">{v.desc}</p>",
+          "{v.icon}</div>\n                <b className=\"block text-[13px] text-ink mb-1\">{t(v.title)}</b>\n                <p className=\"text-[11.5px] text-mute leading-snug\">{t(v.desc)}</p>"
+        ],
+        [
+          "<small className=\"text-[11px] text-mute\">Registered VN dealers</small>",
+          "<small className=\"text-[11px] text-mute\">{t(\"login.stat_dealers\")}</small>"
+        ],
+        [
+          "<small className=\"text-[11px] text-mute\">Verified products</small>",
+          "<small className=\"text-[11px] text-mute\">{t(\"login.stat_products\")}</small>"
+        ],
+        [
+          "<small className=\"text-[11px] text-mute\">GMV in 2025</small>",
+          "<small className=\"text-[11px] text-mute\">{t(\"login.stat_gmv\")}</small>"
+        ],
+        [
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">✓ Vietnam Ministry of Industry &amp; Trade</span>",
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">{t(\"login.badge_moit\")}</span>"
+        ],
+        [
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">✓ ISO 27001</span>",
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">{t(\"login.badge_iso\")}</span>"
+        ],
+        [
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">✓ SSL Secured</span>",
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">{t(\"login.badge_ssl\")}</span>"
+        ],
+        [
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">✓ TUV Audited</span>",
+          "<span className=\"px-2.5 py-1 bg-bg border border-line rounded-sm\">{t(\"login.badge_tuv\")}</span>"
+        ],
+        [
+          "export const metadata = { title: \"Sign In — Huayuesc\" };",
+          "export const metadata = { title: \"Sign In — Huayuesc\" };"
+        ]
+      ],
+      "deferred": "metadata.title (\"Sign In — Huayuesc\") nằm trong hằng module-level `export const metadata`, không có chỗ render JSX để bọc t(); để i18n hoá cần đổi sang generateMetadata async — ngoài phạm vi an toàn nên bỏ qua."
+    },
+    {
+      "file": "src/app/buying-request/page.tsx",
+      "isClient": false,
+      "keys": {
+        "buying_request.bc_home": "Home",
+        "buying_request.bc_rfq": "Request for Quotation",
+        "buying_request.hero_badge": "📨 RFQ — REQUEST FOR QUOTATION",
+        "buying_request.hero_title": "Send a request — Get quotes within 24h",
+        "buying_request.hero_desc": "Describe it once — sent to 5-10 matching factories. Quotes include samples, lead times, and DDP to Vietnam.",
+        "buying_request.form_title": "Request for Quotation Form",
+        "buying_request.label_product": "Product you need",
+        "buying_request.ph_product": "e.g. porcelain tile 600x1200 calacatta white",
+        "buying_request.label_category": "Category",
+        "buying_request.opt_select_category": "-- Select category --",
+        "buying_request.label_qty": "Quantity + unit",
+        "buying_request.ph_qty": "e.g. 500 m² or 30 sets",
+        "buying_request.label_desc": "Detailed description",
+        "buying_request.ph_desc": "Describe the product: dimensions, color, material, standards, deadline...",
+        "buying_request.label_ref_images": "Reference images",
+        "buying_request.dropzone_choose": "click to choose files",
+        "buying_request.dropzone_hint_after": " — up to 5 images, under 5MB each",
+        "buying_request.label_dest_port": "Destination port",
+        "buying_request.opt_port_catlai": "Cat Lai – HCMC",
+        "buying_request.opt_port_haiphong": "Hai Phong – HP",
+        "buying_request.opt_port_danang": "Da Nang – DN",
+        "buying_request.opt_port_ddp": "DDP to warehouse (recommended)",
+        "buying_request.label_budget": "Budget / unit",
+        "buying_request.opt_budget_flexible": "Flexible",
+        "buying_request.opt_budget_under10": "Under $10",
+        "buying_request.opt_budget_10_50": "$10 – $50",
+        "buying_request.opt_budget_50_200": "$50 – $200",
+        "buying_request.opt_budget_over200": "Over $200",
+        "buying_request.label_urgency": "Urgency",
+        "buying_request.urgency_standard": "Standard (24h)",
+        "buying_request.urgency_fast": "Fast (12h)",
+        "buying_request.urgency_urgent": "Urgent (6h)",
+        "buying_request.btn_send": "🚀 Send RFQ Now",
+        "buying_request.note_free": "Free · No registration required · Quotes within 24h",
+        "buying_request.sent_success": "✓ Your RFQ has been sent to matching suppliers. We'll respond by email within 24h.",
+        "buying_request.process_title": "3-Step Process",
+        "buying_request.step1_t": "Send RFQ",
+        "buying_request.step1_d": "Describe it once; the system matches suitable factories automatically",
+        "buying_request.step2_t": "Receive 5-10 quotes",
+        "buying_request.step2_d": "Within 24h, with sample images, lead times, and DDP",
+        "buying_request.step3_t": "Choose the best supplier",
+        "buying_request.step3_d": "Compare, chat directly, order samples, and confirm your order",
+        "buying_request.promise_title": "🛡 The Huayuesc Promise",
+        "buying_request.promise_1": "✓ Free quotes, no purchase commitment",
+        "buying_request.promise_2": "✓ Free factory audit before ordering",
+        "buying_request.promise_3": "✓ Trade Assurance payment protection",
+        "buying_request.promise_4": "✓ Vietnamese-language support 24/7",
+        "buying_request.recent_title": "Recent RFQs",
+        "buying_request.quotes_received_suffix": "quotes received",
+        "buying_request.rfq_8421": "Porcelain tile 600x1200 for a 2,000m² project",
+        "buying_request.rfq_8417": "L-shape velvet sofa for an HCMC showroom",
+        "buying_request.rfq_8412": "Smart toilet for a 4-star hotel, MOQ 80pc",
+        "buying_request.rfq_8408": "LED downlight 12W, 1000pc",
+        "buying_request.rfq_8401": "Kitchen cabinet OEM, custom drawing",
+        "buying_request.time_12min": "12 minutes ago",
+        "buying_request.time_45min": "45 minutes ago",
+        "buying_request.time_2h": "2 hours ago",
+        "buying_request.time_3h": "3 hours ago",
+        "buying_request.time_5h": "5 hours ago"
+      },
+      "edits": [
+        [
+          "import { NAV_CATEGORIES } from \"@/data/home\";",
+          "import { NAV_CATEGORIES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  { id: \"RFQ-8421\", title: \"Porcelain tile 600x1200 for a 2,000m² project\", time: \"12 minutes ago\", quotes: 7 },\n  { id: \"RFQ-8417\", title: \"L-shape velvet sofa for an HCMC showroom\", time: \"45 minutes ago\", quotes: 5 },\n  { id: \"RFQ-8412\", title: \"Smart toilet for a 4-star hotel, MOQ 80pc\", time: \"2 hours ago\", quotes: 9 },\n  { id: \"RFQ-8408\", title: \"LED downlight 12W, 1000pc\", time: \"3 hours ago\", quotes: 12 },\n  { id: \"RFQ-8401\", title: \"Kitchen cabinet OEM, custom drawing\", time: \"5 hours ago\", quotes: 4 },",
+          "  { id: \"RFQ-8421\", title: \"buying_request.rfq_8421\", time: \"buying_request.time_12min\", quotes: 7 },\n  { id: \"RFQ-8417\", title: \"buying_request.rfq_8417\", time: \"buying_request.time_45min\", quotes: 5 },\n  { id: \"RFQ-8412\", title: \"buying_request.rfq_8412\", time: \"buying_request.time_2h\", quotes: 9 },\n  { id: \"RFQ-8408\", title: \"buying_request.rfq_8408\", time: \"buying_request.time_3h\", quotes: 12 },\n  { id: \"RFQ-8401\", title: \"buying_request.rfq_8401\", time: \"buying_request.time_5h\", quotes: 4 },"
+        ],
+        [
+          "  const sp = await searchParams;\n\n  return (",
+          "  const sp = await searchParams;\n  const t = await getT();\n\n  return ("
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Request for Quotation\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"buying_request.bc_home\"), href: \"/\" }, { label: t(\"buying_request.bc_rfq\") }]} />"
+        ],
+        [
+          "mb-2\">📨 RFQ — REQUEST FOR QUOTATION</span>",
+          "mb-2\">{t(\"buying_request.hero_badge\")}</span>"
+        ],
+        [
+          "max-md:text-[22px]\">Send a request — Get quotes within 24h</h1>",
+          "max-md:text-[22px]\">{t(\"buying_request.hero_title\")}</h1>"
+        ],
+        [
+          "mt-1\">Describe it once — sent to 5-10 matching factories. Quotes include samples, lead times, and DDP to Vietnam.</p>",
+          "mt-1\">{t(\"buying_request.hero_desc\")}</p>"
+        ],
+        [
+          "mb-4\">Request for Quotation Form</h2>",
+          "mb-4\">{t(\"buying_request.form_title\")}</h2>"
+        ],
+        [
+          "mb-1.5\">Product you need <span className=\"text-accent\">*</span></label>",
+          "mb-1.5\">{t(\"buying_request.label_product\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "placeholder=\"e.g. porcelain tile 600x1200 calacatta white\"",
+          "placeholder={t(\"buying_request.ph_product\")}"
+        ],
+        [
+          "mb-1.5\">Category</label>",
+          "mb-1.5\">{t(\"buying_request.label_category\")}</label>"
+        ],
+        [
+          "<option value=\"\">-- Select category --</option>",
+          "<option value=\"\">{t(\"buying_request.opt_select_category\")}</option>"
+        ],
+        [
+          "mb-1.5\">Quantity + unit <span className=\"text-accent\">*</span></label>",
+          "mb-1.5\">{t(\"buying_request.label_qty\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "placeholder=\"e.g. 500 m² or 30 sets\"",
+          "placeholder={t(\"buying_request.ph_qty\")}"
+        ],
+        [
+          "mb-1.5\">Detailed description</label>",
+          "mb-1.5\">{t(\"buying_request.label_desc\")}</label>"
+        ],
+        [
+          "placeholder=\"Describe the product: dimensions, color, material, standards, deadline...\"",
+          "placeholder={t(\"buying_request.ph_desc\")}"
+        ],
+        [
+          "mb-1.5\">Reference images</label>",
+          "mb-1.5\">{t(\"buying_request.label_ref_images\")}</label>"
+        ],
+        [
+          "📎 Drag &amp; drop images or <a className=\"text-brand underline\">click to choose files</a> — up to 5 images, under 5MB each",
+          "📎 Drag &amp; drop images or <a className=\"text-brand underline\">{t(\"buying_request.dropzone_choose\")}</a>{t(\"buying_request.dropzone_hint_after\")}"
+        ],
+        [
+          "mb-1.5\">Destination port</label>",
+          "mb-1.5\">{t(\"buying_request.label_dest_port\")}</label>"
+        ],
+        [
+          "<option>Cat Lai – HCMC</option>",
+          "<option>{t(\"buying_request.opt_port_catlai\")}</option>"
+        ],
+        [
+          "<option>Hai Phong – HP</option>",
+          "<option>{t(\"buying_request.opt_port_haiphong\")}</option>"
+        ],
+        [
+          "<option>Da Nang – DN</option>",
+          "<option>{t(\"buying_request.opt_port_danang\")}</option>"
+        ],
+        [
+          "<option>DDP to warehouse (recommended)</option>",
+          "<option>{t(\"buying_request.opt_port_ddp\")}</option>"
+        ],
+        [
+          "mb-1.5\">Budget / unit</label>",
+          "mb-1.5\">{t(\"buying_request.label_budget\")}</label>"
+        ],
+        [
+          "<option>Flexible</option>",
+          "<option>{t(\"buying_request.opt_budget_flexible\")}</option>"
+        ],
+        [
+          "<option>Under $10</option>",
+          "<option>{t(\"buying_request.opt_budget_under10\")}</option>"
+        ],
+        [
+          "<option>$10 – $50</option>",
+          "<option>{t(\"buying_request.opt_budget_10_50\")}</option>"
+        ],
+        [
+          "<option>$50 – $200</option>",
+          "<option>{t(\"buying_request.opt_budget_50_200\")}</option>"
+        ],
+        [
+          "<option>Over $200</option>",
+          "<option>{t(\"buying_request.opt_budget_over200\")}</option>"
+        ],
+        [
+          "mb-1.5\">Urgency</label>",
+          "mb-1.5\">{t(\"buying_request.label_urgency\")}</label>"
+        ],
+        [
+          "{[\"Standard (24h)\", \"Fast (12h)\", \"Urgent (6h)\"].map((u, i) => (",
+          "{[\"buying_request.urgency_standard\", \"buying_request.urgency_fast\", \"buying_request.urgency_urgent\"].map((u, i) => ("
+        ],
+        [
+          "className=\"accent-brand\" /> {u}",
+          "className=\"accent-brand\" /> {t(u)}"
+        ],
+        [
+          "hover:opacity-90\">🚀 Send RFQ Now</button>",
+          "hover:opacity-90\">{t(\"buying_request.btn_send\")}</button>"
+        ],
+        [
+          "text-mute\">Free · No registration required · Quotes within 24h</span>",
+          "text-mute\">{t(\"buying_request.note_free\")}</span>"
+        ],
+        [
+          "              ✓ Your RFQ has been sent to matching suppliers. We&apos;ll respond by email within 24h.\n",
+          "              {t(\"buying_request.sent_success\")}\n"
+        ],
+        [
+          "mb-3\">3-Step Process</b>",
+          "mb-3\">{t(\"buying_request.process_title\")}</b>"
+        ],
+        [
+          "              { n: 1, t: \"Send RFQ\", d: \"Describe it once; the system matches suitable factories automatically\" },\n              { n: 2, t: \"Receive 5-10 quotes\", d: \"Within 24h, with sample images, lead times, and DDP\" },\n              { n: 3, t: \"Choose the best supplier\", d: \"Compare, chat directly, order samples, and confirm your order\" },",
+          "              { n: 1, t: t(\"buying_request.step1_t\"), d: t(\"buying_request.step1_d\") },\n              { n: 2, t: t(\"buying_request.step2_t\"), d: t(\"buying_request.step2_d\") },\n              { n: 3, t: t(\"buying_request.step3_t\"), d: t(\"buying_request.step3_d\") },"
+        ],
+        [
+          "mb-2\">🛡 The Huayuesc Promise</b>",
+          "mb-2\">{t(\"buying_request.promise_title\")}</b>"
+        ],
+        [
+          "<li>✓ Free quotes, no purchase commitment</li>",
+          "<li>{t(\"buying_request.promise_1\")}</li>"
+        ],
+        [
+          "<li>✓ Free factory audit before ordering</li>",
+          "<li>{t(\"buying_request.promise_2\")}</li>"
+        ],
+        [
+          "<li>✓ Trade Assurance payment protection</li>",
+          "<li>{t(\"buying_request.promise_3\")}</li>"
+        ],
+        [
+          "<li>✓ Vietnamese-language support 24/7</li>",
+          "<li>{t(\"buying_request.promise_4\")}</li>"
+        ],
+        [
+          "mb-2\">Recent RFQs</b>",
+          "mb-2\">{t(\"buying_request.recent_title\")}</b>"
+        ],
+        [
+          "<b className=\"block text-[12px] text-ink leading-snug mb-0.5\">{r.title}</b>",
+          "<b className=\"block text-[12px] text-ink leading-snug mb-0.5\">{t(r.title)}</b>"
+        ],
+        [
+          "<span>{r.time}</span>",
+          "<span>{t(r.time)}</span>"
+        ],
+        [
+          "<span className=\"text-success text-[11px]\">✓ {r.quotes} quotes received</span>",
+          "<span className=\"text-success text-[11px]\">✓ {r.quotes} {t(\"buying_request.quotes_received_suffix\")}</span>"
+        ]
+      ],
+      "deferred": "Lưu ý: file gốc trên VM là tiếng Anh, không phải tiếng Việt — keys giữ y nguyên chuỗi hiển thị gốc (tiếng Anh). NAV_CATEGORIES (c.icon, c.name) đến từ @/data/home, không nằm trong file này nên không đụng. RECENT_RFQS là hằng module-level nên đã đổi value thành key string và bọc t() tại render site ({r.title}, {r.time}). Mã RFQ-xxxx và ký hiệu cảng/budget kèm số ($10, m²) giữ trong key như chuỗi hiển thị."
+    },
+    {
+      "file": "src/app/register/buyer/page.tsx",
+      "isClient": false,
+      "keys": {
+        "register_buyer.benefit_audit_title": "FREE FACTORY AUDIT",
+        "register_buyer.benefit_audit_desc": "One on-site audit of a factory of your choice — a $400 value",
+        "register_buyer.benefit_discount_title": "10% off your first order",
+        "register_buyer.benefit_discount_desc": "Applies to $5K+ orders from verified suppliers",
+        "register_buyer.benefit_ddp_title": "Free DDP on first order",
+        "register_buyer.benefit_ddp_desc": "Free DDP freight to Hanoi/HCMC (up to $300)",
+        "register_buyer.benefit_assurance_title": "Trade Assurance",
+        "register_buyer.benefit_assurance_desc": "100% refund if goods arrive off-spec — no negotiation needed",
+        "register_buyer.testimonial1_quote": "The free audit helped me avoid a fraudulent supplier — worth far more than $400 in reality.",
+        "register_buyer.testimonial2_quote": "Free DDP on my first order saved me 22 million VND on a 5K-meter batch of Oxford fabric.",
+        "register_buyer.step1_title": "Fill in your details",
+        "register_buyer.step1_desc": "60-second form — name, company, industry",
+        "register_buyer.step2_title": "Verify email/phone",
+        "register_buyer.step2_desc": "OTP sent via Zalo or email",
+        "register_buyer.step3_title": "Activate your buyer dashboard",
+        "register_buyer.step3_desc": "Access RFQs, audits, and Trade Assurance",
+        "register_buyer.step4_title": "Start sourcing",
+        "register_buyer.step4_desc": "One-on-one consultation with our experts in Guangzhou",
+        "register_buyer.breadcrumb_home": "Home",
+        "register_buyer.breadcrumb_current": "Register as Buyer",
+        "register_buyer.banner_badge": "🎁 NEW BUYER OFFER Q1/2026",
+        "register_buyer.banner_title_pre": "Register as a Buyer for free — ",
+        "register_buyer.banner_title_highlight": "get 4 perks",
+        "register_buyer.banner_subtitle": "Join 600+ Vietnamese dealers importing directly from Guangzhou, Ningbo, and Xiamen. Quotes in < 24h, free factory audits, and DDP delivery to your warehouse.",
+        "register_buyer.stat_buyers": "👥 Registered buyers",
+        "register_buyer.stat_suppliers": "🏭 Verified suppliers",
+        "register_buyer.stat_gmv": "💰 GMV 2025",
+        "register_buyer.social_prompt": "⚡ Sign up in 5 seconds with:",
+        "register_buyer.social_aria": "Sign up with",
+        "register_buyer.divider_or": "Or fill out the form",
+        "register_buyer.label_name": "Name",
+        "register_buyer.placeholder_name": "Nguyen Van A",
+        "register_buyer.label_company": "Company",
+        "register_buyer.placeholder_company": "ABC Co., Ltd.",
+        "register_buyer.label_email": "Email",
+        "register_buyer.placeholder_email": "you@company.com",
+        "register_buyer.label_phone": "Phone / Zalo",
+        "register_buyer.placeholder_phone": "09xx xxx xxx",
+        "register_buyer.label_password": "Password",
+        "register_buyer.placeholder_password": "At least 8 characters",
+        "register_buyer.label_city": "City / Province",
+        "register_buyer.city_hanoi": "Hanoi",
+        "register_buyer.city_hcmc": "Ho Chi Minh City",
+        "register_buyer.city_danang": "Da Nang",
+        "register_buyer.city_haiphong": "Hai Phong",
+        "register_buyer.city_cantho": "Can Tho",
+        "register_buyer.city_other": "Other",
+        "register_buyer.label_size": "Company size",
+        "register_buyer.size_individual": "Individual / Sole proprietor",
+        "register_buyer.size_under10": "Under 10 employees",
+        "register_buyer.size_10_50": "10 – 50 employees",
+        "register_buyer.size_50_200": "50 – 200 employees",
+        "register_buyer.size_over200": "Over 200 employees",
+        "register_buyer.label_revenue": "Annual revenue",
+        "register_buyer.revenue_under1": "Under 1 billion VND",
+        "register_buyer.revenue_1_5": "1 – 5 billion VND",
+        "register_buyer.revenue_5_20": "5 – 20 billion VND",
+        "register_buyer.revenue_over20": "Over 20 billion VND",
+        "register_buyer.label_industries": "Industries of interest",
+        "register_buyer.industries_hint": "(select multiple)",
+        "register_buyer.label_source": "How did you hear about Huayuesc?",
+        "register_buyer.source_google": "Google search",
+        "register_buyer.source_facebook": "Facebook / Zalo group",
+        "register_buyer.source_referral": "Referral from a friend",
+        "register_buyer.source_tradeshow": "Trade show / event",
+        "register_buyer.source_email": "Email marketing",
+        "register_buyer.source_other": "Other",
+        "register_buyer.terms_and": "and",
+        "register_buyer.terms_link": "Terms",
+        "register_buyer.privacy_link": "Privacy Policy",
+        "register_buyer.newsletter_label": "Receive the weekly Trade Alert — price trends, best sellers, and industry events.",
+        "register_buyer.submit_button": "Register as Buyer & Get Perks →",
+        "register_buyer.already_account": "Already have an account?",
+        "register_buyer.sign_in": "Sign In",
+        "register_buyer.process_heading": "📋 4-Step Process",
+        "register_buyer.testimonials_heading": "💬 What other buyers say",
+        "register_buyer.factory_heading": "🏭 Are you a factory?",
+        "register_buyer.factory_desc": "Register as a verified supplier to receive RFQs directly from 600+ Vietnamese dealers.",
+        "register_buyer.factory_cta": "Register as Supplier →"
+      },
+      "edits": [
+        [
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";",
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const BENEFITS = [\n  { icon: \"🏭\", title: \"FREE FACTORY AUDIT\", desc: \"One on-site audit of a factory of your choice — a $400 value\" },\n  { icon: \"💰\", title: \"10% off your first order\", desc: \"Applies to $5K+ orders from verified suppliers\" },\n  { icon: \"🚚\", title: \"Free DDP on first order\", desc: \"Free DDP freight to Hanoi/HCMC (up to $300)\" },\n  { icon: \"🛡\", title: \"Trade Assurance\", desc: \"100% refund if goods arrive off-spec — no negotiation needed\" },\n];",
+          "const BENEFITS = [\n  { icon: \"🏭\", title: \"register_buyer.benefit_audit_title\", desc: \"register_buyer.benefit_audit_desc\" },\n  { icon: \"💰\", title: \"register_buyer.benefit_discount_title\", desc: \"register_buyer.benefit_discount_desc\" },\n  { icon: \"🚚\", title: \"register_buyer.benefit_ddp_title\", desc: \"register_buyer.benefit_ddp_desc\" },\n  { icon: \"🛡\", title: \"register_buyer.benefit_assurance_title\", desc: \"register_buyer.benefit_assurance_desc\" },\n];"
+        ],
+        [
+          "    quote: \"The free audit helped me avoid a fraudulent supplier — worth far more than $400 in reality.\",",
+          "    quote: \"register_buyer.testimonial1_quote\","
+        ],
+        [
+          "    quote: \"Free DDP on my first order saved me 22 million VND on a 5K-meter batch of Oxford fabric.\",",
+          "    quote: \"register_buyer.testimonial2_quote\","
+        ],
+        [
+          "const STEPS = [\n  { n: 1, title: \"Fill in your details\", desc: \"60-second form — name, company, industry\" },\n  { n: 2, title: \"Verify email/phone\", desc: \"OTP sent via Zalo or email\" },\n  { n: 3, title: \"Activate your buyer dashboard\", desc: \"Access RFQs, audits, and Trade Assurance\" },\n  { n: 4, title: \"Start sourcing\", desc: \"One-on-one consultation with our experts in Guangzhou\" },\n];",
+          "const STEPS = [\n  { n: 1, title: \"register_buyer.step1_title\", desc: \"register_buyer.step1_desc\" },\n  { n: 2, title: \"register_buyer.step2_title\", desc: \"register_buyer.step2_desc\" },\n  { n: 3, title: \"register_buyer.step3_title\", desc: \"register_buyer.step3_desc\" },\n  { n: 4, title: \"register_buyer.step4_title\", desc: \"register_buyer.step4_desc\" },\n];"
+        ],
+        [
+          "export default function RegisterBuyerPage() {\n  return (",
+          "export default async function RegisterBuyerPage() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Register as Buyer\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"register_buyer.breadcrumb_home\"), href: \"/\" }, { label: t(\"register_buyer.breadcrumb_current\") }]} />"
+        ],
+        [
+          "              🎁 NEW BUYER OFFER Q1/2026\n            </span>",
+          "              {t(\"register_buyer.banner_badge\")}\n            </span>"
+        ],
+        [
+          "              Register as a Buyer for free — <span className=\"text-gold\">get 4 perks</span>",
+          "              {t(\"register_buyer.banner_title_pre\")}<span className=\"text-gold\">{t(\"register_buyer.banner_title_highlight\")}</span>"
+        ],
+        [
+          "              Join 600+ Vietnamese dealers importing directly from Guangzhou, Ningbo, and Xiamen.\n              Quotes in &lt; 24h, free factory audits, and DDP delivery to your warehouse.\n            </p>",
+          "              {t(\"register_buyer.banner_subtitle\")}\n            </p>"
+        ],
+        [
+          "              <span>👥 Registered buyers</span>",
+          "              <span>{t(\"register_buyer.stat_buyers\")}</span>"
+        ],
+        [
+          "              <span>🏭 Verified suppliers</span>",
+          "              <span>{t(\"register_buyer.stat_suppliers\")}</span>"
+        ],
+        [
+          "              <span>💰 GMV 2025</span>",
+          "              <span>{t(\"register_buyer.stat_gmv\")}</span>"
+        ],
+        [
+          "              <b className=\"block text-[13px] text-ink mb-1\">{b.title}</b>\n              <p className=\"text-[11.5px] text-mute leading-snug\">{b.desc}</p>",
+          "              <b className=\"block text-[13px] text-ink mb-1\">{t(b.title)}</b>\n              <p className=\"text-[11.5px] text-mute leading-snug\">{t(b.desc)}</p>"
+        ],
+        [
+          "                ⚡ Sign up in 5 seconds with:\n              </p>",
+          "                {t(\"register_buyer.social_prompt\")}\n              </p>"
+        ],
+        [
+          "                    aria-label={`Sign up with ${p.name}`}",
+          "                    aria-label={`${t(\"register_buyer.social_aria\")} ${p.name}`}"
+        ],
+        [
+          "                Or fill out the form\n              </span>",
+          "                {t(\"register_buyer.divider_or\")}\n              </span>"
+        ],
+        [
+          "                    Name <span className=\"text-accent\">*</span>",
+          "                    {t(\"register_buyer.label_name\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                    placeholder=\"Nguyen Van A\"",
+          "                    placeholder={t(\"register_buyer.placeholder_name\")}"
+        ],
+        [
+          "                    Company\n                  </label>\n                  <input\n                    name=\"company\"\n                    placeholder=\"ABC Co., Ltd.\"",
+          "                    {t(\"register_buyer.label_company\")}\n                  </label>\n                  <input\n                    name=\"company\"\n                    placeholder={t(\"register_buyer.placeholder_company\")}"
+        ],
+        [
+          "                    Email <span className=\"text-accent\">*</span>",
+          "                    {t(\"register_buyer.label_email\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                    placeholder=\"you@company.com\"",
+          "                    placeholder={t(\"register_buyer.placeholder_email\")}"
+        ],
+        [
+          "                    Phone / Zalo <span className=\"text-accent\">*</span>",
+          "                    {t(\"register_buyer.label_phone\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                    placeholder=\"09xx xxx xxx\"",
+          "                    placeholder={t(\"register_buyer.placeholder_phone\")}"
+        ],
+        [
+          "                    Password <span className=\"text-accent\">*</span>",
+          "                    {t(\"register_buyer.label_password\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                    placeholder=\"At least 8 characters\"",
+          "                    placeholder={t(\"register_buyer.placeholder_password\")}"
+        ],
+        [
+          "                    City / Province\n                  </label>",
+          "                    {t(\"register_buyer.label_city\")}\n                  </label>"
+        ],
+        [
+          "                    <option>Hanoi</option>\n                    <option>Ho Chi Minh City</option>\n                    <option>Da Nang</option>\n                    <option>Hai Phong</option>\n                    <option>Can Tho</option>\n                    <option>Other</option>",
+          "                    <option>{t(\"register_buyer.city_hanoi\")}</option>\n                    <option>{t(\"register_buyer.city_hcmc\")}</option>\n                    <option>{t(\"register_buyer.city_danang\")}</option>\n                    <option>{t(\"register_buyer.city_haiphong\")}</option>\n                    <option>{t(\"register_buyer.city_cantho\")}</option>\n                    <option>{t(\"register_buyer.city_other\")}</option>"
+        ],
+        [
+          "                    Company size\n                  </label>",
+          "                    {t(\"register_buyer.label_size\")}\n                  </label>"
+        ],
+        [
+          "                    <option>Individual / Sole proprietor</option>\n                    <option>Under 10 employees</option>\n                    <option>10 – 50 employees</option>\n                    <option>50 – 200 employees</option>\n                    <option>Over 200 employees</option>",
+          "                    <option>{t(\"register_buyer.size_individual\")}</option>\n                    <option>{t(\"register_buyer.size_under10\")}</option>\n                    <option>{t(\"register_buyer.size_10_50\")}</option>\n                    <option>{t(\"register_buyer.size_50_200\")}</option>\n                    <option>{t(\"register_buyer.size_over200\")}</option>"
+        ],
+        [
+          "                    Annual revenue\n                  </label>",
+          "                    {t(\"register_buyer.label_revenue\")}\n                  </label>"
+        ],
+        [
+          "                    <option>Under 1 billion VND</option>\n                    <option>1 – 5 billion VND</option>\n                    <option>5 – 20 billion VND</option>\n                    <option>Over 20 billion VND</option>",
+          "                    <option>{t(\"register_buyer.revenue_under1\")}</option>\n                    <option>{t(\"register_buyer.revenue_1_5\")}</option>\n                    <option>{t(\"register_buyer.revenue_5_20\")}</option>\n                    <option>{t(\"register_buyer.revenue_over20\")}</option>"
+        ],
+        [
+          "                    Industries of interest <span className=\"text-mute2 font-normal text-[11px]\">(select multiple)</span>",
+          "                    {t(\"register_buyer.label_industries\")} <span className=\"text-mute2 font-normal text-[11px]\">{t(\"register_buyer.industries_hint\")}</span>"
+        ],
+        [
+          "                    How did you hear about Huayuesc?\n                  </label>",
+          "                    {t(\"register_buyer.label_source\")}\n                  </label>"
+        ],
+        [
+          "                    <option>Google search</option>\n                    <option>Facebook / Zalo group</option>\n                    <option>Referral from a friend</option>\n                    <option>Trade show / event</option>\n                    <option>Email marketing</option>\n                    <option>Other</option>",
+          "                    <option>{t(\"register_buyer.source_google\")}</option>\n                    <option>{t(\"register_buyer.source_facebook\")}</option>\n                    <option>{t(\"register_buyer.source_referral\")}</option>\n                    <option>{t(\"register_buyer.source_tradeshow\")}</option>\n                    <option>{t(\"register_buyer.source_email\")}</option>\n                    <option>{t(\"register_buyer.source_other\")}</option>"
+        ],
+        [
+          "                  <Link href=\"/info/terms-of-service\" className=\"text-brand cursor-pointer hover:underline\">\n                    Terms\n                  </Link>{\" \"}\n                  and{\" \"}\n                  <Link href=\"/info/privacy-policy\" className=\"text-brand cursor-pointer hover:underline\">\n                    Privacy Policy\n                  </Link>",
+          "                  <Link href=\"/info/terms-of-service\" className=\"text-brand cursor-pointer hover:underline\">\n                    {t(\"register_buyer.terms_link\")}\n                  </Link>{\" \"}\n                  {t(\"register_buyer.terms_and\")}{\" \"}\n                  <Link href=\"/info/privacy-policy\" className=\"text-brand cursor-pointer hover:underline\">\n                    {t(\"register_buyer.privacy_link\")}\n                  </Link>"
+        ],
+        [
+          "                <span>Receive the weekly Trade Alert — price trends, best sellers, and industry events.</span>",
+          "                <span>{t(\"register_buyer.newsletter_label\")}</span>"
+        ],
+        [
+          "                Register as Buyer &amp; Get Perks →\n              </button>",
+          "                {t(\"register_buyer.submit_button\")}\n              </button>"
+        ],
+        [
+          "                Already have an account?{\" \"}",
+          "                {t(\"register_buyer.already_account\")}{\" \"}"
+        ],
+        [
+          "                  Sign In\n                </Link>",
+          "                  {t(\"register_buyer.sign_in\")}\n                </Link>"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">📋 4-Step Process</b>",
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">{t(\"register_buyer.process_heading\")}</b>"
+        ],
+        [
+          "                      <b className=\"block text-[12.5px] text-ink\">{s.title}</b>\n                      <p className=\"text-[11px] text-mute leading-snug\">{s.desc}</p>",
+          "                      <b className=\"block text-[12.5px] text-ink\">{t(s.title)}</b>\n                      <p className=\"text-[11px] text-mute leading-snug\">{t(s.desc)}</p>"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">💬 What other buyers say</b>",
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">{t(\"register_buyer.testimonials_heading\")}</b>"
+        ],
+        [
+          "                {TESTIMONIALS.map((t) => (\n                  <div key={t.author} className=\"border-l-2 border-gold pl-3\">\n                    <p className=\"leading-relaxed\">&ldquo;{t.quote}&rdquo;</p>\n                    <span className=\"text-[11px] text-mute mt-1 block\">\n                      — {t.author}, <i>{t.role}</i>\n                    </span>\n                  </div>\n                ))}",
+          "                {TESTIMONIALS.map((tm) => (\n                  <div key={tm.author} className=\"border-l-2 border-gold pl-3\">\n                    <p className=\"leading-relaxed\">&ldquo;{t(tm.quote)}&rdquo;</p>\n                    <span className=\"text-[11px] text-mute mt-1 block\">\n                      — {tm.author}, <i>{tm.role}</i>\n                    </span>\n                  </div>\n                ))}"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold mb-1\">🏭 Are you a factory?</b>",
+          "              <b className=\"block text-[14px] font-bold mb-1\">{t(\"register_buyer.factory_heading\")}</b>"
+        ],
+        [
+          "                Register as a verified supplier to receive RFQs directly from 600+ Vietnamese dealers.\n              </p>",
+          "                {t(\"register_buyer.factory_desc\")}\n              </p>"
+        ],
+        [
+          "                Register as Supplier →\n              </Link>",
+          "                {t(\"register_buyer.factory_cta\")}\n              </Link>"
+        ]
+      ],
+      "deferred": "Author names and roles in TESTIMONIALS (Tran Quang Hung / Phuong Nam Building Materials · Hanoi; Le Thu Hang / Sai Gon Showroom · Ho Chi Minh City) left untranslated as proper nouns / place names. The \"600+\" / \"40+\" / \"$8.2M\" stat values are numbers and left untouched."
+    },
+    {
+      "file": "src/app/register/dealer/page.tsx",
+      "isClient": false,
+      "keys": {
+        "register_dealer.breadcrumb_home": "Home",
+        "register_dealer.breadcrumb_register": "Register as Dealer",
+        "register_dealer.badge_offer": "🎁 NEW DEALER OFFER",
+        "register_dealer.title": "Register as a Dealer — Get 3 special perks",
+        "register_dealer.subtitle": "Limited program for the first 100 dealers in Q1/2026. Free to register.",
+        "register_dealer.perk_audit_t": "Free factory audit",
+        "register_dealer.perk_audit_d": "One on-site audit of a factory of your choice (a $400 value)",
+        "register_dealer.perk_discount_t": "10% off first order",
+        "register_dealer.perk_discount_d": "Applies to $5K+ orders from suppliers on the platform",
+        "register_dealer.perk_ddp_t": "Free DDP",
+        "register_dealer.perk_ddp_d": "Free DDP freight on your first order (up to $300)",
+        "register_dealer.label_name": "Name",
+        "register_dealer.label_company": "Company",
+        "register_dealer.label_email": "Email",
+        "register_dealer.label_phone": "Phone / Zalo",
+        "register_dealer.label_tax": "Tax ID",
+        "register_dealer.label_revenue": "Annual revenue",
+        "register_dealer.revenue_under1": "Under 1 billion VND",
+        "register_dealer.revenue_1to5": "1 – 5 billion VND",
+        "register_dealer.revenue_5to20": "5 – 20 billion VND",
+        "register_dealer.revenue_over20": "Over 20 billion VND",
+        "register_dealer.label_sector": "Business sector",
+        "register_dealer.agree_pre": "I agree to the",
+        "register_dealer.agree_terms": "Terms",
+        "register_dealer.agree_post": "and to using the free audit within 90 days.",
+        "register_dealer.submit": "Register as Dealer &amp; Get Perks →",
+        "register_dealer.testimonials_title": "🎯 What other dealers say",
+        "register_dealer.testimonial1_quote": "&ldquo;The free audit helped me avoid a fraudulent supplier — worth well over $400 in reality.&rdquo;",
+        "register_dealer.testimonial1_author": "— Tran Quang Hung, Phuong Nam Building Materials",
+        "register_dealer.testimonial2_quote": "&ldquo;Free DDP and 10% off my first order saved me 22 million VND on the first batch.&rdquo;",
+        "register_dealer.testimonial2_author": "— Le Thu Hang, Sai Gon Showroom"
+      },
+      "edits": [
+        [
+          "import { NAV_CATEGORIES } from \"@/data/home\";",
+          "import { NAV_CATEGORIES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export default function RegisterDealerPage() {\n  return (",
+          "export default async function RegisterDealerPage() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "<Breadcrumb trail={[{ label: \"Home\", href: \"/\" }, { label: \"Register as Dealer\" }]} />",
+          "<Breadcrumb trail={[{ label: t(\"register_dealer.breadcrumb_home\"), href: \"/\" }, { label: t(\"register_dealer.breadcrumb_register\") }]} />"
+        ],
+        [
+          "<span className=\"inline-block bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3\">🎁 NEW DEALER OFFER</span>",
+          "<span className=\"inline-block bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-3\">{t(\"register_dealer.badge_offer\")}</span>"
+        ],
+        [
+          "<h1 className=\"text-[24px] font-extrabold text-ink mb-1\">Register as a Dealer — Get 3 special perks</h1>",
+          "<h1 className=\"text-[24px] font-extrabold text-ink mb-1\">{t(\"register_dealer.title\")}</h1>"
+        ],
+        [
+          "<p className=\"text-[13px] text-mute mb-5\">Limited program for the first 100 dealers in Q1/2026. Free to register.</p>",
+          "<p className=\"text-[13px] text-mute mb-5\">{t(\"register_dealer.subtitle\")}</p>"
+        ],
+        [
+          "              { icon: \"🏭\", t: \"Free factory audit\", d: \"One on-site audit of a factory of your choice (a $400 value)\" },\n              { icon: \"💰\", t: \"10% off first order\", d: \"Applies to $5K+ orders from suppliers on the platform\" },\n              { icon: \"🚚\", t: \"Free DDP\", d: \"Free DDP freight on your first order (up to $300)\" },",
+          "              { icon: \"🏭\", t: \"register_dealer.perk_audit_t\", d: \"register_dealer.perk_audit_d\" },\n              { icon: \"💰\", t: \"register_dealer.perk_discount_t\", d: \"register_dealer.perk_discount_d\" },\n              { icon: \"🚚\", t: \"register_dealer.perk_ddp_t\", d: \"register_dealer.perk_ddp_d\" },"
+        ],
+        [
+          "<b className=\"block text-[13px] text-ink mb-1\">{p.t}</b>\n                <p className=\"text-[11.5px] text-mute leading-snug\">{p.d}</p>",
+          "<b className=\"block text-[13px] text-ink mb-1\">{t(p.t)}</b>\n                <p className=\"text-[11.5px] text-mute leading-snug\">{t(p.d)}</p>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Name <span className=\"text-accent\">*</span></label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_name\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Company <span className=\"text-accent\">*</span></label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_company\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Email <span className=\"text-accent\">*</span></label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_email\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Phone / Zalo <span className=\"text-accent\">*</span></label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_phone\")} <span className=\"text-accent\">*</span></label>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Tax ID</label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_tax\")}</label>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Annual revenue</label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_revenue\")}</label>"
+        ],
+        [
+          "<option>Under 1 billion VND</option>\n                  <option>1 – 5 billion VND</option>\n                  <option>5 – 20 billion VND</option>\n                  <option>Over 20 billion VND</option>",
+          "<option>{t(\"register_dealer.revenue_under1\")}</option>\n                  <option>{t(\"register_dealer.revenue_1to5\")}</option>\n                  <option>{t(\"register_dealer.revenue_5to20\")}</option>\n                  <option>{t(\"register_dealer.revenue_over20\")}</option>"
+        ],
+        [
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">Business sector</label>",
+          "<label className=\"block text-[12.5px] font-semibold text-ink mb-1.5\">{t(\"register_dealer.label_sector\")}</label>"
+        ],
+        [
+          "<span>I agree to the <Link href=\"/info/terms-of-service\" className=\"text-brand\">Terms</Link> and to using the free audit within 90 days.</span>",
+          "<span>{t(\"register_dealer.agree_pre\")} <Link href=\"/info/terms-of-service\" className=\"text-brand\">{t(\"register_dealer.agree_terms\")}</Link> {t(\"register_dealer.agree_post\")}</span>"
+        ],
+        [
+          "<button type=\"submit\" className=\"w-full py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90 mt-3\">Register as Dealer &amp; Get Perks →</button>",
+          "<button type=\"submit\" className=\"w-full py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90 mt-3\">{t(\"register_dealer.submit\")}</button>"
+        ],
+        [
+          "<b className=\"block text-[14px] font-bold text-ink mb-3\">🎯 What other dealers say</b>",
+          "<b className=\"block text-[14px] font-bold text-ink mb-3\">{t(\"register_dealer.testimonials_title\")}</b>"
+        ],
+        [
+          "<p className=\"leading-relaxed\">&ldquo;The free audit helped me avoid a fraudulent supplier — worth well over $400 in reality.&rdquo;</p>\n              <span className=\"text-[11px] text-mute mt-1 block\">— Tran Quang Hung, Phuong Nam Building Materials</span>",
+          "<p className=\"leading-relaxed\">{t(\"register_dealer.testimonial1_quote\")}</p>\n              <span className=\"text-[11px] text-mute mt-1 block\">{t(\"register_dealer.testimonial1_author\")}</span>"
+        ],
+        [
+          "<p className=\"leading-relaxed\">&ldquo;Free DDP and 10% off my first order saved me 22 million VND on the first batch.&rdquo;</p>\n              <span className=\"text-[11px] text-mute mt-1 block\">— Le Thu Hang, Sai Gon Showroom</span>",
+          "<p className=\"leading-relaxed\">{t(\"register_dealer.testimonial2_quote\")}</p>\n              <span className=\"text-[11px] text-mute mt-1 block\">{t(\"register_dealer.testimonial2_author\")}</span>"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/app/register/factory/page.tsx",
+      "isClient": false,
+      "keys": {
+        "register_factory.vp1_title": "Reach 600+ VN dealers",
+        "register_factory.vp1_desc": "Verified buyers with real revenue — no fake accounts.",
+        "register_factory.vp2_title": "Free audit & onboarding",
+        "register_factory.vp2_desc": "Our Guangzhou team visits your factory to audit and prepares your profile for you.",
+        "register_factory.vp3_title": "0% listing fee",
+        "register_factory.vp3_desc": "Pay just 5% commission per order — no hidden fees, no subscription.",
+        "register_factory.vp4_title": "Vietnamese-language marketing",
+        "register_factory.vp4_desc": "Our content team writes landing pages, translates catalogs, and runs ads to VN buyers.",
+        "register_factory.step1_title": "Submit your application",
+        "register_factory.step1_desc": "5-minute form + brochure / catalog (PDF)",
+        "register_factory.step2_title": "Online interview",
+        "register_factory.step2_desc": "30-minute video call with the QC team — capability review",
+        "register_factory.step3_title": "On-site audit",
+        "register_factory.step3_desc": "Our Guangzhou team spends a day at your factory — photos, video, documents",
+        "register_factory.step4_title": "Listing onboarding",
+        "register_factory.step4_desc": "Create your profile + 10 flagship products, with 1-on-1 training",
+        "register_factory.step5_title": "Go live & first RFQ",
+        "register_factory.step5_desc": "Around 30 days on average from the application date",
+        "register_factory.faq1_q": "Are there any fees I have to pay?",
+        "register_factory.faq1_a": "No. Registration, audit, onboarding, hosting, and marketing are all free. Huayuesc charges only 5% commission on successful orders.",
+        "register_factory.faq2_q": "How long does the audit take?",
+        "register_factory.faq2_a": "1 day on-site + 3-5 days to prepare the report. From scheduling to a finished audit report takes about 7-10 days in total.",
+        "register_factory.faq3_q": "Do I need to speak Vietnamese?",
+        "register_factory.faq3_a": "No. Our Guangzhou team speaks Chinese and handles all transactions with VN buyers. You can focus entirely on production.",
+        "register_factory.faq4_q": "How many factories have gone live?",
+        "register_factory.faq4_a": "40+ verified factories as of Q4/2025, onboarding an average of 8-12 new factories each quarter.",
+        "register_factory.bc_home": "Home",
+        "register_factory.bc_sell": "Sell on CSR",
+        "register_factory.bc_register": "Register Your Factory",
+        "register_factory.badge": "🏭 REGISTER AS A SUPPLIER",
+        "register_factory.hero_title_pre": "Register your factory on",
+        "register_factory.hero_desc": "Reach 600+ Vietnamese dealers actively sourcing Chinese suppliers. Free on-site audit, 1-on-1 onboarding, no listing fees — just 5% commission per order.",
+        "register_factory.stat_suppliers": "🏭 Suppliers verified",
+        "register_factory.stat_rfqs": "📦 RFQs / month",
+        "register_factory.stat_gmv": "💰 GMV 2025",
+        "register_factory.stat_golive": "⏱ Time to go-live",
+        "register_factory.oauth_intro": "⚡ Get started quickly with a company account:",
+        "register_factory.divider_or": "Or fill out the detailed application",
+        "register_factory.sec_company": "① Company Information",
+        "register_factory.lbl_company": "Company name",
+        "register_factory.ph_company": "Foshan ABC Industrial Co., Ltd.",
+        "register_factory.lbl_founded": "Year founded",
+        "register_factory.lbl_biztype": "Business type",
+        "register_factory.opt_manufacturer": "Manufacturer",
+        "register_factory.opt_manufacturer_trading": "Manufacturer + Trading",
+        "register_factory.opt_trading": "Trading Company",
+        "register_factory.opt_distributor": "Distributor / Agent",
+        "register_factory.lbl_province": "Province / City",
+        "register_factory.opt_select_province": "-- Select province --",
+        "register_factory.opt_other": "Other",
+        "register_factory.lbl_employees": "Number of employees",
+        "register_factory.sec_production": "② Production Capability",
+        "register_factory.lbl_area": "Factory area (m²)",
+        "register_factory.lbl_capacity": "Capacity / month",
+        "register_factory.ph_capacity": "e.g. 200,000 pcs / month",
+        "register_factory.lbl_moq": "Typical MOQ",
+        "register_factory.ph_moq": "e.g. 500 pcs / 50 kg / 1x 20ft container",
+        "register_factory.lbl_leadtime": "Average lead time",
+        "register_factory.lbl_main_products": "Main products",
+        "register_factory.hint_select_multiple": "(select multiple)",
+        "register_factory.lbl_export_year": "Year export began",
+        "register_factory.lbl_revenue": "Annual revenue (USD)",
+        "register_factory.lbl_certs": "Existing certifications",
+        "register_factory.sec_contact": "③ Contact & Documents",
+        "register_factory.lbl_contact_person": "Contact person",
+        "register_factory.ph_contact_name": "Contact name at the factory",
+        "register_factory.lbl_job_title": "Job title",
+        "register_factory.ph_job_title": "Sales Manager / Export Director",
+        "register_factory.lbl_email": "Email",
+        "register_factory.lbl_im": "WeChat / WhatsApp",
+        "register_factory.ph_im": "WeChat ID or WhatsApp number",
+        "register_factory.lbl_upload": "Upload capability documents (PDF, brochure, catalog)",
+        "register_factory.upload_drop": "📎 Click or drag & drop a PDF or ZIP file — up to 20MB",
+        "register_factory.upload_hint": "Recommended: product catalog + business license + factory photos",
+        "register_factory.lbl_website": "Existing website (if any)",
+        "register_factory.consent_pre": "I authorize Huayuesc to conduct an on-site audit and agree to the",
+        "register_factory.consent_terms_link": "Supplier Terms",
+        "register_factory.consent_post": "(5% commission on successful orders).",
+        "register_factory.btn_submit": "Submit Factory Application →",
+        "register_factory.have_account": "Already have an account?",
+        "register_factory.sign_in": "Sign In",
+        "register_factory.side_process_title": "📋 5-Step Process",
+        "register_factory.side_faq_title": "❓ Quick FAQ",
+        "register_factory.side_talk_title": "💬 Need to talk first?",
+        "register_factory.side_talk_desc": "Our Guangzhou team is ready for a video call (in Chinese).",
+        "register_factory.side_buyer_title": "🛍 Are you a buyer?",
+        "register_factory.side_buyer_desc": "Register as a Buyer to send RFQs and get a free audit.",
+        "register_factory.side_buyer_link": "Register as Buyer →"
+      },
+      "edits": [
+        [
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";",
+          "import { LOGIN_PROVIDERS } from \"@/components/icons/social\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "    title: \"Reach 600+ VN dealers\",\n    desc: \"Verified buyers with real revenue — no fake accounts.\",",
+          "    title: \"register_factory.vp1_title\",\n    desc: \"register_factory.vp1_desc\","
+        ],
+        [
+          "    title: \"Free audit & onboarding\",\n    desc: \"Our Guangzhou team visits your factory to audit and prepares your profile for you.\",",
+          "    title: \"register_factory.vp2_title\",\n    desc: \"register_factory.vp2_desc\","
+        ],
+        [
+          "    title: \"0% listing fee\",\n    desc: \"Pay just 5% commission per order — no hidden fees, no subscription.\",",
+          "    title: \"register_factory.vp3_title\",\n    desc: \"register_factory.vp3_desc\","
+        ],
+        [
+          "    title: \"Vietnamese-language marketing\",\n    desc: \"Our content team writes landing pages, translates catalogs, and runs ads to VN buyers.\",",
+          "    title: \"register_factory.vp4_title\",\n    desc: \"register_factory.vp4_desc\","
+        ],
+        [
+          "  { n: 1, title: \"Submit your application\", desc: \"5-minute form + brochure / catalog (PDF)\" },",
+          "  { n: 1, title: \"register_factory.step1_title\", desc: \"register_factory.step1_desc\" },"
+        ],
+        [
+          "  { n: 2, title: \"Online interview\", desc: \"30-minute video call with the QC team — capability review\" },",
+          "  { n: 2, title: \"register_factory.step2_title\", desc: \"register_factory.step2_desc\" },"
+        ],
+        [
+          "  { n: 3, title: \"On-site audit\", desc: \"Our Guangzhou team spends a day at your factory — photos, video, documents\" },",
+          "  { n: 3, title: \"register_factory.step3_title\", desc: \"register_factory.step3_desc\" },"
+        ],
+        [
+          "  { n: 4, title: \"Listing onboarding\", desc: \"Create your profile + 10 flagship products, with 1-on-1 training\" },",
+          "  { n: 4, title: \"register_factory.step4_title\", desc: \"register_factory.step4_desc\" },"
+        ],
+        [
+          "  { n: 5, title: \"Go live & first RFQ\", desc: \"Around 30 days on average from the application date\" },",
+          "  { n: 5, title: \"register_factory.step5_title\", desc: \"register_factory.step5_desc\" },"
+        ],
+        [
+          "    q: \"Are there any fees I have to pay?\",\n    a: \"No. Registration, audit, onboarding, hosting, and marketing are all free. Huayuesc charges only 5% commission on successful orders.\",",
+          "    q: \"register_factory.faq1_q\",\n    a: \"register_factory.faq1_a\","
+        ],
+        [
+          "    q: \"How long does the audit take?\",\n    a: \"1 day on-site + 3-5 days to prepare the report. From scheduling to a finished audit report takes about 7-10 days in total.\",",
+          "    q: \"register_factory.faq2_q\",\n    a: \"register_factory.faq2_a\","
+        ],
+        [
+          "    q: \"Do I need to speak Vietnamese?\",\n    a: \"No. Our Guangzhou team speaks Chinese and handles all transactions with VN buyers. You can focus entirely on production.\",",
+          "    q: \"register_factory.faq3_q\",\n    a: \"register_factory.faq3_a\","
+        ],
+        [
+          "    q: \"How many factories have gone live?\",\n    a: \"40+ verified factories as of Q4/2025, onboarding an average of 8-12 new factories each quarter.\",",
+          "    q: \"register_factory.faq4_q\",\n    a: \"register_factory.faq4_a\","
+        ],
+        [
+          "export default function RegisterFactoryPage() {\n  return (",
+          "export default async function RegisterFactoryPage() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "          { label: \"Home\", href: \"/\" },\n          { label: \"Sell on CSR\", href: \"/sell-on-csr\" },\n          { label: \"Register Your Factory\" },",
+          "          { label: t(\"register_factory.bc_home\"), href: \"/\" },\n          { label: t(\"register_factory.bc_sell\"), href: \"/sell-on-csr\" },\n          { label: t(\"register_factory.bc_register\") },"
+        ],
+        [
+          "              🏭 REGISTER AS A SUPPLIER\n            </span>",
+          "              {t(\"register_factory.badge\")}\n            </span>"
+        ],
+        [
+          "              Register your factory on <span className=\"text-gold\">Huayuesc</span>",
+          "              {t(\"register_factory.hero_title_pre\")} <span className=\"text-gold\">Huayuesc</span>"
+        ],
+        [
+          "              Reach 600+ Vietnamese dealers actively sourcing Chinese suppliers.\n              Free on-site audit, 1-on-1 onboarding, no listing fees — just 5% commission per order.\n            </p>",
+          "              {t(\"register_factory.hero_desc\")}\n            </p>"
+        ],
+        [
+          "              <span>🏭 Suppliers verified</span>",
+          "              <span>{t(\"register_factory.stat_suppliers\")}</span>"
+        ],
+        [
+          "              <span>📦 RFQs / month</span>",
+          "              <span>{t(\"register_factory.stat_rfqs\")}</span>"
+        ],
+        [
+          "              <span>💰 GMV 2025</span>",
+          "              <span>{t(\"register_factory.stat_gmv\")}</span>"
+        ],
+        [
+          "              <span>⏱ Time to go-live</span>",
+          "              <span>{t(\"register_factory.stat_golive\")}</span>"
+        ],
+        [
+          "              <b className=\"block text-[13px] text-ink mb-1\">{v.title}</b>\n              <p className=\"text-[11.5px] text-mute leading-snug\">{v.desc}</p>",
+          "              <b className=\"block text-[13px] text-ink mb-1\">{t(v.title)}</b>\n              <p className=\"text-[11.5px] text-mute leading-snug\">{t(v.desc)}</p>"
+        ],
+        [
+          "                ⚡ Get started quickly with a company account:\n              </p>",
+          "                {t(\"register_factory.oauth_intro\")}\n              </p>"
+        ],
+        [
+          "                Or fill out the detailed application\n              </span>",
+          "                {t(\"register_factory.divider_or\")}\n              </span>"
+        ],
+        [
+          "                  ① Company Information\n                </b>",
+          "                  {t(\"register_factory.sec_company\")}\n                </b>"
+        ],
+        [
+          "                      Company name <span className=\"text-accent\">*</span>\n                    </label>\n                    <input\n                      name=\"company\"\n                      required\n                      placeholder=\"Foshan ABC Industrial Co., Ltd.\"",
+          "                      {t(\"register_factory.lbl_company\")} <span className=\"text-accent\">*</span>\n                    </label>\n                    <input\n                      name=\"company\"\n                      required\n                      placeholder={t(\"register_factory.ph_company\")}"
+        ],
+        [
+          "                      Year founded <span className=\"text-accent\">*</span>",
+          "                      {t(\"register_factory.lbl_founded\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                      Business type <span className=\"text-accent\">*</span>",
+          "                      {t(\"register_factory.lbl_biztype\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                      <option>Manufacturer</option>\n                      <option>Manufacturer + Trading</option>\n                      <option>Trading Company</option>\n                      <option>Distributor / Agent</option>",
+          "                      <option>{t(\"register_factory.opt_manufacturer\")}</option>\n                      <option>{t(\"register_factory.opt_manufacturer_trading\")}</option>\n                      <option>{t(\"register_factory.opt_trading\")}</option>\n                      <option>{t(\"register_factory.opt_distributor\")}</option>"
+        ],
+        [
+          "                      Province / City <span className=\"text-accent\">*</span>",
+          "                      {t(\"register_factory.lbl_province\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                      <option value=\"\">-- Select province --</option>",
+          "                      <option value=\"\">{t(\"register_factory.opt_select_province\")}</option>"
+        ],
+        [
+          "                      <option>Other</option>\n                    </select>",
+          "                      <option>{t(\"register_factory.opt_other\")}</option>\n                    </select>"
+        ],
+        [
+          "                      Number of employees\n                    </label>",
+          "                      {t(\"register_factory.lbl_employees\")}\n                    </label>"
+        ],
+        [
+          "                  ② Production Capability\n                </b>",
+          "                  {t(\"register_factory.sec_production\")}\n                </b>"
+        ],
+        [
+          "                      Factory area (m²)\n                    </label>",
+          "                      {t(\"register_factory.lbl_area\")}\n                    </label>"
+        ],
+        [
+          "                      Capacity / month\n                    </label>\n                    <input\n                      name=\"capacity\"\n                      placeholder=\"e.g. 200,000 pcs / month\"",
+          "                      {t(\"register_factory.lbl_capacity\")}\n                    </label>\n                    <input\n                      name=\"capacity\"\n                      placeholder={t(\"register_factory.ph_capacity\")}"
+        ],
+        [
+          "                      Typical MOQ\n                    </label>\n                    <input\n                      name=\"moq\"\n                      placeholder=\"e.g. 500 pcs / 50 kg / 1x 20ft container\"",
+          "                      {t(\"register_factory.lbl_moq\")}\n                    </label>\n                    <input\n                      name=\"moq\"\n                      placeholder={t(\"register_factory.ph_moq\")}"
+        ],
+        [
+          "                      Average lead time\n                    </label>",
+          "                      {t(\"register_factory.lbl_leadtime\")}\n                    </label>"
+        ],
+        [
+          "                      Main products <span className=\"text-accent\">*</span>{\" \"}\n                      <span className=\"text-mute2 font-normal text-[11px]\">(select multiple)</span>",
+          "                      {t(\"register_factory.lbl_main_products\")} <span className=\"text-accent\">*</span>{\" \"}\n                      <span className=\"text-mute2 font-normal text-[11px]\">{t(\"register_factory.hint_select_multiple\")}</span>"
+        ],
+        [
+          "                      Year export began\n                    </label>",
+          "                      {t(\"register_factory.lbl_export_year\")}\n                    </label>"
+        ],
+        [
+          "                      Annual revenue (USD)\n                    </label>",
+          "                      {t(\"register_factory.lbl_revenue\")}\n                    </label>"
+        ],
+        [
+          "                      Existing certifications{\" \"}\n                      <span className=\"text-mute2 font-normal text-[11px]\">(select multiple)</span>",
+          "                      {t(\"register_factory.lbl_certs\")}{\" \"}\n                      <span className=\"text-mute2 font-normal text-[11px]\">{t(\"register_factory.hint_select_multiple\")}</span>"
+        ],
+        [
+          "                  ③ Contact & Documents\n                </b>",
+          "                  {t(\"register_factory.sec_contact\")}\n                </b>"
+        ],
+        [
+          "                      Contact person <span className=\"text-accent\">*</span>\n                    </label>\n                    <input\n                      name=\"contactName\"\n                      required\n                      placeholder=\"Contact name at the factory\"",
+          "                      {t(\"register_factory.lbl_contact_person\")} <span className=\"text-accent\">*</span>\n                    </label>\n                    <input\n                      name=\"contactName\"\n                      required\n                      placeholder={t(\"register_factory.ph_contact_name\")}"
+        ],
+        [
+          "                      Job title\n                    </label>\n                    <input\n                      name=\"contactRole\"\n                      placeholder=\"Sales Manager / Export Director\"",
+          "                      {t(\"register_factory.lbl_job_title\")}\n                    </label>\n                    <input\n                      name=\"contactRole\"\n                      placeholder={t(\"register_factory.ph_job_title\")}"
+        ],
+        [
+          "                      Email <span className=\"text-accent\">*</span>",
+          "                      {t(\"register_factory.lbl_email\")} <span className=\"text-accent\">*</span>"
+        ],
+        [
+          "                      WeChat / WhatsApp\n                    </label>\n                    <input\n                      name=\"im\"\n                      placeholder=\"WeChat ID or WhatsApp number\"",
+          "                      {t(\"register_factory.lbl_im\")}\n                    </label>\n                    <input\n                      name=\"im\"\n                      placeholder={t(\"register_factory.ph_im\")}"
+        ],
+        [
+          "                      Upload capability documents (PDF, brochure, catalog)\n                    </label>",
+          "                      {t(\"register_factory.lbl_upload\")}\n                    </label>"
+        ],
+        [
+          "                      📎 Click or drag &amp; drop a PDF or ZIP file — up to 20MB\n                      <br />\n                      <small className=\"text-[11px] text-mute2\">\n                        Recommended: product catalog + business license + factory photos\n                      </small>",
+          "                      {t(\"register_factory.upload_drop\")}\n                      <br />\n                      <small className=\"text-[11px] text-mute2\">\n                        {t(\"register_factory.upload_hint\")}\n                      </small>"
+        ],
+        [
+          "                      Existing website (if any)\n                    </label>",
+          "                      {t(\"register_factory.lbl_website\")}\n                    </label>"
+        ],
+        [
+          "                  I authorize Huayuesc to conduct an on-site audit and agree to the{\" \"}",
+          "                  {t(\"register_factory.consent_pre\")}{\" \"}"
+        ],
+        [
+          "                    Supplier Terms\n                  </Link>{\" \"}\n                  (5% commission on successful orders).",
+          "                    {t(\"register_factory.consent_terms_link\")}\n                  </Link>{\" \"}\n                  {t(\"register_factory.consent_post\")}"
+        ],
+        [
+          "                Submit Factory Application →\n              </button>",
+          "                {t(\"register_factory.btn_submit\")}\n              </button>"
+        ],
+        [
+          "                Already have an account?{\" \"}",
+          "                {t(\"register_factory.have_account\")}{\" \"}"
+        ],
+        [
+          "                  Sign In\n                </Link>",
+          "                  {t(\"register_factory.sign_in\")}\n                </Link>"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">📋 5-Step Process</b>",
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">{t(\"register_factory.side_process_title\")}</b>"
+        ],
+        [
+          "                      <b className=\"block text-[12.5px] text-ink\">{s.title}</b>\n                      <p className=\"text-[11px] text-mute leading-snug\">{s.desc}</p>",
+          "                      <b className=\"block text-[12.5px] text-ink\">{t(s.title)}</b>\n                      <p className=\"text-[11px] text-mute leading-snug\">{t(s.desc)}</p>"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">❓ Quick FAQ</b>",
+          "              <b className=\"block text-[14px] font-bold text-ink mb-3\">{t(\"register_factory.side_faq_title\")}</b>"
+        ],
+        [
+          "                      <b className=\"text-[12.5px] text-ink leading-snug\">{f.q}</b>",
+          "                      <b className=\"text-[12.5px] text-ink leading-snug\">{t(f.q)}</b>"
+        ],
+        [
+          "                    <p className=\"text-[11.5px] text-mute leading-relaxed mt-1.5\">{f.a}</p>",
+          "                    <p className=\"text-[11.5px] text-mute leading-relaxed mt-1.5\">{t(f.a)}</p>"
+        ],
+        [
+          "              <b className=\"block text-[14px] font-bold mb-1\">💬 Need to talk first?</b>",
+          "              <b className=\"block text-[14px] font-bold mb-1\">{t(\"register_factory.side_talk_title\")}</b>"
+        ],
+        [
+          "                Our Guangzhou team is ready for a video call (in Chinese).\n              </p>",
+          "                {t(\"register_factory.side_talk_desc\")}\n              </p>"
+        ],
+        [
+          "              <b className=\"block text-[12.5px] text-ink mb-1\">🛍 Are you a buyer?</b>",
+          "              <b className=\"block text-[12.5px] text-ink mb-1\">{t(\"register_factory.side_buyer_title\")}</b>"
+        ],
+        [
+          "                Register as a Buyer to send RFQs and get a free audit.\n              </p>",
+          "                {t(\"register_factory.side_buyer_desc\")}\n              </p>"
+        ],
+        [
+          "                Register as Buyer →\n              </Link>",
+          "                {t(\"register_factory.side_buyer_link\")}\n              </Link>"
+        ]
+      ],
+      "deferred": "Phone/email/WeChat contact lines (+86 20 1234 5678, supplier@alibabavn.com, WeChat: alibabavn_sup) left untouched — contact data, not display copy. Metadata title \"Register Your Factory — Huayuesc\" left as-is (module-level export const metadata, cannot use t())."
+    }
+  ]
+}

@@ -1,43 +1,43 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
 import { FACTORIES } from "@/data/home";
 
 const EVENTS = [
   {
-    badge: "TRỰC TIẾP",
-    title: "Canton Fair Mùa Xuân 2026",
+    badge: "IN PERSON",
+    title: "Canton Fair Spring 2026",
     date: "15/04 – 19/04/2026",
-    location: "Quảng Châu · Trung Quốc",
-    desc: "Hội chợ XNK lớn nhất châu Á — 25,000 NCC, 5 ngành hàng. Cybersilkroads tổ chức tour đoàn buyer Việt với phiên dịch + đặt lịch họp 1-1 trước.",
+    location: "Guangzhou · China",
+    desc: "Asia's largest import-export trade show — 25,000 suppliers, 5 industries. Huayuesc runs a Vietnamese buyer-delegation tour with interpreters and pre-booked 1-on-1 meetings.",
     color: "bg-accent",
-    cta: "Đăng ký đoàn",
+    cta: "Register delegation",
   },
   {
     badge: "VIRTUAL",
-    title: "Vietnam Expo 2026 – Booth Trung Quốc",
+    title: "Vietnam Expo 2026 – China Booth",
     date: "08/05 – 11/05/2026",
-    location: "Trung tâm Triển lãm Giảng Võ · Hà Nội",
-    desc: "120 nhà máy gốm sứ, nội thất, vệ sinh có booth tại Hà Nội. Đăng ký vé miễn phí cho buyer Cybersilkroads, đặt lịch họp 30 phút/booth.",
+    location: "Giang Vo Exhibition Center · Hanoi",
+    desc: "120 ceramics, furniture, and sanitaryware factories with booths in Hanoi. Free tickets for Huayuesc buyers, with 30-minute meeting slots per booth.",
     color: "bg-brand",
-    cta: "Lấy vé miễn phí",
+    cta: "Get free tickets",
   },
   {
     badge: "OEM FOCUS",
     title: "Furniture China 2026 – Shanghai",
     date: "10/09 – 13/09/2026",
-    location: "Thượng Hải · NECC Hongqiao",
-    desc: "Riêng cho ngành nội thất: KUKA, Landbond, OPPEIN, ZuoYou đều có booth. Cybersilkroads tổ chức factory tour Phật Sơn ngay sau hội chợ (3 ngày).",
+    location: "Shanghai · NECC Hongqiao",
+    desc: "Furniture industry only: KUKA, Landbond, OPPEIN, and ZuoYou all have booths. Huayuesc runs a 3-day Foshan factory tour right after the fair.",
     color: "bg-gold text-brand-dark",
-    cta: "Xem chi tiết tour",
+    cta: "View tour details",
   },
 ];
 
 const BOOKING_STEPS = [
-  { n: 1, title: "Chọn NCC bạn quan tâm", desc: "Lọc theo ngành / vùng sản xuất / năm lập, tick chọn 1–3 nhà máy." },
-  { n: 2, title: "Chọn khung giờ họp", desc: "Đặt 30–60 phút, qua Zoom/Teams hoặc gặp trực tiếp tại Foshan/Shenzhen." },
-  { n: 3, title: "Gửi agenda + tài liệu", desc: "Yêu cầu báo giá, sample, capacity report — chuẩn bị trước cho buổi họp hiệu quả." },
-  { n: 4, title: "Họp 1-1 với phiên dịch", desc: "Cybersilkroads cung cấp phiên dịch Việt–Trung free cho 60 phút đầu tiên." },
+  { n: 1, title: "Pick the suppliers you're interested in", desc: "Filter by industry / production region / year founded, then select 1–3 factories." },
+  { n: 2, title: "Choose a meeting slot", desc: "Book 30–60 minutes via Zoom/Teams or meet in person in Foshan/Shenzhen." },
+  { n: 3, title: "Send your agenda + documents", desc: "RFQ, samples, capacity report — prepare ahead for a productive meeting." },
+  { n: 4, title: "1-on-1 meeting with an interpreter", desc: "Huayuesc provides a free Vietnamese–Chinese interpreter for the first 60 minutes." },
 ];
 
 const SUPPLIERS = FACTORIES.slice(0, 6);
@@ -45,22 +45,22 @@ const SUPPLIERS = FACTORIES.slice(0, 6);
 export default function MeetSuppliersPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực người mua", href: "/buyer-center" }, { label: "Gặp nhà cung cấp" }]} />
+      <Breadcrumb trail={[{ label: "Home", href: "/" }, { label: "Buyer Center", href: "/buyer-center" }, { label: "Meet Suppliers" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[240px_1fr] gap-5 max-md:grid-cols-1">
         <BuyerSidebar active="/buyer-center/meet-suppliers" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 GẶP NHÀ CUNG CẤP</div>
-            <h1 className="text-[22px] font-bold text-ink">Gặp nhà cung cấp</h1>
+            <div className="inline-block bg-brand/10 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 MEET SUPPLIERS</div>
+            <h1 className="text-[22px] font-bold text-ink">Meet Suppliers</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              Gặp trực tiếp luôn hiệu quả hơn email. Từ hội chợ ngành đến phòng họp video 1-1, Cybersilkroads giúp bạn tiếp cận nhà máy đúng cách: phiên dịch sẵn, agenda chuẩn, follow-up rõ ràng.
+              Meeting in person always beats email. From industry trade shows to 1-on-1 video rooms, Huayuesc helps you reach factories the right way: interpreters ready, a solid agenda, and clear follow-up.
             </p>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="flex justify-between items-center mb-4">
-              <b className="text-[15px] text-ink">📅 Sự kiện sắp tới</b>
-              <Link href="/factory-tour" className="text-brand text-[12px] hover:underline">Xem tất cả →</Link>
+              <b className="text-[15px] text-ink">📅 Upcoming events</b>
+              <Link href="/factory-tour" className="text-brand text-[12px] hover:underline">View All →</Link>
             </div>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {EVENTS.map((e) => (
@@ -79,8 +79,8 @@ export default function MeetSuppliersPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-1">🎯 Đặt lịch họp 1-1 với nhà máy</b>
-            <p className="text-[12px] text-mute mb-4">Quy trình 4 bước, Cybersilkroads lo logistics + phiên dịch.</p>
+            <b className="block text-[15px] text-ink mb-1">🎯 Book a 1-on-1 meeting with a factory</b>
+            <p className="text-[12px] text-mute mb-4">A 4-step process — Huayuesc handles logistics and interpretation.</p>
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 mb-5">
               {BOOKING_STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-3">
@@ -91,7 +91,7 @@ export default function MeetSuppliersPage() {
               ))}
             </div>
 
-            <b className="block text-[13px] text-ink mb-2">Chọn nhà máy bạn muốn gặp:</b>
+            <b className="block text-[13px] text-ink mb-2">Choose the factories you want to meet:</b>
             <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1">
               {SUPPLIERS.map((f) => (
                 <label key={f.slug} className="border border-line rounded p-3 hover:border-brand cursor-pointer flex gap-3 items-start">
@@ -105,17 +105,17 @@ export default function MeetSuppliersPage() {
                 </label>
               ))}
             </div>
-            <button className="mt-4 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">📅 Yêu cầu lịch họp</button>
+            <button className="mt-4 px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[12.5px] hover:opacity-90">📅 Request a meeting</button>
           </div>
 
           <Link href="/factory-tour" className="block bg-brand-dark text-white rounded p-5 hover:opacity-95">
             <div className="flex justify-between items-center max-md:flex-col max-md:items-start max-md:gap-3">
               <div>
                 <div className="inline-block bg-gold text-brand-dark px-2 py-0.5 text-[10px] font-bold rounded-sm tracking-wider mb-2">🆕 360° VR</div>
-                <b className="block text-[16px] mb-1">Tour nhà máy 360°</b>
-                <p className="text-[12.5px] opacity-90">Chưa thể bay sang Foshan? Tham quan dây chuyền, kho thành phẩm, phòng QC qua camera 360° + livestream với QC manager.</p>
+                <b className="block text-[16px] mb-1">360° Factory Tour</b>
+                <p className="text-[12.5px] opacity-90">Can't fly to Foshan yet? Tour the production lines, finished-goods warehouse, and QC room via 360° cameras plus a livestream with the QC manager.</p>
               </div>
-              <span className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] whitespace-nowrap">Bắt đầu tour →</span>
+              <span className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[13px] whitespace-nowrap">Start tour →</span>
             </div>
           </Link>
         </div>
@@ -124,4 +124,4 @@ export default function MeetSuppliersPage() {
   );
 }
 
-export const metadata = { title: "Gặp nhà cung cấp — Buyer Center" };
+export const metadata = { title: "Meet Suppliers — Buyer Center" };

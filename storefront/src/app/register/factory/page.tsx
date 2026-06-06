@@ -1,66 +1,68 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
 import { LOGIN_PROVIDERS } from "@/components/icons/social";
+import { getT } from "@/lib/t";
 
 const VALUE_PROPS = [
   {
     icon: "📈",
-    title: "Tiếp cận 600+ dealer VN",
-    desc: "Buyer đã verified, có doanh thu thực, không phải tài khoản fake.",
+    title: "register_factory.vp1_title",
+    desc: "register_factory.vp1_desc",
   },
   {
     icon: "🆓",
-    title: "Audit & onboarding free",
-    desc: "Đội ngũ tại Quảng Châu đến tận nhà máy audit, làm hồ sơ giùm bạn.",
+    title: "register_factory.vp2_title",
+    desc: "register_factory.vp2_desc",
   },
   {
     icon: "💼",
-    title: "0% phí listing",
-    desc: "Chỉ trả 5% commission khi có đơn — không có phí ẩn, không thuê bao.",
+    title: "register_factory.vp3_title",
+    desc: "register_factory.vp3_desc",
   },
   {
     icon: "🌐",
-    title: "Marketing tiếng Việt",
-    desc: "Đội content viết landing page, dịch catalogue, chạy ads tới buyer VN.",
+    title: "register_factory.vp4_title",
+    desc: "register_factory.vp4_desc",
   },
 ];
 
 const STEPS = [
-  { n: 1, title: "Gửi hồ sơ", desc: "Form 5 phút + brochure / catalogue (PDF)" },
-  { n: 2, title: "Phỏng vấn online", desc: "Video call 30 phút với QC team — kiểm tra capability" },
-  { n: 3, title: "Audit on-site", desc: "Đội tại Quảng Châu đến nhà máy 1 ngày — chụp ảnh, video, tài liệu" },
-  { n: 4, title: "Onboarding listing", desc: "Tạo profile + 10 sản phẩm chủ lực, training 1-on-1" },
-  { n: 5, title: "Go-live & RFQ đầu tiên", desc: "Trung bình 30 ngày từ ngày gửi hồ sơ" },
+  { n: 1, title: "register_factory.step1_title", desc: "register_factory.step1_desc" },
+  { n: 2, title: "register_factory.step2_title", desc: "register_factory.step2_desc" },
+  { n: 3, title: "register_factory.step3_title", desc: "register_factory.step3_desc" },
+  { n: 4, title: "register_factory.step4_title", desc: "register_factory.step4_desc" },
+  { n: 5, title: "register_factory.step5_title", desc: "register_factory.step5_desc" },
 ];
 
 const FAQ = [
   {
-    q: "Tôi có phải trả phí gì không?",
-    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Cybersilkroads chỉ tính 5% commission khi có đơn hàng thành công.",
+    q: "register_factory.faq1_q",
+    a: "register_factory.faq1_a",
   },
   {
-    q: "Audit mất bao lâu?",
-    a: "1 ngày on-site + 3-5 ngày làm báo cáo. Tổng từ lúc đặt lịch đến khi có báo cáo audit khoảng 7-10 ngày.",
+    q: "register_factory.faq2_q",
+    a: "register_factory.faq2_a",
   },
   {
-    q: "Tôi có cần biết tiếng Việt?",
-    a: "Không. Đội tại Quảng Châu nói tiếng Trung và xử lý mọi giao dịch với buyer VN. Bạn chỉ cần tập trung vào sản xuất.",
+    q: "register_factory.faq3_q",
+    a: "register_factory.faq3_a",
   },
   {
-    q: "Bao nhiêu nhà máy đã go-live?",
-    a: "40+ nhà máy verified tính tới Q4/2025, trung bình mỗi quý onboard thêm 8-12 nhà máy.",
+    q: "register_factory.faq4_q",
+    a: "register_factory.faq4_a",
   },
 ];
 
-export default function RegisterFactoryPage() {
+export default async function RegisterFactoryPage() {
+  const t = await getT();
   return (
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Bán trên CSR", href: "/sell-on-csr" },
-          { label: "Đăng ký nhà máy" },
+          { label: t("register_factory.bc_home"), href: "/" },
+          { label: t("register_factory.bc_sell"), href: "/sell-on-csr" },
+          { label: t("register_factory.bc_register") },
         ]}
       />
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
@@ -71,32 +73,31 @@ export default function RegisterFactoryPage() {
         >
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2.5">
-              🏭 ĐĂNG KÝ NHÀ CUNG CẤP
+              {t("register_factory.badge")}
             </span>
             <h1 className="text-[26px] font-extrabold leading-tight mb-1.5 max-md:text-[22px]">
-              Đăng ký nhà máy trên <span className="text-gold">Cybersilkroads</span>
+              {t("register_factory.hero_title_pre")} <span className="text-gold">Huayuesc</span>
             </h1>
             <p className="text-[13px] opacity-90 leading-relaxed max-w-[680px]">
-              Tiếp cận 600+ đại lý Việt Nam đang chủ động tìm nhà cung cấp Trung Quốc.
-              Kiểm định tại chỗ miễn phí, onboarding 1-on-1, không phí listing, chỉ trả 5% commission khi có đơn.
+              {t("register_factory.hero_desc")}
             </p>
           </div>
           <div className="flex flex-col gap-2 text-[12px] opacity-90 min-w-[200px]">
             <div className="flex justify-between">
-              <span>🏭 Suppliers verified</span>
+              <span>{t("register_factory.stat_suppliers")}</span>
               <b>40+</b>
             </div>
             <div className="flex justify-between">
-              <span>📦 RFQ / tháng</span>
+              <span>{t("register_factory.stat_rfqs")}</span>
               <b>1,200+</b>
             </div>
             <div className="flex justify-between">
-              <span>💰 GMV 2025</span>
+              <span>{t("register_factory.stat_gmv")}</span>
               <b>$8.2M</b>
             </div>
             <div className="flex justify-between">
-              <span>⏱ Time to go-live</span>
-              <b>~30 ngày</b>
+              <span>{t("register_factory.stat_golive")}</span>
+              <b>~30 days</b>
             </div>
           </div>
         </div>
@@ -106,8 +107,8 @@ export default function RegisterFactoryPage() {
           {VALUE_PROPS.map((v) => (
             <div key={v.title} className="bg-paper border border-line rounded p-3.5">
               <div className="text-[26px] mb-1.5">{v.icon}</div>
-              <b className="block text-[13px] text-ink mb-1">{v.title}</b>
-              <p className="text-[11.5px] text-mute leading-snug">{v.desc}</p>
+              <b className="block text-[13px] text-ink mb-1">{t(v.title)}</b>
+              <p className="text-[11.5px] text-mute leading-snug">{t(v.desc)}</p>
             </div>
           ))}
         </div>
@@ -118,7 +119,7 @@ export default function RegisterFactoryPage() {
             {/* Quick OAuth signup */}
             <div className="mb-5">
               <p className="text-[12.5px] text-mute mb-2.5">
-                ⚡ Bắt đầu nhanh với tài khoản công ty:
+                {t("register_factory.oauth_intro")}
               </p>
               <div className="grid grid-cols-3 gap-2">
                 {LOGIN_PROVIDERS.map((p) => (
@@ -126,7 +127,7 @@ export default function RegisterFactoryPage() {
                     key={p.name}
                     href={`/register/oauth/${p.name.toLowerCase()}?role=supplier`}
                     className="flex items-center justify-center gap-2 py-2.5 border border-line rounded-sm text-[12.5px] font-semibold text-ink cursor-pointer hover:border-brand hover:bg-bg"
-                    aria-label={`Đăng ký với ${p.name}`}
+                    aria-label={`Sign up with ${p.name}`}
                   >
                     <span className="flex-shrink-0">{p.icon}</span>
                     <span>{p.name}</span>
@@ -138,7 +139,7 @@ export default function RegisterFactoryPage() {
             <div className="flex items-center gap-3 mb-5">
               <div className="flex-1 h-px bg-line" />
               <span className="text-[10.5px] text-mute2 uppercase tracking-wider">
-                Hoặc điền hồ sơ chi tiết
+                {t("register_factory.divider_or")}
               </span>
               <div className="flex-1 h-px bg-line" />
             </div>
@@ -147,23 +148,23 @@ export default function RegisterFactoryPage() {
               {/* Section: Company info */}
               <div>
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ① Thông tin công ty
+                  {t("register_factory.sec_company")}
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tên công ty <span className="text-accent">*</span>
+                      {t("register_factory.lbl_company")} <span className="text-accent">*</span>
                     </label>
                     <input
                       name="company"
                       required
-                      placeholder="Foshan ABC Industrial Co., Ltd."
+                      placeholder={t("register_factory.ph_company")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Năm thành lập <span className="text-accent">*</span>
+                      {t("register_factory.lbl_founded")} <span className="text-accent">*</span>
                     </label>
                     <input
                       name="founded"
@@ -175,29 +176,29 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Loại hình kinh doanh <span className="text-accent">*</span>
+                      {t("register_factory.lbl_biztype")} <span className="text-accent">*</span>
                     </label>
                     <select
                       name="businessType"
                       required
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>Manufacturer (Nhà sản xuất)</option>
-                      <option>Manufacturer + Trading</option>
-                      <option>Trading Company</option>
-                      <option>Distributor / Agent</option>
+                      <option>{t("register_factory.opt_manufacturer")}</option>
+                      <option>{t("register_factory.opt_manufacturer_trading")}</option>
+                      <option>{t("register_factory.opt_trading")}</option>
+                      <option>{t("register_factory.opt_distributor")}</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tỉnh / Thành <span className="text-accent">*</span>
+                      {t("register_factory.lbl_province")} <span className="text-accent">*</span>
                     </label>
                     <select
                       name="province"
                       required
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option value="">-- Chọn tỉnh --</option>
+                      <option value="">{t("register_factory.opt_select_province")}</option>
                       <option>Foshan, Guangdong</option>
                       <option>Guangzhou, Guangdong</option>
                       <option>Shenzhen, Guangdong</option>
@@ -208,12 +209,12 @@ export default function RegisterFactoryPage() {
                       <option>Yiwu, Zhejiang</option>
                       <option>Shanghai</option>
                       <option>Tianjin</option>
-                      <option>Khác</option>
+                      <option>{t("register_factory.opt_other")}</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Số nhân viên
+                      {t("register_factory.lbl_employees")}
                     </label>
                     <select
                       name="employees"
@@ -231,12 +232,12 @@ export default function RegisterFactoryPage() {
               {/* Section: Production capability */}
               <div className="pt-3 border-t border-line">
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ② Năng lực sản xuất
+                  {t("register_factory.sec_production")}
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Diện tích nhà máy (m²)
+                      {t("register_factory.lbl_area")}
                     </label>
                     <input
                       name="area"
@@ -247,43 +248,43 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Capacity / tháng
+                      {t("register_factory.lbl_capacity")}
                     </label>
                     <input
                       name="capacity"
-                      placeholder="Vd: 200,000 pcs / month"
+                      placeholder={t("register_factory.ph_capacity")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      MOQ điển hình
+                      {t("register_factory.lbl_moq")}
                     </label>
                     <input
                       name="moq"
-                      placeholder="Vd: 500 pcs / 50 kg / 1 cont 20"
+                      placeholder={t("register_factory.ph_moq")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Thời gian giao trung bình
+                      {t("register_factory.lbl_leadtime")}
                     </label>
                     <select
                       name="leadTime"
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                     >
-                      <option>7 – 15 ngày</option>
-                      <option>15 – 30 ngày</option>
-                      <option>30 – 45 ngày</option>
-                      <option>45 – 60 ngày</option>
-                      <option>&gt; 60 ngày</option>
+                      <option>7 – 15 days</option>
+                      <option>15 – 30 days</option>
+                      <option>30 – 45 days</option>
+                      <option>45 – 60 days</option>
+                      <option>&gt; 60 days</option>
                     </select>
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Sản phẩm chính <span className="text-accent">*</span>{" "}
-                      <span className="text-mute2 font-normal text-[11px]">(chọn nhiều)</span>
+                      {t("register_factory.lbl_main_products")} <span className="text-accent">*</span>{" "}
+                      <span className="text-mute2 font-normal text-[11px]">{t("register_factory.hint_select_multiple")}</span>
                     </label>
                     <div className="grid grid-cols-3 gap-2 max-md:grid-cols-2">
                       {NAV_CATEGORIES.map((c) => (
@@ -305,7 +306,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Năm bắt đầu xuất khẩu
+                      {t("register_factory.lbl_export_year")}
                     </label>
                     <input
                       name="exportYear"
@@ -316,7 +317,7 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Kim ngạch / năm (USD)
+                      {t("register_factory.lbl_revenue")}
                     </label>
                     <select
                       name="revenue"
@@ -330,8 +331,8 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Chứng nhận hiện có{" "}
-                      <span className="text-mute2 font-normal text-[11px]">(chọn nhiều)</span>
+                      {t("register_factory.lbl_certs")}{" "}
+                      <span className="text-mute2 font-normal text-[11px]">{t("register_factory.hint_select_multiple")}</span>
                     </label>
                     <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
                       {[
@@ -342,7 +343,7 @@ export default function RegisterFactoryPage() {
                         "CE",
                         "RoHS",
                         "FDA",
-                        "Khác",
+                        "Other",
                       ].map((cert) => (
                         <label
                           key={cert}
@@ -365,33 +366,33 @@ export default function RegisterFactoryPage() {
               {/* Section: Contact + documents */}
               <div className="pt-3 border-t border-line">
                 <b className="block text-[12px] uppercase tracking-wider text-brand mb-2">
-                  ③ Liên hệ & hồ sơ
+                  {t("register_factory.sec_contact")}
                 </b>
                 <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Người liên hệ <span className="text-accent">*</span>
+                      {t("register_factory.lbl_contact_person")} <span className="text-accent">*</span>
                     </label>
                     <input
                       name="contactName"
                       required
-                      placeholder="Tên người liên hệ tại nhà máy"
+                      placeholder={t("register_factory.ph_contact_name")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Chức vụ
+                      {t("register_factory.lbl_job_title")}
                     </label>
                     <input
                       name="contactRole"
-                      placeholder="Sales Manager / Export Director"
+                      placeholder={t("register_factory.ph_job_title")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Email <span className="text-accent">*</span>
+                      {t("register_factory.lbl_email")} <span className="text-accent">*</span>
                     </label>
                     <input
                       name="email"
@@ -403,29 +404,29 @@ export default function RegisterFactoryPage() {
                   </div>
                   <div>
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      WeChat / WhatsApp
+                      {t("register_factory.lbl_im")}
                     </label>
                     <input
                       name="im"
-                      placeholder="WeChat ID hoặc số WhatsApp"
+                      placeholder={t("register_factory.ph_im")}
                       className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                     />
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Tải hồ sơ năng lực (PDF, brochure, catalogue)
+                      {t("register_factory.lbl_upload")}
                     </label>
                     <div className="border-2 border-dashed border-line rounded p-5 text-center text-[12.5px] text-mute hover:border-brand cursor-pointer">
-                      📎 Click hoặc kéo thả file PDF, ZIP — tối đa 20MB
+                      {t("register_factory.upload_drop")}
                       <br />
                       <small className="text-[11px] text-mute2">
-                        Khuyến nghị: catalogue sản phẩm + giấy phép kinh doanh + ảnh nhà máy
+                        {t("register_factory.upload_hint")}
                       </small>
                     </div>
                   </div>
                   <div className="col-span-2">
                     <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                      Website hiện có (nếu có)
+                      {t("register_factory.lbl_website")}
                     </label>
                     <input
                       name="website"
@@ -440,14 +441,14 @@ export default function RegisterFactoryPage() {
               <label className="flex items-start gap-2 text-[12px] text-mute mt-4">
                 <input type="checkbox" required className="accent-brand mt-0.5" />
                 <span>
-                  Đồng ý cho Cybersilkroads thực hiện audit on-site và đồng ý{" "}
+                  {t("register_factory.consent_pre")}{" "}
                   <Link
                     href="/info/terms-of-service"
                     className="text-brand cursor-pointer hover:underline"
                   >
-                    Điều khoản NCC
+                    {t("register_factory.consent_terms_link")}
                   </Link>{" "}
-                  (commission 5% trên đơn hàng thành công).
+                  {t("register_factory.consent_post")}
                 </span>
               </label>
 
@@ -455,12 +456,12 @@ export default function RegisterFactoryPage() {
                 type="submit"
                 className="w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light mt-3"
               >
-                Gửi đăng ký nhà máy →
+                {t("register_factory.btn_submit")}
               </button>
               <p className="text-[12px] text-mute text-center">
-                Đã có tài khoản?{" "}
+                {t("register_factory.have_account")}{" "}
                 <Link href="/login" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Đăng nhập
+                  {t("register_factory.sign_in")}
                 </Link>
               </p>
             </form>
@@ -469,7 +470,7 @@ export default function RegisterFactoryPage() {
           {/* === RIGHT: side info ======================================== */}
           <aside className="space-y-4 self-start">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">📋 Quy trình 5 bước</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">{t("register_factory.side_process_title")}</b>
               <ol className="space-y-3">
                 {STEPS.map((s) => (
                   <li key={s.n} className="flex gap-2.5">
@@ -477,8 +478,8 @@ export default function RegisterFactoryPage() {
                       {s.n}
                     </span>
                     <div>
-                      <b className="block text-[12.5px] text-ink">{s.title}</b>
-                      <p className="text-[11px] text-mute leading-snug">{s.desc}</p>
+                      <b className="block text-[12.5px] text-ink">{t(s.title)}</b>
+                      <p className="text-[11px] text-mute leading-snug">{t(s.desc)}</p>
                     </div>
                   </li>
                 ))}
@@ -486,17 +487,17 @@ export default function RegisterFactoryPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">❓ FAQ ngắn</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">{t("register_factory.side_faq_title")}</b>
               <div className="space-y-3">
                 {FAQ.map((f) => (
                   <details key={f.q} className="group">
                     <summary className="flex justify-between items-start gap-2 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-                      <b className="text-[12.5px] text-ink leading-snug">{f.q}</b>
+                      <b className="text-[12.5px] text-ink leading-snug">{t(f.q)}</b>
                       <span className="text-mute text-[11px] group-open:rotate-180 transition-transform flex-shrink-0">
                         ▾
                       </span>
                     </summary>
-                    <p className="text-[11.5px] text-mute leading-relaxed mt-1.5">{f.a}</p>
+                    <p className="text-[11.5px] text-mute leading-relaxed mt-1.5">{t(f.a)}</p>
                   </details>
                 ))}
               </div>
@@ -506,9 +507,9 @@ export default function RegisterFactoryPage() {
               className="rounded p-4 text-white"
               style={{ background: "linear-gradient(135deg,#005F6B,#003A42)" }}
             >
-              <b className="block text-[14px] font-bold mb-1">💬 Cần tư vấn trước?</b>
+              <b className="block text-[14px] font-bold mb-1">{t("register_factory.side_talk_title")}</b>
               <p className="text-[11.5px] opacity-90 leading-snug mb-2.5">
-                Đội tại Quảng Châu sẵn sàng video call (tiếng Trung).
+                {t("register_factory.side_talk_desc")}
               </p>
               <div className="text-[11.5px] opacity-90 space-y-1">
                 <div>📞 +86 20 1234 5678</div>
@@ -518,15 +519,15 @@ export default function RegisterFactoryPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-4">
-              <b className="block text-[12.5px] text-ink mb-1">🛍 Bạn là người mua?</b>
+              <b className="block text-[12.5px] text-ink mb-1">{t("register_factory.side_buyer_title")}</b>
               <p className="text-[11.5px] text-mute leading-snug mb-2">
-                Đăng ký Người mua để gửi RFQ và nhận audit miễn phí.
+                {t("register_factory.side_buyer_desc")}
               </p>
               <Link
                 href="/register/buyer"
                 className="text-[12px] text-brand font-semibold cursor-pointer hover:underline"
               >
-                Đăng ký Người mua →
+                {t("register_factory.side_buyer_link")}
               </Link>
             </div>
           </aside>
@@ -536,4 +537,4 @@ export default function RegisterFactoryPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký nhà máy — Cybersilkroads" };
+export const metadata = { title: "Register Your Factory — Huayuesc" };

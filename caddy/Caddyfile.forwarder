@@ -1,0 +1,10 @@
+{
+    auto_https off
+}
+:80 {
+    header * {
+        Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        -ETag
+    }
+    reverse_proxy storefront:3001
+}

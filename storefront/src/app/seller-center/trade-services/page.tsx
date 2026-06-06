@@ -1,91 +1,92 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
+import { getT } from "@/lib/t";
 
 const CATEGORIES = [
   {
     icon: "🏭",
-    name: "Audit nhà máy",
+    name: "seller_center_trade_services.cat_factory_audit_name",
     providers: ["TÜV Rheinland", "SGS Vietnam", "Bureau Veritas"],
     from: "$420",
-    desc: "Báo cáo audit độc lập theo ISO 9001 / SA8000 — yêu cầu của 80% buyer Việt Nam.",
+    desc: "seller_center_trade_services.cat_factory_audit_desc",
   },
   {
     icon: "🔬",
-    name: "Kiểm định chất lượng hàng",
+    name: "seller_center_trade_services.cat_quality_inspection_name",
     providers: ["Intertek", "QIMA", "AsiaInspection"],
     from: "$220",
-    desc: "Kiểm AQL 2.5 tại xưởng trước niêm phong container, gồm photo + video báo cáo trong 48h.",
+    desc: "seller_center_trade_services.cat_quality_inspection_desc",
   },
   {
     icon: "🚛",
-    name: "Vận chuyển DDP tới VN",
+    name: "seller_center_trade_services.cat_ddp_shipping_name",
     providers: ["VietExpress", "Cainiao Logistics", "DHL Trade"],
     from: "$1,800/cont",
-    desc: "Trọn gói container 20'/40' từ kho NCC tới kho buyer Hà Nội/HCM, đã thông quan.",
+    desc: "seller_center_trade_services.cat_ddp_shipping_desc",
   },
   {
     icon: "⚖",
-    name: "Hợp đồng pháp lý song ngữ",
+    name: "seller_center_trade_services.cat_legal_contract_name",
     providers: ["Baker McKenzie VN", "YKVN", "VILAF"],
     from: "$680",
-    desc: "Soạn / review hợp đồng OEM, NDA, distribution VN-CN. Bảo vệ điều khoản phạt + trung gian.",
+    desc: "seller_center_trade_services.cat_legal_contract_desc",
   },
   {
     icon: "🌐",
-    name: "Dịch thuật chuyên ngành",
+    name: "seller_center_trade_services.cat_translation_name",
     providers: ["TransVN", "WordSworth Asia", "Yufan Translation"],
     from: "$0.05/từ",
-    desc: "Dịch hợp đồng, CO/CQ, datasheet, brochure. Phiên dịch online họp với buyer.",
+    desc: "seller_center_trade_services.cat_translation_desc",
   },
   {
     icon: "📣",
-    name: "Marketing OEM / B2B",
+    name: "seller_center_trade_services.cat_marketing_name",
     providers: ["Nanjing Adsmile", "Asia Trade Media", "Hua Marketing"],
     from: "$1,200/tháng",
-    desc: "Lead-gen Việt Nam: Facebook/Zalo Ads, email outreach 5K buyer, SEO landing tiếng Việt.",
+    desc: "seller_center_trade_services.cat_marketing_desc",
   },
   {
     icon: "📷",
-    name: "Photography sản phẩm",
+    name: "seller_center_trade_services.cat_photography_name",
     providers: ["Studio M.O.", "Shenzhen ProShot", "Liang Visual"],
     from: "$15/SKU",
-    desc: "Chụp white-bg, lifestyle, 360°. Sửa hậu kỳ — chuẩn upload trang sản phẩm Cybersilkroads.",
+    desc: "seller_center_trade_services.cat_photography_desc",
   },
   {
     icon: "💳",
-    name: "Tài chính trade finance",
+    name: "seller_center_trade_services.cat_trade_finance_name",
     providers: ["HSBC China", "ICBC Trade", "Standard Chartered"],
     from: "Lãi 5.4%/năm",
-    desc: "Tài trợ L/C, factoring, discounting. Giải phóng dòng tiền khi buyer trả 60-90 ngày.",
+    desc: "seller_center_trade_services.cat_trade_finance_desc",
   },
   {
     icon: "🛡",
-    name: "Bảo hiểm hàng hoá",
+    name: "seller_center_trade_services.cat_cargo_insurance_name",
     providers: ["PingAn", "PVI", "Bảo Việt"],
     from: "1.1% giá FOB",
-    desc: "Bảo hiểm All-Risk container, cover từ kho NCC tới kho buyer. Bồi thường 110% giá trị.",
+    desc: "seller_center_trade_services.cat_cargo_insurance_desc",
   },
   {
     icon: "📦",
-    name: "Khai báo hải quan",
+    name: "seller_center_trade_services.cat_customs_name",
     providers: ["Logistic VN", "Sino-VN Customs", "FastClear"],
     from: "$180/tờ",
-    desc: "Khai HS code, C/O form E ASEAN-CN. Tối ưu thuế nhập khẩu cho buyer (giảm 5-15%).",
+    desc: "seller_center_trade_services.cat_customs_desc",
   },
   {
     icon: "🔢",
-    name: "Mã vạch GS1 / EAN",
+    name: "seller_center_trade_services.cat_barcode_name",
     providers: ["GS1 China", "GS1 Vietnam"],
     from: "$95/SKU",
-    desc: "Đăng ký mã vạch quốc tế cho retail Việt Nam. Cần thiết bán Co.opmart, Bách Hoá Xanh.",
+    desc: "seller_center_trade_services.cat_barcode_desc",
   },
   {
     icon: "✅",
-    name: "Chứng nhận CE / RoHS / FDA",
+    name: "seller_center_trade_services.cat_certification_name",
     providers: ["TÜV SÜD", "SGS", "ICR Polska"],
     from: "$1,500",
-    desc: "Test lab + cấp giấy CE/RoHS cho hàng điện, FDA cho hàng tiếp xúc thực phẩm.",
+    desc: "seller_center_trade_services.cat_certification_desc",
   },
 ];
 
@@ -98,18 +99,19 @@ const TOP_PROVIDERS = [
   { name: "Sino-VN Customs", rating: 4.8, jobs: "1,180 jobs", tag: "Customs" },
 ];
 
-export default function TradeServicesPage() {
+export default async function TradeServicesPage() {
+  const t = await getT();
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Sàn dịch vụ XNK" }]} />
+      <Breadcrumb trail={[{ label: t("seller_center_trade_services.breadcrumb_home"), href: "/" }, { label: t("seller_center_trade_services.breadcrumb_seller_center"), href: "/seller-center" }, { label: t("seller_center_trade_services.breadcrumb_current") }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/trade-services" />
         <div>
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <div className="inline-block bg-brand/15 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛒 FOREIGN TRADE SERVICE MARKETPLACE</div>
-            <h1 className="text-[22px] font-bold text-ink">Sàn dịch vụ xuất nhập khẩu</h1>
+            <div className="inline-block bg-brand/15 text-brand px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🛒 {t("seller_center_trade_services.hero_badge")}</div>
+            <h1 className="text-[22px] font-bold text-ink">{t("seller_center_trade_services.hero_title")}</h1>
             <p className="text-[13px] text-mute mt-2 leading-relaxed">
-              12 nhóm dịch vụ supplier cần để xuất khẩu sang Việt Nam — từ audit nhà máy, photography sản phẩm, vận chuyển DDP, đến chứng nhận CE/RoHS. Tất cả providers đã được Cybersilkroads audit và thanh toán qua tài khoản trung gian.
+              {t("seller_center_trade_services.hero_desc")}
             </p>
           </div>
 
@@ -119,13 +121,13 @@ export default function TradeServicesPage() {
                 <div className="flex items-start gap-3 mb-2">
                   <div className="text-[28px]">{c.icon}</div>
                   <div className="flex-1">
-                    <b className="block text-[13.5px] text-ink leading-tight">{c.name}</b>
-                    <span className="text-[10.5px] text-mute">Từ <b className="text-accent">{c.from}</b></span>
+                    <b className="block text-[13.5px] text-ink leading-tight">{t(c.name)}</b>
+                    <span className="text-[10.5px] text-mute">{t("seller_center_trade_services.card_from")} <b className="text-accent">{c.from}</b></span>
                   </div>
                 </div>
-                <p className="text-[11.5px] text-mute leading-relaxed mb-3">{c.desc}</p>
+                <p className="text-[11.5px] text-mute leading-relaxed mb-3">{t(c.desc)}</p>
                 <div className="border-t border-line pt-2 mb-3">
-                  <span className="text-[10.5px] text-mute">Provider hàng đầu:</span>
+                  <span className="text-[10.5px] text-mute">{t("seller_center_trade_services.card_top_provider")}</span>
                   <ul className="mt-1 space-y-0.5">
                     {c.providers.map((p) => (
                       <li key={p} className="text-[11.5px] text-ink flex items-center gap-1">
@@ -135,7 +137,7 @@ export default function TradeServicesPage() {
                   </ul>
                 </div>
                 <button className="w-full bg-brand/10 text-brand text-[12px] font-semibold rounded-sm py-1.5 hover:bg-brand hover:text-white">
-                  Xem dịch vụ →
+                  {t("seller_center_trade_services.card_view_service")}
                 </button>
               </div>
             ))}
@@ -144,12 +146,12 @@ export default function TradeServicesPage() {
           <div className="bg-paper border border-line rounded p-5 mb-4">
             <div className="flex justify-between items-center mb-4">
               <b className="text-[15px] text-ink">⭐ Top providers tháng 5/2026</b>
-              <Link href="#" className="text-brand text-[12px]">Xem tất cả →</Link>
+              <Link href="#" className="text-brand text-[12px]">{t("seller_center_trade_services.providers_view_all")}</Link>
             </div>
             <div className="grid grid-cols-6 gap-3 max-md:grid-cols-2">
               {TOP_PROVIDERS.map((p, i) => (
                 <div key={p.name} className="border border-line rounded p-3 text-center hover:border-brand">
-                  <img src={`/img/seller-trade-prov-${i}.jpg?v=4`} alt="" className="w-12 h-12 mx-auto mb-2 rounded object-cover" />
+                  <img src={`/img/seller-trade-prov-${i}.jpg?v=6`} alt="" className="w-12 h-12 mx-auto mb-2 rounded object-cover" />
                   <b className="block text-[11.5px] text-ink leading-tight mb-1">{p.name}</b>
                   <div className="text-[10.5px] text-gold mb-1">★ {p.rating}</div>
                   <span className="text-[10px] text-mute block">{p.jobs}</span>
@@ -161,11 +163,11 @@ export default function TradeServicesPage() {
 
           <div className="bg-brand-dark text-white rounded p-5 flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:text-center">
             <div>
-              <b className="block text-[16px] mb-1">💼 Trở thành Service Provider trên Cybersilkroads</b>
-              <p className="text-[12px] opacity-85">Bạn cung cấp dịch vụ XNK? Đăng ký để tiếp cận 4,200+ supplier đang xuất sang Việt Nam.</p>
+              <b className="block text-[16px] mb-1">💼 {t("seller_center_trade_services.cta_title")}</b>
+              <p className="text-[12px] opacity-85">{t("seller_center_trade_services.cta_desc")}</p>
             </div>
             <button className="bg-gold text-brand-dark px-5 py-2.5 rounded-sm font-bold text-[12.5px] whitespace-nowrap">
-              Đăng ký Provider →
+              {t("seller_center_trade_services.cta_button")}
             </button>
           </div>
         </div>

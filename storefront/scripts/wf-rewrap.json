@@ -1,0 +1,128 @@
+{
+  "summary": "Bọc td() MỌI field data còn sót (giá Liên hệ, nhãn danh mục, năm, hot-search, hq/desc đối tác, hội chợ)",
+  "agentCount": 8,
+  "logs": [],
+  "result": [
+    {
+      "file": "src/components/home/header.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "import { HOT_SEARCHES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";",
+          "import { HOT_SEARCHES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";\nimport { getTd } from \"@/lib/td\";"
+        ],
+        [
+          "export async function Header() {\n  const t = await getT();",
+          "export async function Header() {\n  const t = await getT();\n  const td = await getTd();"
+        ],
+        [
+          "              className=\"text-brand cursor-pointer\"\n            >\n              {s}\n            </Link>",
+          "              className=\"text-brand cursor-pointer\"\n            >\n              {td(s)}\n            </Link>"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/product-section.tsx",
+      "edits": [
+        [
+          "{b === \"deal\" ? \"-25%\" : badgeLabel[b]}",
+          "{b === \"deal\" ? \"-25%\" : td(badgeLabel[b])}"
+        ],
+        [
+          "        <div className=\"text-accent font-extrabold text-[15px] mb-1\">\n          {p.price}",
+          "        <div className=\"text-accent font-extrabold text-[15px] mb-1\">\n          {td(p.price)}"
+        ],
+        [
+          "<span>{p.moq}</span>",
+          "<span>{td(p.moq)}</span>"
+        ]
+      ],
+      "isClient": false,
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/factories.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "                  <span className=\"absolute top-2 right-2 bg-black/55 text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider z-10 backdrop-blur-sm\">\n                    {years}\n                  </span>",
+          "                  <span className=\"absolute top-2 right-2 bg-black/55 text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider z-10 backdrop-blur-sm\">\n                    {td(years)}\n                  </span>"
+        ]
+      ],
+      "deferred": ""
+    },
+    {
+      "file": "src/components/home/trade-shows-section.tsx",
+      "isClient": false,
+      "edits": [],
+      "deferred": ""
+    },
+    {
+      "file": "src/app/products/page.tsx",
+      "isClient": false,
+      "edits": [],
+      "deferred": ""
+    },
+    {
+      "edits": [
+        [
+          "{years && (\n          <span className=\"bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold\">\n            {years}\n          </span>\n        )}",
+          "{years && (\n          <span className=\"bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold\">\n            {td(years)}\n          </span>\n        )}"
+        ]
+      ],
+      "file": "src/app/suppliers/page.tsx",
+      "isClient": false,
+      "deferred": ""
+    },
+    {
+      "file": "src/app/supplier/[slug]/SupplierDetail.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "rounded-sm font-bold\">{f.badges.years}</span>",
+          "rounded-sm font-bold\">{td(f.badges.years)}</span>"
+        ],
+        [
+          "<span><b className=\"text-gold\">{f.meta}</b></span>",
+          "<span><b className=\"text-gold\">{td(f.meta)}</b></span>"
+        ],
+        [
+          "<div className=\"text-accent font-bold text-[13px]\">{p.price}<small className=\"text-mute font-normal text-[10px]\">{p.unit}</small></div>",
+          "<div className=\"text-accent font-bold text-[13px]\">{td(p.price)}<small className=\"text-mute font-normal text-[10px]\">{td(p.unit)}</small></div>"
+        ],
+        [
+          "<div className=\"text-accent font-bold text-[13px]\">\n                {p.price}<small className=\"text-mute font-normal text-[10px]\">{p.unit}</small>",
+          "<div className=\"text-accent font-bold text-[13px]\">\n                {td(p.price)}<small className=\"text-mute font-normal text-[10px]\">{td(p.unit)}</small>"
+        ],
+        [
+          "<span>{p.moq}</span>",
+          "<span>{td(p.moq)}</span>"
+        ]
+      ]
+    },
+    {
+      "file": "src/app/product/[id]/page.tsx",
+      "isClient": false,
+      "edits": [
+        [
+          "<span className=\"bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">{supplier.badges.years}</span>",
+          "<span className=\"bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider\">{td(supplier.badges.years)}</span>"
+        ],
+        [
+          "<b>{p.years} {t(\"product_id.desc_p1_exp\")}</b>",
+          "<b>{td(p.years)} {t(\"product_id.desc_p1_exp\")}</b>"
+        ],
+        [
+          "{sameSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>\n                <div className=\"text-accent font-bold text-[13.5px]\">{x.price}<small className=\"text-mute font-normal text-[11px]\">{x.unit}</small></div>",
+          "{sameSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>\n                <div className=\"text-accent font-bold text-[13.5px]\">{td(x.price)}<small className=\"text-mute font-normal text-[11px]\">{x.unit}</small></div>"
+        ],
+        [
+          "{otherSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>\n                <div className=\"text-accent font-bold text-[13.5px]\">{x.price}<small className=\"text-mute font-normal text-[11px]\">{x.unit}</small></div>",
+          "{otherSection.map((x) => (\n            <Link key={x.id} href={`/product/${x.id}`} className=\"bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer\">\n              <div className=\"aspect-square bg-[#F5F5F5]\">\n                {x.image ? <img src={x.image} alt={td(x.title)} className=\"w-full h-full object-cover\" /> : null}\n              </div>\n              <div className=\"p-2.5\">\n                <h4 className=\"text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]\">{td(x.title)}</h4>\n                <div className=\"text-accent font-bold text-[13.5px]\">{td(x.price)}<small className=\"text-mute font-normal text-[11px]\">{x.unit}</small></div>"
+        ]
+      ],
+      "deferred": ""
+    }
+  ]
+}

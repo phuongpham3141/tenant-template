@@ -1,0 +1,370 @@
+[
+ {
+  "cat": "Nhà cửa & Sân vườn",
+  "catSlug": "home-garden",
+  "idx": 0,
+  "name": "Thang máy",
+  "slug": "thang-may",
+  "image": "/img/kitchen-equipment-sc-prod-3.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 0,
+  "name": "Thép & Kim loại",
+  "slug": "ket-cau-thep-khung",
+  "image": "/img/thep-hinh-h-i-u-v.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 1,
+  "name": "Tấm ốp tường & trần",
+  "slug": "tam-op-tuong-tran",
+  "image": "/img/cer6.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 2,
+  "name": "Vật liệu lát sàn",
+  "slug": "vat-lieu-lat-san",
+  "image": "/img/cer7.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 3,
+  "name": "Đá tự nhiên & Đá nhân tạo",
+  "slug": "da-op-lat",
+  "image": "/img/da-marble-tu-nhien.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 4,
+  "name": "Sơn & Lớp phủ",
+  "slug": "son-lop-phu",
+  "image": "/img/son-epoxy-san.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 5,
+  "name": "Vật liệu cách âm & cách nhiệt",
+  "slug": "vat-lieu-cach-am-cach-nhiet",
+  "image": "/img/tam-cach-am.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 6,
+  "name": "Chống thấm",
+  "slug": "vat-lieu-chong-tham",
+  "image": "/img/mang-chong-tham-bitum.jpg"
+ },
+ {
+  "cat": "Vật liệu xây dựng",
+  "catSlug": "construction-materials",
+  "idx": 7,
+  "name": "Xi măng & Vữa",
+  "slug": "vat-lieu-kho-xi-mang-vua",
+  "image": "/img/chau-xi-mang.jpg"
+ },
+ {
+  "cat": "Thiết bị vệ sinh",
+  "catSlug": "bathroom-sanitary",
+  "idx": 0,
+  "name": "Bồn cầu sứ",
+  "slug": "bon-cau-su",
+  "image": "/img/bathroom-1-1.jpg"
+ },
+ {
+  "cat": "Thiết bị vệ sinh",
+  "catSlug": "bathroom-sanitary",
+  "idx": 1,
+  "name": "Bồn cầu thông minh",
+  "slug": "bon-cau-thong-minh",
+  "image": "/img/bathroom-2-1.jpg"
+ },
+ {
+  "cat": "Thiết bị vệ sinh",
+  "catSlug": "bathroom-sanitary",
+  "idx": 2,
+  "name": "Lavabo sứ",
+  "slug": "lavabo-su",
+  "image": "/img/bathroom-3-1.jpg"
+ },
+ {
+  "cat": "Thiết bị vệ sinh",
+  "catSlug": "bathroom-sanitary",
+  "idx": 3,
+  "name": "Tủ phòng tắm",
+  "slug": "tu-phong-tam",
+  "image": "/img/bathroom-4-1.jpg"
+ },
+ {
+  "cat": "Thiết bị vệ sinh",
+  "catSlug": "bathroom-sanitary",
+  "idx": 4,
+  "name": "Vòi nước & Sen",
+  "slug": "voi-nuoc",
+  "image": "/img/bathroom-5-1.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 0,
+  "name": "Phòng khách",
+  "slug": "phong-khach",
+  "image": "/img/phong-khach.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 1,
+  "name": "Phòng ngủ",
+  "slug": "phong-ngu",
+  "image": "/img/phong-ngu.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 2,
+  "name": "Phòng ăn",
+  "slug": "phong-an",
+  "image": "/img/phong-an.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 3,
+  "name": "Tủ bếp",
+  "slug": "tu-bep",
+  "image": "/img/fur7.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 4,
+  "name": "Tủ quần áo",
+  "slug": "tu-quan-ao",
+  "image": "/img/fur8.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 5,
+  "name": "Văn phòng tại nhà",
+  "slug": "van-phong-tai-nha",
+  "image": "/img/van-phong-tai-nha.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 6,
+  "name": "Nội thất khách sạn",
+  "slug": "noi-that-khach-san",
+  "image": "/img/noi-that-khach-san.jpg"
+ },
+ {
+  "cat": "Nội thất",
+  "catSlug": "noi-that",
+  "idx": 7,
+  "name": "Trẻ em & Em bé",
+  "slug": "tre-em-em-be",
+  "image": "/img/tre-em-em-be.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 0,
+  "name": "Bếp từ",
+  "slug": "bep-tu",
+  "image": "/img/kitchen-equipment-sc-prod-3.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 1,
+  "name": "Máy hút mùi",
+  "slug": "may-hut-mui",
+  "image": "/img/kitchen-equipment-sc-prod-4.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 2,
+  "name": "Lò vi sóng",
+  "slug": "lo-vi-song",
+  "image": "/img/kitchen-equipment-sc-prod-5.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 3,
+  "name": "Nồi áp suất",
+  "slug": "noi-ap-suat",
+  "image": "/img/kitchen-equipment-sc-prod-6.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 4,
+  "name": "Nồi cơm điện",
+  "slug": "noi-com-dien",
+  "image": "/img/kitchen-equipment-sc-prod-7.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 5,
+  "name": "Máy rửa bát",
+  "slug": "may-rua-bat",
+  "image": "/img/kitchen-equipment-sc-prod-2.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 6,
+  "name": "Chậu rửa inox",
+  "slug": "chau-rua-inox",
+  "image": "/img/kitchen-equipment-sc-prod-0.jpg"
+ },
+ {
+  "cat": "Thiết bị bếp",
+  "catSlug": "kitchen-equipment",
+  "idx": 7,
+  "name": "Kim khí & Phụ kiện",
+  "slug": "kim-khi-bep",
+  "image": "/img/kitchen-equipment-sc-prod-1.jpg"
+ },
+ {
+  "cat": "Đèn chiếu sáng",
+  "catSlug": "lighting",
+  "idx": 0,
+  "name": "Nguồn sáng LED",
+  "slug": "den-led",
+  "image": "/img/ceramic-2-1.jpg"
+ },
+ {
+  "cat": "Đèn chiếu sáng",
+  "catSlug": "lighting",
+  "idx": 1,
+  "name": "Đèn LED gia dụng",
+  "slug": "den-led-gia-dung",
+  "image": "/img/ceramic-2-2.jpg"
+ },
+ {
+  "cat": "Đèn chiếu sáng",
+  "catSlug": "lighting",
+  "idx": 2,
+  "name": "Đèn LED thương mại",
+  "slug": "den-led-thuong-mai",
+  "image": "/img/ceramic-2-3.jpg"
+ },
+ {
+  "cat": "Đèn chiếu sáng",
+  "catSlug": "lighting",
+  "idx": 3,
+  "name": "Vật tư điện",
+  "slug": "vat-tu-dien",
+  "image": "/img/ceramic-2-4.jpg"
+ },
+ {
+  "cat": "Cửa & Khoá",
+  "catSlug": "doors-windows",
+  "idx": 0,
+  "name": "Khoá nhận diện khuôn mặt 3D",
+  "slug": "khoa-3d-face",
+  "image": "/img/ceramic-3-1.jpg"
+ },
+ {
+  "cat": "Cửa & Khoá",
+  "catSlug": "doors-windows",
+  "idx": 1,
+  "name": "Khoá thông minh Wi-Fi",
+  "slug": "khoa-wifi",
+  "image": "/img/ceramic-3-2.jpg"
+ },
+ {
+  "cat": "Cửa & Khoá",
+  "catSlug": "doors-windows",
+  "idx": 2,
+  "name": "Khoá cổng Wi-Fi",
+  "slug": "khoa-don-cong-wifi",
+  "image": "/img/ceramic-3-3.jpg"
+ },
+ {
+  "cat": "Cửa & Khoá",
+  "catSlug": "doors-windows",
+  "idx": 3,
+  "name": "Khoá vân tay",
+  "slug": "khoa-van-tay",
+  "image": "/img/ceramic-3-4.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 0,
+  "name": "Điều hoà",
+  "slug": "dieu-hoa",
+  "image": "/img/kitchen-equipment-sc-prod-0.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 1,
+  "name": "Tủ lạnh",
+  "slug": "tu-lanh",
+  "image": "/img/kitchen-equipment-sc-prod-1.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 2,
+  "name": "Máy giặt",
+  "slug": "may-giat",
+  "image": "/img/kitchen-equipment-sc-prod-2.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 3,
+  "name": "Máy sưởi",
+  "slug": "may-suoi",
+  "image": "/img/kitchen-equipment-sc-prod-0.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 4,
+  "name": "Bình nóng lạnh",
+  "slug": "binh-nong-lanh",
+  "image": "/img/kitchen-equipment-sc-prod-1.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 5,
+  "name": "Dây điện & Cáp",
+  "slug": "day-dien-cap",
+  "image": "/img/ceramic-4-1.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 6,
+  "name": "Ống luồn dây điện",
+  "slug": "ong-dan-dien",
+  "image": "/img/ceramic-4-2.jpg"
+ },
+ {
+  "cat": "Điện & Điện gia dụng",
+  "catSlug": "electrical",
+  "idx": 7,
+  "name": "Máng cáp",
+  "slug": "mang-day-dien",
+  "image": "/img/ceramic-4-3.jpg"
+ }
+]

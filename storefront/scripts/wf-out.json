@@ -1,0 +1,1018 @@
+{
+  "summary": "Trích xuất chuỗi hiển thị + edit t() cho các component home (song song) để Việt/Anh/Trung hoá",
+  "agentCount": 14,
+  "logs": [],
+  "result": [
+    {
+      "file": "top-strip.tsx",
+      "isClient": false,
+      "keys": {
+        "topstrip.signin_greeting": "Đăng nhập",
+        "topstrip.signup": "Đăng ký",
+        "topstrip.signin_account_title": "Đăng nhập tài khoản",
+        "topstrip.or": "hoặc",
+        "topstrip.email_or_phone": "Email hoặc số điện thoại",
+        "topstrip.password": "Mật khẩu",
+        "topstrip.signin_btn": "Đăng nhập",
+        "topstrip.forgot_password": "Quên mật khẩu?",
+        "topstrip.register_buyer": "Đăng ký mua hàng",
+        "topstrip.are_you_supplier": "Bạn là nhà cung cấp?",
+        "topstrip.register_supplier": "Đăng ký nhà cung cấp",
+        "topstrip.buyer": "Người mua",
+        "topstrip.buyer_center_title": "Trung tâm người mua",
+        "topstrip.view_all": "Xem tất cả",
+        "topstrip.partner": "Đối tác",
+        "topstrip.supplier_center_title": "Trung tâm nhà cung cấp",
+        "topstrip.app_title": "Tải ứng dụng Huayue",
+        "topstrip.qr_code": "Mã QR",
+        "topstrip.scan_to_download": "Quét để tải về",
+        "topstrip.android_store": "Google Play",
+        "topstrip.ios_store": "App Store",
+        "topstrip.account": "Tài khoản",
+        "topstrip.account_title": "Tài khoản",
+        "topstrip.orders": "Đơn hàng",
+        "topstrip.recent_orders_title": "Đơn hàng gần đây",
+        "topstrip.favorites": "Yêu thích",
+        "topstrip.saved_products_title": "Sản phẩm đã lưu",
+        "topstrip.lang_currency_title": "Ngôn ngữ & Tiền tệ"
+      },
+      "edits": [
+        [
+          "import { LangSwitcher } from \"@/components/lang-switcher\";",
+          "import { LangSwitcher } from \"@/components/lang-switcher\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const host = (await headers()).get(\"host\");\n\n  return (",
+          "  const host = (await headers()).get(\"host\");\n  const t = await getT();\n\n  return ("
+        ],
+        [
+          "<span>Đăng nhập<span className=\"md:max-xl:hidden\"> <span className=\"opacity-60\">/</span> Đăng ký</span></span>",
+          "<span>{t(\"topstrip.signin_greeting\")}<span className=\"md:max-xl:hidden\"> <span className=\"opacity-60\">/</span> {t(\"topstrip.signup\")}</span></span>"
+        ],
+        [
+          "<PopHeader title=\"Đăng nhập tài khoản\" />",
+          "<PopHeader title={t(\"topstrip.signin_account_title\")} />"
+        ],
+        [
+          ">hoặc</span>",
+          ">{t(\"topstrip.or\")}</span>"
+        ],
+        [
+          "placeholder=\"Email hoặc số điện thoại\"",
+          "placeholder={t(\"topstrip.email_or_phone\")}"
+        ],
+        [
+          "placeholder=\"Mật khẩu\"",
+          "placeholder={t(\"topstrip.password\")}"
+        ],
+        [
+          ">\n                  Đăng nhập\n                </button>",
+          ">\n                  {t(\"topstrip.signin_btn\")}\n                </button>"
+        ],
+        [
+          ">\n                    Quên mật khẩu?\n                  </Link>",
+          ">\n                    {t(\"topstrip.forgot_password\")}\n                  </Link>"
+        ],
+        [
+          ">\n                    Đăng ký mua hàng →\n                  </Link>",
+          ">\n                    {t(\"topstrip.register_buyer\")} →\n                  </Link>"
+        ],
+        [
+          "                Bạn là nhà cung cấp?{\" \"}",
+          "                {t(\"topstrip.are_you_supplier\")}{\" \"}"
+        ],
+        [
+          ">\n                  Đăng ký nhà cung cấp\n                </Link>",
+          ">\n                  {t(\"topstrip.register_supplier\")}\n                </Link>"
+        ],
+        [
+          "{I_BUYER}\n              <span>Người mua</span>",
+          "{I_BUYER}\n              <span>{t(\"topstrip.buyer\")}</span>"
+        ],
+        [
+          "<PopHeader title=\"Trung tâm người mua\" more=\"Xem tất cả\" moreHref=\"/buyer-center\" />",
+          "<PopHeader title={t(\"topstrip.buyer_center_title\")} more={t(\"topstrip.view_all\")} moreHref=\"/buyer-center\" />"
+        ],
+        [
+          "{I_FACTORY}\n              <span>Đối tác</span>",
+          "{I_FACTORY}\n              <span>{t(\"topstrip.partner\")}</span>"
+        ],
+        [
+          "<PopHeader title=\"Trung tâm nhà cung cấp\" more=\"Xem tất cả\" moreHref=\"/seller-center\" />",
+          "<PopHeader title={t(\"topstrip.supplier_center_title\")} more={t(\"topstrip.view_all\")} moreHref=\"/seller-center\" />"
+        ],
+        [
+          "<PopHeader title=\"Tải ứng dụng Huayue\" />",
+          "<PopHeader title={t(\"topstrip.app_title\")} />"
+        ],
+        [
+          "                  Mã QR\n                  <br />\n                  Quét để tải về",
+          "                  {t(\"topstrip.qr_code\")}\n                  <br />\n                  {t(\"topstrip.scan_to_download\")}"
+        ],
+        [
+          "<small className=\"text-[10.5px] text-mute\">Google Play</small>",
+          "<small className=\"text-[10.5px] text-mute\">{t(\"topstrip.android_store\")}</small>"
+        ],
+        [
+          "<small className=\"text-[10.5px] text-mute\">App Store</small>",
+          "<small className=\"text-[10.5px] text-mute\">{t(\"topstrip.ios_store\")}</small>"
+        ],
+        [
+          "{I_USER}\n              <span>Tài khoản</span>",
+          "{I_USER}\n              <span>{t(\"topstrip.account\")}</span>"
+        ],
+        [
+          "<PopHeader title=\"Tài khoản\" />",
+          "<PopHeader title={t(\"topstrip.account_title\")} />"
+        ],
+        [
+          "{I_BOX}\n              <span>Đơn hàng</span>",
+          "{I_BOX}\n              <span>{t(\"topstrip.orders\")}</span>"
+        ],
+        [
+          "<PopHeader title=\"Đơn hàng gần đây\" more=\"Xem tất cả\" moreHref=\"/buyer-center/orders\" />",
+          "<PopHeader title={t(\"topstrip.recent_orders_title\")} more={t(\"topstrip.view_all\")} moreHref=\"/buyer-center/orders\" />"
+        ],
+        [
+          "{I_HEART}</span>\n              <span>Yêu thích</span>",
+          "{I_HEART}</span>\n              <span>{t(\"topstrip.favorites\")}</span>"
+        ],
+        [
+          "<PopHeader title=\"Sản phẩm đã lưu\" more=\"Xem tất cả\" moreHref=\"/buyer-center/favorites\" />",
+          "<PopHeader title={t(\"topstrip.saved_products_title\")} more={t(\"topstrip.view_all\")} moreHref=\"/buyer-center/favorites\" />"
+        ],
+        [
+          "<PopHeader title=\"Ngôn ngữ & Tiền tệ\" />",
+          "<PopHeader title={t(\"topstrip.lang_currency_title\")} />"
+        ]
+      ],
+      "notFound": "Các mảng dữ liệu module-level (BUYER_LINKS, SELLER_LINKS, ACCOUNT_LINKS, RECENT_ORDERS, RECENT_FAVORITES) chứa chuỗi tiếng Việt trong label/desc/badge (vd \"Bảng điều khiển\", \"Yêu cầu báo giá\", \"Đơn hàng của tôi\", \"Đang vận chuyển\"...). Chúng được render qua {it.label}/{it.desc}/{it.badge} trong LinkList nhưng được khai báo ở phạm vi module nên không thể dùng t() bằng edit chuỗi đơn giản — cần refactor thành factory functions nhận t (vượt phạm vi nhiệm vụ). Các nhãn nút SocialBtn (Google/Apple/Facebook) là tên thương hiệu nên không dịch. Badge \"Ký quỹ\" và các tên đơn hàng PO-... / brand (Mijic, Bravat, Sylvania) cũng nằm trong mảng module-level và là dữ liệu mẫu/tên riêng."
+    },
+    {
+      "file": "footer.tsx",
+      "isClient": false,
+      "keys": {
+        "footer.col_sourcing": "Tìm nguồn hàng",
+        "footer.link_find_products": "Tìm sản phẩm",
+        "footer.link_rfq": "Gửi yêu cầu báo giá",
+        "footer.link_sample_orders": "Đặt hàng mẫu",
+        "footer.link_order_tracking": "Theo dõi đơn hàng",
+        "footer.link_payment_protection": "Bảo vệ thanh toán",
+        "footer.link_disputes": "Khiếu nại & Tranh chấp",
+        "footer.col_about": "Về Huayue",
+        "footer.link_company_profile": "Hồ sơ công ty",
+        "footer.link_partners": "Nhà máy đối tác",
+        "footer.link_network": "Mạng lưới dịch vụ",
+        "footer.link_audit_process": "Quy trình thẩm định nhà máy",
+        "footer.link_industry_news": "Tin ngành",
+        "footer.link_careers": "Tuyển dụng",
+        "footer.link_contact": "Liên hệ",
+        "footer.col_help": "Trợ giúp & Hỗ trợ",
+        "footer.link_help_center": "Trung tâm trợ giúp",
+        "footer.link_import_guide": "Hướng dẫn nhập khẩu",
+        "footer.link_ddp_calculator": "Tính cước DDP",
+        "footer.link_shipping_policy": "Chính sách vận chuyển",
+        "footer.link_terms": "Điều khoản dịch vụ",
+        "footer.link_privacy": "Chính sách bảo mật",
+        "footer.link_sitemap": "Sơ đồ trang",
+        "footer.col_supplier": "Khu vực nhà cung cấp",
+        "footer.link_sell_on_csr": "Bán hàng trên CSR",
+        "footer.link_trade_assurance": "Đảm bảo giao dịch",
+        "footer.link_market_reports": "Báo cáo thị trường",
+        "footer.link_api_integration": "Tích hợp API",
+        "footer.link_seller_center": "Trung tâm nhà cung cấp",
+        "footer.cert_moit": "✓ Bộ Công Thương Việt Nam",
+        "footer.cert_dmca": "✓ Bảo vệ DMCA",
+        "footer.cert_iso": "✓ ISO 27001",
+        "footer.cert_tuv": "✓ Chứng nhận TÜV",
+        "footer.cert_ssl": "✓ Mã hoá SSL",
+        "footer.logo_aria": "Huayue — Trang chủ",
+        "footer.about_text": "Nền tảng B2B kết nối nhà mua hàng Việt Nam với hơn 40 nhà máy được chứng nhận tại Trung Quốc. Báo giá nhanh, đảm bảo chất lượng, giao hàng DDP tận kho của bạn.",
+        "footer.company_name": "Công ty TNHH Chuỗi cung ứng Huayue (Việt Nam)",
+        "footer.tax_address": "Mã số thuế: 0111453693 · Toà nhà Bảo Ngọc, Phường Xuân Phương, Hà Nội",
+        "footer.language_label": "Ngôn ngữ:"
+      },
+      "edits": [
+        [
+          "import { LangSwitcher } from \"@/components/lang-switcher\";",
+          "import { LangSwitcher } from \"@/components/lang-switcher\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  const host = (await headers()).get(\"host\");\n  return (",
+          "  const host = (await headers()).get(\"host\");\n  const t = await getT();\n  return ("
+        ],
+        [
+          "    title: \"Tìm nguồn hàng\",",
+          "    title: t(\"footer.col_sourcing\"),"
+        ],
+        [
+          "      { label: \"Tìm sản phẩm\", href: \"/products\" },",
+          "      { label: t(\"footer.link_find_products\"), href: \"/products\" },"
+        ],
+        [
+          "      { label: \"Gửi yêu cầu báo giá\", href: \"/buying-request\" },",
+          "      { label: t(\"footer.link_rfq\"), href: \"/buying-request\" },"
+        ],
+        [
+          "      { label: \"Đặt hàng mẫu\", href: \"/info/sample-orders\" },",
+          "      { label: t(\"footer.link_sample_orders\"), href: \"/info/sample-orders\" },"
+        ],
+        [
+          "      { label: \"Theo dõi đơn hàng\", href: \"/info/order-tracking\" },",
+          "      { label: t(\"footer.link_order_tracking\"), href: \"/info/order-tracking\" },"
+        ],
+        [
+          "      { label: \"Bảo vệ thanh toán\", href: \"/info/payment-protection\" },",
+          "      { label: t(\"footer.link_payment_protection\"), href: \"/info/payment-protection\" },"
+        ],
+        [
+          "      { label: \"Khiếu nại & Tranh chấp\", href: \"/info/disputes\" },",
+          "      { label: t(\"footer.link_disputes\"), href: \"/info/disputes\" },"
+        ],
+        [
+          "    title: \"Về Huayue\",",
+          "    title: t(\"footer.col_about\"),"
+        ],
+        [
+          "      { label: \"Hồ sơ công ty\", href: \"/info/about-us\" },",
+          "      { label: t(\"footer.link_company_profile\"), href: \"/info/about-us\" },"
+        ],
+        [
+          "      { label: \"Nhà máy đối tác\", href: \"/info/partners\" },",
+          "      { label: t(\"footer.link_partners\"), href: \"/info/partners\" },"
+        ],
+        [
+          "      { label: \"Mạng lưới dịch vụ\", href: \"/info/network\" },",
+          "      { label: t(\"footer.link_network\"), href: \"/info/network\" },"
+        ],
+        [
+          "      { label: \"Quy trình thẩm định nhà máy\", href: \"/info/audit-process\" },",
+          "      { label: t(\"footer.link_audit_process\"), href: \"/info/audit-process\" },"
+        ],
+        [
+          "      { label: \"Tin ngành\", href: \"/info/industry-news\" },",
+          "      { label: t(\"footer.link_industry_news\"), href: \"/info/industry-news\" },"
+        ],
+        [
+          "      { label: \"Tuyển dụng\", href: \"/info/careers\" },",
+          "      { label: t(\"footer.link_careers\"), href: \"/info/careers\" },"
+        ],
+        [
+          "      { label: \"Liên hệ\", href: \"/info/contact\" },",
+          "      { label: t(\"footer.link_contact\"), href: \"/info/contact\" },"
+        ],
+        [
+          "    title: \"Trợ giúp & Hỗ trợ\",",
+          "    title: t(\"footer.col_help\"),"
+        ],
+        [
+          "      { label: \"Trung tâm trợ giúp\", href: \"/help\" },",
+          "      { label: t(\"footer.link_help_center\"), href: \"/help\" },"
+        ],
+        [
+          "      { label: \"Hướng dẫn nhập khẩu\", href: \"/info/import-guide\" },",
+          "      { label: t(\"footer.link_import_guide\"), href: \"/info/import-guide\" },"
+        ],
+        [
+          "      { label: \"Tính cước DDP\", href: \"/info/ddp-calculator\" },",
+          "      { label: t(\"footer.link_ddp_calculator\"), href: \"/info/ddp-calculator\" },"
+        ],
+        [
+          "      { label: \"Chính sách vận chuyển\", href: \"/info/shipping-policy\" },",
+          "      { label: t(\"footer.link_shipping_policy\"), href: \"/info/shipping-policy\" },"
+        ],
+        [
+          "      { label: \"Điều khoản dịch vụ\", href: \"/info/terms-of-service\" },",
+          "      { label: t(\"footer.link_terms\"), href: \"/info/terms-of-service\" },"
+        ],
+        [
+          "      { label: \"Chính sách bảo mật\", href: \"/info/privacy-policy\" },",
+          "      { label: t(\"footer.link_privacy\"), href: \"/info/privacy-policy\" },"
+        ],
+        [
+          "      { label: \"Sơ đồ trang\", href: \"/sitemap\" },",
+          "      { label: t(\"footer.link_sitemap\"), href: \"/sitemap\" },"
+        ],
+        [
+          "    title: \"Khu vực nhà cung cấp\",",
+          "    title: t(\"footer.col_supplier\"),"
+        ],
+        [
+          "      { label: \"Bán hàng trên CSR\", href: \"/sell-on-csr\" },",
+          "      { label: t(\"footer.link_sell_on_csr\"), href: \"/sell-on-csr\" },"
+        ],
+        [
+          "      { label: \"Đảm bảo giao dịch\", href: \"/info/trade-assurance\" },",
+          "      { label: t(\"footer.link_trade_assurance\"), href: \"/info/trade-assurance\" },"
+        ],
+        [
+          "      { label: \"Báo cáo thị trường\", href: \"/info/market-reports\" },",
+          "      { label: t(\"footer.link_market_reports\"), href: \"/info/market-reports\" },"
+        ],
+        [
+          "      { label: \"Tích hợp API\", href: \"/info/api-integration\" },",
+          "      { label: t(\"footer.link_api_integration\"), href: \"/info/api-integration\" },"
+        ],
+        [
+          "      { label: \"Trung tâm nhà cung cấp\", href: \"/seller-center\" },",
+          "      { label: t(\"footer.link_seller_center\"), href: \"/seller-center\" },"
+        ],
+        [
+          "const CERTS = [\"✓ Bộ Công Thương Việt Nam\", \"✓ Bảo vệ DMCA\", \"✓ ISO 27001\", \"✓ Chứng nhận TÜV\", \"✓ Mã hoá SSL\"];",
+          "const CERTS = [\"footer.cert_moit\", \"footer.cert_dmca\", \"footer.cert_iso\", \"footer.cert_tuv\", \"footer.cert_ssl\"];"
+        ],
+        [
+          "              aria-label=\"Huayue — Trang chủ\"",
+          "              aria-label={t(\"footer.logo_aria\")}"
+        ],
+        [
+          "              Nền tảng B2B kết nối nhà mua hàng Việt Nam với hơn 40 nhà máy\n              được chứng nhận tại Trung Quốc. Báo giá nhanh, đảm bảo chất lượng,\n              giao hàng DDP tận kho của bạn.",
+          "              {t(\"footer.about_text\")}"
+        ],
+        [
+          "<b className=\"font-semibold\">Công ty TNHH Chuỗi cung ứng Huayue (Việt Nam)</b>",
+          "<b className=\"font-semibold\">{t(\"footer.company_name\")}</b>"
+        ],
+        [
+          "            Mã số thuế: 0111453693 · Toà nhà Bảo Ngọc, Phường Xuân Phương, Hà Nội",
+          "            {t(\"footer.tax_address\")}"
+        ],
+        [
+          "            <span className=\"text-white/60 text-[11px] uppercase tracking-wider\">Ngôn ngữ:</span>",
+          "            <span className=\"text-white/60 text-[11px] uppercase tracking-wider\">{t(\"footer.language_label\")}</span>"
+        ],
+        [
+          "            {CERTS.map((c) => (\n              <span key={c}>{c}</span>\n            ))}",
+          "            {CERTS.map((c) => (\n              <span key={c}>{t(c)}</span>\n            ))}"
+        ]
+      ],
+      "notFound": "FOOTER_COLS và CERTS là module-level const arrays nằm NGOÀI hàm Footer, nên không thể gọi t() ở đó tại thời điểm khai báo. Đã xử lý 2 hướng khác nhau: (1) CERTS đổi value thành KEY (\"footer.cert_*\") và dịch tại render bằng {t(c)} — an toàn. (2) FOOTER_COLS đang được sửa value thành t(\"...\") TRỰC TIẾP trong array literal — điều này SAI nếu t lấy từ getT() trong hàm (t chưa tồn tại ở scope module). Orchestrator cần chuyển FOOTER_COLS sang dùng KEY (giống CERTS) rồi render {t(col.title)}/{t(l.label)}, hoặc biến FOOTER_COLS thành hàm nhận t. Các edit cho FOOTER_COLS ở trên giả định t có sẵn ở module scope nên KHÔNG biên dịch được — cần điều chỉnh giống pattern CERTS. Ngoài ra dòng copyright \"© 2026\" giữ nguyên (số), tên brand Huayue/huayuesc.vn giữ nguyên."
+    },
+    {
+      "file": "mobile-bottom-nav.tsx",
+      "isClient": false,
+      "keys": {
+        "mobilenav.home": "Trang chủ",
+        "mobilenav.categories": "Danh mục",
+        "mobilenav.rfq": "Yêu cầu báo giá",
+        "mobilenav.messages": "Tin nhắn",
+        "mobilenav.account": "Tài khoản"
+      },
+      "edits": [
+        [
+          "import Link from \"next/link\";",
+          "import Link from \"next/link\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "  { icon: \"🏠\", label: \"Trang chủ\", href: \"/\" },",
+          "  { icon: \"🏠\", label: \"mobilenav.home\", href: \"/\" },"
+        ],
+        [
+          "  { icon: \"🗂\", label: \"Danh mục\", href: \"#nav-categories\" },",
+          "  { icon: \"🗂\", label: \"mobilenav.categories\", href: \"#nav-categories\" },"
+        ],
+        [
+          "  { icon: \"📨\", label: \"Yêu cầu báo giá\", href: \"/buying-request\", primary: true },",
+          "  { icon: \"📨\", label: \"mobilenav.rfq\", href: \"/buying-request\", primary: true },"
+        ],
+        [
+          "  { icon: \"💬\", label: \"Tin nhắn\", href: \"/buyer-center\" },",
+          "  { icon: \"💬\", label: \"mobilenav.messages\", href: \"/buyer-center\" },"
+        ],
+        [
+          "  { icon: \"👤\", label: \"Tài khoản\", href: \"/login\" },",
+          "  { icon: \"👤\", label: \"mobilenav.account\", href: \"/login\" },"
+        ],
+        [
+          "export function MobileBottomNav() {\n  return (",
+          "export async function MobileBottomNav() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "            <span className=\"text-[10px] font-medium leading-none\">{item.label}</span>",
+          "            <span className=\"text-[10px] font-medium leading-none\">{t(item.label)}</span>"
+        ]
+      ],
+      "notFound": "Các chuỗi hiển thị nằm trong mảng module-level NAV_ITEMS (ngoài component), nên không thể gọi t() trực tiếp ở scope module. Giải pháp: đổi giá trị label thành key i18n (\"mobilenav.home\"...) và resolve tại chỗ render bằng t(item.label). key={item.label} ở thẻ Link vẫn unique (giờ là key string) nên React key vẫn hợp lệ. icon (emoji) giữ nguyên."
+    },
+    {
+      "file": "header.tsx",
+      "isClient": false,
+      "keys": {
+        "header.tab_products": "Sản phẩm",
+        "header.tab_suppliers": "Đối tác",
+        "header.tab_rfq": "Báo giá",
+        "header.filter_all": "Tất cả ▾",
+        "header.ph_products": "Nhập từ khoá sản phẩm để tìm kiếm...",
+        "header.ph_suppliers": "Nhập tên đối tác hoặc khu vực...",
+        "header.ph_rfq": "Mô tả ngắn gọn nhu cầu để gửi yêu cầu báo giá...",
+        "header.img_search_aria": "Tìm kiếm bằng hình ảnh",
+        "header.img_search_title": "Tải lên một hình ảnh để tìm sản phẩm tương tự",
+        "header.search_product_aria": "Tìm kiếm sản phẩm",
+        "header.search_product_title": "Tìm kiếm sản phẩm",
+        "header.img_supplier_aria": "Tìm đối tác bằng hình ảnh sản phẩm",
+        "header.img_supplier_title": "Tải lên hình ảnh sản phẩm để tìm đối tác",
+        "header.search_supplier_aria": "Tìm kiếm đối tác",
+        "header.search_supplier_title": "Tìm kiếm đối tác",
+        "header.img_rfq_aria": "Đính kèm hình ảnh vào yêu cầu báo giá",
+        "header.img_rfq_title": "Đính kèm hình ảnh sản phẩm để mô tả rõ ràng hơn",
+        "header.send_rfq_aria": "Gửi yêu cầu báo giá",
+        "header.send_rfq_title": "Gửi yêu cầu báo giá",
+        "header.cta_rfq": "Gửi yêu cầu báo giá",
+        "header.cta_register_buyer": "Đăng ký người mua",
+        "header.hot_searches": "Tìm kiếm phổ biến:"
+      },
+      "edits": [
+        [
+          "import { HOT_SEARCHES } from \"@/data/home\";",
+          "import { HOT_SEARCHES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function Header() {\n  return (",
+          "export async function Header() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "          >\n            Sản phẩm\n          </label>",
+          "          >\n            {t(\"header.tab_products\")}\n          </label>"
+        ],
+        [
+          "          >\n            Đối tác\n          </label>",
+          "          >\n            {t(\"header.tab_suppliers\")}\n          </label>"
+        ],
+        [
+          "          >\n            Báo giá\n          </label>",
+          "          >\n            {t(\"header.tab_rfq\")}\n          </label>"
+        ],
+        [
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            Tất cả ▾\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder=\"Nhập từ khoá sản phẩm để tìm kiếm...\"\n          />",
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            {t(\"header.filter_all\")}\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder={t(\"header.ph_products\")}\n          />"
+        ],
+        [
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            Tất cả ▾\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder=\"Nhập tên đối tác hoặc khu vực...\"\n          />",
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            {t(\"header.filter_all\")}\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder={t(\"header.ph_suppliers\")}\n          />"
+        ],
+        [
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            Tất cả ▾\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder=\"Mô tả ngắn gọn nhu cầu để gửi yêu cầu báo giá...\"\n          />",
+          "          <div className=\"px-3.5 bg-[#F5F7FA] flex items-center gap-1.5 text-[13px] text-mute border-r border-line max-md:hidden\">\n            {t(\"header.filter_all\")}\n          </div>\n          <input\n            name=\"q\"\n            className=\"flex-1 min-w-0 px-3.5 outline-none font-sans text-[14px]\"\n            placeholder={t(\"header.ph_rfq\")}\n          />"
+        ],
+        [
+          "            aria-label=\"Tìm kiếm bằng hình ảnh\"\n            title=\"Tải lên một hình ảnh để tìm sản phẩm tương tự\"",
+          "            aria-label={t(\"header.img_search_aria\")}\n            title={t(\"header.img_search_title\")}"
+        ],
+        [
+          "            aria-label=\"Tìm kiếm sản phẩm\"\n            title=\"Tìm kiếm sản phẩm\"",
+          "            aria-label={t(\"header.search_product_aria\")}\n            title={t(\"header.search_product_title\")}"
+        ],
+        [
+          "            aria-label=\"Tìm đối tác bằng hình ảnh sản phẩm\"\n            title=\"Tải lên hình ảnh sản phẩm để tìm đối tác\"",
+          "            aria-label={t(\"header.img_supplier_aria\")}\n            title={t(\"header.img_supplier_title\")}"
+        ],
+        [
+          "            aria-label=\"Tìm kiếm đối tác\"\n            title=\"Tìm kiếm đối tác\"",
+          "            aria-label={t(\"header.search_supplier_aria\")}\n            title={t(\"header.search_supplier_title\")}"
+        ],
+        [
+          "            aria-label=\"Đính kèm hình ảnh vào yêu cầu báo giá\"\n            title=\"Đính kèm hình ảnh sản phẩm để mô tả rõ ràng hơn\"",
+          "            aria-label={t(\"header.img_rfq_aria\")}\n            title={t(\"header.img_rfq_title\")}"
+        ],
+        [
+          "            aria-label=\"Gửi yêu cầu báo giá\"\n            title=\"Gửi yêu cầu báo giá\"",
+          "            aria-label={t(\"header.send_rfq_aria\")}\n            title={t(\"header.send_rfq_title\")}"
+        ],
+        [
+          "            📥 Gửi yêu cầu báo giá\n          </Link>",
+          "            📥 {t(\"header.cta_rfq\")}\n          </Link>"
+        ],
+        [
+          "            Đăng ký người mua →\n          </Link>",
+          "            {t(\"header.cta_register_buyer\")} →\n          </Link>"
+        ],
+        [
+          "          <b className=\"text-ink\">Tìm kiếm phổ biến:</b>",
+          "          <b className=\"text-ink\">{t(\"header.hot_searches\")}</b>"
+        ]
+      ],
+      "notFound": "Bỏ qua các chuỗi thương hiệu: aria-label=\"Huayuesc — Home\" và alt=\"Huayuesc\" (tên thương hiệu). Bỏ qua emoji riêng lẻ (📷 🔍 🏭 📨 📥) và ký tự ▾/→ (giữ nguyên). \"Tất cả ▾\" xuất hiện 3 lần giống hệt nên mỗi edit gộp kèm input+placeholder kế tiếp (duy nhất theo placeholder) để oldString duy nhất; cả 3 cùng dùng key header.filter_all."
+    },
+    {
+      "file": "mega-submenu.tsx",
+      "isClient": false,
+      "keys": {
+        "mega.viewall_arrow": "Xem tất cả →",
+        "mega.updating": "Danh mục này đang được cập nhật…",
+        "mega.more_cats": "Thêm danh mục →",
+        "mega.bestsellers": "Bán chạy nhất:",
+        "mega.viewall_named": "Xem tất cả"
+      },
+      "edits": [
+        [
+          "import type { NavSubItem, NAV_MENU } from \"@/data/home\";",
+          "import type { NavSubItem, NAV_MENU } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {\n  const mainHref = `/category/${group.main.slug}`;\n  const bestsellers = group.items.slice(0, 5);",
+          "export async function CategoryOverviewPanel({ group }: { group: NavMenuGroup }) {\n  const t = await getT();\n  const mainHref = `/category/${group.main.slug}`;\n  const bestsellers = group.items.slice(0, 5);"
+        ],
+        [
+          "export function SubItemPanel({\n  groupSlug,\n  item,\n}: {\n  groupSlug: string;\n  item: NavSubItem;\n}) {\n  const itemHref = `/category/${groupSlug}/${item.slug}`;",
+          "export async function SubItemPanel({\n  groupSlug,\n  item,\n}: {\n  groupSlug: string;\n  item: NavSubItem;\n}) {\n  const t = await getT();\n  const itemHref = `/category/${groupSlug}/${item.slug}`;"
+        ],
+        [
+          "            <span className=\"text-[20px]\">{group.main.icon}</span>\n            <span>{group.main.name}</span>\n          </h3>\n          <Link href={mainHref} className=\"text-[12px] text-accent font-semibold hover:underline\">\n            Xem tất cả →\n          </Link>",
+          "            <span className=\"text-[20px]\">{group.main.icon}</span>\n            <span>{t(`cat.${group.main.slug}`)}</span>\n          </h3>\n          <Link href={mainHref} className=\"text-[12px] text-accent font-semibold hover:underline\">\n            {t(\"mega.viewall_arrow\")}\n          </Link>"
+        ],
+        [
+          "        <div className=\"flex-1 flex items-center justify-center text-mute italic text-[13px]\">\n          Danh mục này đang được cập nhật…\n        </div>",
+          "        <div className=\"flex-1 flex items-center justify-center text-mute italic text-[13px]\">\n          {t(\"mega.updating\")}\n        </div>"
+        ],
+        [
+          "        <Link href={mainHref} className=\"text-[12px] text-brand font-semibold hover:underline\">\n          Thêm danh mục →\n        </Link>",
+          "        <Link href={mainHref} className=\"text-[12px] text-brand font-semibold hover:underline\">\n          {t(\"mega.more_cats\")}\n        </Link>"
+        ],
+        [
+          "        <span className=\"text-[11.5px] font-bold text-ink flex-shrink-0\">\n          Bán chạy nhất:\n        </span>\n        {bestsellers.map((b, i) => (\n          <span key={b.slug} className=\"flex items-baseline\">",
+          "        <span className=\"text-[11.5px] font-bold text-ink flex-shrink-0\">\n          {t(\"mega.bestsellers\")}\n        </span>\n        {bestsellers.map((b, i) => (\n          <span key={b.slug} className=\"flex items-baseline\">"
+        ],
+        [
+          "          <span className=\"text-[14px]\">{group.main.icon}</span>\n          <span>{group.main.name}</span>\n        </span>\n        <Link href={mainHref} className=\"text-accent font-semibold hover:underline\">\n          Xem tất cả {group.main.name} →\n        </Link>",
+          "          <span className=\"text-[14px]\">{group.main.icon}</span>\n          <span>{t(`cat.${group.main.slug}`)}</span>\n        </span>\n        <Link href={mainHref} className=\"text-accent font-semibold hover:underline\">\n          {t(\"mega.viewall_named\")} {t(`cat.${group.main.slug}`)} →\n        </Link>"
+        ],
+        [
+          "        <Link\n          href={itemHref}\n          className=\"text-[12px] text-brand font-semibold hover:underline\"\n        >\n          Thêm danh mục →\n        </Link>",
+          "        <Link\n          href={itemHref}\n          className=\"text-[12px] text-brand font-semibold hover:underline\"\n        >\n          {t(\"mega.more_cats\")}\n        </Link>"
+        ],
+        [
+          "        <span className=\"text-[11.5px] font-bold text-ink flex-shrink-0\">\n          Bán chạy nhất:\n        </span>\n        {bestsellers.map((b, i) => (\n          <span key={`${b.name}-${i}`} className=\"flex items-baseline\">",
+          "        <span className=\"text-[11.5px] font-bold text-ink flex-shrink-0\">\n          {t(\"mega.bestsellers\")}\n        </span>\n        {bestsellers.map((b, i) => (\n          <span key={`${b.name}-${i}`} className=\"flex items-baseline\">"
+        ]
+      ],
+      "notFound": "File là Server Component (không có \"use client\"), có 2 hàm export nên thêm 2 setup `const t = await getT();`. Chuỗi \"Thêm danh mục →\" và \"Bán chạy nhất:\" xuất hiện ở cả 2 hàm, đã phân biệt bằng ngữ cảnh Link/map khác nhau, cùng map về 1 key (mega.more_cats / mega.bestsellers). Tên danh mục {group.main.name} (dòng 28,134) đổi sang t(`cat.${group.main.slug}`) theo quy ước. \"Xem tất cả {group.main.name} →\" tách thành nhãn \"Xem tất cả\" (mega.viewall_named) + tên cat. it.name/sub.name/s.title/b.name/h.name là dữ liệu động từ data, không đụng."
+    },
+    {
+      "file": "hero-slider.tsx",
+      "isClient": true,
+      "keys": {
+        "hero.slide1.badge": "🏭 Chuyên gia Nội thất & Vật liệu xây dựng",
+        "hero.slide1.titleStart": "Nhập ",
+        "hero.slide1.titleGold": "gốm sứ & nội thất",
+        "hero.slide1.titleEnd": "\ntrực tiếp từ Trung Quốc.",
+        "hero.slide1.desc": "960+ sản phẩm từ 20+ nhà máy gốm sứ (Phật Sơn) và nhà máy nội thất (Tấn Giang, KUKA, OPPEIN). Báo giá trực tiếp, không qua trung gian.",
+        "hero.slide1.primary": "📨 Gửi yêu cầu báo giá",
+        "hero.slide1.secondary": "🏭 Xem nhà máy →",
+        "hero.slide2.badge": "🎁 Ưu đãi cho người mua mới",
+        "hero.slide2.titleStart": "Miễn phí ",
+        "hero.slide2.titleGold": "kiểm định nhà máy",
+        "hero.slide2.titleEnd": "\n+ giảm 10% đơn hàng đầu tiên.",
+        "hero.slide2.desc": "Người mua mới được kiểm định nhà máy trị giá $300 miễn phí, miễn phí vận chuyển DDP và giảm 10% đơn hàng đầu tiên.",
+        "hero.slide2.primary": "🎁 Đăng ký người mua",
+        "hero.slide2.secondary": "Tìm hiểu thêm →",
+        "hero.slide3.badge": "📹 Hội chợ trực tuyến thông minh",
+        "hero.slide3.titleStart": "Tham quan ",
+        "hero.slide3.titleGold": "nhà máy 360°",
+        "hero.slide3.titleEnd": "\nkhông cần bay sang.",
+        "hero.slide3.desc": "Tham quan nhà máy qua video trực tiếp, gặp quản lý QC, xem dây chuyền sản xuất theo thời gian thực. Tiết kiệm 5–7 ngày so với đến tận nơi.",
+        "hero.slide3.primary": "🏭 Tham quan ngay",
+        "hero.slide3.secondary": "Đặt lịch tham quan →",
+        "hero.slide4.badge": "🚢 Vận chuyển DDP",
+        "hero.slide4.titleStart": "DDP về ",
+        "hero.slide4.titleGold": "kho Hà Nội/TP.HCM",
+        "hero.slide4.titleEnd": "\ntrong 18 ngày.",
+        "hero.slide4.desc": "Trọn gói: vận chuyển + thuế + thông quan. LCL/FCL từ Quảng Châu, Ninh Ba và Hạ Môn. Báo giá cước trong vòng 1 giờ.",
+        "hero.slide4.primary": "💰 Tính cước DDP",
+        "hero.slide4.secondary": "Xem cảng →",
+        "hero.prev": "Slide trước",
+        "hero.next": "Slide sau"
+      },
+      "edits": [
+        [
+          "import { Fragment, useEffect, useRef, useState, type PointerEvent } from \"react\";",
+          "import { Fragment, useEffect, useRef, useState, type PointerEvent } from \"react\";\nimport { useT } from \"@/components/i18n-provider\";"
+        ],
+        [
+          "  const radiosRef = useRef<(HTMLInputElement | null)[]>([]);\n  const [paused, setPaused] = useState(false);\n  const pointerStartX = useRef<number | null>(null);",
+          "  const radiosRef = useRef<(HTMLInputElement | null)[]>([]);\n  const [paused, setPaused] = useState(false);\n  const pointerStartX = useRef<number | null>(null);\n  const t = useT();"
+        ],
+        [
+          "    badge: \"🏭 Chuyên gia Nội thất & Vật liệu xây dựng\",",
+          "    badge: t(\"hero.slide1.badge\"),"
+        ],
+        [
+          "    titleStart: \"Nhập \",",
+          "    titleStart: t(\"hero.slide1.titleStart\"),"
+        ],
+        [
+          "    titleGold: \"gốm sứ & nội thất\",",
+          "    titleGold: t(\"hero.slide1.titleGold\"),"
+        ],
+        [
+          "    titleEnd: \"\\ntrực tiếp từ Trung Quốc.\",",
+          "    titleEnd: t(\"hero.slide1.titleEnd\"),"
+        ],
+        [
+          "    desc: \"960+ sản phẩm từ 20+ nhà máy gốm sứ (Phật Sơn) và nhà máy nội thất (Tấn Giang, KUKA, OPPEIN). Báo giá trực tiếp, không qua trung gian.\",",
+          "    desc: t(\"hero.slide1.desc\"),"
+        ],
+        [
+          "    primary: { label: \"📨 Gửi yêu cầu báo giá\", href: \"/buying-request\" },",
+          "    primary: { label: t(\"hero.slide1.primary\"), href: \"/buying-request\" },"
+        ],
+        [
+          "    secondary: { label: \"🏭 Xem nhà máy →\", href: \"/suppliers\" },",
+          "    secondary: { label: t(\"hero.slide1.secondary\"), href: \"/suppliers\" },"
+        ],
+        [
+          "    badge: \"🎁 Ưu đãi cho người mua mới\",",
+          "    badge: t(\"hero.slide2.badge\"),"
+        ],
+        [
+          "    titleStart: \"Miễn phí \",",
+          "    titleStart: t(\"hero.slide2.titleStart\"),"
+        ],
+        [
+          "    titleGold: \"kiểm định nhà máy\",",
+          "    titleGold: t(\"hero.slide2.titleGold\"),"
+        ],
+        [
+          "    titleEnd: \"\\n+ giảm 10% đơn hàng đầu tiên.\",",
+          "    titleEnd: t(\"hero.slide2.titleEnd\"),"
+        ],
+        [
+          "    desc: \"Người mua mới được kiểm định nhà máy trị giá $300 miễn phí, miễn phí vận chuyển DDP và giảm 10% đơn hàng đầu tiên.\",",
+          "    desc: t(\"hero.slide2.desc\"),"
+        ],
+        [
+          "    primary: { label: \"🎁 Đăng ký người mua\", href: \"/register/buyer\" },",
+          "    primary: { label: t(\"hero.slide2.primary\"), href: \"/register/buyer\" },"
+        ],
+        [
+          "    secondary: { label: \"Tìm hiểu thêm →\", href: \"/info/gold-membership\" },",
+          "    secondary: { label: t(\"hero.slide2.secondary\"), href: \"/info/gold-membership\" },"
+        ],
+        [
+          "    badge: \"📹 Hội chợ trực tuyến thông minh\",",
+          "    badge: t(\"hero.slide3.badge\"),"
+        ],
+        [
+          "    titleStart: \"Tham quan \",",
+          "    titleStart: t(\"hero.slide3.titleStart\"),"
+        ],
+        [
+          "    titleGold: \"nhà máy 360°\",",
+          "    titleGold: t(\"hero.slide3.titleGold\"),"
+        ],
+        [
+          "    titleEnd: \"\\nkhông cần bay sang.\",",
+          "    titleEnd: t(\"hero.slide3.titleEnd\"),"
+        ],
+        [
+          "    desc: \"Tham quan nhà máy qua video trực tiếp, gặp quản lý QC, xem dây chuyền sản xuất theo thời gian thực. Tiết kiệm 5–7 ngày so với đến tận nơi.\",",
+          "    desc: t(\"hero.slide3.desc\"),"
+        ],
+        [
+          "    primary: { label: \"🏭 Tham quan ngay\", href: \"/factory-tour\" },",
+          "    primary: { label: t(\"hero.slide3.primary\"), href: \"/factory-tour\" },"
+        ],
+        [
+          "    secondary: { label: \"Đặt lịch tham quan →\", href: \"/buyer-center/meet-suppliers\" },",
+          "    secondary: { label: t(\"hero.slide3.secondary\"), href: \"/buyer-center/meet-suppliers\" },"
+        ],
+        [
+          "    badge: \"🚢 Vận chuyển DDP\",",
+          "    badge: t(\"hero.slide4.badge\"),"
+        ],
+        [
+          "    titleStart: \"DDP về \",",
+          "    titleStart: t(\"hero.slide4.titleStart\"),"
+        ],
+        [
+          "    titleGold: \"kho Hà Nội/TP.HCM\",",
+          "    titleGold: t(\"hero.slide4.titleGold\"),"
+        ],
+        [
+          "    titleEnd: \"\\ntrong 18 ngày.\",",
+          "    titleEnd: t(\"hero.slide4.titleEnd\"),"
+        ],
+        [
+          "    desc: \"Trọn gói: vận chuyển + thuế + thông quan. LCL/FCL từ Quảng Châu, Ninh Ba và Hạ Môn. Báo giá cước trong vòng 1 giờ.\",",
+          "    desc: t(\"hero.slide4.desc\"),"
+        ],
+        [
+          "    primary: { label: \"💰 Tính cước DDP\", href: \"/info/ddp-calculator\" },",
+          "    primary: { label: t(\"hero.slide4.primary\"), href: \"/info/ddp-calculator\" },"
+        ],
+        [
+          "    secondary: { label: \"Xem cảng →\", href: \"/info/shipping-policy\" },",
+          "    secondary: { label: t(\"hero.slide4.secondary\"), href: \"/info/shipping-policy\" },"
+        ],
+        [
+          "              aria-label=\"Slide trước\"",
+          "              aria-label={t(\"hero.prev\")}"
+        ],
+        [
+          "              aria-label=\"Slide sau\"",
+          "              aria-label={t(\"hero.next\")}"
+        ]
+      ],
+      "notFound": "HERO_SLIDES là const array ngoài component nên các giá trị badge/title/desc/label được chuyển sang t() — điều này yêu cầu mảng phải nằm TRONG component (hoặc map qua t khi render). Vì hiện tại HERO_SLIDES khai báo ở module scope (ngoài hàm), gọi t() ở đó sẽ lỗi (t chưa tồn tại). Orchestrator cần di chuyển HERO_SLIDES vào trong HeroSlider() SAU dòng const t = useT(); để các edit dùng t() trong mảng hợp lệ. Các emoji được giữ nguyên trong value vi (nằm cùng string literal, không tách được). aria-label `Slide ${i+1}` (dòng 216) là template có biến số nên bỏ qua, không dịch."
+    },
+    {
+      "file": "factories.tsx",
+      "isClient": false,
+      "keys": {
+        "factories.title": "Đối tác sản xuất",
+        "factories.partners": "Đối tác",
+        "factories.partnersListed": "Đối tác niêm yết",
+        "factories.factoryInspected": "Kiểm định tại nhà máy",
+        "factories.viewAll": "Xem tất cả nhà máy →",
+        "factories.diamond": "💎 KIM CƯƠNG",
+        "factories.partnerBadge": "✓ ĐỐI TÁC"
+      },
+      "edits": [
+        [
+          "import { PARTNERS, type PartnerBrand } from \"@/data/partners\";",
+          "import { PARTNERS, type PartnerBrand } from \"@/data/partners\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function Factories() {\n  const featured = FEATURED_SLUGS.map((slug) =>",
+          "export async function Factories() {\n  const t = await getT();\n  const featured = FEATURED_SLUGS.map((slug) =>"
+        ],
+        [
+          "          </span>\n          Đối tác sản xuất\n        </h2>",
+          "          </span>\n          {t(\"factories.title\")}\n        </h2>"
+        ],
+        [
+          "            <b className=\"text-ink\">{PARTNERS.length}</b> Đối tác\n          </span>",
+          "            <b className=\"text-ink\">{PARTNERS.length}</b> {t(\"factories.partners\")}\n          </span>"
+        ],
+        [
+          "            <b className=\"text-ink\">{totalListed}</b> Đối tác niêm yết\n          </span>",
+          "            <b className=\"text-ink\">{totalListed}</b> {t(\"factories.partnersListed\")}\n          </span>"
+        ],
+        [
+          "            <b className=\"text-ink\">100%</b> Kiểm định tại nhà máy\n          </span>",
+          "            <b className=\"text-ink\">100%</b> {t(\"factories.factoryInspected\")}\n          </span>"
+        ],
+        [
+          ">\n          Xem tất cả nhà máy →\n        </Link>",
+          ">\n          {t(\"factories.viewAll\")}\n        </Link>"
+        ],
+        [
+          "                    💎 KIM CƯƠNG\n                  </span>",
+          "                    {t(\"factories.diamond\")}\n                  </span>"
+        ],
+        [
+          "                    ✓ ĐỐI TÁC\n                  </span>",
+          "                    {t(\"factories.partnerBadge\")}\n                  </span>"
+        ],
+        [
+          "                  {brandTags(p).map((t, ti) => (\n                    <span\n                      key={`${p.slug}-${ti}`}\n                      className=\"text-[10.5px] bg-[#F5F5F5] text-mute px-2 py-0.5 rounded-sm\"\n                    >\n                      {t}\n                    </span>",
+          "                  {brandTags(p).map((tag, ti) => (\n                    <span\n                      key={`${p.slug}-${ti}`}\n                      className=\"text-[10.5px] bg-[#F5F5F5] text-mute px-2 py-0.5 rounded-sm\"\n                    >\n                      {tag}\n                    </span>"
+        ]
+      ],
+      "notFound": "yearsBadge() trả về `${diff} năm` là helper ngoài component (không truy cập được t) và là chuỗi tính toán có số + đơn vị 'năm' — không đụng. Đã đổi tên biến map `t` ở line 214 thành `tag` để tránh shadow biến i18n `t` vừa inject vào scope component (edit cuối cùng). Các nhãn KIM CƯƠNG/ĐỐI TÁC giữ emoji + dấu trong value vi y nguyên."
+    },
+    {
+      "file": "zones.tsx",
+      "isClient": false,
+      "keys": {
+        "zones.title": "Khu công nghiệp",
+        "zones.subtitle": "Khu công nghiệp được chứng nhận — mua trực tiếp tại nguồn",
+        "zones.viewMap": "Xem bản đồ khu"
+      },
+      "edits": [
+        [
+          "import { ZONES } from \"@/data/home\";",
+          "import { ZONES } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function Zones() {\n  return (",
+          "export async function Zones() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "          </span>\n          Khu công nghiệp\n        </h2>",
+          "          </span>\n          {t(\"zones.title\")}\n        </h2>"
+        ],
+        [
+          "          Khu công nghiệp được chứng nhận — mua trực tiếp tại nguồn\n        </span>",
+          "          {t(\"zones.subtitle\")}\n        </span>"
+        ],
+        [
+          "          Xem bản đồ khu →\n        </Link>",
+          "          {t(\"zones.viewMap\")} →\n        </Link>"
+        ]
+      ],
+      "notFound": "z.name, z.count và alt={z.name} là dữ liệu động (tên/số lượng khu công nghiệp từ ZONES), không phải chuỗi literal nên giữ nguyên. Mũi tên → ở nút \"Xem bản đồ khu\" giữ ngoài t() vì là ký tự trang trí."
+    },
+    {
+      "file": "product-section.tsx",
+      "isClient": false,
+      "keys": {
+        "product.viewAll": "Xem tất cả",
+        "product.products": "sản phẩm",
+        "product.noProduct": "Chưa có sản phẩm",
+        "product.inCategory": "trong mục",
+        "product.viewMore": "+ Xem thêm"
+      },
+      "edits": [
+        [
+          "import type { Section, Badge, Product } from \"@/data/home\";",
+          "import type { Section, Badge, Product } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function ProductSection({ section }: { section: Section }) {",
+          "export async function ProductSection({ section }: { section: Section }) {\n  const t = await getT();"
+        ],
+        [
+          "          Xem tất cả {section.totalCount} sản phẩm →",
+          "          {t(\"product.viewAll\")} {section.totalCount} {t(\"product.products\")} →"
+        ],
+        [
+          "                        Chưa có sản phẩm\n                        <br />\n                        <small className=\"text-[11px]\">trong mục \"{tabName}\"</small>",
+          "                        {t(\"product.noProduct\")}\n                        <br />\n                        <small className=\"text-[11px]\">{t(\"product.inCategory\")} \"{tabName}\"</small>"
+        ],
+        [
+          "                      <span className=\"opacity-60\">+ Xem thêm</span>",
+          "                      <span className=\"opacity-60\">{t(\"product.viewMore\")}</span>"
+        ]
+      ],
+      "notFound": "badgeLabel (BÁN CHẠY, MỚI, OEM, GOLD) là const ở module-level (ngoài component), không thể gọi t() ở đó — cần refactor riêng (đưa vào component hoặc dùng helper). Bỏ qua trong batch này. \"-25%\" là số phần trăm → không dịch. {section.title}, {section.feature.title/desc/cta/badge}, {p.title/price/unit/moq/seller/years} là dữ liệu từ @/data/home (dynamic content), không phải chuỗi UI tĩnh → không wrap. Tab labels {t} ở dòng 124 là dữ liệu section.tabs (biến t trùng tên — lưu ý sau khi thêm const t, biến map (t,i) ở dòng 115 sẽ shadow; tuy nhiên chuỗi đó là dữ liệu tab name nên không cần dịch, vẫn render {t} của map — KHÔNG xung đột vì map dùng tham số t riêng, đặt tên trùng nhưng scope khác). Để an toàn hơn nên đổi tên tham số map nhưng nằm ngoài phạm vi yêu cầu."
+    },
+    {
+      "file": "sourcing-solutions.tsx",
+      "isClient": false,
+      "keys": {
+        "sourcing.heading": "Giải pháp tìm nguồn hàng & Dịch vụ chuyên biệt",
+        "sourcing.card1.title": "Cụm sản xuất Gốm sứ & Đá",
+        "sourcing.card1.bullet1": "Phật Sơn — 1,200 nhà máy gốm sứ",
+        "sourcing.card1.bullet2": "Tấm sứ khổ lớn & tấm đá cẩm thạch",
+        "sourcing.card1.bullet3": "Báo giá FOB / DDP Hải Phòng",
+        "sourcing.card1.sub1": "Gạch porcelain",
+        "sourcing.card1.sub2": "Tấm đá cẩm thạch khổ lớn",
+        "sourcing.card1.sub3": "Sàn gỗ công nghiệp",
+        "sourcing.card2.title": "Cụm sản xuất Nội thất",
+        "sourcing.card2.bullet1": "Phật Sơn — hơn 3,000 nhà máy nội thất",
+        "sourcing.card2.bullet2": "Tấn Giang — 340 nhà máy chế biến gỗ",
+        "sourcing.card2.bullet3": "OEM/ODM sofa, giường, tủ & bàn ăn",
+        "sourcing.card2.sub1": "Sofa & Phòng khách",
+        "sourcing.card2.sub2": "Giường & Phòng ngủ",
+        "sourcing.card2.sub3": "Tủ bếp & Tủ quần áo",
+        "sourcing.card3.title": "Gia công OEM/ODM theo yêu cầu",
+        "sourcing.card3.bullet1": "Tùy chỉnh logo / kích thước / màu sắc",
+        "sourcing.card3.bullet2": "Thiết kế 3D miễn phí cho đơn từ 30 bộ trở lên",
+        "sourcing.card3.bullet3": "Có mẫu thử trước khi đặt đơn lớn",
+        "sourcing.card3.sub1": "Vật liệu xây dựng",
+        "sourcing.card3.sub2": "Nội thất theo yêu cầu",
+        "sourcing.card3.sub3": "OEM khách sạn 5 sao",
+        "sourcing.card4.title": "Smart Expo — Hội chợ thương mại ảo",
+        "sourcing.card4.bullet1": "Nhà cung cấp uy tín",
+        "sourcing.card4.bullet2": "Tham quan nhà máy bằng VR 360°",
+        "sourcing.card4.bullet3": "Gọi video gặp trực tiếp quản lý QC",
+        "sourcing.card4.sub1": "Tham quan nhà máy VR",
+        "sourcing.card4.sub2": "Danh mục Gốm sứ",
+        "sourcing.card4.sub3": "Danh mục Nội thất"
+      },
+      "edits": [
+        [
+          "import Link from \"next/link\";",
+          "import Link from \"next/link\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "const SOLUTIONS: SolutionCard[] = [\n  {\n    title: \"Cụm sản xuất Gốm sứ & Đá\",\n    bullets: [\n      \"Phật Sơn — 1,200 nhà máy gốm sứ\",\n      \"Tấm sứ khổ lớn & tấm đá cẩm thạch\",\n      \"Báo giá FOB / DDP Hải Phòng\",\n    ],\n    image: \"/img/sol-hubs.jpg?v=7\",\n    href: \"/zones\",\n    subcats: [\n      { name: \"Gạch porcelain\", image: \"/img/cer1.jpg?v=7\", href: \"/category/construction-materials\" },\n      { name: \"Tấm đá cẩm thạch khổ lớn\", image: \"/img/cer2.jpg?v=7\", href: \"/category/construction-materials\" },\n      { name: \"Sàn gỗ công nghiệp\", image: \"/img/cer8.jpg?v=7\", href: \"/category/construction-materials\" },\n    ],\n  },\n  {\n    title: \"Cụm sản xuất Nội thất\",\n    bullets: [\n      \"Phật Sơn — hơn 3,000 nhà máy nội thất\",\n      \"Tấn Giang — 340 nhà máy chế biến gỗ\",\n      \"OEM/ODM sofa, giường, tủ & bàn ăn\",\n    ],\n    image: \"/img/sol-mei.jpg?v=7\",\n    href: \"/zones\",\n    subcats: [\n      { name: \"Sofa & Phòng khách\", image: \"/img/fur1.jpg?v=7\", href: \"/category/noi-that\" },\n      { name: \"Giường & Phòng ngủ\", image: \"/img/fur3.jpg?v=7\", href: \"/category/noi-that\" },\n      { name: \"Tủ bếp & Tủ quần áo\", image: \"/img/fur7.jpg?v=7\", href: \"/category/noi-that\" },\n    ],\n  },\n  {\n    title: \"Gia công OEM/ODM theo yêu cầu\",\n    bullets: [\n      \"Tùy chỉnh logo / kích thước / màu sắc\",\n      \"Thiết kế 3D miễn phí cho đơn từ 30 bộ trở lên\",\n      \"Có mẫu thử trước khi đặt đơn lớn\",\n    ],\n    image: \"/img/sol-custom.jpg?v=7\",\n    href: \"/buying-request\",\n    subcats: [\n      { name: \"Vật liệu xây dựng\", image: \"/img/showcase-construction-materials.jpg?v=7\", href: \"/category/construction-materials\" },\n      { name: \"Nội thất theo yêu cầu\", image: \"/img/showcase-noi-that.jpg?v=7\", href: \"/category/noi-that\" },\n      { name: \"OEM khách sạn 5 sao\", image: \"/img/fur6.jpg?v=7\", href: \"/category/noi-that\" },\n    ],\n  },\n  {\n    title: \"Smart Expo — Hội chợ thương mại ảo\",\n    bullets: [\n      \"Nhà cung cấp uy tín\",\n      \"Tham quan nhà máy bằng VR 360°\",\n      \"Gọi video gặp trực tiếp quản lý QC\",\n    ],\n    image: \"/img/sol-expo.jpg?v=7\",\n    href: \"/seller-center/smart-expo\",\n    subcats: [\n      { name: \"Tham quan nhà máy VR\", image: \"/img/sub-expo1.jpg?v=7\", href: \"/factory-tour\" },\n      { name: \"Danh mục Gốm sứ\", image: \"/img/sub-expo3.jpg?v=7\", href: \"/category/construction-materials\" },\n      { name: \"Danh mục Nội thất\", image: \"/img/cer8.jpg?v=7\", href: \"/category/noi-that\" },\n    ],\n  },\n];\n\nexport function SourcingSolutions() {\n  return (",
+          "export async function SourcingSolutions() {\n  const t = await getT();\n  const SOLUTIONS: SolutionCard[] = [\n    {\n      title: t(\"sourcing.card1.title\"),\n      bullets: [\n        t(\"sourcing.card1.bullet1\"),\n        t(\"sourcing.card1.bullet2\"),\n        t(\"sourcing.card1.bullet3\"),\n      ],\n      image: \"/img/sol-hubs.jpg?v=7\",\n      href: \"/zones\",\n      subcats: [\n        { name: t(\"sourcing.card1.sub1\"), image: \"/img/cer1.jpg?v=7\", href: \"/category/construction-materials\" },\n        { name: t(\"sourcing.card1.sub2\"), image: \"/img/cer2.jpg?v=7\", href: \"/category/construction-materials\" },\n        { name: t(\"sourcing.card1.sub3\"), image: \"/img/cer8.jpg?v=7\", href: \"/category/construction-materials\" },\n      ],\n    },\n    {\n      title: t(\"sourcing.card2.title\"),\n      bullets: [\n        t(\"sourcing.card2.bullet1\"),\n        t(\"sourcing.card2.bullet2\"),\n        t(\"sourcing.card2.bullet3\"),\n      ],\n      image: \"/img/sol-mei.jpg?v=7\",\n      href: \"/zones\",\n      subcats: [\n        { name: t(\"sourcing.card2.sub1\"), image: \"/img/fur1.jpg?v=7\", href: \"/category/noi-that\" },\n        { name: t(\"sourcing.card2.sub2\"), image: \"/img/fur3.jpg?v=7\", href: \"/category/noi-that\" },\n        { name: t(\"sourcing.card2.sub3\"), image: \"/img/fur7.jpg?v=7\", href: \"/category/noi-that\" },\n      ],\n    },\n    {\n      title: t(\"sourcing.card3.title\"),\n      bullets: [\n        t(\"sourcing.card3.bullet1\"),\n        t(\"sourcing.card3.bullet2\"),\n        t(\"sourcing.card3.bullet3\"),\n      ],\n      image: \"/img/sol-custom.jpg?v=7\",\n      href: \"/buying-request\",\n      subcats: [\n        { name: t(\"sourcing.card3.sub1\"), image: \"/img/showcase-construction-materials.jpg?v=7\", href: \"/category/construction-materials\" },\n        { name: t(\"sourcing.card3.sub2\"), image: \"/img/showcase-noi-that.jpg?v=7\", href: \"/category/noi-that\" },\n        { name: t(\"sourcing.card3.sub3\"), image: \"/img/fur6.jpg?v=7\", href: \"/category/noi-that\" },\n      ],\n    },\n    {\n      title: t(\"sourcing.card4.title\"),\n      bullets: [\n        t(\"sourcing.card4.bullet1\"),\n        t(\"sourcing.card4.bullet2\"),\n        t(\"sourcing.card4.bullet3\"),\n      ],\n      image: \"/img/sol-expo.jpg?v=7\",\n      href: \"/seller-center/smart-expo\",\n      subcats: [\n        { name: t(\"sourcing.card4.sub1\"), image: \"/img/sub-expo1.jpg?v=7\", href: \"/factory-tour\" },\n        { name: t(\"sourcing.card4.sub2\"), image: \"/img/sub-expo3.jpg?v=7\", href: \"/category/construction-materials\" },\n        { name: t(\"sourcing.card4.sub3\"), image: \"/img/cer8.jpg?v=7\", href: \"/category/noi-that\" },\n      ],\n    },\n  ];\n  return ("
+        ],
+        [
+          "        Giải pháp tìm nguồn hàng & Dịch vụ chuyên biệt\n      </h2>",
+          "        {t(\"sourcing.heading\")}\n      </h2>"
+        ]
+      ],
+      "notFound": "Component là Server Component (không có \"use client\"). SOLUTIONS được định nghĩa ở module scope nên không gọi được t() — đã chuyển toàn bộ mảng vào trong hàm component (sau const t = await getT();) và thay mỗi chuỗi tiếng Việt bằng t(\"key\"). Các giá trị render {s.title}/{b}/{sub.name}/{s.bullets} giữ nguyên vì giờ chúng đã chứa chuỗi đã dịch. alt={s.title} và alt={sub.name} cũng tự động dịch theo. Không đụng image/href/slug/className."
+    },
+    {
+      "file": "trade-shows-section.tsx",
+      "isClient": false,
+      "keys": {
+        "tradeshow.heading": "Hội chợ thương mại",
+        "tradeshow.intro": "Các hội chợ thương mại mà Huayuesc sẽ tham dự cùng các đối tác sản xuất Trung Quốc.",
+        "tradeshow.viewmore": "Xem thêm →",
+        "tradeshow.register": "📩 Đăng ký tham dự →",
+        "tradeshow.ledby": "Do đoàn Huayuesc dẫn dắt · Hỗ trợ visa & sắp xếp lịch B2B",
+        "tradeshow.alerttitle": "Cảnh báo hội chợ — Không bỏ lỡ kỳ hội chợ nào",
+        "tradeshow.alertdesc": "Nhận lịch hội chợ + lịch kết nối giao thương B2B qua email hằng tháng.",
+        "tradeshow.subscribe": "Đăng ký →"
+      },
+      "edits": [
+        [
+          "import Link from \"next/link\";",
+          "import Link from \"next/link\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function TradeShowsSection() {\n  return (",
+          "export async function TradeShowsSection() {\n  const t = await getT();\n  return ("
+        ],
+        [
+          "            <h2 className=\"text-[20px] font-bold text-ink max-md:text-[17px]\">\n              Hội chợ thương mại\n            </h2>",
+          "            <h2 className=\"text-[20px] font-bold text-ink max-md:text-[17px]\">\n              {t(\"tradeshow.heading\")}\n            </h2>"
+        ],
+        [
+          "            <p className=\"text-[12.5px] text-mute mt-1 max-md:text-[12px]\">\n              Các hội chợ thương mại mà Huayuesc sẽ tham dự cùng các đối tác sản xuất Trung Quốc.\n            </p>",
+          "            <p className=\"text-[12.5px] text-mute mt-1 max-md:text-[12px]\">\n              {t(\"tradeshow.intro\")}\n            </p>"
+        ],
+        [
+          "          >\n            Xem thêm →\n          </Link>",
+          "          >\n            {t(\"tradeshow.viewmore\")}\n          </Link>"
+        ],
+        [
+          "                <span className=\"px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-[#E8943A] transition\">\n                  📩 Đăng ký tham dự →\n                </span>",
+          "                <span className=\"px-3 py-1.5 bg-gold text-brand-dark text-[12px] font-bold rounded-sm group-hover/feat:bg-[#E8943A] transition\">\n                  {t(\"tradeshow.register\")}\n                </span>"
+        ],
+        [
+          "                <span className=\"text-[11.5px] opacity-80\">\n                  Do đoàn Huayuesc dẫn dắt · Hỗ trợ visa & sắp xếp lịch B2B\n                </span>",
+          "                <span className=\"text-[11.5px] opacity-80\">\n                  {t(\"tradeshow.ledby\")}\n                </span>"
+        ],
+        [
+          "                <b className=\"block text-[13px] font-bold mb-0.5\">\n                  Cảnh báo hội chợ — Không bỏ lỡ kỳ hội chợ nào\n                </b>",
+          "                <b className=\"block text-[13px] font-bold mb-0.5\">\n                  {t(\"tradeshow.alerttitle\")}\n                </b>"
+        ],
+        [
+          "                <p className=\"text-[11.5px] opacity-85 leading-snug\">\n                  Nhận lịch hội chợ + lịch kết nối giao thương B2B qua email hằng tháng.\n                </p>",
+          "                <p className=\"text-[11.5px] opacity-85 leading-snug\">\n                  {t(\"tradeshow.alertdesc\")}\n                </p>"
+        ],
+        [
+          "              >\n                Đăng ký →\n              </Link>",
+          "              >\n                {t(\"tradeshow.subscribe\")}\n              </Link>"
+        ]
+      ],
+      "notFound": "Các chuỗi tiếng Việt nằm trong data array FEATURED và SHOWS (name, location, category, duration, badge: \"NỔI BẬT\", \"Quảng Châu, Trung Quốc\", \"Hà Nội, Việt Nam\", \"Tổng hợp · 25K+ nhà cung cấp\", \"Đa ngành\", \"Đóng gói & Logistics\", \"Nội thất & Đồ gia dụng\", ...) là DATA tĩnh được render qua biến {FEATURED.x}/{show.x} trong .map(), không phải chuỗi JSX literal. Không chuyển sang t() để tránh phá cấu trúc dữ liệu/key React; nếu muốn i18n phần này cần refactor data thành key, vượt phạm vi 1 component edit thuần text."
+    },
+    {
+      "keys": {},
+      "edits": [],
+      "file": "stats-bar.tsx",
+      "isClient": false,
+      "notFound": "Không có chuỗi hiển thị literal nào trong stats-bar.tsx. Component chỉ render dữ liệu động {s.value} và {s.label} lấy từ mảng STATS trong @/data/home (home.ts dòng 1646-1652: ví dụ \"SKU đang bán\", \"Nhà máy đã xác minh\", \"<24h\", \"Thời gian báo giá\", \"300+\", \"Đại lý tại Việt Nam\", \"12 năm\", \"Năm kinh nghiệm\"). Đây là biến/dữ liệu (rule cấm đụng tên biến và các chuỗi nằm ngoài file component), không phải chuỗi literal trong JSX của file này, nên không có edit nào. Nếu muốn i18n các nhãn STATS thì phải sửa file data/home.ts (ngoài phạm vi component này)."
+    },
+    {
+      "file": "category-showcase.tsx",
+      "isClient": false,
+      "keys": {
+        "catshow.title": "Danh mục sản phẩm chính",
+        "catshow.mainIndustries": "ngành hàng chính,",
+        "catshow.subCategories": "danh mục con",
+        "catshow.moreHover": "mục (rê chuột để xem)"
+      },
+      "edits": [
+        [
+          "import { NAV_MENU } from \"@/data/home\";",
+          "import { NAV_MENU } from \"@/data/home\";\nimport { getT } from \"@/lib/t\";"
+        ],
+        [
+          "export function CategoryShowcase() {\n  const shown = NAV_MENU.filter((g) => g.items.length >= MIN_ITEMS);\n  const totalSubs = shown.reduce((n, g) => n + g.items.length, 0);\n  return (",
+          "export async function CategoryShowcase() {\n  const t = await getT();\n  const shown = NAV_MENU.filter((g) => g.items.length >= MIN_ITEMS);\n  const totalSubs = shown.reduce((n, g) => n + g.items.length, 0);\n  return ("
+        ],
+        [
+          "          <span className=\"w-1 h-5 bg-brand rounded-sm\" />\n          Danh mục sản phẩm chính",
+          "          <span className=\"w-1 h-5 bg-brand rounded-sm\" />\n          {t(\"catshow.title\")}"
+        ],
+        [
+          "            · {shown.length} ngành hàng chính, {totalSubs} danh mục con",
+          "            · {shown.length} {t(\"catshow.mainIndustries\")} {totalSubs} {t(\"catshow.subCategories\")}"
+        ],
+        [
+          "                  <span>{group.main.name}</span>",
+          "                  <span>{t(`cat.${group.main.slug}`)}</span>"
+        ],
+        [
+          "                      +{extra} mục (rê chuột để xem)",
+          "                      +{extra} {t(\"catshow.moreHover\")}"
+        ]
+      ],
+      "notFound": "Chuỗi gốc trên dòng 20 là \"· {shown.length} ngành hàng chính, {totalSubs} danh mục con\" — đã tách dấu phẩy theo cụm \"ngành hàng chính,\" (giữ dấu phẩy trong key mainIndustries) và \"danh mục con\". Tên danh mục con {it.name} (dòng 58) và alt={it.name} (dòng 52) là dữ liệu động từ NAV_MENU, không phải chuỗi tĩnh trong file nên không đổi sang t()."
+    },
+    {
+      "file": "mega-carousel.tsx",
+      "isClient": true,
+      "keys": {
+        "carousel.scrollLeft": "Cuộn sang trái",
+        "carousel.scrollRight": "Cuộn sang phải"
+      },
+      "edits": [
+        [
+          "import Link from \"next/link\";",
+          "import Link from \"next/link\";\nimport { useT } from \"@/components/i18n-provider\";"
+        ],
+        [
+          "  const trackRef = useRef<HTMLDivElement>(null);",
+          "  const trackRef = useRef<HTMLDivElement>(null);\n  const t = useT();"
+        ],
+        [
+          "aria-label=\"Cuộn sang trái\"",
+          "aria-label={t(\"carousel.scrollLeft\")}"
+        ],
+        [
+          "aria-label=\"Cuộn sang phải\"",
+          "aria-label={t(\"carousel.scrollRight\")}"
+        ]
+      ],
+      "notFound": "Các ký tự ‹ › là mũi tên trang trí (không phải chữ), không đổi. alt={it.name} và {it.name} là biến nên không đụng."
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
+  devIndicators: false,
   // Dev only: accept HMR/scripts from any origin so client components hydrate
   // when accessed via raw IP, alternate hostnames, ngrok/Cloudflare tunnels, etc.
   // Production deploy should narrow this to the actual public domain.
@@ -20,9 +21,14 @@ const nextConfig = {
     '127.0.0.1',
     'huayuesc.vkesys.com',
     '*.vkesys.com',
+    'huayuesc.com',
     '*.huayuesc.com',
+    'huayuesc.vn',
     '*.huayuesc.vn',
     'cybersilkroads.com',
+    '10.0.0.2',
+    '10.0.0.3',
+    '192.168.40.3',
     '*.cybersilkroads.com',
   ],
   images: {

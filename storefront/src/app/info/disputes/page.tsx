@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+import { getT } from "@/lib/t";
 
 const HERO_STATS = [
-  { n: "87%", l: "Khiếu nại có lợi cho buyer", icon: "⚖️" },
-  { n: "3.2", l: "Ngày phản hồi trung bình", icon: "⏱" },
-  { n: "$42M+", l: "Giá trị đơn được bảo vệ 2025", icon: "🛡" },
+  { n: "Đa số", l: "Khiếu nại có lợi cho buyer khi evidence đầy đủ", icon: "⚖️" },
+  { n: "<24h", l: "Phản hồi trung bình", icon: "⏱" },
+  { n: "Tích luỹ", l: "Giá trị đơn được Huayue bảo vệ", icon: "🛡" },
   { n: "24/7", l: "Hotline khẩn cấp", icon: "📞" },
 ];
 
@@ -94,17 +95,17 @@ const ESCALATION_TIERS = [
     actions: [
       "Buyer mở dispute kèm bằng chứng",
       "NCC phản hồi trong 24-48h",
-      "Đối thoại có dispatcher CSR theo dõi",
+      "Đối thoại có đội Huayue Quảng Châu theo dõi",
       "Đạt thoả thuận → đóng dispute",
     ],
   },
   {
     tier: "2",
-    label: "CSR Mediation",
+    label: "Huayue Mediation",
     color: "#005F6B",
     duration: "3-14 ngày",
     bgRate: "31%",
-    description: "Nếu tier 1 không đạt thoả thuận trong 5 ngày, dispute được nâng lên tier 2 — Dispute Officer của CSR (có chứng chỉ hoà giải thương mại theo NĐ 22/2017) takes over. Officer review bằng chứng, tổ chức call 3 phương Buyer-NCC-CSR, ra phán quyết ràng buộc theo điều khoản dịch vụ.",
+    description: "Nếu tier 1 không đạt thoả thuận trong 5 ngày, dispute được nâng lên tier 2 — Dispute Officer của Huayue (có chứng chỉ hoà giải thương mại theo NĐ 22/2017) takes over. Officer review bằng chứng, tổ chức call 3 phương Buyer-NCC-CSR, ra phán quyết ràng buộc theo điều khoản dịch vụ.",
     actions: [
       "Dispute Officer review case 2-3 ngày",
       "Call 3 phương 60-90 phút (có dịch song song)",
@@ -131,162 +132,162 @@ const ESCALATION_TIERS = [
 const PROCESS_STEPS = [
   {
     n: "01",
-    title: "Phát hiện vấn đề",
-    deadline: "Trong 7 ngày kể từ ngày nhận hàng",
-    desc: "Buyer kiểm tra hàng tại kho riêng (không tại cảng — phải sau khi đã unload và setup). Inspection period 7 ngày là chuẩn được công khai trong điều khoản Bảo đảm Giao dịch — sau đó hệ thống auto-confirm và tài khoản trung gian giải ngân.",
+    title: "info_disputes.proc_01_title",
+    deadline: "info_disputes.proc_01_deadline",
+    desc: "info_disputes.proc_01_desc",
     tips: [
-      "Inspect 100% lô hàng nếu giá trị < $10K, sample 32 cái nếu > $10K (theo AQL 2.5)",
-      "Quay video unboxing carton ngoài + sản phẩm bên trong tối thiểu 90 giây",
-      "Đo kích thước random 5 cái, so với spec PO",
+      "info_disputes.proc_01_tip1",
+      "info_disputes.proc_01_tip2",
+      "info_disputes.proc_01_tip3",
     ],
   },
   {
     n: "02",
-    title: "Thu thập bằng chứng",
-    deadline: "Trong 24 giờ sau phát hiện",
-    desc: "Bằng chứng càng chi tiết, dispute càng nhanh được xử lý có lợi. Đầu tư 2-4 giờ làm bằng chứng tốt thường tăng win rate từ ~60% lên 90%+.",
+    title: "info_disputes.proc_02_title",
+    deadline: "info_disputes.proc_02_deadline",
+    desc: "info_disputes.proc_02_desc",
     tips: [
-      "8+ ảnh ở các góc, focus vào defect close-up",
-      "Video 60-180 giây quay liên tục, không cắt",
-      "Bảng so sánh spec PO vs thực tế (Excel/PDF)",
-      "Khuyến nghị mạnh: report inspection bên thứ ba (SGS/BV) cho đơn > $20K",
+      "info_disputes.proc_02_tip1",
+      "info_disputes.proc_02_tip2",
+      "info_disputes.proc_02_tip3",
+      "info_disputes.proc_02_tip4",
     ],
   },
   {
     n: "03",
-    title: "Mở dispute trên CSR Dashboard",
-    deadline: "Trong 7 ngày",
-    desc: "Đăng nhập vào /buyer-center/orders, chọn đơn → 'Mở khiếu nại' → upload toàn bộ bằng chứng. Hệ thống tự động khoá tài khoản trung gian ngay lập tức — NCC không thể nhận tiền cho đến khi giải quyết xong.",
+    title: "info_disputes.proc_03_title",
+    deadline: "info_disputes.proc_03_deadline",
+    desc: "info_disputes.proc_03_desc",
     tips: [
-      "Chọn đúng category (sai spec / chất lượng / số lượng / etc.)",
-      "Mô tả vấn đề rõ ràng, không cảm xúc — nêu fact",
-      "Ghi rõ kỳ vọng giải quyết (refund X% / replace / credit)",
+      "info_disputes.proc_03_tip1",
+      "info_disputes.proc_03_tip2",
+      "info_disputes.proc_03_tip3",
     ],
   },
   {
     n: "04",
-    title: "NCC phản hồi",
-    deadline: "NCC có 48 giờ",
-    desc: "NCC nhận thông báo (email + WeChat/DingTalk) và phải phản hồi trong 48 giờ làm việc. Không phản hồi = mất quyền tự bảo vệ, dispute auto-escalate lên tier 2 với giả định lỗi của NCC.",
+    title: "info_disputes.proc_04_title",
+    deadline: "info_disputes.proc_04_deadline",
+    desc: "info_disputes.proc_04_desc",
     tips: [
-      "Nếu NCC nhận lỗi → tier 1 thoả thuận trực tiếp",
-      "Nếu NCC bác bỏ → upload bằng chứng phản biện trong 72h",
-      "Buyer có thể yêu cầu video call 3 phương (có dịch)",
+      "info_disputes.proc_04_tip1",
+      "info_disputes.proc_04_tip2",
+      "info_disputes.proc_04_tip3",
     ],
   },
   {
     n: "05",
-    title: "Đối thoại trực tiếp (Tier 1)",
-    deadline: "5 ngày",
-    desc: "Hai bên đàm phán qua chat CSR có dispatcher theo dõi. ~62% case đạt thoả thuận tại đây. Phương án phổ biến: refund 15-50% + giữ hàng, refund 100% + return, ship hàng bù miễn phí, credit cho đơn sau.",
+    title: "info_disputes.proc_05_title",
+    deadline: "info_disputes.proc_05_deadline",
+    desc: "info_disputes.proc_05_desc",
     tips: [
-      "Đưa ra ít nhất 2 phương án để NCC chọn",
-      "Ghi chép thoả thuận bằng văn bản trên CSR (auto-binding)",
-      "Không thoả thuận private ngoài hệ thống — không có pháp lý protection",
+      "info_disputes.proc_05_tip1",
+      "info_disputes.proc_05_tip2",
+      "info_disputes.proc_05_tip3",
     ],
   },
   {
     n: "06",
-    title: "CSR Mediation (Tier 2)",
-    deadline: "14 ngày",
-    desc: "Nếu tier 1 fail, Dispute Officer của CSR (chứng chỉ hoà giải NĐ 22/2017) takes over. Review bằng chứng 2-3 ngày, tổ chức call 3 phương 60-90 phút, ra phán quyết dựa trên evidence + điều khoản dịch vụ. Phán quyết binding với cả hai bên qua điều khoản đã ký.",
+    title: "info_disputes.proc_06_title",
+    deadline: "info_disputes.proc_06_deadline",
+    desc: "info_disputes.proc_06_desc",
     tips: [
-      "Phán quyết dựa trên: spec PO, evidence quality, NCC track record, AQL standard",
-      "NCC không thi hành → suspend account + reserved fund forfeit",
-      "Buyer có 5 ngày kháng cáo trước khi phán quyết có hiệu lực",
+      "info_disputes.proc_06_tip1",
+      "info_disputes.proc_06_tip2",
+      "info_disputes.proc_06_tip3",
     ],
   },
   {
     n: "07",
-    title: "Thi hành & đóng dispute",
-    deadline: "5-10 ngày",
-    desc: "Phán quyết được thi hành: refund qua tài khoản trung gian trở lại tài khoản người mua, replacement được ship miễn phí kèm QC priority, hoặc credit ghi nhận trong CSR Wallet cho đơn sau. NCC vi phạm bị deduct rating và reserved fund.",
+    title: "info_disputes.proc_07_title",
+    deadline: "info_disputes.proc_07_deadline",
+    desc: "info_disputes.proc_07_desc",
     tips: [
-      "Refund chuyển về tài khoản gốc trong 5-10 ngày làm việc",
-      "Replacement ship miễn phí express với QC trước xuất xưởng",
-      "Credit dùng được trong 12 tháng, áp dụng cho mọi NCC trên CSR",
+      "info_disputes.proc_07_tip1",
+      "info_disputes.proc_07_tip2",
+      "info_disputes.proc_07_tip3",
     ],
   },
 ];
 
 const OUTCOMES = [
-  { icon: "💰", title: "Hoàn tiền 100%", pct: "38%", desc: "Refund đầy đủ giá trị đơn qua tài khoản trung gian. Áp dụng cho gian lận, sai spec nghiêm trọng, NCC không giao hàng." },
-  { icon: "📊", title: "Hoàn tiền partial", pct: "27%", desc: "Refund 15-70% tuỳ mức độ. Buyer giữ hàng, áp dụng cho lỗi không nghiêm trọng nhưng có thể bán giảm giá." },
-  { icon: "🔄", title: "Replacement", pct: "19%", desc: "NCC ship hàng bù miễn phí với QC priority. Áp dụng khi buyer cần hàng đúng spec để bán cho khách cuối." },
-  { icon: "🎟", title: "Credit / Voucher", pct: "11%", desc: "Credit ghi nhận trong CSR Wallet cho đơn sau, thường 100-150% giá trị thiệt hại để giữ buyer." },
-  { icon: "⚖️", title: "Trọng tài", pct: "5%", desc: "Đưa ra VIAC / CIETAC cho dispute lớn không đạt thoả thuận. Phán quyết binding quốc tế." },
+  { icon: "💰", title: "info_disputes.outcome_1_title", pct: "38%", desc: "info_disputes.outcome_1_desc" },
+  { icon: "📊", title: "info_disputes.outcome_2_title", pct: "27%", desc: "info_disputes.outcome_2_desc" },
+  { icon: "🔄", title: "info_disputes.outcome_3_title", pct: "19%", desc: "info_disputes.outcome_3_desc" },
+  { icon: "🎟", title: "info_disputes.outcome_4_title", pct: "11%", desc: "info_disputes.outcome_4_desc" },
+  { icon: "⚖️", title: "info_disputes.outcome_5_title", pct: "5%", desc: "info_disputes.outcome_5_desc" },
 ];
 
 const CASE_STUDIES = [
   {
-    title: "Đơn $42K nội thất gỗ — sai vân gỗ",
-    industry: "Nội thất",
+    title: "info_disputes.case_1_title",
+    industry: "info_disputes.case_1_industry",
     days: "11 ngày",
-    outcome: "Refund 35% + giữ hàng",
-    detail: "Buyer Hà Nội đặt 220 tủ kệ, NCC Foshan giao đúng size nhưng vân gỗ 'walnut dark' nhạt hơn sample đã ký. Buyer mở dispute với 24 ảnh + bảng so sánh Pantone. NCC ban đầu bác bỏ ('vân gỗ tự nhiên có sai số'). Tier 2 mediation review batch sample lưu trữ tại CSR — xác định lệch màu vượt tolerance. Phán quyết refund 35% giá trị, buyer giữ hàng bán giá thấp hơn cho dealer cấp 2.",
+    outcome: "info_disputes.case_1_outcome",
+    detail: "info_disputes.case_1_detail",
   },
   {
-    title: "Đơn $18K đèn LED — 12% đèn không sáng",
-    industry: "Electronics",
+    title: "info_disputes.case_2_title",
+    industry: "info_disputes.case_2_industry",
     days: "7 ngày",
-    outcome: "Replacement free + bồi thường",
-    detail: "Buyer HCM đặt 1,200 đèn LED panel, kiểm tra random 100 cái phát hiện 12% không sáng (defect rate vượt AQL 2.5). Báo cáo SGS xác nhận lỗi mạch. Tier 1: NCC chấp nhận ngay, ship 150 đèn bù miễn phí express + voucher $500 cho lần sau. Đóng dispute trong 7 ngày — không cần lên tier 2.",
+    outcome: "info_disputes.case_2_outcome",
+    detail: "info_disputes.case_2_detail",
   },
   {
-    title: "Đơn $76K sanitary — NCC default",
-    industry: "Sanitary",
+    title: "info_disputes.case_3_title",
+    industry: "info_disputes.case_3_industry",
     days: "21 ngày",
-    outcome: "Refund 100%",
-    detail: "Buyer Hải Phòng đặt 380 bồn cầu Foshan. Sau khi nhận đặt cọc 30%, NCC dừng phản hồi 14 ngày, Tianyancha cho thấy NCC vào diện cảnh báo phá sản. CSR escalate ngay, niêm phong tài khoản trung gian, tier 2 mediation auto-trigger sau 5 ngày NCC không phản hồi. Refund 100% trong 14 ngày làm việc qua Vietcombank. NCC bị suspended khỏi CSR vĩnh viễn.",
+    outcome: "info_disputes.case_3_outcome",
+    detail: "info_disputes.case_3_detail",
   },
   {
-    title: "Đơn $135K dệt may — vi phạm IP",
-    industry: "Textile",
+    title: "info_disputes.case_4_title",
+    industry: "info_disputes.case_4_industry",
     days: "28 ngày",
-    outcome: "Refund 100% + bồi thường legal",
-    detail: "Buyer Đà Nẵng đặt 5,000 áo sơ mi. Khi hàng về cảng Tiên Sa, customs giữ lô hàng do detect logo gần giống brand đã đăng ký Madrid Protocol. NCC ban đầu phủ nhận, nhưng tier 3 trọng tài VIAC xét xử trong 28 ngày, buộc NCC refund 100% + bồi thường $14K phí customs storage + legal fees. Phán quyết được thi hành qua New York Convention tại Trung Quốc.",
+    outcome: "info_disputes.case_4_outcome",
+    detail: "info_disputes.case_4_detail",
   },
 ];
 
 const EMERGENCY_CHANNELS = [
-  { icon: "🚨", title: "Hotline khẩn cấp 24/7", value: "1900 6688", desc: "Cho gian lận, IP infringement, customs giữ hàng — gọi ngay, response trong 30 phút" },
-  { icon: "💬", title: "Live Chat dispute", value: "dashboard /buyer-center", desc: "Click 'Mở khiếu nại' trên đơn — chat trực tiếp Dispute Officer" },
-  { icon: "✉", title: "Email Dispute team", value: "dispute@cybersilkroads.com", desc: "Gửi case complex, đính kèm bằng chứng — phản hồi <2 giờ trong giờ làm việc" },
-  { icon: "📱", title: "WhatsApp / Zalo", value: "+84 1900 6688", desc: "Cho buyer ở vùng sâu không stable internet, escalation manager phụ trách" },
+  { icon: "🚨", title: "info_disputes.emch_1_title", value: "+86 181-2225-6999", desc: "info_disputes.emch_1_desc" },
+  { icon: "💬", title: "info_disputes.emch_2_title", value: "dashboard /buyer-center", desc: "info_disputes.emch_2_desc" },
+  { icon: "✉", title: "info_disputes.emch_3_title", value: "dispute@huayuesc.vn", desc: "info_disputes.emch_3_desc" },
+  { icon: "📱", title: "info_disputes.emch_4_title", value: "+84 +86 181-2225-6999", desc: "info_disputes.emch_4_desc" },
 ];
 
 const FAQ = [
   {
-    q: "Tôi đã nhận hàng được 10 ngày mới phát hiện lỗi — còn mở khiếu nại được không?",
-    a: "Inspection period chính thức là 7 ngày kể từ ngày nhận hàng. Sau 7 ngày, tài khoản trung gian tự động giải ngân và quyền khiếu nại qua Bảo đảm Giao dịch hết hiệu lực. Tuy nhiên, nếu lỗi là defect ẩn (ví dụ máy chạy 30 ngày mới phát hiện hỏng do material kém), bạn vẫn có thể mở dispute trong 30 ngày — nhưng burden of proof cao hơn, cần báo cáo lab độc lập chứng minh lỗi từ NCC. Trên 30 ngày: chỉ còn cách trọng tài VIAC theo Luật Thương mại 2005 (thời hiệu khiếu nại 6 tháng theo Điều 318).",
+    q: "info_disputes.faq_1_q",
+    a: "info_disputes.faq_1_a",
   },
   {
-    q: "Phí khiếu nại là bao nhiêu?",
-    a: "Tier 1 (đối thoại trực tiếp) và Tier 2 (CSR mediation) — HOÀN TOÀN MIỄN PHÍ cho buyer. CSR đầu tư hệ thống dispute như là một phần của Bảo đảm Giao dịch. Tier 3 (trọng tài VIAC/CIETAC) — phí trọng tài $2,000-8,000 tuỳ giá trị tranh chấp, thông thường bên thua chịu (loser pays). CSR hỗ trợ chi phí pháp lý cho tier 3 nếu buyer thắng — không tính phí thêm.",
+    q: "info_disputes.faq_2_q",
+    a: "info_disputes.faq_2_a",
   },
   {
-    q: "Tôi có cần thuê luật sư không?",
-    a: "Không bắt buộc. Tier 1 và Tier 2 chỉ cần buyer làm việc trực tiếp với Dispute Officer của CSR — họ có chứng chỉ hoà giải thương mại theo NĐ 22/2017 và xử lý hàng nghìn case. Tier 3 (VIAC) thì khuyến nghị có luật sư cho đơn > $50K — CSR có danh sách law firm partner với rate ưu đãi cho khách hàng (Baker McKenzie, YKVN, VILAF... — rate $200-450/giờ).",
+    q: "info_disputes.faq_3_q",
+    a: "info_disputes.faq_3_a",
   },
   {
-    q: "NCC giao hàng đã 5 ngày nhưng tôi cần thêm thời gian để kiểm tra (kho ở tỉnh xa, chưa đến) — làm sao gia hạn?",
-    a: "Trên dashboard /buyer-center/orders chọn đơn → 'Yêu cầu gia hạn inspection period'. Hệ thống cho phép gia hạn tự động lên đến 21 ngày tổng cộng (7 + 14 ngày bonus) miễn phí — chỉ cần lý do hợp lệ (kho xa, đang đi công tác, lễ Tết). NCC nhận thông báo gia hạn nhưng không có quyền phủ quyết. Sau 21 ngày là hết, tài khoản trung gian tự giải ngân.",
+    q: "info_disputes.faq_4_q",
+    a: "info_disputes.faq_4_a",
   },
   {
-    q: "Nếu phán quyết không có lợi cho tôi, có quyền kháng cáo không?",
-    a: "Có. Phán quyết Tier 2 (CSR Mediation) có 5 ngày kháng cáo trước khi có hiệu lực thi hành. Buyer nộp đơn kháng cáo kèm bằng chứng mới hoặc lập luận pháp lý mới — Senior Dispute Officer (cấp cao hơn) review lại 7-10 ngày. Nếu vẫn không đồng ý, buyer có quyền đưa ra Tier 3 — trọng tài VIAC/CIETAC theo điều khoản trong PI. Phán quyết trọng tài là final, không kháng cáo (theo Luật Trọng tài Thương mại 2010).",
+    q: "info_disputes.faq_5_q",
+    a: "info_disputes.faq_5_a",
   },
   {
-    q: "Tôi sợ NCC trả thù sau khi mở dispute (blacklist tôi, nâng giá đơn sau...)",
-    a: "Điều khoản dịch vụ CSR cấm tuyệt đối hành vi retaliation. NCC bị phát hiện nâng giá hoặc từ chối đơn của buyer đã từng mở dispute (mà phán quyết đã có hiệu lực) sẽ bị suspended ngay 90 ngày + đóng băng 25% reserved fund. Buyer có thể report retaliation qua dispute@cybersilkroads.com — CSR điều tra và xử lý độc lập. Trên thực tế, retaliation rất hiếm vì NCC sợ mất tier Verified.",
+    q: "info_disputes.faq_6_q",
+    a: "info_disputes.faq_6_a",
   },
   {
-    q: "Khiếu nại có ảnh hưởng đến rating của tôi với tư cách buyer không?",
-    a: "Không. CSR chỉ track NCC rating dựa trên dispute history, KHÔNG track buyer rating dựa trên việc mở dispute. Buyer được khuyến khích mở dispute khi có vấn đề thực sự — đó là cách hệ thống tự cải thiện. Tuy nhiên, buyer mở dispute giả mạo (false claim) có thể bị buyer rating giảm và mất quyền truy cập tier Premium NCC.",
+    q: "info_disputes.faq_7_q",
+    a: "info_disputes.faq_7_a",
   },
   {
-    q: "Trường hợp đặc biệt: hàng cấm hoặc vi phạm pháp luật Việt Nam — sao xử lý?",
-    a: "Nếu lô hàng vi phạm NĐ 69/2018 (cấm nhập), Luật An toàn thực phẩm, hoặc các quy định chuyên ngành (CQ thuốc, hoá chất nguy hiểm...): customs giữ hàng, CSR escalate ngay tier 3 trọng tài VIAC + báo cáo Cục Hải quan. Buyer được full refund 100% + bồi thường legal expenses. NCC bị suspended khỏi platform vĩnh viễn và đưa vào blacklist công khai trustpage.cybersilkroads.com.",
+    q: "info_disputes.faq_8_q",
+    a: "info_disputes.faq_8_a",
   },
 ];
 
@@ -300,14 +301,15 @@ function StatTile({ n, l, icon }: { n: string; l: string; icon: string }) {
   );
 }
 
-export default function KhieuNaiPage() {
+export default async function KhieuNaiPage() {
+  const t = await getT();
   return (
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Khiếu nại & tranh chấp" },
+          { label: t("info_disputes.bc_home"), href: "/" },
+          { label: t("info_disputes.bc_info"), href: "/help" },
+          { label: t("info_disputes.bc_current") },
         ]}
       />
 
@@ -322,14 +324,14 @@ export default function KhieuNaiPage() {
         </div>
         <div className="relative max-w-[1200px] mx-auto px-4 py-12 max-md:py-8">
           <span className="inline-block bg-gold text-brand-dark text-[11px] font-bold px-2.5 py-1 rounded-sm tracking-wider mb-3">
-            ⚖️ KHIẾU NẠI & TRANH CHẤP
+            {t("info_disputes.hero_badge")}
           </span>
           <h1 className="text-[40px] font-extrabold leading-[1.1] mb-4 max-md:text-[26px]">
-            Khi mọi thứ không đúng kế hoạch<br />
-            <span className="text-gold">Cybersilkroads đứng về phía bạn</span>
+            {t("info_disputes.hero_h1_line1")}<br />
+            <span className="text-gold">{t("info_disputes.hero_h1_span")}</span>
           </h1>
           <p className="text-[15px] opacity-90 max-w-[780px] leading-relaxed mb-7 max-md:text-[13px]">
-            Hệ thống giải quyết tranh chấp 3 cấp độ — từ đối thoại trực tiếp, qua CSR Mediation theo NĐ 22/2017, đến trọng tài quốc tế VIAC/CIETAC theo Công ước New York 1958. Buyer Việt Nam được bảo vệ bằng pháp lý, không phải bằng lời hứa. 87% case kết thúc có lợi cho buyer trong trung bình 3.2 ngày.
+            {t("info_disputes.hero_p")}
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {HERO_STATS.map((s) => (
@@ -341,13 +343,13 @@ export default function KhieuNaiPage() {
               href="#mo-disputes"
               className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              📝 Mở khiếu nại ngay
+              {t("info_disputes.hero_cta_open")}
             </a>
             <a
               href="tel:19006688"
               className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              🚨 Hotline khẩn cấp 1900 6688
+              {t("info_disputes.hero_cta_hotline")}
             </a>
           </div>
         </div>
@@ -361,22 +363,22 @@ export default function KhieuNaiPage() {
               ⏰
             </div>
             <div className="flex-1">
-              <h2 className="text-[18px] font-bold text-ink mb-2">Inspection Period — 7 ngày kể từ khi nhận hàng</h2>
+              <h2 className="text-[18px] font-bold text-ink mb-2">{t("info_disputes.inspection_h2")}</h2>
               <p className="text-[13px] text-mute leading-relaxed mb-3">
-                Đây là khoảng thời gian buyer có quyền kiểm tra và mở khiếu nại miễn phí qua Bảo đảm Giao dịch. Sau 7 ngày, tài khoản trung gian tự động giải ngân cho NCC và quyền khiếu nại chuyển sang chế độ bằng chứng cao hơn (defect ẩn 30 ngày, hoặc trọng tài theo Luật Thương mại 2005 — thời hiệu 6 tháng).
+                {t("info_disputes.inspection_p")}
               </p>
               <div className="grid grid-cols-3 gap-2 text-center text-[12px] max-md:grid-cols-1">
                 <div className="bg-success/10 border border-success/30 rounded-sm p-3">
-                  <div className="font-bold text-success">0-7 ngày</div>
-                  <div className="text-mute">Bảo đảm Giao dịch · Free · Win rate 87%</div>
+                  <div className="font-bold text-success">{t("info_disputes.insp_t1_range")}</div>
+                  <div className="text-mute">{t("info_disputes.insp_t1_desc")}</div>
                 </div>
                 <div className="bg-gold/10 border border-gold/30 rounded-sm p-3">
-                  <div className="font-bold text-[#9C6A1F]">8-30 ngày</div>
-                  <div className="text-mute">Defect ẩn · Cần lab report · Win rate 71%</div>
+                  <div className="font-bold text-[#9C6A1F]">{t("info_disputes.insp_t2_range")}</div>
+                  <div className="text-mute">{t("info_disputes.insp_t2_desc")}</div>
                 </div>
                 <div className="bg-mute/10 border border-mute2/30 rounded-sm p-3">
-                  <div className="font-bold text-mute">31 ngày - 6 tháng</div>
-                  <div className="text-mute">Trọng tài VIAC · Phí $2-8K · Win rate 54%</div>
+                  <div className="font-bold text-mute">{t("info_disputes.insp_t3_range")}</div>
+                  <div className="text-mute">{t("info_disputes.insp_t3_desc")}</div>
                 </div>
               </div>
             </div>
@@ -387,10 +389,10 @@ export default function KhieuNaiPage() {
       {/* === Complaint types ================================================ */}
       <section className="max-w-[1200px] mx-auto px-4 mt-10">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">8 LOẠI KHIẾU NẠI</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Phân loại khiếu nại — Mỗi loại có quy trình riêng</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.types_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.types_h2")}</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Win rate, thời gian giải quyết và bằng chứng yêu cầu khác nhau theo từng loại. Chọn đúng category khi mở dispute giúp xử lý nhanh hơn 30-40%.
+            {t("info_disputes.types_p")}
           </p>
         </div>
         <div className="grid grid-cols-4 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -420,10 +422,10 @@ export default function KhieuNaiPage() {
       {/* === 3-tier escalation =============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">3 CẤP ĐỘ GIẢI QUYẾT</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Hệ thống escalation — Càng cao càng formal</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.tiers_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.tiers_h2")}</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Mỗi case đều bắt đầu ở Tier 1 (đối thoại trực tiếp). Chỉ escalate lên cao hơn nếu không đạt thoả thuận. Nguyên tắc: nhanh — rẻ — tự nguyện trước, formal sau.
+            {t("info_disputes.tiers_p")}
           </p>
         </div>
         <div className="space-y-4">
@@ -469,10 +471,10 @@ export default function KhieuNaiPage() {
       {/* === Process steps ================================================== */}
       <section id="mo-disputes" className="max-w-[1200px] mx-auto px-4 mt-12 scroll-mt-20">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">QUY TRÌNH 7 BƯỚC</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Từ phát hiện vấn đề đến đóng dispute</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.process_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.process_h2")}</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Trung bình toàn quy trình kết thúc trong 3.2 ngày cho case đơn giản, 11-21 ngày cho case phức tạp cần mediation tier 2.
+            {t("info_disputes.process_p")}
           </p>
         </div>
         <div className="space-y-3">
@@ -488,19 +490,19 @@ export default function KhieuNaiPage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                  <h3 className="text-[16px] font-bold text-ink">{s.title}</h3>
+                  <h3 className="text-[16px] font-bold text-ink">{t(s.title)}</h3>
                   <span className="text-[10.5px] bg-accent/15 text-accent px-2 py-0.5 rounded-sm font-bold uppercase tracking-wider">
-                    🕒 {s.deadline}
+                    🕒 {t(s.deadline)}
                   </span>
                 </div>
-                <p className="text-[13px] text-mute leading-relaxed mb-3">{s.desc}</p>
+                <p className="text-[13px] text-mute leading-relaxed mb-3">{t(s.desc)}</p>
                 <div className="bg-bg border border-line rounded p-3">
-                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5 block">💡 TIPS QUAN TRỌNG</b>
+                  <b className="text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5 block">{t("info_disputes.process_tips_label")}</b>
                   <ul className="space-y-1 text-[12px]">
                     {s.tips.map((tip, i) => (
                       <li key={i} className="flex gap-2 text-ink">
                         <span className="text-brand flex-shrink-0">✓</span>
-                        <span>{tip}</span>
+                        <span>{t(tip)}</span>
                       </li>
                     ))}
                   </ul>
@@ -514,10 +516,10 @@ export default function KhieuNaiPage() {
       {/* === Outcomes distribution ========================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">KẾT QUẢ KHẢ THI</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Phân bố kết quả dispute 2025</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.outcomes_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.outcomes_h2")}</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Dữ liệu từ 1,840+ dispute đã giải quyết trên CSR — 87% có lợi cho buyer dưới các hình thức khác nhau.
+            {t("info_disputes.outcomes_p")}
           </p>
         </div>
         <div className="grid grid-cols-5 gap-3 max-lg:grid-cols-2 max-md:grid-cols-1">
@@ -527,8 +529,8 @@ export default function KhieuNaiPage() {
                 <span className="text-[28px]">{o.icon}</span>
                 <span className="text-[20px] font-extrabold text-brand">{o.pct}</span>
               </div>
-              <b className="block text-[14px] text-ink mb-2 leading-tight">{o.title}</b>
-              <p className="text-[11.5px] text-mute leading-relaxed">{o.desc}</p>
+              <b className="block text-[14px] text-ink mb-2 leading-tight">{t(o.title)}</b>
+              <p className="text-[11.5px] text-mute leading-relaxed">{t(o.desc)}</p>
             </div>
           ))}
         </div>
@@ -537,10 +539,10 @@ export default function KhieuNaiPage() {
       {/* === Case studies =================================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">TÌNH HUỐNG ĐIỂN HÌNH</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">4 case có thật (đã anonymize)</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.cases_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.cases_h2")}</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Lựa chọn từ 1,840+ dispute đã đóng — đại diện cho 4 loại tình huống thường gặp nhất với buyer Việt Nam.
+            {t("info_disputes.cases_p")}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
@@ -549,22 +551,22 @@ export default function KhieuNaiPage() {
               <div className="flex items-start justify-between gap-3 mb-3 flex-wrap">
                 <div>
                   <span className="inline-block text-[10px] uppercase tracking-wider font-bold bg-bg border border-line px-2 py-0.5 rounded-sm text-mute mb-1">
-                    {c.industry}
+                    {t(c.industry)}
                   </span>
-                  <h3 className="text-[15px] font-bold text-ink leading-tight">{c.title}</h3>
+                  <h3 className="text-[15px] font-bold text-ink leading-tight">{t(c.title)}</h3>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-3 mb-3 text-[12px]">
                 <div className="bg-bg border border-line rounded p-2">
-                  <div className="text-mute uppercase tracking-wider text-[10px]">⏱ Thời gian</div>
+                  <div className="text-mute uppercase tracking-wider text-[10px]">{t("info_disputes.cases_time_label")}</div>
                   <b className="text-ink">{c.days}</b>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-2">
-                  <div className="text-success uppercase tracking-wider text-[10px]">✓ Kết quả</div>
-                  <b className="text-success">{c.outcome}</b>
+                  <div className="text-success uppercase tracking-wider text-[10px]">{t("info_disputes.cases_result_label")}</div>
+                  <b className="text-success">{t(c.outcome)}</b>
                 </div>
               </div>
-              <p className="text-[12.5px] text-ink leading-relaxed">{c.detail}</p>
+              <p className="text-[12.5px] text-ink leading-relaxed">{t(c.detail)}</p>
             </article>
           ))}
         </div>
@@ -578,9 +580,9 @@ export default function KhieuNaiPage() {
               🚨
             </div>
             <div>
-              <h2 className="text-[20px] font-bold text-ink mb-1">Trường hợp khẩn cấp — Liên hệ ngay</h2>
+              <h2 className="text-[20px] font-bold text-ink mb-1">{t("info_disputes.emergency_h2")}</h2>
               <p className="text-[13px] text-mute leading-relaxed">
-                Cho gian lận, vi phạm IP nghiêm trọng, customs giữ hàng, NCC biến mất — không đợi quy trình tự động, gọi/chat ngay 24/7 để được Senior Dispute Officer xử lý ưu tiên.
+                {t("info_disputes.emergency_p")}
               </p>
             </div>
           </div>
@@ -588,9 +590,9 @@ export default function KhieuNaiPage() {
             {EMERGENCY_CHANNELS.map((c) => (
               <div key={c.title} className="bg-paper border border-line rounded p-3.5">
                 <div className="text-[24px] mb-1.5">{c.icon}</div>
-                <b className="block text-[13px] text-ink mb-1">{c.title}</b>
+                <b className="block text-[13px] text-ink mb-1">{t(c.title)}</b>
                 <div className="text-[12.5px] text-accent font-bold mb-1.5 break-all">{c.value}</div>
-                <p className="text-[11px] text-mute leading-snug">{c.desc}</p>
+                <p className="text-[11px] text-mute leading-snug">{t(c.desc)}</p>
               </div>
             ))}
           </div>
@@ -600,10 +602,10 @@ export default function KhieuNaiPage() {
       {/* === Legal references =============================================== */}
       <section className="max-w-[1200px] mx-auto px-4 mt-12">
         <div className="bg-paper border border-line rounded p-5">
-          <h2 className="text-[18px] font-bold text-ink mb-3">📚 Cơ sở pháp lý — Tham chiếu</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-3">{t("info_disputes.legal_h2")}</h2>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 text-[12.5px]">
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">Luật Việt Nam</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_vn")}</b>
               <ul className="space-y-1.5 text-mute">
                 <li>• Luật Thương mại 2005 — Điều 318 (thời hiệu khiếu nại)</li>
                 <li>• Luật Trọng tài Thương mại 2010</li>
@@ -613,7 +615,7 @@ export default function KhieuNaiPage() {
               </ul>
             </div>
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">Quốc tế</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_intl")}</b>
               <ul className="space-y-1.5 text-mute">
                 <li>• Công ước New York 1958 — thi hành phán quyết trọng tài</li>
                 <li>• UNCITRAL Model Law on International Commercial Arbitration</li>
@@ -623,7 +625,7 @@ export default function KhieuNaiPage() {
               </ul>
             </div>
             <div>
-              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">Tổ chức trọng tài</b>
+              <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_org")}</b>
               <ul className="space-y-1.5 text-mute">
                 <li>• <b className="text-ink">VIAC</b> — Vietnam International Arbitration Centre (Hà Nội + HCM)</li>
                 <li>• <b className="text-ink">CIETAC</b> — China International Economic and Trade Arbitration Commission (Bắc Kinh)</li>
@@ -638,18 +640,18 @@ export default function KhieuNaiPage() {
       {/* === FAQ =========================================================== */}
       <section className="max-w-[900px] mx-auto px-4 mt-12">
         <div className="text-center mb-6">
-          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">CÂU HỎI THƯỜNG GẶP</span>
-          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">8 câu hỏi quan trọng nhất</h2>
+          <span className="text-[11px] uppercase tracking-wider text-brand font-bold">{t("info_disputes.faq_eyebrow")}</span>
+          <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">{t("info_disputes.faq_h2")}</h2>
         </div>
         <div className="space-y-2">
           {FAQ.map((f, i) => (
             <details key={i} className="group bg-paper border border-line rounded">
               <summary className="cursor-pointer px-4 py-3 flex justify-between items-center gap-3 list-none">
-                <b className="text-[13.5px] text-ink flex-1">{f.q}</b>
+                <b className="text-[13.5px] text-ink flex-1">{t(f.q)}</b>
                 <span className="text-mute group-open:rotate-180 transition-transform text-[12px]">▾</span>
               </summary>
               <div className="px-4 pb-4 pt-1 text-[13px] text-mute leading-relaxed border-t border-line">
-                {f.a}
+                {t(f.a)}
               </div>
             </details>
           ))}
@@ -662,32 +664,32 @@ export default function KhieuNaiPage() {
           className="rounded p-8 text-white text-center max-md:p-5"
           style={{ background: "linear-gradient(135deg, #002557 0%, #005F6B 50%, #001A3F 100%)" }}
         >
-          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">Cần mở khiếu nại ngay bây giờ?</h3>
+          <h3 className="text-[28px] font-extrabold mb-2 max-md:text-[22px]">{t("info_disputes.cta_h3")}</h3>
           <p className="text-[14px] opacity-90 mb-6 max-w-[660px] mx-auto leading-relaxed">
-            Đăng nhập dashboard buyer, chọn đơn cần khiếu nại, click 'Mở khiếu nại'. Hệ thống tự động khoá tài khoản trung gian và kích hoạt quy trình 7 bước. Hoặc gọi hotline khẩn cấp 24/7 nếu trường hợp nghiêm trọng.
+            {t("info_disputes.cta_p")}
           </p>
           <div className="flex justify-center gap-3 flex-wrap">
             <Link
               href="/buyer-center/orders"
               className="inline-block px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
-              📝 Đi tới Buyer Dashboard
+              {t("info_disputes.cta_dashboard")}
             </Link>
             <a
-              href="mailto:dispute@cybersilkroads.com"
+              href="mailto:dispute@huayuesc.vn"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              ✉ dispute@cybersilkroads.com
+              ✉ dispute@huayuesc.vn
             </a>
             <a
               href="tel:19006688"
               className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
-              🚨 1900 6688 — 24/7
+              🚨 +86 181-2225-6999 — 24/7
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
-            Tier 1 (đối thoại) và Tier 2 (CSR Mediation) hoàn toàn miễn phí. Tier 3 (trọng tài VIAC/CIETAC) có phí $2,000-8,000 — bên thua chịu theo phán quyết. CSR đầu tư hệ thống dispute như một phần cốt lõi của Bảo đảm Giao dịch, không tính phí thêm.
+            {t("info_disputes.cta_footer")}
           </div>
         </div>
       </section>
@@ -696,6 +698,6 @@ export default function KhieuNaiPage() {
 }
 
 export const metadata = {
-  title: "Khiếu nại & tranh chấp — Cybersilkroads Dispute Resolution",
-  description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, CSR Mediation theo NĐ 22/2017, trọng tài VIAC/CIETAC theo Công ước New York 1958. 87% case có lợi cho buyer trong 3.2 ngày trung bình. Hotline 24/7: 1900 6688.",
+  title: "Khiếu nại & tranh chấp — Huayuesc Dispute Resolution",
+  description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình. Hotline 24/7: +86 181-2225-6999.",
 };

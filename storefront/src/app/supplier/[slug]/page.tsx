@@ -2,6 +2,7 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { FACTORIES, SECTIONS } from "@/data/home";
 import type { Factory } from "@/data/home";
 import { SupplierDetail } from "./SupplierDetail";
+import { getT } from "@/lib/t";
 
 function getFactory(slug: string): Factory {
   return (
@@ -12,7 +13,7 @@ function getFactory(slug: string): Factory {
       location: "Foshan, Guangdong · CN",
       rating: 4.7,
       reviews: "350",
-      meta: "Nhà máy đã xác minh",
+      meta: "Verified factory",
       badges: { audited: true, years: "8Y" },
       tags: ["OEM", "ODM", "Export"],
     }
@@ -24,6 +25,7 @@ export default async function SupplierPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const t = await getT();
   const { slug } = await params;
   const f = getFactory(slug);
   const allProducts = SECTIONS.flatMap((s) => s.products);
@@ -34,8 +36,8 @@ export default async function SupplierPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Nhà cung cấp", href: "/suppliers" },
+          { label: t("supplier_slug.breadcrumb_home"), href: "/" },
+          { label: t("supplier_slug.breadcrumb_suppliers"), href: "/suppliers" },
           { label: f.name },
         ]}
       />
@@ -52,5 +54,5 @@ export default async function SupplierPage({
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const f = getFactory(slug);
-  return { title: `${f.name} — Cybersilkroads` };
+  return { title: `${f.name} — Huayuesc` };
 }

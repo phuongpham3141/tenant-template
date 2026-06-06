@@ -1,12 +1,14 @@
 import { STATS } from "@/data/home";
+import { getTd } from "@/lib/td";
 
-export function StatsBar() {
+export async function StatsBar() {
+  const td = await getTd();
   return (
     <div className="max-w-[1400px] mx-auto px-4 max-md:px-3">
       <div className="stats-row bg-paper border border-line rounded my-4 p-4 grid grid-cols-5 gap-5 text-center md:max-xl:grid-cols-3 md:max-xl:gap-3 max-md:grid-cols-3 max-md:gap-2 max-md:my-2 max-md:p-3">
         {STATS.map((s, i) => (
           <div
-            key={s.label}
+            key={td(s.label)}
             className={`px-2.5 max-md:px-1 ${
               i === STATS.length - 1
                 ? ""
@@ -14,10 +16,10 @@ export function StatsBar() {
             }`}
           >
             <b className="block text-[28px] font-extrabold text-brand tracking-tight leading-none max-md:text-[19px]">
-              {s.value}
+              {td(s.value)}
             </b>
             <span className="text-[11.5px] text-mute mt-1 block max-md:text-[10.5px] max-md:leading-tight">
-              {s.label}
+              {td(s.label)}
             </span>
           </div>
         ))}

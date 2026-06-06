@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
+import { getT } from "@/lib/t";
 
 type SolutionSub = { name: string; image: string; href: string };
 
@@ -10,74 +11,74 @@ type SolutionCard = {
   subcats: SolutionSub[];
 };
 
-const SOLUTIONS: SolutionCard[] = [
-  {
-    title: "Tìm nguồn từ Cụm",
-    bullets: [
-      "Khu công nghiệp tập trung",
-      "Cạnh tranh giá nguồn",
-      "Sản phẩm OEM/ODM gốc",
-    ],
-    image: "/img/sol-hubs.jpg?v=4",
-    href: "/zones",
-    subcats: [
-      { name: "Quà tặng & Thể thao", image: "/img/sub-gifts.jpg?v=4", href: "/category/decoration" },
-      { name: "Điện & Điện tử", image: "/img/sub-electric.jpg?v=4", href: "/category/electrical" },
-      { name: "Vận chuyển", image: "/img/sub-transport.jpg?v=4", href: "/category/hardware-tools" },
-    ],
-  },
-  {
-    title: "Sản phẩm đạt giải MEI",
-    bullets: [
-      "Chất lượng sản xuất vượt trội",
-      "Thiết kế đột phá",
-      "Được chuyên gia ngành đánh giá",
-    ],
-    image: "/img/sol-mei.jpg?v=4",
-    href: "/info/mei-awards",
-    subcats: [
-      { name: "Sản xuất & Chế biến", image: "/img/sub-mfg.jpg?v=4", href: "/category/construction-materials" },
-      { name: "Luyện kim & Khoáng sản", image: "/img/sub-metal.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "Đóng gói & In ấn", image: "/img/sub-pack.jpg?v=4", href: "/category/decoration" },
-    ],
-  },
-  {
-    title: "Tùy chỉnh sản phẩm",
-    bullets: [
-      "Tùy chỉnh Logo / Kích thước / Màu",
-      "Thiết kế riêng theo yêu cầu",
-      "Có sẵn mẫu trước đặt hàng",
-    ],
-    image: "/img/sol-custom.jpg?v=4",
-    href: "/buying-request",
-    subcats: [
-      { name: "Ô dù", image: "/img/sub-umb.jpg?v=4", href: "/category/outdoor-garden" },
-      { name: "Dép & Giày", image: "/img/sub-slip.jpg?v=4", href: "/category/hotel-supplies" },
-      { name: "Ốp điện thoại", image: "/img/sub-case.jpg?v=4", href: "/category/electrical" },
-    ],
-  },
-  {
-    title: "Triển lãm thông minh — Hội chợ ảo",
-    bullets: [
-      "Nhà cung cấp đã được kiểm định",
-      "Triển lãm tại hội chợ quốc tế",
-      "Gian hàng ảo 24/7",
-    ],
-    image: "/img/sol-expo.jpg?v=4",
-    href: "/seller-center/smart-expo",
-    subcats: [
-      { name: "Sản xuất & Chế biến", image: "/img/sub-expo1.jpg?v=4", href: "/category/construction-materials" },
-      { name: "Vận chuyển & Xe", image: "/img/sub-expo2.jpg?v=4", href: "/category/hardware-tools" },
-      { name: "Xây dựng & Trang trí", image: "/img/sub-expo3.jpg?v=4", href: "/category/construction-materials" },
-    ],
-  },
-];
-
-export function SourcingSolutions() {
+export async function SourcingSolutions() {
+  const t = await getT();
+  const SOLUTIONS: SolutionCard[] = [
+    {
+      title: t("sourcing.card1.title"),
+      bullets: [
+        t("sourcing.card1.bullet1"),
+        t("sourcing.card1.bullet2"),
+        t("sourcing.card1.bullet3"),
+      ],
+      image: "/img/sol-hubs.jpg?v=7",
+      href: "/zones",
+      subcats: [
+        { name: t("sourcing.card1.sub1"), image: "/img/cer1.jpg?v=7", href: "/category/construction-materials" },
+        { name: t("sourcing.card1.sub2"), image: "/img/cer2.jpg?v=7", href: "/category/construction-materials" },
+        { name: t("sourcing.card1.sub3"), image: "/img/cer8.jpg?v=7", href: "/category/construction-materials" },
+      ],
+    },
+    {
+      title: t("sourcing.card2.title"),
+      bullets: [
+        t("sourcing.card2.bullet1"),
+        t("sourcing.card2.bullet2"),
+        t("sourcing.card2.bullet3"),
+      ],
+      image: "/img/sol-mei.jpg?v=7",
+      href: "/zones",
+      subcats: [
+        { name: t("sourcing.card2.sub1"), image: "/img/fur1.jpg?v=7", href: "/category/noi-that" },
+        { name: t("sourcing.card2.sub2"), image: "/img/fur3.jpg?v=7", href: "/category/noi-that" },
+        { name: t("sourcing.card2.sub3"), image: "/img/fur7.jpg?v=7", href: "/category/noi-that" },
+      ],
+    },
+    {
+      title: t("sourcing.card3.title"),
+      bullets: [
+        t("sourcing.card3.bullet1"),
+        t("sourcing.card3.bullet2"),
+        t("sourcing.card3.bullet3"),
+      ],
+      image: "/img/sol-custom.jpg?v=7",
+      href: "/buying-request",
+      subcats: [
+        { name: t("sourcing.card3.sub1"), image: "/img/showcase-construction-materials.jpg?v=7", href: "/category/construction-materials" },
+        { name: t("sourcing.card3.sub2"), image: "/img/showcase-noi-that.jpg?v=7", href: "/category/noi-that" },
+        { name: t("sourcing.card3.sub3"), image: "/img/fur6.jpg?v=7", href: "/category/noi-that" },
+      ],
+    },
+    {
+      title: t("sourcing.card4.title"),
+      bullets: [
+        t("sourcing.card4.bullet1"),
+        t("sourcing.card4.bullet2"),
+        t("sourcing.card4.bullet3"),
+      ],
+      image: "/img/sol-expo.jpg?v=7",
+      href: "/seller-center/smart-expo",
+      subcats: [
+        { name: t("sourcing.card4.sub1"), image: "/img/sub-expo1.jpg?v=7", href: "/factory-tour" },
+        { name: t("sourcing.card4.sub2"), image: "/img/sub-expo3.jpg?v=7", href: "/category/construction-materials" },
+        { name: t("sourcing.card4.sub3"), image: "/img/cer8.jpg?v=7", href: "/category/noi-that" },
+      ],
+    },
+  ];
   return (
     <div className="max-w-[1400px] mx-auto px-4 mt-6 max-md:px-3 max-md:mt-4">
       <h2 className="text-[20px] font-bold text-ink text-center mb-4 max-md:text-[17px] max-md:mb-3">
-        Giải pháp Tìm nguồn & Dịch vụ chuyên biệt
+        {t("sourcing.heading")}
       </h2>
       <div className="grid grid-cols-4 gap-3 md:max-xl:grid-cols-2 md:max-xl:gap-2.5 max-md:grid-cols-1 max-md:gap-2">
         {SOLUTIONS.map((s) => (
@@ -93,7 +94,7 @@ export function SourcingSolutions() {
               <img
                 src={s.image}
                 alt={s.title}
-                className="w-full h-full object-cover opacity-65 group-hover/sol:opacity-50 transition-opacity"
+                className="w-full h-full object-cover opacity-80 group-hover/sol:opacity-70 transition-opacity"
               />
               <div
                 className="absolute inset-0 px-4 py-4 flex flex-col justify-center"
@@ -119,9 +120,9 @@ export function SourcingSolutions() {
             </Link>
             {/* Bottom: 3 sub-icons with labels */}
             <div className="grid grid-cols-3 gap-1.5 p-3 max-md:p-2">
-              {s.subcats.map((sub) => (
+              {s.subcats.map((sub, si) => (
                 <Link
-                  key={sub.name}
+                  key={`${sub.name}-${si}`}
                   href={sub.href}
                   className="flex flex-col items-center gap-1.5 group/sub"
                 >

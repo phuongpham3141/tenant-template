@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+import { getT } from "@/lib/t";
 
 export const metadata = {
-  title: "Tìm bằng hình ảnh — Cybersilkroads",
+  title: "Search by Image — Huayuesc",
   description:
-    "Tải ảnh sản phẩm lên để tìm sản phẩm tương tự từ hơn 40 nhà máy đã được kiểm định tại Trung Quốc. AI nhận diện ảnh, gợi ý sản phẩm phù hợp trong 5 giây.",
+    "Upload a product photo to find similar products from 40+ certified factories in China. AI image recognition suggests matching products in 5 seconds.",
 };
 
 export default async function ByImageSearchPage({
@@ -12,6 +13,7 @@ export default async function ByImageSearchPage({
 }: {
   searchParams: Promise<{ q?: string | string[] }>;
 }) {
+  const t = await getT();
   const sp = await searchParams;
   const q = typeof sp.q === "string" ? sp.q : "";
 
@@ -19,8 +21,8 @@ export default async function ByImageSearchPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Tìm bằng hình ảnh" },
+          { label: t("search_by_image.breadcrumb_home"), href: "/" },
+          { label: t("search_by_image.breadcrumb_self") },
         ]}
       />
 
@@ -32,17 +34,14 @@ export default async function ByImageSearchPage({
               📷
             </div>
             <h1 className="text-[26px] font-bold text-ink mb-2 max-md:text-[20px]">
-              Tìm sản phẩm bằng hình ảnh
+              {t("search_by_image.hero_title")}
             </h1>
             <p className="text-[13.5px] text-mute max-w-[640px] mx-auto leading-relaxed max-md:text-[12.5px]">
-              AI nhận diện ảnh trong 5 giây, gợi ý hơn 40 nhà máy có sản phẩm
-              tương tự. Phù hợp khi bạn có ảnh sản phẩm mẫu nhưng không biết
-              tên/keyword chính xác.
+              {t("search_by_image.hero_desc")}
             </p>
             {q && (
               <p className="text-[12px] text-mute2 mt-2">
-                Đã nhận từ khoá: <b className="text-ink">{q}</b> · Bạn có thể
-                tải ảnh lên kèm theo
+                {t("search_by_image.keyword_received_prefix")} <b className="text-ink">{q}</b> {t("search_by_image.keyword_received_suffix")}
               </p>
             )}
           </div>
@@ -56,12 +55,12 @@ export default async function ByImageSearchPage({
             <label htmlFor="img-upload" className="cursor-pointer block">
               <div className="text-[64px] mb-3">🖼️</div>
               <h3 className="text-[16px] font-bold text-ink mb-1.5">
-                Kéo & thả ảnh vào đây
+                {t("search_by_image.drop_title")}
               </h3>
               <p className="text-[12.5px] text-mute mb-4">
-                hoặc click để chọn file từ máy ·{" "}
-                <span className="text-brand font-medium">JPG / PNG / WEBP</span>{" "}
-                · Tối đa 10MB
+                {t("search_by_image.choose_file_prefix")}{" "}
+                <span className="text-brand font-medium">{t("search_by_image.formats")}</span>{" "}
+                {t("search_by_image.size_limit")}
               </p>
               <input
                 id="img-upload"
@@ -71,7 +70,7 @@ export default async function ByImageSearchPage({
                 className="hidden"
               />
               <span className="inline-block px-6 py-2.5 bg-brand text-white font-bold text-[13px] rounded-sm hover:bg-brand-light cursor-pointer">
-                📷 Chọn ảnh từ máy
+                {t("search_by_image.choose_image_btn")}
               </span>
             </label>
           </form>
@@ -79,16 +78,16 @@ export default async function ByImageSearchPage({
           {/* OR sample images */}
           <div className="mt-6">
             <p className="text-[12.5px] text-center text-mute mb-3">
-              Hoặc thử với ảnh mẫu:
+              {t("search_by_image.sample_prompt")}
             </p>
             <div className="grid grid-cols-6 gap-2 max-w-[600px] mx-auto max-md:grid-cols-3">
               {[
-                { seed: "sample-chair", label: "Ghế" },
-                { seed: "sample-tile", label: "Gạch" },
-                { seed: "sample-lamp", label: "Đèn" },
-                { seed: "sample-faucet", label: "Vòi" },
+                { seed: "sample-chair", label: "Chair" },
+                { seed: "sample-tile", label: "Tile" },
+                { seed: "sample-lamp", label: "Lamp" },
+                { seed: "sample-faucet", label: "Faucet" },
                 { seed: "sample-sofa", label: "Sofa" },
-                { seed: "sample-cabinet", label: "Tủ bếp" },
+                { seed: "sample-cabinet", label: "Kitchen Cabinet" },
               ].map((s) => (
                 <Link
                   key={s.seed}
@@ -97,7 +96,7 @@ export default async function ByImageSearchPage({
                 >
                   <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden border border-line group-hover:border-brand">
                     <img
-                      src={`/img/${s.seed}.jpg?v=4`}
+                      src={`/img/${s.seed}.jpg?v=6`}
                       alt={s.label}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
@@ -115,18 +114,18 @@ export default async function ByImageSearchPage({
             {[
               {
                 icon: "📤",
-                title: "Tải ảnh lên",
-                desc: "Chụp hoặc tải ảnh sản phẩm từ máy. Hỗ trợ JPG/PNG/WEBP.",
+                title: t("search_by_image.step_upload_title"),
+                desc: t("search_by_image.step_upload_desc"),
               },
               {
                 icon: "🤖",
-                title: "AI phân tích",
-                desc: "Hệ thống nhận diện đặc điểm sản phẩm: hình dáng, màu sắc, vật liệu.",
+                title: t("search_by_image.step_ai_title"),
+                desc: t("search_by_image.step_ai_desc"),
               },
               {
                 icon: "🏭",
-                title: "Kết quả tức thì",
-                desc: "Hiển thị sản phẩm tương tự + nhà máy đã audit có thể cung cấp.",
+                title: t("search_by_image.step_results_title"),
+                desc: t("search_by_image.step_results_desc"),
               },
             ].map((s, i) => (
               <div key={i} className="text-center">
@@ -139,26 +138,24 @@ export default async function ByImageSearchPage({
 
           {/* Tips */}
           <div className="mt-6 p-4 bg-gold/10 border border-gold/30 rounded text-[12px] text-ink leading-relaxed">
-            <b className="text-brand">💡 Mẹo cho kết quả tốt nhất:</b> Chụp ảnh
-            sản phẩm trên nền sáng, thấy rõ chi tiết, không bị che. Có thể tải
-            nhiều ảnh cùng lúc (mỗi ảnh tối đa 10MB) để AI phân tích chính xác
-            hơn.
+            <b className="text-brand">{t("search_by_image.tips_label")}</b>{" "}
+            {t("search_by_image.tips_body")}
           </div>
 
           {/* CTA fallback */}
           <div className="mt-5 text-center text-[12.5px] text-mute">
-            Không có ảnh? Thử{" "}
+            {t("search_by_image.cta_no_image")}{" "}
             <Link href="/search" className="text-brand hover:underline font-medium">
-              tìm bằng từ khoá
+              {t("search_by_image.cta_search_keyword")}
             </Link>{" "}
-            hoặc{" "}
+            {t("search_by_image.cta_or")}{" "}
             <Link
               href="/buying-request"
               className="text-accent hover:underline font-medium"
             >
-              gửi RFQ mô tả
+              {t("search_by_image.cta_send_rfq")}
             </Link>{" "}
-            để NCC liên hệ trực tiếp.
+            {t("search_by_image.cta_tail")}
           </div>
         </div>
       </div>

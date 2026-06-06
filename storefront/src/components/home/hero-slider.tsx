@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Fragment, useEffect, useRef, useState, type PointerEvent } from "react";
+import { useT } from "@/components/i18n-provider";
 
 type HeroSlide = {
   badge: string;
@@ -14,57 +15,60 @@ type HeroSlide = {
   image: string;
 };
 
-const HERO_SLIDES: HeroSlide[] = [
+
+
+export function HeroSlider() {
+  const radiosRef = useRef<(HTMLInputElement | null)[]>([]);
+  const [paused, setPaused] = useState(false);
+  const pointerStartX = useRef<number | null>(null);
+  const t = useT();
+
+  const HERO_SLIDES: HeroSlide[] = [
   {
-    badge: "⚡ Canton Fair 2026",
-    titleStart: "Tìm nhà máy tốt nhất\ntừ ",
-    titleGold: "Trung Quốc",
-    titleEnd: ".",
-    desc: "2,400+ sản phẩm từ 40+ nhà máy đã được kiểm định. Báo giá trực tiếp, không qua trung gian.",
-    primary: { label: "📨 Gửi yêu cầu báo giá", href: "/buying-request" },
-    secondary: { label: "🏭 Xem nhà máy →", href: "/suppliers" },
-    image: "/img/heroint.jpg?v=4",
+    badge: t("hero.slide1.badge"),
+    titleStart: t("hero.slide1.titleStart"),
+    titleGold: t("hero.slide1.titleGold"),
+    titleEnd: t("hero.slide1.titleEnd"),
+    desc: t("hero.slide1.desc"),
+    primary: { label: t("hero.slide1.primary"), href: "/buying-request" },
+    secondary: { label: t("hero.slide1.secondary"), href: "/suppliers" },
+    image: "/img/heroint.jpg?v=7",
   },
   {
-    badge: "🎁 Ưu đãi buyer mới",
-    titleStart: "Audit nhà máy ",
-    titleGold: "miễn phí",
-    titleEnd: "\n+ giảm 10% đơn đầu.",
-    desc: "Đăng ký buyer mới nhận audit nhà máy trị giá $300 miễn phí, miễn phí vận chuyển DDP và giảm 10% đơn hàng đầu tiên.",
-    primary: { label: "🎁 Đăng ký Người mua", href: "/register/buyer" },
-    secondary: { label: "Tìm hiểu thêm →", href: "/info/gold-membership" },
-    image: "/img/hero-buyer-promo.jpg?v=4",
+    badge: t("hero.slide2.badge"),
+    titleStart: t("hero.slide2.titleStart"),
+    titleGold: t("hero.slide2.titleGold"),
+    titleEnd: t("hero.slide2.titleEnd"),
+    desc: t("hero.slide2.desc"),
+    primary: { label: t("hero.slide2.primary"), href: "/register/buyer" },
+    secondary: { label: t("hero.slide2.secondary"), href: "/info/gold-membership" },
+    image: "/img/hero-buyer-promo.jpg?v=7",
   },
   {
-    badge: "📹 Smart Expo Online",
-    titleStart: "Tham quan ",
-    titleGold: "nhà máy 360°",
-    titleEnd: "\nkhông cần bay.",
-    desc: "Live video factory tour, gặp QC manager, xem dây chuyền sản xuất real-time. Tiết kiệm 5-7 ngày so với đi thực tế.",
-    primary: { label: "🏭 Tham quan ngay", href: "/factory-tour" },
-    secondary: { label: "Đặt lịch tour →", href: "/buyer-center/meet-suppliers" },
-    image: "/img/hero-factory-tour.jpg?v=4",
+    badge: t("hero.slide3.badge"),
+    titleStart: t("hero.slide3.titleStart"),
+    titleGold: t("hero.slide3.titleGold"),
+    titleEnd: t("hero.slide3.titleEnd"),
+    desc: t("hero.slide3.desc"),
+    primary: { label: t("hero.slide3.primary"), href: "/factory-tour" },
+    secondary: { label: t("hero.slide3.secondary"), href: "/buyer-center/meet-suppliers" },
+    image: "/img/hero-factory-tour.jpg?v=7",
   },
   {
-    badge: "🚢 Logistics DDP",
-    titleStart: "DDP tận kho ",
-    titleGold: "Hà Nội/HCM",
-    titleEnd: "\ntrong 18 ngày.",
-    desc: "Trọn gói: vận chuyển + thuế + thông quan. LCL/FCL từ Quảng Châu, Ninh Ba, Hạ Môn. Báo giá cước trong 1h.",
-    primary: { label: "💰 Tính cước DDP", href: "/info/ddp-calculator" },
-    secondary: { label: "Xem cảng đi →", href: "/info/shipping-policy" },
-    image: "/img/hero-ddp-logistics.jpg?v=4",
+    badge: t("hero.slide4.badge"),
+    titleStart: t("hero.slide4.titleStart"),
+    titleGold: t("hero.slide4.titleGold"),
+    titleEnd: t("hero.slide4.titleEnd"),
+    desc: t("hero.slide4.desc"),
+    primary: { label: t("hero.slide4.primary"), href: "/info/ddp-calculator" },
+    secondary: { label: t("hero.slide4.secondary"), href: "/info/shipping-policy" },
+    image: "/img/hero-ddp-logistics.jpg?v=7",
   },
 ];
 
 const AUTO_INTERVAL = 3000;
 const SWIPE_THRESHOLD = 50;
 const N = HERO_SLIDES.length;
-
-export function HeroSlider() {
-  const radiosRef = useRef<(HTMLInputElement | null)[]>([]);
-  const [paused, setPaused] = useState(false);
-  const pointerStartX = useRef<number | null>(null);
 
   const goTo = (idx: number) => {
     const safe = ((idx % N) + N) % N;
@@ -141,14 +145,14 @@ export function HeroSlider() {
           <img
             src={slide.image}
             alt=""
-            className="w-full h-full object-cover opacity-70 pointer-events-none"
+            className="w-full h-full object-cover opacity-95 pointer-events-none"
             draggable={false}
           />
           <div
             className="absolute inset-0 px-12 py-10 flex flex-col justify-center text-white max-md:px-4 max-md:py-4"
             style={{
               background:
-                "linear-gradient(90deg, rgba(0,37,87,0.9), rgba(0,37,87,0.3))",
+                "linear-gradient(90deg, rgba(0,28,66,0.62) 0%, rgba(0,28,66,0.28) 45%, rgba(0,28,66,0.04) 100%)",
             }}
           >
             <span className="inline-block self-start bg-gold text-brand-dark px-3 py-1 rounded-sm text-[11px] font-bold tracking-wider uppercase mb-3.5">
@@ -191,14 +195,14 @@ export function HeroSlider() {
           <Fragment key={`nav-${idx}`}>
             <label
               htmlFor={`hs-${prevTarget}`}
-              aria-label="Slide trước"
+              aria-label={t("hero.prev")}
               className={`hero-prev hero-prev-${idx} absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ‹
             </label>
             <label
               htmlFor={`hs-${nextTarget}`}
-              aria-label="Slide sau"
+              aria-label={t("hero.next")}
               className={`hero-next hero-next-${idx} absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
             >
               ›

@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
+import { getT } from "@/lib/t";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import {
@@ -101,6 +102,7 @@ export default async function ArticlePage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
+  const t = await getT();
   const { slug } = await params;
   const article = getArticle(slug);
 
@@ -113,9 +115,9 @@ export default async function ArticlePage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Thông tin", href: "/help" },
-          { label: "Tin tức ngành", href: "/info/industry-news" },
+          { label: t("info_industry_news_slug.breadcrumb_home"), href: "/" },
+          { label: t("info_industry_news_slug.breadcrumb_info"), href: "/help" },
+          { label: t("info_industry_news_slug.breadcrumb_industry_news"), href: "/info/industry-news" },
           { label: cat.label, href: `/info/industry-news?cat=${article.category}` },
           { label: article.title },
         ]}
@@ -153,7 +155,7 @@ export default async function ArticlePage({
             <span>·</span>
             <span>📅 {fmtDate(article.date)}</span>
             <span>·</span>
-            <span>⏱ {article.readMinutes} phút đọc</span>
+            <span>⏱ {article.readMinutes} {t("info_industry_news_slug.read_minutes_suffix")}</span>
           </div>
         </div>
       </section>
@@ -176,7 +178,7 @@ export default async function ArticlePage({
           {/* Tags */}
           {article.tags.length > 0 && (
             <div className="mt-8 pt-5 border-t border-line">
-              <span className="text-[11.5px] uppercase tracking-wider text-mute font-bold mr-3">Tags:</span>
+              <span className="text-[11.5px] uppercase tracking-wider text-mute font-bold mr-3">{t("info_industry_news_slug.tags_label")}</span>
               <div className="inline-flex flex-wrap gap-1.5">
                 {article.tags.map((t) => (
                   <Link
@@ -198,9 +200,9 @@ export default async function ArticlePage({
             </div>
             <div className="flex-1">
               <b className="block text-[14px] text-ink">{article.author}</b>
-              <span className="text-[12px] text-mute">{article.authorRole} · Cybersilkroads</span>
+              <span className="text-[12px] text-mute">{article.authorRole} · Huayuesc</span>
               <p className="text-[12.5px] text-mute mt-1.5 leading-relaxed">
-                Theo dõi {article.author} để cập nhật thêm các bài phân tích về ngành sourcing Việt Nam – Trung Quốc.
+                {t("info_industry_news_slug.follow_prefix")} {article.author} {t("info_industry_news_slug.follow_suffix")}
               </p>
             </div>
           </div>
@@ -212,16 +214,16 @@ export default async function ArticlePage({
           >
             <div className="grid grid-cols-[1fr_auto] gap-4 items-center max-md:grid-cols-1">
               <div>
-                <b className="block text-[15px] mb-1">Cần sourcing trực tiếp từ NCC?</b>
+                <b className="block text-[15px] mb-1">{t("info_industry_news_slug.cta_title")}</b>
                 <p className="text-[12.5px] opacity-85 leading-snug">
-                  Gửi RFQ — báo giá miễn phí trong 24h từ 5-10 NCC verified.
+                  {t("info_industry_news_slug.cta_desc")}
                 </p>
               </div>
               <Link
                 href="/buying-request"
                 className="px-5 py-2.5 bg-gold text-brand-dark rounded-sm font-bold text-[13px] hover:bg-[#E8943A] cursor-pointer text-center inline-block whitespace-nowrap"
               >
-                🚀 Gửi RFQ
+                🚀 {t("info_industry_news_slug.cta_button")}
               </Link>
             </div>
           </div>
@@ -231,22 +233,22 @@ export default async function ArticlePage({
         <aside className="space-y-4 max-lg:hidden">
           {/* Article meta */}
           <div className="bg-paper border border-line rounded p-4 sticky top-[5rem]">
-            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📑 Bài viết này</b>
+            <b className="block text-[12px] uppercase tracking-wider text-mute font-bold mb-3">📑 {t("info_industry_news_slug.sidebar_this_article")}</b>
             <ul className="space-y-1.5 text-[12px] mb-4 pb-4 border-b border-line">
               <li className="flex justify-between">
-                <span className="text-mute">Tác giả</span>
+                <span className="text-mute">{t("info_industry_news_slug.sidebar_author")}</span>
                 <b className="text-ink text-right">{article.author}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">Ngày đăng</span>
+                <span className="text-mute">{t("info_industry_news_slug.sidebar_date")}</span>
                 <b className="text-ink">{fmtDate(article.date)}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">Đọc trong</span>
-                <b className="text-ink">{article.readMinutes} phút</b>
+                <span className="text-mute">{t("info_industry_news_slug.sidebar_read_in")}</span>
+                <b className="text-ink">{article.readMinutes} {t("info_industry_news_slug.read_minutes_unit")}</b>
               </li>
               <li className="flex justify-between">
-                <span className="text-mute">Danh mục</span>
+                <span className="text-mute">{t("info_industry_news_slug.sidebar_category")}</span>
                 <b className="text-ink text-right">{cat.label}</b>
               </li>
             </ul>
@@ -255,13 +257,13 @@ export default async function ArticlePage({
               href="/info/industry-news"
               className="block text-center py-2 border border-line rounded-sm text-[12px] text-ink font-semibold cursor-pointer hover:border-brand hover:text-brand mb-2"
             >
-              ← Tất cả bài viết
+              ← {t("info_industry_news_slug.all_articles")}
             </Link>
             <Link
               href="/trade-alert"
               className="block text-center py-2 bg-accent text-white rounded-sm text-[12px] font-bold cursor-pointer hover:opacity-90"
             >
-              📬 Đăng ký Cảnh báo Thương mại
+              📬 {t("info_industry_news_slug.subscribe_trade_alert")}
             </Link>
           </div>
         </aside>
@@ -270,7 +272,7 @@ export default async function ArticlePage({
       {/* === Related articles ============================================= */}
       {related.length > 0 && (
         <div className="max-w-[1100px] mx-auto px-4 mb-10">
-          <h2 className="text-[18px] font-bold text-ink mb-4">Bài viết liên quan</h2>
+          <h2 className="text-[18px] font-bold text-ink mb-4">{t("info_industry_news_slug.related_articles")}</h2>
           <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
             {related.map((a) => (
               <Link
@@ -307,11 +309,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const t = await getT();
   const { slug } = await params;
   const article = getArticle(slug);
-  if (!article) return { title: "Bài viết không tồn tại — Cybersilkroads" };
+  if (!article) return { title: "Bài viết không tồn tại — Huayuesc" };
   return {
-    title: `${article.title} — Cybersilkroads Blog`,
+    title: `${article.title} — Huayuesc Blog`,
     description: article.excerpt,
   };
 }

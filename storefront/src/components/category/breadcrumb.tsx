@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 
 export function Breadcrumb({ trail }: { trail: { label: string; href?: string }[] }) {
   return (

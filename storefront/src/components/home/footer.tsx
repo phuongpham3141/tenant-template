@@ -1,56 +1,12 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
+import { headers } from "next/headers";
 import { LangSwitcher } from "@/components/lang-switcher";
+import { getT } from "@/lib/t";
 
 type FooterLink = { label: string; href: string };
 
-const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
-  {
-    title: "Mua hàng",
-    links: [
-      { label: "Tìm sản phẩm", href: "/products" },
-      { label: "Gửi RFQ", href: "/buying-request" },
-      { label: "Đặt mẫu", href: "/info/sample-orders" },
-      { label: "Theo dõi đơn hàng", href: "/info/order-tracking" },
-      { label: "Bảo vệ thanh toán", href: "/info/payment-protection" },
-      { label: "Khiếu nại", href: "/info/disputes" },
-    ],
-  },
-  {
-    title: "Về Cybersilkroads",
-    links: [
-      { label: "Giới thiệu", href: "/info/about-us" },
-      { label: "Mạng lưới kết nối", href: "/info/network" },
-      { label: "Quy trình kiểm định", href: "/info/audit-process" },
-      { label: "Tin tức ngành", href: "/info/industry-news" },
-      { label: "Tuyển dụng", href: "/info/careers" },
-      { label: "Liên hệ", href: "/info/contact" },
-    ],
-  },
-  {
-    title: "Hỗ trợ",
-    links: [
-      { label: "Trung tâm trợ giúp", href: "/help" },
-      { label: "Hướng dẫn nhập khẩu", href: "/info/import-guide" },
-      { label: "Tính cước DDP", href: "/info/ddp-calculator" },
-      { label: "Chính sách vận chuyển", href: "/info/shipping-policy" },
-      { label: "Điều khoản", href: "/info/terms-of-service" },
-      { label: "Chính sách bảo mật", href: "/info/privacy-policy" },
-      { label: "Bản đồ trang", href: "/sitemap" },
-    ],
-  },
-  {
-    title: "Dành cho NCC",
-    links: [
-      { label: "Đăng ký nhà máy", href: "/sell-on-csr" },
-      { label: "Bảo đảm Giao dịch", href: "/info/trade-assurance" },
-      { label: "Báo cáo thị trường", href: "/info/market-reports" },
-      { label: "Tích hợp API", href: "/info/api-integration" },
-      { label: "Trung tâm bán hàng", href: "/seller-center" },
-    ],
-  },
-];
 
-const CERTS = ["✓ Bộ Công Thương", "✓ Bảo vệ DMCA", "✓ ISO 27001", "✓ Đã kiểm định TUV", "✓ Bảo mật SSL"];
+const CERTS = ["footer.cert_moit", "footer.cert_dmca", "footer.cert_iso", "footer.cert_tuv", "footer.cert_ssl"];
 
 type Social = {
   name: string;
@@ -123,7 +79,57 @@ const SOCIALS: Social[] = [
   },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const host = (await headers()).get("host");
+  const t = await getT();
+
+  const FOOTER_COLS: { title: string; links: FooterLink[] }[] = [
+  {
+    title: t("footer.col_sourcing"),
+    links: [
+      { label: t("footer.link_find_products"), href: "/products" },
+      { label: t("footer.link_rfq"), href: "/buying-request" },
+      { label: t("footer.link_sample_orders"), href: "/info/sample-orders" },
+      { label: t("footer.link_order_tracking"), href: "/info/order-tracking" },
+      { label: t("footer.link_payment_protection"), href: "/info/payment-protection" },
+      { label: t("footer.link_disputes"), href: "/info/disputes" },
+    ],
+  },
+  {
+    title: t("footer.col_about"),
+    links: [
+      { label: t("footer.link_company_profile"), href: "/info/about-us" },
+      { label: t("footer.link_partners"), href: "/info/partners" },
+      { label: t("footer.link_network"), href: "/info/network" },
+      { label: t("footer.link_audit_process"), href: "/info/audit-process" },
+      { label: t("footer.link_industry_news"), href: "/info/industry-news" },
+      { label: t("footer.link_careers"), href: "/info/careers" },
+      { label: t("footer.link_contact"), href: "/info/contact" },
+    ],
+  },
+  {
+    title: t("footer.col_help"),
+    links: [
+      { label: t("footer.link_help_center"), href: "/help" },
+      { label: t("footer.link_import_guide"), href: "/info/import-guide" },
+      { label: t("footer.link_ddp_calculator"), href: "/info/ddp-calculator" },
+      { label: t("footer.link_shipping_policy"), href: "/info/shipping-policy" },
+      { label: t("footer.link_terms"), href: "/info/terms-of-service" },
+      { label: t("footer.link_privacy"), href: "/info/privacy-policy" },
+      { label: t("footer.link_sitemap"), href: "/sitemap" },
+    ],
+  },
+  {
+    title: t("footer.col_supplier"),
+    links: [
+      { label: t("footer.link_sell_on_csr"), href: "/sell-on-csr" },
+      { label: t("footer.link_trade_assurance"), href: "/info/trade-assurance" },
+      { label: t("footer.link_market_reports"), href: "/info/market-reports" },
+      { label: t("footer.link_api_integration"), href: "/info/api-integration" },
+      { label: t("footer.link_seller_center"), href: "/seller-center" },
+    ],
+  },
+];
   return (
     <footer className="bg-brand-dark text-white mt-7 pt-9 pb-5 max-md:mt-4 max-md:pt-5 max-md:pb-3">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -135,20 +141,18 @@ export function Footer() {
             <Link
               href="/"
               className="block mx-auto mb-4 w-fit"
-              aria-label="Cybersilkroads — Trang chủ"
+              aria-label={t("footer.logo_aria")}
             >
               <img
-                src="/logo/cybersilkroads-horizontal.png?v=5"
-                alt="Cybersilkroads"
+                src="/logo/cybersilkroads-horizontal.png?v=6"
+                alt="Huayuesc"
                 width={400}
                 height={200}
                 className="h-32 w-auto max-md:h-24"
               />
             </Link>
             <p className="text-[12px] opacity-75 leading-relaxed mb-3.5 max-w-[320px] md:max-lg:mx-auto max-md:mx-auto">
-              Nền tảng B2B kết nối nhà bán Việt Nam với 40+ nhà máy đã được kiểm định
-              tại Trung Quốc. Báo giá nhanh, chất lượng đảm bảo, vận chuyển DDP
-              tận kho.
+              {t("footer.about_text")}
             </p>
             <div className="flex gap-2 flex-wrap md:max-lg:justify-center max-md:justify-center">
               {SOCIALS.map((s) => (
@@ -203,16 +207,18 @@ export function Footer() {
             Desktop: 3-col strip [copy | lang | certs].
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
-          <span className="opacity-80 max-lg:order-3">
-            © 2026 Cybersilkroads (CSR) · Nền tảng B2B · Vận hành bởi Beeagents.com
+          <span className="opacity-80 max-lg:order-3 leading-relaxed">
+            © 2026 <b className="font-semibold">{t("footer.company_name")}</b>{" · "}
+            <a href="https://huayuesc.vn" className="hover:underline">huayuesc.vn</a>{" · "}
+            {t("footer.tax_address")}
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
-            <span className="text-white/60 text-[11px] uppercase tracking-wider">Ngôn ngữ:</span>
-            <LangSwitcher variant="compact" />
+            <span className="text-white/60 text-[11px] uppercase tracking-wider">{t("footer.language_label")}</span>
+            <LangSwitcher variant="compact" initialHost={host} />
           </div>
           <div className="flex gap-3.5 flex-wrap opacity-70 max-lg:justify-center max-lg:order-2">
             {CERTS.map((c) => (
-              <span key={c}>{c}</span>
+              <span key={c}>{t(c)}</span>
             ))}
           </div>
         </div>

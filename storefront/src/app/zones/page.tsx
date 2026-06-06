@@ -1,24 +1,26 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ZONES } from "@/data/home";
+import { getT } from "@/lib/t";
 
 const ZONE_DESC: Record<string, string> = {
-  "foshan-ceramic": "Trung tâm gốm sứ lớn nhất Trung Quốc — chiếm 60% sản lượng porcelain toàn cầu.",
-  "taizhou-faucet": "Thủ phủ vòi nước & sanitary fittings — 480 nhà máy xuất khẩu khắp thế giới.",
-  "foshan-furniture": "Cluster nội thất lớn nhất châu Á — 3,000+ nhà máy với chuỗi cung ứng đầy đủ.",
-  "zhongshan-light": "Vương quốc đèn LED — 2,200 nhà máy chiếu sáng dân dụng và thương mại.",
-  "jinjiang-wood": "Trung tâm sàn gỗ và đồ gỗ engineered — 340 nhà máy chuyên xuất khẩu.",
-  "chaozhou-sanitary": "Thủ phủ sanitary ceramic — toilet, basin, bathtub cao cấp xuất khẩu.",
+  "foshan-ceramic": "zones.descFoshanCeramic",
+  "taizhou-faucet": "zones.descTaizhouFaucet",
+  "foshan-furniture": "zones.descFoshanFurniture",
+  "zhongshan-light": "zones.descZhongshanLight",
+  "jinjiang-wood": "zones.descJinjiangWood",
+  "chaozhou-sanitary": "zones.descChaozhouSanitary",
 };
 
-export default function ZonesPage() {
+export default async function ZonesPage() {
+  const t = await getT();
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Trading Zones" }]} />
+      <Breadcrumb trail={[{ label: t("zones.breadcrumbHome"), href: "/" }, { label: t("zones.breadcrumbTrading") }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="bg-paper border border-line rounded p-5">
-          <h1 className="text-[24px] font-extrabold text-ink leading-tight">🗺️ Trading Zones — Cluster công nghiệp Trung Quốc</h1>
-          <p className="text-[13px] text-mute mt-1">6 cluster lớn nhất chuyên ngành vật liệu, nội thất, sanitary, đèn LED. Mua trực tiếp tại nguồn — giá tốt nhất.</p>
+          <h1 className="text-[24px] font-extrabold text-ink leading-tight">{t("zonespage.title")}</h1>
+          <p className="text-[13px] text-mute mt-1">{t("zones.intro")}</p>
         </div>
       </div>
 
@@ -35,8 +37,8 @@ export default function ZonesPage() {
                 </div>
               </div>
               <div className="p-4">
-                <p className="text-[12.5px] text-mute leading-relaxed">{ZONE_DESC[z.slug] ?? "Cụm công nghiệp chuyên ngành với nhiều nhà máy đối tác đã audit."}</p>
-                <span className="text-brand text-[12.5px] font-semibold mt-3 block">Khám phá cluster →</span>
+                <p className="text-[12.5px] text-mute leading-relaxed">{t(ZONE_DESC[z.slug] ?? "zones.descFallback")}</p>
+                <span className="text-brand text-[12.5px] font-semibold mt-3 block">{t("zones.explore")}</span>
               </div>
             </Link>
           ))}
@@ -45,14 +47,14 @@ export default function ZonesPage() {
 
       {/* Map placeholder */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
-        <h2 className="text-[18px] font-bold text-ink mb-3">📍 Bản đồ cluster Trung Quốc</h2>
+        <h2 className="text-[18px] font-bold text-ink mb-3">{t("zones.mapHeading")}</h2>
         <div className="relative rounded overflow-hidden h-[420px] bg-brand-dark">
-          <img src="/img/china-map.jpg?v=4" alt="map" className="w-full h-full object-cover opacity-50" />
+          <img src="/img/china-map.jpg?v=6" alt="map" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.5)" }}>
             <div className="text-center">
               <div className="text-[42px] mb-2">🗺️</div>
-              <b className="block text-[20px] font-bold">6 cluster trên bản đồ</b>
-              <p className="text-[12.5px] opacity-90 max-w-[480px] mx-auto mt-2">Bản đồ tương tác với pin location cho từng cluster sẽ ra mắt Q2/2026. Hiện tại click vào card phía trên để xem chi tiết.</p>
+              <b className="block text-[20px] font-bold">{t("zones.mapTitle")}</b>
+              <p className="text-[12.5px] opacity-90 max-w-[480px] mx-auto mt-2">{t("zones.mapNote")}</p>
             </div>
           </div>
           {/* dot markers */}
@@ -72,4 +74,4 @@ export default function ZonesPage() {
   );
 }
 
-export const metadata = { title: "Trading Zones — Cybersilkroads" };
+export const metadata = { title: "Trading Zones — Huayuesc" };

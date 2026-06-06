@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/i18n-link";
+import { useT } from "@/components/i18n-provider";
 import { useRef } from "react";
 
 export type CarouselItem = {
@@ -11,6 +12,7 @@ export type CarouselItem = {
 
 export function MegaCarousel({ items }: { items: CarouselItem[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const t = useT();
 
   const scroll = (dir: -1 | 1) => {
     const el = trackRef.current;
@@ -23,7 +25,7 @@ export function MegaCarousel({ items }: { items: CarouselItem[] }) {
     <div className="relative">
       <button
         type="button"
-        aria-label="Cuộn trái"
+        aria-label={t("carousel.scrollLeft")}
         onClick={() => scroll(-1)}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-paper border border-line shadow-sm flex items-center justify-center text-[14px] text-ink hover:bg-brand hover:text-white hover:border-brand cursor-pointer"
       >
@@ -55,7 +57,7 @@ export function MegaCarousel({ items }: { items: CarouselItem[] }) {
       </div>
       <button
         type="button"
-        aria-label="Cuộn phải"
+        aria-label={t("carousel.scrollRight")}
         onClick={() => scroll(1)}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 rounded-full bg-paper border border-line shadow-sm flex items-center justify-center text-[14px] text-ink hover:bg-brand hover:text-white hover:border-brand cursor-pointer"
       >

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SupBanner } from "@/components/products/sup-banner";
 import { TitleTabs } from "@/components/products/title-tabs";
@@ -12,6 +12,7 @@ import { NotFoundBlock } from "@/components/products/not-found-block";
 import { getLeafCategory } from "@/data/products";
 import { getCategory } from "@/data/categories";
 import { NAV_CATEGORIES } from "@/data/home";
+import { getT } from "@/lib/t";
 
 export default async function LeafCategoryPage({
   params,
@@ -19,6 +20,7 @@ export default async function LeafCategoryPage({
   params: Promise<{ slug: string; sub: string }>;
 }) {
   const { slug, sub } = await params;
+  const t = await getT();
   const data = getLeafCategory(slug, sub);
   const parent = getCategory(slug);
   const navEntry = NAV_CATEGORIES.find((c) => c.slug === slug);
@@ -28,8 +30,8 @@ export default async function LeafCategoryPage({
       <div className="max-w-[1400px] mx-auto px-4 py-12">
         <Breadcrumb
           trail={[
-            { label: "Trang chủ", href: "/" },
-            { label: "Danh mục sản phẩm" },
+            { label: t("category_slug_sub.home"), href: "/" },
+            { label: t("category_slug_sub.product_categories") },
             {
               label: parent?.title ?? navEntry?.name ?? slug,
               href: `/category/${slug}`,
@@ -41,14 +43,13 @@ export default async function LeafCategoryPage({
           <div className="text-[48px] mb-3">🔧</div>
           <h1 className="text-[24px] font-bold text-ink mb-2">{sub}</h1>
           <p className="text-[13px] text-mute mb-5">
-            Danh sách sản phẩm cho danh mục này đang được cập nhật. Quay lại sau
-            hoặc duyệt danh mục cha.
+            {t("category_slug_sub.updating_notice")}
           </p>
           <Link
             href={`/category/${slug}`}
             className="inline-block px-5 py-2.5 bg-brand text-white rounded-sm font-semibold text-[13px] hover:bg-brand-light"
           >
-            ← {parent?.title ?? navEntry?.name ?? "Quay lại danh mục"}
+            ← {parent?.title ?? navEntry?.name ?? t("category_slug_sub.back_to_category")}
           </Link>
         </div>
       </div>
@@ -59,8 +60,8 @@ export default async function LeafCategoryPage({
     <>
       <Breadcrumb
         trail={[
-          { label: "Trang chủ", href: "/" },
-          { label: "Danh mục sản phẩm" },
+          { label: t("category_slug_sub.home"), href: "/" },
+          { label: t("category_slug_sub.product_categories") },
           { label: data.parentName, href: `/category/${data.parentSlug}` },
           { label: data.l2Name },
           { label: data.title },
@@ -98,9 +99,9 @@ export async function generateMetadata({
   const { slug, sub } = await params;
   const data = getLeafCategory(slug, sub);
   return {
-    title: data ? `${data.title} — ${data.resultsCount} kết quả · Cybersilkroads` : `${sub} · Cybersilkroads`,
+    title: data ? `${data.title} — ${data.resultsCount} results · Huayuesc` : `${sub} · Huayuesc`,
     description: data
-      ? `${data.resultsCount} ${data.title} từ nhà cung cấp đã kiểm định tại Trung Quốc. Báo giá nhanh trong 24h trên Cybersilkroads.`
+      ? `${data.resultsCount} ${data.title} from certified suppliers in China. Get fast quotes within 24h on Huayuesc.`
       : undefined,
   };
 }

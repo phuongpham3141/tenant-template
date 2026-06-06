@@ -1,39 +1,41 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
 import { LOGIN_PROVIDERS } from "@/components/icons/social";
+import { getT } from "@/lib/t";
 
 const BENEFITS = [
-  { icon: "🏭", title: "KIỂM ĐỊNH MIỄN PHÍ", desc: "1 lần kiểm định tại chỗ nhà máy bạn chọn — giá trị $400" },
-  { icon: "💰", title: "Giảm 10% đơn đầu", desc: "Áp dụng cho đơn $5K+ từ Nhà cung cấp đã xác minh" },
-  { icon: "🚚", title: "Miễn phí DDP đơn đầu", desc: "Miễn cước DDP tới Hà Nội/HCM (tối đa $300)" },
-  { icon: "🛡", title: "Bảo đảm Giao dịch", desc: "Hoàn 100% nếu hàng giao sai — không cần thương lượng" },
+  { icon: "🏭", title: "register_buyer.benefit_audit_title", desc: "register_buyer.benefit_audit_desc" },
+  { icon: "💰", title: "register_buyer.benefit_discount_title", desc: "register_buyer.benefit_discount_desc" },
+  { icon: "🚚", title: "register_buyer.benefit_ddp_title", desc: "register_buyer.benefit_ddp_desc" },
+  { icon: "🛡", title: "register_buyer.benefit_assurance_title", desc: "register_buyer.benefit_assurance_desc" },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "Kiểm định miễn phí giúp tôi tránh được 1 NCC giả mạo — giá trị thật hơn $400.",
-    author: "Trần Quang Hưng",
-    role: "VLXD Phương Nam · Hà Nội",
+    quote: "register_buyer.testimonial1_quote",
+    author: "Tran Quang Hung",
+    role: "Phuong Nam Building Materials · Hanoi",
   },
   {
-    quote: "DDP miễn phí đơn đầu tiết kiệm cho tôi 22 triệu cho lô vải Oxford 5K mét.",
-    author: "Lê Thu Hằng",
-    role: "Showroom Sài Gòn · TP HCM",
+    quote: "register_buyer.testimonial2_quote",
+    author: "Le Thu Hang",
+    role: "Sai Gon Showroom · Ho Chi Minh City",
   },
 ];
 
 const STEPS = [
-  { n: 1, title: "Điền thông tin", desc: "Form 60 giây — họ tên, công ty, ngành" },
-  { n: 2, title: "Xác minh email/SĐT", desc: "OTP gửi qua Zalo hoặc email" },
-  { n: 3, title: "Kích hoạt bảng điều khiển người mua", desc: "Truy cập RFQ, audit, Bảo đảm Giao dịch" },
-  { n: 4, title: "Bắt đầu tìm nguồn", desc: "Tư vấn 1-1 với chuyên gia tại Quảng Châu" },
+  { n: 1, title: "register_buyer.step1_title", desc: "register_buyer.step1_desc" },
+  { n: 2, title: "register_buyer.step2_title", desc: "register_buyer.step2_desc" },
+  { n: 3, title: "register_buyer.step3_title", desc: "register_buyer.step3_desc" },
+  { n: 4, title: "register_buyer.step4_title", desc: "register_buyer.step4_desc" },
 ];
 
-export default function RegisterBuyerPage() {
+export default async function RegisterBuyerPage() {
+  const t = await getT();
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Đăng ký Người mua" }]} />
+      <Breadcrumb trail={[{ label: t("register_buyer.breadcrumb_home"), href: "/" }, { label: t("register_buyer.breadcrumb_current") }]} />
       <div className="max-w-[1200px] mx-auto px-4 mt-6 mb-10">
         {/* HEADER BANNER */}
         <div
@@ -42,27 +44,26 @@ export default function RegisterBuyerPage() {
         >
           <div>
             <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2.5">
-              🎁 ƯU ĐÃI NGƯỜI MUA MỚI Q1/2026
+              {t("register_buyer.banner_badge")}
             </span>
             <h1 className="text-[26px] font-extrabold leading-tight mb-1.5 max-md:text-[22px]">
-              Đăng ký Người mua miễn phí — <span className="text-gold">nhận 4 ưu đãi</span>
+              {t("register_buyer.banner_title_pre")}<span className="text-gold">{t("register_buyer.banner_title_highlight")}</span>
             </h1>
             <p className="text-[13px] opacity-90 leading-relaxed max-w-[600px]">
-              Tham gia 600+ đại lý Việt Nam đang nhập khẩu trực tiếp từ Quảng Châu, Ninh Ba, Hạ Môn.
-              Báo giá &lt; 24h, kiểm định miễn phí, vận chuyển DDP tận kho.
+              {t("register_buyer.banner_subtitle")}
             </p>
           </div>
           <div className="flex flex-col gap-2 text-[12px] opacity-90 min-w-[180px]">
             <div className="flex justify-between">
-              <span>👥 Người mua đã đăng ký</span>
+              <span>{t("register_buyer.stat_buyers")}</span>
               <b>600+</b>
             </div>
             <div className="flex justify-between">
-              <span>🏭 NCC đã xác minh</span>
+              <span>{t("register_buyer.stat_suppliers")}</span>
               <b>40+</b>
             </div>
             <div className="flex justify-between">
-              <span>💰 Giao dịch 2025</span>
+              <span>{t("register_buyer.stat_gmv")}</span>
               <b>$8.2M</b>
             </div>
           </div>
@@ -73,8 +74,8 @@ export default function RegisterBuyerPage() {
           {BENEFITS.map((b) => (
             <div key={b.title} className="bg-[#FFF7E6] border border-gold/40 rounded p-3.5">
               <div className="text-[26px] mb-1.5">{b.icon}</div>
-              <b className="block text-[13px] text-ink mb-1">{b.title}</b>
-              <p className="text-[11.5px] text-mute leading-snug">{b.desc}</p>
+              <b className="block text-[13px] text-ink mb-1">{t(b.title)}</b>
+              <p className="text-[11.5px] text-mute leading-snug">{t(b.desc)}</p>
             </div>
           ))}
         </div>
@@ -85,7 +86,7 @@ export default function RegisterBuyerPage() {
             {/* Quick social signup */}
             <div className="mb-5">
               <p className="text-[12.5px] text-mute mb-2.5">
-                ⚡ Đăng ký nhanh trong 5 giây bằng:
+                {t("register_buyer.social_prompt")}
               </p>
               <div className="grid grid-cols-3 gap-2">
                 {LOGIN_PROVIDERS.map((p) => (
@@ -93,7 +94,7 @@ export default function RegisterBuyerPage() {
                     key={p.name}
                     href={`/register/oauth/${p.name.toLowerCase()}?role=buyer`}
                     className="flex items-center justify-center gap-2 py-2.5 border border-line rounded-sm text-[12.5px] font-semibold text-ink cursor-pointer hover:border-brand hover:bg-bg"
-                    aria-label={`Đăng ký với ${p.name}`}
+                    aria-label={`${t("register_buyer.social_aria")} ${p.name}`}
                   >
                     <span className="flex-shrink-0">{p.icon}</span>
                     <span>{p.name}</span>
@@ -105,7 +106,7 @@ export default function RegisterBuyerPage() {
             <div className="flex items-center gap-3 mb-5">
               <div className="flex-1 h-px bg-line" />
               <span className="text-[10.5px] text-mute2 uppercase tracking-wider">
-                Hoặc điền form
+                {t("register_buyer.divider_or")}
               </span>
               <div className="flex-1 h-px bg-line" />
             </div>
@@ -114,108 +115,108 @@ export default function RegisterBuyerPage() {
               <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Họ tên <span className="text-accent">*</span>
+                    {t("register_buyer.label_name")} <span className="text-accent">*</span>
                   </label>
                   <input
                     name="name"
                     required
-                    placeholder="Nguyễn Văn A"
+                    placeholder={t("register_buyer.placeholder_name")}
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                   />
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Công ty
+                    {t("register_buyer.label_company")}
                   </label>
                   <input
                     name="company"
-                    placeholder="Công ty TNHH ABC"
+                    placeholder={t("register_buyer.placeholder_company")}
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                   />
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Email <span className="text-accent">*</span>
+                    {t("register_buyer.label_email")} <span className="text-accent">*</span>
                   </label>
                   <input
                     name="email"
                     type="email"
                     required
-                    placeholder="ban@congty.vn"
+                    placeholder={t("register_buyer.placeholder_email")}
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                   />
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Điện thoại / Zalo <span className="text-accent">*</span>
+                    {t("register_buyer.label_phone")} <span className="text-accent">*</span>
                   </label>
                   <input
                     name="phone"
                     required
-                    placeholder="09xx xxx xxx"
+                    placeholder={t("register_buyer.placeholder_phone")}
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                   />
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Mật khẩu <span className="text-accent">*</span>
+                    {t("register_buyer.label_password")} <span className="text-accent">*</span>
                   </label>
                   <input
                     name="password"
                     type="password"
                     required
-                    placeholder="Tối thiểu 8 ký tự"
+                    placeholder={t("register_buyer.placeholder_password")}
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
                   />
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Tỉnh / Thành
+                    {t("register_buyer.label_city")}
                   </label>
                   <select
                     name="city"
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                   >
-                    <option>Hà Nội</option>
-                    <option>TP Hồ Chí Minh</option>
-                    <option>Đà Nẵng</option>
-                    <option>Hải Phòng</option>
-                    <option>Cần Thơ</option>
-                    <option>Khác</option>
+                    <option>{t("register_buyer.city_hanoi")}</option>
+                    <option>{t("register_buyer.city_hcmc")}</option>
+                    <option>{t("register_buyer.city_danang")}</option>
+                    <option>{t("register_buyer.city_haiphong")}</option>
+                    <option>{t("register_buyer.city_cantho")}</option>
+                    <option>{t("register_buyer.city_other")}</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Quy mô doanh nghiệp
+                    {t("register_buyer.label_size")}
                   </label>
                   <select
                     name="size"
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                   >
-                    <option>Cá nhân / Hộ kinh doanh</option>
-                    <option>Dưới 10 nhân viên</option>
-                    <option>10 – 50 nhân viên</option>
-                    <option>50 – 200 nhân viên</option>
-                    <option>Trên 200 nhân viên</option>
+                    <option>{t("register_buyer.size_individual")}</option>
+                    <option>{t("register_buyer.size_under10")}</option>
+                    <option>{t("register_buyer.size_10_50")}</option>
+                    <option>{t("register_buyer.size_50_200")}</option>
+                    <option>{t("register_buyer.size_over200")}</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Doanh thu / năm
+                    {t("register_buyer.label_revenue")}
                   </label>
                   <select
                     name="revenue"
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                   >
-                    <option>Dưới 1 tỷ</option>
-                    <option>1 – 5 tỷ</option>
-                    <option>5 – 20 tỷ</option>
-                    <option>Trên 20 tỷ</option>
+                    <option>{t("register_buyer.revenue_under1")}</option>
+                    <option>{t("register_buyer.revenue_1_5")}</option>
+                    <option>{t("register_buyer.revenue_5_20")}</option>
+                    <option>{t("register_buyer.revenue_over20")}</option>
                   </select>
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Ngành quan tâm <span className="text-mute2 font-normal text-[11px]">(chọn nhiều)</span>
+                    {t("register_buyer.label_industries")} <span className="text-mute2 font-normal text-[11px]">{t("register_buyer.industries_hint")}</span>
                   </label>
                   <div className="grid grid-cols-3 gap-2 max-md:grid-cols-2">
                     {NAV_CATEGORIES.slice(0, 9).map((c) => (
@@ -237,18 +238,18 @@ export default function RegisterBuyerPage() {
                 </div>
                 <div className="col-span-2">
                   <label className="block text-[12.5px] font-semibold text-ink mb-1.5">
-                    Bạn nghe Cybersilkroads từ đâu?
+                    {t("register_buyer.label_source")}
                   </label>
                   <select
                     name="source"
                     className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white"
                   >
-                    <option>Tìm kiếm Google</option>
-                    <option>Nhóm Facebook / Zalo</option>
-                    <option>Bạn bè giới thiệu</option>
-                    <option>Hội chợ / Sự kiện</option>
-                    <option>Tiếp thị qua email</option>
-                    <option>Khác</option>
+                    <option>{t("register_buyer.source_google")}</option>
+                    <option>{t("register_buyer.source_facebook")}</option>
+                    <option>{t("register_buyer.source_referral")}</option>
+                    <option>{t("register_buyer.source_tradeshow")}</option>
+                    <option>{t("register_buyer.source_email")}</option>
+                    <option>{t("register_buyer.source_other")}</option>
                   </select>
                 </div>
               </div>
@@ -256,32 +257,32 @@ export default function RegisterBuyerPage() {
               <label className="flex items-start gap-2 text-[12px] text-mute mt-4">
                 <input type="checkbox" required className="accent-brand mt-0.5" />
                 <span>
-                  Tôi đồng ý với{" "}
+                  I agree to Huayuesc&apos;s{" "}
                   <Link href="/info/terms-of-service" className="text-brand cursor-pointer hover:underline">
-                    Điều khoản
+                    {t("register_buyer.terms_link")}
                   </Link>{" "}
-                  và{" "}
+                  {t("register_buyer.terms_and")}{" "}
                   <Link href="/info/privacy-policy" className="text-brand cursor-pointer hover:underline">
-                    Chính sách bảo mật
-                  </Link>{" "}
-                  của Cybersilkroads.
+                    {t("register_buyer.privacy_link")}
+                  </Link>
+                  .
                 </span>
               </label>
               <label className="flex items-start gap-2 text-[12px] text-mute">
                 <input type="checkbox" defaultChecked className="accent-brand mt-0.5" />
-                <span>Nhận Cảnh báo Thương mại hàng tuần — xu hướng giá, sản phẩm bán chạy, sự kiện ngành.</span>
+                <span>{t("register_buyer.newsletter_label")}</span>
               </label>
 
               <button
                 type="submit"
                 className="w-full py-3 bg-brand text-white rounded-sm font-bold text-[14px] cursor-pointer hover:bg-brand-light mt-3"
               >
-                Đăng ký Người mua & Nhận ưu đãi →
+                {t("register_buyer.submit_button")}
               </button>
               <p className="text-[12px] text-mute text-center">
-                Đã có tài khoản?{" "}
+                {t("register_buyer.already_account")}{" "}
                 <Link href="/login" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Đăng nhập
+                  {t("register_buyer.sign_in")}
                 </Link>
               </p>
             </form>
@@ -290,7 +291,7 @@ export default function RegisterBuyerPage() {
           {/* === RIGHT: side info ======================================== */}
           <aside className="space-y-4 self-start">
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">📋 Quy trình 4 bước</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">{t("register_buyer.process_heading")}</b>
               <ol className="space-y-3">
                 {STEPS.map((s) => (
                   <li key={s.n} className="flex gap-2.5">
@@ -298,8 +299,8 @@ export default function RegisterBuyerPage() {
                       {s.n}
                     </span>
                     <div>
-                      <b className="block text-[12.5px] text-ink">{s.title}</b>
-                      <p className="text-[11px] text-mute leading-snug">{s.desc}</p>
+                      <b className="block text-[12.5px] text-ink">{t(s.title)}</b>
+                      <p className="text-[11px] text-mute leading-snug">{t(s.desc)}</p>
                     </div>
                   </li>
                 ))}
@@ -307,13 +308,13 @@ export default function RegisterBuyerPage() {
             </div>
 
             <div className="bg-paper border border-line rounded p-5">
-              <b className="block text-[14px] font-bold text-ink mb-3">💬 Người mua khác nói gì</b>
+              <b className="block text-[14px] font-bold text-ink mb-3">{t("register_buyer.testimonials_heading")}</b>
               <div className="space-y-3 text-[12px] text-ink">
-                {TESTIMONIALS.map((t) => (
-                  <div key={t.author} className="border-l-2 border-gold pl-3">
-                    <p className="leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+                {TESTIMONIALS.map((tm) => (
+                  <div key={tm.author} className="border-l-2 border-gold pl-3">
+                    <p className="leading-relaxed">&ldquo;{t(tm.quote)}&rdquo;</p>
                     <span className="text-[11px] text-mute mt-1 block">
-                      — {t.author}, <i>{t.role}</i>
+                      — {tm.author}, <i>{tm.role}</i>
                     </span>
                   </div>
                 ))}
@@ -324,15 +325,15 @@ export default function RegisterBuyerPage() {
               className="rounded p-4 text-white"
               style={{ background: "linear-gradient(135deg,#E85D4E,#E8364A)" }}
             >
-              <b className="block text-[14px] font-bold mb-1">🏭 Bạn là nhà máy?</b>
+              <b className="block text-[14px] font-bold mb-1">{t("register_buyer.factory_heading")}</b>
               <p className="text-[11.5px] opacity-90 leading-snug mb-2.5">
-                Đăng ký Nhà cung cấp đã xác minh để nhận RFQ trực tiếp từ 600+ đại lý Việt Nam.
+                {t("register_buyer.factory_desc")}
               </p>
               <Link
                 href="/register/factory"
                 className="inline-block px-3 py-1.5 bg-white text-accent text-[12px] font-bold rounded-sm cursor-pointer hover:bg-bg"
               >
-                Đăng ký Nhà cung cấp →
+                {t("register_buyer.factory_cta")}
               </Link>
             </div>
           </aside>
@@ -342,4 +343,4 @@ export default function RegisterBuyerPage() {
   );
 }
 
-export const metadata = { title: "Đăng ký Người mua — Cybersilkroads" };
+export const metadata = { title: "Register as Buyer — Huayuesc" };

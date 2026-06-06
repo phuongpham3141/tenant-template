@@ -1,7 +1,9 @@
-import Link from "next/link";
-import { cookies } from "next/headers";
+import Link from "@/components/i18n-link";
+import { cookies, headers } from "next/headers";
 import { SocialIcons } from "@/components/icons/social";
 import { LangSwitcher } from "@/components/lang-switcher";
+import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
 
 /**
  * Top strip — slim utility bar above the main header.
@@ -10,7 +12,7 @@ import { LangSwitcher } from "@/components/lang-switcher";
  * gap shrinks so 7 items still fit in 768px.
  *
  * Auth-aware: reads the `auth_token` cookie server-side. When logged in,
- * the "Đăng nhập / Đăng ký" item is replaced by "Tài khoản" — keeping
+ * the "Sign In / Sign Up" item is replaced by "Account" — keeping
  * the same item count (7), so the row stays balanced either way.
  */
 
@@ -19,32 +21,32 @@ type LinkRow = {
   href: string;
   desc?: string;
   icon?: string;          // emoji glyph shown left of label
-  badge?: string;         // optional pill text (e.g. "12", "MỚI", "VIP")
+  badge?: string;         // optional pill text (e.g. "12", "NEW", "VIP")
   badgeTone?: "info" | "success" | "warning" | "accent" | "muted";
   thumb?: string;         // 32×32 image thumbnail (favorites)
 };
 
 const BUYER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "Trang tổng quan", href: "/buyer-center", desc: "Xem RFQ, đơn hàng, tin nhắn" },
-  { icon: "📨", label: "Yêu cầu báo giá (RFQ)", href: "/buyer-center/rfqs", desc: "Quản lý báo giá đã gửi", badge: "3", badgeTone: "info" },
-  { icon: "📦", label: "Đơn hàng của tôi", href: "/buyer-center/orders", desc: "Tracking & vận chuyển", badge: "5", badgeTone: "info" },
-  { icon: "❤️", label: "Sản phẩm yêu thích", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
+  { icon: "📊", label: "Bảng điều khiển", href: "/buyer-center", desc: "Xem yêu cầu báo giá, đơn hàng và tin nhắn" },
+  { icon: "📨", label: "Yêu cầu báo giá", href: "/buyer-center/rfqs", desc: "Quản lý yêu cầu báo giá đã gửi", badge: "3", badgeTone: "info" },
+  { icon: "📦", label: "Đơn hàng của tôi", href: "/buyer-center/orders", desc: "Theo dõi vận chuyển và giao nhận", badge: "5", badgeTone: "info" },
+  { icon: "❤️", label: "Sản phẩm đã lưu", href: "/buyer-center/favorites", badge: "12", badgeTone: "muted" },
   { icon: "📍", label: "Sổ địa chỉ", href: "/buyer-center/addresses" },
-  { icon: "📄", label: "Hợp đồng & hoá đơn", href: "/buyer-center/invoices" },
+  { icon: "📄", label: "Hợp đồng & Hoá đơn", href: "/buyer-center/invoices" },
 ];
 
 const SELLER_LINKS: LinkRow[] = [
-  { icon: "📊", label: "Trang tổng quan", href: "/seller-center", desc: "Doanh số, đơn nhận, tin nhắn" },
+  { icon: "📊", label: "Bảng điều khiển", href: "/seller-center", desc: "Doanh số, đơn hàng đến và tin nhắn" },
   { icon: "🏷", label: "Sản phẩm của tôi", href: "/seller-center/products" },
   { icon: "💬", label: "Báo giá đã gửi", href: "/seller-center/quotes" },
-  { icon: "📥", label: "Đơn hàng nhận được", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "Đăng ký nhà máy", href: "/sell-on-csr", desc: "Trở thành Nhà cung cấp đã xác minh" },
-  { icon: "🛡", label: "Bảo đảm Giao dịch", href: "/info/trade-assurance", desc: "Trung gian bảo vệ thanh toán xuyên biên giới", badge: "TRUNG GIAN", badgeTone: "success" },
+  { icon: "📥", label: "Đơn hàng đến", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
+  { icon: "🏭", label: "Bán hàng trên CSR", href: "/sell-on-csr", desc: "Trở thành nhà cung cấp được chứng nhận" },
+  { icon: "🛡", label: "Bảo đảm giao dịch", href: "/info/trade-assurance", desc: "Ký quỹ thanh toán xuyên biên giới", badge: "Ký quỹ", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
-  { icon: "👤", label: "Hồ sơ cá nhân", href: "/account/profile" },
-  { icon: "🔒", label: "Bảo mật & mật khẩu", href: "/account/security" },
+  { icon: "👤", label: "Hồ sơ", href: "/account/profile" },
+  { icon: "🔒", label: "Bảo mật & Mật khẩu", href: "/account/security" },
   { icon: "💳", label: "Phương thức thanh toán", href: "/account/payment" },
   { icon: "🔔", label: "Thông báo", href: "/account/notifications", badge: "2", badgeTone: "accent" },
   { icon: "🚪", label: "Đăng xuất", href: "/logout" },
@@ -71,30 +73,30 @@ const RECENT_ORDERS: LinkRow[] = [
     icon: "🔧",
     label: "PO-202610-0091",
     href: "/buyer-center/orders/PO-202610-0091",
-    desc: "Khoá kéo YKK · Hangzhou Zip Co",
-    badge: "Đang SX",
+    desc: "Khoá kéo YKK · Hangzhou Zipper",
+    badge: "Đang sản xuất",
     badgeTone: "warning",
   },
 ];
 
 const RECENT_FAVORITES: LinkRow[] = [
   {
-    thumb: "/img/fav-oxford.jpg?v=4",
-    label: "Vải Oxford 420D chống thấm",
-    href: "/products/vai-oxford-420d",
-    desc: "Hồ Bắc Textile · $3.20/m",
+    thumb: "/img/products/mijic/mijic-20240627104150-88430.png",
+    label: "Bồn cầu thông minh nguyên khối Mijic",
+    href: "/info/partners/mijic/mijic-20240627104150-88430",
+    desc: "Mijic · Thiết bị vệ sinh",
   },
   {
-    thumb: "/img/fav-led.jpg?v=4",
-    label: "Đèn LED panel 60×60",
-    href: "/products/den-led-panel",
-    desc: "Quảng Đông Lighting · $12/cái",
+    thumb: "/img/products/bravat/f518102c.png",
+    label: "Vòi bồn tắm 5 lỗ Bravat F518102C",
+    href: "/info/partners/bravat/f518102c",
+    desc: "Bravat · Thiết bị vệ sinh Đức",
   },
   {
-    thumb: "/img/fav-powerbank.jpg?v=4",
-    label: "Pin sạc dự phòng 20000mAh",
-    href: "/products/pin-sac-20000",
-    desc: "Thâm Quyến Power · $8.50/cái",
+    thumb: "/img/products/sylvania/equinox.png",
+    label: "Đèn LED downlight Concord Equinox",
+    href: "/info/partners/sylvania/equinox",
+    desc: "Sylvania · Chiếu sáng chuyên nghiệp",
   },
 ];
 
@@ -164,7 +166,8 @@ const TONE_CLASS: Record<NonNullable<LinkRow["badgeTone"]>, string> = {
   muted: "bg-bg text-mute",
 };
 
-function LinkList({ items }: { items: LinkRow[] }) {
+async function LinkList({ items }: { items: LinkRow[] }) {
+  const td = await getTd();
   return (
     <ul className="py-2">
       {items.map((it) => (
@@ -188,19 +191,19 @@ function LinkList({ items }: { items: LinkRow[] }) {
             {/* Text body */}
             <span className="flex-1 min-w-0">
               <span className="flex items-center gap-1.5">
-                <span className="text-[12.5px] text-ink font-medium truncate">{it.label}</span>
+                <span className="text-[12.5px] text-ink font-medium truncate">{td(it.label)}</span>
                 {it.badge && (
                   <span
                     className={`flex-shrink-0 px-1.5 py-px text-[10px] font-bold rounded-sm leading-tight ${
                       TONE_CLASS[it.badgeTone || "muted"]
                     }`}
                   >
-                    {it.badge}
+                    {td(it.badge)}
                   </span>
                 )}
               </span>
               {it.desc && (
-                <span className="block text-[11px] text-mute mt-0.5 truncate">{it.desc}</span>
+                <span className="block text-[11px] text-mute mt-0.5 truncate">{td(it.desc)}</span>
               )}
             </span>
           </Link>
@@ -233,6 +236,8 @@ function SocialBtn({
 export async function TopStrip() {
   const cookieStore = await cookies();
   const isLoggedIn = !!cookieStore.get("auth_token")?.value;
+  const host = (await headers()).get("host");
+  const t = await getT();
 
   return (
     <div className="bg-brand-dark text-white text-[12px] relative z-50">
@@ -247,10 +252,10 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white flex items-center gap-1.5 cursor-pointer py-1"
             >
               <span aria-hidden="true">👋</span>
-              <span>Đăng nhập<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> Đăng ký</span></span>
+              <span>{t("topstrip.signin_greeting")}<span className="md:max-xl:hidden"> <span className="opacity-60">/</span> {t("topstrip.signup")}</span></span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Đăng nhập tài khoản" />
+              <PopHeader title={t("topstrip.signin_account_title")} />
               {/* Social login buttons */}
               <div className="px-4 pt-3 grid grid-cols-3 gap-2">
                 <SocialBtn provider="google" label="Google" icon={I_GOOGLE} />
@@ -260,7 +265,7 @@ export async function TopStrip() {
               {/* Divider */}
               <div className="px-4 py-3 flex items-center gap-3">
                 <div className="flex-1 h-px bg-line" />
-                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">Hoặc</span>
+                <span className="text-[10.5px] text-mute2 uppercase tracking-wider">{t("topstrip.or")}</span>
                 <div className="flex-1 h-px bg-line" />
               </div>
               {/* Email/password form */}
@@ -268,34 +273,34 @@ export async function TopStrip() {
                 <input
                   name="email"
                   type="email"
-                  placeholder="Email hoặc số điện thoại"
+                  placeholder={t("topstrip.email_or_phone")}
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <input
                   name="password"
                   type="password"
-                  placeholder="Mật khẩu"
+                  placeholder={t("topstrip.password")}
                   className="w-full px-2.5 py-2 border border-line rounded-sm text-[12.5px] outline-none focus:border-brand"
                 />
                 <button
                   type="submit"
                   className="w-full py-2 bg-brand text-white rounded-sm font-semibold text-[12.5px] cursor-pointer hover:bg-brand-light"
                 >
-                  Đăng nhập
+                  {t("topstrip.signin_btn")}
                 </button>
                 <div className="flex justify-between text-[11.5px] pt-1">
                   <Link href="/forgot-password" className="text-mute hover:text-brand cursor-pointer">
-                    Quên mật khẩu?
+                    {t("topstrip.forgot_password")}
                   </Link>
                   <Link href="/register/buyer" className="text-brand font-semibold cursor-pointer hover:underline">
-                    Đăng ký Người mua →
+                    {t("topstrip.register_buyer")} →
                   </Link>
                 </div>
               </form>
               <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
-                Bạn là nhà cung cấp?{" "}
+                {t("topstrip.are_you_supplier")}{" "}
                 <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
-                  Đăng ký Nhà cung cấp
+                  {t("topstrip.register_supplier")}
                 </Link>
               </div>
             </div>
@@ -309,11 +314,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BUYER}
-              <span>Người mua</span>
+              <span>{t("topstrip.buyer")}</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Khu vực người mua" more="Xem tất cả" moreHref="/buyer-center" />
+              <PopHeader title={t("topstrip.buyer_center_title")} more={t("topstrip.view_all")} moreHref="/buyer-center" />
               <LinkList items={BUYER_LINKS} />
             </div>
           </div>
@@ -325,11 +330,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_FACTORY}
-              <span>Nhà cung cấp</span>
+              <span>{t("topstrip.partner")}</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Khu vực nhà cung cấp" more="Xem tất cả" moreHref="/seller-center" />
+              <PopHeader title={t("topstrip.supplier_center_title")} more={t("topstrip.view_all")} moreHref="/seller-center" />
               <LinkList items={SELLER_LINKS} />
             </div>
           </div>
@@ -341,16 +346,16 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_PHONE}
-              <span>Ứng dụng</span>
+              <span>APP</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Tải ứng dụng Cybersilkroads" />
+              <PopHeader title={t("topstrip.app_title")} />
               <div className="p-4 flex gap-3 items-center">
                 <div className="w-[110px] h-[110px] bg-bg border border-line rounded flex items-center justify-center text-[10.5px] text-mute text-center leading-tight flex-shrink-0">
-                  QR Code
+                  {t("topstrip.qr_code")}
                   <br />
-                  scan để tải
+                  {t("topstrip.scan_to_download")}
                 </div>
                 <div className="flex-1 space-y-2">
                   <Link
@@ -360,7 +365,7 @@ export async function TopStrip() {
                     <span className="text-[14px]">🤖</span>
                     <span>
                       <b className="block font-semibold">Android</b>
-                      <small className="text-[10.5px] text-mute">Google Play</small>
+                      <small className="text-[10.5px] text-mute">{t("topstrip.android_store")}</small>
                     </span>
                   </Link>
                   <Link
@@ -370,7 +375,7 @@ export async function TopStrip() {
                     <span className="text-[14px]">🍎</span>
                     <span>
                       <b className="block font-semibold">iOS</b>
-                      <small className="text-[10.5px] text-mute">App Store</small>
+                      <small className="text-[10.5px] text-mute">{t("topstrip.ios_store")}</small>
                     </span>
                   </Link>
                 </div>
@@ -382,7 +387,7 @@ export async function TopStrip() {
         {/* RIGHT GROUP — ml-auto pushes to right edge whether on the same
             row as LEFT (desktop) or wrapped onto a new row (mobile). */}
         <div className="flex gap-4 items-center ml-auto justify-end md:max-xl:gap-2.5 max-md:gap-2 max-md:flex-wrap">
-          {/* My Cybersilkroads — only when logged in */}
+          {/* My Huayuesc — only when logged in */}
           {isLoggedIn && (
           <div className="ts-item relative">
             <Link
@@ -390,11 +395,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_USER}
-              <span>Tài khoản</span>
+              <span>{t("topstrip.account")}</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[300px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Tài khoản" />
+              <PopHeader title={t("topstrip.account_title")} />
               <LinkList items={ACCOUNT_LINKS} />
             </div>
           </div>
@@ -407,11 +412,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               {I_BOX}
-              <span>Đơn hàng</span>
+              <span>{t("topstrip.orders")}</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Đơn hàng gần đây" more="Xem tất cả" moreHref="/buyer-center/orders" />
+              <PopHeader title={t("topstrip.recent_orders_title")} more={t("topstrip.view_all")} moreHref="/buyer-center/orders" />
               <LinkList items={RECENT_ORDERS} />
             </div>
           </div>
@@ -423,11 +428,11 @@ export async function TopStrip() {
               className="ts-trigger text-white/85 hover:text-white cursor-pointer py-1 inline-flex items-center gap-1.5"
             >
               <span className="text-accent">{I_HEART}</span>
-              <span>Yêu thích</span>
+              <span>{t("topstrip.favorites")}</span>
               <span className="text-[10px] opacity-70">▾</span>
             </Link>
             <div className="ts-pop absolute right-0 top-full w-[360px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Sản phẩm đã lưu" more="Xem tất cả" moreHref="/buyer-center/favorites" />
+              <PopHeader title={t("topstrip.saved_products_title")} more={t("topstrip.view_all")} moreHref="/buyer-center/favorites" />
               <LinkList items={RECENT_FAVORITES} />
             </div>
           </div>
@@ -439,12 +444,12 @@ export async function TopStrip() {
               tabIndex={0}
             >
               {I_GLOBE}
-              <LangSwitcher variant="trigger" />
+              <LangSwitcher variant="trigger" initialHost={host} />
               <span className="text-[10px] opacity-70">▾</span>
             </span>
             <div className="ts-pop absolute right-0 top-full w-[260px] bg-paper text-ink rounded shadow-xl border border-line">
-              <PopHeader title="Ngôn ngữ & tiền tệ" />
-              <LangSwitcher variant="full" />
+              <PopHeader title={t("topstrip.lang_currency_title")} />
+              <LangSwitcher variant="full" initialHost={host} />
             </div>
           </div>
         </div>

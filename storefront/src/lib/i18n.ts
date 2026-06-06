@@ -1,92 +1,91 @@
 /**
  * i18n configuration — single source of truth for supported locales.
  *
- * Subdomain URL strategy: each locale lives at its own subdomain
- *   - vi (default) → `shop.huayuesc.local` / `huayuesc.com` (prod)
- *   - en           → `en.huayuesc.local`   / `en.huayuesc.com`
- *   - cn           → `cn.huayuesc.local`   / `cn.huayuesc.com`
+ * Domain strategy (one currency per locale, currency follows language):
+ *   - vi (default) → apex          huayuesc.vn      · VND
+ *   - en           → en.           en.huayuesc.vn   · USD
+ *   - cn           → cn.           cn.huayuesc.vn   · CNY
  *
- * `localeHref(target, currentPath, currentHost)` swaps the first DNS label
- * of the host with the target locale's subdomain. Path stays the same so
- * users land on the equivalent page in the new locale.
+ * `localeHref(target, path, host)` rebuilds the URL for `target` on the same
+ * registrable/base domain: `vi` drops the locale label (apex), `en`/`cn`
+ * prefix it. Switching language therefore also switches currency.
  *
- * To add a new locale (e.g. Thai):
- *   1) Add an entry in LOCALES below
- *   2) Caddy: route the new subdomain to storefront in Caddyfile.dev
- *   3) next.config.mjs: add the new host to allowedDevOrigins
+ * To add a locale: add it to LOCALES, route its subdomain in Caddy, and add
+ * the host to next.config.mjs allowedDevOrigins.
  */
 
 export type LocaleCode = "vi" | "en" | "cn";
 
 export type LocaleConfig = {
   code: LocaleCode;
-  label: string;       // "Tiếng Việt"
+  label: string;       // shown in its own language: "Tiếng Việt" / "English" / "中文"
   shortLabel: string;  // "VI"
   flag: string;        // 🇻🇳
   currency: string;    // "VND"
-  subdomain: string;   // "shop" (default) | "en" | "cn"
+  subdomain: string;   // "" = apex (vi) | "en" | "cn"
 };
 
 export const LOCALES: Record<LocaleCode, LocaleConfig> = {
-  vi: { code: "vi", label: "Tiếng Việt", shortLabel: "VI", flag: "🇻🇳", currency: "VND", subdomain: "shop" },
-  en: { code: "en", label: "English",    shortLabel: "EN", flag: "🇬🇧", currency: "USD", subdomain: "en"   },
-  cn: { code: "cn", label: "中文",        shortLabel: "CN", flag: "🇨🇳", currency: "CNY", subdomain: "cn"   },
+  vi: { code: "vi", label: "Tiếng Việt", shortLabel: "VI", flag: "🇻🇳", currency: "VND", subdomain: ""   },
+  en: { code: "en", label: "English",    shortLabel: "EN", flag: "🇬🇧", currency: "USD", subdomain: "en" },
+  cn: { code: "cn", label: "中文", shortLabel: "CN", flag: "🇨🇳", currency: "CNY", subdomain: "cn" },
 };
 
 export const DEFAULT_LOCALE: LocaleCode = "vi";
 export const LOCALE_LIST: LocaleConfig[] = Object.values(LOCALES);
 
-/** All recognized first-DNS-labels (so we know what to strip when swapping). */
-const KNOWN_SUBDOMAINS = new Set<string>([
-  ...LOCALE_LIST.map((l) => l.subdomain),
-  "vi", // alias for default — also recognized
-]);
+/** First-DNS labels that denote a locale prefix — stripped to find the base domain. */
+const STRIP_LABELS = new Set<string>(["cn", "en", "shop", "vi"]);
 
 /* ------------------------------------------------------------------ */
-/*  Detection helpers                                                 */
+/*  Detection                                                          */
 /* ------------------------------------------------------------------ */
 
-/** Detect locale from a host header like "en.huayuesc.local". */
+/** Detect the active locale from a host like "cn.huayuesc.vn" / "huayuesc.vn". */
 export function detectLocaleFromHost(host: string | null | undefined): LocaleCode {
   if (!host) return DEFAULT_LOCALE;
-  const sub = host.split(":")[0].split(".")[0];
-  const matched = LOCALE_LIST.find((l) => l.subdomain === sub);
-  if (matched) return matched.code;
-  if (sub === "vi") return "vi";
-  return DEFAULT_LOCALE;
+  const first = host.split(":")[0].split(".")[0].toLowerCase();
+  if (first === "cn") return "cn";
+  if (first === "en") return "en";
+  return DEFAULT_LOCALE; // apex / shop / vi / anything else → Vietnamese
 }
 
 /* ------------------------------------------------------------------ */
-/*  URL builder (subdomain mode)                                       */
+/*  URL builder                                                        */
 /* ------------------------------------------------------------------ */
 
 /**
- * Build the URL for the same `currentPath` on the target locale's subdomain.
- * Returns a protocol-relative absolute URL so the browser does a full
- * navigation (cookies are subdomain-scoped, no client-side routing here).
- *
- * Falls back to the path itself if `currentHost` is unknown (e.g. SSR
- * before hydration), the LangSwitcher upgrades the href on the client.
+ * Build the URL for `currentPath` under `target` locale on the same base
+ * domain. Protocol-relative so the browser does a full cross-host navigation
+ * (cookies are per-host). Returns the path alone if host is unknown.
  */
-export function localeHref(
-  target: LocaleCode,
-  currentPath: string,
-  currentHost?: string | null,
-): string {
-  if (!currentHost) return currentPath || "/";
+export function localeHref(target: LocaleCode, currentPath: string): string {
+  return withLocalePrefix(target, currentPath);
+}
 
-  // Split host:port → host parts + port
-  const [bareHost, port] = currentHost.split(":");
-  const parts = bareHost.split(".");
 
-  // Replace the first label if it's a known locale subdomain;
-  // otherwise prepend the target subdomain.
-  if (parts.length > 0 && KNOWN_SUBDOMAINS.has(parts[0])) {
-    parts[0] = LOCALES[target].subdomain;
-  } else {
-    parts.unshift(LOCALES[target].subdomain);
+/* ------------------------------------------------------------------ */
+/*  Path-based locale (/en, /cn ; vi = no prefix)                      */
+/* ------------------------------------------------------------------ */
+
+export function detectLocaleFromPath(pathname: string): LocaleCode | null {
+  const seg = pathname.split("/")[1]?.toLowerCase();
+  if (seg === "en") return "en";
+  if (seg === "cn") return "cn";
+  return null;
+}
+
+export function stripLocalePrefix(pathname: string): string {
+  const seg = pathname.split("/")[1]?.toLowerCase();
+  if (seg === "en" || seg === "cn") {
+    const rest = pathname.slice(seg.length + 1);
+    return rest === "" ? "/" : rest;
   }
+  return pathname || "/";
+}
 
-  const newHost = parts.join(".") + (port ? `:${port}` : "");
-  return `//${newHost}${currentPath || "/"}`;
+export function withLocalePrefix(locale: LocaleCode, path: string): string {
+  const clean = stripLocalePrefix(path);
+  if (locale === "vi") return clean;
+  return clean === "/" ? `/${locale}` : `/${locale}${clean}`;
 }

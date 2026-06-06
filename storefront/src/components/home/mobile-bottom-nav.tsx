@@ -1,14 +1,16 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
+import { getT } from "@/lib/t";
 
 const NAV_ITEMS = [
-  { icon: "🏠", label: "Trang chủ", href: "/" },
-  { icon: "🗂", label: "Danh mục", href: "#nav-categories" },
-  { icon: "📨", label: "RFQ", href: "/buying-request", primary: true },
-  { icon: "💬", label: "Tin nhắn", href: "/buyer-center" },
-  { icon: "👤", label: "Tài khoản", href: "/login" },
+  { icon: "🏠", label: "mobilenav.home", href: "/" },
+  { icon: "🗂", label: "mobilenav.categories", href: "#nav-categories" },
+  { icon: "📨", label: "mobilenav.rfq", href: "/buying-request", primary: true },
+  { icon: "💬", label: "mobilenav.messages", href: "/buyer-center" },
+  { icon: "👤", label: "mobilenav.account", href: "/login" },
 ];
 
-export function MobileBottomNav() {
+export async function MobileBottomNav() {
+  const t = await getT();
   return (
     <>
       {/* Spacer to prevent content from being hidden behind fixed nav */}
@@ -31,7 +33,7 @@ export function MobileBottomNav() {
             >
               {item.icon}
             </span>
-            <span className="text-[10px] font-medium leading-none">{item.label}</span>
+            <span className="text-[10px] font-medium leading-none">{t(item.label)}</span>
           </Link>
         ))}
       </nav>

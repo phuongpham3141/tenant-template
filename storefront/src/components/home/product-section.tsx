@@ -1,8 +1,10 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import type { Section, Badge, Product } from "@/data/home";
+import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
 
 /**
- * Product section — purely Vietnamese (no 中文 subtitle), with instant
+ * Product section — single-language labels (no secondary subtitle), with instant
  * tab switching driven by hidden radios + CSS :has() (zero JS, zero
  * navigation, no flash). The feature image stretches to the full height
  * of the products grid via items-stretch + h-full.
@@ -24,13 +26,14 @@ const badgeLabel: Record<Badge, string> = {
   new: "MỚI",
   deal: "-25%",
   oem: "OEM",
-  gold: "VÀNG",
+  gold: "GOLD",
 };
 
-function ProductCard({ p }: { p: Product }) {
+async function ProductCard({ p }: { p: Product }) {
+  const td = await getTd();
   return (
     <Link
-      href={`/product/${p.id}`}
+      href={p.href ?? `/product/${p.id}`}
       className="border border-line rounded-sm bg-white transition cursor-pointer overflow-hidden hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] hover:-translate-y-0.5 block"
     >
       <div className="aspect-square overflow-hidden relative bg-[#F5F5F5]">
@@ -41,32 +44,32 @@ function ProductCard({ p }: { p: Product }) {
                 key={b}
                 className={`text-[9px] px-1.5 py-0.5 rounded-sm font-bold tracking-wider ${badgeStyle[b]}`}
               >
-                {b === "deal" ? "-25%" : badgeLabel[b]}
+                {b === "deal" ? "-25%" : td(badgeLabel[b])}
               </span>
             ))}
           </div>
         )}
         {p.image ? (
-          <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+          <img src={p.image} alt={td(p.title)} className="w-full h-full object-cover" />
         ) : null}
       </div>
       <div className="p-2.5">
         <h4 className="text-[12.5px] font-medium leading-tight text-ink mb-1.5 min-h-[32px] line-clamp-2">
-          {p.title}
+          {td(p.title)}
         </h4>
         <div className="text-accent font-extrabold text-[15px] mb-1">
-          {p.price}
-          <small className="text-mute font-normal text-[11px]">{p.unit}</small>
+          {td(p.price)}
+          <small className="text-mute font-normal text-[11px]">{td(p.unit)}</small>
         </div>
         <div className="text-[11px] text-mute flex justify-between mb-1.5">
-          <span>{p.moq}</span>
+          <span>{td(p.moq)}</span>
           <span>★{p.rating}</span>
         </div>
         <div className="flex items-center gap-1 py-1.5 border-t border-dashed border-line text-[11px] text-mute">
           <span className="cn-flag" />
           {p.seller}
           <span className="bg-brand text-white px-1.5 py-px rounded-sm text-[9px] font-bold ml-auto">
-            {p.years}
+            {td(p.years)}
           </span>
         </div>
       </div>
@@ -74,8 +77,10 @@ function ProductCard({ p }: { p: Product }) {
   );
 }
 
-export function ProductSection({ section }: { section: Section }) {
-  // Pre-compute each tab's product list. Tab[0] = "Tất cả" → all products;
+export async function ProductSection({ section }: { section: Section }) {
+  const t = await getT();
+  const td = await getTd();
+  // Pre-compute each tab's product list. Tab[0] = "All" → all products;
   // others filter by tag matching the tab name. Cap at 8 = 2 rows × 4 cols
   // so every section has identical 2-row height (image stays compact).
   const PER_TAB = 8;
@@ -106,7 +111,7 @@ export function ProductSection({ section }: { section: Section }) {
           <span className="w-7 h-7 bg-brand text-white rounded-sm flex items-center justify-center font-bold max-md:w-6 max-md:h-6 max-md:text-[13px]">
             {section.num}
           </span>
-          <span className="truncate">{section.title}</span>
+          <span className="truncate">{td(section.title)}</span>
         </h2>
         <div
           role="tablist"
@@ -114,14 +119,14 @@ export function ProductSection({ section }: { section: Section }) {
         >
           {section.tabs.map((t, i) => (
             <label
-              key={t}
+              key={`${t}-${i}`}
               htmlFor={`ps-${section.id}-${i + 1}`}
               role="tab"
               className={`ps-tab ps-tab-${
                 i + 1
               } px-3.5 py-1.5 border-b-2 -mb-px cursor-pointer max-md:flex-shrink-0 max-md:whitespace-nowrap transition`}
             >
-              {t}
+              {td(t)}
             </label>
           ))}
         </div>
@@ -129,7 +134,7 @@ export function ProductSection({ section }: { section: Section }) {
           href={`/category/${section.categorySlug}`}
           className="text-brand text-[12.5px] flex items-center gap-1 cursor-pointer max-md:text-[11.5px] max-md:self-end"
         >
-          Xem tất cả {section.totalCount} sp →
+          {t("product.viewAll")} {section.totalCount} {t("product.products")} →
         </Link>
       </div>
 
@@ -137,33 +142,33 @@ export function ProductSection({ section }: { section: Section }) {
       <div className="bg-paper rounded-b border-l border-r border-b border-line p-4 grid grid-cols-[320px_1fr] gap-4 items-stretch md:max-xl:grid-cols-[220px_1fr] md:max-xl:gap-3 max-md:grid-cols-1 max-md:p-2.5 max-md:gap-2.5">
         {/* Feature image — h-full stretches to full grid row height (matches products) */}
         <Link
-          href={`/supplier/${section.featureSlug}`}
-          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[16/7] max-md:h-auto"
+          href={section.feature.href ?? `/supplier/${section.featureSlug}`}
+          className="relative rounded overflow-hidden bg-brand-dark text-white h-full cursor-pointer block max-md:aspect-[3/4] max-md:h-auto"
         >
           <span className="absolute top-3.5 left-3.5 bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider z-10">
-            {section.feature.badge}
+            {td(section.feature.badge)}
           </span>
           {section.feature.image ? (
             <img
               src={section.feature.image}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-65"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           ) : null}
           <div
             className="absolute inset-0 p-5 flex flex-col justify-end max-md:p-3"
             style={{
-              background: "linear-gradient(transparent 20%, rgba(0,37,87,0.9))",
+              background: "linear-gradient(transparent 45%, rgba(0,18,45,0.85))",
             }}
           >
             <h3 className="text-[22px] font-bold mb-1.5 leading-tight max-md:text-[15px] max-md:mb-1">
-              {section.feature.title}
+              {td(section.feature.title)}
             </h3>
             <p className="text-[12px] opacity-90 mb-3.5 max-md:text-[11px] max-md:mb-2 max-md:line-clamp-2">
-              {section.feature.desc}
+              {td(section.feature.desc)}
             </p>
             <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-gold text-brand-dark font-bold text-[12.5px] rounded-sm self-start max-md:px-2.5 max-md:py-1.5 max-md:text-[11.5px]">
-              {section.feature.cta}
+              {td(section.feature.cta)}
             </span>
           </div>
         </Link>
@@ -193,12 +198,12 @@ export function ProductSection({ section }: { section: Section }) {
                   >
                     {k === 0 && list.length === 0 ? (
                       <span className="text-center px-2">
-                        Chưa có sản phẩm
+                        {t("product.noProduct")}
                         <br />
-                        <small className="text-[11px]">trong tab "{tabName}"</small>
+                        <small className="text-[11px]">{t("product.inCategory")} "{td(tabName)}"</small>
                       </span>
                     ) : (
-                      <span className="opacity-60">+ Xem thêm</span>
+                      <span className="opacity-60">{t("product.viewMore")}</span>
                     )}
                   </Link>
                 ))}

@@ -1,5 +1,6 @@
-import Link from "next/link";
+import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
+import { getT } from "@/lib/t";
 
 /**
  * /info/ddp-calculator — DDP / CIF / FOB cost calculator.
@@ -11,16 +12,16 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
  */
 
 const PORTS: Record<string, { label: string; cifPerCbm: number; ddpPerCbm: number; days: string }> = {
-  haiphong: { label: "Hải Phòng (Bắc)",      cifPerCbm: 280, ddpPerCbm: 480, days: "12-15 / 18-22" },
-  catlai:   { label: "Cát Lái (TP HCM)",     cifPerCbm: 320, ddpPerCbm: 540, days: "14-17 / 20-24" },
-  danang:   { label: "Đà Nẵng (Trung)",      cifPerCbm: 350, ddpPerCbm: 580, days: "13-16 / 19-23" },
-  langson:  { label: "Đường bộ Lạng Sơn",    cifPerCbm: 220, ddpPerCbm: 420, days: "5-8 / 10-12" },
+  haiphong: { label: "info_ddp_calculator.port_haiphong",      cifPerCbm: 280, ddpPerCbm: 480, days: "12-15 / 18-22" },
+  catlai:   { label: "info_ddp_calculator.port_catlai",     cifPerCbm: 320, ddpPerCbm: 540, days: "14-17 / 20-24" },
+  danang:   { label: "info_ddp_calculator.port_danang",      cifPerCbm: 350, ddpPerCbm: 580, days: "13-16 / 19-23" },
+  langson:  { label: "info_ddp_calculator.port_langson",    cifPerCbm: 220, ddpPerCbm: 420, days: "5-8 / 10-12" },
 };
 
 const MODES: Record<string, { label: string; desc: string }> = {
-  fob: { label: "FOB Trung Quốc",            desc: "Pickup tại cảng/nhà máy. Buyer tự lo cước, thuế." },
-  cif: { label: "CIF Cảng Việt Nam",         desc: "Đã gồm cước biển + bảo hiểm tới cảng VN. Buyer tự lo thuế + nội địa." },
-  ddp: { label: "DDP Tận kho Việt Nam",      desc: "Trọn gói: cước + thuế + thông quan + nội địa. Không phát sinh." },
+  fob: { label: "info_ddp_calculator.mode_fob",            desc: "Pickup tại cảng/nhà máy. Buyer tự lo cước, thuế." },
+  cif: { label: "info_ddp_calculator.mode_cif",         desc: "Đã gồm cước biển + bảo hiểm tới cảng VN. Buyer tự lo thuế + nội địa." },
+  ddp: { label: "info_ddp_calculator.mode_ddp",      desc: "Trọn gói: cước + thuế + thông quan + nội địa. Không phát sinh." },
 };
 
 const VND_RATE = 25500; // 1 USD ≈ 25500 VND
@@ -34,6 +35,7 @@ export default async function CalcPage({
 }: {
   searchParams: Promise<{ mode?: string; port?: string; qty?: string; value?: string; productId?: string }>;
 }) {
+  const t = await getT();
   const sp = await searchParams;
   const mode = (sp.mode && MODES[sp.mode] ? sp.mode : "ddp") as keyof typeof MODES;
   const portKey = (sp.port && PORTS[sp.port] ? sp.port : "haiphong") as keyof typeof PORTS;
@@ -54,9 +56,9 @@ export default async function CalcPage({
   const total = goodsCost + oceanFreight + insurance + importDuty + vat + customsClearance + domesticDelivery + platformFee;
 
   const trail = [
-    { label: "Trang chủ", href: "/" },
-    { label: "Hỗ trợ", href: "/help" },
-    { label: "Tính cước DDP" },
+    { label: t("info_ddp_calculator.trail_home"), href: "/" },
+    { label: t("info_ddp_calculator.trail_help"), href: "/help" },
+    { label: t("info_ddp_calculator.trail_calc") },
   ];
 
   return (
@@ -66,9 +68,9 @@ export default async function CalcPage({
       <div className="max-w-[1100px] mx-auto px-4 mt-4 mb-7">
         {/* === Calculator form (always visible — easy to re-tune) === */}
         <div className="bg-paper border border-line rounded p-5 mb-4">
-          <h1 className="text-[20px] font-bold text-ink mb-1">⚡ Tính cước DDP / CIF / FOB</h1>
+          <h1 className="text-[20px] font-bold text-ink mb-1">{t("info_ddp_calculator.title")}</h1>
           <p className="text-[12.5px] text-mute mb-4">
-            Ước tính chi phí trọn gói nhập khẩu từ Trung Quốc về Việt Nam. Dùng tham khảo, báo giá chính thức gửi qua{" "}
+            {t("info_ddp_calculator.intro_pre")}{" "}
             <Link href="/buying-request" className="text-brand font-semibold cursor-pointer hover:underline">RFQ</Link>.
           </p>
 
@@ -76,42 +78,42 @@ export default async function CalcPage({
             {sp.productId && <input type="hidden" name="productId" value={sp.productId} />}
 
             <div>
-              <label className="block text-[11.5px] font-semibold text-ink mb-1">Phương thức</label>
+              <label className="block text-[11.5px] font-semibold text-ink mb-1">{t("info_ddp_calculator.label_mode")}</label>
               <select name="mode" defaultValue={mode} className="w-full px-3 py-2 border border-line rounded-sm text-[13px] bg-white outline-none focus:border-brand cursor-pointer">
                 {Object.entries(MODES).map(([k, m]) => (
-                  <option key={k} value={k}>{m.label}</option>
+                  <option key={k} value={k}>{t(m.label)}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="block text-[11.5px] font-semibold text-ink mb-1">Cảng đích</label>
+              <label className="block text-[11.5px] font-semibold text-ink mb-1">{t("info_ddp_calculator.label_port")}</label>
               <select name="port" defaultValue={portKey} className="w-full px-3 py-2 border border-line rounded-sm text-[13px] bg-white outline-none focus:border-brand cursor-pointer">
                 {Object.entries(PORTS).map(([k, p]) => (
-                  <option key={k} value={k}>{p.label}</option>
+                  <option key={k} value={k}>{t(p.label)}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label className="block text-[11.5px] font-semibold text-ink mb-1">Khối lượng (CBM)</label>
+              <label className="block text-[11.5px] font-semibold text-ink mb-1">{t("info_ddp_calculator.label_qty")}</label>
               <input
                 name="qty"
                 type="number"
                 step="0.1"
                 min="0"
                 defaultValue={qty || ""}
-                placeholder="VD: 5.5"
+                placeholder={t("info_ddp_calculator.ph_qty")}
                 className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
             </div>
             <div>
-              <label className="block text-[11.5px] font-semibold text-ink mb-1">Giá trị hàng (USD)</label>
+              <label className="block text-[11.5px] font-semibold text-ink mb-1">{t("info_ddp_calculator.label_value")}</label>
               <input
                 name="value"
                 type="number"
                 step="1"
                 min="0"
                 defaultValue={value || ""}
-                placeholder="VD: 8500"
+                placeholder={t("info_ddp_calculator.ph_value")}
                 className="w-full px-3 py-2 border border-line rounded-sm text-[13px] outline-none focus:border-brand"
               />
             </div>
@@ -120,7 +122,7 @@ export default async function CalcPage({
               type="submit"
               className="col-span-4 py-2.5 bg-brand text-white rounded-sm font-bold text-[13.5px] cursor-pointer hover:bg-brand-light max-md:col-span-2"
             >
-              Tính cước →
+              {t("info_ddp_calculator.btn_calc")}
             </button>
           </form>
         </div>
@@ -130,25 +132,25 @@ export default async function CalcPage({
           <div className="bg-paper border-2 border-brand rounded p-5 mb-4">
             <div className="flex justify-between items-baseline mb-3 pb-3 border-b border-line max-md:flex-col max-md:gap-2">
               <h2 className="text-[16px] font-bold text-ink">
-                Ước tính {MODES[mode].label} → {port.label}
+                {t("info_ddp_calculator.result_estimate")} {t(MODES[mode].label)} → {t(port.label)}
               </h2>
               <div className="text-[11.5px] text-mute">
-                {qty > 0 && <>📦 {qty} CBM · </>}{value > 0 && <>💰 ${fmt(value)} · </>}⏱ {port.days} ngày
+                {qty > 0 && <>📦 {qty} CBM · </>}{value > 0 && <>💰 ${fmt(value)} · </>}⏱ {port.days} {t("info_ddp_calculator.unit_days")}
               </div>
             </div>
 
             <table className="w-full text-[13px]">
               <tbody>
-                <Row label="Giá trị hàng (FOB)" v={goodsCost} />
-                {oceanFreight > 0 && <Row label="Cước biển + xếp dỡ" v={oceanFreight} />}
-                {insurance > 0 && <Row label="Bảo hiểm hàng hoá (0.5%)" v={insurance} />}
-                {importDuty > 0 && <Row label="Thuế nhập khẩu (~10% trung bình)" v={importDuty} />}
-                {vat > 0 && <Row label="VAT 10%" v={vat} />}
-                {customsClearance > 0 && <Row label="Phí thông quan + chứng từ" v={customsClearance} />}
-                {domesticDelivery > 0 && <Row label="Vận chuyển nội địa Việt Nam" v={domesticDelivery} />}
-                {platformFee > 0 && <Row label="Phí dịch vụ Cybersilkroads (2%)" v={platformFee} />}
+                <Row label={t("info_ddp_calculator.row_goods")} v={goodsCost} />
+                {oceanFreight > 0 && <Row label={t("info_ddp_calculator.row_ocean")} v={oceanFreight} />}
+                {insurance > 0 && <Row label={t("info_ddp_calculator.row_insurance")} v={insurance} />}
+                {importDuty > 0 && <Row label={t("info_ddp_calculator.row_duty")} v={importDuty} />}
+                {vat > 0 && <Row label={t("info_ddp_calculator.row_vat")} v={vat} />}
+                {customsClearance > 0 && <Row label={t("info_ddp_calculator.row_customs")} v={customsClearance} />}
+                {domesticDelivery > 0 && <Row label={t("info_ddp_calculator.row_domestic")} v={domesticDelivery} />}
+                {platformFee > 0 && <Row label={t("info_ddp_calculator.row_platform")} v={platformFee} />}
                 <tr className="border-t-2 border-brand">
-                  <td className="py-3 text-ink font-bold text-[14px]">Tổng cộng</td>
+                  <td className="py-3 text-ink font-bold text-[14px]">{t("info_ddp_calculator.row_total")}</td>
                   <td className="py-3 text-right text-accent font-extrabold text-[20px]">${fmt(total)}</td>
                 </tr>
                 <tr>
@@ -164,13 +166,13 @@ export default async function CalcPage({
                 href={`/buying-request${sp.productId ? `?productId=${sp.productId}` : ""}&intent=rfq&mode=${mode}&port=${portKey}&qty=${qty}&value=${value}`}
                 className="px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[13px] text-center cursor-pointer hover:opacity-90"
               >
-                🚀 Gửi RFQ với báo giá DDP chính xác
+                {t("info_ddp_calculator.cta_rfq")}
               </Link>
               <Link
                 href="/info/shipping-policy"
                 className="px-5 py-2.5 border-2 border-brand text-brand rounded-sm font-bold text-[13px] text-center cursor-pointer hover:bg-brand hover:text-white"
               >
-                📖 Chi tiết chính sách vận chuyển
+                {t("info_ddp_calculator.cta_shipping")}
               </Link>
             </div>
 
@@ -186,7 +188,7 @@ export default async function CalcPage({
               tới khi hàng đặt tại kho buyer ở Việt Nam, đã thanh toán mọi loại thuế.
             </p>
             <p>
-              Cybersilkroads quản lý DDP qua 3 cảng chính: <b className="text-ink">Hải Phòng</b> (đối với khách miền Bắc),{" "}
+              Huayuesc quản lý DDP qua 3 cảng chính: <b className="text-ink">Hải Phòng</b> (đối với khách miền Bắc),{" "}
               <b className="text-ink">Cát Lái HCM</b> (miền Nam) và <b className="text-ink">Đà Nẵng</b> (miền Trung).
               Đường bộ qua Lạng Sơn nhanh hơn (5-8 ngày) cho hàng nhỏ &lt; 3 CBM.
             </p>
@@ -198,16 +200,16 @@ export default async function CalcPage({
 
         {/* === Methodology ================================================== */}
         <div className="bg-paper border border-line rounded p-5">
-          <h3 className="text-[14px] font-bold text-ink mb-3">📋 Cách tính chi phí DDP</h3>
+          <h3 className="text-[14px] font-bold text-ink mb-3">{t("info_ddp_calculator.methodology_title")}</h3>
           <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[12.5px] text-ink max-md:grid-cols-1">
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Cước biển trung bình</span><b>$280-350/CBM</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Bảo hiểm hàng hoá</span><b>0.5% giá trị</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Thuế nhập khẩu (NK)</span><b>0-30% theo HS</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">VAT</span><b>10% (giá trị + NK)</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Phí thông quan</span><b>$80-150 / lô</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Vận chuyển nội địa</span><b>$60-120/CBM</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Phí Cybersilkroads</span><b>2% (trung gian + tranh chấp)</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">Tổng overhead DDP</span><b className="text-accent">+25-35% giá FOB</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_ocean")}</span><b>$280-350/CBM</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_insurance")}</span><b>0.5% giá trị</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_duty")}</span><b>0-30% theo HS</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_vat")}</span><b>10% (giá trị + NK)</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_customs")}</span><b>$80-150 / lô</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_domestic")}</span><b>$60-120/CBM</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_platform")}</span><b>2% (trung gian + tranh chấp)</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_overhead")}</span><b className="text-accent">+25-35% giá FOB</b></div>
           </div>
         </div>
       </div>
@@ -225,6 +227,6 @@ function Row({ label, v }: { label: string; v: number }) {
 }
 
 export const metadata = {
-  title: "Tính cước DDP / CIF / FOB — Cybersilkroads",
+  title: "Tính cước DDP / CIF / FOB — Huayuesc",
   description: "Ước tính trọn gói chi phí nhập khẩu từ Trung Quốc về Việt Nam: FOB, CIF, DDP. Tính nhanh theo CBM + giá trị đơn.",
 };
