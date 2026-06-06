@@ -4,6 +4,8 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { PARTNERS, getPartner, productSlug, type PartnerProduct } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 export function generateStaticParams() {
   return PARTNERS.map((p) => ({ slug: p.slug }));
@@ -16,10 +18,11 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const p = getPartner(slug);
-  if (!p) return { title: "Đối tác — Huayuesc" };
+  if (!p) return { title: "Huayuesc" };
+  const td = await getTd();
   return {
-    title: `${p.name} — Đối tác sản xuất Huayuesc`,
-    description: p.introduction.slice(0, 160),
+    title: `${td(p.name)} · Huayuesc`,
+    description: td(p.introduction).slice(0, 160),
   };
 }
 
@@ -38,8 +41,10 @@ export default async function PartnerDetailPage({
 }) {
   const t = await getT();
   const { slug } = await params;
-  const partner = getPartner(slug);
-  if (!partner) return notFound();
+  const raw = getPartner(slug);
+  if (!raw) return notFound();
+  const td = await getTd();
+  const partner = tdDeep(raw, td);
 
   const category = NAV_CATEGORIES.find((c) => c.slug === partner.category);
   const trail = [
@@ -80,7 +85,7 @@ export default async function PartnerDetailPage({
                   className="inline-flex items-center gap-1.5 bg-white/15 hover:bg-white/25 text-white text-[12px] px-3 py-1 rounded-full mb-2 transition-colors"
                 >
                   <span>{category.icon}</span>
-                  <span>{category.name}</span>
+                  <span>{td(category.name)}</span>
                 </Link>
               )}
               <h1 className="text-[28px] font-bold mb-2 leading-tight max-md:text-[22px]">
@@ -301,13 +306,14 @@ function FactoryField({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ProductCard({
+async function ProductCard({
   product,
   partnerSlug,
 }: {
   product: PartnerProduct;
   partnerSlug: string;
 }) {
+  const td = await getTd();
   const detailHref = `/info/partners/${partnerSlug}/${productSlug(product)}`;
   return (
     <div className="group border border-line rounded overflow-hidden hover:border-brand hover:shadow-md transition flex flex-col bg-white">
@@ -329,12 +335,12 @@ function ProductCard({
           <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-bg to-[#E0E5EC] text-mute2">
             <span className="text-[44px] opacity-60">{guessIcon(product.name)}</span>
             <span className="text-[10.5px] text-mute font-semibold tracking-wider">
-              {product.model}
+              {td(product.model)}
             </span>
           </div>
         )}
         <span className="absolute top-2 left-2 bg-brand-dark text-white text-[10px] font-bold px-2 py-0.5 rounded-sm tracking-wider">
-          {product.model}
+          {td(product.model)}
         </span>
       </Link>
 
@@ -358,7 +364,7 @@ function ProductCard({
             href={detailHref}
             className="text-[11.5px] text-brand font-semibold hover:underline inline-flex items-center gap-1"
           >
-            Xem chi tiết →
+            {td("Xem chi tiết →")}
           </Link>
           <Link
             href={`/buying-request?partner=${partnerSlug}&model=${encodeURIComponent(product.model)}`}
@@ -372,7 +378,7 @@ function ProductCard({
   );
 }
 
-function RelatedPartnersSection({
+async function RelatedPartnersSection({
   currentSlug,
   category,
 }: {
@@ -384,12 +390,13 @@ function RelatedPartnersSection({
   );
   if (others.length === 0) return null;
   const cat = NAV_CATEGORIES.find((c) => c.slug === category);
+  const td = await getTd();
 
   return (
     <section className="mt-8">
       <h2 className="text-[16px] font-bold text-ink mb-3 flex items-center gap-2">
         <span className="w-1 h-4 bg-brand rounded-sm" />
-        Đối tác khác trong ngành {cat?.icon} {cat?.name}
+        {td("Đối tác khác trong ngành")} {cat?.icon} {cat?.name && td(cat.name)}
       </h2>
       <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-md:gap-3">
         {others.map((p) => (
@@ -403,7 +410,7 @@ function RelatedPartnersSection({
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={p.logo}
-                  alt={p.name}
+                  alt={td(p.name)}
                   className="max-w-full max-h-full object-contain p-1"
                   loading="lazy"
                   referrerPolicy="no-referrer"
@@ -414,10 +421,10 @@ function RelatedPartnersSection({
             </div>
             <div className="min-w-0">
               <h3 className="text-[13.5px] font-bold text-ink group-hover:text-brand leading-tight truncate">
-                {p.name}
+                {td(p.name)}
               </h3>
               <p className="text-[11px] text-mute truncate">
-                {p.products.length} SKU · {p.factory.location.split(",")[0]}
+                {p.products.length} SKU · {td(p.factory.location).split(",")[0]}
               </p>
             </div>
           </Link>

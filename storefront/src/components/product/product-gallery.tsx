@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 type Props = {
   images: string[];
   alt: string;
+  zoomLabel?: string;
 };
 
 /**
@@ -15,7 +16,7 @@ type Props = {
  * - Thumbnail row dưới đổi ảnh chính (highlight active)
  * - Trong lightbox: keyboard ← → Esc, click ngoài để đóng
  */
-export function ProductGallery({ images, alt }: Props) {
+export function ProductGallery({ images, alt, zoomLabel }: Props) {
   const safe = images.filter(Boolean);
   const [active, setActive] = useState(0);
   const [lightbox, setLightbox] = useState(false);
@@ -71,7 +72,7 @@ export function ProductGallery({ images, alt }: Props) {
           referrerPolicy="no-referrer"
         />
         <span className="absolute bottom-2 right-2 bg-black/55 text-white text-[11px] px-2 py-1 rounded backdrop-blur-sm flex items-center gap-1">
-          🔍 Bấm để phóng to
+          🔍 {zoomLabel ?? "Bấm để phóng to"}
         </span>
         {safe.length > 1 && (
           <span className="absolute top-2 right-2 bg-black/55 text-white text-[11px] px-2 py-0.5 rounded backdrop-blur-sm">

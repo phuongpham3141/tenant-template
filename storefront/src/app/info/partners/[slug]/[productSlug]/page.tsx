@@ -11,6 +11,8 @@ import {
 } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 import { getSeriesMeta as getKitoMeta } from "@/data/catalogs/kito-meta";
 import { getSeriesMeta as getMideaMeta } from "@/data/catalogs/midea-meta";
 import { getSeriesMeta as getToshibaMeta } from "@/data/catalogs/toshiba-meta";
@@ -84,14 +86,17 @@ export async function generateMetadata({
 }) {
   const { slug, productSlug: ps } = await params;
   const hit = getProduct(slug, ps);
-  if (!hit) return { title: "Sản phẩm — Huayue" };
-  const { partner, product } = hit;
+  if (!hit) return { title: "Huayuesc" };
+  const { partner: rp, product: rpr } = hit;
+  const td = await getTd();
+  const partner = tdDeep(rp, td);
+  const product = tdDeep(rpr, td);
   return {
-    title: `${product.name} (${product.model}) — ${partner.name} · Huayuesc`,
+    title: `${product.name} (${td(product.model)}) — ${partner.name} · Huayuesc`,
     description:
       product.longDesc?.slice(0, 160) ??
       product.desc?.slice(0, 160) ??
-      `${product.name} ${product.model} — ${partner.name}`,
+      `${product.name} ${td(product.model)} — ${partner.name}`,
   };
 }
 
@@ -103,11 +108,14 @@ export default async function ProductDetailPage({
   const { slug, productSlug: ps } = await params;
   const hit = getProduct(slug, ps);
   if (!hit) return notFound();
-  const { partner, product } = hit;
+  const { partner: rawPartner, product: rawProduct } = hit;
   const t = await getT();
+  const td = await getTd();
+  const partner = tdDeep(rawPartner, td);
+  const product = tdDeep(rawProduct, td);
   const category = NAV_CATEGORIES.find((c) => c.slug === partner.category);
   const lookup = META_LOOKUP[partner.slug];
-  const meta = lookup ? lookup(product.seriesOriginal) : undefined;
+  const meta = lookup ? tdDeep(lookup(rawProduct.seriesOriginal), td) : undefined;
 
   const trail = [
     { label: t("info_partners_slug_productSlug.breadcrumb_home"), href: "/" },
@@ -139,7 +147,7 @@ export default async function ProductDetailPage({
         {/* ════ 1. HERO: Gallery + Key info ═══════════════════════════ */}
         <section className="grid grid-cols-[1.1fr_1fr] gap-7 mb-7 max-md:grid-cols-1 max-md:gap-5">
           <div>
-            <ProductGallery images={gallery} alt={`${product.name} (${product.model})`} />
+            <ProductGallery images={gallery} alt={`${product.name} (${td(product.model)})`} zoomLabel={td("Bấm để phóng to")} />
           </div>
 
           <div>
@@ -160,7 +168,7 @@ export default async function ProductDetailPage({
               <div className="bg-bg border border-line rounded px-3 py-1.5 inline-flex items-center gap-2">
                 <span className="text-[11px] text-mute">{t("info_partners_slug_productSlug.sku_label")}</span>
                 <code className="text-[13px] font-bold text-brand">
-                  {product.model}
+                  {td(product.model)}
                 </code>
               </div>
               <span className="inline-flex items-center gap-1 bg-[#ECFDF5] text-[#065F46] rounded-full px-2.5 py-1 text-[11.5px] font-semibold">
@@ -187,7 +195,7 @@ export default async function ProductDetailPage({
               )}
               <SpecCard icon="🏭" label={t("info_partners_slug_productSlug.spec_manufacturer")} value={partner.name} />
               {category && (
-                <SpecCard icon={category.icon} label={t("info_partners_slug_productSlug.spec_industry")} value={category.name} />
+                <SpecCard icon={category.icon} label={t("info_partners_slug_productSlug.spec_industry")} value={td(category.name)} />
               )}
             </div>
 
@@ -216,9 +224,9 @@ export default async function ProductDetailPage({
             {/* Trust signals strip */}
             <div className="mt-5 pt-4 border-t border-line">
               <div className="grid grid-cols-3 gap-2 text-center text-[11.5px] text-mute">
-                <TrustSignal icon="🛡️" label={t("info_partners_slug_productSlug.trust_warranty")} value="25 năm" />
-                <TrustSignal icon="✅" label={t("info_partners_slug_productSlug.trust_factory_audit")} value="2 lần/năm tại chỗ" />
-                <TrustSignal icon="🌍" label={t("info_partners_slug_productSlug.trust_export")} value="60+ quốc gia" />
+                <TrustSignal icon="🛡️" label={t("info_partners_slug_productSlug.trust_warranty")} value={td("25 năm")} />
+                <TrustSignal icon="✅" label={t("info_partners_slug_productSlug.trust_factory_audit")} value={td("2 lần/năm tại chỗ")} />
+                <TrustSignal icon="🌍" label={t("info_partners_slug_productSlug.trust_export")} value={td("60+ quốc gia")} />
               </div>
             </div>
           </div>
@@ -570,7 +578,7 @@ export default async function ProductDetailPage({
               href={rfqHref}
               className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-bold rounded px-6 py-3 hover:bg-white hover:text-brand transition-colors text-[14px]"
             >
-              {t("info_partners_slug_productSlug.cta_footer_btn_prefix")}{product.model}
+              {t("info_partners_slug_productSlug.cta_footer_btn_prefix")}{td(product.model)}
             </Link>
             <a
               href="https://zalo.me/0912345678"
@@ -636,7 +644,7 @@ function TrustSignal({
   );
 }
 
-function RelatedProducts({
+async function RelatedProducts({
   partner,
   related,
   seriesName,
@@ -645,12 +653,13 @@ function RelatedProducts({
   related: PartnerProduct[];
   seriesName?: string;
 }) {
+  const td = await getTd();
   return (
     <section className="mt-2">
       <div className="flex items-center justify-between mb-4 max-md:flex-col max-md:items-start max-md:gap-2">
         <h2 className="text-[18px] font-bold text-ink flex items-center gap-2 max-md:text-[16px]">
           <span className="w-1 h-5 bg-brand rounded-sm" />
-          Các mã SKU khác trong dòng sản phẩm này
+          {td("Các mã SKU khác trong dòng sản phẩm này")}
           {seriesName && (
             <span className="text-[13px] text-mute font-normal ml-1">
               · {seriesName}
@@ -661,7 +670,7 @@ function RelatedProducts({
           href={`/info/partners/${partner.slug}`}
           className="text-brand text-[12.5px] font-semibold hover:underline"
         >
-          Xem toàn bộ danh mục →
+          {td("Xem toàn bộ danh mục →")}
         </Link>
       </div>
       <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">

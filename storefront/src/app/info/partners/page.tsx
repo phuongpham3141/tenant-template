@@ -3,12 +3,18 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 import { PARTNERS, partnersByCategory, type PartnerBrand } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
-export const metadata = {
-  title: "Đối tác sản xuất — Huayuesc",
-  description:
-    "Danh sách 24 thương hiệu đối tác chính thức của Huayue Chuỗi Cung Ứng tại Việt Nam — đã thẩm định nhà máy, có catalog phân phối ưu đãi cho thị trường Việt.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Đối tác sản xuất") + " · Huayuesc",
+    description: td(
+      "Danh sách 24 thương hiệu đối tác chính thức của Huayue Chuỗi Cung Ứng tại Việt Nam — đã thẩm định nhà máy, có catalog phân phối ưu đãi cho thị trường Việt."
+    ),
+  };
+}
 
 /**
  * Trang index Đối tác sản xuất — gom 24 brand đối tác theo 8 root
@@ -17,6 +23,7 @@ export const metadata = {
  */
 export default async function PartnersIndexPage() {
   const t = await getT();
+  const td = await getTd();
   const trail = [
     { label: t("info_partners.breadcrumb_home"), href: "/" },
     { label: t("info_partners.breadcrumb_self") },
@@ -68,7 +75,7 @@ export default async function PartnersIndexPage() {
             <CategorySection
               key={cat.slug}
               icon={cat.icon}
-              name={cat.name}
+              name={td(cat.name)}
               partners={partners}
             />
           );
@@ -102,7 +109,7 @@ export default async function PartnersIndexPage() {
                     className="inline-flex items-center gap-1.5 bg-paper border border-line rounded-full px-3 py-1 text-[12px] text-ink"
                   >
                     <span>{c.icon}</span>
-                    <span>{c.name}</span>
+                    <span>{td(c.name)}</span>
                   </span>
                 ))}
               </div>
@@ -168,8 +175,10 @@ async function CategorySection({
   );
 }
 
-async function PartnerCard({ partner }: { partner: PartnerBrand }) {
+async function PartnerCard({ partner: rawP }: { partner: PartnerBrand }) {
   const t = await getT();
+  const td = await getTd();
+  const partner = tdDeep(rawP, td);
   return (
     <Link
       href={`/info/partners/${partner.slug}`}

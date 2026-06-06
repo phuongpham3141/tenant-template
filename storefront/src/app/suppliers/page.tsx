@@ -4,12 +4,17 @@ import { PARTNERS, type PartnerBrand } from "@/data/partners";
 import { NAV_CATEGORIES } from "@/data/home";
 import { getT } from "@/lib/t";
 import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
-export const metadata = {
-  title: "Danh bạ nhà cung cấp — Huayuesc",
-  description:
-    "Danh bạ nhà máy + thương hiệu Trung – Việt mà Huayue đã thẩm định: vị trí nhà máy, năm thành lập, quy mô, số mã SKU và mã chứng khoán nếu niêm yết.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Danh bạ nhà cung cấp") + " · Huayuesc",
+    description: td(
+      "Danh bạ nhà máy + thương hiệu Trung – Việt mà Huayue đã thẩm định: vị trí nhà máy, năm thành lập, quy mô, số mã SKU và mã chứng khoán nếu niêm yết."
+    ),
+  };
+}
 
 type View = "cards" | "table";
 
@@ -45,6 +50,7 @@ export default async function SuppliersPage({
 
   const totalSku = list.reduce((n, p) => n + p.products.length, 0);
   const listed = list.filter((p) => p.listed).length;
+  const tList = list.map((p) => tdDeep(p, td));
 
   return (
     <>
@@ -217,9 +223,9 @@ export default async function SuppliersPage({
               .
             </div>
           ) : view === "table" ? (
-            <TableView list={list} />
+            <TableView list={tList} />
           ) : (
-            <CardsView list={list} />
+            <CardsView list={tList} />
           )}
 
           {/* ── Pending sites ──────────────────────────────────────── */}
@@ -251,7 +257,7 @@ export default async function SuppliersPage({
               </li>
               <li>
                 ·{" "}
-                <b>Quảng Cương (Gise-Gnm)</b> ·{" "}
+                <b>{td("Quảng Cương (Gise-Gnm)")}</b> ·{" "}
                 <a
                   href="http://www.gise-gnm.com/"
                   className="text-brand hover:underline break-all"
@@ -423,10 +429,10 @@ async function SupplierCard({ partner }: { partner: PartnerBrand }) {
       {/* Badges */}
       <div className="flex gap-1 mb-2.5 flex-wrap">
         <span className="bg-gradient-to-r from-[#A5F3FC] to-[#38BDF8] text-brand-dark text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
-          💎 KIM CƯƠNG
+          💎 {td("KIM CƯƠNG")}
         </span>
         <span className="bg-success text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
-          Đối tác
+          {td("Đối tác")}
         </span>
         {years && (
           <span className="bg-brand text-white text-[10px] px-1.5 py-0.5 rounded-sm font-bold">
@@ -470,23 +476,24 @@ function CnFlag() {
 
 /* ─── Table view ──────────────────────────────────────────────────── */
 
-function TableView({ list }: { list: PartnerBrand[] }) {
+async function TableView({ list }: { list: PartnerBrand[] }) {
+  const td = await getTd();
   return (
     <div className="bg-paper border border-line rounded overflow-hidden">
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full text-[13px]">
           <thead className="bg-bg border-b border-line">
             <tr className="text-left text-mute text-[12px]">
-              <th className="px-4 py-2.5 font-semibold">Thương hiệu</th>
-              <th className="px-3 py-2.5 font-semibold">Ngành</th>
-              <th className="px-3 py-2.5 font-semibold">Vị trí nhà máy</th>
+              <th className="px-4 py-2.5 font-semibold">{td("Thương hiệu")}</th>
+              <th className="px-3 py-2.5 font-semibold">{td("Ngành")}</th>
+              <th className="px-3 py-2.5 font-semibold">{td("Vị trí nhà máy")}</th>
               <th className="px-3 py-2.5 font-semibold text-right">
-                Thành lập
+                {td("Thành lập")}
               </th>
-              <th className="px-3 py-2.5 font-semibold">Quy mô / Năng lực</th>
+              <th className="px-3 py-2.5 font-semibold">{td("Quy mô / Năng lực")}</th>
               <th className="px-3 py-2.5 font-semibold text-right">SKU</th>
-              <th className="px-3 py-2.5 font-semibold">Niêm yết</th>
-              <th className="px-3 py-2.5 font-semibold text-right">Chi tiết</th>
+              <th className="px-3 py-2.5 font-semibold">{td("Niêm yết")}</th>
+              <th className="px-3 py-2.5 font-semibold text-right">{td("Chi tiết")}</th>
             </tr>
           </thead>
           <tbody>
@@ -572,7 +579,7 @@ async function SupplierRow({ partner }: { partner: PartnerBrand }) {
           href={`/info/partners/${partner.slug}`}
           className="inline-flex items-center gap-1 text-brand font-semibold text-[12.5px] hover:underline"
         >
-          Xem →
+          {td("Xem →")}
         </Link>
       </td>
     </tr>

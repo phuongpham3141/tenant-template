@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const KEY = fs.readFileSync('/tmp/.dskey', 'utf8').trim();
 const SRC = JSON.parse(fs.readFileSync('/work/scripts/gen-out/data-vi.json', 'utf8'));
 const keys = Object.keys(SRC);
-const BATCH = 80;
+const BATCH = 8;
 
 async function call(targetName, items) {
   const sys = `Translate each Vietnamese building-materials/e-commerce term into ${targetName}. Keep concise, industry-correct. Keep brand names, standard codes (e.g. JIS SS400, EN S275JR, ASTM A36, ISO...), dimensions/units (mm, kg, m/s, °) UNCHANGED. Return ONLY a JSON object mapping each input string to its translation. No commentary.`;
