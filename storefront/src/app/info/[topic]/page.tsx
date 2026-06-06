@@ -1,5 +1,7 @@
 import Link from "@/components/i18n-link";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 import { Fragment, type ReactNode } from "react";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 
@@ -1311,7 +1313,8 @@ export default async function InfoPage({
   params: Promise<{ topic: string }>;
 }) {
   const { topic } = await params;
-  const t = getTopic(topic);
+  const td = await getTd();
+  const t = tdDeep(getTopic(topic), td);
   const tr = await getT();
 
   // Pair section titles with paragraphs (1:1, with title=null meaning no header)
@@ -1519,7 +1522,8 @@ export default async function InfoPage({
 
 export async function generateMetadata({ params }: { params: Promise<{ topic: string }> }) {
   const { topic } = await params;
-  const t = getTopic(topic);
+  const td = await getTd();
+  const t = tdDeep(getTopic(topic), td);
   const tr = await getT();
   return { title: `${t.title} — Huayuesc` };
 }

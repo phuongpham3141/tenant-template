@@ -1,7 +1,9 @@
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
-import { ARTICLES, CATEGORIES, type BlogCategory } from "@/lib/blog";
+import { ARTICLES as ARTICLES_SRC, CATEGORIES as CATEGORIES_SRC, type BlogCategory } from "@/lib/blog";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 /**
  * Blog index — /info/industry-news.
@@ -17,7 +19,7 @@ import { getT } from "@/lib/t";
 
 function fmtDate(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString("vi-VN", { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" });
 }
 
 export default async function BlogIndexPage({
@@ -26,6 +28,9 @@ export default async function BlogIndexPage({
   searchParams: Promise<{ cat?: string }>;
 }) {
   const t = await getT();
+  const td = await getTd();
+  const ARTICLES = tdDeep(ARTICLES_SRC, td);
+  const CATEGORIES = tdDeep(CATEGORIES_SRC, td);
   const sp = await searchParams;
   const activeCat = sp.cat as BlogCategory | undefined;
 
@@ -302,8 +307,10 @@ export default async function BlogIndexPage({
   );
 }
 
-export const metadata = {
-  title: "Tin tức ngành sourcing — Huayuesc Blog",
-  description:
-    "Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Huayuesc.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Tin tức ngành sourcing — Huayuesc Blog"),
+    description: td("Phân tích xu hướng giá, hội chợ, chính sách thuế, case study buyer Việt Nam và profile NCC Trung Quốc. Cập nhật mỗi tuần bởi đội Huayuesc."),
+  };
+}

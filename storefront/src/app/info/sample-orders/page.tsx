@@ -1,15 +1,17 @@
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
-const HERO_STATS = [
+const HERO_STATS_RAW = [
   { n: "8-12", l: "info_sample_orders.hero_stat_l_1", icon: "⏱" },
   { n: "$30-200", l: "info_sample_orders.hero_stat_l_2", icon: "💰" },
   { n: "100%", l: "info_sample_orders.hero_stat_l_3", icon: "↩" },
   { n: "4%", l: "info_sample_orders.hero_stat_l_4", icon: "📉" },
 ];
 
-const WHY_REASONS = [
+const WHY_REASONS_RAW = [
   {
     icon: "🤲",
     title: "info_sample_orders.why_title_1",
@@ -42,7 +44,7 @@ const WHY_REASONS = [
   },
 ];
 
-const PROCESS_STEPS = [
+const PROCESS_STEPS_RAW = [
   {
     n: "01",
     icon: "🔍",
@@ -127,7 +129,7 @@ const PROCESS_STEPS = [
   },
 ];
 
-const SAMPLE_TYPES = [
+const SAMPLE_TYPES_RAW = [
   {
     type: "info_sample_orders.sample_type_1",
     color: "#0E7490",
@@ -163,7 +165,7 @@ const SAMPLE_TYPES = [
   },
 ];
 
-const COST_TABLE = [
+const COST_TABLE_RAW = [
   { item: "info_sample_orders.cost_item_1", range: "$30-100", note: "info_sample_orders.cost_note_1" },
   { item: "info_sample_orders.cost_item_2", range: "$50-150", note: "info_sample_orders.cost_note_2" },
   { item: "info_sample_orders.cost_item_3", range: "$80-300", note: "info_sample_orders.cost_note_3" },
@@ -174,7 +176,7 @@ const COST_TABLE = [
   { item: "info_sample_orders.cost_item_8", range: "$0", note: "info_sample_orders.cost_note_8" },
 ];
 
-const PRE_MOQ_CHECKLIST = [
+const PRE_MOQ_CHECKLIST_RAW = [
   {
     category: "info_sample_orders.checklist_cat_1",
     icon: "🧪",
@@ -227,7 +229,7 @@ const PRE_MOQ_CHECKLIST = [
   },
 ];
 
-const SAMPLE_SUB_FEATURES = [
+const SAMPLE_SUB_FEATURES_RAW = [
   { icon: "♾", title: "info_sample_orders.subfeat_title_1", desc: "info_sample_orders.subfeat_desc_1" },
   { icon: "🚀", title: "info_sample_orders.subfeat_title_2", desc: "info_sample_orders.subfeat_desc_2" },
   { icon: "🤝", title: "info_sample_orders.subfeat_title_3", desc: "info_sample_orders.subfeat_desc_3" },
@@ -236,7 +238,7 @@ const SAMPLE_SUB_FEATURES = [
   { icon: "↩", title: "info_sample_orders.subfeat_title_6", desc: "info_sample_orders.subfeat_desc_6" },
 ];
 
-const PITFALLS = [
+const PITFALLS_RAW = [
   {
     icon: "🚫",
     title: "info_sample_orders.pitfall_title_1",
@@ -269,7 +271,7 @@ const PITFALLS = [
   },
 ];
 
-const FAQ = [
+const FAQ_RAW = [
   {
     q: "info_sample_orders.faq_q_1",
     a: "info_sample_orders.faq_a_1",
@@ -317,6 +319,16 @@ async function StatTile({ n, l, icon }: { n: string; l: string; icon: string }) 
 
 export default async function DatMauPage() {
   const t = await getT();
+  const td = await getTd();
+  const HERO_STATS = tdDeep(HERO_STATS_RAW, td);
+  const WHY_REASONS = tdDeep(WHY_REASONS_RAW, td);
+  const PROCESS_STEPS = tdDeep(PROCESS_STEPS_RAW, td);
+  const SAMPLE_TYPES = tdDeep(SAMPLE_TYPES_RAW, td);
+  const COST_TABLE = tdDeep(COST_TABLE_RAW, td);
+  const PRE_MOQ_CHECKLIST = tdDeep(PRE_MOQ_CHECKLIST_RAW, td);
+  const SAMPLE_SUB_FEATURES = tdDeep(SAMPLE_SUB_FEATURES_RAW, td);
+  const PITFALLS = tdDeep(PITFALLS_RAW, td);
+  const FAQ = tdDeep(FAQ_RAW, td);
   return (
     <>
       <Breadcrumb
@@ -636,7 +648,7 @@ export default async function DatMauPage() {
             </div>
             <div className="mt-4 flex justify-center">
               <a
-                href="mailto:sales@huayuesc.vn?subject=Gói đăng ký mẫu"
+                href={`mailto:sales@huayuesc.vn?subject=${encodeURIComponent(td("Gói đăng ký mẫu"))}`}
                 className="inline-block px-6 py-3 bg-brand text-white rounded-sm font-bold text-[14px] hover:bg-brand-light"
               >
                 🚀 {t("info_sample_orders.sub_cta")}
@@ -730,7 +742,10 @@ export default async function DatMauPage() {
   );
 }
 
-export const metadata = {
-  title: "Đặt mẫu (Sample Order) — Huayuesc",
-  description: "Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. văn phòng Huayue Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Đặt mẫu (Sample Order) — Huayuesc").split("— Huayuesc").join("· Huayuesc"),
+    description: td("Quy trình 6 bước đặt sample từ NCC Trung Quốc về Việt Nam. văn phòng Huayue Quảng Châu gom shipping tiết kiệm 50-60% cước, thời gian giao 8-12 ngày, hoàn 100% phí khi đặt MOQ. 22%→4% giảm rủi ro khiếu nại nhờ sample."),
+  };
+}

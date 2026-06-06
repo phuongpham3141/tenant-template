@@ -3,6 +3,8 @@ import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { COMPANY } from "@/data/company";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────
 
@@ -170,6 +172,8 @@ const PROMOTION_IMAGES = [
 
 export default async function AboutUsPage() {
   const t = await getT();
+  const td = await getTd();
+  const company = tdDeep(COMPANY, td);
   return (
     <>
       <Breadcrumb
@@ -203,27 +207,27 @@ export default async function AboutUsPage() {
           <div className="grid grid-cols-[1fr_auto] gap-8 items-end max-md:grid-cols-1 max-md:gap-5">
             <div>
               <h1 className="text-[38px] font-extrabold leading-tight mb-3 max-md:text-[24px]">
-                {COMPANY.brandShort}{" "}
-                <span className="text-gold">{COMPANY.brandCn}</span>
+                {company.brandShort}{" "}
+                <span className="text-gold">{company.brandCn}</span>
               </h1>
               <p className="text-[18px] font-bold leading-snug mb-2 text-gold max-md:text-[15px]">
-                {COMPANY.visionCn}
+                {company.visionCn}
               </p>
               <p className="text-[14.5px] leading-relaxed opacity-95 max-w-[760px] italic max-md:text-[12.5px]">
-                {COMPANY.visionVi}
+                {company.visionVi}
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-5 py-4 text-center min-w-[200px] max-md:w-full">
               <div className="text-[11px] uppercase tracking-wider opacity-80 mb-1">
-                Tên pháp lý
+                {td("Tên pháp lý")}
               </div>
               <b className="block text-[14px] leading-tight text-gold mb-2">
-                CT TNHH Chuỗi Cung Ứng Huayue Việt Nam
+                {td("CT TNHH Chuỗi Cung Ứng Huayue Việt Nam")}
               </b>
               <div className="text-[11.5px] opacity-90 leading-snug">
-                MST: <b>{COMPANY.taxId}</b>
+                MST: <b>{company.taxId}</b>
                 <br />
-                Domain: <b>{COMPANY.domain}</b>
+                Domain: <b>{company.domain}</b>
               </div>
             </div>
           </div>
@@ -253,7 +257,7 @@ export default async function AboutUsPage() {
             <div className="absolute -bottom-4 -right-4 bg-brand text-white px-4 py-3 rounded-lg shadow-lg max-md:relative max-md:-bottom-0 max-md:-right-0 max-md:mt-3 max-md:inline-block">
               <span className="text-[10.5px] uppercase tracking-wider opacity-80">{t("info_about_us.intro_core_msg_label")}</span>
               <b className="block text-gold text-[14px] mt-0.5">
-                {COMPANY.taglineCn}
+                {company.taglineCn}
               </b>
             </div>
           </div>
@@ -547,18 +551,18 @@ export default async function AboutUsPage() {
                   <span className="text-[28px]">🇻🇳</span>
                   <div>
                     <small className="text-[10.5px] uppercase tracking-wider opacity-75">{t("info_about_us.contact_vn_label")}</small>
-                    <b className="block text-[15px] leading-tight">{COMPANY.legalNameVi}</b>
+                    <b className="block text-[15px] leading-tight">{company.legalNameVi}</b>
                   </div>
                 </div>
                 <p className="text-[12.5px] opacity-90 leading-relaxed mb-2">
-                  {COMPANY.offices.vn.addressVi}
+                  {company.offices.vn.addressVi}
                 </p>
                 <p className="text-[11.5px] opacity-70 italic">
-                  {COMPANY.offices.vn.addressCn}
+                  {company.offices.vn.addressCn}
                 </p>
                 <div className="mt-3 pt-3 border-t border-white/15 text-[12px] opacity-90 space-y-1">
-                  <div><b>MST:</b> {COMPANY.taxId}</div>
-                  <div><b>Domain:</b> <a href={COMPANY.websiteUrl} className="text-gold underline hover:opacity-80">{COMPANY.domain}</a></div>
+                  <div><b>MST:</b> {company.taxId}</div>
+                  <div><b>Domain:</b> <a href={company.websiteUrl} className="text-gold underline hover:opacity-80">{company.domain}</a></div>
                 </div>
               </div>
 
@@ -572,10 +576,10 @@ export default async function AboutUsPage() {
                   </div>
                 </div>
                 <p className="text-[12.5px] opacity-90 leading-relaxed mb-2">
-                  {COMPANY.offices.cn.addressVi}
+                  {company.offices.cn.addressVi}
                 </p>
                 <p className="text-[11.5px] opacity-70 italic">
-                  {COMPANY.offices.cn.addressCn}
+                  {company.offices.cn.addressCn}
                 </p>
                 <div className="mt-3 pt-3 border-t border-white/15 text-[12px] opacity-90">
                   <b>{t("info_about_us.contact_role_a")}</b> {t("info_about_us.contact_role_b")}
@@ -587,7 +591,7 @@ export default async function AboutUsPage() {
             <div className="px-7 py-5 bg-black/30 border-t border-white/15 grid grid-cols-2 gap-4 items-center max-md:grid-cols-1 max-md:px-5 max-md:py-4">
               <div>
                 <small className="text-[10.5px] uppercase tracking-wider opacity-75">HOTLINE</small>
-                <b className="block text-gold text-[22px] mt-0.5 max-md:text-[18px]">{COMPANY.contact.hotline}</b>
+                <b className="block text-gold text-[22px] mt-0.5 max-md:text-[18px]">{company.contact.hotline}</b>
                 <span className="text-[11.5px] opacity-80">{t("info_about_us.hotline_support")}</span>
               </div>
               <div className="flex gap-2 max-md:flex-col">
@@ -612,8 +616,10 @@ export default async function AboutUsPage() {
   );
 }
 
-export const metadata = {
-  title: "Giới thiệu — Huayuesc · Công ty TNHH Chuỗi Cung Ứng Huayue Việt Nam",
-  description:
-    "Huayue là nhà cung cấp dịch vụ chuỗi cung ứng toàn diện, chuyên xuất khẩu vật liệu xây dựng, vật liệu trang trí và đồ điện gia dụng nhà bếp – phòng tắm từ Trung Quốc vào Việt Nam. Trụ sở Hà Nội + văn phòng đại diện Quảng Châu. MST 0111453693.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Giới thiệu — Huayuesc · Công ty TNHH Chuỗi Cung Ứng Huayue Việt Nam"),
+    description: td("Huayue là nhà cung cấp dịch vụ chuỗi cung ứng toàn diện, chuyên xuất khẩu vật liệu xây dựng, vật liệu trang trí và đồ điện gia dụng nhà bếp – phòng tắm từ Trung Quốc vào Việt Nam. Trụ sở Hà Nội + văn phòng đại diện Quảng Châu. MST 0111453693."),
+  };
+}

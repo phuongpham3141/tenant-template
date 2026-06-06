@@ -1,7 +1,9 @@
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
-import { ARTICLES } from "@/lib/blog";
+import { ARTICLES as ARTICLES_SRC } from "@/lib/blog";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 type SitemapLink = { label: string; href: string; desc?: string };
 
@@ -13,7 +15,7 @@ type SitemapSection = {
   links: SitemapLink[];
 };
 
-const SECTIONS: SitemapSection[] = [
+const SECTIONS_RAW: SitemapSection[] = [
   {
     icon: "🏠",
     color: "#005F6B",
@@ -143,6 +145,9 @@ const SECTIONS: SitemapSection[] = [
 
 export default async function SitemapPage() {
   const t = await getT();
+  const td = await getTd();
+  const SECTIONS = tdDeep(SECTIONS_RAW, td);
+  const ARTICLES = tdDeep(ARTICLES_SRC, td);
   const totalLinks = SECTIONS.reduce((acc, s) => acc + s.links.length, 0) + ARTICLES.length;
   const sectionsCount = SECTIONS.length + 1; // +1 for blog
 
@@ -172,7 +177,7 @@ export default async function SitemapPage() {
             {t("sitemap.h1")}
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[760px] leading-relaxed mb-6 max-md:text-[13px]">
-            {totalLinks}+ pages organized into {sectionsCount} functional groups. Use this sitemap to quickly explore all of the platform's features and documentation. XML sitemap for search engines: <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
+            {totalLinks}+ {td("pages organized into")} {sectionsCount} {td("functional groups. Use this sitemap to quickly explore all of the platform's features and documentation. XML sitemap for search engines:")} <a href="/sitemap.xml" className="underline text-gold hover:opacity-80">/sitemap.xml</a>
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             <div className="bg-white/10 border border-white/20 rounded p-3 backdrop-blur-sm">
@@ -297,7 +302,7 @@ export default async function SitemapPage() {
               </div>
               <div>
                 <h2 className="text-[18px] font-extrabold text-ink leading-tight">{t("sitemap.blog_title")}</h2>
-                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} articles on market analysis, case studies, and guides</p>
+                <p className="text-[12px] text-mute mt-0.5">{ARTICLES.length} {td("articles on market analysis, case studies, and guides")}</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -355,7 +360,10 @@ export default async function SitemapPage() {
   );
 }
 
-export const metadata = {
-  title: "Sitemap — Huayuesc",
-  description: "A map of the entire Huayuesc site — 80+ pages organized into 9 functional groups. XML sitemap for search engines at /sitemap.xml.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Sitemap") + " · Huayuesc",
+    description: td("A map of the entire Huayuesc site — 80+ pages organized into 9 functional groups. XML sitemap for search engines at /sitemap.xml."),
+  };
+}

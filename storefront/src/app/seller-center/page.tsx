@@ -2,6 +2,7 @@ import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
 
 const KPIS = [
   { v: "187", l: "seller_center.kpi_orders", c: "text-brand", trend: "seller_center.kpi_orders_trend" },
@@ -126,4 +127,7 @@ export default async function SellerCenterPage() {
   );
 }
 
-export const metadata = { title: "Trung tâm người bán — Huayuesc" };
+export async function generateMetadata() {
+  const td = await getTd();
+  return { title: td("Trung tâm người bán — Huayuesc") };
+}

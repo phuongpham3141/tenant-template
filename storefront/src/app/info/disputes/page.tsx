@@ -1,15 +1,17 @@
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
-const HERO_STATS = [
+const HERO_STATS_RAW = [
   { n: "Đa số", l: "Khiếu nại có lợi cho buyer khi evidence đầy đủ", icon: "⚖️" },
   { n: "<24h", l: "Phản hồi trung bình", icon: "⏱" },
   { n: "Tích luỹ", l: "Giá trị đơn được Huayue bảo vệ", icon: "🛡" },
   { n: "24/7", l: "Hotline khẩn cấp", icon: "📞" },
 ];
 
-const COMPLAINT_TYPES = [
+const COMPLAINT_TYPES_RAW = [
   {
     icon: "🎨",
     color: "#DC2626",
@@ -84,7 +86,7 @@ const COMPLAINT_TYPES = [
   },
 ];
 
-const ESCALATION_TIERS = [
+const ESCALATION_TIERS_RAW = [
   {
     tier: "1",
     label: "Đối thoại trực tiếp",
@@ -303,6 +305,10 @@ function StatTile({ n, l, icon }: { n: string; l: string; icon: string }) {
 
 export default async function KhieuNaiPage() {
   const t = await getT();
+  const td = await getTd();
+  const HERO_STATS = tdDeep(HERO_STATS_RAW, td);
+  const COMPLAINT_TYPES = tdDeep(COMPLAINT_TYPES_RAW, td);
+  const ESCALATION_TIERS = tdDeep(ESCALATION_TIERS_RAW, td);
   return (
     <>
       <Breadcrumb
@@ -402,7 +408,7 @@ export default async function KhieuNaiPage() {
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-[26px]">{t.icon}</span>
                   <span className="text-[10.5px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded-sm" style={{ backgroundColor: t.color, color: "#fff" }}>
-                    {t.successRate} thắng
+                    {t.successRate} {td("thắng")}
                   </span>
                 </div>
                 <b className="block text-[14px] font-bold text-ink leading-tight">{t.title}</b>
@@ -410,7 +416,7 @@ export default async function KhieuNaiPage() {
               <div className="p-4 flex-1 flex flex-col">
                 <p className="text-[12px] text-mute leading-relaxed mb-3 flex-1">{t.desc}</p>
                 <div className="text-[11px] space-y-1 border-t border-line pt-2.5">
-                  <div className="flex justify-between"><span className="text-mute">⏱ TB giải quyết</span><b className="text-ink">{t.avgDays} ngày</b></div>
+                  <div className="flex justify-between"><span className="text-mute">⏱ {td("TB giải quyết")}</span><b className="text-ink">{t.avgDays} {td("ngày")}</b></div>
                   <div className="text-mute pt-1">📎 <span className="text-ink">{t.evidence}</span></div>
                 </div>
               </div>
@@ -443,11 +449,11 @@ export default async function KhieuNaiPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="text-center">
-                        <div className="text-[10px] text-mute uppercase">Thời gian</div>
+                        <div className="text-[10px] text-mute uppercase">{td("Thời gian")}</div>
                         <b className="text-[14px] text-ink">{t.duration}</b>
                       </div>
                       <div className="text-center">
-                        <div className="text-[10px] text-mute uppercase">% Case xử lý tại tier này</div>
+                        <div className="text-[10px] text-mute uppercase">{td("% Case xử lý tại tier này")}</div>
                         <b className="text-[18px] font-extrabold" style={{ color: t.color }}>{t.bgRate}</b>
                       </div>
                     </div>
@@ -559,7 +565,7 @@ export default async function KhieuNaiPage() {
               <div className="grid grid-cols-2 gap-3 mb-3 text-[12px]">
                 <div className="bg-bg border border-line rounded p-2">
                   <div className="text-mute uppercase tracking-wider text-[10px]">{t("info_disputes.cases_time_label")}</div>
-                  <b className="text-ink">{c.days}</b>
+                  <b className="text-ink">{td(c.days)}</b>
                 </div>
                 <div className="bg-success/10 border border-success/30 rounded p-2">
                   <div className="text-success uppercase tracking-wider text-[10px]">{t("info_disputes.cases_result_label")}</div>
@@ -607,30 +613,30 @@ export default async function KhieuNaiPage() {
             <div>
               <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_vn")}</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• Luật Thương mại 2005 — Điều 318 (thời hiệu khiếu nại)</li>
-                <li>• Luật Trọng tài Thương mại 2010</li>
-                <li>• NĐ 22/2017/NĐ-CP về hoà giải thương mại</li>
-                <li>• Bộ luật Dân sự 2015 — chế định hợp đồng</li>
-                <li>• NĐ 13/2023/NĐ-CP — bảo vệ dữ liệu cá nhân</li>
+                <li>• {td("Luật Thương mại 2005 — Điều 318 (thời hiệu khiếu nại)")}</li>
+                <li>• {td("Luật Trọng tài Thương mại 2010")}</li>
+                <li>• {td("NĐ 22/2017/NĐ-CP về hoà giải thương mại")}</li>
+                <li>• {td("Bộ luật Dân sự 2015 — chế định hợp đồng")}</li>
+                <li>• {td("NĐ 13/2023/NĐ-CP — bảo vệ dữ liệu cá nhân")}</li>
               </ul>
             </div>
             <div>
               <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_intl")}</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• Công ước New York 1958 — thi hành phán quyết trọng tài</li>
+                <li>• {td("Công ước New York 1958 — thi hành phán quyết trọng tài")}</li>
                 <li>• UNCITRAL Model Law on International Commercial Arbitration</li>
                 <li>• ICC Rules of Arbitration 2021</li>
-                <li>• Incoterms 2020 (ICC) — phân chia trách nhiệm</li>
-                <li>• CISG 1980 — Hợp đồng mua bán hàng hoá quốc tế</li>
+                <li>• {td("Incoterms 2020 (ICC) — phân chia trách nhiệm")}</li>
+                <li>• {td("CISG 1980 — Hợp đồng mua bán hàng hoá quốc tế")}</li>
               </ul>
             </div>
             <div>
               <b className="block text-[11px] uppercase tracking-wider text-brand font-bold mb-2">{t("info_disputes.legal_col_org")}</b>
               <ul className="space-y-1.5 text-mute">
-                <li>• <b className="text-ink">VIAC</b> — Vietnam International Arbitration Centre (Hà Nội + HCM)</li>
-                <li>• <b className="text-ink">CIETAC</b> — China International Economic and Trade Arbitration Commission (Bắc Kinh)</li>
-                <li>• <b className="text-ink">SIAC</b> — Singapore International Arbitration Centre (cho case ASEAN)</li>
-                <li>• <b className="text-ink">HKIAC</b> — Hong Kong International Arbitration Centre</li>
+                <li>• <b className="text-ink">VIAC</b> {td("— Vietnam International Arbitration Centre (Hà Nội + HCM)")}</li>
+                <li>• <b className="text-ink">CIETAC</b> {td("— China International Economic and Trade Arbitration Commission (Bắc Kinh)")}</li>
+                <li>• <b className="text-ink">SIAC</b> {td("— Singapore International Arbitration Centre (cho case ASEAN)")}</li>
+                <li>• <b className="text-ink">HKIAC</b> {td("— Hong Kong International Arbitration Centre")}</li>
               </ul>
             </div>
           </div>
@@ -697,7 +703,10 @@ export default async function KhieuNaiPage() {
   );
 }
 
-export const metadata = {
-  title: "Khiếu nại & tranh chấp — Huayuesc Dispute Resolution",
-  description: "Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình. Hotline 24/7: +86 181-2225-6999.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Khiếu nại & tranh chấp") + " · Huayuesc Dispute Resolution",
+    description: td("Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình. Hotline 24/7: +86 181-2225-6999."),
+  };
+}

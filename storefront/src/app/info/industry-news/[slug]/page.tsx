@@ -13,7 +13,7 @@ import {
 
 function fmtDate(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString("vi-VN", { year: "numeric", month: "long", day: "numeric" });
+  return d.toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" });
 }
 
 function renderBlock(block: BlogBlock, i: number) {

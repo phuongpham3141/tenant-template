@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 const BS = String.fromCharCode(92);
-const DIRS = ["/work/src/data", "/work/src/data/catalogs"];
+const DIRS = ["/work/src/data", "/work/src/app", "/work/src/lib", "/work/src/components"];
 const VI_RE = /[À-ɏḀ-ỿ]/;
 function extractStrings(src) {
   const out = [];
@@ -20,28 +20,35 @@ function extractStrings(src) {
   }
   return out;
 }
+const files = [];
+function walk(d) {
+  if (!fs.existsSync(d)) return;
+  for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+    const p = path.join(d, e.name);
+    if (e.isDirectory()) walk(p);
+    else if (/\.(ts|tsx)$/.test(e.name)) files.push(p);
+  }
+}
+for (const d of DIRS) walk(d);
 const set = new Set();
 try { for (const k of Object.keys(JSON.parse(fs.readFileSync("/work/scripts/gen-out/data-vi.json", "utf8")))) set.add(k); } catch {}
 const before = set.size;
-for (const d of DIRS) {
-  if (!fs.existsSync(d)) continue;
-  for (const e of fs.readdirSync(d)) {
-    if (!e.endsWith(".ts")) continue;
-    const src = fs.readFileSync(path.join(d, e), "utf8");
-    for (const raw of extractStrings(src)) {
-      if (!VI_RE.test(raw)) continue;
-      let v;
-      try { v = JSON.parse('"' + raw + '"'); } catch { continue; }
-      v = v.trim();
-      if (!v) continue;
-      if (/^https?:\/\//.test(v)) continue;
-      if (/^\/(img|logo)\//.test(v)) continue;
-      if (/\.(jpg|jpeg|png|webp|svg|gif)(\?|$)/i.test(v)) continue;
-      set.add(v);
-    }
+for (const f of files) {
+  const src = fs.readFileSync(f, "utf8");
+  for (const raw of extractStrings(src)) {
+    if (!VI_RE.test(raw)) continue;
+    let v;
+    try { v = JSON.parse('"' + raw + '"'); } catch { continue; }
+    v = v.trim();
+    if (!v) continue;
+    if (/^https?:\/\//.test(v)) continue;
+    if (/^\/(img|logo)\//.test(v)) continue;
+    if (/\.(jpg|jpeg|png|webp|svg|gif)(\?|$)/i.test(v)) continue;
+    if (/^[a-z0-9_]+\.[a-z0-9_.]+$/i.test(v)) continue;   // dotted t() keys
+    set.add(v);
   }
 }
 const obj = {};
 for (const s of [...set]) obj[s] = s;
 fs.writeFileSync("/work/scripts/gen-out/data-vi.json", JSON.stringify(obj, null, 2));
-console.log("seed", before, "-> total", set.size, "| NEW (escaped-quote strings)", set.size - before);
+console.log("files", files.length, "| seed", before, "-> total", set.size, "| NEW", set.size - before);

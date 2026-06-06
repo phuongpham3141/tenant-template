@@ -1,6 +1,8 @@
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 /**
  * /info/ddp-calculator — DDP / CIF / FOB cost calculator.
@@ -11,14 +13,14 @@ import { getT } from "@/lib/t";
  * over the catch-all `/info/[topic]` route for the same path.
  */
 
-const PORTS: Record<string, { label: string; cifPerCbm: number; ddpPerCbm: number; days: string }> = {
+const PORTS_RAW: Record<string, { label: string; cifPerCbm: number; ddpPerCbm: number; days: string }> = {
   haiphong: { label: "info_ddp_calculator.port_haiphong",      cifPerCbm: 280, ddpPerCbm: 480, days: "12-15 / 18-22" },
   catlai:   { label: "info_ddp_calculator.port_catlai",     cifPerCbm: 320, ddpPerCbm: 540, days: "14-17 / 20-24" },
   danang:   { label: "info_ddp_calculator.port_danang",      cifPerCbm: 350, ddpPerCbm: 580, days: "13-16 / 19-23" },
   langson:  { label: "info_ddp_calculator.port_langson",    cifPerCbm: 220, ddpPerCbm: 420, days: "5-8 / 10-12" },
 };
 
-const MODES: Record<string, { label: string; desc: string }> = {
+const MODES_RAW: Record<string, { label: string; desc: string }> = {
   fob: { label: "info_ddp_calculator.mode_fob",            desc: "Pickup tại cảng/nhà máy. Buyer tự lo cước, thuế." },
   cif: { label: "info_ddp_calculator.mode_cif",         desc: "Đã gồm cước biển + bảo hiểm tới cảng VN. Buyer tự lo thuế + nội địa." },
   ddp: { label: "info_ddp_calculator.mode_ddp",      desc: "Trọn gói: cước + thuế + thông quan + nội địa. Không phát sinh." },
@@ -36,6 +38,9 @@ export default async function CalcPage({
   searchParams: Promise<{ mode?: string; port?: string; qty?: string; value?: string; productId?: string }>;
 }) {
   const t = await getT();
+  const td = await getTd();
+  const PORTS = tdDeep(PORTS_RAW, td);
+  const MODES = tdDeep(MODES_RAW, td);
   const sp = await searchParams;
   const mode = (sp.mode && MODES[sp.mode] ? sp.mode : "ddp") as keyof typeof MODES;
   const portKey = (sp.port && PORTS[sp.port] ? sp.port : "haiphong") as keyof typeof PORTS;
@@ -177,23 +182,23 @@ export default async function CalcPage({
             </div>
 
             <p className="text-[11px] text-mute mt-3 leading-relaxed">
-              <b>Lưu ý:</b> đây là ước tính theo công thức trung bình. Báo giá chính thức phụ thuộc HS code thật, trọng lượng,
-              loại hàng (đặc biệt: dễ vỡ, lạnh, nguy hiểm) và mùa cao điểm. Sai số ±15-20%.
+              <b>{td("Lưu ý:")}</b>{" "}
+              {td("đây là ước tính theo công thức trung bình. Báo giá chính thức phụ thuộc HS code thật, trọng lượng, loại hàng (đặc biệt: dễ vỡ, lạnh, nguy hiểm) và mùa cao điểm. Sai số ±15-20%.")}
             </p>
           </div>
         ) : (
           <div className="bg-paper border border-line rounded p-5 mb-4 text-[13px] text-mute leading-relaxed space-y-3">
             <p>
-              <b className="text-ink">DDP (Delivered Duty Paid)</b> là incoterm cao cấp nhất — NCC chịu mọi chi phí và rủi ro
-              tới khi hàng đặt tại kho buyer ở Việt Nam, đã thanh toán mọi loại thuế.
+              <b className="text-ink">DDP (Delivered Duty Paid)</b>{" "}
+              {td("là incoterm cao cấp nhất — NCC chịu mọi chi phí và rủi ro tới khi hàng đặt tại kho buyer ở Việt Nam, đã thanh toán mọi loại thuế.")}
             </p>
             <p>
-              Huayuesc quản lý DDP qua 3 cảng chính: <b className="text-ink">Hải Phòng</b> (đối với khách miền Bắc),{" "}
-              <b className="text-ink">Cát Lái HCM</b> (miền Nam) và <b className="text-ink">Đà Nẵng</b> (miền Trung).
-              Đường bộ qua Lạng Sơn nhanh hơn (5-8 ngày) cho hàng nhỏ &lt; 3 CBM.
+              Huayuesc {td("quản lý DDP qua 3 cảng chính:")} <b className="text-ink">{td("Hải Phòng")}</b> {td("(đối với khách miền Bắc),")}{" "}
+              <b className="text-ink">{td("Cát Lái HCM")}</b> {td("(miền Nam) và")} <b className="text-ink">{td("Đà Nẵng")}</b> {td("(miền Trung).")}{" "}
+              {td("Đường bộ qua Lạng Sơn nhanh hơn (5-8 ngày) cho hàng nhỏ")} &lt; 3 CBM.
             </p>
             <p>
-              Nhập <b>khối lượng</b> (CBM hoặc tương đương kg/167) và <b>giá trị FOB</b> ở form trên để xem ngay tổng chi phí ước tính.
+              {td("Nhập")} <b>{td("khối lượng")}</b> {td("(CBM hoặc tương đương kg/167) và")} <b>{td("giá trị FOB")}</b> {td("ở form trên để xem ngay tổng chi phí ước tính.")}
             </p>
           </div>
         )}
@@ -203,13 +208,13 @@ export default async function CalcPage({
           <h3 className="text-[14px] font-bold text-ink mb-3">{t("info_ddp_calculator.methodology_title")}</h3>
           <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-[12.5px] text-ink max-md:grid-cols-1">
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_ocean")}</span><b>$280-350/CBM</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_insurance")}</span><b>0.5% giá trị</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_duty")}</span><b>0-30% theo HS</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_vat")}</span><b>10% (giá trị + NK)</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_customs")}</span><b>$80-150 / lô</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_insurance")}</span><b>{td("0.5% giá trị")}</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_duty")}</span><b>{td("0-30% theo HS")}</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_vat")}</span><b>{td("10% (giá trị + NK)")}</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_customs")}</span><b>{td("$80-150 / lô")}</b></div>
             <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_domestic")}</span><b>$60-120/CBM</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_platform")}</span><b>2% (trung gian + tranh chấp)</b></div>
-            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_overhead")}</span><b className="text-accent">+25-35% giá FOB</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_platform")}</span><b>{td("2% (trung gian + tranh chấp)")}</b></div>
+            <div className="flex justify-between border-b border-line py-1.5"><span className="text-mute">{t("info_ddp_calculator.m_overhead")}</span><b className="text-accent">{td("+25-35% giá FOB")}</b></div>
           </div>
         </div>
       </div>
@@ -226,7 +231,10 @@ function Row({ label, v }: { label: string; v: number }) {
   );
 }
 
-export const metadata = {
-  title: "Tính cước DDP / CIF / FOB — Huayuesc",
-  description: "Ước tính trọn gói chi phí nhập khẩu từ Trung Quốc về Việt Nam: FOB, CIF, DDP. Tính nhanh theo CBM + giá trị đơn.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Tính cước DDP / CIF / FOB — Huayuesc"),
+    description: td("Ước tính trọn gói chi phí nhập khẩu từ Trung Quốc về Việt Nam: FOB, CIF, DDP. Tính nhanh theo CBM + giá trị đơn."),
+  };
+}

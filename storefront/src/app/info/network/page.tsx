@@ -2,6 +2,8 @@ import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { COMPANY } from "@/data/company";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
 // ─── DATA ────────────────────────────────────────────────────────────────
 
@@ -132,7 +134,7 @@ const PARTNERSHIP_MECHANISMS = [
   },
 ];
 
-const TRADE_FAIRS = [
+const TRADE_FAIRS_RAW = [
   { month: "info_network.tf1_month", name: "CIFF Quảng Châu", desc: "info_network.tf1_desc", color: "#005F6B" },
   { month: "info_network.tf2_month", name: "Canton Fair Phase 1-3", desc: "info_network.tf2_desc", color: "#C8102E" },
   { month: "info_network.tf2_month", name: "Foshan Pottery Show", desc: "info_network.tf3_desc", color: "#9C6A1F" },
@@ -179,6 +181,8 @@ const FAQS = [
 
 export default async function NetworkPage() {
   const t = await getT();
+  const td = await getTd();
+  const TRADE_FAIRS = tdDeep(TRADE_FAIRS_RAW, td);
   return (
     <>
       <Breadcrumb
@@ -370,7 +374,7 @@ export default async function NetworkPage() {
               {t("info_network.pm_h2")}
             </h2>
             <p className="text-[13px] text-mute max-md:text-[12px]">
-              Theo brochure section <i>'Dịch vụ triển lãm thương mại'</i> và <i>'Quảng bá thị trường'</i>
+              {td('Theo brochure section')} <i>'{td('Dịch vụ triển lãm thương mại')}'</i> {td('và')} <i>'{td('Quảng bá thị trường')}'</i>
             </p>
           </div>
           <div className="grid grid-cols-5 gap-3 max-lg:grid-cols-3 max-md:grid-cols-1">
@@ -501,8 +505,12 @@ export default async function NetworkPage() {
   );
 }
 
-export const metadata = {
-  title: "Mạng lưới đối tác — Huayuesc",
-  description:
-    "Huayue kết nối nhà máy hàng đầu Quảng Đông, Phúc Kiến, Sơn Đông với 4 nhóm đối tác phân phối tại Việt Nam: đại lý VLXD, nhà thầu xây dựng, công ty thiết kế nội thất, đại lý điện máy. 63 tỉnh thành coverage, 2 văn phòng vận hành Hải Phòng + Quảng Châu.",
-};
+export async function generateMetadata() {
+  const td = await getTd();
+  return {
+    title: td("Mạng lưới đối tác") + " · Huayuesc",
+    description: td(
+      "Huayue kết nối nhà máy hàng đầu Quảng Đông, Phúc Kiến, Sơn Đông với 4 nhóm đối tác phân phối tại Việt Nam: đại lý VLXD, nhà thầu xây dựng, công ty thiết kế nội thất, đại lý điện máy. 63 tỉnh thành coverage, 2 văn phòng vận hành Hải Phòng + Quảng Châu.",
+    ),
+  };
+}

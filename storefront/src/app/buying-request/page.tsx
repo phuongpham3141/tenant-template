@@ -3,6 +3,7 @@ import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
 import { getT } from "@/lib/t";
+import { getTd } from "@/lib/td";
 
 const RECENT_RFQS = [
   { id: "RFQ-8421", title: "buying_request.rfq_8421", time: "buying_request.time_12min", quotes: 7 },
@@ -19,6 +20,7 @@ export default async function BuyingRequestPage({
 }) {
   const sp = await searchParams;
   const t = await getT();
+  const td = await getTd();
 
   return (
     <>
@@ -48,7 +50,7 @@ export default async function BuyingRequestPage({
               <select name="category" className="w-full px-3 py-2.5 border border-line rounded-sm text-[13px] bg-white">
                 <option value="">{t("buying_request.opt_select_category")}</option>
                 {NAV_CATEGORIES.map((c) => (
-                  <option key={c.slug} value={c.slug}>{c.icon} {c.name}</option>
+                  <option key={c.slug} value={c.slug}>{c.icon} {td(c.name)}</option>
                 ))}
               </select>
             </div>

@@ -3,7 +3,7 @@ import { getTd } from "@/lib/td";
 /** Field names that must NOT be translated (codes, paths, slugs, phone). */
 const SKIP = new Set([
   "model", "slug", "image", "gallery", "logo", "sourceUrl",
-  "icon", "href", "category", "seriesOriginal", "hotline",
+  "icon", "href", "seriesOriginal", "hotline",
 ]);
 
 /**

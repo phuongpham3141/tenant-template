@@ -1,6 +1,8 @@
 import Link from "@/components/i18n-link";
+import { getTd } from "@/lib/td";
+import { tdDeep } from "@/lib/localize";
 
-const NAV_GROUPS = [
+const NAV_GROUPS_RAW = [
   {
     title: "Tổng quan",
     items: [
@@ -33,14 +35,16 @@ const NAV_GROUPS = [
   },
 ];
 
-export function SellerSidebar({ active }: { active?: string }) {
+export async function SellerSidebar({ active }: { active?: string }) {
+  const td = await getTd();
+  const NAV_GROUPS = tdDeep(NAV_GROUPS_RAW, td);
   return (
     <aside className="bg-paper border border-line rounded p-3 self-start">
       <div className="px-3 py-2.5 border-b border-line mb-2">
-        <b className="block text-[14px] text-ink">Công ty TNHH KUKA Home</b>
+        <b className="block text-[14px] text-ink">{td("Công ty TNHH KUKA Home")}</b>
         <span className="text-[11.5px] text-mute">
-          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">Vàng</span>
-          Supplier · Quảng Châu
+          <span className="inline-block bg-gold/30 text-brand-dark px-1.5 py-0.5 rounded-sm font-bold mr-1">{td("Vàng")}</span>
+          Supplier · {td("Quảng Châu")}
         </span>
       </div>
       {NAV_GROUPS.map((group, gi) => (
