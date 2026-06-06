@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { getT } from "@/lib/t";
 import { notFound } from "next/navigation";
@@ -38,7 +39,7 @@ function renderBlock(block: BlogBlock, i: number) {
     case "img":
       return (
         <figure key={i} className="my-7">
-          <img src={block.src} alt={block.caption ?? ""} loading="lazy" className="w-full rounded" />
+          <Img src={block.src} alt={block.caption ?? ""} loading="lazy" className="w-full rounded" />
           {block.caption && (
             <figcaption className="text-[11.5px] text-mute2 italic text-center mt-2">{block.caption}</figcaption>
           )}
@@ -164,7 +165,7 @@ export default async function ArticlePage({
       <div className="max-w-[1100px] mx-auto px-4 mt-6 mb-10 grid grid-cols-[1fr_280px] gap-7 max-lg:grid-cols-1">
         <article className="bg-paper border border-line rounded p-7 max-md:p-4">
           {/* Hero image */}
-          <img
+          <Img loading="lazy" decoding="async"
             src={article.image}
             alt={article.title}
             className="w-full rounded mb-6 max-md:mb-4"
@@ -281,7 +282,7 @@ export default async function ArticlePage({
                 className="block bg-paper border border-line rounded overflow-hidden cursor-pointer hover:border-brand hover:shadow-sm transition group/related"
               >
                 <div className="aspect-[16/9] overflow-hidden bg-[#0E2A33]">
-                  <img src={a.image} alt={a.title} loading="lazy" className="w-full h-full object-cover group-hover/related:scale-[1.03] transition-transform" />
+                  <Img src={a.image} alt={a.title} loading="lazy" className="w-full h-full object-cover group-hover/related:scale-[1.03] transition-transform" />
                 </div>
                 <div className="p-3.5">
                   <span

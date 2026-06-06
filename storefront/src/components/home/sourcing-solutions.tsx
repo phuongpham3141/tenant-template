@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { getT } from "@/lib/t";
 
@@ -91,7 +92,7 @@ export async function SourcingSolutions() {
               href={s.href}
               className="relative aspect-[16/9] bg-brand-dark text-white block group/sol"
             >
-              <img
+              <Img loading="lazy" decoding="async"
                 src={s.image}
                 alt={s.title}
                 className="w-full h-full object-cover opacity-80 group-hover/sol:opacity-70 transition-opacity"
@@ -127,7 +128,7 @@ export async function SourcingSolutions() {
                   className="flex flex-col items-center gap-1.5 group/sub"
                 >
                   <div className="w-[52px] h-[52px] rounded-full bg-[#F5F5F5] overflow-hidden border border-line group-hover/sub:border-accent transition-colors max-md:w-[44px] max-md:h-[44px]">
-                    <img
+                    <Img loading="lazy" decoding="async"
                       src={sub.image}
                       alt={sub.name}
                       className="w-full h-full object-cover group-hover/sub:scale-105 transition-transform"

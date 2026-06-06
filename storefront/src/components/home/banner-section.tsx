@@ -1,4 +1,5 @@
 import Link from "@/components/i18n-link";
+import { preload } from "react-dom";
 import { NAV_MENU } from "@/data/home";
 import { HeroSlider } from "@/components/home/hero-slider";
 import { CategoryOverviewPanel } from "@/components/home/mega-submenu";
@@ -101,6 +102,7 @@ async function RightWidgets() {
 }
 
 export function BannerSection() {
+  preload("/img/heroint.webp?v=7", { as: "image", fetchPriority: "high", type: "image/webp" });
   return (
     <section className="py-4 bg-paper max-md:py-2">
       <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-[240px_1fr_240px] gap-3 items-stretch h-[504px] max-[1280px]:grid-cols-1 max-[1280px]:h-auto max-md:gap-2 max-md:px-3">

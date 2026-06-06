@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { getT } from "@/lib/t";
 import { getTd } from "@/lib/td";
@@ -88,7 +89,7 @@ export async function TradeShowsSection() {
             href={FEATURED.href}
             className="relative rounded overflow-hidden bg-brand-dark group/feat block xl:aspect-[16/10] md:max-xl:h-full md:max-xl:min-h-[440px] max-md:aspect-[16/9]"
           >
-            <img
+            <Img loading="lazy" decoding="async"
               src={FEATURED.banner}
               alt={td(FEATURED.name)}
               className="w-full h-full object-cover group-hover/feat:scale-[1.02] transition-transform"

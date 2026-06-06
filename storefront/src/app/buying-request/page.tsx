@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
@@ -24,7 +25,7 @@ export default async function BuyingRequestPage({
       <Breadcrumb trail={[{ label: t("buying_request.bc_home"), href: "/" }, { label: t("buying_request.bc_rfq") }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[180px] bg-brand-dark">
-          <img src="/img/rfq-hero.jpg?v=6" alt="" className="w-full h-full object-cover opacity-55" />
+          <Img loading="lazy" decoding="async" src="/img/rfq-hero.jpg?v=6" alt="" className="w-full h-full object-cover opacity-55" />
           <div className="absolute inset-0 px-8 py-6 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">{t("buying_request.hero_badge")}</span>
             <h1 className="text-[30px] font-extrabold leading-tight max-md:text-[22px]">{t("buying_request.hero_title")}</h1>

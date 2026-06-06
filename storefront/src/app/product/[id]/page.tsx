@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { QtyStepper } from "@/components/products/qty-stepper";
@@ -261,7 +262,7 @@ export default async function ProductPage({
                   className={`ig-thumb ig-thumb-${i} aspect-square w-full bg-[#F5F5F5] rounded overflow-hidden cursor-pointer hover:border-brand max-md:w-[64px] max-md:flex-shrink-0`}
                   aria-label={`Image ${i}`}
                 >
-                  <img
+                  <Img loading="lazy" decoding="async"
                     src={`/img/${p.id}-${i}.jpg?v=6`}
                     alt=""
                     className="w-full h-full object-cover"
@@ -273,7 +274,7 @@ export default async function ProductPage({
             {/* Main image area — 5 images stacked, only the active one shown */}
             <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden relative group max-md:order-1">
               {[1, 2, 3, 4, 5].map((i) => (
-                <img
+                <Img loading="lazy" decoding="async"
                   key={i}
                   src={
                     i === 1 && p.image
@@ -584,13 +585,13 @@ export default async function ProductPage({
           <p className="text-[13px] text-ink leading-relaxed mb-4">
             <b>{td(p.title)}</b> {t("product_id.desc_p1_a")} <Link href={`/supplier/${supplier.slug}`} className="text-brand hover:underline cursor-pointer">{p.seller}</Link>, {t("product_id.desc_p1_b")} <b>{td(p.years)} {t("product_id.desc_p1_exp")}</b>{t("product_id.desc_p1_c")}
           </p>
-          <img src={`/img/${p.id}-desc1.jpg?v=6`} alt="" className="w-full rounded mb-4" loading="lazy" />
+          <Img src={`/img/${p.id}-desc1.jpg?v=6`} alt="" className="w-full rounded mb-4" loading="lazy" />
           <p className="text-[13px] text-ink leading-relaxed mb-4">
             {t("product_id.desc_p2_a")} <b>ISO 9001:2015</b>{t("product_id.desc_p2_b")} <b>{t("product_id.desc_p2_oem")}</b> {t("product_id.desc_p2_c")}
           </p>
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
-            <img src={`/img/${p.id}-desc2.jpg?v=6`} alt="" className="w-full rounded" loading="lazy" />
-            <img src={`/img/${p.id}-desc3.jpg?v=6`} alt="" className="w-full rounded" loading="lazy" />
+            <Img src={`/img/${p.id}-desc2.jpg?v=6`} alt="" className="w-full rounded" loading="lazy" />
+            <Img src={`/img/${p.id}-desc3.jpg?v=6`} alt="" className="w-full rounded" loading="lazy" />
           </div>
           <p className="text-[13px] text-ink leading-relaxed">
             <b>{t("product_id.desc_p3_a")}</b> {t("product_id.desc_p3_b")}
@@ -817,7 +818,7 @@ export default async function ProductPage({
           {sameSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
               <div className="aspect-square bg-[#F5F5F5]">
-                {x.image ? <img src={x.image} alt={td(x.title)} className="w-full h-full object-cover" /> : null}
+                {x.image ? <Img loading="lazy" decoding="async" src={x.image} alt={td(x.title)} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
                 <h4 className="text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]">{td(x.title)}</h4>
@@ -835,7 +836,7 @@ export default async function ProductPage({
           {otherSection.map((x) => (
             <Link key={x.id} href={`/product/${x.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-sm block cursor-pointer">
               <div className="aspect-square bg-[#F5F5F5]">
-                {x.image ? <img src={x.image} alt={td(x.title)} className="w-full h-full object-cover" /> : null}
+                {x.image ? <Img loading="lazy" decoding="async" src={x.image} alt={td(x.title)} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
                 <h4 className="text-[12px] text-ink line-clamp-2 mb-1 leading-snug min-h-[32px]">{td(x.title)}</h4>

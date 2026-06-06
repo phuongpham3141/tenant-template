@@ -1,5 +1,6 @@
 "use client";
 
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Fragment, useEffect, useRef, useState, type PointerEvent } from "react";
 import { useT } from "@/components/i18n-provider";
@@ -111,7 +112,7 @@ const N = HERO_SLIDES.length;
 
   return (
     <div
-      className="hero-root group/hero relative rounded overflow-hidden h-full bg-brand-dark touch-pan-y select-none max-md:h-auto max-md:aspect-[5/4]"
+      className="hero-root group/hero relative rounded overflow-hidden h-full bg-brand-dark touch-pan-y select-none max-xl:h-auto max-xl:aspect-[5/4]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onPointerDown={onPointerDown}
@@ -142,7 +143,7 @@ const N = HERO_SLIDES.length;
           key={`slide-${i}`}
           className={`hero-slide hero-slide-${i + 1} absolute inset-0`}
         >
-          <img
+          <Img loading={i === 0 ? "eager" : "lazy"} fetchPriority={i === 0 ? "high" : "auto"} decoding="async" width={1536} height={1024}
             src={slide.image}
             alt=""
             className="w-full h-full object-cover opacity-95 pointer-events-none"

@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import type { CategoryPage, CatOverviewItem } from "@/data/categories";
 
@@ -54,7 +55,7 @@ export function OverviewCard({ data }: { data: CategoryPage }) {
                 {p.name}
               </span>
               <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden">
-                {p.image && <img src={p.image} alt={p.name} className="w-full h-full object-cover" />}
+                {p.image && <Img loading="lazy" decoding="async" src={p.image} alt={p.name} className="w-full h-full object-cover" />}
               </div>
             </a>
           ))}

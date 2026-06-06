@@ -1,5 +1,6 @@
 "use client";
 
+import { Img } from "@/components/ui/img";
 import { useCallback, useEffect, useState } from "react";
 
 type Props = {
@@ -159,7 +160,7 @@ export function ProductGallery({ images, alt }: Props) {
 
           {/* Image */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Img loading="lazy" decoding="async"
             src={safe[active]}
             alt={`${alt} — phóng to`}
             className="max-w-[92vw] max-h-[88vh] object-contain"

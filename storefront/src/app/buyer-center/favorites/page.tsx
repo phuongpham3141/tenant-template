@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
@@ -39,7 +40,7 @@ export default async function FavoritesPage({
               {FAV_PRODUCTS.map((p) => (
                 <Link key={p.id} href={`/product/${p.id}`} className="border border-line rounded-sm overflow-hidden hover:border-brand block">
                   <div className="aspect-square bg-[#F5F5F5]">
-                    {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
+                    {p.image ? <Img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
                   </div>
                   <div className="p-2.5">
                     <h4 className="text-[12px] text-ink line-clamp-2 mb-1 min-h-[30px]">{p.title}</h4>

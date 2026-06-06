@@ -23,8 +23,7 @@ http://vi.huayuesc.local {
 }
 
 :80 {
-    import no_cache_dev
-    reverse_proxy storefront:3001
+    reverse_proxy storefront-prod:3001
 }
 
 http://admin.huayuesc.local {

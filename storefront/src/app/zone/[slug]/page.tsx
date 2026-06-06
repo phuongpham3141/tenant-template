@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ZONES, FACTORIES, SECTIONS } from "@/data/home";
@@ -46,7 +47,7 @@ export default async function ZonePage({
       {/* Hero */}
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[280px] bg-brand-dark">
-          {z.image ? <img src={z.image} alt={z.name} className="w-full h-full object-cover opacity-65" /> : null}
+          {z.image ? <Img loading="lazy" decoding="async" src={z.image} alt={z.name} className="w-full h-full object-cover opacity-65" /> : null}
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-end text-white" style={{ background: "linear-gradient(transparent 30%, rgba(0,37,87,0.95))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">📍 {t("zone_slug.badge_trading_zone")}</span>
             <h1 className="text-[32px] font-extrabold leading-tight max-md:text-[24px]">{z.name} {t("zone_slug.hero_industrial_cluster")}</h1>
@@ -114,7 +115,7 @@ export default async function ZonePage({
           {products.map((p) => (
             <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
               <div className="aspect-square bg-[#F5F5F5]">
-                {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
+                {p.image ? <Img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
               </div>
               <div className="p-2.5">
                 <h4 className="text-[12px] text-ink line-clamp-2 mb-1">{p.title}</h4>
@@ -144,7 +145,7 @@ export default async function ZonePage({
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
         <h2 className="text-[16px] font-bold text-ink mb-3">{t("zone_slug.h_cluster_map")}</h2>
         <div className="relative rounded overflow-hidden h-[280px] bg-brand-dark">
-          <img src={`/img/${slug}-map.jpg?v=6`} alt="map" className="w-full h-full object-cover opacity-60" />
+          <Img loading="lazy" decoding="async" src={`/img/${slug}-map.jpg?v=6`} alt="map" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.55)" }}>
             <div className="text-center">
               <div className="text-[36px] mb-2">🗺️</div>

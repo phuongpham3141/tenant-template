@@ -1,5 +1,5 @@
 import Link from "@/components/i18n-link";
-import type { NavSubItem, NAV_MENU } from "@/data/home";
+import type { NavSubItem, NAV_MENU } from "@/data/nav";
 
 type NavMenuGroup = typeof NAV_MENU[number];
 

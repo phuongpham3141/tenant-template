@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SECTIONS, FACTORIES } from "@/data/home";
@@ -72,7 +73,7 @@ export default async function SearchPage({
             {results.map((p) => (
               <Link key={p.id} href={`/product/${p.id}`} className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand block">
                 <div className="aspect-square bg-[#F5F5F5]">
-                  {p.image ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
+                  {p.image ? <Img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover" /> : null}
                 </div>
                 <div className="p-2.5">
                   <h4 className="text-[12.5px] text-ink line-clamp-2 mb-1 min-h-[32px]">{p.title}</h4>

@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
@@ -68,7 +69,7 @@ export default async function TradeEhomePage() {
             <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
               {INTEGRATIONS.map((i) => (
                 <div key={i.name} className="border border-line rounded p-3 flex items-center gap-3 hover:border-brand">
-                  <img src={`/img/seller-ehome-int-${i.logo}.jpg?v=6`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
+                  <Img loading="lazy" decoding="async" src={`/img/seller-ehome-int-${i.logo}.jpg?v=6`} alt="" className="w-10 h-10 rounded object-cover flex-shrink-0" />
                   <div className="min-w-0">
                     <b className="block text-[12px] text-ink truncate">{i.name}</b>
                     <span className="text-[10.5px] text-mute">{t(i.type)}</span>

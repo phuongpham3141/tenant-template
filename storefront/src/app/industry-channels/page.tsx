@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
@@ -37,7 +38,7 @@ export default async function IndustryChannelsPage() {
           return (
             <Link key={c.slug} href={`/category/${c.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
               <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
-                <img src={`/img/industry-${c.slug}.jpg?v=6`} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
+                <Img loading="lazy" decoding="async" src={`/img/industry-${c.slug}.jpg?v=6`} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
                 <div className="absolute top-3 left-3 bg-white px-3 py-1.5 rounded-sm text-[24px] leading-none">{c.icon}</div>
               </div>
               <div className="p-4">

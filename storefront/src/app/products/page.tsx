@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { NAV_CATEGORIES } from "@/data/home";
@@ -101,7 +102,7 @@ export default async function ProductsPage({
                 className="bg-paper border border-line rounded-sm overflow-hidden hover:border-brand hover:shadow-[0_4px_10px_rgba(0,60,143,0.1)] hover:-translate-y-0.5 transition block"
               >
                 <div className="aspect-square bg-[#F5F5F5] overflow-hidden">
-                  <img src={p.image} alt={td(p.title)} loading="lazy" className="w-full h-full object-cover" />
+                  <Img src={p.image} alt={td(p.title)} loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="p-2.5">
                   <h4 className="text-[12.5px] text-ink line-clamp-2 mb-1 min-h-[32px] leading-tight">{td(p.title)}</h4>

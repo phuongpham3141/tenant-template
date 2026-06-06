@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
@@ -95,7 +96,7 @@ export default async function ByImageSearchPage({
                   className="group block"
                 >
                   <div className="aspect-square bg-[#F5F5F5] rounded overflow-hidden border border-line group-hover:border-brand">
-                    <img
+                    <Img loading="lazy" decoding="async"
                       src={`/img/${s.seed}.jpg?v=6`}
                       alt={s.label}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"

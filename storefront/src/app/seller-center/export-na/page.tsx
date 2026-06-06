@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
@@ -68,7 +69,7 @@ export default async function ExportNaPage() {
           <div className="grid grid-cols-2 gap-3 mb-4 max-md:grid-cols-1">
             {CHANNELS.map((c) => (
               <div key={c.name} className="bg-paper border border-line rounded p-4 hover:border-brand grid grid-cols-[80px_1fr] gap-3">
-                <img src={`/img/seller-na-${c.img}.jpg?v=6`} alt="" className="w-20 h-20 rounded object-cover" />
+                <Img loading="lazy" decoding="async" src={`/img/seller-na-${c.img}.jpg?v=6`} alt="" className="w-20 h-20 rounded object-cover" />
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[20px]">{c.icon}</span>
@@ -102,7 +103,7 @@ export default async function ExportNaPage() {
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {CASES.map((c) => (
                 <div key={c.company} className="border border-line rounded overflow-hidden hover:border-brand">
-                  <img src={`/img/seller-na-case-${c.img}.jpg?v=6`} alt="" className="w-full h-[140px] object-cover" />
+                  <Img loading="lazy" decoding="async" src={`/img/seller-na-case-${c.img}.jpg?v=6`} alt="" className="w-full h-[140px] object-cover" />
                   <div className="p-4">
                     <b className="block text-[13px] text-ink mb-1">{c.company}</b>
                     <span className="text-[11px] text-brand block mb-2">{t(c.product)}</span>

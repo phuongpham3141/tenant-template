@@ -1,11 +1,10 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import { vi } from "@/messages/vi";
 import type { Messages } from "@/messages";
 import type { LocaleCode } from "@/lib/i18n";
 
-const Ctx = createContext<{ messages: Messages; locale: LocaleCode }>({ messages: vi, locale: "vi" });
+const Ctx = createContext<{ messages: Messages; locale: LocaleCode }>({ messages: {} as Messages, locale: "vi" });
 
 export function I18nProvider({
   messages,

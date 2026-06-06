@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { HOT_SEARCHES } from "@/data/home";
 import { getT } from "@/lib/t";
@@ -47,7 +48,7 @@ export async function Header() {
           aria-label="Huayuesc — Home"
         >
           {/* Desktop & tablet: horizontal logo fills the logo column */}
-          <img
+          <Img loading="eager" fetchPriority="low" decoding="async"
             src="/logo/cybersilkroads-horizontal.png?v=6"
             alt="Huayuesc"
             width={400}
@@ -56,7 +57,7 @@ export async function Header() {
           />
           {/* Mobile: compact horizontal logo. Capped at max-w to keep header
               tidy on small screens (avoids huge logo dominating viewport). */}
-          <img
+          <Img loading="eager" fetchPriority="low" decoding="async"
             src="/logo/cybersilkroads-horizontal-compact.png?v=6"
             alt="Huayuesc"
             width={400}

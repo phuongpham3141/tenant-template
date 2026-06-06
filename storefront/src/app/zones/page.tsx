@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { ZONES } from "@/data/home";
@@ -29,7 +30,7 @@ export default async function ZonesPage() {
           {ZONES.map((z) => (
             <Link key={z.slug} href={`/zone/${z.slug}`} className="bg-paper border border-line rounded overflow-hidden hover:border-brand block group">
               <div className="aspect-[16/9] bg-[#F5F5F5] relative overflow-hidden">
-                {z.image ? <img src={z.image} alt={z.name} className="w-full h-full object-cover group-hover:scale-105 transition" /> : null}
+                {z.image ? <Img loading="lazy" decoding="async" src={z.image} alt={z.name} className="w-full h-full object-cover group-hover:scale-105 transition" /> : null}
                 <div className="absolute inset-0" style={{ background: "linear-gradient(transparent 60%, rgba(0,37,87,0.85))" }} />
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <b className="block text-[18px] font-bold leading-tight">{z.name}</b>
@@ -49,7 +50,7 @@ export default async function ZonesPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-5 mb-7">
         <h2 className="text-[18px] font-bold text-ink mb-3">{t("zones.mapHeading")}</h2>
         <div className="relative rounded overflow-hidden h-[420px] bg-brand-dark">
-          <img src="/img/china-map.jpg?v=6" alt="map" className="w-full h-full object-cover opacity-50" />
+          <Img loading="lazy" decoding="async" src="/img/china-map.jpg?v=6" alt="map" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 flex items-center justify-center text-white" style={{ background: "rgba(0,37,87,0.5)" }}>
             <div className="text-center">
               <div className="text-[42px] mb-2">🗺️</div>

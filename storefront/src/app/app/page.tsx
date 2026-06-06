@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
@@ -35,7 +36,7 @@ export default async function AppPage() {
             </div>
             <div className="mt-5 pt-5 border-t border-line flex items-center gap-4 max-md:flex-col max-md:items-start">
               <div className="w-28 h-28 bg-paper border border-line rounded p-1.5 flex-shrink-0">
-                <img src="/img/qrcode.jpg?v=6" alt={t("app.qr_alt")} className="w-full h-full object-cover rounded-sm" />
+                <Img loading="lazy" decoding="async" src="/img/qrcode.jpg?v=6" alt={t("app.qr_alt")} className="w-full h-full object-cover rounded-sm" />
               </div>
               <div>
                 <b className="block text-[13px] text-ink mb-1">{t("app.scan_title")}</b>
@@ -56,7 +57,7 @@ export default async function AppPage() {
           </div>
           <div className="flex justify-center">
             <div className="relative">
-              <img src="/img/app-phone.jpg?v=6" alt={t("app.phone_alt")} className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
+              <Img loading="lazy" decoding="async" src="/img/app-phone.jpg?v=6" alt={t("app.phone_alt")} className="w-full max-w-[320px] rounded-2xl shadow-[0_20px_60px_rgba(0,37,87,0.3)]" />
               <div className="absolute -top-3 -right-3 bg-gold text-brand-dark px-3 py-1.5 rounded-full text-[11px] font-bold rotate-12 shadow">
                 +5% OFF
               </div>

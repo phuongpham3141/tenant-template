@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import type { ListingProduct } from "@/data/products";
 
@@ -8,7 +9,7 @@ export function ProdCard({ p }: { p: ListingProduct }) {
       {/* Image — wrapped in Link to product detail */}
       <Link href={href} className="relative cursor-pointer block">
         <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden">
-          <img src={p.img.src} alt={p.title} className="w-full h-full object-cover" />
+          <Img loading="lazy" decoding="async" src={p.img.src} alt={p.title} className="w-full h-full object-cover" />
         </div>
         {(p.amazing || p.monthLabel) && (
           <div className="absolute top-1.5 left-1.5 flex flex-col gap-1">

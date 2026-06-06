@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { headers } from "next/headers";
 import { LangSwitcher } from "@/components/lang-switcher";
@@ -143,7 +144,7 @@ export async function Footer() {
               className="block mx-auto mb-4 w-fit"
               aria-label={t("footer.logo_aria")}
             >
-              <img
+              <Img loading="lazy" decoding="async"
                 src="/logo/cybersilkroads-horizontal.png?v=6"
                 alt="Huayuesc"
                 width={400}
@@ -214,7 +215,7 @@ export async function Footer() {
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">{t("footer.language_label")}</span>
-            <LangSwitcher variant="compact" initialHost={host} />
+            <LangSwitcher variant="compact" />
           </div>
           <div className="flex gap-3.5 flex-wrap opacity-70 max-lg:justify-center max-lg:order-2">
             {CERTS.map((c) => (

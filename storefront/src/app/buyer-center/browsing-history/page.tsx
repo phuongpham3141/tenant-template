@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { BuyerSidebar } from "@/components/buyer/sidebar";
@@ -91,7 +92,7 @@ export default async function BrowsingHistoryPage() {
                   <div key={`${g.title}-${idx}`} className="border border-line rounded-sm overflow-hidden hover:border-brand group">
                     <Link href={`/product/${item.p.id}`} className="block">
                       <div className="aspect-square bg-[#F5F5F5]">
-                        {item.p.image ? <img src={item.p.image} alt={item.p.title} className="w-full h-full object-cover" /> : null}
+                        {item.p.image ? <Img loading="lazy" decoding="async" src={item.p.image} alt={item.p.title} className="w-full h-full object-cover" /> : null}
                       </div>
                     </Link>
                     <div className="p-2.5">

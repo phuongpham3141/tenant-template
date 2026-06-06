@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { getT } from "@/lib/t";
@@ -18,7 +19,7 @@ export default async function TradeShowsPage() {
       <Breadcrumb trail={[{ label: t("trade_shows.crumb_home"), href: "/" }, { label: t("trade_shows.crumb_trade_shows") }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4">
         <div className="relative rounded overflow-hidden h-[220px] bg-brand-dark">
-          <img src="/img/tradeshow-hero.jpg?v=6" alt="" className="w-full h-full object-cover opacity-60" />
+          <Img loading="lazy" decoding="async" src="/img/tradeshow-hero.jpg?v=6" alt="" className="w-full h-full object-cover opacity-60" />
           <div className="absolute inset-0 px-8 py-7 flex flex-col justify-center text-white" style={{ background: "linear-gradient(90deg, rgba(0,37,87,0.95), rgba(0,37,87,0.4))" }}>
             <span className="inline-block self-start bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">{t("trade_shows.hero_badge")}</span>
             <h1 className="text-[34px] font-extrabold leading-tight max-md:text-[24px]">{t("trade_shows.hero_title")}</h1>
@@ -51,7 +52,7 @@ export default async function TradeShowsPage() {
               <Link href="/info/audit-process" className="px-5 py-2.5 border border-brand text-brand rounded-sm font-semibold text-[13px]">{t("trade_shows.btn_canton_history")}</Link>
             </div>
           </div>
-          <img src="/img/cantonfair.jpg?v=6" alt={t("trade_shows.canton_img_alt")} className="w-full h-full object-cover rounded" />
+          <Img loading="lazy" decoding="async" src="/img/cantonfair.jpg?v=6" alt={t("trade_shows.canton_img_alt")} className="w-full h-full object-cover rounded" />
         </div>
       </div>
 
@@ -77,7 +78,7 @@ export default async function TradeShowsPage() {
         <div className="grid grid-cols-4 gap-2 max-md:grid-cols-2">
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
             <div key={i} className="aspect-video bg-[#F5F5F5] rounded overflow-hidden">
-              <img src={`/img/tradeshow-past-${i}.jpg?v=6`} alt="" className="w-full h-full object-cover" />
+              <Img loading="lazy" decoding="async" src={`/img/tradeshow-past-${i}.jpg?v=6`} alt="" className="w-full h-full object-cover" />
             </div>
           ))}
         </div>

@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import type { Section, Badge, Product } from "@/data/home";
 import { getT } from "@/lib/t";
@@ -50,7 +51,7 @@ async function ProductCard({ p }: { p: Product }) {
           </div>
         )}
         {p.image ? (
-          <img src={p.image} alt={td(p.title)} className="w-full h-full object-cover" />
+          <Img loading="lazy" decoding="async" src={p.image} alt={td(p.title)} className="w-full h-full object-cover" />
         ) : null}
       </div>
       <div className="p-2.5">
@@ -149,7 +150,7 @@ export async function ProductSection({ section }: { section: Section }) {
             {td(section.feature.badge)}
           </span>
           {section.feature.image ? (
-            <img
+            <Img loading="lazy" decoding="async"
               src={section.feature.image}
               alt=""
               className="absolute inset-0 w-full h-full object-cover"

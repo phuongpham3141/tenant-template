@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import type { FeaturedSupplier } from "@/data/products";
 
 export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
@@ -7,7 +8,7 @@ export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
         {/* Video / image side */}
         <div className="relative bg-brand-dark overflow-hidden">
           <div className="aspect-[16/11] relative">
-            <img
+            <Img loading="lazy" decoding="async"
               src={sup.videoSrc}
               alt={sup.name}
               className="w-full h-full object-cover opacity-85"
@@ -64,7 +65,7 @@ export function SupBanner({ sup }: { sup: FeaturedSupplier }) {
                 className="border border-line rounded-sm p-1.5 cursor-pointer hover:border-brand block"
               >
                 <div className="aspect-square bg-[#F5F5F5] rounded-sm overflow-hidden mb-1">
-                  <img src={mp.img} alt={mp.title} className="w-full h-full object-cover" />
+                  <Img loading="lazy" decoding="async" src={mp.img} alt={mp.title} className="w-full h-full object-cover" />
                 </div>
                 <span className="block text-[10.5px] text-ink leading-tight line-clamp-2 min-h-[26px]">
                   {mp.title}

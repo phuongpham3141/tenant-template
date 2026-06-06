@@ -1,8 +1,9 @@
 "use client";
 
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { useEffect, useRef, useState } from "react";
-import { NAV_MENU } from "@/data/home";
+import { NAV_MENU } from "@/data/nav";
 import { useT } from "@/components/i18n-provider";
 
 const NAV_LINKS: { key: string; href: string }[] = [
@@ -63,14 +64,14 @@ export function StickyHeader() {
           className="flex items-center flex-shrink-0"
           aria-label="Huayuesc — Trang chủ"
         >
-          <img
+          <Img loading="lazy" decoding="async"
             src="/logo/cybersilkroads-horizontal.png?v=6"
             alt="Huayuesc"
             width={400}
             height={200}
             className="h-9 w-auto max-md:hidden"
           />
-          <img
+          <Img loading="lazy" decoding="async"
             src="/logo/cybersilkroads-icon.png?v=6"
             alt="Huayuesc"
             width={300}

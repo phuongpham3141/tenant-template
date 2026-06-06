@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { SellerSidebar } from "@/components/seller/sidebar";
@@ -148,7 +149,7 @@ export default async function GoldMemberPage() {
               {TESTIMONIALS.map((item) => (
                 <div key={item.company} className="border border-line rounded p-4 bg-[#FAFBFC]">
                   <div className="flex items-center gap-3 mb-3">
-                    <img src={`/img/seller-gold-${item.avatar}.jpg?v=6`} alt="" className="w-12 h-12 rounded-full object-cover" />
+                    <Img loading="lazy" decoding="async" src={`/img/seller-gold-${item.avatar}.jpg?v=6`} alt="" className="w-12 h-12 rounded-full object-cover" />
                     <div>
                       <b className="block text-[12.5px] text-ink leading-tight">{item.company}</b>
                       <span className="text-[11px] text-mute">{item.role}</span>

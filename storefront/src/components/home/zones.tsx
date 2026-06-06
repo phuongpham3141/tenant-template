@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { ZONES } from "@/data/home";
 import { getT } from "@/lib/t";
@@ -30,7 +31,7 @@ export async function Zones() {
             className="relative aspect-square rounded-sm overflow-hidden bg-brand-dark cursor-pointer block group"
           >
             {z.image ? (
-              <img
+              <Img loading="lazy" decoding="async"
                 src={z.image}
                 alt={td(z.name)}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform"

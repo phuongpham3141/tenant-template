@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { cookies, headers } from "next/headers";
 import { SocialIcons } from "@/components/icons/social";
@@ -178,7 +179,7 @@ async function LinkList({ items }: { items: LinkRow[] }) {
           >
             {/* Leading visual: thumbnail OR icon-in-square */}
             {it.thumb ? (
-              <img
+              <Img loading="lazy" decoding="async"
                 src={it.thumb}
                 alt=""
                 className="w-9 h-9 flex-shrink-0 rounded-sm object-cover bg-bg border border-line"
@@ -444,12 +445,12 @@ export async function TopStrip() {
               tabIndex={0}
             >
               {I_GLOBE}
-              <LangSwitcher variant="trigger" initialHost={host} />
+              <LangSwitcher variant="trigger" />
               <span className="text-[10px] opacity-70">▾</span>
             </span>
             <div className="ts-pop absolute right-0 top-full w-[260px] bg-paper text-ink rounded shadow-xl border border-line">
               <PopHeader title={t("topstrip.lang_currency_title")} />
-              <LangSwitcher variant="full" initialHost={host} />
+              <LangSwitcher variant="full" />
             </div>
           </div>
         </div>

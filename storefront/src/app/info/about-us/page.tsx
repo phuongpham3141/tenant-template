@@ -1,3 +1,4 @@
+import { Img } from "@/components/ui/img";
 import Link from "@/components/i18n-link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { COMPANY } from "@/data/company";
@@ -182,7 +183,7 @@ export default async function AboutUsPage() {
       {/* ═══ HERO ═══════════════════════════════════════════════════════ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Img loading="lazy" decoding="async"
             src="/img/heroint.jpg?v=6"
             alt="Container ship — Huayue chuỗi cung ứng Trung-Việt"
             className="w-full h-full object-cover"
@@ -244,7 +245,7 @@ export default async function AboutUsPage() {
       <section className="max-w-[1200px] mx-auto px-4 mt-10 max-md:mt-6">
         <div className="grid grid-cols-[1fr_1.2fr] gap-8 items-center max-md:grid-cols-1 max-md:gap-5">
           <div className="relative">
-            <img
+            <Img loading="lazy" decoding="async"
               src="/img/hero-buyer-promo.jpg?v=6"
               alt="Giới thiệu Huayue — chuỗi cung ứng TQ-VN"
               className="w-full aspect-[4/5] object-cover rounded-lg shadow-lg max-md:aspect-[16/10]"
@@ -300,7 +301,7 @@ export default async function AboutUsPage() {
           {CORE_SERVICES.map((s, i) => (
             <div key={s.title} className="bg-paper border border-line rounded-lg overflow-hidden flex hover:shadow-lg transition-shadow max-md:flex-col">
               <div className="w-[140px] flex-shrink-0 relative max-md:w-full max-md:aspect-[16/9]">
-                <img src={s.image} alt={t(s.title)} className="w-full h-full object-cover" />
+                <Img loading="lazy" decoding="async" src={s.image} alt={t(s.title)} className="w-full h-full object-cover" />
                 <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${s.color}90 0%, transparent 100%)` }} />
                 <div className="absolute top-2 left-2 w-10 h-10 rounded-lg bg-white/95 flex items-center justify-center text-[22px] shadow">
                   {s.icon}
@@ -337,7 +338,7 @@ export default async function AboutUsPage() {
             {INDUSTRIES.map((ind) => (
               <div key={ind.title} className="bg-paper rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img src={ind.image} alt={t(ind.title)} className="w-full h-full object-cover" />
+                  <Img loading="lazy" decoding="async" src={ind.image} alt={t(ind.title)} className="w-full h-full object-cover" />
                   <div className="absolute top-3 right-3 w-12 h-12 rounded flex items-center justify-center text-white font-extrabold text-[20px]" style={{ backgroundColor: ind.color }}>
                     {ind.badge}
                   </div>
@@ -356,7 +357,7 @@ export default async function AboutUsPage() {
                   <div className="grid grid-cols-3 gap-1.5 pt-3 border-t border-line">
                     {ind.extraImages.map((src, i) => (
                       <div key={i} className="aspect-square rounded overflow-hidden bg-bg">
-                        <img src={src} alt="" className="w-full h-full object-cover" />
+                        <Img loading="lazy" decoding="async" src={src} alt="" className="w-full h-full object-cover" />
                       </div>
                     ))}
                   </div>
@@ -409,7 +410,7 @@ export default async function AboutUsPage() {
           <div className="grid grid-cols-3 gap-1.5">
             {PROMOTION_IMAGES.map((src, i) => (
               <div key={i} className={i === 0 ? "col-span-2 row-span-2 aspect-square rounded-lg overflow-hidden" : "aspect-square rounded-lg overflow-hidden"}>
-                <img src={src} alt="" className="w-full h-full object-cover hover:scale-105 transition" />
+                <Img loading="lazy" decoding="async" src={src} alt="" className="w-full h-full object-cover hover:scale-105 transition" />
               </div>
             ))}
           </div>
@@ -438,7 +439,7 @@ export default async function AboutUsPage() {
               {WAREHOUSE_TYPES.map((w) => (
                 <div key={w.title} className="bg-white/5 border border-white/15 rounded-lg overflow-hidden hover:border-gold/50 transition">
                   <div className="aspect-[16/10] overflow-hidden">
-                    <img src={w.image} alt={t(w.title)} className="w-full h-full object-cover opacity-80" />
+                    <Img loading="lazy" decoding="async" src={w.image} alt={t(w.title)} className="w-full h-full object-cover opacity-80" />
                   </div>
                   <div className="p-4">
                     <div className="text-[11px] text-gold italic mb-0.5">{t(w.cn)}</div>
