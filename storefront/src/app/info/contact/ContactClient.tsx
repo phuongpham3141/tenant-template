@@ -125,7 +125,7 @@ export default function ContactClient({
             {tx.heroTitle}
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
-            {tx.heroP1} <b>{tx.heroAddrHn}</b> {tx.heroP2} <b>{tx.heroAddrGz}</b> {tx.heroP3} <b>+86 181-2225-6999</b> {tx.heroP4}
+            {tx.heroP1} <b>{tx.heroAddrHn}</b> {tx.heroP2} <b>{tx.heroAddrGz}</b> {tx.heroP3} <b>000-000-000</b> {tx.heroP4}
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {[

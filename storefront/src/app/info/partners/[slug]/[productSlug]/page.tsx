@@ -208,7 +208,7 @@ export default async function ProductDetailPage({
                 {t("info_partners_slug_productSlug.cta_request_quote")}
               </Link>
               <a
-                href="tel:+842839991234"
+                href="tel:000-000-000"
                 className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-semibold rounded px-5 py-2.5 hover:bg-yellow-400 transition-colors text-[13.5px]"
               >
                 {t("info_partners_slug_productSlug.cta_call_hotline")}

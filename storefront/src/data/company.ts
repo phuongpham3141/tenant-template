@@ -160,7 +160,7 @@ export const COMPANY = {
 
   // ─── Contact (brochure page 8) ──────────────────────────────────────────
   contact: {
-    hotline: "+86 181-2225-6999",
+    hotline: "000-000-000",
     emails: {
       sales: "sales@huayuesc.vn",
       support: "support@huayuesc.vn",

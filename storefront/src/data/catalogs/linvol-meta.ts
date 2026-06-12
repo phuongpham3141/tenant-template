@@ -1,7 +1,7 @@
 /**
  * Metadata LINVOL — trang chi tiết. Keyed by seriesOriginal (villa/retrofit/escalator/passenger).
  * Sourcing: linvol.midea.com.cn — thương hiệu thang máy chính thức của Tập đoàn Midea.
- * Nhà sản xuất: Lingwang Elevator. Hotline dịch vụ: 400-700-7722.
+ * Nhà sản xuất: Lingwang Elevator. Hotline dịch vụ: 000-000-000.
  */
 export type SeriesMeta = {
   story: string; heritage: string;
@@ -27,7 +27,7 @@ const MFG = [
 const PACK = [
   { label: "Hình thức cung cấp", value: "Trọn bộ thang máy + lắp đặt theo dự án" },
   { label: "Tuỳ biến", value: "Cabin & cấu hình theo công trình" },
-  { label: "Dịch vụ", value: "«Quản gia + chuyên gia» — bảo hành trọn đời + bảo trì (hotline 400-700-7722)" },
+  { label: "Dịch vụ", value: "«Quản gia + chuyên gia» — bảo hành trọn đời + bảo trì (hotline 000-000-000)" },
 ];
 const INSTALL = [
   "Khảo sát hố thang (pit), hành trình, tải trọng trước khi chọn cấu hình",

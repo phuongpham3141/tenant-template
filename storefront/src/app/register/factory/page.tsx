@@ -512,7 +512,7 @@ export default async function RegisterFactoryPage() {
                 {t("register_factory.side_talk_desc")}
               </p>
               <div className="text-[11.5px] opacity-90 space-y-1">
-                <div>📞 +86 20 1234 5678</div>
+                <div>📞 000-000-000</div>
                 <div>📧 supplier@alibabavn.com</div>
                 <div>💬 WeChat: alibabavn_sup</div>
               </div>

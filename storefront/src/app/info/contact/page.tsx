@@ -19,8 +19,8 @@ const OFFICES_RAW: Office[] = [
     addressCn: "越南河内市春芳坊清林街2号宝玉大厦7楼",
     addressEn:
       "Floor 7, Bao Ngoc Building, No. 02 Thanh Lam Street, Xuan Phuong Ward, Hanoi, Vietnam",
-    phone: "+86 181-2225-6999",
-    hotline: "+86 181-2225-6999",
+    phone: "000-000-000",
+    hotline: "000-000-000",
     email: "support@huayuesc.vn",
     manager: {
       name: "Đội vận hành Hà Nội",
@@ -63,7 +63,7 @@ const OFFICES_RAW: Office[] = [
     address: "Tầng 3, Tòa 1, Cảng Shuyu Chuangxing, bến tàu phía Bắc làng Hoàng Phố, đường Tân Cảng Đông, quận Hải Châu, Quảng Châu, Trung Quốc",
     addressCn: "广州市海珠区新港东路黄埔村北码头数娱创兴港1号楼3楼",
     addressEn: "3F, Building 1, Shuyu Chuangxing Port, North Wharf of Huangpu Village, East Xingang Road, Haizhu District, Guangzhou, China",
-    phone: "+86 181-2225-6999",
+    phone: "000-000-000",
     email: "sales@huayuesc.vn",
     manager: { name: "Đội Sourcing Quảng Châu", title: "Sourcing & QC Team Lead", initials: "GZ" },
     teamSize: 15,
@@ -101,7 +101,7 @@ const DEPARTMENTS_RAW: Department[] = [
 ];
 
 const CHANNELS_RAW: Channel[] = [
-  { icon: "📞", title: "Hotline", desc: "+86 181-2225-6999 — hỗ trợ tiếng Việt + tiếng Trung, 8h–22h", action: "Gọi ngay", href: "tel:+8618122256999" },
+  { icon: "📞", title: "Hotline", desc: "000-000-000 — hỗ trợ tiếng Việt + tiếng Trung, 8h–22h", action: "Gọi ngay", href: "tel:000-000-000" },
   { icon: "✉", title: "Email", desc: "support@huayuesc.vn — phản hồi <6 giờ giờ hành chính", action: "Soạn email", href: "mailto:support@huayuesc.vn" },
   { icon: "💬", title: "Live Chat website", desc: "Phản hồi <5 phút trong giờ làm việc; AI 24/7 ngoài giờ", action: "Mở chat", href: "#chat" },
   { icon: "📱", title: "Zalo OA", desc: "Huayuesc — chat tiếng Việt nhanh nhất", action: "Mở Zalo", href: "https://zalo.me/huayuesc" },

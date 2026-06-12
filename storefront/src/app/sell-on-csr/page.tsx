@@ -682,8 +682,8 @@ export default async function SellOnCsrPage() {
             </Link>
           </div>
           <div className="mt-6 pt-5 border-t border-white/15 text-[12px] opacity-80 flex justify-center gap-5 flex-wrap">
-            <span>📞 +86 20 8888 1234 (Guangzhou)</span>
-            <span>📞 +84 24 3556 7788 (Hanoi)</span>
+            <span>📞 000-000-000 (Guangzhou)</span>
+            <span>📞 000-000-000 (Hanoi)</span>
             <span>✉ supplier@huayuesc.vn</span>
           </div>
         </div>
