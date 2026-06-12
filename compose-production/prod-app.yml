@@ -1,0 +1,94 @@
+# Sprint 13 P0-1B + P0-2 — csr-app-prod (192.168.40.60): Medusa + Storefront + Payload
+# TOAN BO target: production (P0-2 hoan thanh — het virtual-module blank page D47)
+# NEXT_PUBLIC_* bake luc BUILD (Next.js inline) → doi gia tri = rebuild storefront
+# Public URLs: shop/api/admin/cms.cybersilkroads.com (user tro proxy ve .60)
+
+services:
+  medusa:
+    build:
+      context: ../medusa
+      dockerfile: Dockerfile
+      target: production
+    container_name: csr-medusa-prod
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      MEDUSA_WORKER_MODE: shared
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.40.61:5432/${POSTGRES_DB_MEDUSA}?sslmode=disable
+      REDIS_URL: redis://:${REDIS_PASSWORD}@192.168.40.61:6379
+      JWT_SECRET: ${MEDUSA_JWT_SECRET}
+      COOKIE_SECRET: ${MEDUSA_COOKIE_SECRET}
+      STORE_CORS: https://shop.cybersilkroads.com,https://cybersilkroads.com,http://192.168.40.60:3000
+      ADMIN_CORS: https://admin.cybersilkroads.com,http://192.168.40.60:9000,http://192.168.40.60:7001
+      AUTH_CORS: https://shop.cybersilkroads.com,https://admin.cybersilkroads.com,https://cybersilkroads.com,https://api.cybersilkroads.com,http://192.168.40.60:3000,http://192.168.40.60:9000
+      S3_FILE_URL: http://192.168.40.62:9000/medusa-media
+      S3_ACCESS_KEY_ID: ${MINIO_ROOT_USER}
+      S3_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      S3_REGION: us-east-1
+      S3_BUCKET: medusa-media
+      S3_ENDPOINT: http://192.168.40.62:9000
+      DEFAULT_TENANT_ID: csr
+      SYSTEM_TENANT_ID: csr
+      # P0-3 Email (Resend)
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      EMAIL_FROM: ${EMAIL_FROM}
+      CONTACT_EMAIL: ${CONTACT_EMAIL}
+      STOREFRONT_URL: ${STOREFRONT_URL}
+      # P0-4 VNPay
+      VNP_TMN_CODE: ${VNP_TMN_CODE}
+      VNP_HASH_SECRET: ${VNP_HASH_SECRET}
+      VNP_URL: ${VNP_URL}
+      VNP_RETURN_URL: ${VNP_RETURN_URL}
+    ports:
+      - "9000:9000"
+      - "7001:7001"
+    command: sh -c "(npx medusa db:migrate || true) && npx medusa start"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  storefront:
+    build:
+      context: ../storefront
+      dockerfile: Dockerfile
+      target: production
+      args:
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: https://api.cybersilkroads.com
+        NEXT_PUBLIC_BASE_URL: https://shop.cybersilkroads.com
+        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
+        NEXT_PUBLIC_TENANT: csr
+    container_name: csr-storefront-prod
+    restart: unless-stopped
+    depends_on:
+      - medusa
+    environment:
+      NODE_ENV: production
+      # Server-side fetch noi bo (khong qua proxy)
+      MEDUSA_BACKEND_URL: http://192.168.40.60:9000
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: https://api.cybersilkroads.com
+      NEXT_PUBLIC_BASE_URL: https://shop.cybersilkroads.com
+      NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
+      NEXT_PUBLIC_TENANT: csr
+    ports:
+      - "3000:3001"
+
+  payload:
+    build:
+      context: ../payload
+      dockerfile: Dockerfile
+      target: production
+      args:
+        DATABASE_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.40.61:5432/${POSTGRES_DB_PAYLOAD}
+        PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+    container_name: csr-payload-prod
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.40.61:5432/${POSTGRES_DB_PAYLOAD}
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_SERVER_URL: https://cms.cybersilkroads.com
+    ports:
+      - "3001:3000"
