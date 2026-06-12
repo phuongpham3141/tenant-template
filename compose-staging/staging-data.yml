@@ -1,0 +1,43 @@
+# Sprint 12 Pha 3 — csr-data (192.168.40.51): Postgres + Redis
+# Adapted from R20 compose-staging-data.yml:
+# - IP binding 10.10.1.11 -> default (VM-level firewall/router isolation)
+# - ZFS /rpool-data -> /data/csr (ext4)
+# - pgvector image -> custom build (pgvector + pg_partman, same as dev)
+# - clickhouse DROPPED (khong co consumer, dev khong chay)
+# - POSTGRES_MULTIPLE_DATABASES medusa,payload + init script (dev pattern)
+
+services:
+  postgres:
+    build:
+      context: ./postgres
+    container_name: csr-postgres-staging
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_MULTIPLE_DATABASES: ${POSTGRES_DB_MEDUSA},${POSTGRES_DB_PAYLOAD}
+    volumes:
+      - /data/csr/postgres:/var/lib/postgresql/data
+      - ./scripts/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: csr-redis-staging
+    restart: unless-stopped
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - /data/csr/redis:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a ${REDIS_PASSWORD} ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
