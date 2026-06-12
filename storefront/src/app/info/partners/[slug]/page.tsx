@@ -200,15 +200,6 @@ export default async function PartnerDetailPage({
                   <span>{partner.hotline}</span>
                 </a>
               )}
-              <a
-                href={partner.website}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex items-center gap-2 text-[12.5px] text-brand hover:underline break-all"
-              >
-                <span>🌐</span>
-                <span>{t("info_partners_slug.official_site")}</span>
-              </a>
             </div>
 
             <Link
