@@ -90,5 +90,7 @@ services:
       DATABASE_URI: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.40.61:5432/${POSTGRES_DB_PAYLOAD}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       PAYLOAD_PUBLIC_SERVER_URL: https://cms.cybersilkroads.com
+      PAYLOAD_CORS: https://cms.cybersilkroads.com,https://shop.cybersilkroads.com
+      PAYLOAD_CSRF: https://cms.cybersilkroads.com
     ports:
       - "3001:3000"

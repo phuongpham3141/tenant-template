@@ -1,4 +1,6 @@
-import { api } from "../../api/client"
+// SDK nay duoc import boi CLIENT components (AiChatBox/useAiLivestreamChat)
+// → dung browser-client (client-safe), KHONG dung api/client (keo theo next/headers)
+import { api } from "../../api/browser-client"
 
 export type Locale = "vi" | "en" | "cn"
 export type LivestreamMode = "human" | "ai_segment" | "ai_continuous"

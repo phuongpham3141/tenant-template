@@ -124,8 +124,4 @@ export default buildConfig({
   plugins: [],
   cors: (process.env.PAYLOAD_CORS || 'http://shop.huayuesc.local,http://admin.huayuesc.local').split(','),
   csrf: (process.env.PAYLOAD_CSRF || 'http://shop.huayuesc.local,http://admin.huayuesc.local').split(','),
-  rateLimit: {
-    max: 2000,
-    window: 60_000,
-  },
 })

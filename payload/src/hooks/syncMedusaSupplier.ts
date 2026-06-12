@@ -3,8 +3,7 @@ import type { CollectionAfterChangeHook } from 'payload'
 const MEDUSA_BASE_URL = process.env.MEDUSA_BASE_URL || 'http://medusa:9000'
 const MEDUSA_API_TOKEN = process.env.PAYLOAD_TO_MEDUSA_TOKEN || ''
 
-export const syncMedusaSupplier: CollectionAfterChangeHook = async ({ doc, previousDoc, operation, req }) => {
-  if (operation === 'delete') return doc
+export const syncMedusaSupplier: CollectionAfterChangeHook = async ({ doc, previousDoc, req }) => {
   if (doc._status !== 'published') return doc
   if (!doc.supplierId) return doc
 

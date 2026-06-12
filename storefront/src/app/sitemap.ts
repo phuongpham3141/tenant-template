@@ -3,7 +3,7 @@ import { ARTICLES } from "@/lib/blog";
 
 const BASE_URL = "https://cybersilkroads.com";
 
-type Priority = 0.3 | 0.5 | 0.7 | 0.8 | 0.9 | 1.0;
+type Priority = 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0;
 type ChangeFreq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
 function entry(path: string, priority: Priority, changeFrequency: ChangeFreq): MetadataRoute.Sitemap[number] {

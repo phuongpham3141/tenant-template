@@ -1,10 +1,11 @@
-import { getSession } from "../session"
 import { DEFAULT_TENANT } from "../tenant"
 
-const BASE_URL = process.env.MEDUSA_INTERNAL_URL ?? process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL ?? "http://api.huayuesc.local"
+// Client-safe API client — KHONG import session (next/headers server-only).
+// Session cookie la httpOnly → browser tu gui qua credentials; khong build Authorization header.
+const BASE_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL ?? "http://api.huayuesc.local"
 const PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ?? ""
 
-export interface ApiOptions {
+export interface BrowserApiOptions {
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
   body?: unknown
   headers?: Record<string, string>
@@ -13,13 +14,13 @@ export interface ApiOptions {
   query?: Record<string, string | number | boolean | undefined | null>
 }
 
-export class ApiError extends Error {
+export class BrowserApiError extends Error {
   constructor(public status: number, public code: string, message: string, public details?: unknown) {
     super(message)
   }
 }
 
-function buildUrl(path: string, query?: ApiOptions["query"]): string {
+function buildUrl(path: string, query?: BrowserApiOptions["query"]): string {
   const url = new URL(path.startsWith("http") ? path : `${BASE_URL}${path}`)
   if (query) {
     for (const [k, v] of Object.entries(query)) {
@@ -30,16 +31,12 @@ function buildUrl(path: string, query?: ApiOptions["query"]): string {
   return url.toString()
 }
 
-export async function api<T>(path: string, opts: ApiOptions = {}): Promise<T> {
-  const session = await getSession()
+export async function api<T>(path: string, opts: BrowserApiOptions = {}): Promise<T> {
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
     "x-publishable-api-key": PUBLISHABLE_KEY,
-    "x-tenant-id": session?.tenantId ?? DEFAULT_TENANT.tenantId,
+    "x-tenant-id": DEFAULT_TENANT.tenantId,
     ...(opts.headers ?? {}),
-  }
-  if (session) {
-    headers["Authorization"] = `Bearer ${session.userId}`
   }
 
   const res = await fetch(buildUrl(path, opts.query), {
@@ -48,6 +45,7 @@ export async function api<T>(path: string, opts: ApiOptions = {}): Promise<T> {
     body: opts.body ? JSON.stringify(opts.body) : undefined,
     cache: opts.cache,
     next: opts.next,
+    credentials: "include",
   })
 
   const ct = res.headers.get("content-type") ?? ""
@@ -57,7 +55,7 @@ export async function api<T>(path: string, opts: ApiOptions = {}): Promise<T> {
   if (!res.ok) {
     const code = isJson ? (payload as any).code ?? (payload as any).error ?? "API_ERROR" : "HTTP_ERROR"
     const message = isJson ? (payload as any).message ?? "Request failed" : `HTTP ${res.status}`
-    throw new ApiError(res.status, code, message, payload)
+    throw new BrowserApiError(res.status, code, message, payload)
   }
   return payload as T
 }
