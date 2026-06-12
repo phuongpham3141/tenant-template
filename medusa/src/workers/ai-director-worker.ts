@@ -20,7 +20,7 @@ export function startAiDirectorWorker(container: any) {
     async (job) => {
       const { tenantId, sessionId } = job.data
       const ctx = adminContext(tenantId)
-      const service = container.resolve<AiLivestreamService>(AI_LIVESTREAM_MODULE)
+      const service = container.resolve(AI_LIVESTREAM_MODULE) as AiLivestreamService
       const result = await tickDirector({ ctx, service, sessionId })
       if (result.action !== "ended" && !result.action.startsWith("failed") && !result.action.startsWith("noop_terminal")) {
         await directorQ.add(

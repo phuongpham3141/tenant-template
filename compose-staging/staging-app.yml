@@ -12,11 +12,11 @@ services:
     build:
       context: ../medusa
       dockerfile: Dockerfile
-      target: development
+      target: production
     container_name: csr-medusa-staging
     restart: unless-stopped
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
       MEDUSA_WORKER_MODE: shared
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@192.168.40.51:5432/${POSTGRES_DB_MEDUSA}?sslmode=disable
       REDIS_URL: redis://:${REDIS_PASSWORD}@192.168.40.51:6379
@@ -36,7 +36,7 @@ services:
     ports:
       - "9000:9000"
       - "7001:7001"
-    command: sh -c "npx medusa db:migrate || true; npm run dev"
+    command: sh -c "(npx medusa db:migrate || true) && npx medusa start"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
       interval: 30s

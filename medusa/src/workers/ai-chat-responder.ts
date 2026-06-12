@@ -25,7 +25,7 @@ export function startAiChatResponderWorker(container: any) {
     async (job) => {
       const { tenantId, sessionId, personaId, locale, message } = job.data
       const ctx = adminContext(tenantId)
-      const service = container.resolve<AiLivestreamService>(AI_LIVESTREAM_MODULE)
+      const service = container.resolve(AI_LIVESTREAM_MODULE) as AiLivestreamService
 
       // 1. Cache lookup
       const cached = await service.lookupChatResponse(ctx, personaId, locale, message)
