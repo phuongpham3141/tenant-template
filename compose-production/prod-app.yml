@@ -74,6 +74,13 @@ services:
       NEXT_PUBLIC_TENANT: csr
     ports:
       - "3000:3001"
+    # Override image healthcheck: localhost→::1 (IPv6 hong tren VM) → refused
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3001"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   payload:
     build:
@@ -94,3 +101,10 @@ services:
       PAYLOAD_CSRF: https://cms.cybersilkroads.com
     ports:
       - "3001:3000"
+    # Override image healthcheck: /api/health khong ton tai (404) → check /admin
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:3000/admin"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
