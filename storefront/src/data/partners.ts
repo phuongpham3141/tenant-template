@@ -22,6 +22,7 @@ import { DONGYUAN_PRODUCTS } from "@/data/catalogs/dongyuan";
 import { CARE_LIGHTING_PRODUCTS } from "@/data/catalogs/care-lighting";
 import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
 import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
+import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
 
 /**
  * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
@@ -438,6 +439,28 @@ export const PARTNERS: PartnerBrand[] = [
     hotline: "(+84) 238-863-9666",
     website: "https://ducthinhstone.com/",
     products: DUC_THINH_STONE_PRODUCTS,
+  },
+  {
+    slug: "lumina",
+    name: "光年地板",
+    nameOriginal: "光年地板 Lumina Floor",
+    category: "construction-materials",
+    cvsStt: 45,
+    introduction:
+      "光年地板（Lumina Floor）是华越供应链旗下自营工厂重点打造的青年地材品牌，以环保石塑 SPC 与高弹性 LVT 为核心产品矩阵。品牌深度洞察年轻消费群体对时尚设计与实用性能的双重追求，将创新科技与潮流美学深度融合，为现代家居及商业空间提供兼具颜值、品质与性价比的年轻化地面解决方案。",
+    factory: {
+      location: "中国 · 华越供应链自营工厂",
+      capacity: "SPC / LVT 地板，800+ 图案与颜色",
+    },
+    highlights: [
+      "华越供应链自营工厂 —— 源头直供、品控稳定",
+      "核心品类：环保石塑 SPC（4–8mm）+ 高弹性 LVT（2–5mm）",
+      "800+ 图案与颜色，均来自领先装饰膜制造商",
+      "多种厚度、背衬（EVA / IXPE）与耐磨层（0.2–0.5mm）可选",
+      "锁扣 / 自粘 / 干式背衬多种安装方式，适配住宅与商业项目",
+    ],
+    website: "https://huayuesc.vn/",
+    products: LUMINA_PRODUCTS,
   },
 
   // ─── 💡 灯具照明（新增 —— Phase 5+ 批次） ──────────────────
