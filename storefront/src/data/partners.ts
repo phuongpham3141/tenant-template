@@ -23,6 +23,7 @@ import { CARE_LIGHTING_PRODUCTS } from "@/data/catalogs/care-lighting";
 import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
 import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
 import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
+import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
 
 /**
  * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
@@ -332,6 +333,28 @@ export const PARTNERS: PartnerBrand[] = [
     hotline: "400-8308-789",
     website: "https://www.anbichina.com/",
     products: ANBI_PRODUCTS,
+  },
+  {
+    slug: "mijic",
+    name: "民洁",
+    nameOriginal: "民洁卫浴 Mijic (Guangdong Minjie)",
+    category: "bathroom-sanitary",
+    cvsStt: 22,
+    introduction:
+      "广东民洁卫浴是一家以「打造民族品牌、共建洁净世界」为使命的卫浴企业。自 1992 年创立以来，始终致力于为全球用户提供高品质、以人为本的卫浴解决方案。2002 年正式建立陶瓷生产基地、开启规模化发展；2019 年品牌全面升级，提出「民洁的，是世界的」；2022 年进一步聚焦以人为本的卫浴，定位为「更懂人的卫浴专家」。公司拥有两座现代化陶瓷工厂（其中一座为智能制造）及专属浴室柜定制工厂，覆盖陶瓷卫浴、浴室柜与整体卫浴空间定制，形成完整产业链。",
+    founded: "1992",
+    factory: {
+      location: "中国 · 广东",
+      facilities: "两座现代化陶瓷工厂（含智能制造）+ 浴室柜定制工厂",
+    },
+    highlights: [
+      "创立于 1992 年 —— 30 余年卫浴制造经验",
+      "品牌口号：民洁的，是世界的",
+      "聚焦以人为本的卫浴 —— 更懂人的卫浴专家",
+      "全产品线：智能马桶、陶瓷卫浴、浴室柜、浴缸、淋浴房、五金配件",
+    ],
+    website: "https://www.mijic.cn/",
+    products: MIJIC_PRODUCTS,
   },
 
   // ─── 🧱 建筑材料 ──────────────────────────────────────────
