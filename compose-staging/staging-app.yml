@@ -33,6 +33,16 @@ services:
       S3_ENDPOINT: http://192.168.40.52:9000
       DEFAULT_TENANT_ID: csr
       SYSTEM_TENANT_ID: csr
+      # P0-3 Email (Resend)
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      EMAIL_FROM: ${EMAIL_FROM}
+      CONTACT_EMAIL: ${CONTACT_EMAIL}
+      STOREFRONT_URL: ${STOREFRONT_URL}
+      # P0-4 VNPay
+      VNP_TMN_CODE: ${VNP_TMN_CODE}
+      VNP_HASH_SECRET: ${VNP_HASH_SECRET}
+      VNP_URL: ${VNP_URL}
+      VNP_RETURN_URL: ${VNP_RETURN_URL}
     ports:
       - "9000:9000"
       - "7001:7001"
