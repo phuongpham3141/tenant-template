@@ -23,6 +23,7 @@ import { CARE_LIGHTING_PRODUCTS } from "@/data/catalogs/care-lighting";
 import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
 import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
 import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
+import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
 
 /**
  * Huayue Supply Chain partner factories — 24 official partner brands, all
@@ -464,6 +465,32 @@ export const PARTNERS: PartnerBrand[] = [
     hotline: "(+84) 238-863-9666",
     website: "https://ducthinhstone.com/",
     products: DUC_THINH_STONE_PRODUCTS,
+  },
+  {
+    slug: "lumina",
+    name: "Lumina Floor",
+    nameOriginal: "光年地板 Lumina Floor",
+    category: "construction-materials",
+    cvsStt: 45,
+    introduction:
+      "Lumina Floor is an up-and-coming young flooring brand crafted by Huayue Supply Chain's in-house factory. Guided by the belief that a premium look should be within everyone's reach, it focuses on two core categories: eco-friendly SPC stone-plastic composite and high-resilience LVT. The brand deeply understands the younger generation's dual desire for stylish design and practical performance —— floors that look great and photograph beautifully, yet are also waterproof, wear-resistant and low-maintenance. Drawing on Huayue's full-chain control, from core formulation and decorative-film printing to click-lock tooling, Lumina fuses commercial-grade durability with trend-level aesthetics, offering more than 800 wood-grain, stone-pattern and on-trend designs in styles ranging from wabi-sabi raw wood to modern minimalism. Whether it's a whole-home renovation of a compact unit, creating atmosphere for a cafe or concept store, or a quick refresh of an office or showroom, Lumina Floor lays a young, quiet and solid surface for modern homes and commercial spaces, all with great looks, fine quality and a friendly price.",
+    factory: {
+      location: "China · Huayue Supply Chain in-house factory (SPC / LVT flooring base)",
+      capacity: "SPC 4–8mm / LVT 2–5mm, 800+ patterns kept in stock",
+      facilities: "Full-chain control: core formulation · decorative-film printing · click-lock tooling · finished-goods QC",
+    },
+    highlights: [
+      "Huayue Supply Chain in-house factory —— direct-from-source supply, friendly prices, reliable lead times",
+      "Two core categories: eco-friendly SPC (rigid and waterproof) + high-resilience LVT (quiet and comfortable)",
+      "800+ decorative patterns: wood grain / stone pattern / herringbone / woven texture, on-trend styles all in one place",
+      "Multiple thicknesses (SPC 4–8mm · LVT 2–5mm), backings (EVA / IXPE) and wear layers (0.2–0.5mm) freely combined",
+      "Three installation methods —— glue-free click-lock / self-adhesive peel-and-stick / dry-back full-spread glue —— lay directly over old floors for a same-day refresh",
+      "Naturally waterproof, rigid and wear-resistant, E0 / E1 eco-friendly core, a confident choice for green home renovation",
+      "OEM / ODM pattern and specification customization supported, suited to both project and distribution channels",
+      "Wide applications: residential apartments, offices and showrooms, cafes and concept stores, retail and light commercial spaces",
+    ],
+    website: "https://huayuesc.vn/",
+    products: LUMINA_PRODUCTS,
   },
 
   // ─── 💡 Lighting (added —— Phase 5+ batch) ──────────────────
