@@ -60,7 +60,7 @@ services:
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
       NEXT_PUBLIC_TENANT: csr
     ports:
-      - "3000:3000"
+      - "3000:3001"
 
   payload:
     build:
@@ -75,4 +75,4 @@ services:
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       PAYLOAD_PUBLIC_SERVER_URL: http://192.168.40.50:3001
     ports:
-      - "3001:3001"
+      - "3001:3000"
