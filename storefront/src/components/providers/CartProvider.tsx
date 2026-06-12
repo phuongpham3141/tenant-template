@@ -230,7 +230,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const currency = items[0]?.currency ?? "USD"
   const totalMinor = items.reduce(
     (acc, i) => acc + i.unitPriceMinor * BigInt(i.quantity),
-    0n,
+    BigInt(0),
   )
 
   return (

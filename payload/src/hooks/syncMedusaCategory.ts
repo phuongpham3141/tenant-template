@@ -4,7 +4,6 @@ const MEDUSA_BASE_URL = process.env.MEDUSA_BASE_URL || 'http://medusa:9000'
 const MEDUSA_API_TOKEN = process.env.PAYLOAD_TO_MEDUSA_TOKEN || ''
 
 export const syncMedusaCategory: CollectionAfterChangeHook = async ({ doc, previousDoc, operation, req }) => {
-  if (operation === 'delete') return doc
   if (doc._status !== 'published') return doc
 
   const previousStatus = previousDoc?._status

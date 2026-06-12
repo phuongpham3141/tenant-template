@@ -1,0 +1,54 @@
+# Sprint 13 P0-1B — csr-storage-prod (192.168.40.62): MinIO + Meilisearch
+# CPU prod VMs VAN la kvm64 (user chua doi type=host trong Proxmox)
+# → minio/mc GIU PIN RELEASE 2022 (x86-64-v2 requirement)
+# TODO: user doi CPU type=host → unpin (xem production-vms-setup.html)
+
+services:
+  minio:
+    image: minio/minio:RELEASE.2022-10-24T18-35-07Z
+    container_name: csr-minio-prod
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - /data/csr/minio:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:RELEASE.2022-10-29T10-09-23Z
+    container_name: csr-minio-init-prod
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until mc alias set local http://minio:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD} 2>/dev/null; do echo waiting-minio; sleep 3; done &&
+      mc mb -p local/medusa-media &&
+      mc mb -p local/payload-uploads &&
+      mc anonymous set download local/medusa-media &&
+      echo 'buckets ready'
+      "
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.10
+    container_name: csr-meilisearch-prod
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_ENV: production
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - /data/csr/meilisearch:/meili_data
+    ports:
+      - "7700:7700"

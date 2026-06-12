@@ -9,13 +9,13 @@ export async function POST(req: Request) {
   }
   const body = (await req.json()) as { collection?: string; slug?: string; tag?: string; path?: string }
   const collection = body.collection
-  if (body.tag) revalidateTag(body.tag)
+  if (body.tag) revalidateTag(body.tag, "max")
   if (body.path) revalidatePath(body.path)
   if (collection === "blog-articles" && body.slug) revalidatePath(`/blog/${body.slug}`)
   if (collection === "pages" && body.slug) revalidatePath(`/${body.slug}`)
-  if (collection === "banners") revalidateTag("banners")
-  if (collection === "navigation") revalidateTag("navigation")
-  if (collection === "footer") revalidateTag("footer")
-  if (collection === "site-settings") revalidateTag("site-settings")
+  if (collection === "banners") revalidateTag("banners", "max")
+  if (collection === "navigation") revalidateTag("navigation", "max")
+  if (collection === "footer") revalidateTag("footer", "max")
+  if (collection === "site-settings") revalidateTag("site-settings", "max")
   return NextResponse.json({ ok: true })
 }
