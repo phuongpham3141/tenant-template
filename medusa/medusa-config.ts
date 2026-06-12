@@ -23,6 +23,7 @@ module.exports = defineConfig({
           'api.huayuesc.local',
           '.huayuesc.local',
           '.huayuesc.com',
+          '.cybersilkroads.com',
           'localhost',
         ],
       },

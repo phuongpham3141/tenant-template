@@ -43,7 +43,7 @@ export default async function trendingRebuilder(container: MedusaContainer) {
              AND processed_query = ANY($4::text[])`,
           [locale, p.priorInterval, p.interval, current.map((r) => r.term)]
         ).catch(() => [])
-        const priorMap = new Map<string, number>(priorRows.map((r) => [r.term, Number(r.cnt)]))
+        const priorMap = new Map<string, number>(priorRows.map((r): [string, number] => [r.term, Number(r.cnt)]))
 
         // Wipe and rewrite this (tenant, locale, period) bucket
         await queryT(
