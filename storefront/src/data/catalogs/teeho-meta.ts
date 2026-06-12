@@ -1,96 +1,371 @@
 /**
- * TEEHO 智能锁元数据 — 详情页。按 seriesOriginal (catKey) 索引。
- * 货源：teeho.com（Shopify）。出口型电子 / 智能门锁（主要面向美国市场）。
+ * TEEHO 智能锁系列元数据 —— 产品详情页富文本。
+ * 按 seriesOriginal (catKey) 索引：keypad-deadbolt / lever-lock / handle-set /
+ * wifi-lock / wifi-handle / smart-handle / gateway / other。
+ * 资料来源：teeho.com（Shopify 官方站点，出口型电子 / 智能门锁，主要面向美国市场）
+ * 已核验的产品参数 + 智能门锁行业通用工艺说明。
  */
+
 export type SeriesMeta = {
-  story: string; heritage: string;
+  story: string;
+  heritage: string;
   technicalSpecs: { label: string; value: string }[];
-  manufacturing: string[]; careGuide: { title: string; desc: string }[];
-  installation: string[]; certifications: string[];
+  manufacturing: string[];
+  careGuide: { title: string; desc: string }[];
+  installation: string[];
+  certifications: string[];
   packaging: { label: string; value: string }[];
   whyChoose: { icon: string; title: string; desc: string }[];
-  projectShowcase: string[]; faq: { q: string; a: string }[];
+  projectShowcase: string[];
+  faq: { q: string; a: string }[];
 };
-const CERTS = ["国际电子安全认证", "民用门锁标准（参照 ANSI/BHMA）", "RoHS —— 安全材料", "指纹 / 密码数据加密安全"];
-const MFG = [
-  "TEEHO —— 智能 / 电子门锁品牌，通过 D2C/B2B 渠道分销（Shopify，美国市场）",
-  "产品系列：密码插芯锁、执手锁、执手套装、WiFi/蓝牙锁、网关",
-  "多种开锁方式：指纹、密码、卡片/App、机械应急钥匙",
-  "按民用电子门锁标准进行质量与安全管控",
+
+const BRAND_MFG = [
+  "TEEHO 是一家专注消费级电子 / 智能门锁的品牌，通过 D2C 与 B2B 渠道分销，产品从机械锁体到电子主控均按民用电子门锁标准设计与品控",
+  "全系覆盖密码插芯锁、密码执手锁、执手套装、WiFi 智能锁、智能执手与配套网关，开锁逻辑统一、配件互通，便于成套交付与后期维护",
+  "锁体多采用锌合金 / 铝合金压铸面板搭配不锈钢锁舌，表面提供哑光黑、缎面镍、仿古铜三种处理，兼顾耐用性与现代外观",
+  "电子部分以低功耗主控加 4 节 AA 干电池供电，配电量不足红灯报警与机械应急钥匙 / 应急供电接口，保证断电不被锁在门外",
+  "支持按批量 / 集装箱起订，可多型号混搭出货，并可按项目需求协调表面处理与零售包装方案",
 ];
-const PACK = [
-  { label: "包装", value: "零售包装，含安装配件与电池" },
-  { label: "随附配件", value: "螺丝、机械应急钥匙、说明书（电池）" },
-  { label: "起订量", value: "按批量 / 集装箱；支持多型号混搭" },
+
+const BRAND_CARE = [
+  { title: "电池保养", desc: "建议使用品牌碱性 5 号（AA）电池，续航约一年；面板出现红灯或低电提示时整组更换，避免新旧混用导致供电不稳。" },
+  { title: "传感与键盘清洁", desc: "用干燥软布擦拭指纹传感器与键盘，去除油污和指纹残留可提升识别率；切勿用水冲洗或喷洒含酒精 / 强溶剂的清洁剂。" },
+  { title: "密码与权限安全", desc: "定期更换主密码，访客一次性密码用后及时删除；善用防窥视虚位密码功能，在真实密码前后随意加数字，防止旁人偷窥。" },
+  { title: "户外防护", desc: "面向户外的门体建议核对防护等级（IP54 / IP55），雨季注意密封胶条状态，避免长时间积水浸泡键盘与锁孔。" },
 ];
-const INSTALL = [
-  "适用于标准门（常见门厚与锁舌中心距）；下单前请核对",
-  "可按说明书用螺丝刀自行安装（DIY）；无需布线",
-  "安装后录入指纹 / 密码并连接 App（WiFi/蓝牙系列）",
-  "交付前检查开锁 / 上锁、自动上锁及电量",
+
+const BRAND_INSTALL = [
+  "下单前核对门体参数：门厚常见适配范围 35-50mm（约 1-3/8 至 2 英寸）与锁舌中心距，确认开门方向（左 / 右开通用）",
+  "拆除原有锁具，按说明书定位安装孔；多数型号沿用标准开孔，无需重新打孔即可替换旧锁",
+  "用一把螺丝刀即可完成机械安装，无需布线、无需专业工具，单人约 15-30 分钟到位（DIY 友好）",
+  "通电后录入管理员指纹 / 密码，联网型号再按提示连接 WiFi / 蓝牙与手机 App，绑定家庭账户",
+  "交付前完整测试：开锁 / 上锁、自动上锁定时、常开模式、机械应急钥匙以及电量显示均需逐项确认",
 ];
-const CARE = [
-  { title: "电池", desc: "使用优质 AA 电池；电量不足提示时更换。部分型号配有应急供电接口。" },
-  { title: "清洁", desc: "用干燥软布擦拭指纹传感器与键盘；避免接触水或强化学品。" },
-  { title: "安全", desc: "定期更换密码，临时密码使用后删除；及时更新 App（WiFi 系列）。" },
+
+const BRAND_CERTS = [
+  "电子门锁电气安全认证 —— 主控与供电电路按国际电子安全规范设计，低压直流供电安全可靠",
+  "民用门锁机械标准 —— 锁体强度参照 ANSI/BHMA 等级（部分型号达 Grade 3），锁舌耐用",
+  "RoHS 有害物质限制 —— 选用环保安全材料，符合出口市场环保要求",
+  "指纹 / 密码数据加密 —— 生物与密码信息本地加密存储，连续错误输入触发键盘锁定保护",
+  "无线模块合规 —— WiFi / 蓝牙系列射频部分符合通用无线电气规范（如 CCC / FCC 类规则）",
 ];
-const FAQ = [
-  { q: "TEEHO 门锁能否安装在越南的门上？", a: "适用于符合门厚与锁舌中心距的标准门；下单前请按各型号确认门体参数。" },
-  { q: "是否配有机械应急钥匙与应急供电？", a: "多数型号配有机械应急钥匙和 / 或应急供电接口；详情视各产品而定。" },
-  { q: "起订量与交期？", a: "按批量计；交期随订单确认。" },
+
+const BRAND_PACK = [
+  { label: "零售包装", value: "彩盒零售装，内含锁体、面板、安装配件与说明书，泡棉成型防护" },
+  { label: "随附配件", value: "安装螺丝、机械应急钥匙、安装模板与说明书；电池视型号是否随附" },
+  { label: "起订量", value: "按批量 / 集装箱计，支持多型号、多表面处理混装出货" },
+  { label: "交期", value: "常备型号快速发货；定制表面 / 包装随订单协商确认" },
+  { label: "样品", value: "可提供样锁供安装核验与手感确认，再行批量下单" },
 ];
-function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
-  return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
-}
-const WHY = { icon: "🔐", title: "多种开锁方式", desc: "指纹、密码、卡片/App 及机械应急钥匙 —— 便捷又安全。" };
-const SHOW = ["住宅、公寓、别墅", "办公室、民宿/Airbnb", "智能家居交付项目"];
-const DEADBOLT = mk({
-  story: "TEEHO 密码插芯锁（TE001/TE002）—— 支持指纹与密码开锁的电子插芯锁，配机械应急钥匙，DIY 安装免布线，自动上锁。",
-  heritage: "插芯锁系列是 TEEHO 面向通道门最普及的产品。",
-  technicalSpecs: [{ label: "类型", value: "电子插芯锁（deadbolt）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "安装", value: "DIY，免布线" }, { label: "供电", value: "AA电池 + 应急供电接口（视型号而定）" }],
-  whyChoose: [WHY, { icon: "🛠️", title: "DIY安装简便", desc: "用螺丝刀即可自行安装，适用于标准门。" }, { icon: "🔄", title: "自动上锁", desc: "关门后自动上锁，省心不遗忘。" }],
-  projectShowcase: SHOW,
-});
-const WIFI = mk({
-  story: "TEEHO WiFi智能锁（TE011W/TE012W）——可通过App远程控制与下发密码、查看进出记录、集成语音助手，支持指纹/密码/App/钥匙开锁。",
-  heritage: "WiFi系列将TEEHO门锁接入智能家居生态。",
-  technicalSpecs: [{ label: "类型", value: "WiFi智能锁" }, { label: "连接方式", value: "WiFi（部分含蓝牙）" }, { label: "控制", value: "App远程控制、下发/锁定密码、记录" }, { label: "开锁方式", value: "指纹、密码、App、机械钥匙" }],
-  whyChoose: [WHY, { icon: "📱", title: "远程控制", desc: "随时随地通过App下发密码与开锁。" }, { icon: "🗣️", title: "智能家居", desc: "集成语音助手（Alexa/Google，视型号而定）。" }],
-  projectShowcase: SHOW,
-});
+
 export const TEEHO_SERIES_META: Record<string, SeriesMeta> = {
-  "keypad-deadbolt": DEADBOLT,
-  "lever-lock": mk({
-    story: "TEEHO密码执手锁（TE001L/TE002L/TE003/TE004）——适用于房门/入户门的电子执手锁，支持指纹与密码开锁，配机械应急钥匙。",
-    heritage: "执手锁系列适用于需要执手而非单纯插芯的门。",
-    technicalSpecs: [{ label: "类型", value: "电子执手锁（lever）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "房门、入户门、办公室" }],
-    whyChoose: [WHY, { icon: "🚪", title: "执手便捷", desc: "通过执手开关门，适用于多种门型。" }, { icon: "🔑", title: "应急钥匙", desc: "需要时有机械钥匙可用，使用安心。" }],
-    projectShowcase: SHOW,
-  }),
-  "handle-set": mk({
-    story: "TEEHO执手锁套装（TE001K/TE002K/TE001H）——插芯锁+同步执手套装组合，适用于入户门，支持指纹与密码开锁。",
-    heritage: "执手套装为入户门带来完整外观与双重安全。",
-    technicalSpecs: [{ label: "类型", value: "插芯锁+执手套装（handle set）" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "入户门、外立面门" }],
-    whyChoose: [WHY, { icon: "🏠", title: "双重安全", desc: "插芯锁+同步执手，守护入户门。" }, { icon: "✨", title: "美观", desc: "完整套装，外观高雅大气。" }],
-    projectShowcase: SHOW,
-  }),
-  "wifi-lock": WIFI, "wifi-handle": WIFI,
-  "smart-handle": mk({
-    story: "TEEHO智能执手（TE018）——集成指纹/密码的门执手，简洁紧凑，适用于房门。",
-    heritage: "智能执手提供轻巧紧凑的门锁解决方案。",
-    technicalSpecs: [{ label: "类型", value: "智能执手" }, { label: "开锁方式", value: "指纹、密码、机械钥匙" }, { label: "适用场景", value: "房门" }],
-    whyChoose: [WHY, { icon: "🤚", title: "轻巧紧凑", desc: "执手集成门锁，安装紧凑，适用于房门。" }],
-    projectShowcase: SHOW,
-  }),
-  gateway: mk({
-    story: "TEEHO网关（G1）——连接器/hub，让蓝牙门锁可通过WiFi实现远程控制，扩展智能家居功能。",
-    heritage: "网关是TEEHO门锁系统的连接扩展配件。",
-    technicalSpecs: [{ label: "类型", value: "网关/连接Hub" }, { label: "功能", value: "蓝牙↔WiFi桥接，实现远程控制" }, { label: "兼容性", value: "支持网关的TEEHO门锁" }],
-    whyChoose: [{ icon: "📡", title: "远程控制", desc: "让蓝牙门锁可通过App实现远程控制。" }, WHY],
-    projectShowcase: SHOW,
-  }),
-  other: DEADBOLT,
+  "keypad-deadbolt": {
+    story:
+      "TEEHO 密码插芯锁是整个产品线里最朴素也最可靠的一类 —— 它不联网、不依赖手机、不需要任何网关，开门只靠你脑中的一串密码，或指尖的一枚指纹。背光键盘在夜里也清晰可按，TE001 纯密码、TE002 加上指纹识别，约 0.3 秒读指、约 1 秒开门，进门动作干脆利落。它最懂北方的冬天与南方的雨季：IP54 防护、零下三十度到七十度照常工作，4 节 5 号电池一撑就是一年。对不想折腾智能生态、只想要一把省心好用前门锁的人来说，这就是答案。",
+    heritage:
+      "插芯锁是 TEEHO 面向入户门与通道门最普及、销量最稳的基础款，也是品牌口碑的起点。它把无钥匙体验做到极致简单 —— 不教学、不调试，装上就能用。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹（TE002）、键盘 PIN 密码、一次性密码、2 把机械应急钥匙" },
+      { label: "材质", value: "锌 / 铝合金压铸面板 + 不锈钢锁舌；哑光黑 / 缎面镍 / 仿古铜" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，电量低于 15% 红灯提示（非锂电方案）" },
+      { label: "续航", value: "正常使用约 12 个月；附低电报警，更换不被锁门外" },
+      { label: "联网 WiFi", value: "无 —— 完全离线运行，不依赖 App / WiFi / 蓝牙" },
+      { label: "适用门", value: "标准入户门 / 通道门，门厚约 35-50mm，左右开通用" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🔐", title: "指纹 + 密码", desc: "TE002 支持最多 20 枚指纹与 20 组密码，每位家人专属开锁方式，约一秒进门。" },
+      { icon: "📴", title: "彻底离线", desc: "不联网、不绑 App，无隐私顾虑也无断网烦恼，开机即用、永不收费。" },
+      { icon: "🔄", title: "自动上锁", desc: "关门后 10-99 秒自动落锁，或长按任意键即时上锁，再不怕忘锁门。" },
+      { icon: "❄️", title: "全天候耐候", desc: "IP54 防护，零下三十度到七十度稳定工作，寒冬酷暑雨天都从容。" },
+      { icon: "🔑", title: "机械应急钥匙", desc: "随附 2 把应急钥匙，电池意外耗尽也能从容开门，多一重安心。" },
+    ],
+    projectShowcase: [
+      "自住住宅入户门 —— 想要省心、不联网的无钥匙升级",
+      "老人独居家庭 —— 指纹 + 应急钥匙双保险，记不住密码也不怕",
+      "无网络环境的别墅 / 乡间住宅前门",
+    ],
+    faq: [
+      { q: "密码插芯锁需要联网或装 App 吗？", a: "不需要。这是完全离线的独立锁，所有指纹与密码都在本地存储，没有 WiFi、蓝牙或月费，断网照常使用。" },
+      { q: "忘记密码或电池没电了怎么办？", a: "随附 2 把机械应急钥匙可直接开门；电量低于 15% 时面板红灯会提前报警，及时整组更换 4 节 AA 电池即可。" },
+      { q: "TE001 和 TE002 怎么选？", a: "只要密码 + 钥匙选 TE001；想要指尖一碰即开、家人各自指纹管理，就选带指纹识别的 TE002。" },
+      { q: "能装在我家现有的门上吗？", a: "适用于门厚约 35-50mm 的标准门，沿用常见开孔，左右开通用；下单前按型号核对门厚与锁舌中心距即可。" },
+    ],
+  },
+
+  "lever-lock": {
+    story:
+      "不是每扇门都适合圆滚滚的插芯旋钮 —— 房门、办公室门、朝外的通道门，更习惯一压即开的执手。TEEHO 密码执手锁把电子开锁装进了顺手的把手里：背光键盘输入 PIN 即可无钥匙进门，TE003 / TE004 还带防窥视虚位密码与外出模式，访客来了发一组一次性密码，用过自动失效。执手一体成型、握感扎实，IP54 耐候让它在朝外的门上也站得住脚。它把智能锁的便利，藏进了你最熟悉的开门姿势里。",
+    heritage:
+      "执手锁系列服务于那些需要把手而非单纯插芯的门 —— 在欧美住宅与办公场景里，杠杆执手是最自然的开门方式。TEEHO 用它补全了从前门到内门的覆盖。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "键盘 PIN 密码、一次性访客密码、机械应急钥匙；防窥视虚位密码" },
+      { label: "材质", value: "合金执手 + 不锈钢锁舌一体结构；哑光黑 / 缎面镍" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，低电红灯提示（非锂电方案）" },
+      { label: "续航", value: "正常使用约一年以上，附电量不足报警" },
+      { label: "联网 WiFi", value: "无 —— 独立键盘锁，不依赖 App / WiFi / 蓝牙" },
+      { label: "适用门", value: "房门 / 入户门 / 办公室门；IP54 耐候，可用于朝外门，约 -31°F 至 150°F" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🚪", title: "执手开门", desc: "一压把手即开，符合多数人的开门习惯，房门、办公室门、通道门都合适。" },
+      { icon: "🔢", title: "密码无钥匙", desc: "背光键盘输入 PIN 即进门，告别带钥匙、找钥匙、配钥匙的麻烦。" },
+      { icon: "👁️", title: "防窥视密码", desc: "真实密码前后可随意加数字干扰，旁人偷看也猜不出，公共门更安全。" },
+      { icon: "🏃", title: "外出模式", desc: "离家时一键进入节能外出模式，停用临时密码，安全又省电。" },
+      { icon: "🔑", title: "应急钥匙", desc: "随附机械钥匙备用，电子部分异常时仍可手动开门，使用安心。" },
+    ],
+    projectShowcase: [
+      "住宅房门 / 卧室门 —— 把手开门更顺手",
+      "小型办公室、工作室入口 —— 密码管理多人进出",
+      "朝外的庭院门 / 侧门 —— IP54 耐候经得起风雨",
+    ],
+    faq: [
+      { q: "执手锁和插芯锁有什么区别？", a: "插芯锁靠旋钮 + 锁舌，执手锁把电子开锁集成在杠杆把手里，一压即开，更适合房门、办公室门等习惯用把手的门。" },
+      { q: "可以给访客临时开门权限吗？", a: "可以。支持生成一次性访客 PIN 密码，使用一次后自动删除，保洁、维修、来客都能临时进出而不泄露主密码。" },
+      { q: "什么是防窥视虚位密码？", a: "在真实密码前后任意输入一串无关数字，只要其中包含正确密码即可开锁，旁人即使看到也无法记住你的真实密码。" },
+      { q: "能装在朝外淋雨的门上吗？", a: "可以。执手锁达 IP54 耐候等级，工作温区约 -31°F 至 150°F，适用于朝外的通道门，但建议避免长时间积水浸泡。" },
+    ],
+  },
+
+  "handle-set": {
+    story:
+      "入户门是一栋房子的脸面，也是安全的第一道关。TEEHO 执手锁套装把密码 / 指纹插芯锁与一套同步执手组合在一起 —— 一把锁守住门内的安全，一套配套执手撑起门外的体面。TE001L / TE002K / TE002L / TE004 / TK001H 覆盖纯密码到指纹识别：指纹约一秒开门、20 组密码分配给全家，自动上锁让门随手即锁，访客一次性密码用完即焚。ANSI Grade 3 锁芯与合金锁体扛得住日常使用，约十五分钟一把螺丝刀就能换新。它给入户门的，是看得见的美观，和看不见的踏实。",
+    heritage:
+      "执手套装是入户门的完整解决方案 —— 在北美住宅里，插芯锁加配套把手是前门的标准搭配。TEEHO 把这套组合做成开锁同步、外观协调的一体套装，让升级一步到位。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹（部分型号）、键盘 PIN 密码、一次性密码、机械应急钥匙" },
+      { label: "材质", value: "插芯锁体 + 同步执手套装；耐用合金锁芯，多种表面处理" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，低电红灯报警（非锂电方案）" },
+      { label: "续航", value: "正常使用约一年以上，电量不足提前提示" },
+      { label: "联网 WiFi", value: "无 —— 离线套装，不依赖 App / WiFi / 蓝牙" },
+      { label: "适用门", value: "入户门 / 外立面门，门厚约 35-50mm；IP54 耐候，约 -22°F 至 158°F" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🏠", title: "双重守护", desc: "密码 / 指纹插芯锁 + 同步执手，门内门外双重把守，入户门更安心。" },
+      { icon: "✨", title: "成套美观", desc: "锁体与执手表面处理统一，整门外观协调大气，提升入户门第一印象。" },
+      { icon: "👆", title: "指纹秒开", desc: "带指纹型号识别率高、约一秒进门，双手拎东西也能轻松开门。" },
+      { icon: "🛡️", title: "ANSI Grade 3", desc: "锁芯达民用门锁 Grade 3 等级、合金锁体，结实耐用、防撬更放心。" },
+      { icon: "⏱️", title: "快速安装", desc: "约 15 分钟、一把螺丝刀完成，左右开门通用，旧锁可直接替换。" },
+    ],
+    projectShowcase: [
+      "自住住宅入户门整体升级 —— 安全与门面一次到位",
+      "联排别墅 / 独栋前门 —— 成套执手提升外立面质感",
+      "需要为家人分配多组密码 / 指纹的多口之家",
+    ],
+    faq: [
+      { q: "套装里都包含什么？", a: "包含一把密码 / 指纹插芯锁与一套同步执手（如两个室内执手或外执手套装），开锁联动、表面处理统一，一次安装搞定整门。" },
+      { q: "带指纹的型号识别快不快、能存多少？", a: "带指纹型号读取约 0.3 秒、开锁约 1 秒，最多可存约 20 枚指纹与 20 组密码，足够全家与常客分别管理。" },
+      { q: "安装复杂吗，需要请师傅吗？", a: "不需要。沿用标准开孔，约 15 分钟、仅用一把螺丝刀即可完成，左右开门通用，DIY 友好。" },
+      { q: "锁的安全等级怎么样？", a: "插芯锁芯达 ANSI Grade 3 民用门锁标准，搭配耐用合金锁体与 IP54 耐候，适合长期用于入户门。" },
+    ],
+  },
+
+  "wifi-lock": {
+    story:
+      "把钥匙留在脑子里还不够 —— TEEHO WiFi 智能锁让你把整扇门装进手机。TE011W / TE012W 内置 WiFi，不用额外网关就能远程开锁、远程下发密码、随时查看谁在几点进出过门。出门在外给保洁开个一次性密码，孩子放学到家手机弹出提醒，深夜想确认门锁没忘统统一键搞定。它兼容 Alexa 与 Google Assistant，一句话即可锁门；TE012W 还叠加指纹识别与 IP55 防水，把便捷、安全与智能拧成一股绳。这是一把会主动汇报、能远程指挥的门锁。",
+    heritage:
+      "WiFi 系列把 TEEHO 门锁正式接入智能家居生态 —— 从一把单机门锁，升级为可远程管理、可语音联动、可记录留痕的智能入口，是品牌迈向全屋智能的关键一步。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹（TE012W）、键盘密码、App 远程开锁、机械应急钥匙" },
+      { label: "材质", value: "合金面板 + 不锈钢锁舌；哑光黑 / 缎面镍，IP55 防水（TE012W）" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，低电 App / 红灯双提醒（非锂电方案）" },
+      { label: "续航", value: "正常使用约一年；联网会略增耗电，低电及时提醒" },
+      { label: "联网 WiFi", value: "内置 WiFi，无需独立网关即可远程控制；兼容 Alexa / Google" },
+      { label: "适用门", value: "标准入户门，门厚约 35-50mm，左右开通用" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "📱", title: "远程控制", desc: "内置 WiFi 无需网关，随时随地用手机开锁、下发密码、远程查看门锁状态。" },
+      { icon: "📋", title: "进出记录", desc: "App 自动记录谁在何时开门，孩子到家、访客到访一目了然，安全感拉满。" },
+      { icon: "🗣️", title: "语音联动", desc: "兼容 Alexa 与 Google Assistant，一句话即可上锁，接入全屋智能场景。" },
+      { icon: "👆", title: "指纹 + 密码", desc: "TE012W 叠加指纹识别与键盘密码，本地多种方式开锁，断网也不耽误进门。" },
+      { icon: "💧", title: "IP55 防水", desc: "TE012W 达 IP55 防护，朝外入户门也经得起风吹雨打，户外使用更可靠。" },
+    ],
+    projectShowcase: [
+      "智能家居全屋交付项目 —— 入户门接入语音与自动化场景",
+      "异地业主 / 经常出差的家庭 —— 远程为亲友、保洁授权开门",
+      "需要进出留痕的住宅与小型办公空间",
+    ],
+    faq: [
+      { q: "需要单独买网关才能远程控制吗？", a: "不需要。WiFi 系列内置 WiFi 模块，连上家里路由器即可直接远程开锁、下发密码与查看记录，无需额外网关或 hub。" },
+      { q: "断网或停电时还能开门吗？", a: "可以。本地键盘密码、指纹（TE012W）与机械应急钥匙不依赖网络，断网照常开门；电池没电时用应急钥匙即可。" },
+      { q: "可以接入 Alexa 或 Google 吗？", a: "可以。WiFi 系列兼容 Amazon Alexa 与 Google Assistant，绑定后即可语音上锁并纳入智能家居自动化场景。" },
+      { q: "联网会很费电吗？", a: "联网会比纯离线型号略增耗电，但正常使用一组 4 节 AA 电池仍可用约一年，App 与面板都会在低电时提前提醒更换。" },
+    ],
+  },
+
+  "wifi-handle": {
+    story:
+      "把 WiFi 智能锁的远程能力，装进入户门最体面的执手套装里 —— 这就是 TEEHO WiFi 执手锁。TE012W-H 带一体执手、TE012W-K 配双旋钮执手套装，内置 WiFi 无需网关即可远程控锁、下发密码、查看进出，TE012W-K 还支持指纹秒开。它既有执手套装的完整外观与入户门质感，又有联网门锁的远程掌控与记录留痕，哑光黑与缎面镍两种表面处理任你搭配立面。当你想要一扇既好看、又聪明、还能远程管理的前门，它把这三件事一次办齐。",
+    heritage:
+      "WiFi 执手锁是执手套装与 WiFi 智能锁的合体款 —— 在保留入户门完整外观的同时接入智能家居，让远程管理不再以牺牲门面为代价，是 TEEHO 面向高端入户门的旗舰组合。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹（TE012W-K）、键盘密码、App 远程开锁、机械应急钥匙" },
+      { label: "材质", value: "插芯锁 + 同步执手套装，合金面板；哑光黑 / 缎面镍" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，低电 App / 红灯提醒（非锂电方案）" },
+      { label: "续航", value: "正常使用约一年；联网略增耗电，低电及时提示" },
+      { label: "联网 WiFi", value: "内置 WiFi，无需独立网关即可 App 远程控制与下发密码" },
+      { label: "适用门", value: "标准入户门 / 外立面门，门厚约 35-50mm，左右开通用" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "📲", title: "执手 + 联网", desc: "执手套装的完整门面，加内置 WiFi 远程控锁，门面与智能两手都要。" },
+      { icon: "🏠", title: "成套入户", desc: "插芯锁 + 同步执手套装，外观协调大气，专为入户门质感打造。" },
+      { icon: "👆", title: "指纹秒开", desc: "TE012W-K 支持指纹无钥匙开锁，进出快捷，双手拎物也轻松。" },
+      { icon: "📡", title: "免网关远控", desc: "内置 WiFi 直连路由器，无需额外网关即可远程开锁、授权与查看记录。" },
+      { icon: "🎨", title: "双色可选", desc: "哑光黑与缎面镍两种表面处理，灵活适配不同门色与立面风格。" },
+    ],
+    projectShowcase: [
+      "高端住宅入户门 —— 既要门面又要远程管理",
+      "智能家居样板房 / 精装交付 —— 联网执手锁作为入户亮点",
+      "需要远程为家人、访客授权的别墅前门",
+    ],
+    faq: [
+      { q: "WiFi 执手锁和普通 WiFi 智能锁有何不同？", a: "前者在 WiFi 远程能力之外，额外配一套同步执手 / 执手套装，外观更完整、入户门质感更强，适合在意门面的前门。" },
+      { q: "也需要单独的网关吗？", a: "不需要。同样内置 WiFi，连上路由器即可远程开锁、下发密码与查看记录，省去额外网关与布线。" },
+      { q: "TE012W-H 和 TE012W-K 怎么选？", a: "TE012W-H 为一体执手、外观简洁；TE012W-K 配双旋钮执手套装并支持指纹，功能更全、套装更完整，按门型与预算选择。" },
+      { q: "有哪些颜色可选？", a: "提供哑光黑（Matte Black）与缎面镍（Satin Nickel）两种表面处理，可根据门色与整体立面风格搭配。" },
+    ],
+  },
+
+  "smart-handle": {
+    story:
+      "TEEHO 智能执手把一整套智能锁，浓缩进一个小巧的门执手里。TE018 集成键盘与执手、支持 App 控制，TE019 走蓝牙 App 路线、带数字键盘与常开模式 —— 键盘输密码、手机远程分享一次性密码、关门自动上锁，全部塞进顺手的把手中。它轻巧紧凑、安装简单，不抢空间也不抢风头，特别适合卧室门、出租房与需要灵活授权的小门。把临时密码发给短租房客、把开门权限远程交给来访的朋友，一切都在指尖完成。小身材，大智慧。",
+    heritage:
+      "智能执手是 TEEHO 最轻巧的一类智能锁，为不需要重型插芯、却想要智能体验的门而生 —— 卧室、书房、出租房间，一把把手就搞定无钥匙与远程授权。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "键盘 PIN 密码、App 控制、一次性 / 临时密码、机械钥匙（视型号）" },
+      { label: "材质", value: "一体执手 / 门球形执手集成键盘；哑光黑 / 缎面镍" },
+      { label: "电源 锂电", value: "5 号（AA）干电池供电，低电提示（非锂电方案）" },
+      { label: "续航", value: "正常使用约一年，低电及时提醒更换" },
+      { label: "联网 WiFi", value: "App 控制（TE019 经蓝牙；可配网关扩展为远程 WiFi 控制）" },
+      { label: "适用门", value: "卧室门 / 房门 / 出租房门等内门，安装紧凑" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🤚", title: "轻巧紧凑", desc: "整锁集成在执手里，不占门体空间，安装简单，特别适合卧室与房门。" },
+      { icon: "🔢", title: "键盘无钥匙", desc: "集成键盘输入密码即开，告别房门带钥匙的麻烦，进出更随意。" },
+      { icon: "📤", title: "远程分享密码", desc: "通过 App 把一次性密码远程发给访客或租客，临时授权不用到场。" },
+      { icon: "🔄", title: "自动上锁", desc: "关门后自动落锁，房门、出租房随手即锁，安全不靠记性。" },
+      { icon: "🛏️", title: "出租友好", desc: "常开模式与临时密码方便短租 / 房间出租场景，换客即换密码。" },
+    ],
+    projectShowcase: [
+      "卧室门 / 书房门 —— 轻量无钥匙升级",
+      "单间出租 / 合租房间 —— 临时密码随客更换",
+      "民宿短租客房门 —— 远程分享一次性密码免接送钥匙",
+    ],
+    faq: [
+      { q: "智能执手适合装在哪种门上？", a: "适合卧室门、书房门、出租房间门等内门，体积紧凑、安装简单；入户门建议选插芯锁或执手套装系列以获得更高安全等级。" },
+      { q: "能远程给访客或租客开门吗？", a: "可以。通过 App 远程分享一次性 / 临时密码，访客或租客自行输入即可进门，无需到场交钥匙，用后可设为自动失效。" },
+      { q: "TE018 和 TE019 有什么区别？", a: "TE018 集成键盘并支持 App 控制；TE019 走蓝牙 App、带数字键盘与常开模式。按是否需要常开模式与控制方式选择。" },
+      { q: "蓝牙型号能实现远程控制吗？", a: "TE019 经蓝牙在近距离用 App 控制；若需异地远程，可搭配 TEEHO 网关把蓝牙桥接到 WiFi，实现真正的远程控锁。" },
+    ],
+  },
+
+  gateway: {
+    story:
+      "TEEHO G1 网关是智能门锁系统里那个低调的幕后中枢 —— 它把只支持蓝牙、够不着路由器的门锁，桥接到家里的 WiFi，让原本只能近场控制的锁拥有了远程的手。装上 G1，蓝牙门锁也能在 App 里随时上锁开锁、查看状态，配合 KK Home App 与 Alexa 语音一并接入智能家居。更妙的是，G1 还集成了一个可 App 控制的智能插座，一个小盒子既当门锁桥梁，又顺手把一盏灯、一台风扇纳入掌控。它不抢戏，却让整套门锁活了起来。",
+    heritage:
+      "网关是 TEEHO 门锁系统的连接扩展配件 —— 它为蓝牙门锁补上远程的最后一公里，是让单机智能锁升级为可远程管理智能家居节点的关键桥梁。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "本身不开锁，为兼容蓝牙门锁提供远程上锁 / 开锁通道" },
+      { label: "材质", value: "插座式塑料外壳，集成智能插座，即插即用" },
+      { label: "电源 锂电", value: "市电直插供电（非电池 / 锂电方案）" },
+      { label: "续航", value: "市电持续供电，长期在线无需更换电池" },
+      { label: "联网 WiFi", value: "WiFi 桥接：蓝牙↔WiFi，把近场蓝牙锁接入远程控制" },
+      { label: "适用门", value: "适配支持网关的 TEEHO 蓝牙门锁；配合 KK Home App 使用" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "📡", title: "蓝牙变远程", desc: "把只支持蓝牙的门锁桥接到 WiFi，让原本近场的锁实现随时随地远程控制。" },
+      { icon: "🔌", title: "集成插座", desc: "一个网关兼带可 App 控制的智能插座，门锁桥梁与家电控制一盒搞定。" },
+      { icon: "🗣️", title: "Alexa 语音", desc: "支持 Alexa 语音控制，把门锁与插座一并接入语音助手与智能家居。" },
+      { icon: "🏠", title: "智能中枢", desc: "配合 KK Home App 作为门锁的控制中枢，统一管理状态与远程操作。" },
+      { icon: "⚡", title: "即插即用", desc: "市电直插、配网简单，无需布线即可为现有蓝牙锁补上远程能力。" },
+    ],
+    projectShowcase: [
+      "已装蓝牙门锁、想升级远程控制的家庭",
+      "智能家居改造项目 —— 统一接入门锁与插座节点",
+      "出租公寓 / 民宿 —— 远程管理多门蓝牙锁状态",
+    ],
+    faq: [
+      { q: "网关本身能开门吗？", a: "网关不直接开门，它的作用是把蓝牙门锁桥接到 WiFi，让你能用 App 远程上锁、开锁与查看状态，开锁仍由门锁本身完成。" },
+      { q: "哪些门锁需要配网关？", a: "支持蓝牙、但本身不内置 WiFi 的 TEEHO 门锁（如部分智能执手）才需要网关；内置 WiFi 的型号可直接远程控制，无需网关。" },
+      { q: "网关怎么供电，需要换电池吗？", a: "G1 为插座式市电直插供电，长期在线，无需更换电池；同时还集成一个可 App 控制的智能插座。" },
+      { q: "支持语音控制吗？", a: "支持。配合 KK Home App 使用，并兼容 Alexa 语音控制，可把门锁与集成插座一并纳入智能家居语音场景。" },
+    ],
+  },
+
+  other: {
+    story:
+      "TEEHO 全系智能锁覆盖从纯密码插芯锁、密码执手锁、入户执手套装，到内置 WiFi 的远程智能锁、轻巧的智能执手与配套网关 —— 围绕指纹、密码、App、机械钥匙四种开锁方式，构建出一套逻辑统一、配件互通的门锁体系。无论是想要一把彻底离线、装上即用的省心前门锁，还是一套能远程授权、记录进出、语音联动的智能入口，都能在这里找到对应的型号。开锁体验一致、安装同样简单，让整屋门锁成套升级变得轻松。",
+    heritage:
+      "作为 TEEHO 产品体系的总览，这一类汇集了品牌在电子 / 智能门锁上的完整布局 —— 从基础离线锁到联网旗舰，覆盖住宅、公寓与短租的各类门型需求。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹、键盘 PIN 密码、App / 远程、机械应急钥匙（按型号组合）" },
+      { label: "材质", value: "锌 / 铝合金面板 + 不锈钢锁舌；哑光黑 / 缎面镍 / 仿古铜" },
+      { label: "电源 锂电", value: "4 节 5 号（AA）干电池供电，低电报警（网关型号市电供电）" },
+      { label: "续航", value: "门锁类正常使用约一年，附低电提示" },
+      { label: "联网 WiFi", value: "离线 / 内置 WiFi / 蓝牙 + 网关，按系列不同而定" },
+      { label: "适用门", value: "入户门 / 房门 / 内门，门厚约 35-50mm，左右开通用" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🔐", title: "多种开锁方式", desc: "指纹、密码、App / 卡片与机械应急钥匙，按需组合，便捷又安全。" },
+      { icon: "🧩", title: "成套体系", desc: "插芯锁、执手锁、套装、WiFi 锁、智能执手与网关配件互通，整屋成套升级。" },
+      { icon: "🛠️", title: "安装简便", desc: "多数型号一把螺丝刀、约 15-30 分钟即可 DIY 安装，无需布线。" },
+      { icon: "📱", title: "可联网可离线", desc: "既有彻底离线的省心款，也有远程控锁、记录留痕的联网款，丰俭由人。" },
+      { icon: "🔑", title: "应急无忧", desc: "机械应急钥匙与低电报警双保险，断电断网也不被锁在门外。" },
+    ],
+    projectShowcase: [
+      "住宅整屋门锁成套升级 —— 入户门到内门统一体系",
+      "公寓 / 长租公寓 —— 多门多户批量交付与管理",
+      "民宿短租 —— 远程授权与一次性密码免接送钥匙",
+    ],
+    faq: [
+      { q: "TEEHO 有哪些主要系列？", a: "包含密码插芯锁、密码执手锁、执手锁套装、WiFi 智能锁、WiFi 执手锁、智能执手与网关配件，覆盖入户门到内门的各类需求。" },
+      { q: "离线锁和联网锁怎么选？", a: "图省心、不想绑 App 选离线插芯 / 执手锁；要远程授权、进出记录与语音联动，选内置 WiFi 的智能锁或加配网关的蓝牙型号。" },
+      { q: "这些锁能装在我家的门上吗？", a: "多数型号适用于门厚约 35-50mm 的标准门，沿用常见开孔、左右开通用；下单前按具体型号核对门厚与锁舌中心距即可。" },
+      { q: "断电断网会不会被锁在门外？", a: "不会。门锁类配机械应急钥匙与低电报警，离线型号本就不依赖网络，联网型号断网仍可本地密码 / 指纹开锁。" },
+    ],
+  },
 };
+
+/** Helper：按 seriesOriginal 获取元数据，缺省回退到 keypad-deadbolt。 */
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {
   if (!seriesOriginal) return undefined;
   return TEEHO_SERIES_META[seriesOriginal.trim()] || TEEHO_SERIES_META["keypad-deadbolt"];

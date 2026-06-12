@@ -1,101 +1,329 @@
 /**
- * TTLock 智能锁元数据 — 详情页。按 seriesOriginal (catKey) 索引。
- * 货源：ttlock.eu（欧洲分销商）。TTLock/Sciener（赛脑智能，深圳）—— 全球智能锁平台。
+ * TTLock 智能锁系列元数据 —— 产品详情页富文本。
+ * 按 seriesOriginal（catKey）索引：smart-lock / lever / cylinder / outdoor / gateway 等。
+ * 资料来源：ttlock.eu（欧洲分销商）+ TTLock / Sciener 赛脑智能（深圳）平台公开资料 + 行业通用参数。
  */
+
 export type SeriesMeta = {
-  story: string; heritage: string;
+  story: string;
+  heritage: string;
   technicalSpecs: { label: string; value: string }[];
-  manufacturing: string[]; careGuide: { title: string; desc: string }[];
-  installation: string[]; certifications: string[];
+  manufacturing: string[];
+  careGuide: { title: string; desc: string }[];
+  installation: string[];
+  certifications: string[];
   packaging: { label: string; value: string }[];
   whyChoose: { icon: string; title: string; desc: string }[];
-  projectShowcase: string[]; faq: { q: string; a: string }[];
+  projectShowcase: string[];
+  faq: { q: string; a: string }[];
 };
-const CERTS = ["国际电子安全认证（CE）", "数据加密安全（AES）", "RoHS —— 安全材料", "兼容 TTLock App 与 Sciener 平台"];
-const MFG = [
-  "TTLock / Sciener 赛脑智能（深圳）—— 全球智能锁平台（App + 云端 API + SDK）",
-  "产品生态：门锁、执手锁、锁芯、挂锁、电机锁、WiFi 网关",
-  "多种开锁方式：指纹、密码、刷卡、App/蓝牙、机械钥匙；可通过网关远程下发密码",
-  "为出租公寓、酒店、办公室提供集中化门锁管理",
+
+const BRAND_MFG = [
+  "TTLock 由 Sciener 赛脑智能（深圳）打造 —— 一套覆盖 App、云端 API 与开放 SDK 的全球智能门禁平台，硬件与软件同源研发，体验一脉相承",
+  "锁体面板采用锌合金压铸与航空级铝材，配合钢化玻璃或拉丝金属饰面，兼顾结构强度与质感，经受频繁开合不松动",
+  "核心电子模组集成蓝牙 5.0 低功耗芯片、半导体指纹传感器与防撬报警电路，所有元件经老化与高低温测试后方可装机",
+  "工厂支持 OEM / ODM：可按项目定制面板配色、把手形态、开锁组合与 App 品牌皮肤，最小起订量灵活，适配工程与分销两种渠道",
+  "依托 TTLock 开放生态，同一把锁可接入网关、门铃、门磁、智能摄像头等周边，形成一体化的智能门禁解决方案",
 ];
-const PACK = [
-  { label: "包装", value: "零售包装，含安装配件与电池" },
-  { label: "随附配件", value: "螺丝、机械钥匙、说明书（视产品而定）" },
-  { label: "起订量", value: "按批量；支持多型号混搭" },
+
+const BRAND_CARE = [
+  { title: "电池保养", desc: "选用品牌碱性或锂电池，App 提示低电量时及时更换；部分型号底部预留 Type-C 或 9V 应急供电口，电量耗尽也能临时取电开门。" },
+  { title: "App 与密钥安全", desc: "保持 TTLock App 为最新版本，及时远程下发或撤销 eKey；临时密码、一次性密码用完后随手删除，定期清理过期授权。" },
+  { title: "传感器清洁", desc: "用干燥柔软的布擦拭指纹采集窗与触控键盘，保持洁净以提升识别率；切勿用水冲洗或接触酒精、强溶剂等化学品。" },
+  { title: "活动部件维护", desc: "执手、旋钮与锁舌如出现涩滞，可在金属导轨处点少量专用润滑剂；避免大力撞击面板，雨季注意户外锁体的密封圈状态。" },
 ];
-const INSTALL = [
-  "下单前核对门厚与锁型（插芯锁 / 欧标锁芯）是否兼容",
-  "按说明书安装；通过蓝牙连接 TTLock App",
-  "录入指纹 / 密码 / 卡片；加装 WiFi 网关以实现远程控制与下发密码",
-  "交付前检查开锁 / 上锁及电量",
+
+const BRAND_INSTALL = [
+  "下单前用卡尺核对门厚、开孔间距与锁型（插芯锁体 / 欧标锁芯 / 美标），确认左右开向与门框尺寸兼容",
+  "按随附说明书逐步安装锁体与面板，走线整齐避免压伤；装上电池后开机自检，确保前后面板通信正常",
+  "手机开启蓝牙就近配对，在 TTLock App 中添加门锁并完成初始化，录入管理员指纹、密码与卡片",
+  "如需远程功能，就近加装 WiFi 网关并联网，绑定后即可远程下发密码、查看开门记录与电量",
+  "交付前反复测试指纹、密码、刷卡、App 与机械钥匙各开锁方式，校准锁舌行程与上锁到位，确认报警与电量正常",
 ];
-const CARE = [
-  { title: "电池", desc: "使用优质电池；App 提示电量不足时及时更换。部分型号配有应急供电接口。" },
-  { title: "App 与安全", desc: "及时更新 TTLock App；远程下发 / 撤销 eKey 密钥；临时密码使用后及时删除。" },
-  { title: "清洁", desc: "用干燥软布擦拭指纹传感器与键盘；避免接触水或强化学品。" },
+
+const BRAND_CERTS = [
+  "中国强制性产品认证 CCC —— 电子门锁产品合规上市的基础门槛",
+  "电气安全符合 CE / RoHS 要求，元件无有害物质，低压供电运行安全可靠",
+  "数据传输采用 AES 加密，云端与 App 通信受保护，临时密码与 eKey 可远程撤销，保障门禁数据安全",
+  "兼容 TTLock App 与 Sciener 云平台，开放 API / SDK 可对接酒店 PMS、公寓管理与第三方智能家居系统",
+  "整机及核心电子模组提供质保，按销售约定享受售后与配件支持",
 ];
-const FAQ = [
-  { q: "TTLock 能否远程控制？", a: "可以，加装 WiFi 网关后，即可通过 TTLock App 远程下发密码、开锁并查看进出记录。" },
-  { q: "是否适合出租公寓 / 酒店管理？", a: "非常适合 —— 可为客人下发一次性 / 限时密码，并集中管理多把门锁。" },
-  { q: "起订量与交期？", a: "按批量计；交期随订单确认。" },
+
+const BRAND_PACK = [
+  { label: "包装", value: "零售彩盒，内含 EPE 泡棉与分隔卡位，前后面板分仓固定防磕碰" },
+  { label: "随附配件", value: "安装螺丝包、机械应急钥匙、电池、感应卡与中英文说明书（视型号而定）" },
+  { label: "起订量", value: "按批量计；支持多型号、多配色混装，工程订单可议" },
+  { label: "交期", value: "常规型号现货快发；定制面板与 OEM 订单随订单协商（参考 15–30 天）" },
+  { label: "样品", value: "提供整机样锁与演示账号，批量下单前可先体验开锁与 App 管理流程" },
 ];
-function mk(p: Pick<SeriesMeta,"story"|"heritage"|"technicalSpecs"|"whyChoose"|"projectShowcase">): SeriesMeta {
-  return { ...p, manufacturing: MFG, careGuide: CARE, installation: INSTALL, certifications: CERTS, packaging: PACK, faq: FAQ };
-}
-const WHY = { icon: "📲", title: "TTLock 生态系统", desc: "App + 网关：远程下发密码与管理，支持多把门锁联动。" };
-const SHOW = ["出租公寓 / Airbnb", "酒店、办公室", "智能家居"];
-const LOCK = mk({
-  story: "TTLock 智能门锁（ENTR、RIO 等）—— 支持指纹、密码、刷卡、App/蓝牙及机械钥匙开锁；配备网关后可远程下发密码并查看进出记录。",
-  heritage: "门锁系列是 TTLock 生态系统的核心产品。",
-  technicalSpecs: [{ label: "类型", value: "智能电子门锁" }, { label: "开锁方式", value: "指纹、密码、刷卡、App/蓝牙、机械钥匙" }, { label: "远程控制", value: "通过 WiFi 网关（TTLock App）" }, { label: "供电", value: "电池 + 应急供电接口（视型号而定）" }],
-  whyChoose: [WHY, { icon: "🔐", title: "多种开锁方式", desc: "多样开锁方式，便捷又安全。" }, { icon: "🏨", title: "适合出租", desc: "为客人下发限时密码，集中管理。" }],
-  projectShowcase: SHOW,
-});
+
+const LOCK: SeriesMeta = {
+  story:
+      "TTLock 智能门锁把一扇普通的门，变成了一座能听懂手机指令的关口 —— 指纹、密码、刷卡、App 蓝牙、机械钥匙五种方式任选其一，指尖轻触锁舌应声而退。从 BOSS、MYSTIC 到 RIO、SPIN，TTLock 用统一的 App 串起整个门锁家族，无论是黑、白、银哪一种配色，都能在同一个界面里集中管理。配上一只 WiFi 网关，你人在千里之外，也能为刚到楼下的客人远程下发一组限时密码，并实时看到那扇门何时被打开。它不只是更安全，更是把开门这件小事，做成了一种从容掌控的体验。",
+    heritage:
+      "智能门锁是 TTLock 生态系统的核心与门面 —— 平台围绕它向外延伸出网关、门铃、门磁与摄像头，构成完整的智能门禁版图。多年来 TTLock 被全球数以万计的公寓、民宿与办公空间采用，沉淀出稳定可靠的开锁体验与成熟的管理后台。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹 / 密码 / 刷卡 / App 蓝牙 / 机械钥匙（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙 5.0 低功耗，手机就近配对，无网络也能本地开锁与配置" },
+      { label: "网关 WiFi", value: "加装 WiFi 网关后支持远程下发密码、远程开锁与开门记录回传" },
+      { label: "电源", value: "干电池供电，低电量 App 提醒；部分型号配 Type-C / 9V 应急取电口" },
+      { label: "材质工艺", value: "锌合金 / 铝合金面板，钢化玻璃或金属拉丝饰面，半导体指纹头" },
+      { label: "适用", value: "出租公寓、民宿、酒店、办公室与智能家居入户门" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "📲", title: "App 远程管理", desc: "配合 WiFi 网关，远程下发密码、远程开锁、查看进出记录，门锁尽在掌心。" },
+      { icon: "🔑", title: "五合一开锁", desc: "指纹 / 密码 / 刷卡 / App / 钥匙多重方式，家人访客各取所需，便捷又安全。" },
+      { icon: "🏨", title: "一房一码", desc: "为客人下发一次性或限时密码，退房自动失效，出租与短租管理省心。" },
+      { icon: "🔋", title: "长效续航", desc: "低功耗设计配低电量提醒，应急取电口让门锁永不被锁在门外。" },
+      { icon: "🛡️", title: "防撬报警", desc: "暴力撬动、多次错误触发本地报警与 App 推送，安全多一道防线。" },
+    ],
+    projectShowcase: [
+      "长租公寓与 Airbnb 短租房整栋换锁，一码一房集中管理",
+      "精品民宿与客栈实现自助入住，远程发码免去前台等候",
+      "办公室与共享办公空间按人员分配权限，离职即撤销",
+    ],
+    faq: [
+      { q: "TTLock 智能门锁能远程控制吗？", a: "可以。门锁本身通过蓝牙就近管理，加装 WiFi 网关并联网后，即可在 App 端远程下发密码、远程开锁并查看进出记录。" },
+      { q: "适合出租公寓或酒店管理吗？", a: "非常适合。可为每位客人下发一次性或限时密码，到期自动失效，并在一个后台集中管理多把门锁与权限。" },
+      { q: "没电了会不会被锁在门外？", a: "不会。App 会提前提示低电量；多数型号底部留有 Type-C 或 9V 应急取电口，临时取电即可开门，也可用机械钥匙兜底。" },
+      { q: "起订量与交期如何？", a: "按批量计，支持多型号多配色混装；常规型号现货快发，定制面板随订单协商交期。" },
+    ],
+};
+
 export const TTLOCK_SERIES_META: Record<string, SeriesMeta> = {
-  "smart-lock": LOCK, deadbolt: LOCK, other: LOCK,
-  lever: mk({
-    story: "TTLock 智能执手锁（Handle）—— 执手一体设计，支持指纹/密码/刷卡/App开锁，适用于房门与入户门。",
-    heritage: "智能执手锁带来简洁便捷的门锁解决方案。",
-    technicalSpecs: [{ label: "类型", value: "智能执手锁" }, { label: "开锁方式", value: "指纹、密码、刷卡、App、机械钥匙" }, { label: "适用场景", value: "房门、入户门" }],
-    whyChoose: [WHY, { icon: "🚪", title: "执手便捷", desc: "通过执手开关门，适用于多种门型。" }],
-    projectShowcase: SHOW,
-  }),
-  cylinder: mk({
-    story: "TTLock 智能锁芯（Euro Cylinder）—— 将普通门锁锁芯升级为智能锁芯，支持App/密码/钥匙开锁，无需更换整套锁具。",
-    heritage: "智能锁芯让旧锁升级变得轻而易举。",
-    technicalSpecs: [{ label: "类型", value: "智能锁芯（欧标锁芯）" }, { label: "开锁方式", value: "App/蓝牙、密码（带键盘型号）、机械钥匙" }, { label: "适用场景", value: "替换标准欧标锁芯" }],
-    whyChoose: [WHY, { icon: "♻️", title: "升级简便", desc: "仅需更换锁芯，无需更换整套锁具。" }],
-    projectShowcase: SHOW,
-  }),
-  padlock: mk({
-    story: "TTLock 智能挂锁（Padlock）—— 支持指纹/App开锁，防水耐用，适用于门禁、柜体、仓库、车辆。",
-    heritage: "智能挂锁适用于移动场景与户外应用。",
-    technicalSpecs: [{ label: "类型", value: "智能挂锁（padlock）" }, { label: "开锁方式", value: "指纹/App蓝牙" }, { label: "特性", value: "防水、可充电电池" }],
-    whyChoose: [WHY, { icon: "🔒", title: "灵活多用", desc: "适用于门禁、柜体、仓库、车辆——无需钥匙即可开锁。" }],
-    projectShowcase: SHOW,
-  }),
-  outdoor: mk({
-    story: "TTLock 户外锁/门禁锁——耐候性强，支持App/密码开锁，适用于大门、庭院及户外区域。",
-    heritage: "户外系列可耐受恶劣环境。",
-    technicalSpecs: [{ label: "类型", value: "户外锁/门禁" }, { label: "特性", value: "防水、耐候" }, { label: "开锁方式", value: "App、密码" }],
-    whyChoose: [WHY, { icon: "🌧️", title: "耐候性强", desc: "经受风吹日晒，适用于大门及户外区域。" }],
-    projectShowcase: SHOW,
-  }),
-  motorlock: mk({
-    story: "TTLock 电机锁——适用于玻璃门/铝合金门的电子锁，集成电机实现自动开关，可通过App控制。",
-    heritage: "电机锁适用于商用门与现代玻璃门。",
-    technicalSpecs: [{ label: "类型", value: "电机锁（玻璃门/铝合金门）" }, { label: "特性", value: "电机自动开关" }, { label: "开锁方式", value: "App、密码、刷卡" }],
-    whyChoose: [WHY, { icon: "⚙️", title: "电机自动", desc: "开关顺畅静音，适用于商用玻璃门。" }],
-    projectShowcase: SHOW,
-  }),
-  gateway: mk({
-    story: "TTLock 网关/配件——蓝牙门锁的WiFi桥接器，实现远程控制与下发密码，扩展智能门锁系统。",
-    heritage: "网关是TTLock系统的远程连接中枢。",
-    technicalSpecs: [{ label: "类型", value: "WiFi网关/配件" }, { label: "功能", value: "蓝牙↔WiFi桥接，实现远程控制" }, { label: "兼容性", value: "TTLock门锁" }],
-    whyChoose: [{ icon: "📡", title: "远程控制", desc: "让蓝牙门锁可通过App实现远程控制。" }, WHY],
-    projectShowcase: SHOW,
-  }),
+  "smart-lock": LOCK,
+  deadbolt: LOCK,
+  other: LOCK,
+  lever: {
+    story:
+      "TTLock 智能执手锁（HANDLE）把电子门锁的智慧，藏进了一根顺手的把手里 —— 执手一体设计，下压即开，符合日常推拉门的直觉动作。它主打易装易用，无需大改门体就能把房门、入户门升级为指纹、密码、刷卡、App 多方式开锁的智能门。黑白两色简洁百搭，无论是公寓房门还是办公室隔间，都能融入而不突兀。对于想低成本快速智能化的空间，它是那块最不费力的敲门砖。",
+    heritage:
+      "执手锁是 TTLock 家族里最贴近日常动线的一员 —— 用最熟悉的下压开门动作，承载完整的智能开锁能力。它让智能化不必从头规划，一扇旧门也能优雅升级。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹 / 密码 / 刷卡 / App 蓝牙 / 机械钥匙（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙 5.0 就近配对，App 本地录入指纹、密码与卡片" },
+      { label: "网关 WiFi", value: "可选配 WiFi 网关，实现远程下发密码与开门记录" },
+      { label: "电源", value: "干电池供电，低电量 App 提醒，应急取电口兜底" },
+      { label: "形态", value: "执手一体式，下压开门，安装便捷不大改门体" },
+      { label: "适用", value: "房门、入户门、办公隔间等多种门型" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🚪", title: "执手即开", desc: "下压把手开门符合日常直觉，老人小孩都能轻松上手。" },
+      { icon: "🔧", title: "易装易改", desc: "无需大改门体，旧门也能快速升级为智能门锁。" },
+      { icon: "📲", title: "App 管理", desc: "配网关后远程下发密码、查看记录，集中管理多扇门。" },
+      { icon: "🔑", title: "多方式开锁", desc: "指纹 / 密码 / 刷卡 / App / 钥匙任选，家人访客各得其便。" },
+      { icon: "🎨", title: "黑白百搭", desc: "简洁配色融入各种装修风格，公寓办公皆相宜。" },
+    ],
+    projectShowcase: [
+      "出租公寓房门批量升级，租客自助管理密码",
+      "办公室与会议室隔间按权限分配指纹卡片",
+      "民宿客房快速智能化，免大改门体即装即用",
+    ],
+    faq: [
+      { q: "执手锁安装会很麻烦吗？", a: "不会。执手一体设计无需大改门体，按说明书逐步安装即可，适配多数标准房门与入户门。" },
+      { q: "可以远程发密码吗？", a: "门锁本地通过蓝牙管理，选配 WiFi 网关并联网后即可远程下发密码、查看开门记录。" },
+      { q: "支持哪些开锁方式？", a: "支持指纹、密码、刷卡、App 蓝牙与机械钥匙，具体组合视型号而定。" },
+      { q: "起订量与定制？", a: "按批量计，支持黑白配色与多型号混装，工程订单可议定制方案。" },
+    ],
+  },
+  cylinder: {
+    story:
+      "TTLock 智能锁芯（SMART CYLINDER）是给老门做的一次温柔升级 —— 不换整套锁具，只把那枚平平无奇的欧标锁芯，替换成会联网、能发码的智能芯。拧动之间，App、密码、机械钥匙皆可开门，原本的门面与门体分毫不动。它尤其适合酒店与公寓这类锁具规格统一的场景，一次换芯，整栋门都接入智能管理。这是最克制、也最聪明的智能化路径：花最小的改动，换来最大的掌控。",
+    heritage:
+      "智能锁芯让旧锁升级变得轻而易举 —— 它把智能门禁的能力浓缩进一枚标准锁芯，省去更换整门的成本与施工。对存量房与连锁酒店而言，这是最务实的过渡方案。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "App 蓝牙 / 密码（带键盘型号）/ 机械钥匙（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙 5.0 就近配对，App 完成授权与密码管理" },
+      { label: "网关 WiFi", value: "配 WiFi 网关后支持远程下发密码与开锁记录" },
+      { label: "电源", value: "内置纽扣 / 可充电电池，低电量 App 提醒" },
+      { label: "规格", value: "欧标锁芯尺寸，多种长度可选（如 35+35），直接替换标准锁芯" },
+      { label: "适用", value: "酒店、公寓存量门锁升级，无需更换整套锁具" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "♻️", title: "换芯即升级", desc: "仅更换锁芯无需更换整套锁具，门面门体保持原样。" },
+      { icon: "💰", title: "改造省成本", desc: "存量房与连锁酒店批量升级，施工量与花费大幅降低。" },
+      { icon: "📲", title: "App 集中管", desc: "配网关后远程发码、查记录，一栋楼的门统一管理。" },
+      { icon: "🔑", title: "钥匙兜底", desc: "保留机械钥匙开锁，电量异常时也有可靠备份。" },
+      { icon: "📐", title: "欧标通用", desc: "标准欧标尺寸多种长度可选，兼容性强易于替换。" },
+    ],
+    projectShowcase: [
+      "连锁酒店统一规格批量换芯，接入集中门禁管理",
+      "存量公寓低成本智能化，保留原有门面",
+      "办公楼标准锁芯升级，按部门下发权限",
+    ],
+    faq: [
+      { q: "智能锁芯需要换整套门锁吗？", a: "不需要。它直接替换标准欧标锁芯，门体、门面与执手保持原样，是最省事的升级方式。" },
+      { q: "怎么确认尺寸合适？", a: "下单前测量原锁芯长度（如 35+35），选择对应规格即可；不确定可提供门厚与现有锁芯尺寸由我们核对。" },
+      { q: "支持远程管理吗？", a: "锁芯本地通过 App 蓝牙管理，加装 WiFi 网关后即可远程下发密码与查看开锁记录。" },
+      { q: "适合酒店批量用吗？", a: "很适合。锁具规格统一的酒店一次换芯即可整栋接入智能管理，集中下发与回收权限。" },
+    ],
+  },
+  padlock: {
+    story:
+      "TTLock 智能挂锁（PADLOCK）把开锁这件事从口袋里的钥匙串中解放出来 —— 指纹一按或 App 一点，锁梁应声弹开。它生来面对风吹日晒，防水耐候的机身让它在户外也游刃有余，内置可充电电池免去频繁更换的烦恼。从仓库、配电箱到柜体、车辆，凡是需要灵活上锁又怕丢钥匙的地方，它都能补位。这是一把可以随身带、随处用、还能远程授权的钥匙。",
+    heritage:
+      "智能挂锁是 TTLock 生态里最具机动性的成员 —— 它把无钥匙开锁的便利带到固定门锁覆盖不到的移动与户外场景，让管理半径不再受限于一扇门。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "指纹 / App 蓝牙（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙 5.0 就近配对，App 授权与分享开锁权限" },
+      { label: "网关 WiFi", value: "可配网关实现远程授权与开锁记录回传" },
+      { label: "电源", value: "内置可充电锂电池，USB 充电，续航持久" },
+      { label: "防护", value: "防水耐候机身，锁梁淬硬处理，适应户外环境" },
+      { label: "适用", value: "门禁、柜体、仓库、配电箱、车辆等移动与户外场景" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🔒", title: "无钥匙开锁", desc: "指纹或 App 即开，告别钥匙丢失与配钥匙的烦恼。" },
+      { icon: "💧", title: "防水耐候", desc: "户外风雨日晒不怵，仓库车辆配电箱皆可放心使用。" },
+      { icon: "🔋", title: "充电续航", desc: "内置可充电电池 USB 取电，续航持久免频繁更换。" },
+      { icon: "📲", title: "远程授权", desc: "配网关后远程分享或撤销开锁权限，管理灵活。" },
+      { icon: "🧳", title: "随身灵活", desc: "可随身携带随处上锁，适配移动与临时场景。" },
+    ],
+    projectShowcase: [
+      "仓库与配电箱无钥匙化管理，权限远程分发",
+      "户外柜体与设备箱防水上锁，多人临时授权",
+      "车辆与移动资产灵活上锁，开锁记录可追溯",
+    ],
+    faq: [
+      { q: "智能挂锁能在户外用吗？", a: "可以。机身防水耐候、锁梁淬硬处理，适应风吹日晒的户外环境，常用于仓库、配电箱与设备柜。" },
+      { q: "怎么充电？", a: "内置可充电锂电池，用 USB 充电即可，续航持久，省去频繁更换电池的麻烦。" },
+      { q: "能多人共用吗？", a: "可以。通过 App 授权多个用户开锁，配网关后还能远程分享或撤销权限。" },
+      { q: "起订量与交期？", a: "按批量计，支持多型号混装；常规现货快发，定制随订单协商。" },
+    ],
+  },
+  outdoor: {
+    story:
+      "TTLock 户外锁与门禁系列（G 系列网关与门禁）是把智能门禁延伸到风雨之中的关键一环 —— 耐候机身经受日晒雨淋，App 与密码开锁让庭院大门、园区门禁也能纳入统一管理。从 G2 的 WiFi 联网到 G3 的网口直连、G4 的 GSM 移动网络，再到 G5 双频 WiFi，不同的联网方式覆盖了从家庭到园区的各类环境。哪怕大门远离路由器，它也能找到一条联网的路。这是一道既挡得住风雨、又连得上云端的智能边界。",
+    heritage:
+      "户外系列可耐受恶劣环境 —— 它让 TTLock 的智能门禁不止于室内入户门，而是延伸到庭院、园区与公共出入口，把联网与远程管理带到更广阔的边界。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "App 蓝牙 / 密码 / 刷卡（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙就近配对管理，本地无网也可开锁" },
+      { label: "网关 WiFi", value: "G2 WiFi / G3 网口 / G4 GSM / G5 双频 WiFi，多种联网方式可选" },
+      { label: "电源", value: "适配电源供电，部分型号支持 PoE 网线取电" },
+      { label: "防护", value: "耐候机身，防水防尘，适应户外大门与园区出入口" },
+      { label: "适用", value: "庭院大门、园区门禁、户外出入口等室外区域" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "🌧️", title: "耐候防水", desc: "经受风吹日晒雨淋，适用于庭院大门与户外门禁。" },
+      { icon: "📡", title: "多种联网", desc: "WiFi / 网口 / GSM / 双频可选，大门远离路由也能联网。" },
+      { icon: "📲", title: "远程开门", desc: "App 远程开锁与下发密码，访客来访无需现场迎候。" },
+      { icon: "🔌", title: "灵活供电", desc: "适配电源或 PoE 网线取电，布线场景更从容。" },
+      { icon: "🏘️", title: "园区适配", desc: "覆盖从家庭庭院到园区出入口的多种户外门禁场景。" },
+    ],
+    projectShowcase: [
+      "别墅庭院与院落大门远程开锁，访客无需现场迎候",
+      "园区与厂区出入口接入网关，统一联网管理",
+      "户外公共出入口按 GSM 或 PoE 灵活联网部署",
+    ],
+    faq: [
+      { q: "户外大门离路由器很远怎么联网？", a: "可按环境选择联网方式：近 WiFi 选 G2 / G5，有网口选 G3，无固网覆盖可用 G4 的 GSM 移动网络。" },
+      { q: "户外锁防水吗？", a: "防水耐候机身专为户外设计，可经受风吹日晒雨淋，适用于庭院大门与园区出入口。" },
+      { q: "能远程给访客开门吗？", a: "可以。联网后通过 App 远程开锁或下发临时密码，访客到门口即可进入。" },
+      { q: "供电怎么解决？", a: "适配电源供电，部分网关型号支持 PoE 网线取电，布线更灵活。" },
+    ],
+  },
+  motorlock: {
+    story:
+      "TTLock 电机锁（MOTOR LOCK）专为现代玻璃门与铝合金门而生 —— 内置电机驱动锁舌自动伸缩，开关顺畅而静音，告别手动插拔的滞涩。一声 App 指令或一组密码，门便利落地解锁或闭合，特别契合商铺、写字楼那些通透轻盈的玻璃门面。它把门禁的智能从厚重的入户门延伸到现代商业空间，让开合本身也成为一种体面。当空间追求轻盈、通透与自动化时，电机锁是那个安静利落的执行者。",
+    heritage:
+      "电机锁适用于商用门与现代玻璃门 —— 它以电机自动开关的方式，补齐了玻璃门、铝合金门在智能门禁上的空白，让通透的商业空间也能享受无钥匙管理。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "App 蓝牙 / 密码 / 刷卡（视型号而定）" },
+      { label: "通信 蓝牙", value: "蓝牙就近配对管理，App 录入与授权" },
+      { label: "网关 WiFi", value: "配 WiFi 网关后远程开锁、下发密码与查记录" },
+      { label: "电源", value: "适配电源供电，电机驱动锁舌自动伸缩" },
+      { label: "结构", value: "电机自动开关，静音顺畅，适配玻璃门 / 铝合金门" },
+      { label: "适用", value: "商铺、写字楼、展厅的玻璃门与铝合金门" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "⚙️", title: "电机自动", desc: "电机驱动锁舌自动伸缩，开关顺畅静音不费力。" },
+      { icon: "🚪", title: "玻璃门适配", desc: "专为玻璃门与铝合金门设计，融入通透商业门面。" },
+      { icon: "📲", title: "远程开锁", desc: "配网关后 App 远程开门、下发密码、查看记录。" },
+      { icon: "🏢", title: "商用首选", desc: "契合商铺写字楼展厅，提升门面智能化体验。" },
+      { icon: "🔑", title: "多方式开门", desc: "App / 密码 / 刷卡灵活组合，访客员工各取所需。" },
+    ],
+    projectShowcase: [
+      "商铺与品牌门店玻璃门自动开合，提升门面体验",
+      "写字楼前台与会议区铝合金门按权限管理",
+      "展厅与展示空间玻璃门远程控制开闭",
+    ],
+    faq: [
+      { q: "电机锁能装在玻璃门上吗？", a: "可以。电机锁专为玻璃门与铝合金门设计，电机自动驱动锁舌，开关顺畅静音，契合通透的商业门面。" },
+      { q: "和普通智能锁有何不同？", a: "电机锁靠内置电机自动完成开关动作，无需手动插拔，更适合现代商用玻璃门的使用习惯。" },
+      { q: "支持远程控制吗？", a: "本地通过 App 蓝牙管理，加装 WiFi 网关后即可远程开锁、下发密码与查看记录。" },
+      { q: "供电方式是什么？", a: "采用适配电源供电以驱动电机，安装时按说明布线即可，运行稳定。" },
+    ],
+  },
+  gateway: {
+    story:
+      "TTLock 网关（GATEWAY）是整套智能门锁系统的远程中枢 —— 它在蓝牙门锁与家中 WiFi 之间架起一座桥，把原本只能近距离管理的门锁，接入云端。插上电、连上网，门锁便从此能被远程下发密码、远程开锁，开门记录也会实时回传到 App。从 RENTY WiFi 这样的入门网关，到 G 系列的多形态联网方案，它让一把锁的掌控半径从门口延伸到天涯。没有它，门锁是孤岛；有了它，整个门禁系统才真正活起来。",
+    heritage:
+      "网关是 TTLock 系统的远程连接中枢 —— 它把蓝牙门锁的本地能力升级为云端可达的远程管理，是公寓、酒店实现集中化门禁运营不可或缺的一环。",
+    technicalSpecs: [
+      { label: "解锁方式", value: "本身不直接开锁，为门锁提供远程开锁与发码通道" },
+      { label: "通信 蓝牙", value: "通过蓝牙连接周边 TTLock 门锁，桥接其本地通信" },
+      { label: "网关 WiFi", value: "上联家庭 / 项目 WiFi，蓝牙↔WiFi 桥接，打通云端" },
+      { label: "电源", value: "适配电源直插供电，常驻在线保持连接" },
+      { label: "兼容性", value: "兼容 TTLock 门锁、执手锁、锁芯与挂锁等设备" },
+      { label: "适用", value: "公寓、酒店、办公等需要远程与集中门锁管理的场景" },
+    ],
+    manufacturing: BRAND_MFG,
+    careGuide: BRAND_CARE,
+    installation: BRAND_INSTALL,
+    certifications: BRAND_CERTS,
+    packaging: BRAND_PACK,
+    whyChoose: [
+      { icon: "📡", title: "远程连接", desc: "蓝牙门锁经网关接入 WiFi，开锁与发码不再受距离限制。" },
+      { icon: "📲", title: "记录回传", desc: "开门记录实时上传 App，谁何时进出一目了然。" },
+      { icon: "🏨", title: "集中管理", desc: "公寓酒店多把门锁统一后台运营，下发与回收高效。" },
+      { icon: "🔌", title: "即插即用", desc: "插电联网绑定即可，安装简单常驻在线。" },
+      { icon: "🧩", title: "生态兼容", desc: "兼容门锁、执手锁、锁芯与挂锁，扩展整套门禁系统。" },
+    ],
+    projectShowcase: [
+      "长租公寓集中部署网关，整栋门锁远程发码管理",
+      "民宿与酒店实现远程入住，开门记录实时回传",
+      "办公空间多门联动，权限统一在后台分发回收",
+    ],
+    faq: [
+      { q: "网关是做什么用的？", a: "它是蓝牙门锁与 WiFi 之间的桥梁，门锁经网关接入云端后，即可远程下发密码、远程开锁并回传开门记录。" },
+      { q: "一个网关能带几把锁？", a: "可连接覆盖范围内的多把 TTLock 门锁，具体数量视型号与现场信号而定，密集场景可增配网关。" },
+      { q: "网关需要怎么安装？", a: "插电、连上 WiFi，在 App 中绑定就近的门锁即可，无需复杂布线，常驻在线保持连接。" },
+      { q: "断网了门锁还能用吗？", a: "能。门锁本地的指纹、密码、刷卡与蓝牙开锁不受影响，仅远程功能在断网时暂不可用，恢复联网即自动同步。" },
+    ],
+  },
 };
+
+/** Helper：按 seriesOriginal 获取元数据，缺省回退到 smart-lock。 */
 export function getSeriesMeta(seriesOriginal?: string): SeriesMeta | undefined {
   if (!seriesOriginal) return undefined;
   return TTLOCK_SERIES_META[seriesOriginal.trim()] || TTLOCK_SERIES_META["smart-lock"];
