@@ -26,6 +26,9 @@ const nextConfig = {
     '*.cybersilkroads.com',
   ],
   images: {
+    // TAM THOI cho LAN phase: Next 16 chan private IP trong optimizer (SSRF guard).
+    // GO BO khi anh chuyen het sang https://media.cybersilkroads.com
+    dangerouslyAllowLocalIP: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'minio.huayuesc.com' },
       { protocol: 'http',  hostname: 'minio' },
