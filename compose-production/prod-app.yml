@@ -66,8 +66,8 @@ services:
       - medusa
     environment:
       NODE_ENV: production
-      # Server-side fetch noi bo (khong qua proxy)
-      MEDUSA_BACKEND_URL: http://192.168.40.60:9000
+      # Server-side fetch noi bo (khong qua proxy) — client.ts doc MEDUSA_INTERNAL_URL truoc
+      MEDUSA_INTERNAL_URL: http://192.168.40.60:9000
       NEXT_PUBLIC_MEDUSA_BACKEND_URL: https://api.cybersilkroads.com
       NEXT_PUBLIC_BASE_URL: https://shop.cybersilkroads.com
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}

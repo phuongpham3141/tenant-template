@@ -31,6 +31,10 @@ const nextConfig = {
       { protocol: 'http',  hostname: 'minio' },
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
+      // MinIO staging/prod (LAN) + media domain public — anh san pham medusa-media
+      { protocol: 'http',  hostname: '192.168.40.52', port: '9000' },
+      { protocol: 'http',  hostname: '192.168.40.62', port: '9000' },
+      { protocol: 'https', hostname: 'media.cybersilkroads.com' },
     ],
   },
 }
