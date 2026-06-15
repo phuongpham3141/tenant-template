@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Breadcrumb } from "@/components/category/breadcrumb";
 import { QtyStepper } from "@/components/products/qty-stepper";
+import { MedusaProductDetail } from "@/components/store/MedusaProductDetail";
+import { getProductByHandle } from "@/lib/store/catalog";
 import { SECTIONS, FACTORIES, NAV_CATEGORIES } from "@/data/home";
 import type { Product } from "@/data/home";
 import { getLeafCategory } from "@/data/products";
@@ -180,6 +182,18 @@ export default async function ProductPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+
+  // Sản phẩm THẬT từ Medusa (handle = id). Nếu có → trang chi tiết Medusa
+  // (giá VND + thêm vào giỏ thật). Nếu không → fallback UI demo bên dưới.
+  try {
+    const { product } = await getProductByHandle(id);
+    if (product) {
+      return <MedusaProductDetail product={product} />;
+    }
+  } catch {
+    /* lỗi backend → fallback demo */
+  }
+
   const found = findProduct(id);
 
   if (!found) {
