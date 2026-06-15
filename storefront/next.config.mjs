@@ -26,17 +26,10 @@ const nextConfig = {
     '*.cybersilkroads.com',
   ],
   images: {
-    // TAM THOI cho LAN phase: Next 16 chan private IP trong optimizer (SSRF guard).
-    // GO BO khi anh chuyen het sang https://media.cybersilkroads.com
-    dangerouslyAllowLocalIP: true,
     remotePatterns: [
-      { protocol: 'https', hostname: 'minio.huayuesc.com' },
-      { protocol: 'http',  hostname: 'minio' },
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
-      // MinIO staging/prod (LAN) + media domain public — anh san pham medusa-media
-      { protocol: 'http',  hostname: '192.168.40.52', port: '9000' },
-      { protocol: 'http',  hostname: '192.168.40.62', port: '9000' },
+      // Anh san pham medusa-media qua domain public (Cloudflare proxy -> MinIO .62)
       { protocol: 'https', hostname: 'media.cybersilkroads.com' },
     ],
   },
