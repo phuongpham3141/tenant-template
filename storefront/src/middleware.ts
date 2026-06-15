@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { detectLocaleFromHost } from "@/lib/i18n";
 
-const PROTECTED_PATHS = [/^\/buyer-center/, /^\/seller-center/, /^\/account/, /^\/checkout/];
+// /checkout cho phép khách (guest checkout) để test full flow; email gắn khi đặt hàng.
+const PROTECTED_PATHS = [/^\/buyer-center/, /^\/seller-center/, /^\/account/];
 
 export function middleware(req: NextRequest) {
   const host = req.headers.get("host");
