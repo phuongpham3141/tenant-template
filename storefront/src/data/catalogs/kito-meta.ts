@@ -613,6 +613,36 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
       },
     ],
   },
+  // ─── 2026 臻选 KITO 2026 Selection ──────────────────────────────
+  "kito-2026": {
+    story:
+      "「哑光质感专家 · 2026 臻选」。\n\n金意陶 KITO 以「哑光/质感」立身，2026 产品大集以「大学·学院」分类体系重构产品矩阵 —— 精致奢华、自然质朴、经典浪漫、轻奢简约四大学院，涵盖奢石、真石釉、洞石、木纹、现代大板等丰富品类。\n\n本系列甄选 2026 年度代表作：从罗马印记的古洞石、塔兰泰拉与云雾之境的大理石连纹，到北欧臻木、如意木的温润木纹，规格覆盖 600×1200mm 至 1200×2700mm 大板，真石釉 1.0/2.0 与雅光柔面还原天然石木的质感肌理。",
+    heritage:
+      "延续金意陶「真石釉」与「哑光肌理」技术沉淀，2026 系列以多面连纹（一石多面）设计提升大面积通铺的自然随机感，并以雅光/柔面工艺兼顾质感与防滑。",
+    technicalSpecs: [
+      { label: "坯体材料（Body）", value: "Vitrified porcelain —— 全瓷化瓷质" },
+      { label: "吸水率", value: "≤ 0.5%（符合 EN 14411 Bla）" },
+      { label: "表面工艺", value: "真石釉 1.0 / 2.0 · 雅光柔面 · 金属釉（按 SKU）" },
+      { label: "连纹设计", value: "一石多面（4 / 6 / 12 / 15 面版，按 SKU）" },
+      { label: "主推规格", value: "600×1200 / 750×1500 / 1200×1800 / 1200×2700mm" },
+      { label: "厚度", value: "约 9 – 10mm（大板）" },
+      { label: "耐磨", value: "PEI 4 —— 适合高人流区域" },
+      { label: "耐污性", value: "5 级（最高 —— ISO 10545-14）" },
+    ],
+    manufacturing: [...COMMON_MFG, "2026 产品大学分类体系：精致奢华 / 自然质朴 / 经典浪漫 / 轻奢简约 四大学院", "多面连纹（一石多面）设计，提升大面积通铺自然感"],
+    careGuide: COMMON_CARE,
+    installation: COMMON_INSTALL,
+    certifications: COMMON_CERTS,
+    packaging: COMMON_PACKAGING,
+    whyChoose: [
+      { icon: "🎨", title: "哑光质感专家", desc: "金意陶以哑光/质感立身，真石釉与雅光柔面还原天然石木肌理。" },
+      { icon: "🧩", title: "一石多面连纹", desc: "4/6/12/15 面版连纹设计，大面积通铺自然不重复。" },
+      { icon: "📐", title: "大板规格", desc: "覆盖 600×1200 至 1200×2700mm，墙地通铺大气一体。" },
+      { icon: "🏛️", title: "四大学院体系", desc: "奢华/质朴/浪漫/简约，覆盖多风格设计需求。" },
+    ],
+    projectShowcase: ["客厅与电视背景墙", "酒店大堂与会所", "高端住宅墙地通铺", "商业与展示空间"],
+    faq: COMMON_FAQ_BASE,
+  },
 };
 
 /** Helper：根据 seriesOriginal 获取某个产品的 meta。 */
