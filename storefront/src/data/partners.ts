@@ -24,6 +24,7 @@ import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
 import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
 import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
 import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
+import { SOFEYIA_PRODUCTS } from "@/data/catalogs/sofeyia";
 
 /**
  * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
@@ -776,6 +777,29 @@ export const PARTNERS: PartnerBrand[] = [
     ],
     website: "https://www.sylvania-group.com/",
     products: SYLVANIA_PRODUCTS,
+  },
+  // ─── 🛋️ 全屋定制家居 ─────────────────────────────────────────
+  {
+    slug: "sofeyia",
+    name: "SOFEYIA",
+    nameOriginal: "索菲亚 SOFEYIA（全屋定制）",
+    category: "noi-that",
+    cvsStt: 46,
+    introduction:
+      "索菲亚 SOFEYIA 是源自法国设计、扎根中国制造的全屋定制家居品牌，业务覆盖定制衣柜与衣帽间、整体橱柜、客餐厅柜与电视墙、主卧定制、室内木门与浴室柜等。以「一站式整家」为核心，将各空间统一在同一套设计语言之中，色彩、五金与木纹通体协调；并提供 Salon Gathering、Evening Dress、Party、Michelin、Vacation、Fayven Master、Leisurely Duke 等多套成品级设计系列，可整屋直接落地。依托数字化柔性生产线按单定制，采用 E0 / ENF 级环保基材与进口五金，从设计、测量到生产、安装一体化交付。",
+    factory: {
+      location: "源自法国设计 · 中国制造（华南生产基地）",
+      facilities: "数字化柔性生产线，按单定制；板件按图切割、封边、开孔",
+      capacity: "E0 / ENF 级环保基材 + 进口五金，全屋同色同系一体出货",
+    },
+    highlights: [
+      "源自法国设计、扎根中国制造的全屋定制家居品牌",
+      "一站式整家：衣柜 / 橱柜 / 木门 / 浴室柜同色同系",
+      "多套成品级设计系列（Salon Gathering、Evening Dress、Michelin、Fayven Master 等）",
+      "E0 / ENF 级环保基材，设计—测量—生产—安装一体化服务",
+    ],
+    website: "https://www.sofeyia.com/",
+    products: SOFEYIA_PRODUCTS,
   },
 ];
 

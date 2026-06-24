@@ -36,6 +36,7 @@ import { getSeriesMeta as getLanghuiMeta } from "@/data/catalogs/langhui-meta";
 import { getSeriesMeta as getZhongjuYabaiMeta } from "@/data/catalogs/zhongju-yabai-meta";
 import { getSeriesMeta as getLuminaMeta } from "@/data/catalogs/lumina-meta";
 import { getSeriesMeta as getMijicMeta } from "@/data/catalogs/mijic-meta";
+import { getSeriesMeta as getSofeyiaMeta } from "@/data/catalogs/sofeyia-meta";
 
 /** Map brand slug → series-meta lookup function. Add new entries when
  *  enriching more brands via /partner-catalog skill. */
@@ -66,6 +67,7 @@ const META_LOOKUP: Record<string, (s?: string) => ReturnType<typeof getKitoMeta>
   "zhongju-yabai": getZhongjuYabaiMeta,
   lumina: getLuminaMeta,
   mijic: getMijicMeta,
+  sofeyia: getSofeyiaMeta,
 };
 
 export function generateStaticParams() {
