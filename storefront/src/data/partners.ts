@@ -25,6 +25,7 @@ import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
 import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
 import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
 import { SOFEYIA_PRODUCTS } from "@/data/catalogs/sofeyia";
+import { OCEANO_PRODUCTS } from "@/data/catalogs/oceano";
 
 /**
  * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
@@ -800,6 +801,29 @@ export const PARTNERS: PartnerBrand[] = [
     ],
     website: "https://www.sofeyia.com/",
     products: SOFEYIA_PRODUCTS,
+  },
+  // ─── 🧱 大理石瓷砖 / 岩板 ─────────────────────────────────────────
+  {
+    slug: "oceano",
+    name: "OCEANO",
+    nameOriginal: "欧神诺 OCEANO 瓷砖",
+    category: "construction-materials",
+    cvsStt: 48,
+    introduction:
+      "欧神诺 OCEANO 是帝欧家居旗下的高端瓷砖与岩板品牌，专注大规格大理石瓷砖。2025 秋季推出「中国玉」系列，以玄玉、白玉、青玉、赤玉、黄玉五大玉石色系演绎东方玉质美学，采用新一代「微雕肌理面」工艺（400 目超细干粒 + 三层施釉），纹理立体、触感温润如玉；坯体加厚至 11–12mm，主推 1200×2700mm、1200×1600mm、900×1800mm 等大规格，广泛用于住宅、酒店与商业空间的墙面与地面。",
+    factory: {
+      location: "中国 · 帝欧家居（OCEANO 欧神诺）",
+      facilities: "大规格大理石瓷砖 / 岩板生产线，微雕肌理面 + 数码对位工艺",
+      capacity: "主推 1200×2700 / 1200×1600 / 900×1800mm，坯体加厚 11–12mm",
+    },
+    highlights: [
+      "帝欧家居旗下高端瓷砖 / 岩板品牌，专注大规格大理石瓷砖",
+      "2025 秋季「中国玉」系列：玄玉 / 白玉 / 青玉 / 赤玉 / 黄玉 五大色系",
+      "新一代「微雕肌理面」：400 目超细干粒 + 三层施釉，温润如玉",
+      "坯体加厚 11–12mm，放射性 A 类可室内使用，A' 密缝铺贴更服帖",
+    ],
+    website: "https://www.oceano.com.cn/",
+    products: OCEANO_PRODUCTS,
   },
 ];
 
