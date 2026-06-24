@@ -692,7 +692,7 @@ function RelatedProducts({
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform"
+                  className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform"
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />

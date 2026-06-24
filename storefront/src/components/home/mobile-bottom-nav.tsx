@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NAV_ITEMS = [
   { icon: "🏠", label: "首页", href: "/" },
-  { icon: "🗂", label: "分类", href: "#nav-categories" },
+  { icon: "🤝", label: "合作伙伴", href: "/info/partners" },
   { icon: "📨", label: "采购需求", href: "/buying-request", primary: true },
   { icon: "💬", label: "消息", href: "/buyer-center" },
   { icon: "👤", label: "账户", href: "/login" },

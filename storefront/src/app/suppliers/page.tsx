@@ -218,52 +218,7 @@ export default async function SuppliersPage({
             <CardsView list={list} />
           )}
 
-          {/* ── Pending sites ──────────────────────────────────────── */}
-          <section className="bg-[#FFFBEB] border-l-4 border-gold rounded-r p-4 mt-6">
-            <h3 className="text-[13.5px] font-bold text-[#92400E] mb-2 flex items-center gap-2">
-              <span>⚠️</span>
-              <span>2家合作伙伴的工厂数据待补充</span>
-            </h3>
-            <p className="text-[12px] text-ink leading-relaxed mb-2">
-              下方2家供应商的网站屏蔽了来自中国大陆以外网络的访问——华越正在等待官方PDF资料，或通过中国代理补充工厂数据。
-            </p>
-            <ul className="text-[12px] text-ink/85 space-y-1 ml-1">
-              <li>
-                ·{" "}
-                <b>Mijic（米吉克）</b> ·{" "}
-                <a
-                  href="https://www.mijic.cn/"
-                  className="text-brand hover:underline break-all"
-                  rel="nofollow noopener"
-                  target="_blank"
-                >
-                  www.mijic.cn
-                </a>{" "}
-                — IP{" "}
-                <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
-                  47.90.164.246
-                </code>{" "}
-                无法访问
-              </li>
-              <li>
-                ·{" "}
-                <b>广钢（Gise-Gnm）</b> ·{" "}
-                <a
-                  href="http://www.gise-gnm.com/"
-                  className="text-brand hover:underline break-all"
-                  rel="nofollow noopener"
-                  target="_blank"
-                >
-                  www.gise-gnm.com
-                </a>{" "}
-                — IP{" "}
-                <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
-                  219.137.250.200
-                </code>{" "}
-                被服务器拒绝
-              </li>
-            </ul>
-          </section>
+          {/* Pending-sites notice hidden per request (Mijic / Gise-Gnm) */}
 
           {/* ── CTA ────────────────────────────────────────────────── */}
           <section className="mt-6 bg-brand text-white rounded-lg p-6 text-center max-md:p-5">

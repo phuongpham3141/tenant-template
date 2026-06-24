@@ -317,7 +317,7 @@ function ProductCard({
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform"
             loading="lazy"
             referrerPolicy="no-referrer"
           />
