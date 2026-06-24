@@ -26,6 +26,7 @@ import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
 import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
 import { SOFEYIA_PRODUCTS } from "@/data/catalogs/sofeyia";
 import { OCEANO_PRODUCTS } from "@/data/catalogs/oceano";
+import { COMFEE_PRODUCTS } from "@/data/catalogs/comfee";
 
 /**
  * 华越供应链合作工厂 —— 24 个正式合作品牌，均已通过广州采购部门
@@ -824,6 +825,29 @@ export const PARTNERS: PartnerBrand[] = [
     ],
     website: "https://www.oceano.com.cn/",
     products: OCEANO_PRODUCTS,
+  },
+  // ─── 🍳 嵌入式厨电 ─────────────────────────────────────────
+  {
+    slug: "comfee",
+    name: "Comfee",
+    nameOriginal: "Comfee（美的出口厨电品牌）",
+    category: "kitchen-equipment",
+    cvsStt: 49,
+    introduction:
+      "Comfee 是美的集团（《财富》世界 500 强）旗下面向出口市场的厨电品牌，专注嵌入式厨房电器，产品线涵盖电磁灶、油烟机、洗碗机、嵌入式烤箱与嵌入式微波炉。依托美的的研发、制造与供应链资源，Comfee 将 AI 智能技术（AI 烹饪、AI 变频、AI 洗涤识别、AI 隔空触控等）与德国 IGBT 等核心科技融入日常烹饪与清洁，并以欧标嵌入式设计与整体橱柜浑然一体，让现代厨房高效、整洁而智能。",
+    factory: {
+      location: "美的集团旗下出口厨电品牌（中国制造）",
+      facilities: "共享美的全球研发、制造与供应链体系",
+      capacity: "嵌入式厨电：电磁灶 / 油烟机 / 洗碗机 / 烤箱 / 微波炉",
+    },
+    highlights: [
+      "美的集团（《财富》世界 500 强）旗下出口厨电品牌",
+      "嵌入式厨电全矩阵：电磁灶 · 油烟机 · 洗碗机 · 烤箱 · 微波炉",
+      "AI 智能 + 德国 IGBT：AI 烹饪 / AI 变频 / AI 识别 / AI 隔空触控",
+      "欧标嵌入式设计，与整体橱柜同色同系、浑然一体",
+    ],
+    website: "https://www.comfee.com/",
+    products: COMFEE_PRODUCTS,
   },
 ];
 

@@ -38,6 +38,7 @@ import { getSeriesMeta as getLuminaMeta } from "@/data/catalogs/lumina-meta";
 import { getSeriesMeta as getMijicMeta } from "@/data/catalogs/mijic-meta";
 import { getSeriesMeta as getSofeyiaMeta } from "@/data/catalogs/sofeyia-meta";
 import { getSeriesMeta as getOceanoMeta } from "@/data/catalogs/oceano-meta";
+import { getSeriesMeta as getComfeeMeta } from "@/data/catalogs/comfee-meta";
 
 /** Map brand slug → series-meta lookup function. Add new entries when
  *  enriching more brands via /partner-catalog skill. */
@@ -70,6 +71,7 @@ const META_LOOKUP: Record<string, (s?: string) => ReturnType<typeof getKitoMeta>
   mijic: getMijicMeta,
   sofeyia: getSofeyiaMeta,
   oceano: getOceanoMeta,
+  comfee: getComfeeMeta,
 };
 
 export function generateStaticParams() {
