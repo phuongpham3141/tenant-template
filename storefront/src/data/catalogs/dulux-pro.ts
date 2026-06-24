@@ -1,4 +1,5 @@
 import type { PartnerProduct } from "@/data/partners";
+import { DULUX_2026_ADD } from "@/data/catalogs/dulux-2026-add";
 
 /**
  * Catalog Dulux Professional 多乐士专业 —— 40 款真实产品，来自 duluxpro.com.cn。
@@ -533,4 +534,6 @@ export const DULUX_PRO_PRODUCTS: PartnerProduct[] = [
     applications: ["弹性与抗裂性佳", "采用特殊工艺滚筒营造多种立体浮雕花纹效果", "无气喷涂可获得极佳的平整表面效果", "经济型保护性丙烯酸弹性水性中涂漆", "适合作为 EIFS 外墙保温系统的配套涂料"],
     sourceUrl: "https://project.duluxpro.com.cn/product/k8553/",
   },
+  // ─── 2026 新增体系（Dulux Professional 2026 画册）─────────────
+  ...DULUX_2026_ADD,
 ];

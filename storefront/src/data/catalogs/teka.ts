@@ -1,4 +1,5 @@
 import type { PartnerProduct } from "@/data/partners";
+import { TEKA_2026_ADD } from "@/data/catalogs/teka-2026-add";
 
 /**
  * Catalog Teka — 40 款真实产品，来自 teka.com/zh-cn。
@@ -518,4 +519,6 @@ export const TEKA_PRODUCTS: PartnerProduct[] = [
     specs: [{ k: "产品高度（mm）", v: "140" }, { k: "产品宽度（mm）", v: "595" }, { k: "产品深度（mm）", v: "557" }, { k: "净重（Kg）", v: "18" }, { k: "颜色", v: "不锈钢" }],
     applications: ["配有厨房电子秤", "保鲜膜与锡箔纸切割刀", "配件存放空间", "阻尼铰链与自闭系统", "电子秤保护盖", "锡箔纸卷支架与保鲜膜支架"],
   },
+  // ─── 2026 新品（Teka 2026 画册，真实型号 + 真实图片）─────────────
+  ...TEKA_2026_ADD,
 ];
