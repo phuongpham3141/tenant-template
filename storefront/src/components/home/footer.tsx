@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LangSwitcher } from "@/components/lang-switcher";
+import { NewsletterSignup } from "@/components/store/NewsletterSignup";
 
 type FooterLink = { label: string; href: string };
 
@@ -127,6 +128,7 @@ export function Footer() {
   return (
     <footer className="bg-brand-dark text-white mt-7 pt-9 pb-5 max-md:mt-4 max-md:pt-5 max-md:pb-3">
       <div className="max-w-[1400px] mx-auto px-4">
+        <NewsletterSignup />
         <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-9 pb-7 border-b border-white/10 md:max-lg:grid-cols-2 md:max-lg:gap-6 max-md:grid-cols-1 max-md:gap-0 max-md:pb-3">
           <div className="md:max-lg:col-span-2 md:max-lg:pb-4 md:max-lg:border-b md:max-lg:border-white/10 md:max-lg:text-center max-md:pb-3 max-md:border-b max-md:border-white/10 max-md:mb-2 max-md:text-center">
             {/* Logo — horizontal mark on transparent background, centered.

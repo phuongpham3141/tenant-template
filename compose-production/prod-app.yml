@@ -72,6 +72,8 @@ services:
       NEXT_PUBLIC_BASE_URL: https://shop.cybersilkroads.com
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
       NEXT_PUBLIC_TENANT: csr
+      # Newsletter marketing (server-side, không lộ ra browser)
+      RESEND_API_KEY: ${RESEND_API_KEY}
     ports:
       - "3000:3001"
     # Override image healthcheck: localhost→::1 (IPv6 hong tren VM) → refused
