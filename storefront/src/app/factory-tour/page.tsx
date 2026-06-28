@@ -76,6 +76,36 @@ export default function FactoryTourPage() {
         </div>
       </div>
 
+      {/* Site Visit — thẩm định 2 chiều */}
+      <div className="max-w-[1400px] mx-auto px-4 mt-7">
+        <div className="bg-paper border border-line rounded p-6">
+          <div className="flex justify-between items-end mb-4 max-md:flex-col max-md:items-start max-md:gap-3">
+            <div>
+              <span className="inline-block bg-gold text-brand-dark px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-2">🤝 THẨM ĐỊNH 2 CHIỀU</span>
+              <h2 className="text-[20px] font-bold text-ink">Site Visit — Thẩm định đại lý Việt Nam</h2>
+              <p className="text-[12.5px] text-mute mt-1 max-w-[760px] leading-relaxed">
+                Factory Tour giúp bạn đánh giá nhà máy Trung Quốc. Ở chiều ngược lại, đoàn nhà máy TQ sẽ trực tiếp đến thăm kho bãi, showroom của đại lý Việt Nam để đánh giá năng lực phân phối trước khi ký hợp đồng độc quyền khu vực. Thẩm định 2 chiều bảo đảm cả hai bên đều đủ năng lực để hợp tác lâu dài.
+              </p>
+            </div>
+            <Link href="/buying-request" className="px-5 py-2.5 bg-accent text-white rounded-sm font-semibold text-[13px] whitespace-nowrap">Đăng ký Site Visit →</Link>
+          </div>
+          <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
+            {[
+              { icon: "🏬", title: "Kho bãi & logistics nội bộ", desc: "Diện tích kho, công suất lưu trữ, quy trình xuất nhập và năng lực giao hàng nội địa của đại lý." },
+              { icon: "🛍", title: "Diện tích & vị trí showroom", desc: "Quy mô mặt bằng trưng bày, vị trí mặt tiền, lưu lượng giao thông và mức độ tiếp cận khách hàng." },
+              { icon: "👥", title: "Năng lực nhân sự bán hàng", desc: "Số lượng và trình độ đội ngũ sales, kỹ năng tư vấn kỹ thuật và năng lực chăm sóc khách hàng B2B." },
+              { icon: "📈", title: "Lượng khách thực tế (traffic)", desc: "Lưu lượng khách ghé showroom, tỷ lệ chuyển đổi và doanh số thực tế để chứng minh năng lực thị trường." },
+            ].map((c) => (
+              <div key={c.title} className="border border-line rounded p-4 bg-surface-1">
+                <div className="w-11 h-11 bg-paper border border-line rounded-sm flex items-center justify-center text-[22px] mb-2">{c.icon}</div>
+                <b className="block text-[13px] text-ink leading-tight mb-1.5">{c.title}</b>
+                <p className="text-[11.5px] text-mute leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Booking */}
       <div className="max-w-[1400px] mx-auto px-4 mt-7 mb-7">
         <div className="bg-paper border border-line rounded p-6">

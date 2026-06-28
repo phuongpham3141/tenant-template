@@ -252,7 +252,7 @@ export function FactoryApplicationForm() {
         <span>
           Đồng ý cho Cybersilkroads thực hiện audit on-site và đồng ý{" "}
           <Link href="/info/terms-of-service" className="text-brand cursor-pointer hover:underline">Điều khoản NCC</Link>
-          {" "}(commission 5% trên đơn hàng thành công).
+          {" "}(phí dịch vụ 2% trên đơn hàng thành công).
         </span>
       </label>
 
