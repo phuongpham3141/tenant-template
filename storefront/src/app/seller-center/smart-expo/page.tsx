@@ -10,9 +10,9 @@ const UPCOMING = [
 ];
 
 const STEPS = [
-  { n: 1, title: "Chọn gói gian hàng", desc: "Tiêu chuẩn $480 · Cao cấp $1,280 · Kim cương $3,200 — bao gồm thiết kế 3D, video intro, livestream slot." },
-  { n: 2, title: "Upload SKU + media", desc: "Tối thiểu 12 sản phẩm hot, 1 video factory tour 60-90 giây, profile công ty song ngữ VN-CN." },
-  { n: 3, title: "Live + chat realtime", desc: "Trong 5 ngày expo: 2 buổi livestream/ngày, chat AI dịch tự động VN ↔ CN, lịch hẹn 1-1 với buyer." },
+  { n: 1, title: "Đăng ký tham dự MIỄN PHÍ", desc: "Tham dự Hội nghị B2B Matching của VGEA và mở gian hàng cơ bản miễn phí — không phí thuê chỗ. Chỉ thu phí dịch vụ 2% khi phát sinh đơn." },
+  { n: 2, title: "Upload SKU + media", desc: "Tối thiểu 12 sản phẩm hot, 1 video factory tour 60-90 giây, profile công ty song ngữ VN-CN. Mỗi sản phẩm có mã QR dẫn thẳng tới trang chi tiết." },
+  { n: 3, title: "Matching + chat realtime", desc: "Trong các ngày hội nghị: livestream factory tour, chat AI dịch Việt ↔ Trung 1-1 real-time, lịch hẹn matching 1-1 với buyer." },
 ];
 
 const BOOTHS = [
@@ -26,7 +26,7 @@ const BOOTHS = [
 
 const STATS = [
   { v: "50K+", l: "Buyer ghé thăm/năm" },
-  { v: "3.2K+", l: "Gian hàng đã setup" },
+  { v: "3.2K+", l: "Gian hàng đã tham dự" },
   { v: "12", l: "Expo / năm theo ngành" },
   { v: "$48M", l: "GMV phát sinh tại expo 2025" },
 ];
@@ -34,15 +34,15 @@ const STATS = [
 export default function SmartExpoPage() {
   return (
     <>
-      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Smart Expo đám mây" }]} />
+      <Breadcrumb trail={[{ label: "Trang chủ", href: "/" }, { label: "Khu vực nhà bán", href: "/seller-center" }, { label: "Smart Expo — Hội nghị B2B Matching" }]} />
       <div className="max-w-[1400px] mx-auto px-4 mt-4 mb-7 grid grid-cols-[280px_1fr] gap-5 max-md:grid-cols-1">
         <SellerSidebar active="/seller-center/smart-expo" />
         <div>
           <div className="bg-gradient-to-br from-accent/90 to-brand text-white rounded p-6 mb-4">
-            <div className="inline-block bg-white text-accent px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🎪 SMART EXPO CLOUD</div>
-            <h1 className="text-[26px] font-bold leading-tight">Hội chợ ảo — Bằng Canton Fair, chỉ 1/8 chi phí</h1>
+            <div className="inline-block bg-white text-accent px-2.5 py-1 text-[11px] font-bold rounded-sm tracking-wider mb-3">🎪 SMART EXPO — HỘI NGHỊ B2B MATCHING</div>
+            <h1 className="text-[26px] font-bold leading-tight">Tham dự Hội nghị B2B Matching — MIỄN PHÍ</h1>
             <p className="text-[14px] opacity-90 mt-2 leading-relaxed max-w-[680px]">
-              Gian hàng 3D, livestream factory tour, chat AI dịch realtime VN-CN, lịch hẹn 1-1 với 50K+ buyer Việt Nam và Đông Nam Á. Một expo = 2-3 tháng prospecting offline.
+              Phần số hóa của Hội nghị B2B Matching do VGEA (Hiệp hội TMĐT Toàn cầu VN) tổ chức. Không phải thuê gian hàng đắt đỏ — tham dự matching miễn phí, chỉ thu phí dịch vụ 2% khi phát sinh đơn. Chat AI dịch Việt–Trung 1-1 real-time, livestream factory tour, quét QR mở thẳng trang sản phẩm, lịch hẹn 1-1 với 50K+ buyer Việt Nam và Đông Nam Á.
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function SmartExpoPage() {
                     <b className="block text-[13.5px] text-ink mt-1 mb-1">{u.title}</b>
                     <p className="text-[11.5px] text-mute mb-2">{u.topic}</p>
                     <p className="text-[11px] text-mute mb-3"><span className="font-semibold">Buyer:</span> {u.buyer}</p>
-                    <button className="bg-brand text-white text-[11.5px] font-semibold px-3 py-1 rounded-sm">Đăng gian hàng →</button>
+                    <button className="bg-brand text-white text-[11.5px] font-semibold px-3 py-1 rounded-sm">Đăng ký tham dự miễn phí →</button>
                   </div>
                 </div>
               ))}
@@ -77,7 +77,7 @@ export default function SmartExpoPage() {
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
-            <b className="block text-[15px] text-ink mb-4">🚀 Tạo gian hàng ảo — 3 bước</b>
+            <b className="block text-[15px] text-ink mb-4">🚀 Tham dự matching miễn phí — 3 bước</b>
             <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
               {STEPS.map((s) => (
                 <div key={s.n} className="border border-line rounded p-4">
@@ -87,6 +87,9 @@ export default function SmartExpoPage() {
                 </div>
               ))}
             </div>
+            <p className="text-[11.5px] text-mute leading-relaxed mt-4 border-t border-line pt-3">
+              <span className="font-semibold text-ink">Tùy chọn nâng cao (không bắt buộc):</span> gian hàng cần thêm trải nghiệm có thể chọn gói thiết kế 3D, video intro chuyên nghiệp, slot livestream ưu tiên — Tiêu chuẩn $480 · Cao cấp $1,280 · Kim cương $3,200. Tham dự matching cơ bản vẫn luôn miễn phí.
+            </p>
           </div>
 
           <div className="bg-paper border border-line rounded p-5 mb-4">
@@ -115,9 +118,9 @@ export default function SmartExpoPage() {
           </div>
 
           <div className="bg-brand-dark text-white rounded p-5 text-center">
-            <b className="block text-[18px] mb-2">🎟 Đăng gian hàng cho Furniture Asia 12-16/06</b>
-            <p className="text-[12.5px] opacity-90 mb-4">Slot Kim cương chỉ còn 8 — Premium còn 24. Đăng trước 25/05 giảm 30%.</p>
-            <button className="bg-gold text-brand-dark px-7 py-3 rounded-sm font-bold text-[14px]">Tạo gian hàng ảo ngay</button>
+            <b className="block text-[18px] mb-2">🎟 Tham dự Hội nghị B2B Matching — Furniture Asia 12-16/06</b>
+            <p className="text-[12.5px] opacity-90 mb-4">Tham dự matching MIỄN PHÍ — chỉ thu phí dịch vụ 2% khi phát sinh đơn. Có chat AI dịch Việt–Trung 1-1 real-time, livestream factory tour và quét QR tại hội nghị.</p>
+            <button className="bg-gold text-brand-dark px-7 py-3 rounded-sm font-bold text-[14px]">Đăng ký tham dự miễn phí</button>
           </div>
         </div>
       </div>
@@ -125,4 +128,4 @@ export default function SmartExpoPage() {
   );
 }
 
-export const metadata = { title: "Smart Expo — Hội chợ đám mây — Seller Center" };
+export const metadata = { title: "Smart Expo — Hội nghị B2B Matching (VGEA) — Seller Center" };

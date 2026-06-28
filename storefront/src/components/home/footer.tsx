@@ -148,9 +148,9 @@ export function Footer() {
               />
             </Link>
             <p className="text-[12px] opacity-75 leading-relaxed mb-3.5 max-w-[320px] md:max-lg:mx-auto max-md:mx-auto">
-              Nền tảng B2B kết nối nhà bán Việt Nam với 40+ nhà máy đã được kiểm định
-              tại Trung Quốc. Báo giá nhanh, chất lượng đảm bảo, vận chuyển DDP
-              tận kho.
+              Sàn B2B trung tâm của Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam
+              (VGEA), kết nối trực tiếp nhà máy Trung Quốc với đại lý và cửa hàng
+              bán lẻ Việt Nam theo giá gốc nhà máy.
             </p>
             <div className="flex gap-2 flex-wrap md:max-lg:justify-center max-md:justify-center">
               {SOCIALS.map((s) => (
@@ -206,7 +206,7 @@ export function Footer() {
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
           <span className="opacity-80 max-lg:order-3">
-            © 2026 Cybersilkroads (CSR) · Nền tảng B2B · Vận hành bởi Beeagents.com
+            © 2026 Cybersilkroads (CSR) · Sàn B2B trung tâm của Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA) · Vận hành bởi [TÊN CÔNG TY QUẢN LÝ]
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Ngôn ngữ:</span>

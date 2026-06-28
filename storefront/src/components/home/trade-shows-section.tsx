@@ -59,18 +59,22 @@ export function TradeShowsSection() {
         {/* Header */}
         <div className="flex justify-between items-start mb-4 max-md:flex-col max-md:gap-2 max-md:mb-3">
           <div className="text-center flex-1 max-md:text-left">
+            <span className="inline-block bg-accent text-white px-2 py-0.5 text-[10px] font-bold rounded-sm tracking-wider mb-1">⚡ DO VGEA TỔ CHỨC</span>
             <h2 className="text-[20px] font-bold text-ink max-md:text-[17px]">
-              Hội chợ thương mại
+              Hội nghị B2B Matching — Miễn phí
             </h2>
             <p className="text-[12.5px] text-mute mt-1 max-md:text-[12px]">
-              Danh sách các hội chợ Cybersilkroads sẽ tham dự cùng đối tác Made-in-China.
+              Kết nối trực tiếp nhà máy Trung Quốc &amp; doanh nghiệp Việt Nam — <b className="text-accent">miễn phí cho cả hai phía</b>, tổ chức theo từng lĩnh vực.
+            </p>
+            <p className="text-[11.5px] text-mute mt-0.5 max-md:text-[11px]">
+              Quét QR tại bàn nhà máy · chat 1-1 dịch Việt–Trung real-time. Kèm hỗ trợ tham dự các hội chợ quốc tế bên dưới.
             </p>
           </div>
           <Link
             href="/trade-shows"
             className="px-5 py-2 bg-accent text-white font-semibold text-[13px] rounded-sm hover:bg-red cursor-pointer flex-shrink-0 max-md:self-end max-md:py-1.5 max-md:px-4"
           >
-            Xem thêm →
+            Tìm hiểu Hội nghị B2B →
           </Link>
         </div>
 
@@ -185,10 +189,10 @@ export function TradeShowsSection() {
               </div>
               <div className="flex-1 min-w-0">
                 <b className="block text-[13px] font-bold mb-0.5">
-                  Cảnh báo Thương mại — Không bỏ lỡ hội chợ
+                  Cảnh báo Thương mại — Không bỏ lỡ Hội nghị B2B Matching
                 </b>
                 <p className="text-[11.5px] opacity-85 leading-snug">
-                  Nhận lịch hội chợ + lịch B2B match-making qua email mỗi tháng.
+                  Hội nghị kích hoạt theo nhu cầu thị trường (data-driven). Nhận thông báo theo từng lĩnh vực + lịch hội chợ qua email.
                 </p>
               </div>
               <Link
