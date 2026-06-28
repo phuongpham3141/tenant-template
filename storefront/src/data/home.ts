@@ -64,43 +64,25 @@ export const HOT_SEARCHES = [
 ];
 
 export const NAV_CATEGORIES = [
-  // Cụm 1 — Tiêu dùng & đời sống
-  { icon: "👗", name: "Thời trang", slug: "thoi-trang" },
-  { icon: "💄", name: "Mỹ phẩm", slug: "my-pham" },
-  { icon: "👜", name: "Phụ kiện", slug: "phu-kien" },
-  { icon: "🍼", name: "Đồ Mẹ & Bé", slug: "do-me-be" },
-  { icon: "⚽", name: "Thể thao", slug: "the-thao" },
-  { icon: "🎮", name: "Giải trí", slug: "giai-tri" },
-  { icon: "🍱", name: "Thực phẩm", slug: "thuc-pham" },
-  // Cụm 2 — Xây dựng & nội thất
+  { icon: "🏠", name: "Nhà & Sân vườn", slug: "home-garden" },
   { icon: "🧱", name: "Vật liệu xây dựng", slug: "construction-materials" },
+  { icon: "🚿", name: "Phòng tắm & Vệ sinh", slug: "bathroom-sanitary" },
   { icon: "🛋", name: "Nội thất", slug: "noi-that", isNew: true },
-  { icon: "🚿", name: "Thiết bị vệ sinh", slug: "bathroom-sanitary" },
-  { icon: "🔲", name: "Gạch ốp lát", slug: "gach-op-lat" },
-  { icon: "💡", name: "Chiếu sáng", slug: "lighting" },
-  { icon: "🖨", name: "Thiết bị văn phòng", slug: "thiet-bi-van-phong" },
-  // Cụm 3 — Công nghiệp & kỹ thuật
-  { icon: "🏍", name: "Phụ tùng ô tô xe máy", slug: "phu-tung-oto-xe-may" },
-  { icon: "⚡", name: "Thiết bị điện", slug: "electrical" },
-  { icon: "📱", name: "Điện tử", slug: "dien-tu" },
-  { icon: "🔌", name: "Thiết bị & linh kiện", slug: "thiet-bi-linh-kien" },
-  { icon: "🏭", name: "Máy công nghiệp", slug: "may-cong-nghiep" },
-  { icon: "🔨", name: "Công cụ & đồ ngũ kim", slug: "hardware-tools" },
-  { icon: "🛢", name: "Năng lượng & khoáng sản", slug: "nang-luong-khoang-san" },
-  { icon: "⚗️", name: "Hóa chất", slug: "hoa-chat" },
-  // Cụm 4 — Nông nghiệp & dịch vụ
-  { icon: "🌾", name: "Nông sản", slug: "nong-san" },
-  { icon: "🚜", name: "Nông nghiệp", slug: "nong-nghiep" },
-  { icon: "🚚", name: "Vận tải", slug: "van-tai" },
-  { icon: "🛡", name: "Bảo vệ & an ninh", slug: "bao-ve-an-ninh" },
-  { icon: "📦", name: "Túi & hộp (bao bì)", slug: "bao-bi" },
+  { icon: "🍳", name: "Thiết bị nhà bếp", slug: "kitchen-equipment" },
+  { icon: "💡", name: "Đèn & Chiếu sáng", slug: "lighting" },
+  { icon: "🪟", name: "Cửa & Cửa sổ", slug: "doors-windows" },
+  { icon: "🛏", name: "Đồ dùng khách sạn", slug: "hotel-supplies" },
+  { icon: "🔨", name: "Phụ kiện & Dụng cụ", slug: "hardware-tools" },
+  { icon: "🎨", name: "Trang trí", slug: "decoration" },
+  { icon: "🌿", name: "Ngoài trời & Sân vườn", slug: "outdoor-garden" },
+  { icon: "⚡", name: "Điện & Thiết bị điện", slug: "electrical" },
 ];
 
 export const STATS = [
   { value: "2.400+", label: "SKU đang bán" },
-  { value: "40", label: "Lĩnh vực trọng điểm" },
+  { value: "40+", label: "Nhà máy đã thẩm định" },
   { value: "<24h", label: "Thời gian báo giá" },
-  { value: "Toàn quốc", label: "Mạng lưới bán lẻ" },
+  { value: "600+", label: "Đại lý VN" },
   { value: "12 năm", label: "Lịch sử giao dịch" },
 ];
 

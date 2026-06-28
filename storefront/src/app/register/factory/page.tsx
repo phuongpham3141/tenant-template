@@ -18,7 +18,7 @@ const VALUE_PROPS = [
   {
     icon: "💼",
     title: "0% phí listing",
-    desc: "Chỉ trả phí dịch vụ 2% khi có đơn — không có phí ẩn, không thuê bao.",
+    desc: "Chỉ trả 5% commission khi có đơn — không có phí ẩn, không thuê bao.",
   },
   {
     icon: "🌐",
@@ -38,7 +38,7 @@ const STEPS = [
 const FAQ = [
   {
     q: "Tôi có phải trả phí gì không?",
-    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Cybersilkroads chỉ tính phí dịch vụ 2% khi có đơn hàng thành công.",
+    a: "Không. Đăng ký, audit, onboarding, hosting, marketing — tất cả free. Cybersilkroads chỉ tính 5% commission khi có đơn hàng thành công.",
   },
   {
     q: "Audit mất bao lâu?",
@@ -79,7 +79,7 @@ export default function RegisterFactoryPage() {
             </h1>
             <p className="text-[13px] opacity-90 leading-relaxed max-w-[680px]">
               Tiếp cận 600+ đại lý Việt Nam đang chủ động tìm nhà cung cấp Trung Quốc.
-              Kiểm định tại chỗ miễn phí, onboarding 1-on-1, không phí listing, chỉ trả phí dịch vụ 2% khi có đơn.
+              Kiểm định tại chỗ miễn phí, onboarding 1-on-1, không phí listing, chỉ trả 5% commission khi có đơn.
             </p>
           </div>
           <div className="flex flex-col gap-2 text-[12px] opacity-90 min-w-[200px]">

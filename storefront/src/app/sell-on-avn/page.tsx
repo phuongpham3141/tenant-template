@@ -3,27 +3,27 @@ import { Breadcrumb } from "@/components/category/breadcrumb";
 
 const TIERS = [
   {
-    name: "Niêm yết",
-    price: "0 đ",
-    sub: "miễn phí",
-    desc: "Niêm yết, kiểm định và mọi công cụ marketing — miễn phí 100%, không thu trước",
-    features: ["Listing không giới hạn", "Inbox RFQ + ghép nối AI", "Hồ sơ NCC đã xác minh", "Hỗ trợ tiếng Việt 24/7", "Account manager song ngữ", "Banner ngành", "—"],
+    name: "Free",
+    price: "0 NDT",
+    sub: "/năm",
+    desc: "Listing cơ bản, phù hợp NCC mới muốn thử nghiệm",
+    features: ["Listing 20 sản phẩm", "Inbox RFQ cơ bản", "Hồ sơ NCC chuẩn", "Hỗ trợ email", "—", "—", "—"],
     accent: false,
   },
   {
-    name: "Phí dịch vụ",
-    price: "2%",
-    sub: "/giá trị đơn phát sinh",
-    desc: "Phí dịch vụ duy nhất theo Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam — chỉ thu khi có đơn thành công",
-    features: ["Chia sẻ doanh thu theo kết quả", "Chỉ thu khi đơn thành công", "Tài khoản trung gian Bảo đảm Giao dịch", "Người mua trả 0% phí", "Mức phí công khai, không phí ẩn", "Tự động khấu trừ", "Không phí thành viên hằng năm"],
+    name: "Verified",
+    price: "8,000 NDT",
+    sub: "/năm",
+    desc: "Audited tier, ưu tiên trên search, account manager",
+    features: ["Listing không giới hạn", "Inbox RFQ ưu tiên", "Audited badge", "Hỗ trợ tiếng Việt 24/7", "Account manager", "Banner ngành", "—"],
     accent: true,
   },
   {
-    name: "Hội nghị B2B Matching",
-    price: "Miễn phí",
-    sub: "theo từng lĩnh vực",
-    desc: "Kết nối trực tiếp đại lý Việt Nam, kích hoạt theo điểm bùng phát dữ liệu nhu cầu — tham dự miễn phí",
-    features: ["Tham dự miễn phí 100%", "Tổ chức theo từng lĩnh vực", "Top 3 ghép nối RFQ", "Account manager đồng hành", "Featured trang chủ", "Kiểm định miễn phí", "Trade show đại diện"],
+    name: "Gold",
+    price: "50,000 NDT",
+    sub: "/năm",
+    desc: "Top tier — featured banner trang chủ, ưu tiên match RFQ top 3",
+    features: ["Listing không giới hạn", "Top 3 match RFQ", "Gold + Audited badge", "Account manager riêng", "Featured trang chủ", "Audit free 2 lần/năm", "Trade show đại diện"],
     accent: false,
   },
 ];
@@ -65,8 +65,8 @@ export default function SellOnAVNPage() {
 
       {/* Tier plans */}
       <div className="max-w-[1400px] mx-auto px-4 mt-7">
-        <h2 className="text-[22px] font-bold text-ink text-center mb-1">Mô hình phí thống nhất — minh bạch một mức</h2>
-        <p className="text-[13px] text-mute text-center mb-5">Niêm yết và dự Hội nghị B2B Matching miễn phí 100%. Phí dịch vụ duy nhất 2% trên giá trị đơn hàng phát sinh, chỉ thu khi có đơn thành công.</p>
+        <h2 className="text-[22px] font-bold text-ink text-center mb-1">Chọn gói phù hợp</h2>
+        <p className="text-[13px] text-mute text-center mb-5">Mọi tier đều có audit free, hỗ trợ tiếng Việt, không phí giao dịch.</p>
         <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1">
           {TIERS.map((t) => (
             <div key={t.name} className={`bg-paper border-2 rounded p-5 ${t.accent ? "border-brand" : "border-line"}`}>
@@ -85,7 +85,7 @@ export default function SellOnAVNPage() {
                 ))}
               </ul>
               <Link href="/register/factory" className={`block w-full text-center py-2.5 rounded-sm font-semibold text-[13px] ${t.accent ? "bg-brand text-white" : "border border-brand text-brand"}`}>
-                Đăng ký miễn phí
+                Bắt đầu {t.name}
               </Link>
             </div>
           ))}
@@ -103,33 +103,6 @@ export default function SellOnAVNPage() {
               <p className="text-[12px] text-mute leading-snug">{s.d}</p>
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* B2B Matching conference */}
-      <div className="max-w-[1400px] mx-auto px-4 mt-7">
-        <div className="bg-paper border border-line rounded p-6 max-md:p-4">
-          <h2 className="text-[22px] font-bold text-ink text-center mb-1">Điều kiện tham dự Hội nghị B2B Matching (miễn phí)</h2>
-          <p className="text-[13px] text-mute text-center mb-5 max-w-[760px] mx-auto leading-relaxed">
-            Hội nghị B2B Matching tổ chức theo từng lĩnh vực, kích hoạt theo &ldquo;điểm bùng phát&rdquo; dữ liệu nhu cầu của đại lý Việt Nam. Tham dự miễn phí. Nhà máy Trung Quốc khi tham dự BẮT BUỘC đáp ứng đủ 4 yêu cầu sau.
-          </p>
-          <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2">
-            {[
-              { icon: "🧑‍💼", t: "Hiện diện trực tiếp", d: "Đại diện có thẩm quyền của nhà máy tham dự trực tiếp tại hội nghị." },
-              { icon: "📦", t: "Sản phẩm mẫu vật lý", d: "Mang sản phẩm mẫu vật lý để đại lý kiểm tra chất lượng tại chỗ." },
-              { icon: "🎬", t: "Video dây chuyền nhà xưởng", d: "Chuẩn bị video dây chuyền sản xuất nhà xưởng thực tế." },
-              { icon: "📖", t: "Catalog", d: "Mang catalog sản phẩm đầy đủ với thông số, MOQ và bậc giá." },
-            ].map((r) => (
-              <div key={r.t} className="bg-bg border border-line rounded p-4 text-center">
-                <div className="text-[26px] mb-2">{r.icon}</div>
-                <b className="block text-[13.5px] text-ink mb-1 leading-tight">{r.t}</b>
-                <p className="text-[12px] text-mute leading-snug">{r.d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 text-center bg-success/10 border border-success/25 text-success font-semibold py-2.5 rounded-sm text-[13px]">
-            Niêm yết và tham dự Hội nghị B2B Matching đều MIỄN PHÍ — chỉ thu phí dịch vụ 2% khi có đơn hàng thành công.
-          </div>
         </div>
       </div>
 
@@ -164,8 +137,7 @@ export default function SellOnAVNPage() {
       <div className="max-w-[1400px] mx-auto px-4 mt-7 mb-7">
         <div className="bg-brand-dark text-white rounded p-7 text-center">
           <h3 className="text-[24px] font-bold mb-2">Sẵn sàng tăng doanh thu xuất khẩu Việt Nam?</h3>
-          <p className="text-[13.5px] opacity-85 mb-4 max-w-[600px] mx-auto">Đăng ký miễn phí, kiểm định miễn phí. Niêm yết và dự Hội nghị B2B Matching miễn phí — chỉ thu phí dịch vụ 2% trên giá trị đơn hàng phát sinh khi có đơn thành công. Trung bình 30 ngày để go-live và nhận đơn đầu tiên.</p>
-          <p className="text-[11.5px] opacity-70 mb-4 max-w-[640px] mx-auto leading-relaxed">Phí dịch vụ 2% theo Hợp đồng Quảng bá &amp; Kết nối khách hàng Việt Nam (chia sẻ doanh thu theo kết quả), bảo hộ [5 năm — placeholder, cần xác nhận pháp lý]; hành vi né phí chịu phạt [8% — placeholder, cần xác nhận pháp lý] theo điều khoản hợp đồng.</p>
+          <p className="text-[13.5px] opacity-85 mb-4 max-w-[600px] mx-auto">Đăng ký miễn phí, audit miễn phí. Trung bình 30 ngày để go-live và nhận đơn đầu tiên.</p>
           <Link href="/register/factory" className="inline-block px-8 py-3.5 bg-gold text-brand-dark rounded-sm font-bold text-[15px]">🚀 Đăng ký nhà máy ngay</Link>
         </div>
       </div>

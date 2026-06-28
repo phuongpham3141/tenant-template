@@ -760,7 +760,7 @@ export default function KetNoiPage() {
             Một con đường tơ lụa số
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            Là Sàn B2B trung tâm của <b>Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA)</b>, Cybersilkroads dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Với vai trò tổ chức chủ quản, VGEA là hạt nhân kết nối toàn bộ mạng lưới hiệp hội đối tác; sàn được vận hành qua công ty quản lý do VGEA chỉ định: <b>[TÊN CÔNG TY QUẢN LÝ]</b>. Tổng tiếp cận 200,000+ NCC qua mạng lưới hiệp hội.
+            Cybersilkroads dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Tổng tiếp cận 200,000+ NCC qua đối tác mẹ.
           </p>
 
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
@@ -845,7 +845,7 @@ export default function KetNoiPage() {
           <span className="text-[11px] uppercase tracking-wider text-brand font-bold">TẦM NHÌN</span>
           <h2 className="text-[26px] font-bold text-ink mt-1 max-md:text-[20px]">Cây cầu hai chiều giữa 3 thị trường</h2>
           <p className="text-[13px] text-mute mt-2 max-w-[700px] mx-auto">
-            Khác với platform B2B truyền thống chỉ là kênh nhập một chiều, Cybersilkroads vận hành hai dòng chảy: hàng Trung Quốc → Việt Nam, và hàng Việt Nam → ASEAN — qua chính mạng lưới hiệp hội chính thức của 3 khối. Tựa vào nền tảng Zalo AI của VGEA, sàn còn có năng lực kết nối &ldquo;chặng cuối&rdquo; (last-mile) tới mạng lưới điểm bán lẻ trên toàn quốc.
+            Khác với platform B2B truyền thống chỉ là kênh nhập một chiều, Cybersilkroads vận hành hai dòng chảy: hàng Trung Quốc → Việt Nam, và hàng Việt Nam → ASEAN — qua chính mạng lưới hiệp hội chính thức của 3 khối.
           </p>
         </div>
 

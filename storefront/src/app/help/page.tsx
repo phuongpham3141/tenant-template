@@ -130,7 +130,7 @@ const FAQ_BY_STAGE = [
       },
       {
         q: "Phí dịch vụ Cybersilkroads là bao nhiêu?",
-        a: "MIỄN PHÍ HOÀN TOÀN cho Buyer. Không phí thành viên, không phí giao dịch, không phí trung gian, không phí audit on-site (cho đơn ≥$5K). Cybersilkroads chỉ thu phí dịch vụ 2% từ nhà cung cấp khi giao dịch thành công. Buyer chỉ trả: giá hàng (theo PO) + cước DDP (transparent).",
+        a: "MIỄN PHÍ HOÀN TOÀN cho Buyer. Không phí thành viên, không phí giao dịch, không phí trung gian, không phí audit on-site (cho đơn ≥$5K). Cybersilkroads chỉ thu 5% commission từ Supplier khi giao dịch thành công. Buyer chỉ trả: giá hàng (theo PO) + cước DDP (transparent).",
       },
       {
         q: "Tôi có cần là doanh nghiệp mới đăng ký được không?",

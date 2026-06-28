@@ -22,7 +22,7 @@ const VALUE_PROPS = [
   {
     icon: "🛡",
     title: "Bảo đảm Giao dịch — người mua trả 0% phí",
-    desc: "Tài khoản trung gian qua Vietcombank · BIDV · Bank of China. Nhà cung cấp đóng phí dịch vụ 2% trên giá trị đơn hàng phát sinh (đã bao gồm trong giá niêm yết). Loại bỏ rào cản tin tưởng — đại lý Việt Nam tự tin đặt đơn lớn.",
+    desc: "Tài khoản trung gian qua Vietcombank · BIDV · Bank of China. Nhà cung cấp đóng 1,5% (đã bao gồm trong giá niêm yết). Loại bỏ rào cản tin tưởng — đại lý Việt Nam tự tin đặt đơn lớn.",
   },
   {
     icon: "🚢",
@@ -36,8 +36,8 @@ const VALUE_PROPS = [
   },
   {
     icon: "💸",
-    title: "Mô hình Win-Win — chia sẻ doanh thu theo kết quả",
-    desc: "Niêm yết, kiểm định, ghép nối RFQ, banner, dự Hội nghị B2B Matching — miễn phí 100%. Phí duy nhất là phí dịch vụ 2% trên giá trị đơn hàng phát sinh theo Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam (chia sẻ doanh thu theo kết quả), chỉ thu khi đơn đã thành công.",
+    title: "Mô hình Win-Win — chia sẻ rủi ro thị trường",
+    desc: "Niêm yết, kiểm định, ghép nối RFQ, banner — miễn phí 100%. Phí duy nhất 1,5% Bảo đảm Giao dịch chỉ phát sinh khi đơn đã thành công. Cam kết hoàn 100% phí nếu nhà cung cấp chưa có lợi nhuận sau 12 tháng đầu.",
   },
 ];
 
@@ -63,17 +63,17 @@ const PRICING_PILLARS = [
   },
   {
     badge: "Khi có đơn thành công",
-    price: "2%",
-    priceSub: "Trên giá trị đơn phát sinh",
+    price: "1,5%",
+    priceSub: "Trên giá trị đơn",
     color: "var(--color-brand)",
-    headline: "Phí dịch vụ duy nhất — chỉ thu khi đã giao hàng thành công",
-    desc: "Chúng tôi chỉ kiếm tiền khi nhà cung cấp đã nhận được đơn hàng và đại lý Việt Nam đã xác nhận. Phí dịch vụ 2% trên giá trị đơn hàng phát sinh, theo Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam (chia sẻ doanh thu theo kết quả), bao trọn dịch vụ tài khoản trung gian qua Vietcombank · BIDV · Bank of China — bảo vệ niềm tin cho người mua. Người mua trả 0 đ, nhà cung cấp đã bao gồm 2% trong giá niêm yết, không phí ẩn.",
+    headline: "Bảo đảm Giao dịch — phí duy nhất, chỉ thu khi đã giao hàng thành công",
+    desc: "Chúng tôi chỉ kiếm tiền khi nhà cung cấp đã nhận được đơn hàng và đại lý Việt Nam đã xác nhận. Phí 1,5% bao trọn dịch vụ tài khoản trung gian qua Vietcombank · BIDV · Bank of China — bảo vệ niềm tin cho người mua. Người mua trả 0 đ, nhà cung cấp đã bao gồm 1,5% trong giá niêm yết, không phí ẩn.",
     items: [
       "Tài khoản trung gian qua 3 ngân hàng quốc tế",
       "Người mua Việt Nam trả 0% phí — yên tâm đặt đơn lớn",
       "Chỉ giải ngân sau khi đại lý xác nhận hàng đúng",
       "Bảo vệ tranh chấp — hoàn tiền nếu sai cam kết",
-      "Mức phí công khai, không có khoản nào ngoài 2%",
+      "Mức phí công khai, không có khoản nào ngoài 1,5%",
       "Tự động khấu trừ — nhà cung cấp không phải làm gì thêm",
     ],
     accent: true,
@@ -84,10 +84,10 @@ const PRICING_PILLARS = [
     priceSub: "Không thu phí",
     color: "#9C6A1F",
     headline: "Nếu nhà cung cấp chưa có lợi nhuận, Cybersilkroads miễn phí toàn bộ",
-    desc: "Chúng tôi tin vào mô hình các bên cùng có lợi. Nếu sau 12 tháng đầu nhà cung cấp chưa thu được lợi nhuận thực từ Cybersilkroads, chúng tôi hoàn 100% phí dịch vụ 2% đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Đây không phải khuyến mại — đây là triết lý vận hành.",
+    desc: "Chúng tôi tin vào mô hình các bên cùng có lợi. Nếu sau 12 tháng đầu nhà cung cấp chưa thu được lợi nhuận thực từ Cybersilkroads, chúng tôi hoàn 100% phí Bảo đảm Giao dịch đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Đây không phải khuyến mại — đây là triết lý vận hành.",
     items: [
-      "Cam kết ràng buộc trong Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam",
-      "Hoàn 100% phí dịch vụ sau 12 tháng nếu chưa lãi",
+      "Cam kết ràng buộc trong hợp đồng dịch vụ",
+      "Hoàn 100% phí Bảo đảm Giao dịch sau 12 tháng nếu chưa lãi",
       "Hoặc tiếp tục miễn phí thêm 6 tháng — nhà cung cấp chọn",
       "Quản lý tài khoản chủ động đề xuất tối ưu giá, sản phẩm",
       "Cybersilkroads chia sẻ rủi ro thị trường cùng nhà cung cấp",
@@ -279,11 +279,11 @@ const FAQ = [
   },
   {
     q: "Cybersilkroads kiếm tiền bằng cách nào nếu mọi thứ đều miễn phí?",
-    a: "Chúng tôi chỉ thu phí dịch vụ 2% trên giá trị đơn hàng phát sinh đã thành công, theo Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam (chia sẻ doanh thu theo kết quả) — phí này nhà cung cấp đã bao gồm trong giá niêm yết, không phải phí ẩn. Người mua trả 0 đ. Mô hình của chúng tôi gắn liền với thành công của nhà cung cấp: chúng tôi chỉ kiếm tiền khi nhà cung cấp đã bán được hàng. Nếu nhà cung cấp chưa có lợi nhuận, chúng tôi không thu gì cả.",
+    a: "Chúng tôi chỉ thu phí 1,5% trên giá trị đơn hàng đã thành công, qua dịch vụ Bảo đảm Giao dịch — phí này nhà cung cấp đã bao gồm trong giá niêm yết, không phải phí ẩn. Người mua trả 0 đ. Mô hình của chúng tôi gắn liền với thành công của nhà cung cấp: chúng tôi chỉ kiếm tiền khi nhà cung cấp đã bán được hàng. Nếu nhà cung cấp chưa có lợi nhuận, chúng tôi không thu gì cả.",
   },
   {
     q: "Cam kết &ldquo;Không Lãi Không Thu&rdquo; hoạt động cụ thể như thế nào?",
-    a: "Sau 12 tháng kể từ khi nhà cung cấp lên gian hàng chính thức, nếu tổng lợi nhuận từ các đơn hàng trên Cybersilkroads (sau khi trừ chi phí sản xuất, vận chuyển, phí dịch vụ 2%) chưa dương, nhà cung cấp có quyền yêu cầu một trong hai phương án: (1) Hoàn 100% phí dịch vụ đã đóng trong 12 tháng đó. (2) Tiếp tục miễn phí dịch vụ thêm 6 tháng — Cybersilkroads chia sẻ rủi ro thị trường cùng nhà cung cấp. Cam kết này được ghi rõ trong Hợp đồng Quảng bá & Kết nối khách hàng Việt Nam — không phải lời hứa marketing.",
+    a: "Sau 12 tháng kể từ khi nhà cung cấp lên gian hàng chính thức, nếu tổng lợi nhuận từ các đơn hàng trên Cybersilkroads (sau khi trừ chi phí sản xuất, vận chuyển, phí 1,5%) chưa dương, nhà cung cấp có quyền yêu cầu một trong hai phương án: (1) Hoàn 100% phí Bảo đảm Giao dịch đã đóng trong 12 tháng đó. (2) Tiếp tục miễn phí Bảo đảm Giao dịch thêm 6 tháng — Cybersilkroads chia sẻ rủi ro thị trường cùng nhà cung cấp. Cam kết này được ghi rõ trong hợp đồng dịch vụ — không phải lời hứa marketing.",
   },
   {
     q: "Tôi có thể rút khỏi Cybersilkroads bất kỳ lúc nào không?",
@@ -299,7 +299,7 @@ const FAQ = [
   },
   {
     q: "Bảo đảm Giao dịch có bắt buộc không?",
-    a: "Khuyến nghị mạnh nhưng không bắt buộc. Khoảng 78% đơn trên Cybersilkroads đang dùng Bảo đảm Giao dịch. Nhà cung cấp tham gia giúp tăng tỷ lệ chốt đơn (đại lý tin tưởng cao hơn 3,4 lần theo dữ liệu nội bộ), đặc biệt với đơn đầu tiên với đại lý mới. Phí dịch vụ 2% trên giá trị đơn hàng phát sinh mỗi đơn đã bao gồm trong giá niêm yết, không phí ẩn.",
+    a: "Khuyến nghị mạnh nhưng không bắt buộc. Khoảng 78% đơn trên Cybersilkroads đang dùng Bảo đảm Giao dịch. Nhà cung cấp tham gia giúp tăng tỷ lệ chốt đơn (đại lý tin tưởng cao hơn 3,4 lần theo dữ liệu nội bộ), đặc biệt với đơn đầu tiên với đại lý mới. Phí 1,5% mỗi đơn đã bao gồm trong giá niêm yết, không phí ẩn.",
   },
 ];
 
@@ -385,7 +385,7 @@ export default function SellOnCsrPage() {
             Niêm yết miễn phí 100% — chỉ thu phí khi giao dịch thành công
           </h2>
           <p className="text-[13.5px] text-mute mt-2 max-w-[760px] mx-auto leading-relaxed">
-            Cybersilkroads hỗ trợ kết nối các bên giao thương theo nguyên tắc <b className="text-ink">tất cả cùng có lợi</b>. Chúng tôi không thu phí đăng ký, không thu phí kiểm định, không thu phí thành viên hằng năm, dự Hội nghị B2B Matching cũng miễn phí. Phí duy nhất là phí dịch vụ 2% trên giá trị đơn hàng phát sinh, theo Hợp đồng Quảng bá &amp; Kết nối khách hàng Việt Nam (chia sẻ doanh thu theo kết quả) — chỉ phát sinh khi nhà cung cấp đã có đơn thành công và đại lý xác nhận hàng. <b className="text-ink">Nếu nhà cung cấp chưa có lợi nhuận, Cybersilkroads cam kết miễn phí toàn bộ.</b>
+            Cybersilkroads hỗ trợ kết nối các bên giao thương theo nguyên tắc <b className="text-ink">tất cả cùng có lợi</b>. Chúng tôi không thu phí đăng ký, không thu phí kiểm định, không thu phí thành viên hằng năm. Phí duy nhất là 1,5% Bảo đảm Giao dịch — chỉ phát sinh khi nhà cung cấp đã có đơn thành công và đại lý xác nhận hàng. <b className="text-ink">Nếu nhà cung cấp chưa có lợi nhuận, Cybersilkroads cam kết miễn phí toàn bộ.</b>
           </p>
         </div>
 
@@ -463,9 +463,9 @@ export default function SellOnCsrPage() {
               🤝
             </div>
             <div className="flex-1">
-              <b className="block text-[16px] mb-1">Hợp đồng Quảng bá &amp; Kết nối khách hàng Việt Nam — chia sẻ doanh thu theo kết quả</b>
+              <b className="block text-[16px] mb-1">Cam kết &ldquo;Không Lãi Không Thu&rdquo; — bằng văn bản trong hợp đồng dịch vụ</b>
               <p className="text-[13px] opacity-90 leading-relaxed">
-                Phí dịch vụ duy nhất 2% trên giá trị đơn hàng phát sinh, có hiệu lực bảo hộ trong [THỜI HẠN: 5 năm — placeholder, cần xác nhận pháp lý]. Hành vi né phí (giao dịch ngoài nền tảng để tránh phí dịch vụ) chịu mức phạt [8% — placeholder, cần xác nhận pháp lý] theo điều khoản hợp đồng. Nếu sau 12 tháng đầu nhà cung cấp chưa có lợi nhuận thực từ Cybersilkroads, chúng tôi <b>hoàn 100% phí dịch vụ</b> đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Chúng tôi tin nền tảng B2B chỉ có giá trị khi mọi bên cùng thắng.
+                Nếu sau 12 tháng đầu nhà cung cấp chưa có lợi nhuận thực từ Cybersilkroads, chúng tôi <b>hoàn 100% phí Bảo đảm Giao dịch</b> đã đóng — hoặc tiếp tục miễn phí thêm 6 tháng để cùng tìm hướng tối ưu. Chúng tôi tin nền tảng B2B chỉ có giá trị khi mọi bên cùng thắng.
               </p>
             </div>
             <Link
@@ -564,56 +564,6 @@ export default function SellOnCsrPage() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* === B2B Matching conference ======================================= */}
-      <section className="max-w-[1200px] mx-auto px-4 mt-12">
-        <div className="bg-paper border border-line rounded p-6 max-md:p-4">
-          <div className="text-center mb-5">
-            <span className="text-[11px] uppercase tracking-wider text-brand font-bold">HỘI NGHỊ B2B MATCHING · MIỄN PHÍ</span>
-            <h2 className="text-[24px] font-bold text-ink mt-1 max-md:text-[19px]">
-              Điều kiện tham dự Hội nghị B2B Matching (miễn phí)
-            </h2>
-            <p className="text-[13px] text-mute mt-2 max-w-[760px] mx-auto leading-relaxed">
-              Hội nghị B2B Matching được tổ chức theo từng lĩnh vực, kích hoạt theo &ldquo;điểm bùng phát&rdquo; dữ liệu nhu cầu của đại lý Việt Nam. Tham dự hoàn toàn miễn phí. Để bảo đảm chất lượng kết nối, nhà máy Trung Quốc khi tham dự BẮT BUỘC đáp ứng đủ 4 yêu cầu sau.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-            {[
-              {
-                icon: "🧑‍💼",
-                title: "Hiện diện trực tiếp",
-                desc: "Đại diện có thẩm quyền của nhà máy phải tham dự trực tiếp tại hội nghị — không chỉ tham gia trực tuyến hay uỷ quyền hình thức.",
-              },
-              {
-                icon: "📦",
-                title: "Sản phẩm mẫu vật lý",
-                desc: "Mang theo sản phẩm mẫu vật lý để đại lý Việt Nam trực tiếp kiểm tra chất lượng, chất liệu và hoàn thiện tại chỗ.",
-              },
-              {
-                icon: "🎬",
-                title: "Video dây chuyền nhà xưởng",
-                desc: "Chuẩn bị video dây chuyền sản xuất nhà xưởng thực tế để chứng minh năng lực và quy mô sản xuất.",
-              },
-              {
-                icon: "📖",
-                title: "Catalog",
-                desc: "Mang theo catalog sản phẩm đầy đủ (in hoặc số) với thông số kỹ thuật, MOQ và bậc giá để đại lý đối chiếu nhanh.",
-              },
-            ].map((r) => (
-              <div key={r.title} className="flex gap-3 bg-bg border border-line rounded p-4">
-                <div className="text-[28px] flex-shrink-0">{r.icon}</div>
-                <div>
-                  <b className="block text-[14.5px] text-ink mb-1 leading-tight">{r.title}</b>
-                  <p className="text-[12.5px] text-mute leading-relaxed">{r.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 text-center bg-success/10 border border-success/25 text-success font-semibold py-2.5 rounded-sm text-[13px]">
-            Niêm yết gian hàng và tham dự Hội nghị B2B Matching đều MIỄN PHÍ — chỉ thu phí dịch vụ 2% khi có đơn hàng thành công.
           </div>
         </div>
       </section>

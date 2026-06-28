@@ -25,70 +25,8 @@ export default function TradeShowsPage() {
         </div>
       </div>
 
-      {/* Featured — Hội nghị B2B Matching (VGEA) */}
-      <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <div className="bg-paper border-2 border-accent rounded p-5">
-          <span className="inline-block bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2">⚡ ĐIỂM CỐT LÕI · DO VGEA TỔ CHỨC</span>
-          <h2 className="text-[24px] font-extrabold text-ink mb-1 max-md:text-[20px]">🤝 Hội nghị B2B Matching — Miễn phí, theo từng lĩnh vực</h2>
-          <p className="text-[13.5px] text-mute leading-relaxed mb-4 max-w-[860px]">
-            Hội nghị kết nối trực tiếp nhà máy Trung Quốc với doanh nghiệp Việt Nam, do <b className="text-ink">Hiệp hội Thương mại điện tử Toàn cầu Việt Nam (VGEA)</b> tổ chức.
-            Hoàn toàn <b className="text-accent">MIỄN PHÍ cho cả hai phía</b> — không thu phí gian hàng, không phí tham dự. Mỗi hội nghị tập trung vào <b className="text-ink">một lĩnh vực cụ thể</b>.
-          </p>
-
-          <div className="grid grid-cols-3 gap-4 mb-4 max-md:grid-cols-1">
-            <div className="border border-line rounded p-4 bg-surface-2">
-              <b className="block text-[14px] text-ink mb-1">💸 Miễn phí 2 chiều</b>
-              <p className="text-[12.5px] text-mute leading-relaxed">Doanh nghiệp Trung Quốc và Việt Nam đều tham dự miễn phí. VGEA chịu trách nhiệm tổ chức, kết nối và phiên dịch.</p>
-            </div>
-            <div className="border border-line rounded p-4 bg-surface-2">
-              <b className="block text-[14px] text-ink mb-1">📊 Kích hoạt theo dữ liệu</b>
-              <p className="text-[12.5px] text-mute leading-relaxed">Không cố định lịch trước. Hội nghị được kích hoạt theo <b className="text-ink">"điểm bùng phát"</b> của dữ liệu nhu cầu thực tế — mở đúng lĩnh vực, đúng thời điểm thị trường cần.</p>
-            </div>
-            <div className="border border-line rounded p-4 bg-surface-2">
-              <b className="block text-[14px] text-ink mb-1">🏭 Theo từng lĩnh vực</b>
-              <p className="text-[12.5px] text-mute leading-relaxed">Mỗi kỳ tổ chức riêng cho một ngành (nội thất, vật liệu xây dựng, đèn LED, sanitary…) để buyer và nhà máy gặp đúng đối tác.</p>
-            </div>
-          </div>
-
-          <div className="border border-gold rounded p-4 bg-cream mb-4">
-            <b className="block text-[14px] text-ink mb-2">✅ Điều kiện BẮT BUỘC với nhà máy Trung Quốc tham dự</b>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-1.5 max-md:grid-cols-1">
-              <span className="text-[12.5px] text-mute">👤 Hiện diện <b className="text-ink">trực tiếp</b> tại hội nghị</span>
-              <span className="text-[12.5px] text-mute">📦 Mang theo <b className="text-ink">sản phẩm mẫu vật lý</b></span>
-              <span className="text-[12.5px] text-mute">🎥 Video dây chuyền nhà xưởng <b className="text-ink">không cắt ghép</b></span>
-              <span className="text-[12.5px] text-mute">📖 Đầy đủ <b className="text-ink">catalog</b> sản phẩm</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 mb-4 max-md:grid-cols-1">
-            <div className="border border-line rounded p-4 bg-surface-2 flex gap-3 items-start">
-              <span className="text-[22px]">📱</span>
-              <div>
-                <b className="block text-[13.5px] text-ink mb-0.5">Quét QR tại bàn nhà máy</b>
-                <p className="text-[12.5px] text-mute leading-relaxed">Buyer quét mã QR ngay tại bàn của nhà máy để mở trang sản phẩm tương ứng trên cybersilkroads.com.</p>
-              </div>
-            </div>
-            <div className="border border-line rounded p-4 bg-surface-2 flex gap-3 items-start">
-              <span className="text-[22px]">💬</span>
-              <div>
-                <b className="block text-[13.5px] text-ink mb-0.5">Chat 1-1 dịch real-time</b>
-                <p className="text-[12.5px] text-mute leading-relaxed">Trao đổi trực tiếp với nhà máy qua chat 1-1, dịch <b className="text-ink">Việt – Trung tức thời</b>, không cần phiên dịch viên riêng.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex gap-2 flex-wrap">
-            <Link href="/buying-request" className="px-5 py-2.5 bg-accent text-white rounded-sm font-bold text-[13px]">Đăng ký nhận lịch Hội nghị B2B Matching →</Link>
-            <Link href="/trade-alert" className="px-5 py-2.5 border border-brand text-brand rounded-sm font-semibold text-[13px]">Nhận cảnh báo theo lĩnh vực</Link>
-          </div>
-        </div>
-      </div>
-
       {/* Featured Canton Fair */}
       <div className="max-w-[1400px] mx-auto px-4 mt-5">
-        <p className="text-[12.5px] text-mute mb-3">
-          Ngoài Hội nghị B2B Matching, Cybersilkroads còn <b className="text-ink">hỗ trợ doanh nghiệp tham dự các hội chợ quốc tế</b> dưới đây (đây là dịch vụ hỗ trợ tham dự, không phải hội nghị matching của VGEA).
-        </p>
         <div className="bg-paper border-2 border-gold rounded p-5 grid grid-cols-[1fr_280px] gap-5 max-md:grid-cols-1">
           <div>
             <span className="inline-block bg-accent text-white px-2.5 py-1 text-[10.5px] font-bold rounded-sm tracking-wider mb-2">NỔI BẬT · HỘI CHỢ B2B LỚN NHẤT</span>
