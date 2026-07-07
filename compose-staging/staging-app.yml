@@ -58,21 +58,32 @@ services:
     build:
       context: ../storefront
       dockerfile: Dockerfile
-      target: development
+      target: production
+      args:
+        NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://192.168.40.50:9000
+        NEXT_PUBLIC_BASE_URL: http://192.168.40.50:3000
+        NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
+        NEXT_PUBLIC_TENANT: csr
     container_name: csr-storefront-staging
     restart: unless-stopped
     depends_on:
       - medusa
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
+      MEDUSA_INTERNAL_URL: http://192.168.40.50:9000
       NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://192.168.40.50:9000
       NEXT_PUBLIC_BASE_URL: http://192.168.40.50:3000
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: ${NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY}
       NEXT_PUBLIC_TENANT: csr
-      # Newsletter marketing (server-side)
       RESEND_API_KEY: ${RESEND_API_KEY}
     ports:
       - "3000:3001"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3001"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   payload:
     build:
