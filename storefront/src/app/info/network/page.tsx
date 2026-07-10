@@ -760,7 +760,7 @@ export default function KetNoiPage() {
             Một con đường tơ lụa số
           </h1>
           <p className="text-[15px] opacity-90 max-w-[760px] leading-relaxed mb-7 max-md:text-[13px]">
-            Là Sàn B2B trung tâm của <b>Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA)</b>, Cybersilkroads dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Với vai trò tổ chức chủ quản, VGEA là hạt nhân kết nối toàn bộ mạng lưới hiệp hội đối tác; sàn được vận hành qua công ty quản lý do VGEA chỉ định: <b>[TÊN CÔNG TY QUẢN LÝ]</b>. Tổng tiếp cận 200,000+ NCC qua mạng lưới hiệp hội.
+            Là Sàn B2B trung tâm của <b>Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA)</b>, Cybersilkroads dệt mạng lưới hợp tác với <b>{totalCount} hiệp hội B2B chính thức</b> tại Việt Nam, Trung Quốc và toàn ASEAN — bao gồm CCPIT cấp quốc gia, 5 CCPIT cấp tỉnh (đặc biệt Quảng Tây và Vân Nam giáp biên giới VN), 2 phòng thương mại cấp thành phố cluster (Foshan, Yiwu), 16 hiệp hội ngành chủ lực, và mạng lưới ASEAN 10 nước. Với vai trò tổ chức chủ quản, VGEA là hạt nhân kết nối toàn bộ mạng lưới hiệp hội đối tác; sàn được vận hành qua công ty quản lý do VGEA chỉ định: <b>Công ty Cổ phần Quốc tế Cyncahome</b>. Tổng tiếp cận 200,000+ NCC qua mạng lưới hiệp hội.
           </p>
 
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">

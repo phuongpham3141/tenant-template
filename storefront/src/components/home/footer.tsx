@@ -206,7 +206,7 @@ export function Footer() {
             Tablet & mobile: stacked vertically + center-aligned. */}
         <div className="pt-5 grid grid-cols-[1fr_auto_auto] gap-x-6 gap-y-3 items-center text-[11.5px] opacity-90 max-lg:grid-cols-1 max-lg:text-center max-lg:gap-y-3.5">
           <span className="opacity-80 max-lg:order-3">
-            © 2026 Cybersilkroads (CSR) · Sàn B2B trung tâm của Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA) · Vận hành bởi [TÊN CÔNG TY QUẢN LÝ]
+            © 2026 Cybersilkroads (CSR) · Sàn B2B trung tâm của Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA) · Vận hành bởi Công ty Cổ phần Quốc tế Cyncahome (MST: 0111355625)
           </span>
           <div className="flex items-center gap-2 max-lg:justify-center max-lg:order-1">
             <span className="text-white/60 text-[11px] uppercase tracking-wider">Ngôn ngữ:</span>

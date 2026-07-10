@@ -631,10 +631,10 @@ export default function LienHePage() {
         <div className="bg-paper border border-line rounded p-5 max-md:p-4">
           <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-2">🏛 Đơn vị chủ quản &amp; vận hành</b>
           <p className="text-[13px] text-ink leading-relaxed">
-            Cybersilkroads là Sàn B2B trung tâm của <b>Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA)</b>. Sàn được vận hành bởi công ty quản lý do VGEA chỉ định: <b>[TÊN CÔNG TY QUẢN LÝ]</b>.
+            Cybersilkroads là Sàn B2B trung tâm của <b>Hiệp hội Thương mại Điện tử Toàn cầu Việt Nam (VGEA)</b>. Sàn được vận hành bởi công ty quản lý do VGEA chỉ định: <b>Công ty Cổ phần Quốc tế Cyncahome</b>.
           </p>
           <ul className="mt-3 space-y-1.5 text-[12.5px]">
-            <li className="flex gap-2"><span className="text-mute font-semibold w-[120px] flex-shrink-0">Mã số thuế:</span><b className="text-ink">[MST]</b></li>
+            <li className="flex gap-2"><span className="text-mute font-semibold w-[120px] flex-shrink-0">Mã số thuế:</span><b className="text-ink">0111355625</b></li>
             <li className="flex gap-2"><span className="text-mute font-semibold w-[120px] flex-shrink-0">Địa chỉ trụ sở:</span><b className="text-ink">[ĐỊA CHỈ]</b></li>
           </ul>
         </div>
