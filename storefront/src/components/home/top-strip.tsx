@@ -139,9 +139,7 @@ const I_GLOBE = (
 );
 
 /* Social-login icons come from @/components/icons/social (shared with /login) */
-const I_GOOGLE = SocialIcons.google;
 const I_APPLE = SocialIcons.apple;
-const I_FACEBOOK = SocialIcons.facebook;
 
 /* ========================================================================= */
 
@@ -256,11 +254,9 @@ export async function TopStrip() {
             </Link>
             <div className="ts-pop absolute left-0 top-full w-[320px] bg-paper text-ink rounded shadow-xl border border-line">
               <PopHeader title={t("topstrip.signin_account_title")} />
-              {/* Social login buttons */}
-              <div className="px-4 pt-3 grid grid-cols-3 gap-2">
-                <SocialBtn provider="google" label="Google" icon={I_GOOGLE} />
+              {/* Social login buttons — Google/Facebook removed (blocked in China); Apple works in CN */}
+              <div className="px-4 pt-3 grid grid-cols-1 gap-2">
                 <SocialBtn provider="apple" label="Apple" icon={I_APPLE} />
-                <SocialBtn provider="facebook" label="Facebook" icon={I_FACEBOOK} />
               </div>
               {/* Divider */}
               <div className="px-4 py-3 flex items-center gap-3">

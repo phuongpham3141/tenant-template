@@ -11,6 +11,7 @@ docker build --target production -t huayuesc-storefront:prod .
 echo ">> restarting storefront-prod..."
 docker rm -f storefront-prod 2>/dev/null || true
 docker run -d --name storefront-prod --restart unless-stopped --no-healthcheck \
+  --memory=16g --memory-swap=16g \
   --network tenant-template-dev_tenant_net \
   -p 192.168.40.3:18090:3001 \
   -e NODE_ENV=production \

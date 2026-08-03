@@ -148,9 +148,9 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "美的 Midea",
     category: "electrical",
     cvsStt: 1,
-    logo: "https://cn-res.midea.com/content/dam/mideacn-aem/test/logo-1x.png",
+    logo: "/img/ext/cn-res-0.png",
     banner:
-      "https://cn-res.midea.com/content/dam/mideacn-aem/%E7%BE%8E%E7%9A%84%E4%B8%9A%E5%8A%A1/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/%E7%BE%8E%E7%9A%84/%E7%BE%8E%E7%9A%841.png",
+      "/img/ext/cn-res-1.png",
     introduction:
       "Midea là tập đoàn điện gia dụng đa thương hiệu hàng đầu Trung Quốc với danh mục thương hiệu chiến lược trải dài từ phân khúc tầm trung đến cao cấp. Máy điều hòa, tủ lạnh, máy giặt, thiết bị nhà bếp và đồ gia dụng nhỏ của Midea giữ thị phần dẫn đầu tại Trung Quốc và được xuất khẩu sang hơn 200 quốc gia.",
     founded: "1968",
@@ -198,7 +198,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "联塑 Lesso",
     category: "electrical",
     cvsStt: 29,
-    logo: "https://www.lesso.com/uploads/20260210/1469496bff5ab6eba035b3c4ef12df07.png",
+    logo: "/img/ext/lesso-2.png",
     introduction:
       "Lesso là tập đoàn lớn của Trung Quốc trong lĩnh vực vật liệu xây dựng, gia dụng và chuỗi cung ứng, với các mảng kinh doanh trải dài từ ống nhựa, dây và cáp điện, vật liệu xây dựng, bảo vệ môi trường, năng lượng mới và nhiều lĩnh vực khác, phục vụ các thị trường hạ tầng dân dụng, công nghiệp, nông nghiệp và đô thị.",
     factory: {
@@ -223,7 +223,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "Teka",
     category: "kitchen-equipment",
     cvsStt: 4,
-    logo: "https://www.teka.com/zh-cn/wp-content/themes/teka/img/teka-new-logo.svg",
+    logo: "/img/ext/teka-3.svg",
     introduction:
       "Teka là tập đoàn thiết bị nhà bếp và phòng tắm của Tây Ban Nha với hơn một thế kỷ lịch sử và danh mục gồm 3 thương hiệu: Teka (1924, gốc Đức), Küppersbusch (1875, cao cấp Đức, đoạt nhiều giải Red Dot và IF Design) và Intra (1871, bồn rửa inox Thụy Điển). Hiện thuộc công ty mẹ German Heritage B.",
     founded: "1924 (Teka)",
@@ -273,7 +273,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "广日电梯 Guangri",
     category: "home-garden",
     cvsStt: 13,
-    logo: "https://www.guangri.com.cn/cn/images/logo.png",
+    logo: "/img/ext/guangri-4.png",
     introduction:
       "Guangri Elevator là công ty niêm yết và là công ty con chủ chốt của Guangzhou Industrial Investment Holding Group (Fortune Global 500). Thành lập năm 1956 và sản xuất thang máy chở hàng từ năm 1973, Guangri đã tích lũy hơn 50 năm kinh nghiệm và phát triển thành doanh nghiệp hiện đại tích hợp R&D, sản xuất, lắp đặt và bảo trì.",
     founded: "1956",
@@ -300,7 +300,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "TEEHO",
     category: "doors-windows",
     cvsStt: 18,
-    logo: "https://www.teeho.com/cdn/shop/files/20220414170928_dab500c7-794d-410b-80a0-54b76e9eb97b.png?v=1678261396&width=240",
+    logo: "/img/ext/teeho-5.png",
     introduction:
       "TEEHO là thương hiệu khóa thông minh bán chạy trên Amazon Mỹ, tập trung vào thiết kế và sản xuất khóa vân tay, khóa bàn phím và khóa Wi-Fi. Sản phẩm kết hợp công nghệ hiện đại với trải nghiệm người dùng thân thiện, phục vụ thị trường nhà ở, khách sạn và lưu trú ngắn ngày Airbnb tại Bắc Mỹ.",
     factory: {
@@ -371,7 +371,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "Dulux Pro / AkzoNobel",
     category: "construction-materials",
     cvsStt: 34,
-    logo: "https://www.duluxpro.com.cn/wp-content/uploads/2024/05/logo-1.png",
+    logo: "/img/ext/duluxpro-6.png",
     introduction:
       "Dulux Professional là dòng sản phẩm sơn chuyên nghiệp của tập đoàn AkzoNobel (Hà Lan, thành lập năm 1792 với hơn 230 năm lịch sử). Tập đoàn sở hữu các thương hiệu sơn nổi tiếng toàn cầu như Dulux, International, Sikkens và Interpon, hoạt động tại hơn 150 quốc gia và có 34.000 nhân viên.",
     founded: "1792 (AkzoNobel)",
@@ -395,7 +395,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "东方雨虹 Oriental Yuhong",
     category: "construction-materials",
     cvsStt: 36,
-    logo: "https://www.yuhong.com.cn/thems/dfyhjt/images/f_logo_03.png",
+    logo: "/img/ext/yuhong-7.png",
     introduction:
       "Oriental Yuhong là tập đoàn hàng đầu Trung Quốc trong lĩnh vực chống thấm, cách nhiệt và sơn xây dựng dân dụng, niêm yết trên Sàn Giao dịch Chứng khoán Thâm Quyến với mã 002271. Doanh thu năm 2023 đạt khoảng 32,8 tỷ RMB, với 1.916 bằng sáng chế và 68 cơ sở sản xuất, R&D và logistics (3 trong số đó ở nước ngoài).",
     founded: "1995",
@@ -422,7 +422,7 @@ export const PARTNERS: PartnerBrand[] = [
     nameOriginal: "朗辉建材 Langhui",
     category: "construction-materials",
     cvsStt: 42,
-    logo: "https://gdlanghui.com/template/default/images/logo.png",
+    logo: "/img/ext/gdlanghui-8.png",
     introduction:
       "Langhui (Guangdong Langhui Building Materials) là nhà sản xuất chuyên về tấm bê tông khí chưng áp ALC/AAC có trụ sở tại Quảng Đông, Trung Quốc. Khu sản xuất rộng 246 mẫu (khoảng 166 hecta), với mức đầu tư khoảng 4,2 tỷ RMB, vận hành hơn 120 bộ thiết bị tự động hóa cao với công suất hàng năm trên 1 triệu mét khối.",
     factory: {
@@ -449,7 +449,7 @@ export const PARTNERS: PartnerBrand[] = [
     category: "construction-materials",
     cvsStt: 44,
     logo:
-      "https://ducthinhstone.com/wp-content/uploads/2025/06/z7153273983391_4d3bb7ae8fc09b583a866595e847744c.jpg",
+      "/img/ext/ducthinhstone-9.jpg",
     introduction:
       "Duc Thinh Stone Technology là công ty pháp nhân tại Việt Nam của Tập đoàn Pengxiang (Phúc Kiến, Trung Quốc) —— Pengxiang là một trong những nhà sản xuất đá nhân tạo cao cấp hàng đầu châu Á. Nhà máy đặt tại Khu công nghiệp Nghĩa Đàn, tỉnh Nghệ An, Việt Nam, với mức đầu tư 25 triệu USD, khoảng 800-1.000 nhân viên và sản lượng hàng năm 8,5 triệu m² tấm đá. Sản phẩm phục vụ thị trường nội địa Việt Nam và xuất khẩu sang hơn 120 quốc gia.",
     factory: {

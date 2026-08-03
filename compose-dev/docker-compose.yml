@@ -181,6 +181,7 @@ services:
       target: development
     container_name: dev-storefront
     restart: unless-stopped
+    mem_limit: 8g
     depends_on:
       - medusa-server
     environment:

@@ -654,7 +654,7 @@ async function ContactTab({ f }: { f: Factory }) {
             <div className="text-[42px] mb-2">🗺</div>
             <p className="text-[13px]">{f.location}</p>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f.location)}`}
+              href={`https://map.baidu.com/search/${encodeURIComponent(f.location)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-3 px-4 py-2 bg-brand text-white rounded-sm text-[12px] font-bold hover:bg-brand-light"

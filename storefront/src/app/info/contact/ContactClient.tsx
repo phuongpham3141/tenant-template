@@ -50,8 +50,8 @@ export type ContactText = {
 
 function MapCard({ office }: { office: Office }) {
   const t = useT();
-  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${office.googleMapsQuery}`;
-  const dirUrl = `https://www.google.com/maps/dir/?api=1&destination=${office.googleMapsQuery}`;
+  const mapUrl = `https://map.baidu.com/search/${encodeURIComponent(office.googleMapsQuery)}`;
+  const dirUrl = `https://map.baidu.com/dir/?destination=${encodeURIComponent(office.googleMapsQuery)}&mode=driving`;
   return (
     <div className="bg-bg border border-line rounded p-4">
       <div className="flex items-start gap-3">
