@@ -1,4 +1,5 @@
 import type { PartnerProduct } from "@/data/partners";
+import { DULUX_2026_ADD } from "@/data/catalogs/dulux-2026-add";
 
 /**
  * Catalog Dulux Professional — 40 sản phẩm THẬT từ duluxpro.com.cn.
@@ -533,4 +534,5 @@ export const DULUX_PRO_PRODUCTS: PartnerProduct[] = [
     applications: ["Độ đàn hồi và khả năng chống nứt tốt", "Sử dụng con lăn công nghệ đặc biệt để tạo nhiều hiệu ứng hoa văn nổi ba chiều đa dạng", "Thi công phun không khí cho hiệu quả bề mặt phẳng cực tốt", "Sơn lớp giữa gốc nước acrylic đàn hồi bảo vệ kinh tế", "Phù hợp làm sơn đồng bộ cho hệ thống cách nhiệt ngoại thất EIFS"],
     sourceUrl: "https://project.duluxpro.com.cn/product/k8553/",
   },
+  ...DULUX_2026_ADD,
 ];

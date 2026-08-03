@@ -38,6 +38,11 @@ import { getSeriesMeta as getCareLightingMeta } from "@/data/catalogs/care-light
 import { getSeriesMeta as getLanghuiMeta } from "@/data/catalogs/langhui-meta";
 import { getSeriesMeta as getZhongjuYabaiMeta } from "@/data/catalogs/zhongju-yabai-meta";
 import { getSeriesMeta as getMijicMeta } from "@/data/catalogs/mijic-meta";
+import { getSeriesMeta as getLuminaMeta } from "@/data/catalogs/lumina-meta";
+import { getSeriesMeta as getSofeyiaMeta } from "@/data/catalogs/sofeyia-meta";
+import { getSeriesMeta as getOceanoMeta } from "@/data/catalogs/oceano-meta";
+import { getSeriesMeta as getComfeeMeta } from "@/data/catalogs/comfee-meta";
+import { getSeriesMeta as getSuncreateMeta } from "@/data/catalogs/suncreate-meta";
 
 /** Map brand slug → series-meta lookup function. Add new entries when
  *  enriching more brands via /partner-catalog skill. */
@@ -67,6 +72,11 @@ const META_LOOKUP: Record<string, (s?: string) => ReturnType<typeof getKitoMeta>
   langhui: getLanghuiMeta,
   "zhongju-yabai": getZhongjuYabaiMeta,
   mijic: getMijicMeta,
+  lumina: getLuminaMeta,
+  sofeyia: getSofeyiaMeta,
+  oceano: getOceanoMeta,
+  comfee: getComfeeMeta,
+  suncreate: getSuncreateMeta,
 };
 
 export function generateStaticParams() {
@@ -207,12 +217,6 @@ export default async function ProductDetailPage({
               >
                 {t("info_partners_slug_productSlug.cta_request_quote")}
               </Link>
-              <a
-                href="tel:000-000-000"
-                className="inline-flex items-center justify-center gap-2 bg-gold text-brand-dark font-semibold rounded px-5 py-2.5 hover:bg-yellow-400 transition-colors text-[13.5px]"
-              >
-                {t("info_partners_slug_productSlug.cta_call_hotline")}
-              </a>
               <Link
                 href={`/info/partners/${partner.slug}`}
                 className="inline-flex items-center justify-center gap-2 border border-line text-ink font-semibold rounded px-5 py-2.5 hover:border-brand hover:text-brand transition-colors text-[13.5px]"
@@ -580,18 +584,9 @@ export default async function ProductDetailPage({
             >
               {t("info_partners_slug_productSlug.cta_footer_btn_prefix")}{td(product.model)}
             </Link>
-            <a
-              href="https://zalo.me/0912345678"
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white font-semibold rounded px-6 py-3 hover:bg-white/10 transition-colors text-[14px]"
-            >
-              {t("info_partners_slug_productSlug.cta_footer_chat_zalo")}
-            </a>
           </div>
-          <div className="mt-5 pt-4 border-t border-white/20 text-[12.5px] opacity-80 grid grid-cols-3 gap-2 max-md:grid-cols-1">
-            <span>📞 Hotline: 028-3999-1234</span>
-            <span>📧 sourcing@huayuesc.vn</span>
+          <div className="mt-5 pt-4 border-t border-white/20 text-[12.5px] opacity-80 grid grid-cols-2 gap-2 max-md:grid-cols-1">
+            <span>📧 mcy@huayuesc.com</span>
             <span>{t("info_partners_slug_productSlug.footer_office")}</span>
           </div>
         </section>
@@ -686,7 +681,7 @@ async function RelatedProducts({
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform"
+                  className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform"
                   loading="lazy"
                   referrerPolicy="no-referrer"
                 />

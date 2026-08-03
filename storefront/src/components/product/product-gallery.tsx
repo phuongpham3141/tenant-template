@@ -67,7 +67,7 @@ export function ProductGallery({ images, alt, zoomLabel }: Props) {
         <img
           src={safe[active]}
           alt={`${alt} — ảnh ${active + 1}`}
-          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform"
+          className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform"
           loading="eager"
           referrerPolicy="no-referrer"
         />
@@ -101,7 +101,7 @@ export function ProductGallery({ images, alt, zoomLabel }: Props) {
               <img
                 src={src}
                 alt={`${alt} thumbnail ${i + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
                 referrerPolicy="no-referrer"
               />

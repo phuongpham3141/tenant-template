@@ -588,12 +588,7 @@ export default async function AboutUsPage() {
             </div>
 
             {/* Hotline strip */}
-            <div className="px-7 py-5 bg-black/30 border-t border-white/15 grid grid-cols-2 gap-4 items-center max-md:grid-cols-1 max-md:px-5 max-md:py-4">
-              <div>
-                <small className="text-[10.5px] uppercase tracking-wider opacity-75">HOTLINE</small>
-                <b className="block text-gold text-[22px] mt-0.5 max-md:text-[18px]">{company.contact.hotline}</b>
-                <span className="text-[11.5px] opacity-80">{t("info_about_us.hotline_support")}</span>
-              </div>
+            <div className="px-7 py-5 bg-black/30 border-t border-white/15 grid grid-cols-1 gap-4 items-center max-md:grid-cols-1 max-md:px-5 max-md:py-4">
               <div className="flex gap-2 max-md:flex-col">
                 <Link
                   href="/buying-request"

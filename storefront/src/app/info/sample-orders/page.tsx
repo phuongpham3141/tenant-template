@@ -648,7 +648,7 @@ export default async function DatMauPage() {
             </div>
             <div className="mt-4 flex justify-center">
               <a
-                href={`mailto:sales@huayuesc.vn?subject=${encodeURIComponent(td("Gói đăng ký mẫu"))}`}
+                href={`mailto:mcy@huayuesc.com?subject=${encodeURIComponent(td("Gói đăng ký mẫu"))}`}
                 className="inline-block px-6 py-3 bg-brand text-white rounded-sm font-bold text-[14px] hover:bg-brand-light"
               >
                 🚀 {t("info_sample_orders.sub_cta")}
@@ -727,7 +727,7 @@ export default async function DatMauPage() {
               📝 {t("info_sample_orders.cta_btn_rfq")}
             </Link>
             <a
-              href="mailto:sales@huayuesc.vn"
+              href="mailto:mcy@huayuesc.com"
               className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
             >
               💬 {t("info_sample_orders.cta_btn_consult")}

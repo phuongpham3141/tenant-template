@@ -90,10 +90,10 @@ export async function Footer() {
     links: [
       { label: t("footer.link_find_products"), href: "/products" },
       { label: t("footer.link_rfq"), href: "/buying-request" },
-      { label: t("footer.link_sample_orders"), href: "/info/sample-orders" },
-      { label: t("footer.link_order_tracking"), href: "/info/order-tracking" },
-      { label: t("footer.link_payment_protection"), href: "/info/payment-protection" },
-      { label: t("footer.link_disputes"), href: "/info/disputes" },
+      { label: t("footer.link_sample_orders"), href: "/info/maintenance" },
+      { label: t("footer.link_order_tracking"), href: "/info/maintenance" },
+      { label: t("footer.link_payment_protection"), href: "/info/maintenance" },
+      { label: t("footer.link_disputes"), href: "/info/maintenance" },
     ],
   },
   {
@@ -101,8 +101,8 @@ export async function Footer() {
     links: [
       { label: t("footer.link_company_profile"), href: "/info/about-us" },
       { label: t("footer.link_partners"), href: "/info/partners" },
-      { label: t("footer.link_network"), href: "/info/network" },
-      { label: t("footer.link_audit_process"), href: "/info/audit-process" },
+      { label: t("footer.link_network"), href: "/info/maintenance" },
+      { label: t("footer.link_audit_process"), href: "/info/maintenance" },
       { label: t("footer.link_industry_news"), href: "/info/industry-news" },
       { label: t("footer.link_careers"), href: "/info/careers" },
       { label: t("footer.link_contact"), href: "/info/contact" },
@@ -111,23 +111,22 @@ export async function Footer() {
   {
     title: t("footer.col_help"),
     links: [
-      { label: t("footer.link_help_center"), href: "/help" },
-      { label: t("footer.link_import_guide"), href: "/info/import-guide" },
+      { label: t("footer.link_help_center"), href: "/info/maintenance" },
+      { label: t("footer.link_import_guide"), href: "/info/maintenance" },
       { label: t("footer.link_ddp_calculator"), href: "/info/ddp-calculator" },
-      { label: t("footer.link_shipping_policy"), href: "/info/shipping-policy" },
-      { label: t("footer.link_terms"), href: "/info/terms-of-service" },
-      { label: t("footer.link_privacy"), href: "/info/privacy-policy" },
+      { label: t("footer.link_shipping_policy"), href: "/info/maintenance" },
+      { label: t("footer.link_terms"), href: "/info/maintenance" },
+      { label: t("footer.link_privacy"), href: "/info/maintenance" },
       { label: t("footer.link_sitemap"), href: "/sitemap" },
     ],
   },
   {
     title: t("footer.col_supplier"),
     links: [
-      { label: t("footer.link_sell_on_csr"), href: "/sell-on-csr" },
-      { label: t("footer.link_trade_assurance"), href: "/info/trade-assurance" },
-      { label: t("footer.link_market_reports"), href: "/info/market-reports" },
-      { label: t("footer.link_api_integration"), href: "/info/api-integration" },
-      { label: t("footer.link_seller_center"), href: "/seller-center" },
+      { label: t("footer.link_trade_assurance"), href: "/info/maintenance" },
+      { label: t("footer.link_market_reports"), href: "/info/maintenance" },
+      { label: t("footer.link_api_integration"), href: "/info/maintenance" },
+      { label: t("footer.link_seller_center"), href: "/info/maintenance" },
     ],
   },
 ];
@@ -222,6 +221,9 @@ export async function Footer() {
               <span key={c}>{t(c)}</span>
             ))}
           </div>
+        </div>
+        <div className="pt-3 mt-1 border-t border-white/10 text-center text-[11px] opacity-55 leading-relaxed">
+          {t("footer.legal_note")}
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import type { PartnerProduct } from "@/data/partners";
+import { TEKA_2026_ADD } from "@/data/catalogs/teka-2026-add";
 
 /**
  * Catalog Teka — 40 sản phẩm THẬT từ teka.com/zh-cn.
@@ -518,4 +519,5 @@ export const TEKA_PRODUCTS: PartnerProduct[] = [
     specs: [{ k: "Chiều cao sản phẩm (mm)", v: "140" }, { k: "Chiều rộng sản phẩm (mm)", v: "595" }, { k: "Chiều sâu sản phẩm (mm)", v: "557" }, { k: "Trọng lượng tịnh (Kg)", v: "18" }, { k: "Màu sắc", v: "Inox" }],
     applications: ["Kèm theo cân điện tử nhà bếp", "Dao cắt màng bọc thực phẩm và dao cắt giấy bạc", "Không gian để đặt phụ kiện", "Bản lề giảm chấn và hệ thống tự đóng", "Nắp bảo vệ cân điện tử", "Giá đỡ cuộn giấy bạc và giá đỡ màng bọc thực phẩm"],
   },
+  ...TEKA_2026_ADD,
 ];

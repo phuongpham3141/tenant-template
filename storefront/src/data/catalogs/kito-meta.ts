@@ -613,6 +613,41 @@ export const KITO_SERIES_META: Record<string, SeriesMeta> = {
       },
     ],
   },
+
+  // ─── 2026 臻选 KITO 2026 Selection ──────────────────────────────
+  "kito-2026": {
+    story:
+      "Chuyên gia chất cảm mờ · 2026 Tinh Tuyển.\n\nKITO 金意陶 lập danh bằng 'mờ / chất cảm', bộ sản phẩm lớn 2026 tái cấu trúc ma trận sản phẩm theo hệ thống phân loại 'Đại học · Học viện' — bốn học viện Sang Trọng Tinh Tế, Tự Nhiên Mộc Mạc, Lãng Mạn Cổ Điển và Nhẹ Nhàng Tối Giản, bao phủ phong phú các chủng loại như đá xa xỉ, men đá thật, đá travertine, vân gỗ, tấm lớn hiện đại.\n\nSeries này tuyển chọn các tác phẩm tiêu biểu năm 2026: từ đá travertine cổ của Dấu Ấn La Mã, vân liền mạch đá cẩm thạch của Tarantella và Cõi Mây Sương, đến vân gỗ ấm áp của Gỗ Quý Bắc Âu, Gỗ Như Ý, quy cách trải từ 600×1200mm đến tấm lớn 1200×2700mm, men đá thật 1.0/2.0 cùng bề mặt mềm mờ mịn tái hiện chất cảm và kết cấu của đá gỗ tự nhiên.",
+    heritage:
+      "Tiếp nối tích luỹ công nghệ 'men đá thật' và 'kết cấu mờ' của KITO, series 2026 dùng thiết kế vân liền mạch đa mặt (một viên đá nhiều mặt) nâng cao cảm giác tự nhiên ngẫu nhiên cho ốp lát thông tầng diện tích lớn, đồng thời dùng công nghệ mờ mịn / mặt mềm cân bằng giữa chất cảm và chống trượt.",
+    technicalSpecs: [
+      { label: "Loại vật liệu (Body)", value: "Vitrified porcelain — sứ kết tinh hoàn toàn" },
+      { label: "Hấp thụ nước", value: "≤ 0.5% (đạt EN 14411 Bla)" },
+      { label: "Công nghệ bề mặt", value: "Men đá thật 1.0 / 2.0 · mờ mịn mặt mềm · men kim loại (tuỳ SKU)" },
+      { label: "Thiết kế vân liền mạch", value: "Một viên đá nhiều mặt (4 / 6 / 12 / 15 mặt bản, tuỳ SKU)" },
+      { label: "Quy cách chủ lực", value: "600×1200 / 750×1500 / 1200×1800 / 1200×2700mm" },
+      { label: "Độ dày", value: "khoảng 9 – 10mm (tấm lớn)" },
+      { label: "Chống trầy", value: "PEI 4 — phù hợp khu vực giao thông cao" },
+      { label: "Khả năng chịu vết bẩn", value: "Cấp 5 (cao nhất — ISO 10545-14)" },
+    ],
+    manufacturing: [
+      ...COMMON_MFG,
+      "Hệ thống phân loại Đại học sản phẩm 2026: bốn học viện Sang Trọng Tinh Tế / Tự Nhiên Mộc Mạc / Lãng Mạn Cổ Điển / Nhẹ Nhàng Tối Giản",
+      "Thiết kế vân liền mạch đa mặt (một viên đá nhiều mặt), nâng cao cảm giác tự nhiên cho ốp lát thông tầng diện tích lớn",
+    ],
+    careGuide: COMMON_CARE,
+    installation: COMMON_INSTALL,
+    certifications: COMMON_CERTS,
+    packaging: COMMON_PACKAGING,
+    whyChoose: [
+      { icon: "🎨", title: "Chuyên gia chất cảm mờ", desc: "KITO lập danh bằng mờ / chất cảm, men đá thật và mờ mịn mặt mềm tái hiện kết cấu đá gỗ tự nhiên." },
+      { icon: "🧩", title: "Vân liền mạch một viên đá nhiều mặt", desc: "Thiết kế vân liền mạch 4/6/12/15 mặt bản, ốp lát thông tầng diện tích lớn tự nhiên không lặp." },
+      { icon: "📐", title: "Khổ tấm lớn", desc: "Bao phủ 600×1200 đến 1200×2700mm, ốp lát tường sàn thông tầng bề thế liền mạch." },
+      { icon: "🏛️", title: "Hệ thống bốn học viện", desc: "Sang trọng / mộc mạc / lãng mạn / tối giản, bao phủ nhu cầu thiết kế đa phong cách." },
+    ],
+    projectShowcase: ["Phòng khách & tường nền TV", "Sảnh khách sạn & câu lạc bộ", "Ốp lát tường sàn thông tầng nhà ở cao cấp", "Không gian thương mại & trưng bày"],
+    faq: COMMON_FAQ_BASE,
+  },
 };
 
 /** Helper: lấy meta cho 1 product dựa trên seriesOriginal. */

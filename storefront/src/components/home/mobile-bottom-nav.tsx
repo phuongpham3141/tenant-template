@@ -3,7 +3,7 @@ import { getT } from "@/lib/t";
 
 const NAV_ITEMS = [
   { icon: "🏠", label: "mobilenav.home", href: "/" },
-  { icon: "🗂", label: "mobilenav.categories", href: "#nav-categories" },
+  { icon: "🤝", label: "mobilenav.partners", href: "/info/partners" },
   { icon: "📨", label: "mobilenav.rfq", href: "/buying-request", primary: true },
   { icon: "💬", label: "mobilenav.messages", href: "/buyer-center" },
   { icon: "👤", label: "mobilenav.account", href: "/login" },

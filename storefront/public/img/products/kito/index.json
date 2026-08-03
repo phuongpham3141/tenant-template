@@ -1,0 +1,254 @@
+[
+  {
+    "slug": "classic-candy",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/classic-candy-banner.jpg",
+    "size": 426622,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1655743889497444352.jpg"
+  },
+  {
+    "slug": "classic-candy",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/classic-candy-enter.jpg",
+    "size": 126637,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656116195907108864.jpg"
+  },
+  {
+    "slug": "classic-candy",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/classic-candy-space.png",
+    "size": 597344,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660291627902988288.png"
+  },
+  {
+    "slug": "classic-candy",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/classic-candy-texture.png",
+    "size": 642857,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660292595424063488.png"
+  },
+  {
+    "slug": "classic-candy",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/classic-candy-m-banner.jpg",
+    "size": 379859,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660873854431223808.jpg"
+  },
+  {
+    "slug": "classic-candy",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/classic-candy-m-enter.jpg",
+    "size": 426622,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1661930430606258176.jpg"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/stone-glaze-banner.jpg",
+    "size": 494499,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1659516423891042304.jpg"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/stone-glaze-enter.jpg",
+    "size": 494499,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1659516337761009664.jpg"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/stone-glaze-space.png",
+    "size": 687728,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660292839494807552.png"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/stone-glaze-texture.png",
+    "size": 705255,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660292721668419584.png"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/stone-glaze-m-banner.jpg",
+    "size": 204232,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660873946622025728.jpg"
+  },
+  {
+    "slug": "stone-glaze",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/stone-glaze-m-enter.jpg",
+    "size": 494499,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1661930719069515776.jpg"
+  },
+  {
+    "slug": "art-series",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/art-series-banner.jpg",
+    "size": 537552,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1655743978131476480.jpg"
+  },
+  {
+    "slug": "art-series",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/art-series-enter.jpg",
+    "size": 158465,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656116115930120192.jpg"
+  },
+  {
+    "slug": "art-series",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/art-series-space.png",
+    "size": 712598,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293052859052032.png"
+  },
+  {
+    "slug": "art-series",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/art-series-texture.png",
+    "size": 1060973,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660292973611872256.png"
+  },
+  {
+    "slug": "art-series",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/art-series-m-banner.jpg",
+    "size": 372173,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660874005619105792.jpg"
+  },
+  {
+    "slug": "art-series",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/art-series-m-enter.png",
+    "size": 277821,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656108108349472768.png"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/chinese-style-banner.jpg",
+    "size": 771069,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1655744019046912000.jpg"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/chinese-style-enter.jpg",
+    "size": 152772,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656116085966012416.jpg"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/chinese-style-space.png",
+    "size": 581855,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293223651110912.png"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/chinese-style-texture.png",
+    "size": 446992,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293207142330368.png"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/chinese-style-m-banner.jpg",
+    "size": 401541,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660874104780840960.jpg"
+  },
+  {
+    "slug": "chinese-style",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/chinese-style-m-enter.png",
+    "size": 96346,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656108191224725504.png"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/modern-tile-banner.jpg",
+    "size": 758467,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1655744145840721920.jpg"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/modern-tile-enter.jpg",
+    "size": 138086,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656116048401825792.jpg"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/modern-tile-space.png",
+    "size": 686225,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293344732278784.png"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/modern-tile-texture.png",
+    "size": 776518,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293330769440768.png"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/modern-tile-m-banner.jpg",
+    "size": 430948,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660874179196182528.jpg"
+  },
+  {
+    "slug": "modern-tile",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/modern-tile-m-enter.png",
+    "size": 184280,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656108292064182272.png"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "banner",
+    "file": "/tmp/kito-imgs/wood-grain-banner.jpg",
+    "size": 492309,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1655744199540396032.jpg"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "enter",
+    "file": "/tmp/kito-imgs/wood-grain-enter.jpg",
+    "size": 199150,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656116011210932224.jpg"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "space",
+    "file": "/tmp/kito-imgs/wood-grain-space.png",
+    "size": 671359,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293465112997888.png"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "texture",
+    "file": "/tmp/kito-imgs/wood-grain-texture.jpg",
+    "size": 433245,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660293508469518336.jpg"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "m-banner",
+    "file": "/tmp/kito-imgs/wood-grain-m-banner.jpg",
+    "size": 405729,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1660874240487546880.jpg"
+  },
+  {
+    "slug": "wood-grain",
+    "kind": "m-enter",
+    "file": "/tmp/kito-imgs/wood-grain-m-enter.png",
+    "size": 213754,
+    "url": "https://www.kito.cn/kitocms/userfiles/fileupload/202305/1656108332878954496.png"
+  }
+]

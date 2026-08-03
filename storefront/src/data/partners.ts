@@ -23,6 +23,11 @@ import { CARE_LIGHTING_PRODUCTS } from "@/data/catalogs/care-lighting";
 import { LANGHUI_PRODUCTS } from "@/data/catalogs/langhui";
 import { ZHONGJU_YABAI_PRODUCTS } from "@/data/catalogs/zhongju-yabai";
 import { MIJIC_PRODUCTS } from "@/data/catalogs/mijic";
+import { LUMINA_PRODUCTS } from "@/data/catalogs/lumina";
+import { SOFEYIA_PRODUCTS } from "@/data/catalogs/sofeyia";
+import { OCEANO_PRODUCTS } from "@/data/catalogs/oceano";
+import { COMFEE_PRODUCTS } from "@/data/catalogs/comfee";
+import { SUNCREATE_PRODUCTS } from "@/data/catalogs/suncreate";
 
 /**
  * Huayue Supply Chain partner factories — 24 official partner brands, all
@@ -201,12 +206,12 @@ export const PARTNERS: PartnerBrand[] = [
       facilities: "Hơn 30 nhà máy lớn tại Trung Quốc và Đông Nam Á",
     },
     highlights: [
-      "Hotline toàn quốc 24/7: 000-000-000",
+      "Hotline toàn quốc 24/7",
       "Hiện diện tại 7 thị trường quốc tế: các khu vực nói tiếng Anh, UAE, Hoa Kỳ, Indonesia, Ấn Độ, Malaysia, Campuchia",
       "6 hệ sản phẩm: công trình đô thị, dân dụng, nông nghiệp, công nghiệp & thương mại, phòng cháy chữa cháy, khí đốt",
       "Vận chuyển nguyên container trực tiếp từ nhà máy về Việt Nam",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://www.lessopipe.com/",
     products: LESSO_PRODUCTS,
   },
@@ -253,12 +258,12 @@ export const PARTNERS: PartnerBrand[] = [
       facilities: "Nhà máy sản xuất tại Thẩm Dương và Tô Châu",
     },
     highlights: [
-      "Hotline kỹ thuật toàn quốc: 000-000-000",
+      "Hotline kỹ thuật toàn quốc",
       "Top 7 nhà sản xuất thang máy toàn cầu (2024)",
       "12 công nghệ cốt lõi: tốc độ siêu cao, điều khiển nhóm theo tầng đích FLOORNAVI, quản lý nhóm thang máy bằng AI, thiết kế BIM, guốc dẫn hướng từ trường và nhiều hơn nữa",
       "Dự án tiêu biểu gần đây: Bệnh viện CT Nội Mông, Sơn Tây Lộ An Hoa Đô giai đoạn 5 (67 thang)",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://www.toshiba-elevator.com.cn/",
     products: TOSHIBA_ELEVATOR_PRODUCTS,
   },
@@ -277,13 +282,13 @@ export const PARTNERS: PartnerBrand[] = [
       facilities: "Sản xuất chính tại Quảng Châu, cùng các cơ sở phụ trợ trên toàn quốc",
     },
     highlights: [
-      "Hotline kỹ thuật: 000-000-000",
+      "Hotline kỹ thuật",
       "Email: grdt@guangri.com.cn",
       "Công ty mẹ nằm trong Fortune Global 500",
       "Hơn 50 năm kinh nghiệm sản xuất thang máy",
       "Giải pháp toàn diện: R&D, thiết kế, sản xuất, lắp đặt, bảo trì, đào tạo",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://guangri.com.cn/",
     products: GUANGRI_PRODUCTS,
   },
@@ -326,13 +331,13 @@ export const PARTNERS: PartnerBrand[] = [
       location: "Thị trấn Cổ Hạng, quận Triều An, Triều Châu, Quảng Đông, Trung Quốc",
     },
     highlights: [
-      "Hotline: 000-000-000",
+      "Hotline",
       "Khẩu hiệu thương hiệu: Thông minh cùng ANBI, an tâm tận hưởng",
       "Được vinh danh Top 10 Thương hiệu Phòng tắm Triều Châu 2024",
       "Thương hiệu được Người tiêu dùng Yêu thích 2024",
       "Được chọn vào danh mục mua sắm tiết kiệm năng lượng của chính phủ Trung Quốc",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://www.anbichina.com/",
     products: ANBI_PRODUCTS,
   },
@@ -406,7 +411,7 @@ export const PARTNERS: PartnerBrand[] = [
       "1.916 bằng sáng chế (toàn tập đoàn)",
       "Vận hành một Phòng thí nghiệm Trọng điểm Quốc gia về vật liệu chống thấm tiên tiến",
       "Cung cấp chống thấm cho Tổ Chim, Khối Nước (Olympic Bắc Kinh 2008) và Nhà hát Lớn Quốc gia",
-      "Hotline theo dòng sản phẩm: công trình 000-000-000 / dân dụng 000-000-000 / sửa chữa 000-000-000 / vữa 000-000-000",
+      "Hotline theo dòng sản phẩm: công trình / dân dụng / sửa chữa / vữa",
     ],
     website: "https://www.yuhong.com.cn/",
     products: YUHONG_PRODUCTS,
@@ -428,12 +433,12 @@ export const PARTNERS: PartnerBrand[] = [
       investment: "Khoảng 4,2 tỷ RMB",
     },
     highlights: [
-      "Hotline bán hàng: 000-000-000 / email: salesem@gdlanghui.com",
+      "Hotline bán hàng / email: salesem@gdlanghui.com",
       "Sản phẩm tường chống cháy với khả năng chịu lửa trên 4 giờ",
       "Tấm siêu mỏng 50/75mm xuất khẩu sang Úc, Nhật Bản và Hàn Quốc",
       "Dự án tiêu biểu: Longfor Properties, Agile Xiyuefu",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://gdlanghui.com/",
     products: LANGHUI_PRODUCTS,
   },
@@ -456,14 +461,40 @@ export const PARTNERS: PartnerBrand[] = [
     },
     highlights: [
       "Công ty pháp nhân tại Việt Nam —— sản xuất ngay tại Việt Nam, logistics thuận tiện",
-      "Hotline: 000-000-000 / email: office@ducthinhstone.com",
+      "Hotline / email: office@ducthinhstone.com",
       "Công ty mẹ Tập đoàn Pengxiang (Phúc Kiến, Trung Quốc) —— nhà sản xuất đá nhân tạo hàng đầu châu Á",
       "Xuất khẩu sang hơn 120 quốc gia",
       "Ứng dụng: mặt bàn bếp, tủ phòng tắm, ốp tường, cầu thang, nội thất gia đình cao cấp, trung tâm thương mại, khách sạn",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://ducthinhstone.com/",
     products: DUC_THINH_STONE_PRODUCTS,
+  },
+  {
+    slug: "lumina",
+    name: "Lumina Floor",
+    nameOriginal: "光年地板 Lumina Floor",
+    category: "construction-materials",
+    cvsStt: 45,
+    introduction:
+      "Lumina Floor (光年地板) là thương hiệu vật liệu sàn dành cho giới trẻ, được nhà máy tự doanh thuộc chuỗi cung ứng Huayue chú trọng phát triển, với tôn chỉ «đưa nét sang trọng đến gần hơn», tập trung vào hai dòng cốt lõi: sàn nhựa đá SPC thân thiện môi trường và sàn nhựa LVT đàn hồi cao. Thương hiệu thấu hiểu sâu sắc nhu cầu kép của thế hệ trẻ về thiết kế thời thượng và tính năng thực dụng — vừa đẹp, lên hình, vừa chống nước, chống mài mòn, bền bỉ và dễ chăm sóc. Nhờ năng lực kiểm soát toàn chuỗi từ phối liệu cốt nền, in màng trang trí đến tạo hèm khóa, Lumina hợp nhất «độ bền cấp thương mại» với «thẩm mỹ hợp xu hướng», cung cấp hơn 800 mẫu vân gỗ, vân đá và họa tiết thời thượng. Dù là cải tạo toàn bộ căn hộ nhỏ, tạo không gian cho quán cà phê và cửa hàng concept, hay làm mới nhanh văn phòng và showroom, Lumina Floor đều mang đến mặt sàn trẻ trung, êm ái và vững chắc với mức giá thân thiện.",
+    factory: {
+      location: "Trung Quốc · Nhà máy tự doanh chuỗi cung ứng Huayue (cơ sở sàn SPC / LVT)",
+      capacity: "SPC 4–8mm / LVT 2–5mm, hơn 800 mẫu mã thường trực",
+      facilities: "Kiểm soát toàn chuỗi: phối liệu cốt nền · in màng trang trí · tạo hèm khóa · kiểm định thành phẩm",
+    },
+    highlights: [
+      "Nhà máy tự doanh chuỗi cung ứng Huayue — nguồn gốc trực tiếp, giá thân thiện, giao hàng ổn định",
+      "Hai dòng cốt lõi: sàn SPC nhựa đá (cứng chắc, chống nước) + sàn LVT đàn hồi (êm ái, chống ồn)",
+      "800+ mẫu màng trang trí: vân gỗ / vân đá / xương cá / dệt — đủ phong cách thời thượng",
+      "Đa dạng độ dày (SPC 4–8mm · LVT 2–5mm), lớp lót (EVA / IXPE) và lớp chống mài mòn (0,2–0,5mm)",
+      "Ba kiểu lắp: hèm khóa không keo / tự dán / dán keo nền khô — lát thẳng trên nền cũ, đổi mới trong ngày",
+      "Chống nước tự nhiên, cứng chắc chống mài mòn, cốt nền chuẩn E0 / E1 thân thiện môi trường",
+      "Hỗ trợ tùy chỉnh OEM / ODM mẫu mã & quy cách, phù hợp cả kênh dự án lẫn đại lý",
+      "Ứng dụng rộng: căn hộ, văn phòng, showroom, quán cà phê & cửa hàng concept, bán lẻ và thương mại nhẹ",
+    ],
+    website: "https://huayuesc.vn/",
+    products: LUMINA_PRODUCTS,
   },
 
   // ─── 💡 Lighting (added —— Phase 5+ batch) ──────────────────
@@ -677,7 +708,7 @@ export const PARTNERS: PartnerBrand[] = [
       "Giao hàng trọn gói một cửa cho thiết kế nội thất",
       "Cũng vận hành thương hiệu xuất khẩu KITO Ceramics (kitoceramics.com)",
     ],
-    hotline: "000-000-000",
+    hotline: "",
     website: "https://kito.cn/",
     products: KITO_PRODUCTS,
   },
@@ -753,6 +784,103 @@ export const PARTNERS: PartnerBrand[] = [
     ],
     website: "https://www.sylvania-group.com/",
     products: SYLVANIA_PRODUCTS,
+  },
+
+  // ─── 🛋️ Nội thất trọn gói toàn nhà ─────────────────────────────────────────
+  {
+    slug: "sofeyia",
+    name: "SOFEYIA",
+    nameOriginal: "Sofeyia (索菲亚 SOFEYIA · Nội thất trọn gói)",
+    category: "noi-that",
+    cvsStt: 46,
+    introduction:
+      "Sofeyia là thương hiệu nội thất trọn gói với thiết kế đến từ Pháp và sản xuất tại Trung Quốc, bao phủ tủ quần áo và phòng thay đồ tùy chỉnh, tủ bếp trọn bộ, tủ phòng khách - phòng ăn và tường tivi, tùy chỉnh phòng ngủ chính, cửa gỗ nội thất và tủ phòng tắm. Lấy giải pháp toàn nhà một điểm dừng làm cốt lõi, thương hiệu hợp nhất các không gian trong cùng một ngôn ngữ thiết kế, để màu sắc, ngũ kim và vân gỗ hòa hợp xuyên suốt; đồng thời cung cấp nhiều dòng thiết kế cấp thành phẩm như Salon Gathering, Evening Dress, Party, Michelin, Vacation, Fayven Master, Leisurely Duke, có thể triển khai trực tiếp cho cả nhà. Dựa trên dây chuyền sản xuất linh hoạt số hóa tùy chỉnh theo đơn, sử dụng vật liệu nền thân thiện môi trường cấp E0 / ENF và ngũ kim nhập khẩu, bàn giao tích hợp từ thiết kế, đo đạc đến sản xuất và lắp đặt.",
+    factory: {
+      location: "Thiết kế đến từ Pháp · Sản xuất tại Trung Quốc (cơ sở sản xuất Hoa Nam)",
+      facilities: "Dây chuyền sản xuất linh hoạt số hóa, tùy chỉnh theo đơn; ván cắt, dán cạnh, khoan lỗ theo bản vẽ",
+      capacity: "Vật liệu nền thân thiện môi trường cấp E0 / ENF + ngũ kim nhập khẩu, cả nhà cùng tông cùng hệ, xuất xưởng đồng bộ",
+    },
+    highlights: [
+      "Thương hiệu nội thất trọn gói với thiết kế đến từ Pháp và sản xuất tại Trung Quốc",
+      "Trọn nhà một điểm dừng: tủ quần áo / tủ bếp / cửa gỗ / tủ phòng tắm cùng tông cùng hệ",
+      "Nhiều dòng thiết kế cấp thành phẩm (Salon Gathering, Evening Dress, Michelin, Fayven Master ...)",
+      "Vật liệu nền thân thiện môi trường cấp E0 / ENF, dịch vụ tích hợp thiết kế - đo đạc - sản xuất - lắp đặt",
+    ],
+    website: "https://www.sofeyia.com/",
+    products: SOFEYIA_PRODUCTS,
+  },
+
+  // ─── 🧱 Building Materials (1 new premium tile / sintered-slab brand) ───────────────────
+  {
+    slug: "oceano",
+    name: "OCEANO",
+    nameOriginal: "欧神诺 OCEANO 瓷砖",
+    category: "construction-materials",
+    cvsStt: 48,
+    introduction:
+      "OCEANO (欧神诺) là thương hiệu gạch porcelain và tấm sintered (đá nung kết) cao cấp thuộc Tập đoàn DOBE Home, chuyên về gạch porcelain vân đá quy cách lớn. Thu 2025, OCEANO ra mắt bộ sưu tập «Ngọc Trung Hoa», diễn giải mỹ học ngọc phương Đông qua năm hệ màu ngọc: Ngọc Đen, Ngọc Trắng, Ngọc Lam-Xám, Ngọc Đỏ và Ngọc Vàng, sử dụng công nghệ «bề mặt vân khắc vi mô» thế hệ mới (hạt khô siêu mịn 400 mesh + tráng men 3 lớp), vân nổi khối, chạm vào ôn nhuận như ngọc; phôi được tăng độ dày lên 11–12mm, chủ lực là các quy cách lớn như 1200×2700mm, 1200×1600mm, 900×1800mm, ứng dụng rộng cho tường và sàn các không gian nhà ở, khách sạn và thương mại.",
+    factory: {
+      location: "Trung Quốc · Tập đoàn DOBE Home (OCEANO 欧神诺)",
+      facilities: "Dây chuyền sản xuất gạch porcelain vân đá / tấm sintered quy cách lớn, công nghệ bề mặt vân khắc vi mô + canh chỉnh đối vị kỹ thuật số",
+      capacity: "Chủ lực 1200×2700 / 1200×1600 / 900×1800mm, phôi tăng độ dày 11–12mm",
+    },
+    highlights: [
+      "Thương hiệu gạch porcelain / tấm sintered cao cấp thuộc Tập đoàn DOBE Home, chuyên về gạch porcelain vân đá quy cách lớn",
+      "Bộ sưu tập «Ngọc Trung Hoa» thu 2025: năm hệ màu Ngọc Đen / Ngọc Trắng / Ngọc Lam-Xám / Ngọc Đỏ / Ngọc Vàng",
+      "«Bề mặt vân khắc vi mô» thế hệ mới: hạt khô siêu mịn 400 mesh + tráng men 3 lớp, ôn nhuận như ngọc",
+      "Phôi tăng độ dày 11–12mm, độ phóng xạ loại A dùng được trong nhà, lát mạch khít A' bám sát hơn",
+    ],
+    website: "https://www.oceano.com.cn/",
+    products: OCEANO_PRODUCTS,
+  },
+
+  // ─── 🍳 Kitchen Equipment (built-in appliances) ─────────────────────────────────────────
+  {
+    slug: "comfee",
+    name: "Comfee",
+    nameOriginal: "Comfee (thương hiệu thiết bị nhà bếp xuất khẩu của Midea)",
+    category: "kitchen-equipment",
+    cvsStt: 49,
+    introduction:
+      "Comfee là thương hiệu thiết bị nhà bếp xuất khẩu của Tập đoàn Midea (Fortune Global 500), chuyên về thiết bị nhà bếp âm tủ, với dòng sản phẩm trải dài từ bếp từ, máy hút mùi, máy rửa chén đến lò nướng âm tủ và lò vi sóng âm tủ. Dựa trên nguồn lực R&D, sản xuất và chuỗi cung ứng của Midea, Comfee đưa các công nghệ AI thông minh (AI nấu ăn, AI Inverter, AI Wash nhận diện vết bẩn, AI điều khiển không chạm...) cùng các công nghệ cốt lõi như Germany IGBT vào việc nấu nướng và vệ sinh hằng ngày, đồng thời với thiết kế âm tủ chuẩn châu Âu hòa làm một với tủ bếp trọn bộ, mang lại gian bếp hiện đại hiệu quả, gọn gàng và thông minh.",
+    factory: {
+      location: "Thương hiệu thiết bị nhà bếp xuất khẩu của Tập đoàn Midea (sản xuất tại Trung Quốc)",
+      facilities: "Dùng chung hệ thống R&D, sản xuất và chuỗi cung ứng toàn cầu của Midea",
+      capacity: "Thiết bị nhà bếp âm tủ: bếp từ / máy hút mùi / máy rửa chén / lò nướng / lò vi sóng",
+    },
+    highlights: [
+      "Thương hiệu thiết bị nhà bếp xuất khẩu của Tập đoàn Midea (Fortune Global 500)",
+      "Ma trận thiết bị nhà bếp âm tủ đầy đủ: bếp từ · máy hút mùi · máy rửa chén · lò nướng · lò vi sóng",
+      "AI thông minh + Germany IGBT: AI nấu ăn / AI Inverter / AI nhận diện / AI điều khiển không chạm",
+      "Thiết kế âm tủ chuẩn châu Âu, cùng tông cùng hệ với tủ bếp trọn bộ, hòa làm một",
+    ],
+    website: "https://www.comfee.com/",
+    products: COMFEE_PRODUCTS,
+  },
+
+  // ─── 🪨 Đá vô cơ đúc sẵn (inorganic stone) ─────────────────────────────────────────
+  {
+    slug: "suncreate",
+    name: "SUNCREATE",
+    nameOriginal: "建研晟创 SUNCREATE · Đá vô cơ đúc sẵn",
+    category: "construction-materials",
+    cvsStt: 51,
+    introduction:
+      "SUNCREATE (建研晟创) là thương hiệu đá vô cơ đúc sẵn cao cấp (无机石材) — thành viên Tập đoàn Kiến trúc Quảng Châu (广州建筑集团, lọt Top 500 doanh nghiệp lớn nhất thế giới - Fortune Global 500 năm 2025) cùng Viện Nghiên cứu Kiến trúc Quảng Châu (广州建研). Đá vô cơ SUNCREATE hội tụ 8 đặc tính: siêu chống mài mòn, chống bám bẩn, độ bóng cao & đặc chắc, chống cháy đỉnh cao, tính thiết kế cao, không độc – không phóng xạ, thấp carbon thân thiện môi trường, kháng khuẩn chống mốc. Danh mục gồm 204 mã màu thuộc 11 hệ màu (trắng, xám, đen, đỏ, nâu, vàng be, xanh lá, xanh dương, vân tơ tằm, dòng cao cấp Ngự và dòng nghệ thuật terrazzo). Nhập khẩu và phân phối độc quyền tại Việt Nam bởi Huayue.",
+    factory: {
+      location: "Trung Quốc · Quảng Châu — 广州建研晟创 (SUNCREATE), thành viên Tập đoàn Kiến trúc Quảng Châu (广州建筑集团)",
+      facilities: "Dây chuyền đá vô cơ đúc sẵn (无机石材): ép đúc vật liệu vô cơ + mài bóng, hậu thuẫn kỹ thuật từ Viện Nghiên cứu Kiến trúc Quảng Châu (广州建研)",
+      capacity: "204 mã màu / 11 hệ màu — cung ứng theo quy cách tấm & cắt theo yêu cầu",
+    },
+    highlights: [
+      "Thành viên Tập đoàn Kiến trúc Quảng Châu (广州建筑集团) — Fortune Global 500 (2025)",
+      "Đá vô cơ đúc sẵn cao cấp với 8 đặc tính: chống mài mòn · chống cháy · không độc/phóng xạ · kháng khuẩn chống mốc",
+      "204 mã màu thuộc 11 hệ màu — từ trắng/xám/đen tới dòng cao cấp Ngự & nghệ thuật terrazzo",
+      "Không độc, không phóng xạ, thấp carbon — an toàn & thân thiện môi trường cho không gian trong nhà",
+      "Nhập khẩu & phân phối độc quyền tại Việt Nam bởi Huayue",
+    ],
+    website: "https://huayuesc.vn",
+    products: SUNCREATE_PRODUCTS,
   },
 ];
 

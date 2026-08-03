@@ -70,7 +70,6 @@ const SECTIONS_RAW: SitemapSection[] = [
     title: "Selling (Seller / Supplier)",
     subtitle: "Register and manage your supplier storefront",
     links: [
-      { label: "sitemap.lbl_sell_on_csr", href: "/sell-on-csr", desc: "sitemap.desc_sell_on_csr" },
       { label: "sitemap.lbl_register_factory_a", href: "/register/factory", desc: "sitemap.desc_register_factory_a" },
       { label: "sitemap.lbl_register_dealer_a", href: "/register/dealer", desc: "sitemap.desc_register_dealer_a" },
     ],

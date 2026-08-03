@@ -13,14 +13,6 @@ const CHANNELS = [
     color: "bg-brand/10 text-brand",
   },
   {
-    icon: "📞",
-    title: "buyer_center_contact.channel_hotline_title",
-    primary: "000-000-000 (VN)",
-    secondary: "000-000-000 (CN)",
-    hours: "buyer_center_contact.channel_hotline_hours",
-    color: "bg-accent/10 text-accent",
-  },
-  {
     icon: "💬",
     title: "buyer_center_contact.channel_chat_title",
     primary: "Zalo: Huayuesc-Buyer",
@@ -35,7 +27,7 @@ const OFFICES = [
     flag: "🇻🇳",
     city: "buyer_center_contact.office_hanoi_city",
     address: "18th Floor, Lotte Center, 54 Lieu Giai, Ba Dinh, Hanoi",
-    phone: "000-000-000",
+    phone: "",
     email: "hanoi@alibabavn.com",
     hours: "buyer_center_contact.office_hanoi_hours",
   },
@@ -43,7 +35,7 @@ const OFFICES = [
     flag: "🇻🇳",
     city: "buyer_center_contact.office_hcm_city",
     address: "12th Floor, Bitexco Financial Tower, 2 Hai Trieu, District 1, Ho Chi Minh City",
-    phone: "000-000-000",
+    phone: "",
     email: "hcm@alibabavn.com",
     hours: "buyer_center_contact.office_hanoi_hours",
   },
@@ -51,7 +43,7 @@ const OFFICES = [
     flag: "🇨🇳",
     city: "buyer_center_contact.office_guangzhou_city",
     address: "Room 1808, R&F Center, No.10 Huaxia Rd, Tianhe District, Guangzhou",
-    phone: "000-000-000",
+    phone: "",
     email: "guangzhou@alibabavn.com",
     hours: "buyer_center_contact.office_guangzhou_hours",
   },
@@ -59,7 +51,7 @@ const OFFICES = [
     flag: "🇨🇳",
     city: "buyer_center_contact.office_foshan_city",
     address: "5th Floor, China Ceramics City, Chancheng District, Foshan, Guangdong",
-    phone: "000-000-000",
+    phone: "",
     email: "foshan@alibabavn.com",
     hours: "buyer_center_contact.office_guangzhou_hours",
   },
@@ -113,7 +105,6 @@ export default async function ContactPage() {
                   <b className="text-[14px] text-ink">{t(o.city)}</b>
                 </div>
                 <div className="text-[12.5px] text-ink mb-1">📍 {o.address}</div>
-                <div className="text-[12.5px] text-mute mb-1">📞 {o.phone}</div>
                 <div className="text-[12.5px] text-mute mb-1">✉️ {o.email}</div>
                 <div className="text-[11.5px] text-mute pt-2 border-t border-line mt-2">🕘 {t(o.hours)}</div>
               </div>

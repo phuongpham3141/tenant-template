@@ -125,7 +125,7 @@ export default function ContactClient({
             {tx.heroTitle}
           </h1>
           <p className="text-[14.5px] opacity-90 max-w-[720px] leading-relaxed mb-5 max-md:text-[13px]">
-            {tx.heroP1} <b>{tx.heroAddrHn}</b> {tx.heroP2} <b>{tx.heroAddrGz}</b> {tx.heroP3} <b>000-000-000</b> {tx.heroP4}
+            {tx.heroP1} <b>{tx.heroAddrHn}</b> {tx.heroP2} <b>{tx.heroAddrGz}</b> {tx.heroP3}
           </p>
           <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
             {[
@@ -259,16 +259,7 @@ export default function ContactClient({
               </div>
 
               {/* Contact */}
-              <div className="grid grid-cols-2 gap-4 max-md:grid-cols-1">
-                <div>
-                  <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">📞 {t("info_contact.label_phone")}</b>
-                  <a href={`tel:${active.phone.replace(/\s/g, "")}`} className="text-[13.5px] text-brand font-semibold hover:underline">
-                    {active.phone}
-                  </a>
-                  {active.hotline && (
-                    <div className="text-[12px] text-mute mt-0.5">{t("info_contact.hotline_vn")} <b className="text-ink">{active.hotline}</b></div>
-                  )}
-                </div>
+              <div className="grid grid-cols-1 gap-4 max-md:grid-cols-1">
                 <div>
                   <b className="block text-[10.5px] uppercase tracking-wider text-mute font-bold mb-1.5">✉ {t("info_contact.label_email")}</b>
                   <a href={`mailto:${active.email}`} className="text-[13.5px] text-brand font-semibold hover:underline break-all">
@@ -370,7 +361,7 @@ export default function ContactClient({
           <h2 className="text-[22px] font-bold text-ink max-md:text-[18px]">{t("info_contact.channels_title")}</h2>
           <p className="text-[13px] text-mute mt-1">{t("info_contact.channels_desc")}</p>
         </div>
-        <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
+        <div className="grid grid-cols-3 gap-3 max-md:grid-cols-1 max-w-[860px] mx-auto">
           {CHANNELS.map((c) => (
             <a
               key={c.title}
@@ -432,7 +423,7 @@ export default function ContactClient({
               🚀 {t("info_contact.cta_rfq")}
             </Link>
             <a
-              href="mailto:hello@huayuesc.vn"
+              href="mailto:mcy@huayuesc.com"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
               📧 {t("info_contact.cta_book")}

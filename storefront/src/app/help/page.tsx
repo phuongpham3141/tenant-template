@@ -217,9 +217,7 @@ const SYSTEM_STATUS = [
 ];
 
 const CONTACT_CHANNELS = [
-  { icon: "💬", title: "Live Chat", desc: "Response under 5 min", info: "8am-10pm daily", href: "#chat" },
-  { icon: "📞", title: "Hotline", desc: "000-000-000", info: "8am-6pm Mon-Sat", href: "tel:000-000-000" },
-  { icon: "📧", title: "Email Support", desc: "Response under 6 hours", info: "support@huayuesc.vn", href: "mailto:support@huayuesc.vn" },
+  { icon: "📧", title: "Email Support", desc: "Response under 6 hours", info: "mcy@huayuesc.com", href: "mailto:mcy@huayuesc.com" },
   { icon: "📹", title: "Video Call", desc: "Book in advance", info: "1-on-1 with an account manager", href: "/info/contact" },
 ];
 

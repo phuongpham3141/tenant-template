@@ -95,10 +95,10 @@ export default async function PartnersIndexPage() {
               <p className="text-[12.5px] text-ink leading-relaxed mb-3">
                 {t("info_partners.empty_desc_pre")}{" "}
                 <a
-                  href="mailto:partnership@huayuesc.vn"
+                  href="mailto:mcy@huayuesc.com"
                   className="text-brand font-semibold hover:underline"
                 >
-                  partnership@huayuesc.vn
+                  mcy@huayuesc.com
                 </a>
                 .
               </p>

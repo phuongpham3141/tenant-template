@@ -13,12 +13,12 @@ export default function Home() {
     <>
       <BannerSection />
       <StatsBar />
+      <Factories />
       <CategoryShowcase />
       {SECTIONS.map((s) => (
         <ProductSection key={s.id} section={s} />
       ))}
       <SourcingSolutions />
-      <Factories />
       <TradeShowsSection />
       <Zones />
     </>

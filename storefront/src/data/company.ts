@@ -150,9 +150,9 @@ export const COMPANY = {
       cityCn: "Hà Nội",
       countryVi: "Việt Nam",
       countryCn: "Việt Nam",
-      addressCn: "Tầng 7, Toà nhà Bảo Ngọc, Số 02 Đường Thanh Lãm, Phường Xuân Phương, Hà Nội, Việt Nam",
+      addressCn: "Toà nhà Ecolife, số 58 Tố Hữu, Phường Đại Mỗ, Quận Nam Từ Liêm, Hà Nội, Việt Nam",
       addressVi:
-        "Tầng 7, Toà nhà Bảo Ngọc, Số 02 Đường Thanh Lãm, Phường Xuân Phương, Hà Nội, Việt Nam",
+        "Toà nhà Ecolife, số 58 Tố Hữu, Phường Đại Mỗ, Quận Nam Từ Liêm, Hà Nội, Việt Nam",
       role: "Trụ sở chính · Vận hành · Phân phối tại Việt Nam",
       timezone: "GMT+7",
     },
@@ -160,13 +160,13 @@ export const COMPANY = {
 
   // ─── Contact (brochure page 8) ──────────────────────────────────────────
   contact: {
-    hotline: "000-000-000",
+    hotline: "",
     emails: {
-      sales: "sales@huayuesc.vn",
-      support: "support@huayuesc.vn",
-      hr: "hr@huayuesc.vn",
-      privacy: "privacy@huayuesc.vn",
-      partnership: "partnership@huayuesc.vn",
+      sales: "mcy@huayuesc.com",
+      support: "mcy@huayuesc.com",
+      hr: "mcy@huayuesc.com",
+      privacy: "mcy@huayuesc.com",
+      partnership: "mcy@huayuesc.com",
     },
     social: {
       zalo: "https://zalo.me/huayuesc",

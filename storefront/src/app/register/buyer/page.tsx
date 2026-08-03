@@ -4,13 +4,6 @@ import { NAV_CATEGORIES } from "@/data/home";
 import { LOGIN_PROVIDERS } from "@/components/icons/social";
 import { getT } from "@/lib/t";
 
-const BENEFITS = [
-  { icon: "🏭", title: "register_buyer.benefit_audit_title", desc: "register_buyer.benefit_audit_desc" },
-  { icon: "💰", title: "register_buyer.benefit_discount_title", desc: "register_buyer.benefit_discount_desc" },
-  { icon: "🚚", title: "register_buyer.benefit_ddp_title", desc: "register_buyer.benefit_ddp_desc" },
-  { icon: "🛡", title: "register_buyer.benefit_assurance_title", desc: "register_buyer.benefit_assurance_desc" },
-];
-
 const TESTIMONIALS = [
   {
     quote: "register_buyer.testimonial1_quote",
@@ -67,17 +60,6 @@ export default async function RegisterBuyerPage() {
               <b>$8.2M</b>
             </div>
           </div>
-        </div>
-
-        {/* BENEFITS */}
-        <div className="grid grid-cols-4 gap-3 mb-5 max-md:grid-cols-2">
-          {BENEFITS.map((b) => (
-            <div key={b.title} className="bg-[#FFF7E6] border border-gold/40 rounded p-3.5">
-              <div className="text-[26px] mb-1.5">{b.icon}</div>
-              <b className="block text-[13px] text-ink mb-1">{t(b.title)}</b>
-              <p className="text-[11.5px] text-mute leading-snug">{t(b.desc)}</p>
-            </div>
-          ))}
         </div>
 
         <div className="grid grid-cols-[1fr_320px] gap-6 max-md:grid-cols-1">

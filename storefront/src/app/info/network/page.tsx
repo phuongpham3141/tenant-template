@@ -481,7 +481,7 @@ export default async function NetworkPage() {
                 {t("info_network.cta_p")}
               </p>
               <p className="text-[12px] opacity-80 mt-2">
-                📞 {COMPANY.contact.hotline} · ✉ <a href={`mailto:${COMPANY.contact.emails.partnership}`} className="underline hover:text-gold">{COMPANY.contact.emails.partnership}</a>
+                ✉ <a href={`mailto:${COMPANY.contact.emails.partnership}`} className="underline hover:text-gold">{COMPANY.contact.emails.partnership}</a>
               </p>
             </div>
             <div className="flex flex-col gap-2 max-md:w-full">

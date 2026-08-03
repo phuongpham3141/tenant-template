@@ -582,8 +582,6 @@ async function ContactTab({ f }: { f: Factory }) {
             Main production building, Tianhe Industrial Park, {f.location}
           </p>
           <ul className="space-y-1 text-[12px] text-ink">
-            <li>📞 Hotline: <b>000-000-000</b></li>
-            <li>💬 WeChat / WhatsApp: <b>000-000-000</b></li>
             <li>✉ Email: <b>sales@{f.slug.replace(/-/g, "")}.com.cn</b></li>
             <li>🕒 Hours: <b>Mon-Sat, 8:30-18:00 (GMT+8)</b></li>
             <li>🌐 Languages: <b>Chinese, English, Vietnamese via CSR interpreter</b></li>
@@ -599,8 +597,6 @@ async function ContactTab({ f }: { f: Factory }) {
             21st Floor, Diamond Flower Tower, 48 Le Van Luong, Cau Giay, Hanoi
           </p>
           <ul className="space-y-1 text-[12px] text-ink">
-            <li>📞 Hotline: <b>000-000-000</b> (toll-free in Vietnam)</li>
-            <li>💬 Zalo: <b>000-000-000</b></li>
             <li>✉ Email: <b>vn-{f.slug}@huayuesc.vn</b></li>
             <li>🕒 Hours: <b>Mon-Fri, 8:30-18:00 (GMT+7)</b></li>
             <li>🌐 Languages: <b>Vietnamese, with translation to Chinese</b></li>
@@ -623,9 +619,8 @@ async function ContactTab({ f }: { f: Factory }) {
               Ha manages {f.name}'s Vietnam dealers — from product advice and price negotiation to production tracking and dispute resolution. Replies via Zalo / Email in under 30 minutes during business hours.
             </p>
             <div className="mt-3 flex gap-2 flex-wrap">
-              <a href="tel:000-000-000" className="px-3 py-1.5 bg-brand text-white rounded-sm text-[12px] font-semibold hover:bg-brand-light">{t("supplier_slug_SupplierDetail.contact_call_now")}</a>
               <a href="https://zalo.me/huayuesc" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#0068FF] text-white rounded-sm text-[12px] font-semibold hover:opacity-90">{t("supplier_slug_SupplierDetail.contact_chat_zalo")}</a>
-              <a href="mailto:hr@huayuesc.vn" className="px-3 py-1.5 border border-line text-ink rounded-sm text-[12px] font-semibold hover:border-brand">{t("supplier_slug_SupplierDetail.contact_email")}</a>
+              <a href="mailto:mcy@huayuesc.com" className="px-3 py-1.5 border border-line text-ink rounded-sm text-[12px] font-semibold hover:border-brand">{t("supplier_slug_SupplierDetail.contact_email")}</a>
             </div>
           </div>
         </div>

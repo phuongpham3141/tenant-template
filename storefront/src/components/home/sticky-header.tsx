@@ -14,7 +14,6 @@ const NAV_LINKS: { key: string; href: string }[] = [
   { key: "nav.industryChannels", href: "/industry-channels" },
   { key: "nav.tradeAlert", href: "/trade-alert" },
   { key: "nav.buyingRequest", href: "/buying-request" },
-  { key: "nav.sellOnCsr", href: "/sell-on-csr" },
 ];
 
 export function StickyHeader() {

@@ -215,10 +215,10 @@ export default async function SuppliersPage({
             <div className="bg-paper border border-line rounded p-10 text-center text-mute text-[13px]">
               {t("suppliers.empty")}{" "}
               <a
-                href="mailto:partnership@huayuesc.vn"
+                href="mailto:mcy@huayuesc.com"
                 className="text-brand font-semibold hover:underline"
               >
-                partnership@huayuesc.vn
+                mcy@huayuesc.com
               </a>
               .
             </div>
@@ -228,52 +228,7 @@ export default async function SuppliersPage({
             <CardsView list={tList} />
           )}
 
-          {/* ── Pending sites ──────────────────────────────────────── */}
-          <section className="bg-[#FFFBEB] border-l-4 border-gold rounded-r p-4 mt-6">
-            <h3 className="text-[13.5px] font-bold text-[#92400E] mb-2 flex items-center gap-2">
-              <span>⚠️</span>
-              <span>{t("suppliers.pending_title")}</span>
-            </h3>
-            <p className="text-[12px] text-ink leading-relaxed mb-2">
-              {t("suppliers.pending_desc")}
-            </p>
-            <ul className="text-[12px] text-ink/85 space-y-1 ml-1">
-              <li>
-                ·{" "}
-                <b>Mijic</b> ·{" "}
-                <a
-                  href="https://www.mijic.cn/"
-                  className="text-brand hover:underline break-all"
-                  rel="nofollow noopener"
-                  target="_blank"
-                >
-                  www.mijic.cn
-                </a>{" "}
-                — IP{" "}
-                <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
-                  47.90.164.246
-                </code>{" "}
-                {t("suppliers.pending_mijic_suffix")}
-              </li>
-              <li>
-                ·{" "}
-                <b>{td("Quảng Cương (Gise-Gnm)")}</b> ·{" "}
-                <a
-                  href="http://www.gise-gnm.com/"
-                  className="text-brand hover:underline break-all"
-                  rel="nofollow noopener"
-                  target="_blank"
-                >
-                  www.gise-gnm.com
-                </a>{" "}
-                — IP{" "}
-                <code className="bg-paper px-1 py-0.5 rounded text-[11px]">
-                  219.137.250.200
-                </code>{" "}
-                {t("suppliers.pending_gise_suffix")}
-              </li>
-            </ul>
-          </section>
+          {/* Pending-sites notice hidden per request (Mijic / Gise-Gnm) */}
 
           {/* ── CTA ────────────────────────────────────────────────── */}
           <section className="mt-6 bg-brand text-white rounded-lg p-6 text-center max-md:p-5">

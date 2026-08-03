@@ -42,7 +42,7 @@ export function HeroSlider() {
     titleEnd: t("hero.slide2.titleEnd"),
     desc: t("hero.slide2.desc"),
     primary: { label: t("hero.slide2.primary"), href: "/register/buyer" },
-    secondary: { label: t("hero.slide2.secondary"), href: "/info/gold-membership" },
+    secondary: { label: t("hero.slide2.secondary"), href: "/info/about-us" },
     image: "/img/hero-buyer-promo.jpg?v=7",
   },
   {
@@ -51,8 +51,8 @@ export function HeroSlider() {
     titleGold: t("hero.slide3.titleGold"),
     titleEnd: t("hero.slide3.titleEnd"),
     desc: t("hero.slide3.desc"),
-    primary: { label: t("hero.slide3.primary"), href: "/factory-tour" },
-    secondary: { label: t("hero.slide3.secondary"), href: "/buyer-center/meet-suppliers" },
+    primary: { label: t("hero.slide3.primary"), href: "/products" },
+    secondary: { label: t("hero.slide3.secondary"), href: "/info/partners" },
     image: "/img/hero-factory-tour.jpg?v=7",
   },
   {
@@ -62,7 +62,7 @@ export function HeroSlider() {
     titleEnd: t("hero.slide4.titleEnd"),
     desc: t("hero.slide4.desc"),
     primary: { label: t("hero.slide4.primary"), href: "/info/ddp-calculator" },
-    secondary: { label: t("hero.slide4.secondary"), href: "/info/shipping-policy" },
+    secondary: { label: t("hero.slide4.secondary"), href: "/info/contact" },
     image: "/img/hero-ddp-logistics.jpg?v=7",
   },
 ];
@@ -112,7 +112,7 @@ const N = HERO_SLIDES.length;
 
   return (
     <div
-      className="hero-root group/hero relative rounded overflow-hidden h-full bg-brand-dark touch-pan-y select-none max-xl:h-auto max-xl:aspect-[5/4]"
+      className="hero-root group/hero relative rounded overflow-hidden h-full bg-brand-dark touch-pan-y select-none max-xl:h-auto max-xl:aspect-[5/4] max-md:aspect-[4/5]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onPointerDown={onPointerDown}
@@ -150,7 +150,7 @@ const N = HERO_SLIDES.length;
             draggable={false}
           />
           <div
-            className="absolute inset-0 px-12 py-10 flex flex-col justify-center text-white max-md:px-4 max-md:py-4"
+            className="absolute inset-0 px-12 py-10 flex flex-col justify-center text-white max-md:px-12 max-md:py-7"
             style={{
               background:
                 "linear-gradient(90deg, rgba(0,28,66,0.62) 0%, rgba(0,28,66,0.28) 45%, rgba(0,28,66,0.04) 100%)",
@@ -197,14 +197,14 @@ const N = HERO_SLIDES.length;
             <label
               htmlFor={`hs-${prevTarget}`}
               aria-label={t("hero.prev")}
-              className={`hero-prev hero-prev-${idx} absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
+              className={`hero-prev hero-prev-${idx} absolute left-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-8 max-md:h-8 max-md:text-[16px]`}
             >
               ‹
             </label>
             <label
               htmlFor={`hs-${nextTarget}`}
               aria-label={t("hero.next")}
-              className={`hero-next hero-next-${idx} absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-9 max-md:h-9 max-md:text-[18px]`}
+              className={`hero-next hero-next-${idx} absolute right-3 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-md bg-black/40 backdrop-blur-sm text-white text-[22px] font-bold items-center justify-center cursor-pointer hover:bg-black/60 transition-opacity max-md:w-8 max-md:h-8 max-md:text-[16px]`}
             >
               ›
             </label>

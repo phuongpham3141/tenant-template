@@ -252,10 +252,8 @@ const CASE_STUDIES = [
 ];
 
 const EMERGENCY_CHANNELS = [
-  { icon: "🚨", title: "info_disputes.emch_1_title", value: "000-000-000", desc: "info_disputes.emch_1_desc" },
   { icon: "💬", title: "info_disputes.emch_2_title", value: "dashboard /buyer-center", desc: "info_disputes.emch_2_desc" },
-  { icon: "✉", title: "info_disputes.emch_3_title", value: "dispute@huayuesc.vn", desc: "info_disputes.emch_3_desc" },
-  { icon: "📱", title: "info_disputes.emch_4_title", value: "+84 000-000-000", desc: "info_disputes.emch_4_desc" },
+  { icon: "✉", title: "info_disputes.emch_3_title", value: "mcy@huayuesc.com", desc: "info_disputes.emch_3_desc" },
 ];
 
 const FAQ = [
@@ -350,12 +348,6 @@ export default async function KhieuNaiPage() {
               className="px-6 py-3 bg-gold text-brand-dark rounded-sm font-bold text-[14px] hover:bg-[#E8943A]"
             >
               {t("info_disputes.hero_cta_open")}
-            </a>
-            <a
-              href="tel:000-000-000"
-              className="px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
-            >
-              {t("info_disputes.hero_cta_hotline")}
             </a>
           </div>
         </div>
@@ -682,16 +674,10 @@ export default async function KhieuNaiPage() {
               {t("info_disputes.cta_dashboard")}
             </Link>
             <a
-              href="mailto:dispute@huayuesc.vn"
+              href="mailto:mcy@huayuesc.com"
               className="inline-block px-6 py-3 border-2 border-white/40 text-white rounded-sm font-bold text-[14px] hover:bg-white/10"
             >
-              ✉ dispute@huayuesc.vn
-            </a>
-            <a
-              href="tel:000-000-000"
-              className="inline-block px-6 py-3 bg-accent text-white rounded-sm font-bold text-[14px] hover:opacity-90"
-            >
-              🚨 000-000-000 — 24/7
+              ✉ mcy@huayuesc.com
             </a>
           </div>
           <div className="mt-5 pt-5 border-t border-white/15 text-[11.5px] opacity-75 max-w-[680px] mx-auto leading-relaxed">
@@ -707,6 +693,6 @@ export async function generateMetadata() {
   const td = await getTd();
   return {
     title: td("Khiếu nại & tranh chấp") + " · Huayuesc Dispute Resolution",
-    description: td("Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình. Hotline 24/7: 000-000-000."),
+    description: td("Hệ thống giải quyết tranh chấp 3 cấp độ: đối thoại trực tiếp, Huayue Mediation theo NĐ 22/2017, trọng tài VIAC Hà Nội theo Công ước New York 1958. đa số case có lợi cho buyer khi evidence đầy đủ trong 3.2 ngày trung bình."),
   };
 }

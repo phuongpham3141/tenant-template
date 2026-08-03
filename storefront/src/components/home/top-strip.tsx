@@ -41,8 +41,7 @@ const SELLER_LINKS: LinkRow[] = [
   { icon: "🏷", label: "Sản phẩm của tôi", href: "/seller-center/products" },
   { icon: "💬", label: "Báo giá đã gửi", href: "/seller-center/quotes" },
   { icon: "📥", label: "Đơn hàng đến", href: "/seller-center/orders", badge: "8", badgeTone: "info" },
-  { icon: "🏭", label: "Bán hàng trên CSR", href: "/sell-on-csr", desc: "Trở thành nhà cung cấp được chứng nhận" },
-  { icon: "🛡", label: "Bảo đảm giao dịch", href: "/info/trade-assurance", desc: "Ký quỹ thanh toán xuyên biên giới", badge: "Ký quỹ", badgeTone: "success" },
+  { icon: "🛡", label: "Bảo đảm giao dịch", href: "/info/maintenance", desc: "Ký quỹ thanh toán xuyên biên giới", badge: "Ký quỹ", badgeTone: "success" },
 ];
 
 const ACCOUNT_LINKS: LinkRow[] = [
@@ -298,12 +297,6 @@ export async function TopStrip() {
                   </Link>
                 </div>
               </form>
-              <div className="px-4 pb-3 pt-2 border-t border-line text-[11.5px] text-mute">
-                {t("topstrip.are_you_supplier")}{" "}
-                <Link href="/sell-on-csr" className="text-brand font-semibold cursor-pointer hover:underline">
-                  {t("topstrip.register_supplier")}
-                </Link>
-              </div>
             </div>
           </div>
           )}

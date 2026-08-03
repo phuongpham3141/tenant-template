@@ -14,20 +14,6 @@ export default async function RegisterDealerPage() {
           <h1 className="text-[24px] font-extrabold text-ink mb-1">{t("register_dealer.title")}</h1>
           <p className="text-[13px] text-mute mb-5">{t("register_dealer.subtitle")}</p>
 
-          <div className="grid grid-cols-3 gap-3 mb-5 max-md:grid-cols-1">
-            {[
-              { icon: "🏭", t: "register_dealer.perk_audit_t", d: "register_dealer.perk_audit_d" },
-              { icon: "💰", t: "register_dealer.perk_discount_t", d: "register_dealer.perk_discount_d" },
-              { icon: "🚚", t: "register_dealer.perk_ddp_t", d: "register_dealer.perk_ddp_d" },
-            ].map((p) => (
-              <div key={p.t} className="border border-line rounded p-3 bg-[#FFF7E6]">
-                <div className="text-[26px] mb-1">{p.icon}</div>
-                <b className="block text-[13px] text-ink mb-1">{t(p.t)}</b>
-                <p className="text-[11.5px] text-mute leading-snug">{t(p.d)}</p>
-              </div>
-            ))}
-          </div>
-
           <form action="/buyer-center" method="get" className="space-y-4">
             <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
               <div>
@@ -82,11 +68,11 @@ export default async function RegisterDealerPage() {
           <b className="block text-[14px] font-bold text-ink mb-3">{t("register_dealer.testimonials_title")}</b>
           <div className="space-y-3 text-[12px] text-ink">
             <div className="border-l-2 border-gold pl-3">
-              <p className="leading-relaxed">{t("register_dealer.testimonial1_quote")}</p>
+              <p className="leading-relaxed">&ldquo;{t("register_dealer.testimonial1_quote")}&rdquo;</p>
               <span className="text-[11px] text-mute mt-1 block">{t("register_dealer.testimonial1_author")}</span>
             </div>
             <div className="border-l-2 border-gold pl-3">
-              <p className="leading-relaxed">{t("register_dealer.testimonial2_quote")}</p>
+              <p className="leading-relaxed">&ldquo;{t("register_dealer.testimonial2_quote")}&rdquo;</p>
               <span className="text-[11px] text-mute mt-1 block">{t("register_dealer.testimonial2_author")}</span>
             </div>
           </div>
